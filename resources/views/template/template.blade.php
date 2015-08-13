@@ -15,9 +15,10 @@
     <!-- Begin page content -->
     <div class="container">
 
-    <h4>Brand</h4>
-        @yield('mainContent')
+        <h4>Brand</h4>
+            @yield('mainContent')
     </div>
+
 
     <footer class="footer">
         <div class="conteiner">
@@ -27,11 +28,7 @@
             <div class="col-xs-6">
                 <h4>{{Session::get('company_code')}}</h4>
             </div>
-
-
         </div>
-
-
     </footer>
 
     </body>

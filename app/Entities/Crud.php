@@ -4,11 +4,9 @@ namespace App\Entities;
 
 class Crud extends Entity{
 
-    protected $table = 'users';
+    protected $table = 'base';
 
-    public function Perfil()
-    {
-        return $this->hasMany(Profile::getClass());
-    }
+    protected $fillable = ['data1','data2'];
+
 
 }

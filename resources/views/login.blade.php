@@ -2,6 +2,8 @@
 
     @section('mainContent')
 
+        @include('messages')
+
         {!!Form::open(['route'=>'postLogin'])!!}
         {!!Form::text('email')!!}
         {!!Form::password('password')!!}
