@@ -20,4 +20,9 @@ class Profile  extends Entity{
     {
         return $this->hasMany(User::getClass());
     }
+
+    public function Permissions()
+    {
+        return $this->hasMany(Permissions::getClass(),'profiles_id');
+    }
 }

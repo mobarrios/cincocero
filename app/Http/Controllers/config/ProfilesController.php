@@ -16,6 +16,7 @@ class ProfilesController extends Controller {
     public   $data;
     public   $request;
     public   $rules;
+    public   $detail;
 
     public function __construct(Repo $repo)
     {
@@ -27,6 +28,8 @@ class ProfilesController extends Controller {
         //data for views
         $this->view                 = 'config.profiles.index';
         $this->form                 = 'config.profiles.form';
+        $this->detail               = 'config.profiles.detail';
+
         $this->data['sectionName']  = 'Perfiles';
 
         //data for validation
@@ -39,7 +42,7 @@ class ProfilesController extends Controller {
         $this->data['routeNew']     = 'profilesGetNew';
         $this->data['routePostNew'] = 'profilesPostNew';
         $this->data['routePostEdit']= 'profilesPostEdit';
-
+        $this->data['routeDetail']  = 'profilesDetail';
 
     }
 

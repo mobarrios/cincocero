@@ -15,6 +15,12 @@ class Modules  extends Entity{
     protected $table  = 'modules';
     protected $fillable = ['name','available'];
 
+    public function Permissions()
+    {
+        return $this->hasMany(Permissions::getClass());
+    }
+
+
 
 
 }

@@ -55,9 +55,12 @@ use App\Http\Controllers\Auth\AuthController ;
 //test
 Route::get('test',function()
 {
+
+    dd(bcrypt('1234'));
+    /*
     Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
     Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
     Artisan::call('make:migration',	['name'=>'PepitoMigration']);
-
+*/
 });
 

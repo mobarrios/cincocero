@@ -9,7 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Entities\User;
-use App\Http\Repositories\UserRepo;
+use App\Http\Repositories\config\UserRepo;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Helpers\Helper;
 use Illuminate\Support\Facades\Auth;

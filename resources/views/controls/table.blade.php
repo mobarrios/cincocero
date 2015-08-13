@@ -21,7 +21,12 @@
     <tbody>
     @foreach($models as $model)
         <tr>
-            <td>{{$model->id}}</td>
+            <td>
+                @if(isset($routeDetail))
+                     <a href="{{route($routeDetail, $model->id)}}">{{$model->id}}</a>
+                @else
+                     {{$model->id}}
+                @endif
 
                 @foreach($tableHeader['columns'] as $column)
 

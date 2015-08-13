@@ -8,6 +8,8 @@
 
 namespace App\Http\Repositories\config;
 
+use App\Entities\Modules;
+use App\Entities\Permissions;
 use App\Entities\Profile;
 use App\Http\Repositories\BaseRepo;
 
@@ -44,6 +46,28 @@ class ProfileRepo extends BaseRepo {
         ];
 
         return $header;
+    }
+
+    public function create($datos)
+    {
+        $model =  $this->model->create($datos->all());
+        $modules = Modules::all();
+
+
+
+        foreach($modules as $module)
+        {
+            $permissions = new Permissions();
+            $permissions->modules_id    = $module->id;
+            $permissions->profiles_id   = $model->id;
+            $permissions->list          = 0;
+            $permissions->edit          = 0;
+            $permissions->delete        = 0;
+            $permissions->store         = 0;
+
+            $permissions->save();
+
+        }
     }
 
 
