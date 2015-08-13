@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Entities\Crud;
 use App\Http\Repositories\CrudRepo as Repo;
 
 
@@ -38,12 +37,4 @@ class CrudController extends Controller {
         $this->data['routePostNew'] = 'crudPostNew';
         $this->data['routePostEdit']= 'crudPostEdit';
     }
-
-
-
-
-
-
-
-
 }

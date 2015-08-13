@@ -13,6 +13,7 @@ namespace App\Entities;
 class Profile  extends Entity{
 
     protected $table  = 'profiles';
+    protected $fillable = ['profile'];
 
 
     public function User()

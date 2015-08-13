@@ -6,9 +6,10 @@
  * Time: 12:42
  */
 
-namespace App\Http\Repositories;
+namespace App\Http\Repositories\config;
 
 use App\Entities\User;
+use App\Http\Repositories\BaseRepo;
 
 class UserRepo extends BaseRepo {
 
@@ -40,6 +41,17 @@ class UserRepo extends BaseRepo {
                                     ],
        ];
         return $header;
+    }
+
+    public function Rules()
+    {
+
+        return [
+            'name'          => 'required',
+            'last_name'     => 'required',
+            'email'         =>'required|unique:users,email',
+            'password'      =>'required|min:4',
+        ];
     }
 
 

@@ -26,14 +26,25 @@ abstract class BaseRepo {
 
     public function create($datos)
     {
-        return $this->model->create($datos);
+        return $this->model->create($datos->all());
     }
 
-    public function edit($model, $datos)
+    public function edit($id, $datos)
     {
-        $model->fill($datos);
+        $model = $this->model->find($id);
+        $model->fill($datos->all());
         $model->save();
 
-        return $model;
+    }
+
+    public function delete($id)
+    {
+        $this->model->find($id)->delete();
+    }
+
+    public function ListAll()
+    {
+        $qry = $this->model->all();
+        return $qry;
     }
 }

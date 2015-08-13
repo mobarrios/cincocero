@@ -30,6 +30,16 @@
                     </ul>
                 </li>
 
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Config<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{route('user')}}">Users</a></li>
+                        <li><a href="{{route('profiles')}}">Profiles</a></li>
+                        <li><a href="{{route('modules')}}">Modulos</a></li>
+
+                    </ul>
+                </li>
+
             </ul>
 
 

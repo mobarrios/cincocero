@@ -32,15 +32,16 @@ abstract class Controller extends BaseController
     public function getEdit($id)
     {
         $this->data['model'] = $this->repo->getModel()->find($id);
+
         return view($this->form)->with($this->data);
     }
 
     //delete item
     public function getDel($id)
     {
-        $this->repo->Borrar($id);
+        $this->repo->delete($id);
 
-        return redirect($this->data['route'])->withErrors(trans('messages.delItem'));
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
     }
 
 
@@ -51,10 +52,11 @@ abstract class Controller extends BaseController
         $this->validate($request, $this->rules);
 
         // method crear in repo
-        $this->repo->Crear($request);
+        $this->repo->create($request);
 
         // redirect with errors messages language
-        return redirect($this->data['route'])->withErrors(trans('messages.newItem'));
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+
     }
 
 
@@ -63,10 +65,11 @@ abstract class Controller extends BaseController
         // validation rules form repo
         $this->validate($request, $this->rules);
 
-        $this->repo->Editar($id, $request);
+        $this->repo->edit($id, $request);
 
         // redirect with errors messages language
-        return redirect($this->data['route'])->withErrors(trans('messages.editItem'));
+
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.editItem'));
     }
 
 }

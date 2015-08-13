@@ -34,13 +34,7 @@ use App\Http\Controllers\Auth\AuthController ;
             Route::get('home', ['as'=>'home','uses'=>'HomeController@getIndex']);
            // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
-            Route::get('crud', ['as'=>'crud','uses'=>'CrudController@getIndex']);
-            Route::get('crudEdit/{id}',['as'=>'crudGetEdit','uses'=>'CrudController@getEdit']);
-            Route::get('crudDelete/{id}',['as'=>'crudGetDel','uses'=>'CrudController@getDel']);
-            Route::get('crudNew',['as'=>'crudGetNew', 'uses'=>'CrudController@getNew']);
-
-            Route::post('crudPostNew', ['as'=>'crudPostNew', 'uses'=>'CrudController@postNew']);
-            Route::post('crudPostEdit/{id}',['as'=>'crudPostEdit', 'uses'=>'CrudController@postEdit']);
+            require(__DIR__.'/Routes/CrudRoutes.php');
 
             //logout
             Route::get('logout',['as'=>'logout','uses'=>'LoginController@getLogout']);
@@ -48,7 +42,9 @@ use App\Http\Controllers\Auth\AuthController ;
 
         Route::group(['prefix'=>'config'],function()
         {
-
+            require(__DIR__ . '/Routes/config/UsersRoutes.php');
+            require(__DIR__ . '/Routes/config/ProfilesRoutes.php');
+            require(__DIR__ . '/Routes/config/ModulesRoutes.php');
         });
 
 

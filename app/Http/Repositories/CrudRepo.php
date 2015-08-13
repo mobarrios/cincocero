@@ -15,20 +15,14 @@ class CrudRepo extends BaseRepo {
          return new Crud();
     }
 
-    public function ListAndPaginate($paginate = 50, $search = null)
+    public function Rules()
     {
-        $qry = $this->model->orderBy('profile')
-            ->paginate($paginate);
-
-        return $qry;
+        return [
+            'data1'   => 'required|max:5',
+            'data2'   => 'required|max:10'
+        ];
     }
 
-
-    public function ListAll()
-    {
-        $qry = $this->model->all();
-        return $qry;
-    }
 
     public function tableHeader()
     {
@@ -44,32 +38,6 @@ class CrudRepo extends BaseRepo {
         return $header;
     }
 
-    public function Crear($data)
-    {
-        $this->model->create($data->all());
-    }
 
-    public function Editar($id = null , $data )
-    {
-        $qry =  $this->model->find($id);
-
-        $qry->fill($data->all());
-        $qry->save();
-    }
-
-    public function Borrar($id = null)
-    {
-        $this->model->find($id)->delete();
-    }
-
-
-    public function Rules()
-    {
-
-        return [
-            'data1'   => 'required|max:5',
-            'data2'   => 'required|max:10'
-        ];
-    }
 
 }
