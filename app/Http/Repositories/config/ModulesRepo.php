@@ -37,6 +37,13 @@ class ModulesRepo extends BaseRepo {
         return $header;
     }
 
+    public function buscarRoles($module = null , $section = null)
+    {
+        $module      =  $this->model->where('name',$module)->first();
+        $permission  =  Permissions::where('modules_id',$module->id)->where('profiles_id',Auth()->user()->profiles_id)->first();
+
+        return $permission->$section;
+    }
 
 
     public function create($datos)
