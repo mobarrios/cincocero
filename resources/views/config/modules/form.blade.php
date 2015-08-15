@@ -12,7 +12,7 @@
 
 
 
-        {!! Form::submit('save')!!}
+        {!! Form::submit(trans('messages.btnSave'))!!}
         {!! Form::close()!!}
 
     @endsection

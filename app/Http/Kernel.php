@@ -30,6 +30,7 @@ class Kernel extends HttpKernel {
         'company'       => '\App\Http\Middleware\Company',
         'changeDb'      => '\App\Http\Middleware\ChangeDB',
         'roles'         => '\App\Http\Middleware\Roles',
+        'changeLanguaje'=> '\App\Http\Middleware\ChangeLanguaje',
 	];
 
 }

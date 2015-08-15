@@ -47,7 +47,7 @@ class LoginController extends Controller {
               return redirect('home');
             }
 
-           return  redirect('login/id='.Session::get('company_code'));
+           return  redirect('login/id='.Session::get('company_code'))->withErrors(trans('messages.login'));
         }
         return redirect('home');
     }

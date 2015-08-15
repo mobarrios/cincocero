@@ -28,7 +28,7 @@ class Roles
         $section    = $data[1];
 
        if($this->moduloRepo->buscarRoles($modulo , $section) != '1')
-            return redirect()->back()->withErrors("Acceso restrigido");
+            return redirect()->back()->withErrors(trans('messages.access'));
 
         return $next($request);
     }

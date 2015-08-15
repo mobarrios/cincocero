@@ -5,7 +5,7 @@
         @foreach($tableHeader['columns'] as $column => $data)
             <th>{{$column}}</th>
         @endforeach
-        <th style="width: 10%;" class="no-sort"></th>
+        <th style="width: 15%;" class="no-sort"></th>
     </tr>
     </thead>
     {{--<tfoot>
@@ -39,8 +39,8 @@
                 @endforeach
 
             <td class="">
-                <a href="{{route($routeEdit,$model->id)}}" class="btn btn-xs btn-success">Edit</a>
-                <a href="{{route($routeDel ,$model->id)}}" class="delete btn btn-xs btn-danger">Del</a>
+                <a href="{{route($routeEdit,$model->id)}}" class="btn btn-xs btn-success">{{trans('messages.btnEdit')}}</a>
+                <a href="{{route($routeDel ,$model->id)}}" class="delete btn btn-xs btn-danger">{{trans('messages.btnDel')}}</a>
             </td>
         </tr>
     @endforeach

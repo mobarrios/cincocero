@@ -22,12 +22,20 @@
 
     <footer class="footer">
         <div class="conteiner">
-            <div class="col-xs-6">
+            <div class="col-xs-4">
                 <span class="badge">Master</span>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-4">
                 <h4>{{Session::get('company_code')}}</h4>
             </div>
+
+            <div class="col-xs-4">
+                <select id="changeLanguaje" data="{{Session::get('languaje')}}">
+                    <option @if (Session::get('languaje') == 'es_ES' ) selected @endif value="es_ES">Español</option>
+                    <option @if (Session::get('languaje') == 'en' )    selected @endif  value="en">English</option>
+                </select>
+            </div>
+
         </div>
     </footer>
 

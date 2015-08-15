@@ -17,6 +17,10 @@ use App\Http\Controllers\Auth\AuthController ;
        return view('company_list');
     });
 
+//Session::put('languaje','es_ES');
+
+Route::group(['middleware'=>'changeLanguaje'],function(){
+
 
     //login pasa x middle company para chequear la empresa
     Route::get('login/id={id}', ['middleware'=>['company'],'as'=>'login','uses'=>'LoginController@getLogin']);
@@ -24,8 +28,7 @@ use App\Http\Controllers\Auth\AuthController ;
     //pasa para cambiar la conexion a la db segun la empresa
     Route::group(['middleware'=>'changeDb'],function(){
 
-        //setea el idioma de la applicaion
-        App::setLocale('es_ES');
+
 
         Route::post('postLogin',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
 
@@ -49,6 +52,16 @@ use App\Http\Controllers\Auth\AuthController ;
 
 
     });
+
+});
+
+Route::get('changeLanguaje/{lang}',function($lang){
+
+    Session::put('languaje',$lang);
+
+    return redirect()->back()->withErrors(trans('messages.changeLanguaje'));
+});
+
 
 
 
