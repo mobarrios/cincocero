@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\config;
 
 
+use App\Entities\User;
 use App\Http\Repositories\config\ProfileRepo as Repo;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 
 class ProfilesController extends Controller {
@@ -44,6 +46,13 @@ class ProfilesController extends Controller {
         $this->data['routePostEdit']= 'profilesPostEdit';
         $this->data['routeDetail']  = 'profilesDetail';
 
+    }
+
+    public function userProfileEdit()
+    {
+        $this->data['model'] = Auth::user();
+
+        return view('config.users.userProfile')->with($this->data);
     }
 
 }

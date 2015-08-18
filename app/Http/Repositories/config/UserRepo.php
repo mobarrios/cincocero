@@ -54,6 +54,7 @@ class UserRepo extends BaseRepo {
             'password_confirmation' =>'required',
 
         ];
+
     }
 
 

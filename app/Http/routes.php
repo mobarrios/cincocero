@@ -28,8 +28,6 @@ Route::group(['middleware'=>'changeLanguaje'],function(){
     //pasa para cambiar la conexion a la db segun la empresa
     Route::group(['middleware'=>'changeDb'],function(){
 
-
-
         Route::post('postLogin',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
 
         Route::group(['middleware' => ['auth']], function()

@@ -12,5 +12,8 @@ Route::get('detail'.$module.'/{id}', ['middleware'=>'roles','data'=> $module.'-l
 Route::post('postNew'.$module,          ['as'=> $module.'PostNew', 'uses'=> $controller.'@postNew']);
 Route::post('postEdit'.$module.'/{id}', ['as'=>$module.'PostEdit', 'uses'=> $controller.'@postEdit']);
 
+//user Profile
 
+Route::get('userProfile', ['as'=>'userProfileEdit', 'uses'=> $controller.'@userProfileEdit']);
+Route::post('userProfileEdit', ['as'=>'userProfilePostEdit', 'uses'=> $controller.'@userProfileEdit']);
 
