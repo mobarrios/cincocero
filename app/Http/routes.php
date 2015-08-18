@@ -46,6 +46,8 @@ Route::group(['middleware'=>'changeLanguaje'],function(){
             require(__DIR__ . '/Routes/config/UsersRoutes.php');
             require(__DIR__ . '/Routes/config/ProfilesRoutes.php');
             require(__DIR__ . '/Routes/config/ModulesRoutes.php');
+            require(__DIR__ . '/Routes/stock/items/ItemsRoutes.php');
+            require(__DIR__ . '/Routes/stock/brands/BrandsRoutes.php');
         });
 
     });
