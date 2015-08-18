@@ -25,7 +25,7 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password','profiles_id'];
+    protected $fillable = ['name','last_name', 'email', 'password','profiles_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -35,6 +35,11 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
     protected $hidden = ['password', 'remember_token'];
 
 
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+
+    }
 
     public function Perfil()
     {

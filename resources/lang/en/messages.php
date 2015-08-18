@@ -16,6 +16,7 @@ return [
     'btnAccess'=> 'Access',
 
     'changeLanguaje' => 'Languaje changed.',
+    'changePermissions' =>'Permission changed',
 ];
 
 ?>

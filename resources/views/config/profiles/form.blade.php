@@ -7,12 +7,14 @@
         @else
             {!! Form::open(['route' => $routePostNew ]) !!}
         @endif
+        {!! Form::label('Perfil') !!}
+        {!! Form::text('profile',null, ['class'=>'form-control']) !!}
 
-        {!! Form::text('profile') !!}
 
+        <hr>
 
+        {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
 
-        {!! Form::submit('save')!!}
         {!! Form::close()!!}
 
     @endsection

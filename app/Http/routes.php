@@ -50,7 +50,6 @@ Route::group(['middleware'=>'changeLanguaje'],function(){
             require(__DIR__ . '/Routes/config/ModulesRoutes.php');
         });
 
-
     });
 
 });

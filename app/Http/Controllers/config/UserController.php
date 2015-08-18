@@ -6,6 +6,7 @@ namespace App\Http\Controllers\config;
 use App\Http\Repositories\config\UserRepo as Repo;
 use App\Http\Repositories\config\ProfileRepo;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Request;
 
 
 class UserController extends Controller {
@@ -43,5 +44,6 @@ class UserController extends Controller {
         $this->data['profiles']      = $profileRepo->Lists();
 
     }
+
 
 }

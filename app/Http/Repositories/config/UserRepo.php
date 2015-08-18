@@ -50,7 +50,9 @@ class UserRepo extends BaseRepo {
             'name'          => 'required',
             'last_name'     => 'required',
             'email'         =>'required|unique:users,email',
-            'password'      =>'required|min:4',
+            'password'      =>'required|between:4,20|confirmed',
+            'password_confirmation' =>'required',
+
         ];
     }
 

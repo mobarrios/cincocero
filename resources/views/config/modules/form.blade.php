@@ -8,11 +8,13 @@
             {!! Form::open(['route' => $routePostNew ]) !!}
         @endif
 
-        {!! Form::text('name') !!}
+        {!! Form::label('Modulo')!!}
+        {!! Form::text('name',null,['class'=>'form-control']) !!}
 
 
+        <hr>
 
-        {!! Form::submit(trans('messages.btnSave'))!!}
+        {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
         {!! Form::close()!!}
 
     @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\config;
 
 
 use App\Http\Repositories\config\ModulesRepo as Repo;
+use App\Http\Repositories\config\PermissionsRepo;
 
 use App\Http\Controllers\Controller;
 
@@ -40,6 +41,16 @@ class ModulesController extends Controller {
         $this->data['routeNew']     = 'modulesGetNew';
         $this->data['routePostNew'] = 'modulesPostNew';
         $this->data['routePostEdit']= 'modulesPostEdit';
+    }
+
+    public function changePermission($id = null , $section = null, $value = null,  PermissionsRepo $permissions)
+    {
+        $permission             = $permissions->find($id);
+        $permission->$section   = $value;
+        $permission->save();
+
+        return redirect()->back()->withErrors(trans('messages.changePermissions'));
+
     }
 
 }

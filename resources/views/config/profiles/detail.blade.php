@@ -21,10 +21,18 @@
                        <td>{{$modules->name}}</td>
                     @foreach($modules->Permissions as $permission)
                         @if($permission->profiles_id == $model->id)
-                            <td> {{$permission->list}}</td>
-                            <td> {{$permission->edit}}</td>
-                            <td> {{$permission->delete}}</td>
-                            <td> {{$permission->store}}</td>
+                            <td>
+                                @if($permission->list) <a href="{{route('changePermission',[$permission->id,'list','0'])}}" class="btn btn-xs btn-success">si</a> @else <a href="{{route('changePermission',[$permission->id,'list','1'])}}" class="btn btn-xs btn-danger">no</a>  @endif
+                            </td>
+                            <td>
+                                @if($permission->edit) <a href="{{route('changePermission',[$permission->id,'edit','0'])}}" class="btn btn-xs btn-success">si</a> @else <a href="{{route('changePermission',[$permission->id,'edit','1'])}}" class="btn btn-xs btn-danger">no</a>  @endif
+                            </td>
+                            <td>
+                                @if($permission->delete) <a href="{{route('changePermission',[$permission->id,'delete','0'])}}" class="btn btn-xs btn-success">si</a> @else <a href="{{route('changePermission',[$permission->id,'delete','1'])}}" class="btn btn-xs btn-danger">no</a>  @endif
+                            </td>
+                            <td>
+                                @if($permission->store) <a href="{{route('changePermission',[$permission->id,'store','0'])}}" class="btn btn-xs btn-success">si</a> @else <a href="{{route('changePermission',[$permission->id,'store','1'])}}" class="btn btn-xs btn-danger">no</a>  @endif
+                            </td>
                         @endif
                     @endforeach
                    </tr>

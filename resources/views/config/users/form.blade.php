@@ -8,17 +8,28 @@
             {!! Form::open(['route' => $routePostNew ]) !!}
         @endif
 
-        {!! Form::text('name') !!}
+        {!! Form::label('Nombre') !!}
+        {!! Form::text('name',null,['class'=>'form-control']) !!}
 
-        {!! Form::text('last_name') !!}
-        {!! Form::email('email') !!}
-        {!! Form::select('profiles_id', $profiles) !!}
-        {!! Form::password('password') !!}
+        {!! Form::label('Apellido') !!}
+        {!! Form::text('last_name',null,['class'=>'form-control']) !!}
+
+        {!! Form::label('E-mail') !!}
+        {!! Form::email('email',null,['class'=>'form-control']) !!}
+
+        {!! Form::label('Perfil') !!}
+        {!! Form::select('profiles_id', $profiles,null,['class'=>'form-control']) !!}
 
 
+        {!! Form::label('Password') !!}
+        {!! Form::password('password',['class'=>'form-control']) !!}
 
+        {!! Form::label('Confirmar Password') !!}
+        {!! Form::password('password_confirmation',['class'=>'form-control']) !!}
 
-        {!! Form::submit('save')!!}
+        <hr>
+
+        {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
         {!! Form::close()!!}
 
     @endsection
