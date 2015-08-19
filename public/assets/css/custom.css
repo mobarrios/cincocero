@@ -3,6 +3,10 @@ body{
     font-size: 12px;
 }
 
+.dropdown-menu{
+    font-family: verdana, sans-serif;
+    font-size: 12px;
+}
 .footer {
     position: absolute;
     bottom: 0px;

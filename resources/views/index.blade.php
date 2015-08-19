@@ -3,7 +3,7 @@
     @section('mainContent')
 
         @include('template/navBar')
-        @include('messages')
+
         <div class="row">
             <div class="col-xs-12">
                 <h4 class="page-header">{{$sectionName}}</h4>

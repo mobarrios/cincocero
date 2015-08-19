@@ -1,11 +1,11 @@
-<table id="example" class="display table table-striped" style="width: 100%; cellspacing: 0;">
+<table id="dataTable" class="display table table-striped" style="width: 100%; cellspacing: 0;">
     <thead>
     <tr>
-        <th style="width: 1%;">#</th>
+        <th class="no-sort" style="width: 1%;">#</th>
         @foreach($tableHeader['columns'] as $column => $data)
             <th>{{$column}}</th>
         @endforeach
-        <th style="width: 15%;" class="no-sort"></th>
+        <th class="no-sort" style="width: 12%;" ></th>
     </tr>
     </thead>
     {{--<tfoot>
@@ -38,7 +38,7 @@
 
                 @endforeach
 
-            <td class="">
+            <td >
                 <a href="{{route($routeEdit,$model->id)}}" class="btn btn-xs btn-success">{{trans('messages.btnEdit')}}</a>
                 <a href="{{route($routeDel ,$model->id)}}" class="delete btn btn-xs btn-danger">{{trans('messages.btnDel')}}</a>
             </td>
