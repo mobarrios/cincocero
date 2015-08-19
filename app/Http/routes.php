@@ -11,6 +11,7 @@
 |
 */
 use App\Http\Controllers\Auth\AuthController ;
+use Intervention\Image\ImageManagerStatic as Image;
 
     // lista de empresas para mejorar acceso
     Route::get('',function(){
@@ -70,6 +71,10 @@ Route::get('changeLanguaje/{lang}',function($lang){
 //test
 Route::get('test',function()
 {
+    $a = Image::make('a.JPG')->resize(100,200);
+
+    $a->crop(150,200,100,100)->save('crop.jpg');
+    dd($a);
 
     dd(bcrypt('1234'));
     /*
