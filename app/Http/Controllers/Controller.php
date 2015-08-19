@@ -13,7 +13,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 abstract class Controller extends BaseController
 {
-    use DispatchesJobs, ValidatesRequests;
+   // use DispatchesJobs, ValidatesRequests;
 
 
     //index
