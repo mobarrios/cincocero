@@ -8,8 +8,12 @@
             {!! Form::open(['route' => $routePostNew ]) !!}
         @endif
 
-        {!! Form::label('Marca')!!}
+
+        {!! Form::label('Nombre')!!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}
+
+        {!! Form::label('Apellido')!!}
+        {!! Form::text('last_name',null,['class'=>'form-control']) !!}
 
 
         <hr>

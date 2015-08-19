@@ -26,7 +26,7 @@ Route::group(['middleware'=>'changeLanguaje'],function(){
     Route::get('login/id={id}', ['middleware'=>['company'],'as'=>'login','uses'=>'LoginController@getLogin']);
 
     //pasa para cambiar la conexion a la db segun la empresa
-    Route::group(['middleware'=>'changeDb'],function(){
+  //  Route::group(['middleware'=>'changeDb'],function(){
 
         Route::post('postLogin',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
 
@@ -48,9 +48,12 @@ Route::group(['middleware'=>'changeLanguaje'],function(){
             require(__DIR__ . '/Routes/config/ModulesRoutes.php');
             require(__DIR__ . '/Routes/stock/items/ItemsRoutes.php');
             require(__DIR__ . '/Routes/stock/brands/BrandsRoutes.php');
+
+            require(__DIR__ . '/Routes/content/staffs/StaffsRoutes.php');
+
         });
 
-    });
+   // });
 
 });
 
