@@ -3,11 +3,14 @@
     @section('content')
 
         @if(isset($model))
-            {!! Form::model($model, ['route'=>[$routePostEdit,$model->id]])!!}
+            {!! Form::model($model, ['route'=>[$routePostEdit,$model->id] ,'files' => true ])!!}
         @else
-            {!! Form::open(['route' => $routePostNew ]) !!}
+            {!! Form::open(['route' => $routePostNew , 'files' => true]) !!}
         @endif
 
+
+        {!! Form::label('Imagen')!!}
+        {!! Form::file('image') !!}
 
         {!! Form::label('Nombre')!!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}

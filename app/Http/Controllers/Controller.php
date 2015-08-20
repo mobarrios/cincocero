@@ -60,6 +60,12 @@ abstract class Controller extends BaseController
         // validation rules form repo
         $this->validate($request, $this->rules);
 
+        if(!is_null($request->files->get('image')))
+        {
+            dd('con');
+        }
+        dd('sin');
+
         // method crear in repo
         $this->repo->create($request);
 

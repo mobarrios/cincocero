@@ -47,8 +47,6 @@ Route::group(['middleware'=>'changeLanguaje'],function(){
             require(__DIR__ . '/Routes/config/UsersRoutes.php');
             require(__DIR__ . '/Routes/config/ProfilesRoutes.php');
             require(__DIR__ . '/Routes/config/ModulesRoutes.php');
-            require(__DIR__ . '/Routes/stock/items/ItemsRoutes.php');
-            require(__DIR__ . '/Routes/stock/brands/BrandsRoutes.php');
 
             require(__DIR__ . '/Routes/content/staffs/StaffsRoutes.php');
 
@@ -71,7 +69,7 @@ Route::get('changeLanguaje/{lang}',function($lang){
 //test
 Route::get('test',function()
 {
-    $a = Image::make('a.JPG')->resize(100,200);
+    $a = Image::make('m.JPG')->resize(100,200);
 
     $a->crop(150,200,100,100)->save('crop.jpg');
     dd($a);
