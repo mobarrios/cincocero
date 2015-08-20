@@ -1,8 +1,10 @@
 @extends('template/template')
 
-    @section('mainContent')
-
+    @section('menu')
         @include('template/navBar')
+    @endsection
+
+    @section('mainContent')
 
         <div class="row">
             <div class="col-xs-12">

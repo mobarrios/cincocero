@@ -9,14 +9,17 @@
 
         <meta charset="UTF-8">
         <title></title>
+        @yield('menu')
     </head>
 
     <body>
 
     <!-- Begin page content -->
+
     <div class="container">
+
         <div class="row">
-            <br><br>
+            @include('messages')
             @yield('mainContent')
         </div>
 
