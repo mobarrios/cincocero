@@ -12,13 +12,13 @@ use App\Entities\User;
 use App\Http\Repositories\config\UserRepo;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Helpers\Helper;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller {
 
@@ -44,6 +44,8 @@ class LoginController extends Controller {
        {
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password]))
             {
+                Log::info('modulo:loggedIN-user:'.Auth::user()->id);
+
               return redirect('home');
             }
 
@@ -54,8 +56,9 @@ class LoginController extends Controller {
 
     public function getLogout()
     {
-
         $company = Session::get('company_code');
+
+        Log::info('modulo:loggedOUT-user:'.Auth::user()->id);
 
         Auth::logout();
         Session::flush();
