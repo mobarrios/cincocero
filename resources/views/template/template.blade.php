@@ -29,7 +29,7 @@
 
 
             <div class="col-xs-4">
-                <span class="badge">Master</span>
+                <span class="badge">CONTENT</span>
             </div>
             <div class="col-xs-4">
                 <h4>{{Session::get('company_code')}}</h4>
