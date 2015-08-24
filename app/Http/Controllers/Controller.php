@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 
 
+use App\Entities\Images;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Helpers\ImagesHelper;
+use Intervention\Image\Facades\Image;
 
 
 abstract class Controller extends BaseController
@@ -48,14 +51,31 @@ abstract class Controller extends BaseController
     //delete item
     public function getDel($id)
     {
+
         $this->repo->delete($id);
+
+        $img = Images::where('entity',$this->data['entityImg'])->where('entity_id',$id)->get();
+
+        if($img->count() != 0)
+        {
+            $imgHelp = new ImagesHelper();
+
+            foreach($img as $imagen)
+            {
+                $imgHelp->deleteFile($imagen->image);
+                $imagen->delete();
+            }
+
+
+        }
+
 
         return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
     }
 
 
     // post new item
-    public function postNew(Request $request)
+    public function postNew(Request $request, ImagesHelper $image)
     {
         // validation rules form repo
         $this->validate($request, $this->rules);
@@ -67,7 +87,13 @@ abstract class Controller extends BaseController
         dd('sin');
 
         // method crear in repo
-        $this->repo->create($request);
+        $model = $this->repo->create($request);
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);
+        }
 
         // redirect with errors messages language
         return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
@@ -75,10 +101,28 @@ abstract class Controller extends BaseController
     }
 
 
-    public function postEdit($id = null, Request $request)
+    public function postEdit($id = null, Request $request, ImagesHelper $image)
     {
         // validation rules form repo
         $this->validate($request, $this->rules);
+
+            // if has image uploaded
+            if($request->hasFile('image'))
+            {
+                $img = Images::where('entity',$this->data['entityImg'])->where('entity_id',$id)->get();
+
+
+                if($this->data['imgQuantityMax']  )
+                {
+                    return "men=";
+                    $image->upload($this->data['entityImg'], $id ,$request->file('image') ,$this->data['imagePath'], true);
+                }
+                else
+                {
+                    return "no";
+                    return redirect()->back()->withErrors('Limite Maximo de Imagenes.');
+                }
+            }
 
         $this->repo->edit($id, $request);
 

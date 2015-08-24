@@ -26,6 +26,7 @@
     </div>
 
 
+<<<<<<< HEAD
     <footer class="navbar navbar-fixed-bottom navbar-default">
         <div class="conteiner">
             <div class="row">
@@ -45,9 +46,9 @@
                 </select>
             </div>
             </div>
+=======
+>>>>>>> master
 
-        </div>
-    </footer>
 
     </body>
 
