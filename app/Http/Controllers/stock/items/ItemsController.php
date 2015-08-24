@@ -27,6 +27,12 @@ class ItemsController extends Controller {
         $this->form                 = 'stock.items.form';
         $this->data['sectionName']  = 'Articulos';
 
+        //images
+        $this->data['imgQuantityMax']   = 2;
+        $this->data['imagePath']        = 'uploads/items/images/';
+        $this->data['entityImg']        = 'items';
+
+
         //data for validation
         $this->rules                = $this->repo->Rules();
 
@@ -37,5 +43,6 @@ class ItemsController extends Controller {
         $this->data['routeNew']     = 'itemsGetNew';
         $this->data['routePostNew'] = 'itemsPostNew';
         $this->data['routePostEdit']= 'itemsPostEdit';
+
     }
 }

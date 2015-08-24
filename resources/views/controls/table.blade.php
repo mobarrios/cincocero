@@ -28,12 +28,29 @@
                      {{$model->id}}
                 @endif
 
+
                 @foreach($tableHeader['columns'] as $column)
 
-                    @if(!is_null($column['relation']))
+                    @if(!is_null($column['relation']))}}
                         <td>{{$model->$column['data']->$column['relation']}}</td>
                     @else
-                        <td>{{$model->$column['data']}}</td>
+
+                         @if($column['data'] == 'images')
+
+                            @if(is_null($model->$column['data']))
+                               <td></td>
+                            @else
+                                <td>
+                                    @foreach($model->$column['data'] as $image)
+                                        <img class="thumbnail" src="{{$image->image}}" width="50px">
+                                    @endforeach
+                                </td>
+                            @endif
+
+                        @else
+
+                              <td>{{$model->$column['data']}}</td>
+                         @endif
                     @endif
 
                 @endforeach
