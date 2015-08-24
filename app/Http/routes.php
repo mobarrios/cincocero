@@ -12,6 +12,7 @@
 */
 use App\Http\Controllers\Auth\AuthController ;
 use Intervention\Image\ImageManagerStatic as Image;
+use App\Helpers\ImagesHelper;
 
     // lista de empresas para mejorar acceso
     Route::get('',function(){
@@ -54,7 +55,24 @@ Route::group(['middleware'=>'changeLanguaje'],function(){
 
         });
 
+<<<<<<< HEAD
    // });
+=======
+        Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){
+
+            $file   = \App\Entities\Images::find($id);
+
+            $img    = new ImagesHelper();
+
+            $img->deleteFile($file->image);
+
+            $file->delete();
+
+            return redirect()->back();
+        }]);
+
+    });
+>>>>>>> 6b3188d20833d303228ded174173857cf7cc68c0
 
 });
 

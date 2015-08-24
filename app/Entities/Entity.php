@@ -16,4 +16,15 @@ class Entity extends Model {
     {
         return get_class(new static);
     }
+
+
+    public function getImagesAttribute()
+    {
+        $id     = $this->attributes['id'];
+        $image  = Images::where('entity_id',$id)->get();
+
+        if(!is_null($image)){
+            return $image;
+        }
+    }
 }
