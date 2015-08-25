@@ -15,28 +15,6 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 
-                <li><a href="{{route('home')}}">Home <span class="sr-only">(current)</span></a></li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('crud')}}">Crud</a></li>
-
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-
-
-
-<<<<<<< HEAD
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contenidos <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('staffs')}}">Staff</a></li>
-                    </ul>
-                </li>
-
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Config<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -47,17 +25,13 @@
                     </ul>
                 </li>
 
-=======
->>>>>>> 2cb6436611e1ceec2f22567e85a6d0c9fb79de3e
             </ul>
 
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}} <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{route('userProfileEdit')}}">Perfil</a></li>
-                        <li role="separator" class="divider"></li>
                         <li><a href="{{route('logout')}}">Salir</a></li>
                     </ul>
                 </li>

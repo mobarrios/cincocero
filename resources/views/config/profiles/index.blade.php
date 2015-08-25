@@ -1,4 +1,4 @@
-@extends('index')
+@extends('config/config')
 
     @section('content')
 
