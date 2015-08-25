@@ -21,7 +21,7 @@ use App\Helpers\ImagesHelper;
 
 //Session::put('languaje','es_ES');
 
-Route::group(['middleware'=>'changeLanguaje'],function(){
+//Route::group(['middleware'=>'changeLanguaje'],function(){
 
 
     //login pasa x middle company para chequear la empresa
@@ -37,20 +37,27 @@ Route::group(['middleware'=>'changeLanguaje'],function(){
             Route::get('home', ['as'=>'home','uses'=>'HomeController@getIndex']);
            // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
-            require(__DIR__.'/Routes/CrudRoutes.php');
+            require(__DIR__. '/Routes/CrudRoutes.php');
+            require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
+            require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+            require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
             //logout
             Route::get('logout',['as'=>'logout','uses'=>'LoginController@getLogout']);
+
+            //only super user
+            Route::group(['prefix'=>'config','middleware'=>'isAdmin'],function()
+            {
+                require(__DIR__ . '/Routes/config/ConfigRoutes.php');
+                require(__DIR__ . '/Routes/config/UsersRoutes.php');
+                require(__DIR__ . '/Routes/config/ProfilesRoutes.php');
+                require(__DIR__ . '/Routes/config/ModulesRoutes.php');
+            });
+
         });
 
-        Route::group(['prefix'=>'config'],function()
-        {
-            require(__DIR__ . '/Routes/config/UsersRoutes.php');
-            require(__DIR__ . '/Routes/config/ProfilesRoutes.php');
-            require(__DIR__ . '/Routes/config/ModulesRoutes.php');
-            require(__DIR__ . '/Routes/stock/items/ItemsRoutes.php');
-            require(__DIR__ . '/Routes/stock/brands/BrandsRoutes.php');
-        });
+
+
 
         Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){
 
@@ -67,7 +74,12 @@ Route::group(['middleware'=>'changeLanguaje'],function(){
 
     });
 
-});
+//});
+
+
+
+
+
 
 Route::get('changeLanguaje/{lang}',function($lang){
 
@@ -82,12 +94,12 @@ Route::get('changeLanguaje/{lang}',function($lang){
 //test
 Route::get('test',function()
 {
-    $a = Image::make('a.JPG')->resize(100,200);
+   // $a = Image::make('a.JPG')->resize(100,200);
 
-    $a->crop(150,200,100,100)->save('crop.jpg');
-    dd($a);
+   // $a->crop(150,200,100,100)->save('crop.jpg');
+   // dd($a);
 
-    dd(bcrypt('1234'));
+    echo(\Illuminate\Support\Facades\Crypt::encrypt('tadeom2475'));
     /*
     Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
     Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);

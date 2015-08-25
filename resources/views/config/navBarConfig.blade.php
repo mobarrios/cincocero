@@ -15,24 +15,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 
-                <li><a href="{{route('home')}}">Home <span class="sr-only">(current)</span></a></li>
-
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Config<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{route('crud')}}">Crud</a></li>
+                        <li><a href="{{route('user')}}">Users</a></li>
+                        <li><a href="{{route('profiles')}}">Profiles</a></li>
+                        <li><a href="{{route('modules')}}">Modulos</a></li>
 
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stock <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('items')}}">Items</a></li>
-                        <li><a href="{{route('brands')}}">Marcas</a></li>
                     </ul>
                 </li>
 
@@ -41,10 +30,8 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}} <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{route('userProfileEdit')}}">Perfil</a></li>
-                        <li role="separator" class="divider"></li>
                         <li><a href="{{route('logout')}}">Salir</a></li>
                     </ul>
                 </li>

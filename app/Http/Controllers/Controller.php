@@ -105,16 +105,13 @@ abstract class Controller extends BaseController
             {
                 $img = Images::where('entity',$this->data['entityImg'])->where('entity_id',$id)->get();
 
-
-                if($this->data['imgQuantityMax']  )
+                if( $this->data['imgQuantityMax'] <= $img->count())
                 {
-                    return "men=";
-                    $image->upload($this->data['entityImg'], $id ,$request->file('image') ,$this->data['imagePath'], true);
+                    return redirect()->back()->withErrors('Limite Maximo de Imagenes.');
                 }
                 else
                 {
-                    return "no";
-                    return redirect()->back()->withErrors('Limite Maximo de Imagenes.');
+                    $image->upload($this->data['entityImg'], $id ,$request->file('image') ,$this->data['imagePath'], true);
                 }
             }
 

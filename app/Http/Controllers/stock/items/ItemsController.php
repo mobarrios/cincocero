@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 class ItemsController extends Controller {
 
+    public   $module;
     public   $repo;
     public   $view ;
     public   $form;
@@ -15,8 +16,10 @@ class ItemsController extends Controller {
     public   $request;
     public   $rules;
 
+
     public function __construct(Repo $repo)
     {
+
         //data from entities
         $this->repo                 = $repo;
         $this->data['models']       = $repo->ListAll();
