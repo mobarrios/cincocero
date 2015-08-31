@@ -8,6 +8,7 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
+
         {!! Form::label('Codigo')!!}
         {!! Form::text('code',null,['class'=>'form-control']) !!}
         {!! Form::label('Articulo')!!}
