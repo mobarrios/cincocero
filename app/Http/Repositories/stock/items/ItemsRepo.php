@@ -13,10 +13,17 @@ class ItemsRepo extends BaseRepo {
     }
 
 
-    public function Rules($id = null)
+    public function Rules()
     {
         return [
             'code'   => 'required|unique:items,code',
+            'name'   => 'required'
+        ];
+    }
+
+    public function RulesEdit($id = null)
+    {
+        return [
             'name'   => 'required'
         ];
     }

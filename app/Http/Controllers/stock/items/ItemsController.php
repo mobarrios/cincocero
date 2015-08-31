@@ -15,6 +15,7 @@ class ItemsController extends Controller {
     public   $data;
     public   $request;
     public   $rules;
+    public   $rulesEdit;
 
 
     public function __construct(Repo $repo)
@@ -38,6 +39,7 @@ class ItemsController extends Controller {
 
         //data for validation
         $this->rules                = $this->repo->Rules();
+        $this->rulesEdit            = $this->repo->RulesEdit();
 
         //data routes
         $this->data['route']        = 'items';
