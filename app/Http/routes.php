@@ -28,7 +28,7 @@ use App\Helpers\ImagesHelper;
     Route::get('login/id={id}', ['middleware'=>['company'],'as'=>'login','uses'=>'LoginController@getLogin']);
 
     //pasa para cambiar la conexion a la db segun la empresa
-    Route::group(['middleware'=>'changeDb'],function(){
+    //Route::group(['middleware'=>'changeDb'],function(){
 
         Route::post('postLogin',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
 
@@ -40,6 +40,8 @@ use App\Helpers\ImagesHelper;
             require(__DIR__. '/Routes/CrudRoutes.php');
             require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
             require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+            require(__DIR__. '/Routes/stock/categories/CategoriesRoutes.php');
+
             require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
             //logout
@@ -71,7 +73,7 @@ use App\Helpers\ImagesHelper;
             return redirect()->back();
         }]);
 
-    });
+    //});
 
 //});
 

@@ -9,21 +9,11 @@
         @endif
 
 
-        {!! Form::label('Codigo')!!}
-        {!! Form::text('code',null,['class'=>'form-control']) !!}
-        {!! Form::label('Articulo')!!}
+        {!! Form::label('Marca')!!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}
-        {!! Form::label('Descripcion')!!}
-        {!! Form::text('description',null,['class'=>'form-control']) !!}
 
         {!! Form::label('Imagen')!!}
         {!! Form::file('image')!!}
-
-        {!! Form::label('Categoria')!!}
-        {!! Form::select('')!!}
-
-        {!! Form::label('Marca')!!}
-        {!! Form::select('')!!}
 
         <br>
         @if(isset($model))

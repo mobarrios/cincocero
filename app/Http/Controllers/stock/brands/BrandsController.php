@@ -29,6 +29,7 @@ class BrandsController extends Controller {
 
         //data for validation
         $this->rules                = $this->repo->Rules();
+        $this->rulesEdit            = $this->repo->RulesEdit();
 
         //data routes
         $this->data['route']        = 'brands';
@@ -37,5 +38,13 @@ class BrandsController extends Controller {
         $this->data['routeNew']     = 'brandsGetNew';
         $this->data['routePostNew'] = 'brandsPostNew';
         $this->data['routePostEdit']= 'brandsPostEdit';
+
+
+        //images
+        $this->data['imgQuantityMax']   = 1;
+        $this->data['imagePath']        = 'uploads/brands/images/';
+        $this->data['entityImg']        = 'brands';
+
+
     }
 }
