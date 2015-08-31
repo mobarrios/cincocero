@@ -72,7 +72,30 @@ use App\Helpers\ImagesHelper;
 
 
 
+<<<<<<< HEAD
 
+<<<<<<< HEAD
+=======
+>>>>>>> 2cb6436611e1ceec2f22567e85a6d0c9fb79de3e
+=======
+>>>>>>> fbc2b5419c0e4e5178841627fb1c2f5aa8c51d77
+        Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){
+
+            $file   = \App\Entities\Images::find($id);
+
+            $img    = new ImagesHelper();
+
+            $img->deleteFile($file->image);
+
+            $file->delete();
+
+            return redirect()->back();
+        }]);
+
+    });
+>>>>>>> 6b3188d20833d303228ded174173857cf7cc68c0
+
+>>>>>>> master
 //});
 
 
