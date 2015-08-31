@@ -29,7 +29,7 @@
 
 
 
-<<<<<<< HEAD
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contenidos <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -37,18 +37,6 @@
                     </ul>
                 </li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Config<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('user')}}">Users</a></li>
-                        <li><a href="{{route('profiles')}}">Profiles</a></li>
-                        <li><a href="{{route('modules')}}">Modulos</a></li>
-
-                    </ul>
-                </li>
-
-=======
->>>>>>> 2cb6436611e1ceec2f22567e85a6d0c9fb79de3e
             </ul>
 
 

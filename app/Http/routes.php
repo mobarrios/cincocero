@@ -38,14 +38,14 @@ use App\Helpers\ImagesHelper;
            // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
             require(__DIR__. '/Routes/CrudRoutes.php');
-            require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
-            require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+            //require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
+            //require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
             require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
             //logout
             Route::get('logout',['as'=>'logout','uses'=>'LoginController@getLogout']);
 
-<<<<<<< HEAD
+
         Route::group(['prefix'=>'config'],function()
         {
             require(__DIR__ . '/Routes/config/UsersRoutes.php');
@@ -56,10 +56,9 @@ use App\Helpers\ImagesHelper;
 
         });
 
-<<<<<<< HEAD
+
    // });
-=======
-=======
+
             //only super user
             Route::group(['prefix'=>'config','middleware'=>'isAdmin'],function()
             {
@@ -73,23 +72,6 @@ use App\Helpers\ImagesHelper;
 
 
 
-
->>>>>>> 2cb6436611e1ceec2f22567e85a6d0c9fb79de3e
-        Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){
-
-            $file   = \App\Entities\Images::find($id);
-
-            $img    = new ImagesHelper();
-
-            $img->deleteFile($file->image);
-
-            $file->delete();
-
-            return redirect()->back();
-        }]);
-
-    });
->>>>>>> 6b3188d20833d303228ded174173857cf7cc68c0
 
 //});
 
@@ -111,16 +93,11 @@ Route::get('changeLanguaje/{lang}',function($lang){
 //test
 Route::get('test',function()
 {
-<<<<<<< HEAD
-    $a = Image::make('m.JPG')->resize(100,200);
-=======
-   // $a = Image::make('a.JPG')->resize(100,200);
->>>>>>> master
 
    // $a->crop(150,200,100,100)->save('crop.jpg');
    // dd($a);
 
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('tadeom2475'));
+    //echo(\Illuminate\Support\Facades\Crypt::encrypt('tadeom2475'));
     /*
     Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
     Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
