@@ -19,6 +19,8 @@
         {!! Form::label('Imagen')!!}
         {!! Form::file('image')!!}
 
+        {!! Form::textfield()!!}
+
         <br>
         @if(isset($model))
             <table>
