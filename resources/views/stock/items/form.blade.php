@@ -19,7 +19,7 @@
         {!! Form::label('Imagen')!!}
         {!! Form::file('image')!!}
 
-        {!! Form::textfield()!!}
+        {!! Form::selectEntity('name','Marcas',$brands)!!}
 
         <br>
         @if(isset($model))
@@ -28,9 +28,10 @@
                 @foreach($model->Images as $image)
 
                     <td style="padding-left: 5px;">
-                            <a href="{{route('deleteImage',$image->id)}}"><span class="glyphicon glyphicon-remove"></span></a>
+                            <a href="{{route('deleteImage',$image->id)}}">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
                             <img class="thumbnail" src="{{$image->image}}" width="150px">
-
                     </td>
 
 
