@@ -19,15 +19,12 @@
         {!! Form::label('Imagen')!!}
         {!! Form::file('image')!!}
 
-<<<<<<< HEAD
         {!! Form::label('Categoria')!!}
         {!! Form::select('')!!}
 
         {!! Form::label('Marca')!!}
         {!! Form::select('')!!}
-=======
-        {!! Form::textfield()!!}
->>>>>>> master
+        {!! Form::selectCategories()!!}
 
         <br>
         @if(isset($model))

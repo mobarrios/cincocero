@@ -2,8 +2,18 @@
 
 namespace App\Services\Html;
 
+use App\Entities\stock\Categories;
+
 class FormBuilder extends \Collective\Html\FormBuilder {
 
+    public function selectCategories()
+    {
+        $categories = Categories::lists('name','id');
+
+        $input = Form::select('a',$categories);
+
+        return $input;
+    }
 
     public function textfield()
     {
