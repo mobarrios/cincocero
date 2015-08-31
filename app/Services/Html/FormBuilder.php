@@ -2,6 +2,7 @@
 
 namespace App\Services\Html;
 
+<<<<<<< HEAD
 use App\Entities\stock\Categories;
 
 class FormBuilder extends \Collective\Html\FormBuilder {
@@ -14,10 +15,37 @@ class FormBuilder extends \Collective\Html\FormBuilder {
 
         return $input;
     }
+=======
 
-    public function textfield()
+class FormBuilder extends \Collective\Html\FormBuilder {
+
+    public $inputClass   = ['class'=>'form-control'];
+    public $contentClass = 'form-group';
+
+>>>>>>> master
+
+    public function selectEntity($name = null , $label = null, $entity = null)
     {
-       /*
+        $input = parent::select($name,['0'=>'Seleccionar'] + $entity ,null,$this->inputClass);
+
+        return $this->buildDiv($name, $label, $input);
+    }
+
+    public function buildDiv($name = null, $label = null, $input = null)
+    {
+        return
+        '<div class="'.$this->contentClass.'">
+            <label>'.$label.'</label>
+
+            '.$input.'
+
+        </div>';
+    }
+
+
+    /*
+    public function textfield($name, $label, $errors, $labelOptions = array(), $inputOptions = array())
+    {
         $labelOptions['class']          = 'form-label';
         $inputOptions['class']          = 'form-control';
         $inputOptions['placeholder']    = $label;
@@ -30,8 +58,6 @@ class FormBuilder extends \Collective\Html\FormBuilder {
             parent::text($name, null, $inputOptions),
             $errors->has($name) ? '<span class="error"><label class="error" for="' . $name . '">' . $errors->first($name) . '</label></span>' : ''
         );
-       */
-        return "ds";
     }
 
     public function submit($value = null, $options = [])
@@ -40,5 +66,5 @@ class FormBuilder extends \Collective\Html\FormBuilder {
 
         return parent::submit($value, $options);
     }
-
+    */
 }

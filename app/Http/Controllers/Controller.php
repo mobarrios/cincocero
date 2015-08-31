@@ -98,7 +98,7 @@ abstract class Controller extends BaseController
     public function postEdit($id = null, Request $request, ImagesHelper $image)
     {
         // validation rules form repo
-        $this->validate($request, $this->rulesEdit);
+        $this->validate($request, $this->rule);
 
             // if has image uploaded
             if($request->hasFile('image'))
