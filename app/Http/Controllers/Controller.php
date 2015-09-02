@@ -35,6 +35,7 @@ abstract class Controller extends BaseController
     // go to form with model
     public function getEdit($id)
     {
+
         $this->data['model'] = $this->repo->getModel()->find($id);
 
         return view($this->form)->with($this->data);
@@ -98,7 +99,7 @@ abstract class Controller extends BaseController
     public function postEdit($id = null, Request $request, ImagesHelper $image)
     {
         // validation rules form repo
-        $this->validate($request, $this->rule);
+        $this->validate($request, $this->rules);
 
             // if has image uploaded
             if($request->hasFile('image'))

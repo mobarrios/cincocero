@@ -8,38 +8,18 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
+        {!! Form::textCustom('code', 'Codigo')!!}
 
-        {!! Form::label('Codigo')!!}
-        {!! Form::text('code',null,['class'=>'form-control']) !!}
-        {!! Form::label('Articulo')!!}
-        {!! Form::text('name',null,['class'=>'form-control']) !!}
-        {!! Form::label('Descripcion')!!}
-        {!! Form::text('description',null,['class'=>'form-control']) !!}
+        {!! Form::textCustom('name', 'Articulo')!!}
+
+        {!! Form::textCustom('description', 'Descripcion')!!}
+
+        {!! Form::selectCustom('name','Marcas',$brands)!!}
 
         {!! Form::label('Imagen')!!}
         {!! Form::file('image')!!}
 
-        {!! Form::selectEntity('name','Marcas',$brands)!!}
-
-        <br>
-        @if(isset($model))
-            <table>
-                <tr>
-                @foreach($model->Images as $image)
-
-                    <td style="padding-left: 5px;">
-                            <a href="{{route('deleteImage',$image->id)}}">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </a>
-                            <img class="thumbnail" src="{{$image->image}}" width="150px">
-                    </td>
-
-
-                @endforeach
-                </tr>
-
-            </table>
-        @endif
+        {!! Form::imageCustom() !!}
 
         <hr>
 

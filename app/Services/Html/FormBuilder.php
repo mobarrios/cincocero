@@ -2,21 +2,30 @@
 
 namespace App\Services\Html;
 
-
 class FormBuilder extends \Collective\Html\FormBuilder {
 
     public $inputClass   = ['class'=>'form-control'];
     public $contentClass = 'form-group';
 
 
-    public function selectEntity($name = null , $label = null, $entity = null)
+    public function textCustom($name = null, $label = null)
+    {
+        $input = parent::text($name,null, $this->inputClass);
+
+        return $this->buildDiv($label, $input);
+    }
+
+
+    public function selectCustom($name = null , $label = null, $entity = null)
     {
         $input = parent::select($name,['0'=>'Seleccionar'] + $entity ,null,$this->inputClass);
 
-        return $this->buildDiv($name, $label, $input);
+        return $this->buildDiv( $label, $input);
     }
 
-    public function buildDiv($name = null, $label = null, $input = null)
+
+
+    public function buildDiv( $label = null, $input = null)
     {
         return
         '<div class="'.$this->contentClass.'">
@@ -25,6 +34,25 @@ class FormBuilder extends \Collective\Html\FormBuilder {
             '.$input.'
 
         </div>';
+    }
+
+    public function imageCustom()
+    {
+        $images = parent::getValueAttribute('images');
+
+        $td['column'] = null;
+
+        foreach($images as $image)
+        {
+               $td['column'] = '<td style="padding-left: 5px;">
+                            <a href="'.route('deleteImage',$image->id).'">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                            <img class="thumbnail" src="'.$image->image.'" width="150px">
+                    </td>';
+           // echo $image->image;
+        }
+        return $td['column'];
     }
 
 
