@@ -20,9 +20,18 @@
 
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stock <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asociados<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{route('items')}}">Items</a></li>
+                        <li><a href="{{route('establecimientos')}}">Establecimientos</a></li>
+
+                        <li><a href="{{route('establecimientos_types')}}">Tipos de Establecimientos</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Web<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{route('noticias')}}">Noticias</a></li>
                     </ul>
                 </li>
 

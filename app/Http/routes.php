@@ -14,6 +14,14 @@ use App\Http\Controllers\Auth\AuthController ;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Helpers\ImagesHelper;
 
+
+Route::group(['web'],function(){
+
+    require(__DIR__. '/Routes/ahgai/WebRoutes.php');
+
+});
+
+
     // lista de empresas para mejorar acceso
     Route::get('',function(){
        return view('company_list');
@@ -28,7 +36,7 @@ use App\Helpers\ImagesHelper;
     Route::get('login/id={id}', ['middleware'=>['company'],'as'=>'login','uses'=>'LoginController@getLogin']);
 
     //pasa para cambiar la conexion a la db segun la empresa
-    Route::group(['middleware'=>'changeDb'],function(){
+    //Route::group(['middleware'=>'changeDb'],function(){
 
         Route::post('postLogin',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
 
@@ -37,9 +45,10 @@ use App\Helpers\ImagesHelper;
             Route::get('home', ['as'=>'home','uses'=>'HomeController@getIndex']);
            // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
-            require(__DIR__. '/Routes/CrudRoutes.php');
-            require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
-            require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+            require(__DIR__. '/Routes/ahgai/EstablecimientosRoutes.php');
+            require(__DIR__. '/Routes/ahgai/EstablecimientosTypesRoutes.php');
+            require(__DIR__. '/Routes/ahgai/NoticiasRoutes.php');
+
             require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
             //logout
@@ -71,7 +80,7 @@ use App\Helpers\ImagesHelper;
             return redirect()->back();
         }]);
 
-    });
+    //});
 
 //});
 
