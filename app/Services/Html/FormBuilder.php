@@ -4,9 +4,25 @@ namespace App\Services\Html;
 
 class FormBuilder extends \Collective\Html\FormBuilder {
 
-    public $inputClass   = ['class'=>'form-control'];
-    public $contentClass = 'form-group';
+    public $inputClass      = ['class'=>'form-control'];
+    public $contentClass    = 'form-group';
+    public $dateClass       = ['class'=>'form-control datepicker'];
+    public $textAreaClass   = ['class'=>'form-control mytextarea'];
 
+
+    public function textAreaCustom($name = null,$label = null)
+    {
+        $input = parent::textarea($name,null, $this->textAreaClass);
+
+        return $this->buildDiv($label, $input);
+    }
+
+    public function dateCustom($name = null, $label = null)
+    {
+        $input = parent::date($name,null, $this->dateClass);
+
+        return $this->buildDiv($label, $input);
+    }
 
     public function textCustom($name = null, $label = null)
     {
@@ -14,7 +30,6 @@ class FormBuilder extends \Collective\Html\FormBuilder {
 
         return $this->buildDiv($label, $input);
     }
-
 
     public function selectCustom($name = null , $label = null, $entity = null)
     {

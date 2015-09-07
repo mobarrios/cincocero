@@ -13,7 +13,7 @@ return [
     'btnDel'   => 'Borrar',
     'btnSave'  => 'Guardar',
     'btnAccept'=> 'Aceptar',
-    'btnAccess'=> 'Ingrsar',
+    'btnAccess'=> 'Ingresar',
 
     'changeLanguaje' => 'Lenguaje cambiado.',
     'changePermissions' =>'Permiso cambiado',
