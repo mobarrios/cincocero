@@ -19,8 +19,9 @@
         {!! Form::label('Imagen')!!}
         {!! Form::file('image')!!}
 
-        {!! Form::imageCustom() !!}
+        {!! Form::dateCustom('dia','Fecha') !!}
 
+        {!! Form::textAreaCustom('description', 'Area')!!}
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}

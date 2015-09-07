@@ -21,3 +21,23 @@ $('#dataTable').DataTable({
     }
 
 });
+
+//datepicker en forms
+$('.datepicker').datepicker({
+    dateFormat: "dd-mm-yy"
+});
+
+
+tinymce.init({
+    plugins: "textcolor",
+    statusbar: false,
+
+
+    selector: ".mytextarea",
+    toolbar: [
+        "undo redo | styleselect | bold italic | forecolor backcolor alignleft aligncenter alignright",
+    ],
+    menubar: false
+
+
+});
