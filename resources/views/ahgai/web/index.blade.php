@@ -97,7 +97,7 @@
                     </li>
                     <li><i class="fa fa-user"></i><a href="#">Ahagai</a>
                     </li>
-                    
+
                     <div class="thumb col-xs-2">
                         <a class="hover-img" href="#">
                             <img src="{{$noticia->images->first()->image}}">
