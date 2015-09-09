@@ -8,15 +8,15 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
-
+        {!! Form::dateCustom('fecha_publicacion','Fecha Publicacion')!!}
         {!! Form::textCustom('encabezado', 'Encabezado')!!}
 
         {!! Form::textAreaCustom('descripcion', 'Descripción')!!}
 
 
 
-        {!! Form::label('Imagen')!!}
-        {!! Form::file('image')!!}
+
+        {!! Form::imageCustom('image','Fotos') !!}
 
 
         <hr>
