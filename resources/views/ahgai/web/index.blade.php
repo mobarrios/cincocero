@@ -88,9 +88,10 @@
     @endsection
     @section('content')
         <div class="article post">
-        @foreach($noticias as $noticia)
             <div class="post-inner">
-                <h4 class="post-title"><a class="text-darken" href="#">{{$noticia->encabezado}}</a></h4>
+                <h4 class="post-title"><a class="text-darken" href="#">Ultimas Noticias</a></h4>
+
+            @foreach($noticias as $noticia)
 
                 <ul class="post-meta">
                     <li><i class="fa fa-calendar"></i><a href="#">23 February, 2013</a>
@@ -100,19 +101,21 @@
 
                     <div class="thumb col-xs-2">
                         <a class="hover-img" href="#">
-                            <img src="{{$noticia->images->first()->image}}">
-
+                            @if($noticia->images->count() != 0)
+                                <img src="{{$noticia->images->first()->image}}">
+                            @endif
                         </a>
                     </div>
 
                     <p class="post-desciption">
-                        {{$noticia->descripcion}}
+                        {{$noticia->encabezado}}
                     </p>
-                    <a class="btn btn-small btn-primary" href="#">Leer</a>
+                    <a class="btn btn-small btn-primary" href="{{route('news_detail',$noticia->id)}}">Leer</a>
                 </ul>
-            </div>
+
 
         @endforeach
+            </div>
         </div>
     @endsection
 @stop

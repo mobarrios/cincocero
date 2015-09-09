@@ -9,6 +9,12 @@ use App\Http\Controllers\Controller;
 
 class WebController extends Controller
 {
+    public function getNewsDetail($news_id = null)
+    {
+        $data['noticias'] = Noticias::find($news_id);
+
+        return view('ahgai.web.news_detail')->with($data);
+    }
 
     public function getIndex()
     {

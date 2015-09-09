@@ -11,7 +11,7 @@
 
         {!! Form::textCustom('encabezado', 'Encabezado')!!}
 
-        {!! Form::textCustom('descripcion', 'Descripción')!!}
+        {!! Form::textAreaCustom('descripcion', 'Descripción')!!}
 
 
 
