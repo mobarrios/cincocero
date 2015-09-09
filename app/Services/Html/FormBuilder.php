@@ -51,23 +51,32 @@ class FormBuilder extends \Collective\Html\FormBuilder {
         </div>';
     }
 
-    public function imageCustom()
+    public function imageCustom($name , $label)
     {
         $images = parent::getValueAttribute('images');
 
         $td['column'] = null;
 
-        foreach($images as $image)
-        {
-               $td['column'] = '<td style="padding-left: 5px;">
-                            <a href="'.route('deleteImage',$image->id).'">
+        if(!is_null($images)) {
+
+            foreach ($images as $image) {
+                $td['column'] .= '<td style="padding-left: 5px;">
+                                <a href="' . route('deleteImage', $image->id) . '">
                                 <span class="glyphicon glyphicon-remove"></span>
-                            </a>
-                            <img class="thumbnail" src="'.$image->image.'" width="150px">
-                    </td>';
-           // echo $image->image;
+                                </a>
+                                <img class="thumbnail" src="' . $image->image . '" width="150px">
+                            </td>';
+            }
         }
-        return $td['column'];
+
+        return '<div class="'.$this->contentClass.'">
+
+        <label>'.$label.'</label>
+        <table>
+            '.$td['column'].'
+        </table>
+            '.parent::file($name).'
+        </div>';
     }
 
 
