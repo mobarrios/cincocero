@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
 
+
+
         <meta charset="UTF-8">
         <title></title>
         @yield('menu')
@@ -43,7 +45,7 @@
     <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 
 
-
+    <script src="assets/js/jquery_datepicker_es.js"></script>
     <script src="assets/js/custom.js"></script>
 
 </html>
