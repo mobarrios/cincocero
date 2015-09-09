@@ -37,9 +37,10 @@ class ImagesHelper
     {
 
        File::delete(public_path($file));
-
-
     }
+
+
+
 }
 
 

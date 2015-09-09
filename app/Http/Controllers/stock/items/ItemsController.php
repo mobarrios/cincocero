@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\stock\items;
 
+use App\Entities\stock\Items;
 use App\Http\Repositories\stock\items\ItemsRepo as Repo;
 use App\Http\Controllers\Controller;
 
@@ -15,6 +16,7 @@ class ItemsController extends Controller {
     public   $data;
     public   $request;
     public   $rules;
+    public   $rulesEdit;
 
 
     public function __construct(Repo $repo)
@@ -30,14 +32,19 @@ class ItemsController extends Controller {
         $this->form                 = 'stock.items.form';
         $this->data['sectionName']  = 'Articulos';
 
+
         //images
         $this->data['imgQuantityMax']   = 2;
         $this->data['imagePath']        = 'uploads/items/images/';
         $this->data['entityImg']        = 'items';
 
+        //selects
+        $this->data['brands']           = Items::lists('name','id');
+
 
         //data for validation
         $this->rules                = $this->repo->Rules();
+        $this->rulesEdit            = $this->repo->RulesEdit();
 
         //data routes
         $this->data['route']        = 'items';

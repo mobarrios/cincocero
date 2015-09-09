@@ -27,4 +27,6 @@ class Entity extends Model {
             return $image;
         }
     }
+
+
 }
