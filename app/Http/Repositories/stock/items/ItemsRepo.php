@@ -17,14 +17,16 @@ class ItemsRepo extends BaseRepo {
     {
         return [
             'code'   => 'required|unique:items,code',
-            'name'   => 'required'
+            'name'   => 'required',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
         ];
     }
 
     public function RulesEdit($id = null)
     {
         return [
-            'name'   => 'required'
+            'name'   => 'required',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
         ];
     }
 

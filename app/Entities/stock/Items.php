@@ -9,5 +9,5 @@ class Items extends Entity{
 
     protected $fillable = ['code','name','description'];
 
-   
+
 }

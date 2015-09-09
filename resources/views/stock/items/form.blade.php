@@ -16,8 +16,8 @@
 
         {!! Form::selectCustom('name','Marcas',$brands)!!}
 
-        {!! Form::label('Imagen')!!}
-        {!! Form::file('image')!!}
+
+        {!! Form::imageCustom('image','Foto')!!}
 
         {!! Form::dateCustom('dia','Fecha') !!}
 
