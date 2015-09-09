@@ -149,6 +149,11 @@ return [
         'Intervention\Image\ImageServiceProvider',
 
 
+
+        //macro From
+        'App\Services\Html\HtmlServiceProvider',
+
+
     ],
 
 	/*
