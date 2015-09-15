@@ -2,6 +2,7 @@
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Session;
 
 class Authenticate {
@@ -41,7 +42,7 @@ class Authenticate {
 			}
 			else
 			{
-				return redirect()->guest('login/id='.Session::get('company_code'));
+				return redirect()->guest('login/id='.Crypt::encrypt(Session::get('db')));
 			}
 		}
 

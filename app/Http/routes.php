@@ -24,8 +24,9 @@ use App\Helpers\ImagesHelper;
 //Route::group(['middleware'=>'changeLanguaje'],function(){
 
 
-    //login pasa x middle company para chequear la empresa
-    Route::get('login/id={id}', ['middleware'=>['company'],'as'=>'login','uses'=>'LoginController@getLogin']);
+
+//login pasa x middle company para chequear la empresa
+Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
     //pasa para cambiar la conexion a la db segun la empresa
     Route::group(['middleware'=>'changeDb'],function(){
@@ -93,12 +94,17 @@ Route::get('changeLanguaje/{lang}',function($lang){
 //test
 Route::get('test',function()
 {
+
    // $a = Image::make('a.JPG')->resize(100,200);
 
    // $a->crop(150,200,100,100)->save('crop.jpg');
    // dd($a);
 
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('tadeom2475'));
+
+
+
+    echo(\Illuminate\Support\Facades\Crypt::encrypt('base_content'));
+
     /*
     Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
     Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
