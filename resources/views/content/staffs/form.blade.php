@@ -9,14 +9,12 @@
         @endif
 
 
-        {!! Form::label('Imagen')!!}
-        {!! Form::file('image') !!}
+        {!! Form::imageCustom('image','Foto') !!}
 
-        {!! Form::label('Nombre')!!}
-        {!! Form::text('name',null,['class'=>'form-control']) !!}
+        {!! Form::textCustom('name','Nombre')!!}
 
-        {!! Form::label('Apellido')!!}
-        {!! Form::text('last_name',null,['class'=>'form-control']) !!}
+        {!! Form::textCustom('last_name','Apellido')!!}
+
 
 
         <hr>

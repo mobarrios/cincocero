@@ -27,8 +27,15 @@ class StaffsController extends Controller {
         $this->form                 = 'content.staffs.form';
         $this->data['sectionName']  = 'Staffs';
 
+
+        //images
+        $this->data['imgQuantityMax']   = 1;
+        $this->data['imagePath']        = 'uploads/staff/images/';
+        $this->data['entityImg']        = 'staffs';
+
         //data for validation
         $this->rules                = $this->repo->Rules();
+        $this->rulesEdit            = $this->repo->RulesEdit();
 
         //data routes
         $this->data['route']        = 'staffs';

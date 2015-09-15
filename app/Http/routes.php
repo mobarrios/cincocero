@@ -103,6 +103,7 @@ Route::get('changeLanguaje/{lang}',function($lang){
 //test
 Route::get('test',function()
 {
+    return bcrypt('content_carvajal');
 
    // $a->crop(150,200,100,100)->save('crop.jpg');
    // dd($a);

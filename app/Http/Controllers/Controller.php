@@ -16,7 +16,7 @@ use Intervention\Image\Facades\Image;
 
 abstract class Controller extends BaseController
 {
-   // use DispatchesJobs,
+    // use DispatchesJobs,
     use ValidatesRequests;
 
 
@@ -81,12 +81,6 @@ abstract class Controller extends BaseController
         // validation rules form repo
         $this->validate($request, $this->rules);
 
-        if(!is_null($request->files->get('image')))
-        {
-            dd('con');
-        }
-        dd('sin');
-
         // method crear in repo
         $model = $this->repo->create($request);
 
@@ -107,20 +101,20 @@ abstract class Controller extends BaseController
         // validation rules form repo
         $this->validate($request, $this->rulesEdit);
 
-            // if has image uploaded
-            if($request->hasFile('image'))
-            {
-                $img = Images::where('entity',$this->data['entityImg'])->where('entity_id',$id)->get();
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $img = Images::where('entity',$this->data['entityImg'])->where('entity_id',$id)->get();
 
-                if( $this->data['imgQuantityMax'] <= $img->count())
-                {
-                    return redirect()->back()->withErrors('Limite Maximo de Imagenes.');
-                }
-                else
-                {
-                    $image->upload($this->data['entityImg'], $id ,$request->file('image') ,$this->data['imagePath'], true);
-                }
+            if( $this->data['imgQuantityMax'] <= $img->count())
+            {
+                return redirect()->back()->withErrors('Limite Maximo de Imagenes.');
             }
+            else
+            {
+                $image->upload($this->data['entityImg'], $id ,$request->file('image') ,$this->data['imagePath'], true);
+            }
+        }
 
         $this->repo->edit($id, $request);
 
