@@ -30,8 +30,11 @@ class LoginController extends Controller {
         $this->userRepo = $userRepo;
     }
 
-    public function getLogin()
+    public function getLogin($db = null)
     {
+
+        Session::put('db', Crypt::decrypt($db));
+
         return view('login');
     }
 
@@ -57,21 +60,22 @@ class LoginController extends Controller {
               return redirect('home');
             }
 
-           return  redirect('login/id='.Session::get('company_code'))->withErrors(trans('messages.login'));
+           return  redirect('login/id='.Session::get('db'))->withErrors(trans('messages.login'));
         }
         return redirect('home');
     }
 
     public function getLogout()
     {
-        $company = Session::get('company_code');
+        //$company = Session::get('company_code');
+        $db = Session::get('db');
 
         Log::info('modulo:loggedOUT-user:'.Auth::user()->id);
 
         Auth::logout();
         Session::flush();
 
-        return redirect('login/id='.$company);
+        return redirect('login/id='.Crypt::encrypt($db));
     }
 
     //public function store(UserCreateRequest $request)
