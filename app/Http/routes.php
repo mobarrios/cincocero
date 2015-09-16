@@ -10,19 +10,18 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-use App\Http\Controllers\Auth\AuthController ;
-use Intervention\Image\ImageManagerStatic as Image;
-use App\Helpers\ImagesHelper;
+//use App\Http\Controllers\Auth\AuthController ;
+//use Intervention\Image\ImageManagerStatic as Image;
+//use App\Helpers\ImagesHelper;
 
     // lista de empresas para mejorar acceso
-    Route::get('',function(){
-       return view('company_list');
-    });
+    //Route::get('',function(){
+    //   return view('company_list');
+    // });
 
 //Session::put('languaje','es_ES');
 
 //Route::group(['middleware'=>'changeLanguaje'],function(){
-
 
 
 //login pasa x middle company para chequear la empresa
