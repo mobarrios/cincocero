@@ -101,32 +101,4 @@ Route::get('changeLanguaje/{lang}',function($lang){
 
 
 
-//test
-Route::get('test',function()
-{
-<<<<<<< HEAD
-    return bcrypt('content_carvajal');
-=======
-
-   // $a = Image::make('a.JPG')->resize(100,200);
->>>>>>> master
-
-   // $a->crop(150,200,100,100)->save('crop.jpg');
-   // dd($a);
-
-<<<<<<< HEAD
-    //echo(\Illuminate\Support\Facades\Crypt::encrypt('tadeom2475'));
-=======
-
-
-
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('base_content'));
-
->>>>>>> master
-    /*
-    Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
-    Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
-    Artisan::call('make:migration',	['name'=>'PepitoMigration']);
-*/
-});
 
