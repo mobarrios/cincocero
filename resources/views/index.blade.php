@@ -4,13 +4,17 @@
         @include('template/navBar')
     @endsection
 
+    @section('side')
+        @include('template/side')
+    @endsection
+
     @section('mainContent')
 
-        <div class="row">
-            <div class="col-xs-12">
-                <h4 class="page-header">{{$sectionName}}</h4>
+        <div class="panel panel-default">
+            <div class="panel-heading ">
+                {{$sectionName}}
             </div>
-            <div class="col-xs-12">
+            <div class="panel-body">
                 @yield('content')
             </div>
         </div>

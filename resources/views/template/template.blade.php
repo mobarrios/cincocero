@@ -2,32 +2,39 @@
 <html>
     <head lang="en">
         <base href="{{asset('')}}">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+
 
         <link href="assets/css/custom.css" rel="stylesheet">
-        <link href="https://cdn.datatables.net/1.10.8/css/dataTables.bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-
-
 
 
         <meta charset="UTF-8">
         <title></title>
-        @yield('menu')
+
     </head>
 
-    <body>
+<body>
 
-    <!-- Begin page content -->
+    @yield('menu')
 
-    <div class="container">
 
-        <div class="row">
-            @include('messages')
-            @yield('mainContent')
-        </div>
 
-    </div>
+    @include('messages')
+
+
+
+            <div class="col-xs-2">
+
+               @yield('side')
+            </div>
+
+            <div class="col-xs-10">
+                @yield('mainContent')
+            </div>
+
 
 
 
@@ -47,5 +54,6 @@
 
     <script src="assets/js/jquery_datepicker_es.js"></script>
     <script src="assets/js/custom.js"></script>
+
 
 </html>

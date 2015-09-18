@@ -56,8 +56,14 @@
                 @endforeach
 
             <td >
-                <a href="{{route($routeEdit,$model->id)}}" class="btn btn-xs btn-success">{{trans('messages.btnEdit')}}</a>
-                <a href="{{route($routeDel ,$model->id)}}" class="delete btn btn-xs btn-danger">{{trans('messages.btnDel')}}</a>
+
+                <a class="btn btn-default" href="{{route($routeEdit,$model->id)}}">
+                    <i class="fa fa-edit"></i>
+                </a>
+                <a class="btn btn-default" href="{{route($routeDel ,$model->id)}}">
+                    <i class="fa fa-trash"></i>
+                </a>
+
             </td>
         </tr>
     @endforeach
