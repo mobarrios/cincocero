@@ -28,7 +28,7 @@
 Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
     //pasa para cambiar la conexion a la db segun la empresa
-  //  Route::group(['middleware'=>'changeDb'],function(){
+    Route::group(['middleware'=>'changeDb'],function(){
 
         Route::post('postLogin',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
 
@@ -57,7 +57,7 @@ Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
         });
 
 
-   // });
+    });
 
             //only super user
             Route::group(['prefix'=>'config','middleware'=>'isAdmin'],function()
