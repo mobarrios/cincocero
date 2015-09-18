@@ -102,7 +102,7 @@ Route::get('test',function()
 
 
 
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('base_content'));
+    echo(\Illuminate\Support\Facades\Crypt::encrypt('base_content_carvajal'));
 
     /*
     Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
