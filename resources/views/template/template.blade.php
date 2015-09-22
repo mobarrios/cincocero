@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
 
+        <link href="assets/css/custom.css" rel="stylesheet">
+
         <meta charset="UTF-8">
         <title></title>
 
@@ -40,6 +42,7 @@
 
 
     </body>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 

@@ -32,6 +32,11 @@ class Kernel extends HttpKernel {
         'roles'         => '\App\Http\Middleware\Roles',
         'changeLanguaje'=> '\App\Http\Middleware\ChangeLanguaje',
         'isAdmin'       => '\App\Http\Middleware\IsAdmin',
-	];
+
+        // API REST
+        'changeDbWS'    => '\App\Http\Middleware\ChangeDbWS',
+        'cors'          => '\App\Http\Middleware\Cors',
+    ];
+
 
 }

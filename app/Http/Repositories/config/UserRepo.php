@@ -54,8 +54,18 @@ class UserRepo extends BaseRepo {
             'password_confirmation' =>'required',
 
         ];
-
     }
+
+    public function RulesEdit($id = null)
+    {
+        return [
+            'name'          => 'required',
+            'last_name'     => 'required',
+            //'password'      =>'required|between:4,20|confirmed',
+            //'password_confirmation' =>'required',
+        ];
+    }
+
 
 
 }
