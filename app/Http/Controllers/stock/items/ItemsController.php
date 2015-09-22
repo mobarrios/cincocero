@@ -41,7 +41,6 @@ class ItemsController extends Controller {
         //selects
         $this->data['brands']           = Items::lists('name','id');
 
-
         //data for validation
         $this->rules                = $this->repo->Rules();
         $this->rulesEdit            = $this->repo->RulesEdit();

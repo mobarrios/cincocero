@@ -32,6 +32,12 @@ class ProfileRepo extends BaseRepo {
             'profile'   => 'required',
         ];
     }
+    public function RulesEdit($id = null)
+    {
+        return [
+            'profile'   => 'required',
+        ];
+    }
 
 
     public function tableHeader()

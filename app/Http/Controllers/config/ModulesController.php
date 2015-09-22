@@ -33,6 +33,13 @@ class ModulesController extends Controller {
 
         //data for validation
         $this->rules                = $this->repo->Rules();
+        $this->rulesEdit            = $this->repo->RulesEdit();
+
+
+        //images
+        $this->data['imgQuantityMax']   = 0;
+        $this->data['imagePath']        = null;
+        $this->data['entityImg']        = null;
 
         //data routes
         $this->data['route']        = 'modules';

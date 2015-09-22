@@ -57,11 +57,11 @@
 
             <td >
 
-                <a class="btn btn-default" href="{{route($routeEdit,$model->id)}}">
+                <a class="btn btn-xs btn-default" href="{{route($routeEdit,$model->id)}}">
                     <i class="fa fa-edit"></i>
                 </a>
-                <a class="btn btn-default" href="{{route($routeDel ,$model->id)}}">
-                    <i class="fa fa-trash"></i>
+                <a class="btn btn-xs btn-default" href="{{route($routeDel ,$model->id)}}">
+                    <i class="delete fa fa-trash"></i>
                 </a>
 
             </td>
