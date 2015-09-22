@@ -16,29 +16,6 @@
 
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stock <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('items')}}">Items</a></li>
-                    </ul>
-                </li>
->>>>>>> master
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contenidos <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('staffs')}}">Staff</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-
-
-=======
->>>>>>> 56f432f7c1fb3fdd193924e71b92118f450b086b
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"> </span>  {{Auth::user()->name}} <span class="caret"></span></a>

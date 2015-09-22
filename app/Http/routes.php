@@ -37,9 +37,9 @@ Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
             Route::get('home', ['as'=>'home','uses'=>'HomeController@getIndex']);
            // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
-            require(__DIR__. '/Routes/CrudRoutes.php');
+            //require(__DIR__. '/Routes/CrudRoutes.php');
             //require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
-            //require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+            require(__DIR__. '/Routes/content/staffs/StaffsRoutes.php');
             require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
             //logout
@@ -98,29 +98,4 @@ Route::get('changeLanguaje/{lang}',function($lang){
 });
 
 
-
-
-<<<<<<< HEAD
-=======
-//test
-Route::get('test',function()
-{
-
-   // $a = Image::make('a.JPG')->resize(100,200);
-
-   // $a->crop(150,200,100,100)->save('crop.jpg');
-   // dd($a);
-
-
-
-
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('base_content_carvajal'));
-
-    /*
-    Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
-    Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
-    Artisan::call('make:migration',	['name'=>'PepitoMigration']);
-*/
-});
->>>>>>> master
 

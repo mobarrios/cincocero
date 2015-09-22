@@ -11,10 +11,10 @@
 
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                    Stock <span class="caret"></span>
+                    Contenidos <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{route('items')}}">Items</a></li>
+                    <li><a href="{{route('staffs')}}">Staff</a></li>
 
                 </ul>
             </li>
