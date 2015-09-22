@@ -1,7 +1,7 @@
 
 $('.delete').on('click',function()
 {
-   if(!confirm('Desa '))
+   if(!confirm('Eliminar Registro ? '))
        return false;
 });
 

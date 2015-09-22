@@ -1,6 +1,6 @@
 
 
-<div class="panel panel-default">
+<div class="panel side panel-default">
     <div class="panel-heading">
         Menu
     </div>

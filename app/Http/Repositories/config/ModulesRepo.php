@@ -22,6 +22,12 @@ class ModulesRepo extends BaseRepo {
         ];
     }
 
+    public function RulesEdit($id = null)
+    {
+        return [
+            'name'   => 'required',
+        ];
+    }
 
     public function tableHeader()
     {
