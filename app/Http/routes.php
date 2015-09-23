@@ -84,13 +84,21 @@ Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
             return redirect()->back();
         }]);
 
+<<<<<<< HEAD
 
+=======
+    });
+>>>>>>> 6b3188d20833d303228ded174173857cf7cc68c0
+
+//});
+/*
+>>>>>>> master
 Route::group(['prefix'=>'ws'],function(){
 
     require(__DIR__ . '/Routes/ws/wsContentRoutes.php');
 });
 
-
+*/
 
 
 Route::get('changeLanguaje/{lang}',function($lang){
@@ -102,3 +110,28 @@ Route::get('changeLanguaje/{lang}',function($lang){
 
 
 
+<<<<<<< HEAD
+=======
+
+//test
+Route::get('test',function()
+{
+
+   // $a = Image::make('a.JPG')->resize(100,200);
+
+   // $a->crop(150,200,100,100)->save('crop.jpg');
+   // dd($a);
+
+
+
+
+    echo(\Illuminate\Support\Facades\Crypt::encrypt('admin_contenidos-carvajal'));
+
+    /*
+    Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
+    Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
+    Artisan::call('make:migration',	['name'=>'PepitoMigration']);
+*/
+});
+
+>>>>>>> master
