@@ -102,3 +102,29 @@ Route::get('changeLanguaje/{lang}',function($lang){
 });
 
 
+<<<<<<< HEAD
+=======
+
+
+//test
+Route::get('test',function()
+{
+
+   // $a = Image::make('a.JPG')->resize(100,200);
+
+   // $a->crop(150,200,100,100)->save('crop.jpg');
+   // dd($a);
+
+
+
+
+    echo(\Illuminate\Support\Facades\Crypt::encrypt('admin_contenidos-handball'));
+
+    /*
+    Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
+    Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
+    Artisan::call('make:migration',	['name'=>'PepitoMigration']);
+*/
+});
+
+>>>>>>> master
