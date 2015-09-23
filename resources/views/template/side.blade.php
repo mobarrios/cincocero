@@ -15,7 +15,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="{{route('staffs')}}">Staff</a></li>
-
+                    <li><a href="{{route('clients')}}">Clientes</a></li>
                 </ul>
             </li>
         </ul>

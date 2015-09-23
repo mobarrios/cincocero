@@ -24,8 +24,8 @@
 //Route::group(['middleware'=>'changeLanguaje'],function(){
 
 
-//login pasa x middle company para chequear la empresa
-Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
+    //login pasa x middle company para chequear la empresa
+    Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
     //pasa para cambiar la conexion a la db segun la empresa
     Route::group(['middleware'=>'changeDb'],function(){
@@ -53,6 +53,7 @@ Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
             require(__DIR__ . '/Routes/config/ModulesRoutes.php');
 
             require(__DIR__ . '/Routes/content/staffs/StaffsRoutes.php');
+            require(__DIR__ . '/Routes/content/clients/ClientsRoutes.php');
 
         });
 
@@ -71,34 +72,26 @@ Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
         });
 
 
-        Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){
+Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){
 
-            $file   = \App\Entities\Images::find($id);
+    $file   = \App\Entities\Images::find($id);
 
-            $img    = new ImagesHelper();
+    $img    = new ImagesHelper();
 
-            $img->deleteFile($file->image);
+    $img->deleteFile($file->image);
 
-            $file->delete();
+    $file->delete();
 
-            return redirect()->back();
-        }]);
+    return redirect()->back();
+}]);
 
-<<<<<<< HEAD
 
-=======
-    });
->>>>>>> 6b3188d20833d303228ded174173857cf7cc68c0
-
-//});
-/*
->>>>>>> master
 Route::group(['prefix'=>'ws'],function(){
 
     require(__DIR__ . '/Routes/ws/wsContentRoutes.php');
 });
 
-*/
+
 
 
 Route::get('changeLanguaje/{lang}',function($lang){
@@ -109,29 +102,3 @@ Route::get('changeLanguaje/{lang}',function($lang){
 });
 
 
-
-<<<<<<< HEAD
-=======
-
-//test
-Route::get('test',function()
-{
-
-   // $a = Image::make('a.JPG')->resize(100,200);
-
-   // $a->crop(150,200,100,100)->save('crop.jpg');
-   // dd($a);
-
-
-
-
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('admin_contenidos-carvajal'));
-
-    /*
-    Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
-    Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
-    Artisan::call('make:migration',	['name'=>'PepitoMigration']);
-*/
-});
-
->>>>>>> master
