@@ -61,12 +61,12 @@ class FormBuilder extends \Collective\Html\FormBuilder {
 
             foreach ($images as $image) {
                 $td['column'] .= '<td style="padding-left: 5px;">
-                                <a href="' . route('deleteImage', $image->id) . '">
-                                <span class="glyphicon glyphicon-remove"></span>
-                                </a>
-                                <img class="thumbnail" src="' . $image->image . '" width="150px">
-                            </td>';
-            }
+                                    <a  class="delete" href="' . route('deleteImage', $image->id) . '">
+                                         <span class="fa fa-remove"></span>
+                                    </a>
+                                    <img class="thumbnail" src="' . $image->image . '" width="150px">
+                                  </td>';
+                }
         }
 
         return '<div class="'.$this->contentClass.'">
