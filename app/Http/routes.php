@@ -97,13 +97,13 @@ Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
 >>>>>>> 6b3188d20833d303228ded174173857cf7cc68c0
 
 //});
-
+/*
 Route::group(['prefix'=>'ws'],function(){
 
     require(__DIR__ . '/Routes/ws/wsContentRoutes.php');
 });
 
-
+*/
 
 
 
@@ -129,7 +129,7 @@ Route::get('test',function()
 
 
 
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('base_content_carvajal'));
+    echo(\Illuminate\Support\Facades\Crypt::encrypt('admin_contenidos-carvajal'));
 
     /*
     Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
