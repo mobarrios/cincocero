@@ -129,7 +129,7 @@ Route::get('test',function()
 
 
 
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('admin_contenidos-carvajal'));
+    echo(\Illuminate\Support\Facades\Crypt::encrypt('admin_contenidos-handball'));
 
     /*
     Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
