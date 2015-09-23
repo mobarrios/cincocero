@@ -19,7 +19,7 @@ class Cors  {
         header('Acces-Control-Allow-Headers: Origin, Content-Type ');
 
 
-        if($request->server('HTTP_HOST') == 'localhost')
+        //if($request->server('HTTP_HOST') == 'localhost' )
             return $next($request);
 
         /*

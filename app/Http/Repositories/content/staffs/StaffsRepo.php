@@ -17,6 +17,8 @@ class StaffsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
+            'last_name' => 'required',
+            'mail'=> 'email',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
         ];
     }
@@ -25,6 +27,8 @@ class StaffsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
+            'last_name' => 'required',
+            'mail'=> 'email',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
         ];
     }

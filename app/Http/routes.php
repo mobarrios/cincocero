@@ -84,20 +84,11 @@ Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
             return redirect()->back();
         }]);
 
-<<<<<<< HEAD
-    //});
-=======
-    });
->>>>>>> 6b3188d20833d303228ded174173857cf7cc68c0
-
-//});
 
 Route::group(['prefix'=>'ws'],function(){
 
     require(__DIR__ . '/Routes/ws/wsContentRoutes.php');
 });
->>>>>>> master
-
 
 
 

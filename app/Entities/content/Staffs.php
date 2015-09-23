@@ -7,7 +7,7 @@ class Staffs extends Entity{
 
     protected $table = 'staffs';
 
-    protected $fillable = ['name','last_name'];
+    protected $fillable = ['name','last_name','cv','mail','phone','title'];
 
 
 }
