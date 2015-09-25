@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Entities\Images;
+use App\Entities\stock\Items;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 
 use Illuminate\Http\Request;
