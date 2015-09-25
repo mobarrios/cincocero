@@ -55,12 +55,29 @@
             require(__DIR__ . '/Routes/content/staffs/StaffsRoutes.php');
             require(__DIR__ . '/Routes/content/clients/ClientsRoutes.php');
 
+            require(__DIR__ . '/Routes/content/TeamsRoutes.php');
+            require(__DIR__ . '/Routes/content/PlayersRoutes.php');
+
         });
 
 
-    });
+      });
 
-            //only super user
+
+        Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){
+
+            $file   = \App\Entities\Images::find($id);
+
+            $img    = new App\Helpers\ImagesHelper();
+
+            $img->deleteFile($file->image);
+
+            $file->delete();
+
+            return redirect()->back();
+        }]);
+
+        //only super user
             Route::group(['prefix'=>'config','middleware'=>'isAdmin'],function()
             {
                 require(__DIR__ . '/Routes/config/ConfigRoutes.php');
@@ -71,19 +88,6 @@
 
         });
 
-
-Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){
-
-    $file   = \App\Entities\Images::find($id);
-
-    $img    = new ImagesHelper();
-
-    $img->deleteFile($file->image);
-
-    $file->delete();
-
-    return redirect()->back();
-}]);
 
 
 Route::group(['prefix'=>'ws'],function(){
@@ -101,30 +105,3 @@ Route::get('changeLanguaje/{lang}',function($lang){
     return redirect()->back()->withErrors(trans('messages.changeLanguaje'));
 });
 
-
-<<<<<<< HEAD
-=======
-
-
-//test
-Route::get('test',function()
-{
-
-   // $a = Image::make('a.JPG')->resize(100,200);
-
-   // $a->crop(150,200,100,100)->save('crop.jpg');
-   // dd($a);
-
-
-
-
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('admin_contenidos-handball'));
-
-    /*
-    Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
-    Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
-    Artisan::call('make:migration',	['name'=>'PepitoMigration']);
-*/
-});
-
->>>>>>> master
