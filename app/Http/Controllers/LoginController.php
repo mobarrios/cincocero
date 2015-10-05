@@ -32,8 +32,8 @@ class LoginController extends Controller {
 
     public function getLogin($db = null)
     {
+         Session::put('db', Crypt::decrypt($db));
 
-        Session::put('db', Crypt::decrypt($db));
 
         return view('login');
     }

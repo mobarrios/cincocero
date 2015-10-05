@@ -25,6 +25,7 @@ class ChangeDB
     public function handle($request, Closure $next)
     {
 
+
         Config::set('database.connections.mysql.database',Session::get('db'));
         DB::setDefaultConnection('mysql');
 

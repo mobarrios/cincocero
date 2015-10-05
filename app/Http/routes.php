@@ -24,11 +24,12 @@
 //Route::group(['middleware'=>'changeLanguaje'],function(){
 
 
-//login pasa x middle company para chequear la empresa
-Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
-    //pasa para cambiar la conexion a la db segun la empresa
-    Route::group(['middleware'=>'changeDb'],function(){
+        //login pasa x middle company para chequear la empresa
+        Route::get('login/id={db}', ['as'=>'login','uses'=>'LoginController@getLogin']);
+
+        //pasa para cambiar la conexion a la db segun la empresa
+        Route::group(['middleware'=>'changeDb'],function(){
 
         Route::post('postLogin',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
 
