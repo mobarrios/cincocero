@@ -35,6 +35,7 @@ class LoginController extends Controller {
          Session::put('db', Crypt::decrypt($db));
 
 
+
         return view('login');
     }
 

@@ -55,7 +55,7 @@
 
                 @endforeach
 
-            <td >
+            <td>
 
                 <a class="btn btn-xs btn-default" href="{{route($routeEdit,$model->id)}}">
                     <i class="fa fa-edit"></i>

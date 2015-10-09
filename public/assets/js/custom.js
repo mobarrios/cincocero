@@ -12,6 +12,7 @@ $('#changeLanguaje').on('change',function(){
 });
 
 $('#dataTable').DataTable({
+    
     columnDefs: [
         { targets: 'no-sort', orderable: false }
     ],
@@ -40,4 +41,13 @@ tinymce.init({
     menubar: false
 
 
+});
+
+$('#selectAllRooms').on('click',function(){
+
+    if($(this).is(':checked')) {
+        $('.checkRooms').prop('checked','checked');
+    }else{
+        $('.checkRooms').prop('checked','');
+    };
 });

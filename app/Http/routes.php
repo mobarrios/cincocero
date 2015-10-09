@@ -43,6 +43,15 @@
             require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
             require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
+
+            $route_files = File::allFiles(__DIR__ . '/Routes/booking');
+
+            foreach ($route_files as $partial)
+            {
+                require_once $partial->getPathName();
+            }
+
+
             //logout
             Route::get('logout',['as'=>'logout','uses'=>'LoginController@getLogout']);
 
