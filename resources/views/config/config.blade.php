@@ -14,6 +14,7 @@
 
            DATABASE : {{\Illuminate\Support\Facades\Config::get('database.connections.mysql.database')}}
 
+
             @yield('content')
         </div>
     </div>

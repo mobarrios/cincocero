@@ -42,8 +42,12 @@ class Authenticate {
 			}
 			else
 			{
-				return redirect()->guest('login/id='.Crypt::encrypt(Session::get('db')));
-			}
+              //  dd('termino');
+                return redirect()->route('login');
+				//return redirect()->guest('login/id='.Crypt::encrypt(Session::get('db')));
+              //  return redirect('http://localhost/sistemas');
+                //dd(Session::all());
+           }
 		}
 
 		return $next($request);

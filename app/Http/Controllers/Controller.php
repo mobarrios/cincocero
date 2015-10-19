@@ -20,6 +20,10 @@ abstract class Controller extends BaseController
    // use DispatchesJobs,
     use ValidatesRequests;
 
+    public function __construct()
+    {
+      //  $this->middleware('changeDB');
+    }
 
     //index
     public function getIndex()

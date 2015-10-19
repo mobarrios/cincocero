@@ -8,9 +8,15 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use App\Http\Repositories\ProfileRepo;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 
 class User extends Entity implements AuthenticatableContract, CanResetPasswordContract
 {
+
+
+
+
     use Authenticatable, CanResetPassword;
 
     /**
