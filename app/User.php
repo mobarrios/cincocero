@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
+    protected $connection = 'user';
+
     use Authenticatable, CanResetPassword;
 
 	/**

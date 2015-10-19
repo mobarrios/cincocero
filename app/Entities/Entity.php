@@ -9,8 +9,17 @@
 namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 
 class Entity extends Model {
+
+
+    public function __construct()
+    {
+        if(Auth::check())
+            Config::set('database.connections.mysql.database', Auth::user()->db);
+    }
 
     public static function getClass()
     {

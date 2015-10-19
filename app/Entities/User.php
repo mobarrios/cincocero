@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\DB;
 class User extends Entity implements AuthenticatableContract, CanResetPasswordContract
 {
 
-
-
+    protected $connection = 'user';
 
     use Authenticatable, CanResetPassword;
 

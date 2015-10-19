@@ -10,7 +10,11 @@ namespace App\Entities;
 
 
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
+
 class Menus  extends Entity {
+
 
     protected $table  = 'menus';
     protected $fillable = ['name','routes','available'];

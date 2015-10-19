@@ -12,7 +12,7 @@
         </div>
         <div class="col-xs-12">
 
-           DATABASE : {{\Illuminate\Support\Facades\Config::get('database.connections.mysql.database')}}
+           DATABASE : {{\Illuminate\Support\Facades\Auth::user()->db}}
 
 
             @yield('content')
