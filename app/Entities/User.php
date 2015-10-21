@@ -8,10 +8,11 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use App\Http\Repositories\ProfileRepo;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
-class User extends Entity implements AuthenticatableContract, CanResetPasswordContract
+class User extends EntityUser implements AuthenticatableContract, CanResetPasswordContract
 {
 
     protected $connection = 'user';
@@ -30,7 +31,7 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
      *
      * @var array
      */
-    protected $fillable = ['name','last_name', 'email', 'password','profiles_id'];
+    protected $fillable = ['name','last_name', 'email', 'password','profiles_id','db'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -48,6 +49,9 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
 
     public function Perfil()
     {
+
+        Config::set('database.connections.mysql.database', Auth::user()->db);
+
        return $this->belongsTo(Profile::getClass(),'profiles_id');
     }
 }

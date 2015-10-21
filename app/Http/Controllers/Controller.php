@@ -20,10 +20,6 @@ abstract class Controller extends BaseController
    // use DispatchesJobs,
     use ValidatesRequests;
 
-    public function __construct()
-    {
-      //  $this->middleware('changeDB');
-    }
 
     //index
     public function getIndex()
@@ -71,10 +67,7 @@ abstract class Controller extends BaseController
                 $imgHelp->deleteFile($imagen->image);
                 $imagen->delete();
             }
-
-
         }
-
 
         return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
     }
@@ -103,8 +96,10 @@ abstract class Controller extends BaseController
 
     public function postEdit($id = null, Request $request, ImagesHelper $image)
     {
+
         // validation rules form repo
         $this->validate($request, $this->rulesEdit);
+
 
             // if has image uploaded
             if($request->hasFile('image'))

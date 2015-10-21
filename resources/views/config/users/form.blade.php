@@ -27,6 +27,8 @@
         {!! Form::label('Confirmar Password') !!}
         {!! Form::password('password_confirmation',['class'=>'form-control']) !!}
 
+        {!! Form::hidden('db',Auth::user()->db) !!}
+
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}

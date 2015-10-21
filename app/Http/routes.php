@@ -24,6 +24,10 @@
 
 //Route::group(['middleware'=>'changeLanguaje'],function(){
 
+Route::get('',function(){
+
+    return redirect()->route('login');
+});
 
 
 
