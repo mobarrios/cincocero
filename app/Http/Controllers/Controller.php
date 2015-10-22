@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 
 
 use App\Entities\Images;
-use App\Entities\stock\Items;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Helpers\ImagesHelper;
-use Intervention\Image\Facades\Image;
 
 
 abstract class Controller extends BaseController
