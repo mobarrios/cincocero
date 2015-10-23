@@ -69,7 +69,9 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                     require(__DIR__ . '/Routes/config/ConfigRoutes.php');
                     require(__DIR__ . '/Routes/config/UsersRoutes.php');
                     require(__DIR__ . '/Routes/config/ProfilesRoutes.php');
+                    require(__DIR__ . '/Routes/config/MenusRoutes.php');
                     require(__DIR__ . '/Routes/config/ModulesRoutes.php');
+
                 });
 
             });

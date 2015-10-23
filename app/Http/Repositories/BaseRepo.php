@@ -31,9 +31,10 @@ abstract class BaseRepo {
         //return $this->model->create($datos->request->all());
 
         $model = new $this->model();
-       // $model->code = $datos->request->all();
         $model->fill($datos->all());
-       $model->save();
+        $model->save();
+
+        return $model;
 
     }
 
