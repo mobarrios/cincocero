@@ -95,12 +95,11 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
 //});
 
-/*
-Route::group(['prefix'=>'ws'],function(){
 
+Route::group(['prefix'=>'ws'],function(){
     require(__DIR__ . '/Routes/ws/wsContentRoutes.php');
 });
-*/
+
 
 
 

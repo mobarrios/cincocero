@@ -25,6 +25,7 @@ class ChangeDbWS
 
     public function handle($request, Closure $next)
     {
+
         $db = Crypt::decrypt($request->id);
 
         Config::set('database.connections.mysql.database',$db);

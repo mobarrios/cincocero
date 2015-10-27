@@ -8,7 +8,6 @@
             </div>
             <hr>
             <div class="col-xs-12">
-
                 @foreach($models as $model)
                     @if($model->routes == '' )
 
@@ -23,7 +22,7 @@
                     @else
                         @if($model->main == 0)
                             <ul>
-                                
+
                             {{$model->name}}
                             </ul>
                         @endif

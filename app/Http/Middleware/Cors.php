@@ -1,5 +1,7 @@
 <?php namespace App\Http\Middleware;
+use App\Entities\User;
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class Cors  {
 
@@ -14,12 +16,34 @@ class Cors  {
         ];
           */
 
-        header('Access-Control-Allow-Origin:  *');
-        header('Access-Control-Allow-Credentials: true');
-        header('Acces-Control-Allow-Headers: Origin, Content-Type ');
+        $token = $request->headers->all();
+        //$token = '$2y$10$WqqbMZ/W4njUOe3DQDTBy.OHXdzY/QdXbxIT1Pc.jGSa3g.b2qC7G';
+
+    if(isset($token['x-csrf-token']))
+    {
+        $user = User::where('token', $token['x-csrf-token'])->get();
+
+        if ($user->count() != 0) {
+            Auth::loginUsingId($user->first()->id);
+
+            header('Access-Control-Allow-Origin:  *');
+            header('Access-Control-Allow-Credentials: true');
+            header('Acces-Control-Allow-Headers: Origin, Content-Type ');
+
+            return $next($request);
+        }
+        return response()->json('invalid Token');
+    }
+    else
+    {
+        return response()->json('Token not found');
+    }
 
 
-       // if($request->server('HTTP_HOST') == 'localhost')
+
+
+
+        // if($request->server('HTTP_HOST') == 'localhost')
             return $next($request);
 
         /*
