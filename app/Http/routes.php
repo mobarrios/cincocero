@@ -62,6 +62,13 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                 require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
                 require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
+                $route_files = File::allFiles(__DIR__ . '/Routes/stock');
+
+                foreach ($route_files as $partial)
+                {
+                    require_once $partial->getPathName();
+                }
+
 
                 //only super user
                 Route::group(['prefix'=>'config','middleware'=>'isAdmin'],function()
