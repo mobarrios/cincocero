@@ -15,7 +15,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'App\Http\Middleware\VerifyCsrfToken',
+		//'App\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -32,6 +32,11 @@ class Kernel extends HttpKernel {
         'roles'         => '\App\Http\Middleware\Roles',
         'changeLanguaje'=> '\App\Http\Middleware\ChangeLanguaje',
         'isAdmin'       => '\App\Http\Middleware\IsAdmin',
-	];
+
+        // API REST
+        'changeDbWS'    => '\App\Http\Middleware\ChangeDbWS',
+        'cors'          => '\App\Http\Middleware\Cors',
+    ];
+
 
 }

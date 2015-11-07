@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Helpers\ImagesHelper;
-use Intervention\Image\Facades\Image;
 
 
 abstract class Controller extends BaseController
@@ -66,10 +65,7 @@ abstract class Controller extends BaseController
                 $imgHelp->deleteFile($imagen->image);
                 $imagen->delete();
             }
-
-
         }
-
 
         return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
     }
@@ -98,8 +94,10 @@ abstract class Controller extends BaseController
 
     public function postEdit($id = null, Request $request, ImagesHelper $image)
     {
+
         // validation rules form repo
         $this->validate($request, $this->rulesEdit);
+
 
             // if has image uploaded
             if($request->hasFile('image'))

@@ -11,6 +11,10 @@
             <h4 class="page-header">{{$sectionName}}</h4>
         </div>
         <div class="col-xs-12">
+
+           DATABASE : {{\Illuminate\Support\Facades\Auth::user()->db}}
+
+
             @yield('content')
         </div>
     </div>

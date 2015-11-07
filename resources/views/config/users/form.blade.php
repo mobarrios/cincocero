@@ -4,9 +4,12 @@
 
         @if(isset($model))
             {!! Form::model($model, ['route'=>[$routePostEdit,$model->id]])!!}
+
+            {{\Illuminate\Support\Facades\Hash::make($model->id)}}
         @else
             {!! Form::open(['route' => $routePostNew ]) !!}
         @endif
+
 
         {!! Form::label('Nombre') !!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}
@@ -26,6 +29,8 @@
 
         {!! Form::label('Confirmar Password') !!}
         {!! Form::password('password_confirmation',['class'=>'form-control']) !!}
+
+        {!! Form::hidden('db',Auth::user()->db) !!}
 
         <hr>
 

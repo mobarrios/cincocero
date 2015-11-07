@@ -14,6 +14,8 @@ namespace App\Http\Controllers;
 //use App\Http\Helpers\Helper;
 
 
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller {
 
     public $view ;
@@ -21,6 +23,7 @@ class HomeController extends Controller {
 
     public function __construct()
     {
+
         $this->view = 'home';
         $this->data['sectionName'] = 'Bienvenido';
     }
