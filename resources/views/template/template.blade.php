@@ -8,6 +8,7 @@
         <link href="assets/css/jquery-ui.css" rel="stylesheet" >
         <link href="assets/css/custom.css" rel="stylesheet">
         <link href="assets/css/dataTables.bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/dataTables.fontAwesome.css" rel="stylesheet">
 
         <meta charset="UTF-8">
         <title></title>

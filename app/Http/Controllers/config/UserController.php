@@ -16,7 +16,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 
 
-class UserController extends BaseController {
+class UserController extends Controller {
 
     use ValidatesRequests;
 
@@ -62,7 +62,7 @@ class UserController extends BaseController {
 
 
 
-
+/*
     //index
     public function getIndex()
     {
@@ -146,4 +146,5 @@ class UserController extends BaseController {
         return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
 
     }
+*/
 }

@@ -56,7 +56,9 @@ class ProfileRepo extends BaseRepo {
 
     public function create($datos)
     {
-        $model =  $this->model->create($datos->all());
+        $model =  $this->model->fill($datos->all());
+        $model->save();
+
         $modules = Modules::all();
 
 

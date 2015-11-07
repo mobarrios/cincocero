@@ -95,14 +95,29 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
 //});
 
-
+/*
 Route::group(['prefix'=>'ws'],function(){
     require(__DIR__ . '/Routes/ws/wsContentRoutes.php');
 });
 
+*/
+Route::get('xls',function(){
+    Excel::create('Laravel Excel', function($excel) {
 
+        $excel->sheet('Excel sheet', function($sheet) {
 
+            $sheet->setOrientation('landscape');
 
+        });
+
+    })->export('xls');
+});
+
+Route::get('pdf',function(){
+    $pdf = App::make('dompdf.wrapper');
+    $pdf->loadHTML('<h1>Test</h1>');
+    return $pdf->stream();
+});
 /*
 Route::get('changeLanguaje/{lang}',function($lang){
 
