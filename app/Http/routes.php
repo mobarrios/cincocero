@@ -39,27 +39,12 @@ Route::get('',function(){
 
 
 
-<<<<<<< HEAD
-    //pasa para cambiar la conexion a la db segun la empresa
-    //Route::group(['middleware'=>'changeDb'],function(){
-=======
->>>>>>> master
-
 //login pasa x middle company para chequear la empresa
 Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
-
-<<<<<<< HEAD
-            require(__DIR__. '/Routes/ahgai/EstablecimientosRoutes.php');
-            require(__DIR__. '/Routes/ahgai/EstablecimientosTypesRoutes.php');
-            require(__DIR__. '/Routes/ahgai/NoticiasRoutes.php');
-
-            require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
-=======
         //pasa para cambiar la conexion a la db segun la empresa
  //   Route::group(['middleware'=>'changeDb'],function()
   //     {
->>>>>>> master
 
 //Config::set('constants.global_db',$request->id);
 
@@ -79,9 +64,9 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
                 require(__DIR__. '/Routes/CrudRoutes.php');
-                require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
-                require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
-                require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
+                //require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
+                //require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+                //require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
 
                 //only super user
@@ -112,11 +97,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
             return redirect()->back();
         }]);
 
-<<<<<<< HEAD
-    //});
-=======
   //});
->>>>>>> master
 
 //});
 
