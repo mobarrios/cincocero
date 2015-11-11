@@ -62,6 +62,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                 require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
                 require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
+
                 $route_files = File::allFiles(__DIR__ . '/Routes/stock');
 
                 foreach ($route_files as $partial)
@@ -125,6 +126,11 @@ Route::get('pdf',function(){
     $pdf->loadHTML('<h1>Test</h1>');
     return $pdf->stream();
 });
+
+Route::get('init', ['as'=>'init','uses'=>'\App\Http\Controllers\config\InitController@getInit']);
+
+
+
 /*
 Route::get('changeLanguaje/{lang}',function($lang){
 
