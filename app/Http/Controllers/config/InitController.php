@@ -45,38 +45,37 @@ class InitController extends Controller {
                     $table->increments('id');
                     $table->timestamps();
                     $table->softDeletes();
-                   // $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-                    //$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
-                    //$table->timestamp('created_at')->default(DB::raw('0000-00-00 00:00:00'))->nulleable();
-                    //$table->timestamp('updated_at')->default(DB::raw('0000-00-00 00:00:00'))->nulleable();
-
 
                     //recorre las columnas y las crea solo si no se encuentran
                     foreach ($k as $m => $a) {
 
                         if (!Schema::hasColumn($val, $m)) {
 
-                            if ($m != 'rel') {
+                            if ($m != 'relations') {
 
                                 $table->$a[0]($m , $a[1])->nullable();
 
                             } else {
 
-                                // si es REL , relacion , crea el campo y luego la foreign key
-                                $table->integer($a[0])->unsigned();
-                                $table->foreign($a[0])->references($a[2])->on($a[1]);
+                                foreach($a as $rel => $rel_data)
+                                {
+                                    // si es REL , relacion , crea el campo y luego la foreign key
+                                     $table->integer($rel)->unsigned();
+                                     $table->foreign($rel)->references($rel_data[1])->on($rel_data[0]);
+                                }
+
 
                             }
                         }
 
 
-                    }
+                   }
                 });
             }
 
         }
 
-        $this->getInitData();
+      //  $this->getInitData();
     }
 
     public function getInitData()

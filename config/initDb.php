@@ -39,10 +39,10 @@ return array(
             'delete'=>['boolean',null],
             'store' =>['boolean',null],
 
-            //['nombre_columna','tabla_realcion','referencia']
-            'rel' => ['profiles_id','profiles','id'],
-            'rel' => ['modules_id','modules','id']
-        ],
+            //relations['nombre_columna'=>'tabla_realcion','referencia']
+            'relations' => ['profiles_id'=>['profiles','id'],
+                            'modules_id'=>['modules','id']],
+        ]
 
 );
 
