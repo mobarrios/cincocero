@@ -13,8 +13,21 @@ use Illuminate\Support\Facades\Schema;
 use App\Helpers\ImagesHelper;
 use Illuminate\Http\Request;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+
+
+
+
 
 class InitController extends Controller {
+
+
+    public function __construct()
+    {
+        if(Auth::check())
+            Config::set('database.connections.mysql.database', Auth::user()->db);
+    }
 
     public function getInit()
     {

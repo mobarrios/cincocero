@@ -80,6 +80,8 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                     require(__DIR__ . '/Routes/config/MenusRoutes.php');
                     require(__DIR__ . '/Routes/config/ModulesRoutes.php');
 
+                    Route::get('init', ['as'=>'init','uses'=>'\App\Http\Controllers\config\InitController@getInit']);
+
                 });
 
             });
@@ -127,7 +129,7 @@ Route::get('pdf',function(){
     return $pdf->stream();
 });
 
-Route::get('init', ['as'=>'init','uses'=>'\App\Http\Controllers\config\InitController@getInit']);
+
 
 
 
