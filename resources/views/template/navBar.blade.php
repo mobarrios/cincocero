@@ -16,28 +16,6 @@
 
 
 
-<<<<<<< HEAD
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asociados<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('establecimientos')}}">Establecimientos</a></li>
-
-                        <li><a href="{{route('establecimientos_types')}}">Tipos de Establecimientos</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Web<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('noticias')}}">Noticias</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-
-
-=======
->>>>>>> master
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"> </span>  {{Auth::user()->name}} <span class="caret"></span></a>

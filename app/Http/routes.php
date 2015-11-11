@@ -15,14 +15,6 @@
 //use App\Helpers\ImagesHelper;
 
 
-
-Route::group(['web'],function(){
-
-    require(__DIR__. '/Routes/ahgai/WebRoutes.php');
-
-});
-
-
     // lista de empresas para mejorar acceso
     //Route::get('',function(){
     //   return view('company_list');
@@ -39,8 +31,10 @@ Route::get('',function(){
 
 
 
+
 //login pasa x middle company para chequear la empresa
 Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
+
 
         //pasa para cambiar la conexion a la db segun la empresa
  //   Route::group(['middleware'=>'changeDb'],function()
@@ -64,9 +58,9 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
                 require(__DIR__. '/Routes/CrudRoutes.php');
-                //require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
-                //require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
-                //require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
+                require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
+                require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+                require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
                 $route_files = File::allFiles(__DIR__ . '/Routes/stock');
 
