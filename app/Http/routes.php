@@ -57,13 +57,13 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
                // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
-                require(__DIR__. '/Routes/CrudRoutes.php');
-                require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
-                require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+                //require(__DIR__. '/Routes/CrudRoutes.php');
+                //require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
+                //require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
                 require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
 
-                $route_files = File::allFiles(__DIR__ . '/Routes/stock');
+                $route_files = File::allFiles(__DIR__ . '/Routes/ahgai');
 
                 foreach ($route_files as $partial)
                 {

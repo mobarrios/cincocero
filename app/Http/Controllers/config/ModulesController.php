@@ -63,6 +63,7 @@ class ModulesController extends Controller {
         return redirect()->back()->withErrors(trans('messages.changePermissions'));
     }
 
+    /*
     // post new item
     public function postNew(Request $request, ImagesHelper $image)
     {
@@ -109,7 +110,7 @@ class ModulesController extends Controller {
 
     }
 
-
+*/
 
 
 }
