@@ -81,6 +81,8 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                     require(__DIR__ . '/Routes/config/ModulesRoutes.php');
 
                     Route::get('init', ['as'=>'init','uses'=>'\App\Http\Controllers\config\InitController@getInit']);
+                    Route::get('update', ['as'=>'update','uses'=>'\App\Http\Controllers\config\InitController@getUpdate']);
+
 
                 });
 
