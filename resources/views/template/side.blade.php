@@ -2,7 +2,7 @@
 
 <div class="panel side panel-default">
     <div class="panel-heading">
-        Menu
+
     </div>
     <div clss="panel-body">
         <ul class="nav nav-pills nav-stacked">
