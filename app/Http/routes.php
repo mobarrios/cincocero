@@ -23,6 +23,10 @@
 //Session::put('languaje','es_ES');
 
 //Route::group(['middleware'=>'changeLanguaje'],function(){
+Route::get('template',function(){
+
+    return view('test');
+});
 
 Route::get('',function(){
 
