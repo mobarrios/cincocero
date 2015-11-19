@@ -1,4 +1,5 @@
-<table id="dataTable" class="display table table-striped" style="width: 100%; cellspacing: 0;">
+<div class="table-responsive">
+<table id="dataTable" class="display table table-bordered table-striped" style="width: 100%; cellspacing: 0;">
     <thead>
     <tr>
         <th class="no-sort" style="width: 1%;">#</th>
@@ -70,3 +71,4 @@
 
     </tbody>
 </table>
+</div>

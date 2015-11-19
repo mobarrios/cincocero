@@ -23,6 +23,10 @@
 //Session::put('languaje','es_ES');
 
 //Route::group(['middleware'=>'changeLanguaje'],function(){
+Route::get('template',function(){
+
+    return view('test');
+});
 
 //Route::get('',function(){
 //    return redirect()->route('login');
@@ -83,6 +87,11 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
                     Route::get('init', ['as'=>'init','uses'=>'\App\Http\Controllers\config\InitController@getInit']);
                     Route::get('update', ['as'=>'update','uses'=>'\App\Http\Controllers\config\InitController@getUpdate']);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5bdbfd33b81a2ffa0c97abf6ed2d21e030bac3c5
                 });
 
             });
