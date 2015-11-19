@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\ahgai;
 
+use App\Entities\ahgai\Categories;
 use App\Entities\ahgai\Establecimientos;
 use App\Entities\ahgai\EstablecimientosTypes;
 use App\Http\Repositories\ahgai\EstablecimientosRepo as Repo;
 use App\Http\Controllers\Controller;
+
+use Illuminate\Http\Request;
 
 
 class EstablecimientosController extends Controller {
@@ -20,9 +23,8 @@ class EstablecimientosController extends Controller {
     public   $rulesEdit;
 
 
-    public function __construct(Repo $repo)
+    public function __construct(Repo $repo, Request $request)
     {
-
         //data from entities
         $this->repo                 = $repo;
         $this->data['models']       = $repo->ListAll();
@@ -40,7 +42,7 @@ class EstablecimientosController extends Controller {
         $this->data['entityImg']        = 'establecimientos';
 
         //selects
-        $this->data['types']           = EstablecimientosTypes::lists('type','id');
+        $this->data['categories']           = Categories::lists('name','id');
 
 
         //data for validation
@@ -55,5 +57,17 @@ class EstablecimientosController extends Controller {
         $this->data['routePostNew'] = 'establecimientosPostNew';
         $this->data['routePostEdit']= 'establecimientosPostEdit';
 
+
+
     }
+
+
+    public function requestCustom($request)
+    {
+       $request['manuel'] = 'barrios';
+
+        return $request;
+
+    }
+
 }

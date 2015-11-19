@@ -9,17 +9,19 @@
         @endif
 
 
-        {!! Form::textCustom('name', 'Nombre Establecieminto')!!}
-
-        {!! Form::textCustom('address', 'Dirección')!!}
-        {!! Form::textCustom('web', 'Web')!!}
-
-        {!! Form::selectCustom('categories_id','Categoria de Establecimiento', $categories)!!}
+        {!! Form::textCustom('name', 'Nombre Asociado')!!}
+        {!! Form::textCustom('last_name', 'Apellido Asociado')!!}
 
 
 
-        {!! Form::label('Imagen')!!}
-        {!! Form::file('image')!!}
+        {!! Form::textCustom('mail', 'Mail')!!}
+
+        {!! Form::textCustom('phone', 'Tel.')!!}
+
+        {!! Form::selectCustom('establecimientos_id','Establecimiento Relacionado', $establecimientos) !!}
+
+
+
 
 
         <hr>

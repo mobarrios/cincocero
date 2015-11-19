@@ -35,7 +35,7 @@ class InitController extends Controller {
     public function getUpdate()
     {
         $this->schemaCreate(Config('ahgai.ahgaiDb'));
-<<<<<<< HEAD
+
 
     }
 
@@ -48,20 +48,6 @@ class InitController extends Controller {
         $profile->save();
     }
 
-=======
-
-    }
-
-
-    public function getInitData()
-    {
-        $profile = new Profile();
-        $profile->id    = 1;
-        $profile->profile = 'admin';
-        $profile->save();
-    }
-
->>>>>>> 5bdbfd33b81a2ffa0c97abf6ed2d21e030bac3c5
     public function schemaCreate($db = null)
     {
         foreach ($db as $val => $k) {
@@ -100,7 +86,7 @@ class InitController extends Controller {
 
 
                     }
-<<<<<<< HEAD
+
                 });
 
             }else{
@@ -139,46 +125,6 @@ class InitController extends Controller {
                     return;
                 });
 
-=======
-                });
-
-            }else{
-                // si la tabla esta creada chequea cada dato si existe o no
-                Schema::table($val, function($table) use($k, $val)
-                {
-                    //recorre las columnas y las crea solo si no se encuentran
-                    foreach ($k as $m => $a) {
-
-
-
-                        if (!Schema::hasColumn($val, $m) )
-                        {
-                            echo Schema::hasColumn($val, $m);
-                            if ($m != 'relations')
-                            {
-                                $table->$a[0]($m , $a[1])->nullable();
-
-                            } else {
-
-                                foreach($a as $rel => $rel_data)
-                                {
-                                    if (!Schema::hasColumn($val, $rel) ) {
-
-                                        // si es REL , relacion , crea el campo y luego la foreign key
-                                        $table->integer($rel)->unsigned();
-                                        $table->foreign($rel)->references($rel_data[1])->on($rel_data[0]);
-                                    }
-                                }
-                            }
-
-                        }
-
-
-                    }
-                    return;
-                });
-
->>>>>>> 5bdbfd33b81a2ffa0c97abf6ed2d21e030bac3c5
             }
 
         }

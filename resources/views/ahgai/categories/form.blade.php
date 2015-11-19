@@ -9,17 +9,10 @@
         @endif
 
 
-        {!! Form::textCustom('name', 'Nombre Establecieminto')!!}
-
-        {!! Form::textCustom('address', 'Dirección')!!}
-        {!! Form::textCustom('web', 'Web')!!}
-
-        {!! Form::selectCustom('categories_id','Categoria de Establecimiento', $categories)!!}
+        {!! Form::textCustom('name', 'Nombre Categoria')!!}
 
 
 
-        {!! Form::label('Imagen')!!}
-        {!! Form::file('image')!!}
 
 
         <hr>

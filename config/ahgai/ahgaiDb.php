@@ -19,16 +19,9 @@ return array(
         'web'=>             ['string','100'],
         'phone' =>          ['string','50'],
         'mail' =>           ['string','50'],
-        'relations' =>      ['types_id'=>['types','id'],
-                             'categories_id'=>['categories','id']],
-        ],
-
-    'news' =>
-        [
-        'date' => ['date',null],
-        'title' => ['string','100'],
-        'copete' => ['string','250'],
-        'description' => ['text',null],
+        'relations' =>      [
+                             'categories_id'=>['categories','id']
+                            ],
         ],
 
     'partners' =>
@@ -39,9 +32,28 @@ return array(
         'mail' =>           ['string','50'],
         ],
 
-    'galeries' => [
-        'name'=>['string' , '50']
-    ],
+    'partners_establecimientos' =>
+        [
+            'relations' =>
+                [
+                    'partners_id'=>['partners','id'],
+                    'establecimientos_id'=>['establecimientos','id']
+                ],
+        ],
+
+
+    'galeries' =>
+        [
+            'name'=>['string' , '50']
+        ],
+
+    'news' =>
+        [
+            'date' => ['date',null],
+            'title' => ['string','100'],
+            'copete' => ['string','250'],
+            'description' => ['text',null],
+        ],
 );
 
 ?>
