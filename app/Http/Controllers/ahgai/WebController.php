@@ -4,21 +4,29 @@ namespace App\Http\Controllers\ahgai;
 
 
 use App\Entities\ahgai\Establecimientos;
-use App\Entities\ahgai\Noticias;
+use App\Entities\ahgai\Galeries;
+use App\Entities\ahgai\News;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Config;
 
 class WebController extends Controller
 {
+    public function __construct()
+    {
+      // cambia la base de datos para ahgai
+        Config::set('database.connections.mysql.database', 'base_ahgai');
+    }
+
     public function getNewsDetail($news_id = null)
     {
-        $data['noticias'] = Noticias::find($news_id);
+        $data['noticias'] = News::find($news_id);
 
         return view('ahgai.web.news_detail')->with($data);
     }
 
     public function getIndex()
     {
-        $data['noticias'] = Noticias::all();
+        $data['noticias'] = News::all();
 
         return view('ahgai.web.index')->with($data);
     }
@@ -32,6 +40,7 @@ class WebController extends Controller
 
     public function getGaleryIndex()
     {
-        return view('ahgai.web.galery');
+        $data['galeries'] = Galeries::all();
+        return view('ahgai.web.galery')->with($data);
     }
 }

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\ahgai;
 
-use App\Entities\ahgai\EstablecimientosCategories;
-use App\Entities\ahgai\EstablecimientosTypes;
+use App\Entities\ahgai\Categories;
+use App\Entities\ahgai\Types;
 
-use App\Http\Repositories\ahgai\EstablecimientosTypesRepo as Repo;
+use App\Http\Repositories\ahgai\Types as Repo;
 use App\Http\Controllers\Controller;
 
 
-class EstablecimientosTypesController extends Controller {
+class TypesController extends Controller {
 
     public   $module;
     public   $repo;

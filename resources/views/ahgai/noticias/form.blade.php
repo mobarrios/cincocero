@@ -8,11 +8,12 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
-        {!! Form::dateCustom('fecha_publicacion','Fecha Publicacion')!!}
-        {!! Form::textCustom('encabezado', 'Encabezado')!!}
+        {!! Form::dateCustom('date','Fecha Publicacion')!!}
+        {!! Form::textCustom('title', 'Título')!!}
 
-        {!! Form::textAreaCustom('descripcion', 'Descripción')!!}
+        {!! Form::textCustom('copete', 'Breve Descripción')!!}
 
+        {!! Form::textAreaCustom('description', 'Descripción Completa')!!}
 
 
 

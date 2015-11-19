@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\ahgai;
 
-use App\Entities\ahgai\Noticias;
+use App\Entities\ahgai\News;
 use App\Http\Repositories\ahgai\NoticiasRepo as Repo;
 use App\Http\Controllers\Controller;
 
@@ -36,7 +36,7 @@ class NoticiasController extends Controller {
         //images
         $this->data['imgQuantityMax']   = 1;
         $this->data['imagePath']        = 'uploads/noticias/images/';
-        $this->data['entityImg']        = 'noticias';
+        $this->data['entityImg']        = 'news';
 
         //selects
        // $this->data['types']           = EstablecimientosTypes::lists('type','id');

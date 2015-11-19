@@ -87,6 +87,8 @@
         </div>
     @endsection
     @section('content')
+
+
         <div class="article post">
             <div class="post-inner">
                 <h4 class="post-title"><a class="text-darken" href="#">Ultimas Noticias</a></h4>
@@ -107,9 +109,12 @@
                         </a>
                     </div>
 
-                    <p class="post-desciption">
-                        {{$noticia->encabezado}}
-                    </p>
+                    <h5 class="post-desciption">
+                        {{$noticia->title}}
+                    </h5>
+
+                    {{$noticia->copete}}
+                    <br>
                     <a class="btn btn-small btn-primary" href="{{route('news_detail',$noticia->id)}}">Leer</a>
                 </ul>
 

@@ -7,7 +7,7 @@ class Establecimientos extends Entity{
 
     protected $table = 'establecimientos';
 
-    protected $fillable = ['name','address','web','phone','establecimientos_types_id'];
+    protected $fillable = ['name','address','web','phone','mail','types_id','categories_id'];
 
 
 }

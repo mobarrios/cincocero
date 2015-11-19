@@ -16,14 +16,7 @@ class EstablecimientosRepo extends BaseRepo {
     public function Rules()
     {
         return [
-<<<<<<< HEAD:app/Http/Repositories/ahgai/EstablecimientosRepo.php
             'name'   => 'required|unique:establecimientos,name',
-            //'name'   => 'required'
-=======
-            'code'   => 'required|unique:items,code',
-            'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
->>>>>>> origin:app/Http/Repositories/stock/items/ItemsRepo.php
         ];
     }
 
@@ -31,10 +24,6 @@ class EstablecimientosRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-<<<<<<< HEAD:app/Http/Repositories/ahgai/EstablecimientosRepo.php
-=======
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
->>>>>>> origin:app/Http/Repositories/stock/items/ItemsRepo.php
         ];
     }
 
@@ -55,6 +44,8 @@ class EstablecimientosRepo extends BaseRepo {
 
         return $header;
     }
+
+
 
 
 
