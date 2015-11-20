@@ -1,5 +1,9 @@
 <div class="table-responsive">
+<<<<<<< HEAD
 <table id="dataTable" class="display table table-striped" style="width: 100%; cellspacing: 0;">
+=======
+<table id="dataTable" class="display table  table-striped" style="width: 100%; cellspacing: 0;">
+>>>>>>> 7ceaf2957db182baae062b8cc35e1833d7dab8f8
     <thead>
     <tr>
         <th class="no-sort" style="width: 1%;">#</th>
