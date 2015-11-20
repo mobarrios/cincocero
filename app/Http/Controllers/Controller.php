@@ -74,6 +74,9 @@ abstract class Controller extends BaseController
     // post new item
     public function postNew(Request $request, ImagesHelper $image)
     {
+        //if in controller custom
+        $request = $this->requestCustom($request);
+
         // validation rules form repo
         $this->validate($request, $this->rules);
 
@@ -94,6 +97,8 @@ abstract class Controller extends BaseController
 
     public function postEdit($id = null, Request $request, ImagesHelper $image)
     {
+        //if in controller custom
+        $request = $this->requestCustom($request);
 
         // validation rules form repo
         $this->validate($request, $this->rulesEdit);
