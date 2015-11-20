@@ -34,6 +34,8 @@ abstract class BaseRepo {
         $model->fill($datos->all());
         $model->save();
 
+        $this->createCustom($datos);
+
         return $model;
 
     }

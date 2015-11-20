@@ -54,4 +54,12 @@ class ItemsController extends Controller {
         $this->data['routePostEdit']= 'itemsPostEdit';
 
     }
+
+    public function requestCustom($request = null)
+    {
+        $newRequest         = $request;
+        $newRequest['nm']   = 'dadas';
+
+        return $newRequest;
+    }
 }

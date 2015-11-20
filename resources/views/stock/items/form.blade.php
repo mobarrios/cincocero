@@ -8,20 +8,15 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
-        {!! Form::textCustom('code', 'Codigo')!!}
 
         {!! Form::textCustom('name', 'Articulo')!!}
 
-        {!! Form::textCustom('description', 'Descripcion')!!}
 
-        {!! Form::selectCustom('name','Marcas',$brands)!!}
 
 
         {!! Form::imageCustom('image','Foto')!!}
 
-        {!! Form::dateCustom('dia','Fecha') !!}
 
-        {!! Form::textAreaCustom('description', 'Area')!!}
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}

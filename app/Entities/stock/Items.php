@@ -7,7 +7,7 @@ class Items extends Entity{
 
     protected $table = 'items';
 
-    protected $fillable = ['code','name','description'];
+    protected $fillable = ['name','nm'];
 
 
 }
