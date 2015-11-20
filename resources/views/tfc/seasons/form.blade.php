@@ -8,13 +8,13 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
-        {!! Form::textCustom('name', 'Nombre Sede')!!}
-        {!! Form::textCustom('address', 'Dirección')!!}
-        {!! Form::textCustom('phone', 'Teléfono')!!}
+        {!! Form::dateCustom('from', 'Fecha de Inicio')!!}
+        {!! Form::dateCustom('to', 'Fecha de Cierre')!!}
 
 
+        {!! Form::textCustom('name', 'Nombre Equipo')!!}
 
-        {!! Form::imageCustom('image','Imagen')!!}
+
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}

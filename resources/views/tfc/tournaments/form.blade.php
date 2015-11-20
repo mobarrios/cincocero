@@ -8,13 +8,17 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
-        {!! Form::textCustom('name', 'Nombre Sede')!!}
-        {!! Form::textCustom('address', 'Dirección')!!}
-        {!! Form::textCustom('phone', 'Teléfono')!!}
+        {!! Form::dateCustom('from', 'Fecha Inicio ')!!}
+        {!! Form::dateCustom('to', 'Fecha Final')!!}
+
+        {!! Form::textCustom('name', 'Nombre Torneo')!!}
+
+        {!! Form::selectCustom('series_id','Serie',$series)!!}
+        {!! Form::hidden('categories_id',$categories_id)!!}
+        {!! Form::hidden('seasons_id',2)!!}
 
 
 
-        {!! Form::imageCustom('image','Imagen')!!}
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}

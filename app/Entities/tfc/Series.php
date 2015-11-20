@@ -3,9 +3,9 @@ namespace App\Entities\tfc;
 
 use \App\Entities\Entity;
 
-class Categories extends Entity{
+class Series extends Entity{
 
-    protected $table = 'categories';
+    protected $table = 'series';
 
     protected $fillable = ['name'];
 
@@ -13,4 +13,5 @@ class Categories extends Entity{
     {
         return $this->hasMany(Tournaments::getClass());
     }
+
 }

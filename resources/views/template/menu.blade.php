@@ -38,8 +38,8 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
 
-                <li class="sidebar-search">
-                    Empresa
+                <li class="sidebar-search text-center">
+                    <strong>The Futbol Company</strong>
                 </li>
 
                 <li>

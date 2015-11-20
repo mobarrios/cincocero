@@ -35,7 +35,30 @@ return array(
             'name'    => ['string','50'],
         ],
 
+    'seasons' =>
+        [
+            'name'    => ['string','50'],
+            'from'      => ['date',''],
+            'to'        => ['date',''],
+        ],
 
+    'series' =>
+        [
+            'name'    => ['string','50'],
+        ],
+
+    'tournaments' =>
+        [
+            'name'    => ['string','50'],
+            'from'      => ['date',''],
+            'to'        => ['date',''],
+
+            'relations' => ['series_id'=>['series','id'],
+                           'seasons_id'=>['seasons','id'],
+                           'categories_id'=>['categories','id']
+            ],
+
+        ],
 
 
             //relations['nombre_columna'=>'tabla_realcion','referencia']
