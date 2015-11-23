@@ -12,6 +12,13 @@ class SeriesRepo extends BaseRepo {
         return new Series;
     }
 
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        return;
+    }
+
 
     public function Rules()
     {

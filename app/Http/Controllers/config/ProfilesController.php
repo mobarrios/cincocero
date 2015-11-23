@@ -78,4 +78,11 @@ class ProfilesController extends Controller {
         return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
     }
 
+    public function requestCustom($request = null)
+    {
+        $newRequest         = $request;
+
+        return $newRequest;
+    }
+
 }

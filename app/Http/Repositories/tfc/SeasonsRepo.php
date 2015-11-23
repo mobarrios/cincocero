@@ -12,6 +12,14 @@ class SeasonsRepo extends BaseRepo {
         return new Seasons;
     }
 
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        return;
+    }
+
+
 
     public function Rules()
     {

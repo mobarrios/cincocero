@@ -13,6 +13,13 @@ class TournamentsRepo extends BaseRepo {
         return new Tournaments();
     }
 
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        return;
+    }
+
 
     public function Rules()
     {

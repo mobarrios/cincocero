@@ -30,24 +30,28 @@
 
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <h4 class="text-center">{{$cat->name}}</h4>
+                                <h4 class="text-center">Categoria : {{$cat->name}}</h4>
 
-                                @foreach(\App\Entities\tfc\Series::all() as $serie)
-
-
-                                    @foreach(\App\Entities\tfc\Tournaments::where('categories_id',$cat->id)->where('series_id', $serie->id)->get() as $data )
+                                    @foreach($cat->Tournaments as $torneo )
 
                                         <table class="table table-condensed table-bordered">
-                                            <th> {{$serie->name}}</th>
+                                            <th> {{$torneo->name}}</th>
 
                                             <tr>
-                                                <td><a href=""> {{$data->name}}</a></td>
+                                                <td>
+
+                                                   <a href="">{{$torneo->Series}}</a>
+
+                                                    <a href="{{route('tournamentsGetNew',$torneo->id)}}" class="btn btn-xs btn-block">Nueva Serie</a>
+
+                                                </td>
+
 
                                             </tr>
 
                                         </table>
                                     @endforeach
-                                @endforeach
+
 
 
                             </div>

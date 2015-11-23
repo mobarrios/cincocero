@@ -44,7 +44,8 @@ return array(
 
     'series' =>
         [
-            'name'    => ['string','50'],
+            'name'      => ['string','50'],
+            'relations' => ['tournaments_id'=>['tournaments','id']],
         ],
 
     'tournaments' =>
@@ -53,7 +54,7 @@ return array(
             'from'      => ['date',''],
             'to'        => ['date',''],
 
-            'relations' => ['series_id'=>['series','id'],
+            'relations' => [
                            'seasons_id'=>['seasons','id'],
                            'categories_id'=>['categories','id']
             ],

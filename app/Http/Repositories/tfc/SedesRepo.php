@@ -13,6 +13,14 @@ class SedesRepo extends BaseRepo {
     }
 
 
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        return;
+    }
+
+
     public function Rules()
     {
         return [

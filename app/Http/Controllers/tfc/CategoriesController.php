@@ -59,6 +59,12 @@ class CategoriesController extends Controller {
         $this->data['routePostEdit']= $module.'PostEdit';
 
     }
+    public function requestCustom($request = null)
+    {
+        $newRequest         = $request;
+
+        return $newRequest;
+    }
 
    
 }

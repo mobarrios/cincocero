@@ -60,5 +60,12 @@ class SedesController extends Controller {
 
     }
 
+    public function requestCustom($request = null)
+    {
+        $newRequest         = $request;
+
+        return $newRequest;
+    }
+
 
 }

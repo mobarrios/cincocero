@@ -60,5 +60,11 @@ class PlayersController extends Controller {
 
     }
 
+    public function requestCustom($request = null)
+    {
+        $newRequest         = $request;
+
+        return $newRequest;
+    }
    
 }

@@ -20,6 +20,14 @@ class ProfileRepo extends BaseRepo {
         return new Profile;
     }
 
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        return;
+    }
+
+
     public function Lists()
     {
         $qry = $this->model->lists('profile','id');

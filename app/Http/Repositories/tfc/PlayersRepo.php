@@ -12,6 +12,13 @@ class PlayersRepo extends BaseRepo {
         return new Players;
     }
 
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        return;
+    }
+
 
     public function Rules()
     {

@@ -14,6 +14,13 @@ class ModulesRepo extends BaseRepo {
         return new Modules;
     }
 
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        return;
+    }
+
 
     public function Rules()
     {
