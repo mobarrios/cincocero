@@ -20,9 +20,9 @@ class Tournaments extends Entity{
         return $this->belongsTo(Categories::getClass());
     }
 
-    public function Series()
+    public function Fases()
     {
-        return $this->belongsTo(Series::getClass());
+        return $this->hasMany(Fases::getClass());
     }
 
     public function getFromAttribute($value)

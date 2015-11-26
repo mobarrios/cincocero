@@ -13,9 +13,9 @@
 
         {!! Form::textCustom('name', 'Nombre Torneo')!!}
 
-        {!! Form::selectCustom('series_id','Serie',$series)!!}
+
         {!! Form::hidden('categories_id',$categories_id)!!}
-        {!! Form::hidden('seasons_id',2)!!}
+        {!! Form::hidden('seasons_id',$seasons_id)!!}
 
 
 

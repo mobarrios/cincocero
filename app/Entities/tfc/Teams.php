@@ -10,4 +10,8 @@ class Teams extends Entity{
     protected $fillable = ['name'];
 
 
+    public function Matches()
+    {
+        return $this->hasMany(Matches::getClass());
+    }
 }

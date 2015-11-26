@@ -15,4 +15,8 @@ class Canchas extends Entity{
         return $this->belongsTo(Sedes::getClass());
     }
 
+    public function Matches()
+    {
+        return $this->hasMany(Matches::getClass());
+    }
 }

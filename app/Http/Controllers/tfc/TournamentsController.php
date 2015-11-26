@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\tfc;
 
-use App\Entities\tfc\Series;
+use App\Entities\tfc\Fases;
 use App\Entities\tfc\Tournaments;
 use App\Http\Repositories\tfc\TournamentsRepo as Repo;
 use App\Http\Controllers\Controller;
@@ -44,7 +44,7 @@ class TournamentsController extends Controller {
         $this->data['entityImg']        = $module;
 
         //selects
-        $this->data['series']          = Series::lists('name','id');
+        $this->data['series']          = Fases::lists('name','id');
         //$this->data['currency']        = Currency::lists('name','id');
 
         //data for validation
@@ -52,7 +52,7 @@ class TournamentsController extends Controller {
         $this->rulesEdit            = $this->repo->RulesEdit();
 
         //data routes
-        $this->data['route']        = $module;
+        $this->data['route']        = 'seasons';
         $this->data['routeEdit']    = $module.'GetEdit';
         $this->data['routeDel']     = $module.'GetDel';
         $this->data['routeNew']     = $module.'GetNew';
@@ -62,9 +62,11 @@ class TournamentsController extends Controller {
     }
 
     //go to form new
-    public function getNew($id = null)
+    public function getNew($season_id = null, $category_id = null)
     {
-        $this->data['categories_id'] = $id;
+        $this->data['categories_id'] = $category_id;
+        $this->data['seasons_id']   = $season_id;
+
         return view($this->form)->with($this->data);
     }
 

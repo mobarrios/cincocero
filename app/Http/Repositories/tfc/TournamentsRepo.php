@@ -28,7 +28,7 @@ class TournamentsRepo extends BaseRepo {
             'from'   => 'required|date',
             'to'   => 'required|date|after:from',
             //'categories_id' => 'required',
-            'series_id' => 'required',
+            //'series_id' => 'required',
 
 
             //'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
@@ -42,7 +42,7 @@ class TournamentsRepo extends BaseRepo {
             'from'   => 'required|date',
             'to'   => 'required|date|after:from',
             //'categories_id' => 'required',
-            'series_id' => 'required',
+            //'series_id' => 'required',
 
 
             // 'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'

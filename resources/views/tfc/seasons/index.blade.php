@@ -1,15 +1,15 @@
 @extends('index')
 
 @section('content')
-    <div class="col-xs-12">
-        <a href="{{route($routeNew)}}"  class=" btn btn-xs btn-info">Nueva Temporada</a>
-    </div>
 
-    <hr>
+
+
 
     <div class="panel-group" id="accordion">
 
-        @foreach($models as $season)
+
+
+    @foreach($models as $season)
         <div class="panel panel-default">
             <div class="panel-heading">
 
@@ -35,19 +35,32 @@
                                     @foreach($cat->Tournaments as $torneo )
 
                                         <table class="table table-condensed table-bordered">
-                                            <th> {{$torneo->name}}</th>
+                                            <th colspan="2"> {{$torneo->name}}</th>
 
-                                            <tr>
+                                                @foreach($torneo->Fases as $fases)
+                                                <tr>
                                                 <td>
-
-                                                   <a href="">{{$torneo->Series}}</a>
-
-                                                    <a href="{{route('tournamentsGetNew',$torneo->id)}}" class="btn btn-xs btn-block">Nueva Serie</a>
-
+                                                  {{$fases->name}}
                                                 </td>
 
+                                                    <td>
+                                                        <a href="{{route('fasesFixture',$fases->id)}}" class="btn btn-xs btn-success">Fixture</a>
+                                                        <a href="{{route('fasesFixture',$fases->id)}}"class="btn btn-xs btn-success">Tabla</a>
+                                                         <a href="{{route('fasesFixture',$fases->id)}}"class="btn btn-xs btn-success">Sanciones</a>
+                                                         <a href="{{route('fasesFixture',$fases->id)}}"class="btn btn-xs btn-success">Goleadores</a>
+                                                        <a href="{{route('fasesFixture',$fases->id)}}"class="btn btn-xs btn-success">FairPlay</a></td>
 
-                                            </tr>
+
+
+                                                </tr>
+
+                                                @endforeach
+
+                                            <tfoot>
+                                            <td colspan="2">
+                                                <a href="{{route('fasesGetNew',$torneo->id)}}" class="btn btn-xs btn-block">Nueva Fase</a>
+                                            </td>
+                                            </tfoot>
 
                                         </table>
                                     @endforeach
@@ -56,7 +69,7 @@
 
                             </div>
                             <div class="panel-footer">
-                                <a href="{{route('tournamentsGetNew',$cat->id)}}" class="btn btn-xs btn-block">Nuevo Torneo</a>
+                                <a href="{{route('tournamentsGetNew',[$season->id, $cat->id])}}" class="btn btn-xs btn-block">Nuevo Torneo</a>
                             </div>
                         </div>
 
@@ -73,6 +86,9 @@
         @endforeach
 
     </div>
+            <hr>
+            <a href="{{route($routeNew)}}"  class=" btn btn-block btn-info">Nueva Temporada</a>
+
 @endsection
 
 @stop

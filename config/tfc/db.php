@@ -42,11 +42,6 @@ return array(
             'to'        => ['date',''],
         ],
 
-    'series' =>
-        [
-            'name'      => ['string','50'],
-            'relations' => ['tournaments_id'=>['tournaments','id']],
-        ],
 
     'tournaments' =>
         [
@@ -61,7 +56,41 @@ return array(
 
         ],
 
+    'fases' =>
+        [
+            'name'      => ['string','50'],
+            'relations' => ['tournaments_id'=>['tournaments','id']],
+        ],
 
+
+    'fases_teams' =>
+        [
+            'relations' => ['fases_id' => ['fases','id'], 'teams_id'=>['teams','id']],
+        ],
+
+
+    'fases_week'=>
+        [
+            'name' => ['string',50],
+            'relations' => ['fases_id'=>['fases','id']],
+        ],
+
+    'matches' =>
+        [
+            'name'          => ['string',50],
+            'hour'          => ['string',50],
+            'date'          => ['date',null],
+            'status'        => ['string',50],
+            'canchas_id'    => ['integer',null],
+
+            'relations' => [
+                            'fases_week_id'=>['fases_week','id'],
+                            'home_teams_id'=>['teams','id'],
+                            'away_teams_id'=> ['teams','id'],
+                            ],
+
+
+        ],
             //relations['nombre_columna'=>'tabla_realcion','referencia']
             //'relations' => ['profiles_id'=>['profiles','id'],
             //                'modules_id'=>['modules','id']],

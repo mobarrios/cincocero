@@ -12,7 +12,7 @@
         {!! Form::dateCustom('to', 'Fecha de Cierre')!!}
 
 
-        {!! Form::textCustom('name', 'Nombre Equipo')!!}
+        {!! Form::textCustom('name', 'Nombre Temporada')!!}
 
 
         <hr>
