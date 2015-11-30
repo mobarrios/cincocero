@@ -10,4 +10,8 @@ class Establecimientos extends Entity{
     protected $fillable = ['name','address','web','phone','mail','types_id','categories_id'];
 
 
+    public function Categories()
+    {
+        return $this->belongsTo(Categories::getClass());
+    }
 }

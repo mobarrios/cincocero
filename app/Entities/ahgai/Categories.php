@@ -9,5 +9,9 @@ class Categories extends Entity{
 
     protected $fillable = ['name'];
 
+    public function Establecimientos()
+    {
+        return $this->hasMany(Establecimientos::getClass());
+    }
 
 }

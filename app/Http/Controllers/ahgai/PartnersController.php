@@ -58,5 +58,13 @@ class PartnersController extends Controller {
         $this->data['routePostEdit']= $module.'PostEdit';
 
     }
+    public function requestCustom($request = null)
+    {
+        $newRequest         = $request;
+      //  $newRequest['nm']   = 'dadas';
+
+        return $newRequest;
+    }
+
 
 }

@@ -12,6 +12,17 @@ class PartnersRepo extends BaseRepo {
         return new Partners();
     }
 
+    public function createCustom($data = null)
+    {
+        $data = $data->all();
+
+
+        $data['establecimientos_id'];
+
+
+
+        return ;
+    }
 
     public function Rules()
     {

@@ -74,15 +74,9 @@ abstract class Controller extends BaseController
     // post new item
     public function postNew(Request $request, ImagesHelper $image)
     {
-<<<<<<< HEAD
-        $request = $this->requestCustom($request->all());
-
-        dd($request);
-=======
         //if in controller custom
         $request = $this->requestCustom($request);
 
->>>>>>> 7ceaf2957db182baae062b8cc35e1833d7dab8f8
         // validation rules form repo
         $this->validate($request, $this->rules);
 
