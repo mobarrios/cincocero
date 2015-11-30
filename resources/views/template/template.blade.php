@@ -10,6 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
     <title>NAVCODER</title>
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +21,7 @@
     <link href="assets/css/jquery-ui.css" rel="stylesheet" >
     <link href="assets/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/dataTables.fontAwesome.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" /> 
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -67,9 +67,9 @@ return [
         'user' => [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'base_admin',
+            'database'  => 'admin_tfcsistema',
             'username'  => 'root',
-            'password'  => 'root',
+            'password'  => '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
