@@ -14,7 +14,7 @@ class WebController extends Controller
     public function __construct()
     {
       // cambia la base de datos para ahgai
-        Config::set('database.connections.mysql.database', 'base_ahgai');
+        Config::set('database.connections.mysql.database', env('DB_DATABASE', ''));
     }
 
     public function getNewsDetail($news_id = null)
