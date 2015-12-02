@@ -284,32 +284,6 @@ class LaravelExcelWriter {
     }
 
     /**
-     * Return the spreadsheet file as a string
-     * @param  string $ext
-     * @return string
-     * @throws LaravelExcelException
-     */
-    public function string($ext = 'xls')
-    {
-        // Set the extension
-        $this->ext = $ext;
-
-        // Render the file
-        $this->_render();
-
-        // Check if writer isset
-        if (!$this->writer)
-            throw new LaravelExcelException('[ERROR] No writer was set.');
-
-        //Capture the content as a string and return it
-        ob_start();
-
-        $this->writer->save('php://output');
-
-        return ob_get_clean();
-    }
-
-    /**
      * Download a file
      * @param array $headers
      * @throws LaravelExcelException
@@ -332,7 +306,6 @@ class LaravelExcelWriter {
         // Check if writer isset
         if (!$this->writer)
             throw new LaravelExcelException('[ERROR] No writer was set.');
-
 
         // Download
         $this->writer->save('php://output');
@@ -498,9 +471,7 @@ class LaravelExcelWriter {
     {
         // Set pdf renderer
         if ($this->format == 'PDF')
-        {
             $this->setPdfRenderer();
-        }
 
         // Create the writer
         $this->writer = PHPExcel_IOFactory::createWriter($this->excel, $this->format);
@@ -510,13 +481,7 @@ class LaravelExcelWriter {
         {
             $this->writer->setDelimiter(Config::get('excel.csv.delimiter', ','));
             $this->writer->setEnclosure(Config::get('excel.csv.enclosure', '"'));
-            $this->writer->setLineEnding(Config::get('excel::csv.line_ending', "\r\n"));
-        }
-
-        // Set CSV delimiter
-        if ($this->format == 'PDF')
-        {
-            $this->writer->writeAllSheets();
+            $this->writer->setLineEnding(Config::get('excel.csv.line_ending', "\r\n"));
         }
 
         // Calculation settings
@@ -539,9 +504,7 @@ class LaravelExcelWriter {
         $path = Config::get('excel.export.pdf.drivers.' . $driver . '.path');
 
         // Disable autoloading for dompdf
-        if(! defined("DOMPDF_ENABLE_AUTOLOAD")){
-            define("DOMPDF_ENABLE_AUTOLOAD", false);
-        }
+        define("DOMPDF_ENABLE_AUTOLOAD", false);
 
         // Set the pdf renderer
         if (!\PHPExcel_Settings::setPdfRenderer($driver, $path))

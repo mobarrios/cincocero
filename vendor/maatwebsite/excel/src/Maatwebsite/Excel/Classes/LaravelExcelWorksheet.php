@@ -1091,25 +1091,6 @@ class LaravelExcelWorksheet extends PHPExcel_Worksheet {
     }
 
     /**
-     * Password protect a sheet
-     * @param          $password
-     * @param callable $callback
-     */
-    public function protect($password, Closure $callback = null)
-    {
-        $protection = $this->getProtection();
-        $protection->setPassword($password);
-        $protection->setSheet(true);
-        $protection->setSort(true);
-        $protection->setInsertRows(true);
-        $protection->setFormatCells(true);
-
-        if(is_callable($callback)) {
-            call_user_func($callback, $protection);
-        }
-    }
-
-    /**
      * Return the start row
      * @return integer
      */
@@ -1184,9 +1165,6 @@ class LaravelExcelWorksheet extends PHPExcel_Worksheet {
                 $value
             );
         }
-
-        // Rebind the PhpExcel object to the style objects
-        $this->getStyle()->bindParent($this->getParent());
 
         return $this;
     }

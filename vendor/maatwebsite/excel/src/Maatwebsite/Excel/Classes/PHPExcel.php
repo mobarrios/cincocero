@@ -65,10 +65,10 @@ class PHPExcel extends PHPOffice_PHPExcel {
 
     /**
      * Set default properties
-     * @param array $custom
+     * @param string $custom
      * @return  void
      */
-    public function setDefaultProperties($custom = [])
+    public function setDefaultProperties($custom)
     {
         // Get the properties
         $properties = $this->getProperties();

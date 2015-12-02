@@ -51,6 +51,9 @@ class ExcelServiceProvider extends ServiceProvider {
 
         //Set the autosizing settings
         $this->setAutoSizingSettings();
+
+        // Register filters
+        $this->registerFilters();
     }
 
     /**
@@ -88,9 +91,7 @@ class ExcelServiceProvider extends ServiceProvider {
             $me->setCacheSettings();
 
             // Init phpExcel
-            $excel = new PHPExcel();
-            $excel->setDefaultProperties();
-            return $excel;
+            return new PHPExcel();
         });
     }
 
@@ -173,16 +174,12 @@ class ExcelServiceProvider extends ServiceProvider {
         // Bind the Excel class and inject its dependencies
         $this->app['excel'] = $this->app->share(function ($app)
         {
-            $excel = new Excel(
+            return new Excel(
                 $app['phpexcel'],
                 $app['excel.reader'],
                 $app['excel.writer'],
                 $app['excel.parsers.view']
             );
-
-            $excel->registerFilters($app['config']->get('excel.filters', array()));
-
-            return $excel;
         });
     }
 
@@ -224,6 +221,15 @@ class ExcelServiceProvider extends ServiceProvider {
     {
         $method = Config::get('excel.export.autosize-method', PHPExcel_Shared_Font::AUTOSIZE_METHOD_APPROX);
         PHPExcel_Shared_Font::setAutoSizeMethod($method);
+    }
+
+    /**
+     * Register filters
+     * @return void
+     */
+    public function registerFilters()
+    {
+        $this->app['excel']->registerFilters(Config::get('excel.filters', array()));
     }
 
     /**
