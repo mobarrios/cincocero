@@ -1738,14 +1738,17 @@ h5.thumb-title {
   font-size: 35px;
 }
 .post .post-desciption {
-  margin-bottom: 15px;
+  margin-bottom: 0;
+  color: #DD811E;
+
 }
 .post .post-meta {
   list-style: none;
   margin: 0 0 5px 0;
-  padding: 0 0 5px 0;
+  padding: 20px;
   border-bottom: 1px dashed #e6e6e6;
   display: table;
+  position:relative;
 }
 .post .post-meta li {
   display: inline-block;
@@ -1874,7 +1877,7 @@ body {
 }
 .top-area,
 .special-area {
-  height: 700px;
+  height: 400px;
   position: relative;
   overflow: hidden;
 }
@@ -2013,7 +2016,7 @@ body {
   z-index: 7;
 }
 .bg-holder > .bg-front {
-  top: 0;
+  top: 20%;
   left: 0;
   width: 100%;
   position: absolute;
@@ -9012,7 +9015,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .owl-controls .owl-buttons div {
   position: absolute;
-  top: 50%;
+  top: 30%;
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -9137,6 +9140,18 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   border-bottom: 1px solid rgba(255,255,255,0.2);
   border-top: 1px solid rgba(255,255,255,0.2);
   text-transform: uppercase;
+
+  z-index: 150;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  right: 0;
+  top: 20%;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 70px;
+  color: #ED8323;
+  text-shadow: 2px 2px #814814;
 }
 @media (max-width:992px) {
   .owl-cap-title {
@@ -9145,6 +9160,14 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .owl-cap-price {
   margin-bottom: 15px;
+  z-index: 150;
+  position: absolute;
+  left: 0px;
+  text-align: center;
+  right: 0px;
+  bottom: 10%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding:10px 0;
 }
 .owl-cap-price small {
   font-size: 20px;
@@ -9155,9 +9178,10 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .owl-cap-price h5 {
   font-size: 50px;
-  color: #ef8f39;
+  color: #ED8323;
   line-height: 1em;
-  margin: 0;
+  margin: ;
+  text-shadow: 2px 2px #814814;
 }
 .owl-cap-weather {
   opacity: 0.8;
@@ -10952,4 +10976,33 @@ img.mfp-img {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
+}
+
+.img-shadow{
+  border:1px solid #dd811e;
+  -webkit-box-shadow: 0 1px 1px 1px rgba(221, 129, 30, 0.59);
+  -moz-box-shadow: 0 1px 1px 1px rgba(221, 129, 30, 0.59);
+  box-shadow: 0 1px 1px 1px rgba(221, 129, 30, 0.59);
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+}
+
+.btn-noticia{
+  position: absolute;
+  right: 20px;
+  top: 40%;
+}
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+}
+
+.fa-blue{
+  color:#1B91C8 !important;
+}
+
+.fa-orange{
+  color: #dd811e !important;
 }

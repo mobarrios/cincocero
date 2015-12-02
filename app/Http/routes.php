@@ -12,7 +12,7 @@
 */
 //use App\Http\Controllers\Auth\AuthController ;
 //use Intervention\Image\ImageManagerStatic as Image;
-//use App\Helpers\ImagesHelper;
+use App\Helpers\ImagesHelper;
 
 
     // lista de empresas para mejorar acceso

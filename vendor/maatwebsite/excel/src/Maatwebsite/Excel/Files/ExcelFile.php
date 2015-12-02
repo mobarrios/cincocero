@@ -17,11 +17,6 @@ abstract class ExcelFile extends File {
     protected $enclosure;
 
     /**
-     * @var bool|string
-    */
-    protected $lineEnding;
-
-    /**
      * @param Application $app
      * @param Excel       $excel
      */
@@ -56,15 +51,6 @@ abstract class ExcelFile extends File {
     }
 
     /**
-     * Get line ending
-     * @return string
-     */
-    protected function getLineEnding()
-    {
-        return $this->lineEnding;
-    }
-
-    /**
      * Get filters
      * @return array
      */
@@ -78,7 +64,9 @@ abstract class ExcelFile extends File {
      */
     public function handleImport()
     {
-        return $this->handle('Import');
+        return $this->handle(
+            get_class($this)
+        );
     }
 
     /**
@@ -146,13 +134,6 @@ abstract class ExcelFile extends File {
         // Set it when given
         if($enclosure)
             $this->excel->setEnclosure($enclosure);
-
-        // Get user provided line ending
-        $lineEnding = $this->getLineEnding();
-
-        // Set it when given
-        if($lineEnding)
-            $this->excel->setLineEnding($lineEnding);
     }
 
     /**

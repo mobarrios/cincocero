@@ -1,52 +1,27 @@
 @extends('template.webTemplate')
     @section('slide')
-
-        <div class="top-area show-onload">
-            <div class="owl-carousel owl-slider owl-carousel-area" id="owl-carousel-slider">
-                <div class="bg-holder full text-center text-white">
-                    <div class="bg-mask"></div>
-                    <div class="bg-img" style="background-image:url(web/img/204804.png);"></div>
-                    <div class="bg-front full-center">
-                        <div class="owl-cap">
-                            <div class="owl-cap-weather">
-                            </div>
-                            <h5 class="owl-cap-title fittext">DESCUBRA LA RUTA DE LOS SABORES MISIONEROS</h5>
-                            <div class="owl-cap-price"><small></small>
-                                <h5>Gastronomia</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-holder full text-center text-white">
-                    <div class="bg-mask"></div>
-                    <div class="bg-img" style="background-image:url(web/img/204802.png);"></div>
-                    <div class="bg-front full-center">
-                        <div class="owl-cap">
-                            <div class="owl-cap-weather">
-                            </div>
-                            <h3 class="owl-cap-title fittext">EL CONFORT DE ALOJARSE EN IGUAZÚ</h3>
-                            <div class="owl-cap-price"><small></small>
-                                <h5>Hoteleria</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-holder full text-center text-white">
-                    <div class="bg-mask"></div>
-                    <div class="bg-img" style="background-image:url(web/img/204803.png);"></div>
-                    <div class="bg-front full-center">
-                        <div class="owl-cap">
-                            <div class="owl-cap-weather">
-                            </div>
-                            <h3 class="owl-cap-title fittext">DISFRUTAR UN BUEN MOMENTO EN UN BUEN LUGAR</h3>
-                            <div class="owl-cap-price">
-                                <h5>Naturaleza</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="parallax-window" data-parallax="scroll" data-image-src="web/img/204804.png" data-z-index="0">
+            <h5 class="owl-cap-title fittext">DESCUBRA LA RUTA DE LOS SABORES MISIONEROS</h5>
+            <div class="owl-cap-price"><small></small>
+                <h5>Gastronomia</h5>
             </div>
         </div>
+
+        {{--<div class="parallax-window" data-parallax="scroll" data-image-src="web/img/204802.png" data-z-index="0">--}}
+            {{--<h5 class="owl-cap-title fittext">EL CONFORT DE ALOJARSE EN IGUAZÚ</h5>--}}
+            {{--<div class="owl-cap-price"><small></small>--}}
+                {{--<h5>Hoteleria</h5>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+        {{--<div class="parallax-window" data-parallax="scroll" data-image-src="web/img/204803.png" data-z-index="0">--}}
+            {{--<h5 class="owl-cap-title fittext">DISFRUTAR UN BUEN MOMENTO EN UN BUEN LUGAR</h5>--}}
+            {{--<div class="owl-cap-price"><small></small>--}}
+                {{--<h5>Naturaleza</h5>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+
         <div class="bg-color text-white">
             <div class="container">
                 <div class="gap"></div>
@@ -96,13 +71,13 @@
             @foreach($noticias as $noticia)
 
                 <ul class="post-meta">
-                    <li><i class="fa fa-calendar"></i><a href="#">23 February, 2013</a>
+                    <li><i class="fa fa-calendar fa-blue"></i><a href="#">23 February, 2013</a>
                     </li>
-                    <li><i class="fa fa-user"></i><a href="#">Ahagai</a>
+                    <li><i class="fa fa-user fa-blue"></i><a href="#">Ahagai</a>
                     </li>
 
                     <div class="thumb col-xs-2">
-                        <a class="hover-img" href="#">
+                        <a class="hover-img img-shadow" href="#">
                             @if($noticia->images->count() != 0)
                                 <img src="{{$noticia->images->first()->image}}">
                             @endif
@@ -115,7 +90,7 @@
 
                     {{$noticia->copete}}
                     <br>
-                    <a class="btn btn-small btn-primary" href="{{route('news_detail',$noticia->id)}}">Leer</a>
+                    <a class="btn btn-small btn-primary btn-noticia" href="{{route('news_detail',$noticia->id)}}">Leer</a>
                 </ul>
 
 
