@@ -67,7 +67,7 @@ return [
         'user' => [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'base_admin',
+            'database'  => 'admin_ahgai',
             'username'  => 'root',
             'password'  => '',
             'charset'   => 'utf8',
