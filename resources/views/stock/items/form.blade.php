@@ -11,7 +11,7 @@
 
         {!! Form::textCustom('name', 'Articulo')!!}
 
-
+        {!! Form::selectCustom('brands_id', 'Marca',$brands)!!}
 
 
         {!! Form::imageCustom('image','Foto')!!}
