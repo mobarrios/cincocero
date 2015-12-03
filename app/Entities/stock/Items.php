@@ -7,7 +7,12 @@ class Items extends Entity{
 
     protected $table = 'items';
 
-    protected $fillable = ['name','nm'];
+    protected $fillable = ['name','brands_id'];
+
+    public function Brands()
+    {
+        return $this->belongsTo(Brands::getClass());
+    }
 
 
 }

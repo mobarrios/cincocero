@@ -63,12 +63,15 @@ class ModulesController extends Controller {
         return redirect()->back()->withErrors(trans('messages.changePermissions'));
     }
 
+<<<<<<< HEAD
     public function requestCustom($request = null)
     {
         $newRequest         = $request;
 
         return $newRequest;
     }
+=======
+>>>>>>> 8d992bd453566574574f3c8260413d8b8f8a2663
 
 
 

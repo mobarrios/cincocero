@@ -9,5 +9,10 @@ class Brands extends Entity{
 
     protected $fillable = ['name'];
 
+    public function Items()
+    {
+        return $this->hasMany(Items::getClass());
+    }
+
 
 }

@@ -46,6 +46,9 @@
                     <a  href="{{route('home')}}"><i class="fa fa-home fa-fw"></i></a>
                 </li>
 
+                <?php
+                    $roles = new App\Http\Repositories\config\ModulesRepo;
+                ?>
 
                 @foreach(\App\Entities\Menus::where('main',0)->get() as $menu)
 
@@ -56,7 +59,10 @@
                             </a>
                             <ul class="nav nav-second-level">
                                 @foreach(\App\Entities\Menus::where('main',$menu->id)->get() as $sub)
-                                    <li><a href="{{route($sub->routes)}}">{{$sub->name}}</a></li>
+
+                                    @if($roles->buscarRoles($sub->routes ,'list') == 1 )
+                                         <li><a href="{{route($sub->routes)}}">{{$sub->name}}</a></li>
+                                    @endif
                                 @endforeach
                             </ul>
                         </li>
