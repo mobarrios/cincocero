@@ -1670,7 +1670,7 @@ h5.thumb-title {
   color: #818181;
   line-height: 1.4em;
 }
-.thumb-caption btn {
+.thumb-caption .btn {
   margin-top: 7.5px;
 }
 .thumb-caption .thumb-social {
@@ -1740,7 +1740,8 @@ h5.thumb-title {
 .post .post-desciption {
   margin-bottom: 0;
   color: #DD811E;
-
+  font-size: 1.6em;
+  font-weight: 400;
 }
 .post .post-meta {
   list-style: none;
@@ -3404,7 +3405,7 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
   border-color: #373737;
 }
 .datepicker table tr td.selected:hover color: #ffffff,
-.datepicker table tr td.selected:hover:hover color: #ffffff,
+.datepicker table tr td.selected:hover:hover; color: #ffffff,
 .datepicker table tr td.selected.disabled:hover color: #ffffff,
 .datepicker table tr td.selected.disabled:hover:hover color: #ffffff,
 .datepicker table tr td.selected:focus color: #ffffff,
@@ -5167,11 +5168,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @-webkit-keyframes tada {
@@ -5208,11 +5209,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @-o-keyframes tada {
@@ -5249,11 +5250,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @-ms-keyframes tada {
@@ -5290,11 +5291,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @keyframes tada {
@@ -5331,11 +5332,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @-moz-keyframes swing {
@@ -8726,11 +8727,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @-moz-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -8743,11 +8744,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @-webkit-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -8760,11 +8761,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @-o-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -8777,11 +8778,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @-ms-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -8794,11 +8795,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -11005,4 +11006,67 @@ img.mfp-img {
 
 .fa-orange{
   color: #dd811e !important;
+}
+
+@media (max-width: 768px) {
+  .btn-noticia{
+    position: inherit;
+    margin-top: 15px;
+    float:right;
+  }
+}
+
+
+.post-meta .thumb{
+  margin-top:-50px;
+}
+
+
+.visible-xxs{
+  display: none;
+}
+
+@media (min-width: 321px) and (max-width: 768px){
+  .visible-xxs{
+    display: block;
+  }
+
+  .post-meta{
+    text-align:center;
+  }
+
+  .post-meta>div{
+    text-align:center;
+  }
+
+  .btn-noticia{
+    position: inherit;
+    margin:auto;
+    margin-top: 15px;
+    float:none;
+    right:auto;
+  }
+}
+
+@media (max-width: 320px){
+  .visible-xxs{
+    display:block !important;
+  }
+
+  .post-meta{
+    text-align:center;
+  }
+
+  .post-meta>div{
+    text-align:left;
+  }
+
+  .btn-noticia{
+    position: inherit;
+    margin:auto;
+    margin-top: 15px;
+    float:none;
+    right:auto;
+  }
+
 }

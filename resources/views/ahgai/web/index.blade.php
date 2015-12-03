@@ -69,24 +69,32 @@
                 <h4 class="post-title"><a class="text-darken" href="#">Ultimas Noticias</a></h4>
 
             @foreach($noticias as $noticia)
-
-                <ul class="post-meta">
-                    <li><i class="fa fa-calendar fa-blue"></i><a href="#">23 February, 2013</a>
-                    </li>
-                    <li><i class="fa fa-user fa-blue"></i><a href="#">Ahagai</a>
-                    </li>
-
-                    <div class="thumb col-xs-2">
+                <div class="thumb col-xs-10 col-xs-offset-1 visible-xxs">
+                    <a class="hover-img img-shadow" href="#">
+                        @if($noticia->images->count() != 0)
+                            <img src="{{$noticia->images->first()->image}}" class="img-responsive">
+                        @endif
+                    </a>
+                </div>
+                <ul class="post-meta col-xs-12">
+                    <h5 class="post-desciption col-sm-offset-4 col-sm-8">
+                        {{$noticia->title}}
+                    </h5>
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <li><i class="fa fa-calendar fa-blue"></i><a href="#">23 February, 2013</a>
+                        </li>
+                        <li><i class="fa fa-user fa-blue"></i><a href="#">Ahagai</a>
+                        </li>
+                    </div>
+                    <div class="thumb col-sm-4 hidden-xs">
                         <a class="hover-img img-shadow" href="#">
                             @if($noticia->images->count() != 0)
-                                <img src="{{$noticia->images->first()->image}}">
+                                <img src="{{$noticia->images->first()->image}}" class="img-responsive">
                             @endif
                         </a>
                     </div>
 
-                    <h5 class="post-desciption">
-                        {{$noticia->title}}
-                    </h5>
+                    <br>
 
                     {{$noticia->copete}}
                     <br>
