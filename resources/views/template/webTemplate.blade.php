@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="web/css/icomoon.css">
     <link rel="stylesheet" href="web/css/styles.css">
     <link rel="stylesheet" href="web/css/mystyles.css">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+
     <script src="web/js/modernizr.js"></script>
     <style type="text/css">
         .owl-cap-title
@@ -25,6 +29,8 @@
             font-size: 30px;
         }
     </style>
+
+
 
 </head>
 
@@ -80,6 +86,7 @@
 <script src="web/js/gridrotator.js"></script>
 <script src="web/js/custom.js"></script>
 
+<script src="web/js/parallax.js"></script>
 
 
 </body>

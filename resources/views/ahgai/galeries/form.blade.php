@@ -11,8 +11,10 @@
         {!! Form::textCustom('name', 'Nombre Foto')!!}
 
 
-        {!! Form::imageCustom('image','Fotos') !!}
+        {!! Form::selectCustom('brands_id', 'Marca',$brands)!!}
 
+
+        {!! Form::imageCustom('image','Foto')!!}
 
         <hr>
 

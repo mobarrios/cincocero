@@ -42,9 +42,11 @@
                             @if(is_null($model->$column['data']))
                                <td></td>
                             @else
-                                <td>
+                                <td style="width: 15%;">
                                     @foreach($model->$column['data'] as $image)
-                                        <img class="thumbnail" src="{{$image->image}}" width="50px">
+                                            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
+                                                 <img width="100%;" src="{{$image->image}}" >
+                                            </a>
                                     @endforeach
                                 </td>
                             @endif

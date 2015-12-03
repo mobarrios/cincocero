@@ -1670,7 +1670,7 @@ h5.thumb-title {
   color: #818181;
   line-height: 1.4em;
 }
-.thumb-caption btn {
+.thumb-caption .btn {
   margin-top: 7.5px;
 }
 .thumb-caption .thumb-social {
@@ -1738,14 +1738,18 @@ h5.thumb-title {
   font-size: 35px;
 }
 .post .post-desciption {
-  margin-bottom: 15px;
+  margin-bottom: 0;
+  color: #DD811E;
+  font-size: 1.6em;
+  font-weight: 400;
 }
 .post .post-meta {
   list-style: none;
   margin: 0 0 5px 0;
-  padding: 0 0 5px 0;
+  padding: 20px;
   border-bottom: 1px dashed #e6e6e6;
   display: table;
+  position:relative;
 }
 .post .post-meta li {
   display: inline-block;
@@ -1874,7 +1878,7 @@ body {
 }
 .top-area,
 .special-area {
-  height: 700px;
+  height: 400px;
   position: relative;
   overflow: hidden;
 }
@@ -2013,7 +2017,7 @@ body {
   z-index: 7;
 }
 .bg-holder > .bg-front {
-  top: 0;
+  top: 20%;
   left: 0;
   width: 100%;
   position: absolute;
@@ -3401,7 +3405,7 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
   border-color: #373737;
 }
 .datepicker table tr td.selected:hover color: #ffffff,
-.datepicker table tr td.selected:hover:hover color: #ffffff,
+.datepicker table tr td.selected:hover:hover; color: #ffffff,
 .datepicker table tr td.selected.disabled:hover color: #ffffff,
 .datepicker table tr td.selected.disabled:hover:hover color: #ffffff,
 .datepicker table tr td.selected:focus color: #ffffff,
@@ -5164,11 +5168,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @-webkit-keyframes tada {
@@ -5205,11 +5209,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @-o-keyframes tada {
@@ -5246,11 +5250,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @-ms-keyframes tada {
@@ -5287,11 +5291,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @keyframes tada {
@@ -5328,11 +5332,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   }
 
   100% {
-    -webkit-transform: scale(1) rotate(0);
-    -moz-transform: scale(1) rotate(0);
-    -o-transform: scale(1) rotate(0);
-    -ms-transform: scale(1) rotate(0);
-    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 @-moz-keyframes swing {
@@ -8723,11 +8727,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @-moz-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -8740,11 +8744,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @-webkit-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -8757,11 +8761,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @-o-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -8774,11 +8778,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @-ms-keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -8791,11 +8795,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 @keyframes spinner {
   0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
@@ -9012,7 +9016,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .owl-controls .owl-buttons div {
   position: absolute;
-  top: 50%;
+  top: 30%;
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -9137,6 +9141,18 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   border-bottom: 1px solid rgba(255,255,255,0.2);
   border-top: 1px solid rgba(255,255,255,0.2);
   text-transform: uppercase;
+
+  z-index: 150;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  right: 0;
+  top: 20%;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 70px;
+  color: #ED8323;
+  text-shadow: 2px 2px #814814;
 }
 @media (max-width:992px) {
   .owl-cap-title {
@@ -9145,6 +9161,14 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .owl-cap-price {
   margin-bottom: 15px;
+  z-index: 150;
+  position: absolute;
+  left: 0px;
+  text-align: center;
+  right: 0px;
+  bottom: 10%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding:10px 0;
 }
 .owl-cap-price small {
   font-size: 20px;
@@ -9155,9 +9179,10 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .owl-cap-price h5 {
   font-size: 50px;
-  color: #ef8f39;
+  color: #ED8323;
   line-height: 1em;
-  margin: 0;
+  margin: ;
+  text-shadow: 2px 2px #814814;
 }
 .owl-cap-weather {
   opacity: 0.8;
@@ -10952,4 +10977,96 @@ img.mfp-img {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
+}
+
+.img-shadow{
+  border:1px solid #dd811e;
+  -webkit-box-shadow: 0 1px 1px 1px rgba(221, 129, 30, 0.59);
+  -moz-box-shadow: 0 1px 1px 1px rgba(221, 129, 30, 0.59);
+  box-shadow: 0 1px 1px 1px rgba(221, 129, 30, 0.59);
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+}
+
+.btn-noticia{
+  position: absolute;
+  right: 20px;
+  top: 40%;
+}
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+}
+
+.fa-blue{
+  color:#1B91C8 !important;
+}
+
+.fa-orange{
+  color: #dd811e !important;
+}
+
+@media (max-width: 768px) {
+  .btn-noticia{
+    position: inherit;
+    margin-top: 15px;
+    float:right;
+  }
+}
+
+
+.post-meta .thumb{
+  margin-top:-50px;
+}
+
+
+.visible-xxs{
+  display: none;
+}
+
+@media (min-width: 321px) and (max-width: 768px){
+  .visible-xxs{
+    display: block;
+  }
+
+  .post-meta{
+    text-align:center;
+  }
+
+  .post-meta>div{
+    text-align:center;
+  }
+
+  .btn-noticia{
+    position: inherit;
+    margin:auto;
+    margin-top: 15px;
+    float:none;
+    right:auto;
+  }
+}
+
+@media (max-width: 320px){
+  .visible-xxs{
+    display:block !important;
+  }
+
+  .post-meta{
+    text-align:center;
+  }
+
+  .post-meta>div{
+    text-align:left;
+  }
+
+  .btn-noticia{
+    position: inherit;
+    margin:auto;
+    margin-top: 15px;
+    float:none;
+    right:auto;
+  }
+
 }
