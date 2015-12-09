@@ -50,9 +50,13 @@
 
     </div>
 
+    @yield('pre-footer')
+
     <div class="gap gap-small"></div>
 
+
 </div>
+
 
 
 <div>

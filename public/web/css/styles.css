@@ -1742,7 +1742,15 @@ h5.thumb-title {
   color: #DD811E;
   font-size: 1.6em;
   font-weight: 400;
+  margin-left: 24%;
+  width: 76%;
 }
+
+.post .post-desciption + div{
+  margin-left: 24%;
+  width: 76%;
+}
+
 .post .post-meta {
   list-style: none;
   margin: 0 0 5px 0;
@@ -9135,11 +9143,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .owl-cap-title {
   line-height: 1em;
   font-size: 120px;
-  display: table;
-  margin: 10px auto;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  border-top: 1px solid rgba(255,255,255,0.2);
   text-transform: uppercase;
 
   z-index: 150;
@@ -9149,10 +9153,10 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   right: 0;
   top: 20%;
   font-weight: 400;
-  background-color: rgba(255, 255, 255, 0.5);
   padding: 10px 70px;
-  color: #ED8323;
-  text-shadow: 2px 2px #814814;
+  color: white;
+  /*text-shadow: 2px 2px white;*/
+  margin: 10px auto;
 }
 @media (max-width:992px) {
   .owl-cap-title {
@@ -9167,7 +9171,6 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   text-align: center;
   right: 0px;
   bottom: 10%;
-  background-color: rgba(255, 255, 255, 0.5);
   padding:10px 0;
 }
 .owl-cap-price small {
@@ -9179,10 +9182,8 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .owl-cap-price h5 {
   font-size: 50px;
-  color: #ED8323;
+  color: white;
   line-height: 1em;
-  margin: ;
-  text-shadow: 2px 2px #814814;
 }
 .owl-cap-weather {
   opacity: 0.8;
