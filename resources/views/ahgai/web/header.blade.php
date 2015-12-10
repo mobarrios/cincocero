@@ -16,7 +16,7 @@
         <div class="nav">
             <ul class="slimmenu" id="slimmenu">
                 <li><a href="{{route('webHome')}}">Home</a></li>
-                <li><a href="">Institucional</a></li>
+                <li><a href="{{route('institucional')}}">Institucional</a></li>
                 <li><a href="{{route('hoteleria')}}">Hoteleria</a></li>
                 <li><a href="">Gastronomia</a></li>
                 <li><a href="{{route('galery')}}">Galeria</a></li>

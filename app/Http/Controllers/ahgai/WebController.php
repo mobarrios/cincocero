@@ -43,4 +43,9 @@ class WebController extends Controller
         $data['galeries'] = Galeries::all();
         return view('ahgai.web.galery')->with($data);
     }
+
+    public function  getInstitucional()
+    {
+        return view('ahgai.web.institucional');
+    }
 }
