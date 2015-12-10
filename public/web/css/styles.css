@@ -535,10 +535,14 @@ blockquote:before {
 .row[data-gutter="60"] {
   margin-left: -30px;
   margin-right: -30px;
+  text-align:center;
 }
 .row[data-gutter="60"] > [class^="col-"] {
   padding-left: 30px;
   padding-right: 30px;
+  display: inline-block;
+  vertical-align: top;
+  float: none;
 }
 .row[data-gutter="120"] {
   margin-left: -60px;
