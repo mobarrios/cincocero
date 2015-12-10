@@ -1,7 +1,6 @@
 @extends('template.webTemplate')
 
     @section('content')
-
         <div class="container">
             <h4 class="page-title">Hoteleria</h4>
         </div>
@@ -9,12 +8,12 @@
         <div class="row row-wrap">
 
             @foreach($hoteles  as $hotel)
-
+                {{dd($hotel)}}
                 <div class="col-md-3">
                     <div class="thumb">
                         <a class="hover-img" href="#">
                             <img src="{{$hotel->images->first()->image}}" alt="Image Alternative text" title="{{$hotel->name}}" />
-                            <div class="hover-inner hover-inner-block hover-inner-bottom hover-inner-bg-black hover-hold">
+                                <div class="hover-inner hover-inner-block hover-inner-bottom hover-inner-bg-black hover-hold">
                                 <div class="text-small">
                                     <h5>{{$hotel->name}}</h5>
                                     <p>{{$hotel->address}}</p>
