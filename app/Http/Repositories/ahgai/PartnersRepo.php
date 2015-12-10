@@ -52,10 +52,12 @@ class PartnersRepo extends BaseRepo {
             [
                 //'Imagen' =>    ['data' => 'images','relation'=> null],
                 //'Codigo' =>    ['data' => 'code','relation' => null],
+
                 'Apellido' =>  ['data' => 'last_name','relation' => null],
                 'Nombre' =>  ['data' => 'name','relation' => null],
                 'Mail' =>  ['data' => 'mail','relation' => null],
 
+                'Comercio' => ['data' => 'Establecimientos' , 'relation' => 'name' ],
 
                 //'Desc.' =>     ['data' => 'description','relation' => null],
 

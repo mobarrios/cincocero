@@ -34,6 +34,7 @@
                 @foreach($tableHeader['columns'] as $column)
 
                     @if(!is_null($column['relation']))
+
                         <td>{{$model->$column['data']->$column['relation']}}</td>
                     @else
 

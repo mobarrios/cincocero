@@ -5,8 +5,10 @@ namespace App\Http\Controllers\ahgai;
 use App\Entities\ahgai\Establecimientos;
 use App\Entities\ahgai\Partners;
 
+use App\Helpers\ImagesHelper;
 use App\Http\Repositories\ahgai\PartnersRepo as Repo;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 
 class PartnersController extends Controller {
@@ -58,12 +60,30 @@ class PartnersController extends Controller {
         $this->data['routePostEdit']= $module.'PostEdit';
 
     }
-    public function requestCustom($request = null)
-    {
-        $newRequest         = $request;
-      //  $newRequest['nm']   = 'dadas';
 
-        return $newRequest;
+
+    // post new item
+    public function postNew(Request $request, ImagesHelper $image)
+    {
+
+
+        // validation rules form repo
+        $this->validate($request, $this->rules);
+
+        // method crear in repo
+        $model = $this->repo->create($request)->Establecimientos()->attach($request->establecimientos_id);
+
+
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);
+        }
+
+        // redirect with errors messages language
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+
     }
 
 
