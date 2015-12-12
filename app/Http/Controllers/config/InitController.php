@@ -34,7 +34,7 @@ class InitController extends Controller {
 
     public function getUpdate()
     {
-        $this->schemaCreate(Config('ahgai.ahgaiDb'));
+        $this->schemaCreate(Config('master.dataBase'));
 
     }
 
