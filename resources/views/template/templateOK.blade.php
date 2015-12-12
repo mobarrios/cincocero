@@ -23,13 +23,11 @@
 
     <div class="content">
         @include('messages')
-        <div class="col-xs-12 col-lg-2" >
-            @yield('side')
-        </div>
 
-
-            <div class="col-xs-12 col-lg-10">
-                @yield('mainContent')
+            <div class=" col-xs-12 ">
+                <div class="panel panel-default">
+                 @yield('mainContent')
+                </div>
             </div>
     </div>
 

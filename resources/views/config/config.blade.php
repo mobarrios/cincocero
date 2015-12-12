@@ -1,4 +1,4 @@
-@extends('template/template')
+@extends('template/templateOK')
 
 @section('menu')
     @include('config/navBarConfig')
@@ -6,18 +6,17 @@
 
 @section('mainContent')
 
-    <div class="row">
-        <div class="col-xs-12">
-            <h4 class="page-header">{{$sectionName}}</h4>
-        </div>
-        <div class="col-xs-12">
+
+
+    <div class=" panel-heading">{{$sectionName}}</div>
+        <div class="panel panel-body">
 
            DATABASE : {{\Illuminate\Support\Facades\Auth::user()->db}}
 
-
             @yield('content')
         </div>
-    </div>
+
+
 
 @endsection
 @stop

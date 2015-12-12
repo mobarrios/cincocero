@@ -11,7 +11,7 @@
         {!! Form::textCustom('name', 'Menu')!!}
 
         {!! Form::selectCustom('main', 'Main', $main ) !!}
-        {!! Form::textCustom('routes', 'Menu')!!}
+        {!! Form::textCustom('routes', 'Ruta')!!}
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
