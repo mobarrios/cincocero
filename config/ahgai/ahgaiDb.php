@@ -29,9 +29,13 @@ return array(
         'name' => ['string','100'],
         'last_name' => ['string','100'],
         'phone' => ['string','50'],
-        'mail' =>           ['string','50'],
+        'mail' =>  ['string','50'],
+            'relations' => [
+                'establecimientos_id' => ['establecimientos','id']
+            ],
         ],
 
+    /*
     'partners_establecimientos' =>
         [
             'relations' =>
@@ -40,7 +44,7 @@ return array(
                     'establecimientos_id'=>['establecimientos','id']
                 ],
         ],
-
+    */
 
     'galeries' =>
         [

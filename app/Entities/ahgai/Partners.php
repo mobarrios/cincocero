@@ -7,13 +7,12 @@ class Partners extends Entity{
 
     protected $table = 'partners';
 
-    protected $fillable = ['name','last_name','phone','mail'];
-
+    protected $fillable = ['name','last_name','phone','mail','establecimientos_id'];
 
 
     public function Establecimientos()
     {
-        return $this->belongsToMany(Establecimientos::getClass(),'partners_establecimientos');
+        return $this->belongsTo(Establecimientos::getClass());
     }
 
 }

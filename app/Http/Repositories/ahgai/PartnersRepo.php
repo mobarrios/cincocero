@@ -29,7 +29,8 @@ class PartnersRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'last_name'   => 'required',
-            'mail'   => 'required',
+            'mail'   => 'required|unique:users,email',
+            'establecimientos_id' => 'required',
 
         ];
     }
@@ -41,6 +42,7 @@ class PartnersRepo extends BaseRepo {
             'name'      => 'required',
             'last_name'  => 'required',
             'mail'      => 'required',
+            'establecimientos_id' => 'required',
         ];
     }
 
@@ -57,9 +59,8 @@ class PartnersRepo extends BaseRepo {
                 'Nombre' =>  ['data' => 'name','relation' => null],
                 'Mail' =>  ['data' => 'mail','relation' => null],
 
-                'Comercio' => ['data' => 'Establecimientos' , 'relation' => 'name' ],
+                'Comercio' => ['data' => 'Establecimientos' , 'relation' => 'name'],
 
-                //'Desc.' =>     ['data' => 'description','relation' => null],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

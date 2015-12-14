@@ -14,4 +14,11 @@ class Establecimientos extends Entity{
     {
         return $this->belongsTo(Categories::getClass());
     }
+
+    public function Partners()
+    {
+        return $this->hasMany(Partners::getClass());
+    }
+
+
 }

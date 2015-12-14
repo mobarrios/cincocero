@@ -54,7 +54,8 @@
 
                         @else
 
-                              <td>{{$model->$column['data']}}</td>
+                                 <td>{{$model->$column['data']}}</td>
+
                          @endif
                     @endif
 
