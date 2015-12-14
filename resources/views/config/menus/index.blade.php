@@ -8,26 +8,26 @@
             </div>
             <hr>
             <div class="col-xs-12">
+
                 @foreach($models as $model)
-                    @if($model->routes == '' )
+                    <div class="list-group">
+                        @if($model->routes == '' )
+                            <div  class="list-group-item active"> {{$model->name}} <a href="{{route('menusGetDel',$model->id)}}" class="delete btn btn-xs pull-right">Borrar</a> <a href="{{route('menusGetEdit',$model->id)}}"  class="btn btn-xs pull-right">Editar</a></div>
 
+                            @foreach(\App\Entities\Menus::where('main',$model->id)->get() as $sub)
+                                <div  class="list-group-item">{{$sub->name}}  <a href="{{route('menusGetDel',$sub->id)}}" class="delete btn btn-xs pull-right">Borrar</a> <a href="{{route('menusGetEdit',$sub->id)}}"  class="btn btn-xs pull-right">Editar</a> </div>
+                            @endforeach
 
-                           <ul> {{$model->name}}
-                        @foreach(\App\Entities\Menus::where('main',$model->id)->get() as $sub)
-                             <li> {{$sub->name}}</li>
-                        @endforeach
+                        @else
+                            @if($model->main == 0)
+                                <div  class="list-group-item active"> {{$model->name}}<a href="{{route('menusGetDel',$model->id)}}" class="delete btn btn-xs pull-right">Borrar</a> <a href="{{route('menusGetEdit',$model->id)}}"  class="btn btn-xs pull-right">Editar</a> </div>
 
-                            </ul>
-
-                    @else
-                        @if($model->main == 0)
-                            <ul>
-
-                            {{$model->name}}
-                            </ul>
+                            @endif
                         @endif
-                    @endif
+                    </div>
                 @endforeach
+
+
 
 
             </div>
