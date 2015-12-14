@@ -7,6 +7,8 @@ Route::get('institucional',['as'=>'institucional','uses'=>'\App\Http\Controllers
 
 Route::get('hoteleria',['as'=>'hoteleria','uses'=>'\App\Http\Controllers\ahgai\WebController@getHoteleriaIndex']);
 
+Route::get('gastronomia',['as'=>'gastronomia','uses'=>'\App\Http\Controllers\ahgai\WebController@getGastronomiaIndex']);
+
 Route::get('galeria',['as'=>'galery','uses'=>'\App\Http\Controllers\ahgai\WebController@getGaleryIndex']);
 
 Route::get('noticia/{id}',['as'=>'news_detail','uses'=>'\App\Http\Controllers\ahgai\WebController@getNewsDetail']);

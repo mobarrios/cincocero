@@ -2,7 +2,7 @@
 
     @section('content')
         <div class="container">
-            <h4 class="page-title">Hoteleria</h4>
+            <h4 class="page-title">Gastronomia</h4>
         </div>
 
         <div class="container">
@@ -108,22 +108,22 @@
             <div class="gap gap-small"></div>
         </div>
 
-        <h3 class="mb20">Hoteles 5 Estrellas</h3>
+        <h3 class="mb20">Categoria gastronómica</h3>
 
         <div class="row row-wrap">
 
-            @foreach($hoteles  as $hotel)
+        @foreach($gastronomia  as $gastro)
 
-                <div class="col-md-3">
+            <div class="col-md-3">
                     <div class="thumb">
                         <a class="hover-img" href="#">
                             {{--<img src="web/img/h02.jpg" alt="Hotel 2" title="{{$hotel->name}}" />--}}
-                            <img src="{{$hotel->images->first()->image}}" alt="Image Alternative text" title="{{$hotel->name}}" />
+                            <img src="{{$gastro->images->first()->image}}" alt="Image Alternative text" title="{{$gastro->name}}" />
                                 <div class="hover-inner hover-inner-block hover-inner-bottom hover-inner-bg-black hover-hold">
                                 <div class="text-small">
-                                    <h5>{{$hotel->name}}</h5>
-                                    <p>{{$hotel->address}}</p>
-                                    <p class="mb0">{{$hotel->web}}</p>
+                                    <h5>{{$gastro->name}}</h5>
+                                    <p>{{$gastro->address}}</p>
+                                    <p class="mb0">{{$gastro->web}}</p>
                                 </div>
                             </div>
                         </a>

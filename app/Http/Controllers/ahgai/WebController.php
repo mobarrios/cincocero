@@ -38,6 +38,13 @@ class WebController extends Controller
         return view('ahgai.web.hoteleria')->with($data);
     }
 
+    public function getGastronomiaIndex()
+    {
+        $data['gastronomia'] = Establecimientos::all();
+
+        return view('ahgai.web.gastronomia')->with($data);
+    }
+
     public function getGaleryIndex()
     {
         $data['galeries'] = Galeries::all();
