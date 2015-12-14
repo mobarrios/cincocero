@@ -20,8 +20,7 @@
                 <li><a href="{{route('hoteleria')}}">Hoteleria</a></li>
                 <li><a href="{{route('gastronomia')}}">Gastronomia</a></li>
                 <li><a href="{{route('galery')}}">Galeria</a></li>
-
-                <li><a href="">Contactanos</a></li>
+                <li><a href="{{route('contacto')}}">Contactanos</a></li>
             </ul>
         </div>
     </div>

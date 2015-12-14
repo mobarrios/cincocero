@@ -8,6 +8,7 @@ use App\Entities\ahgai\Galeries;
 use App\Entities\ahgai\News;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
@@ -54,5 +55,16 @@ class WebController extends Controller
     public function  getInstitucional()
     {
         return view('ahgai.web.institucional');
+    }
+
+    public function  getContacto()
+    {
+        return view('ahgai.web.contacto');
+    }
+
+    public function getMail(Request $request)
+    {
+        echo "Envio de mail con los datos de :";
+        dd($request->request);
     }
 }
