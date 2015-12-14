@@ -46,14 +46,16 @@
     <!-- Page Content -->
     <div id="page-wrapper">
         <div class="container-fluid">
-            @include('messages')
+
 
             <div class="row">
                 <div class="col-lg-12">
                     @yield('mainContent')
+                    @include('messages')
 
                 </div>
                 <!-- /.col-lg-12 -->
+
             </div>
             <!-- /.row -->
         </div>

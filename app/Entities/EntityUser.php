@@ -19,7 +19,7 @@ class EntityUser extends Model {
 
     public function __construct()
     {
-      //  DB::setDefaultConnection('user');
+        DB::setDefaultConnection('user');
     }
 
     public static function getClass()
@@ -41,6 +41,7 @@ class EntityUser extends Model {
 
 
     }
+
 
 
 }

@@ -59,9 +59,11 @@ class UserRepo extends BaseRepo {
         return [
             'name'          => 'required',
             'last_name'     => 'required',
-            //'email'         => 'required|unique:users,email',
+           // 'email'         => 'required|unique:users,email',
             'password'      => 'required|between:4,20|confirmed',
             'password_confirmation' =>'required',
+           // 'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+
 
         ];
     }
@@ -71,8 +73,31 @@ class UserRepo extends BaseRepo {
         return [
             'name'          => 'required',
             'last_name'     => 'required',
+
+
             //'password'      =>'required|between:4,20|confirmed',
             //'password_confirmation' =>'required',
+        ];
+    }
+
+    public function RulesPassword()
+    {
+        return [
+            //'name'          => 'required',
+            //'last_name'     => 'required',
+            'password'              =>'required|between:4,20|confirmed',
+            'password_confirmation' =>'required',
+        ];
+    }
+
+    public function RulesImages()
+    {
+        return [
+            //'name'          => 'required',
+            //'last_name'     => 'required',
+            //'password'              =>'required|between:4,20|confirmed',
+            //'password_confirmation' =>'required',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
         ];
     }
 

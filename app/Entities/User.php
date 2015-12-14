@@ -50,8 +50,9 @@ class User extends EntityUser implements AuthenticatableContract, CanResetPasswo
     public function Perfil()
     {
 
-        Config::set('database.connections.mysql.database', Auth::user()->db);
+        //Config::set('database.connections.mysql.database', Auth::user()->db);
+        DB::setDefaultConnection('mysql');
 
-       return $this->belongsTo(Profile::getClass(),'profiles_id');
+       return $this->belongsTo(\App\Entities\Profile::getClass(),'profiles_id');
     }
 }
