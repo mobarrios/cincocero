@@ -57,24 +57,12 @@ class ProfilesController extends Controller {
 
     }
 
-    public function userProfileEdit()
-    {
-        $this->data['model'] = Auth::user();
-
-        return view('config.users.userProfile')->with($this->data);
-    }
 
     //delete item
     public function getDel($id)
     {
-
         $this->repo->delete($id);
-
         Permissions::where('profiles_id',$id)->delete();
-
-
-
-
         return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
     }
 

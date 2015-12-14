@@ -3,13 +3,15 @@
     @section('content')
 
         @if(isset($model))
-            {!! Form::model($model, ['route'=>[$routePostEdit,$model->id]])!!}
+            {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'])!!}
 
             {{\Illuminate\Support\Facades\Hash::make($model->id)}}
         @else
-            {!! Form::open(['route' => $routePostNew ]) !!}
+            {!! Form::open(['route' => $routePostNew ,'files' =>'true']) !!}
         @endif
 
+
+        {!! Form::hidden('old_email',$model->email)!!}
 
         {!! Form::label('Nombre') !!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}
