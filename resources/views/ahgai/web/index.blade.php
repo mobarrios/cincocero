@@ -53,7 +53,7 @@
         </div>
     @endsection
     @section('content')
-        <div class="col-sm-6 col-sm-offset-3 col-md-3" style="margin-top: 25px;">
+        <div class="col-sm-4 col-md-3" style="margin-top: 25px;">
         <h5 class="text-center">Consultar disponibilidad</h5>
             <div class="booking-item-dates-change">
                 <form>
