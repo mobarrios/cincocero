@@ -1,0 +1,1825 @@
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+
+
+
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1120px) {
+	
+.wrapper {
+    width: 960px;
+}
+
+#top-contact-info ul li {
+    margin: 0 0 0 15px;
+}
+#main-menu {
+    display: none;
+}
+#main-nav > i,
+.mobile-menu-wrapper {
+    display: block;
+}
+.punica-home-slider.loading {
+    min-height: 380px;
+}
+.center-col {
+    width: 522px;
+}
+.widget-area-6 .punica-entry-list-widget > ul > li {
+    width: 163px;
+}
+.punica-home-2 .center-col {
+    width: 460px;
+}
+.punica-featured-news-slider.loading {
+    background-position: center 150px;
+}
+.punica-top-banner {
+    width: 528px;
+}
+.punica-home-3 .center-col,
+.punica-home-6 .center-col,
+.punica-one-sidebar .center-col {
+    width: 640px;
+}
+.punica-home-3 .punica-featured-news-slider .flex-direction-nav a {
+    top: 180px;
+}
+.punica-home-6 .sidebar {
+    width: 321px;
+}
+.punica-featured-news-slider .flex-direction-nav a {
+    top: 140px;
+}
+.tagline-box ul li {
+    margin: 0 0 0 10px;
+}
+.punica-flex-shop-slider ul li .entry-content .more-link {
+    display: none;
+}
+.punica-flex-shop-slider ul li .entry-content h2 {
+    margin: 0;
+}
+.punica-flex-shop-slider ul li .entry-content {
+    padding: 20px 20px 15px;
+}
+.punica-shop-slider-widget .entry-content, .punica-featured-shop-widget .older-post li .entry-content {
+    bottom: 20px;
+}
+.punica-entry-list li .entry-thumb {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.punica-entry-list-2 .element {
+    width: 418px;
+}
+#comments .comments-list .children {
+    margin-left: 0;
+}
+#comments-form .input-block, #contact-form .input-block {
+    width: 100%;
+}
+.punica-entry-box-slider.loading {
+    min-height: 380px;
+}
+.punica-header-3 .punica-header-middle .punica-adv-widget a img {
+    width: 100%;
+}
+.punica-article-nothumb-widget > ul > li header .entry-categories {
+    text-align: right;
+}
+.punica-article-nothumb-widget > ul > li header .entry-categories strong {
+    text-align: center;
+}
+.punica-footer-3 .widget-area-6 .punica-entry-list-widget > ul {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.punica-left-col {
+    width: 775px;
+}
+.elements-box .punica-button {
+    margin-bottom: 5px;
+}
+.punica-featured-news-widget .older-post li {
+    width: 50%;
+}
+.widget-area-12 {
+    margin-right: 0;
+}
+.widget-area-12, .widget-area-13,
+.punica-home-2 .widget-area-12, .punica-home-2 .widget-area-13 {
+    width: 100%;
+}
+
+
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1023px) {
+	
+.wrapper {
+    width: 920px;
+}
+
+#top-contact-info ul li {
+    margin: 0 0 0 15px;
+}
+#main-menu {
+    display: none;
+}
+#main-nav > i,
+.mobile-menu-wrapper {
+    display: block;
+}
+.punica-home-slider.loading {
+    min-height: 360px;
+}
+.center-col {
+    width: 482px;
+}
+.widget-area-6 .punica-entry-list-widget > ul > li {
+    width: 156px;
+}
+.punica-home-2 .center-col {
+    width: 420px;
+}
+.punica-featured-news-slider.loading {
+    background-position: center 150px;
+}
+.punica-top-banner {
+    width: 528px;
+}
+.punica-home-3 .center-col,
+.punica-home-6 .center-col,
+.punica-one-sidebar .center-col {
+    width: 600px;
+}
+.punica-home-3 .punica-featured-news-slider .flex-direction-nav a {
+    top: 160px;
+}
+.punica-home-6 .sidebar {
+    width: 321px;
+}
+.punica-featured-news-slider .flex-direction-nav a {
+    top: 105px;
+}
+.tagline-box ul li {
+    margin: 10px 0 0;
+    display: block;
+}
+.punica-flex-shop-slider ul li .entry-content .more-link {
+    display: none;
+}
+.punica-flex-shop-slider ul li .entry-content h2 {
+    margin: 0;
+}
+.punica-flex-shop-slider ul li .entry-content {
+    padding: 20px 20px 15px;
+}
+.punica-shop-slider-widget .entry-content, .punica-featured-shop-widget .older-post li .entry-content {
+    bottom: 20px;
+}
+.punica-entry-list li .entry-thumb {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.punica-entry-list-2 .element {
+    width: 378px;
+}
+#comments .comments-list .children {
+    margin-left: 0;
+}
+#comments-form .input-block, #contact-form .input-block {
+    width: 100%;
+}
+.punica-entry-box-slider.loading {
+    min-height: 340px;
+}
+.punica-header-3 .punica-header-middle .punica-adv-widget a img {
+    width: 100%;
+}
+.punica-article-nothumb-widget > ul > li header .entry-categories {
+    text-align: right;
+}
+.punica-article-nothumb-widget > ul > li header .entry-categories strong {
+    text-align: center;
+}
+.punica-footer-3 .widget-area-6 .punica-entry-list-widget > ul {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.punica-left-col {
+    width: 735px;
+}
+.elements-box .punica-button {
+    margin-bottom: 5px;
+}
+#punica-main-content .widget .widget-title {
+    font-size: 26px;
+}
+#punica-main-content .punica-slider-carousel-widget .punica-slider-carousel .item .entry-item .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 20px;
+}
+.punica-slider-carousel .item .entry-item .entry-content {
+    padding: 25px 20px 20px;
+}
+
+.punica-featured-news-widget .older-post li {
+    width: 50%;
+}
+.widget-area-12 {
+    margin-right: 0;
+}
+.widget-area-12, .widget-area-13,
+.punica-home-2 .widget-area-12, .punica-home-2 .widget-area-13 {
+    width: 100%;
+}
+
+
+
+
+}
+
+@media only screen and (min-width: 800px) and (max-width: 979px) {
+	
+.wrapper {
+    width: 760px;
+}
+
+#top-contact-info ul li {
+    margin: 0 0 0 15px;
+}
+#main-menu,
+#top-menu {
+    display: none;
+}
+#main-nav > i,
+.mobile-menu-wrapper,
+.top-mobile-menu-wrapper,
+#top-nav > .menu-icon {
+    display: block;
+}
+.punica-home-slider.loading {
+    min-height: 300px;
+}
+.center-col {
+    width: 541px;
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+.widget-area-6 .punica-entry-list-widget > ul > li {
+    width: 130px;
+}
+.punica-home-2 .center-col {
+    width: 580px;
+}
+.punica-featured-news-slider.loading {
+    background-position: center 150px;
+}
+.punica-top-banner {
+    width: 450px;
+}
+.punica-home-3 .center-col,
+.punica-home-6 .center-col,
+.punica-one-sidebar .center-col {
+    width: 440px;
+    margin-right: -1px;
+    padding-right: 20px;
+}
+.punica-home-3 .right-sidebar {
+    padding-left: 20px;
+}
+.punica-home-3 .punica-featured-news-slider .flex-direction-nav a {
+    top: 115px;
+}
+.punica-featured-news-widget .older-post li {
+    width: 50%;
+}
+#punica-main-content .punica-entry-list-3-widget .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.punica-home-6 .sidebar {
+    width: 321px;
+    padding-left: 20px;
+}
+.punica-featured-news-slider .flex-direction-nav a {
+    top: 150px;
+}
+.punica-home-2 .punica-featured-news-slider .flex-direction-nav a {
+    top: 150px;
+}
+.tagline-box ul li {
+    margin: 10px 0 0;
+    display: block;
+}
+.punica-flex-shop-slider ul li .entry-content .more-link {
+    display: none;
+}
+.punica-flex-shop-slider ul li .entry-content h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 22px;
+}
+.punica-flex-shop-slider ul li .entry-content {
+    padding: 20px 20px 15px;
+}
+.punica-shop-slider-widget .entry-content, .punica-featured-shop-widget .older-post li .entry-content {
+    bottom: 0px;
+}
+.punica-entry-list li .entry-thumb {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.punica-entry-list-2 .element {
+    width: 269px;
+}
+#comments .comments-list .children {
+    margin-left: 0;
+}
+#comments-form .input-block, #contact-form .input-block {
+    width: 100%;
+}
+.punica-entry-box-slider.loading {
+    min-height: 340px;
+}
+.punica-header-3 .punica-header-middle .punica-adv-widget a img {
+    width: 100%;
+}
+.punica-article-nothumb-widget > ul > li header .entry-categories strong {
+    text-align: center;
+    display: none;
+}
+.punica-footer-3 .widget-area-6 .punica-entry-list-widget > ul {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.punica-left-col {
+    width: 575px;
+}
+.elements-box .punica-button {
+    margin-bottom: 5px;
+}
+#punica-main-content .widget .widget-title {
+    font-size: 18px;
+    line-height: 22px;
+}
+#punica-main-content .punica-slider-carousel-widget .punica-slider-carousel .item .entry-item .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 20px;
+}
+.punica-slider-carousel .item .entry-item .entry-content {
+    padding: 25px 20px 20px;
+}
+.right-sidebar,
+.punica-home-2 .right-sidebar {
+    border-left: none;
+    padding-left: 0;
+    width: 100%;
+}
+.punica-adv-widget {
+    display: none;
+}
+#punica-main-content .punica-home-slider ul li .flex-caption .entry-title {
+    font-size: 16px;
+    line-height: 22px;
+}
+.punica-home-slider ul li .flex-caption {
+    padding: 10px 15px 10px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-prev {
+    left: 20px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-next {
+    right: 20px;
+}
+.punica-product-short-list-widget ul li .product-thumb {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.punica-product-list-widget ul li .add-cart-btn {
+    padding: 5px 10px;
+}
+.punica-home-6 .center-col {
+    border-right: 1px solid #000;
+}
+.punica-header-3 .punica-header-middle .col-sm-6 {
+    width: 75%;
+}
+.punica-trending-post-widget header .entry-categories {
+    text-align: left;
+}
+.punica-trending-post-widget header .entry-categories span {
+    left: 0;
+    margin-left: 0;
+}
+.punica-home-7 .widget-area-1 {
+    width: 100%;
+    padding-right: 0;
+}
+.punica-home-7 .widget-area-2 {
+    width: 100%;
+}
+.punica-home-7 .punica-article-nothumb-widget > ul > li {
+    width: 50%;
+}
+
+.widget-area-12, .widget-area-13,
+.punica-home-2 .widget-area-12, .punica-home-2 .widget-area-13 {
+    width: 100%;
+}
+.widget-area-12 {
+    margin-right: 0;
+}
+.punica-home-3 .widget-area-3 .punica-entry-list-widget .entry-content, 
+.punica-home-3 .widget-area-3 .punica-entry-list-widget > ul > li:first-child .entry-content {
+    padding: 0;
+    width: 100%;
+}
+.punica-home-3 .widget-area-3 .punica-entry-list-widget .entry-thumb, 
+.punica-home-3 .widget-area-3 .punica-entry-list-widget > ul > li:first-child .entry-thumb {
+    width: 100%;
+}
+.punica-product-short-list-widget ul li .product-price.older-price, 
+.recent-review-product-list li .product-price.older-price,
+.punica-product-short-list-widget ul li .product-price, 
+.recent-review-product-list li .product-price {
+    display: inline-block;
+}
+.punica-product-short-list-widget ul li .product-price.older-price, 
+.recent-review-product-list li .product-price.older-price {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+.punica-must-read-widget ul {
+    margin-top: -20px;
+}
+.punica-must-read-widget ul li {
+    float: none;
+    width: 100%;
+    margin-top: 20px;
+}
+.punica-must-read-widget ul li .entry-item {
+    overflow: hidden;
+}
+.punica-must-read-widget ul li .entry-item .entry-thumb {
+    float: left;
+    margin: 0 20px 0 0;
+    width: 150px;
+}
+
+
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 799px) {
+	
+.wrapper {
+    width: 720px;
+}
+
+#top-contact-info ul li {
+    margin: 0 0 0 15px;
+}
+#main-menu,
+#top-menu {
+    display: none;
+}
+#main-nav > i,
+.mobile-menu-wrapper,
+.top-mobile-menu-wrapper,
+#top-nav > .menu-icon {
+    display: block;
+}
+.punica-home-slider.loading {
+    min-height: 300px;
+}
+.center-col {
+    width: 501px;
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+.widget-area-6 .punica-entry-list-widget > ul > li {
+    width: 185px;
+}
+.punica-home-2 .center-col {
+    width: 540px;
+}
+.punica-featured-news-slider.loading {
+    background-position: center 150px;
+}
+.punica-top-banner {
+    display: none;
+}
+.punica-header-2 .punica-logo {
+    float: none !important;
+    text-align: center;
+}
+.punica-home-3 .center-col,
+.punica-home-6 .center-col,
+.punica-one-sidebar .center-col {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0px;
+    border-right: none;
+}
+.punica-home-3 .right-sidebar {
+    padding-left: 0;
+    border-left: none;
+    width: 100%;
+}
+.punica-home-3 .punica-featured-news-slider .flex-direction-nav a {
+    top: 215px;
+}
+.punica-featured-news-widget .older-post li {
+    width: 50%;
+}
+.punica-home-3 .punica-featured-news-widget .older-post li {
+    width: 25%;
+}
+#punica-main-content .punica-entry-list-3-widget .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.punica-home-6 .sidebar {
+    width: 100%;
+    padding-left: 0px;
+}
+.punica-featured-news-slider .flex-direction-nav a {
+    top: 130px;
+}
+.punica-home-6 .punica-featured-news-slider .flex-direction-nav a {
+    top: 170px;
+}
+.punica-home-2 .punica-featured-news-slider .flex-direction-nav a {
+    top: 150px;
+}
+.tagline-box ul li {
+    margin: 10px 0 0;
+    display: block;
+}
+.punica-flex-shop-slider ul li .entry-content .more-link {
+    display: none;
+}
+.punica-flex-shop-slider ul li .entry-content h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 22px;
+}
+.punica-flex-shop-slider ul li .entry-content {
+    padding: 20px 20px 15px;
+}
+.punica-featured-shop-widget .older-post li .entry-content {
+    bottom: 0px;
+}
+.punica-entry-list li .entry-thumb {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.punica-entry-list-2 .element {
+    width: 249px;
+}
+#comments .comments-list .children {
+    margin-left: 0;
+}
+#comments-form .input-block, #contact-form .input-block {
+    width: 100%;
+}
+.punica-entry-box-slider.loading {
+    min-height: 340px;
+}
+.punica-header-3 .punica-header-middle .punica-adv-widget a img {
+    width: 100%;
+}
+
+.punica-footer-3 .widget-area-6 .punica-entry-list-widget > ul {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.punica-left-col {
+    width: 535px;
+}
+.elements-box .punica-button {
+    margin-bottom: 5px;
+}
+#punica-main-content .widget .widget-title {
+    font-size: 18px;
+    line-height: 22px;
+}
+#punica-main-content .punica-slider-carousel-widget .punica-slider-carousel .item .entry-item .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 20px;
+}
+.punica-slider-carousel .item .entry-item .entry-content {
+    padding: 25px 20px 20px;
+}
+.right-sidebar,
+.punica-home-2 .right-sidebar {
+    border-left: none;
+    padding-left: 0;
+    width: 100%;
+}
+.punica-adv-widget {
+    display: none;
+}
+#punica-main-content .punica-home-slider ul li .flex-caption .entry-title {
+    font-size: 16px;
+    line-height: 22px;
+}
+.punica-home-slider ul li .flex-caption {
+    padding: 10px 15px 10px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-prev {
+    left: 20px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-next {
+    right: 20px;
+}
+
+.punica-product-list-widget ul li .add-cart-btn {
+    padding: 5px 10px;
+}
+.punica-home-6 .center-col {
+    border-right: none;
+}
+#punica-main-content .punica-featured-news-slider .slides li .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.widget-area-1 {
+    padding-right: 0;
+    width: 100%;
+    border-right: none;
+}
+.widget-area-2 {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+#bottom-menu li {
+    margin: 0 0 0 25px;
+}
+.punica-home-3 .col-md-4 {
+    width: 100%;
+}
+.punica-header-3 .widget-area-10 {
+    width: 75%;
+}
+.punica-one-sidebar .right-sidebar {
+    width: 100%;
+}
+.punica-trending-post-widget header .entry-categories {
+    text-align: left;
+}
+.punica-trending-post-widget header .entry-categories span {
+    left: 0;
+    margin-left: 0;
+}
+.punica-footer-3 .punica-footer-bottom .punica-entry-list-widget .entry-thumb, 
+.punica-footer-3 .punica-footer-bottom .punica-entry-list-widget ul li:first-child .entry-thumb {
+    position: static;
+    margin-bottom: 10px;
+}
+.punica-footer-3 .punica-footer-bottom .punica-entry-list-widget > ul > li:first-child .entry-content, 
+.punica-footer-3 .punica-footer-bottom .punica-entry-list-widget > ul > li .entry-content {
+    float: left;
+    padding-left: 0;
+}
+.punica-home-7 .widget-area-1 {
+    width: 100%;
+    padding-right: 0;
+}
+.punica-home-7 .widget-area-2 {
+    width: 100%;
+}
+.punica-home-7 .punica-article-nothumb-widget > ul > li {
+    width: 50%;
+}
+
+.widget-area-12, .widget-area-13,
+.punica-home-2 .widget-area-12, .punica-home-2 .widget-area-13 {
+    width: 100%;
+}
+.widget-area-12 {
+    margin-right: 0;
+}
+
+
+
+
+
+}
+
+@media only screen and (min-width: 640px) and (max-width: 767px) {
+	
+/* =========================================================
+Colunms
+============================================================ */
+body {
+    padding: 0;
+}
+.wrapper {
+    width: 600px;
+}
+
+#top-contact-info ul li {
+    margin: 0 0 0 10px;
+}
+#main-menu,
+#top-menu {
+    display: none;
+}
+#main-nav > i,
+.mobile-menu-wrapper,
+.top-mobile-menu-wrapper,
+#top-nav > .menu-icon {
+    display: block;
+}
+.punica-home-slider.loading {
+    min-height: 240px;
+}
+.center-col {
+    width: 381px;
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+.widget-area-6 .punica-entry-list-widget > ul > li {
+    width: 206px;
+}
+.punica-home-2 .center-col {
+    width: 420px;
+}
+.punica-featured-news-slider.loading {
+    background-position: center 150px;
+}
+.punica-top-banner {
+    display: none;
+}
+.punica-header-2 .punica-logo {
+    float: none !important;
+    text-align: center;
+}
+.punica-home-3 .center-col,
+.punica-home-6 .center-col,
+.punica-one-sidebar .center-col {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0px;
+    border-right: none;
+}
+.punica-home-3 .right-sidebar {
+    padding-left: 0;
+    border-left: none;
+    width: 100%;
+}
+.punica-home-3 .punica-featured-news-slider .flex-direction-nav a {
+    top: 175px;
+}
+.punica-featured-news-widget .older-post li {
+    width: 50%;
+}
+.punica-home-3 .punica-featured-news-widget .older-post li {
+    width: 25%;
+}
+#punica-main-content .punica-entry-list-3-widget .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.punica-home-6 .sidebar {
+    width: 100%;
+    padding-left: 0px;
+}
+.punica-featured-news-slider .flex-direction-nav a {
+    top: 95px;
+}
+.punica-home-6 .punica-featured-news-slider .flex-direction-nav a {
+    top: 140px;
+}
+.punica-home-2 .punica-featured-news-slider .flex-direction-nav a {
+    top: 110px;
+}
+.tagline-box ul li {
+    margin: 10px 0 0;
+    display: block;
+}
+.punica-flex-shop-slider ul li .entry-content .more-link {
+    display: none;
+}
+.punica-flex-shop-slider ul li .entry-content h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 22px;
+}
+.punica-flex-shop-slider ul li .entry-content {
+    padding: 20px 20px 15px;
+}
+.punica-featured-shop-widget .older-post li .entry-content {
+    bottom: 0px;
+}
+.punica-entry-list li .entry-thumb {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.punica-entry-list-2 .element {
+    width: 189px;
+}
+#comments .comments-list .children {
+    margin-left: 0;
+}
+#comments-form .input-block, #contact-form .input-block {
+    width: 100%;
+}
+.punica-entry-box-slider.loading {
+    min-height: 340px;
+}
+.punica-header-3 .punica-header-middle .punica-adv-widget a img {
+    width: 100%;
+}
+
+.punica-footer-3 .widget-area-6 .punica-entry-list-widget > ul {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.punica-left-col {
+    width: 100%;
+    border-right: none;
+    padding-right: 0;
+}
+.punica-left-col .col-md-4 {
+    margin-top: 30px;
+}
+.punica-left-col .col-md-4:first-child {
+    margin-top: 0px;
+}
+.punica-right-col {
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    border-left: none;
+    margin-top: 30px;
+    border-top: 1px solid #757575;
+    padding-top: 20px;
+    overflow: hidden;
+}
+.punica-contact-widget .contact-thumb {
+    float: left;
+    margin-right: 20px;
+    width: 166px;
+}
+.elements-box .punica-button {
+    margin-bottom: 5px;
+}
+#punica-main-content .widget .widget-title {
+    font-size: 18px;
+    line-height: 22px;
+}
+#punica-main-content .punica-slider-carousel-widget .punica-slider-carousel .item .entry-item .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 20px;
+}
+.punica-slider-carousel .item .entry-item .entry-content {
+    padding: 25px 20px 20px;
+}
+.right-sidebar,
+.punica-home-2 .right-sidebar {
+    border-left: none;
+    padding-left: 0;
+    width: 100%;
+}
+.punica-adv-widget {
+    display: none;
+}
+#punica-main-content .punica-home-slider ul li .flex-caption .entry-title {
+    font-size: 16px;
+    line-height: 22px;
+}
+.punica-home-slider ul li .flex-caption {
+    padding: 10px 15px 10px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-prev {
+    left: 20px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-next {
+    right: 20px;
+}
+
+.punica-product-list-widget ul li .add-cart-btn {
+    padding: 5px 10px;
+}
+.punica-home-6 .center-col {
+    border-right: none;
+}
+#punica-main-content .punica-featured-news-slider .slides li .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.widget-area-1 {
+    padding-right: 0;
+    width: 100%;
+    border-right: none;
+}
+.widget-area-2 {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+#bottom-menu li {
+    margin: 0 0 0 15px;
+}
+#bottom-menu li a {
+    font-size: 13px;
+}
+.punica-home-3 .col-md-4 {
+    width: 100%;
+}
+.punica-one-sidebar .right-sidebar {
+    width: 100%;
+}
+.punica-header-3 .punica-logo img, .punica-header-4 .punica-logo img {
+    width: auto;
+}
+.punica-header-3 .punica-logo, 
+.punica-header-4 .punica-logo {
+    margin-bottom: 30px;
+}
+.punica-entry-header-widget ul {
+    margin: 0 -10px;
+}
+.punica-entry-header-widget ul li {
+    border-left: none;
+    padding: 0 10px;
+}
+.punica-footer-2 .punica-footer-bottom .col-md-2 {
+    margin-top: 30px;
+}
+.punica-footer-2 .punica-footer-bottom .col-md-2:first-child {
+    margin-top: 0px;
+}
+.punica-footer-2 .punica-footer-bottom {
+    padding-top: 40px;
+}
+.punica-footer-2 .punica-footer-bottom .punica-end,
+.punica-footer-3 .punica-footer-bottom .punica-end {
+    text-align: center;
+}
+.punica-footer-2 .punica-footer-bottom .punica-end .social-links,
+.punica-footer-2 .punica-footer-bottom .punica-end #copyright,
+.punica-footer-3 .punica-footer-bottom .punica-end .social-links,
+.punica-footer-3 .punica-footer-bottom .punica-end #copyright {
+    float: none;
+}
+.punica-footer-2 .punica-footer-bottom .punica-end .social-links,
+.punica-footer-3 .punica-footer-bottom .punica-end .social-links {
+    display: inline-block;
+}
+.punica-error-404 .col-md-5 h2 {
+    text-align: center;
+    line-height: 100px;
+    margin-bottom: 50px;
+}
+.punica-error-404 .col-md-7 {
+    text-align: center;
+}
+.punica-trending-post-widget header .entry-categories {
+    text-align: left;
+}
+.punica-trending-post-widget header .entry-categories span {
+    left: 0;
+    margin-left: 0;
+}
+.punica-home-7 .widget-area-1 {
+    width: 100%;
+    padding-right: 0;
+}
+.punica-home-7 .widget-area-2 {
+    width: 100%;
+}
+.punica-home-7 .punica-article-nothumb-widget > ul > li {
+    width: 50%;
+}
+.widget-area-12, .widget-area-13,
+.punica-home-2 .widget-area-12, .punica-home-2 .widget-area-13 {
+    width: 100%;
+}
+.widget-area-12 {
+    margin-right: 0;
+}
+
+
+
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 639px) {
+
+/* =========================================================
+Colunms
+============================================================ */
+body {
+    padding: 0;
+}
+.wrapper {
+    width: 440px;
+}
+
+#top-contact-info {
+    display: none;
+}
+#main-menu,
+#top-menu,
+#bottom-menu,
+.punica-home-slider ul li .flex-caption .entry-categories {
+    display: none;
+}
+#main-nav > i,
+.mobile-menu-wrapper,
+.top-mobile-menu-wrapper,
+#top-nav > .menu-icon,
+.bottom-mobile-menu-wrapper,
+#bottom-nav > .menu-icon {
+    display: block;
+}
+#bottom-nav > .menu-icon,
+#bottom-mobile-menu {
+    text-align: left;
+}
+.punica-home-slider.loading {
+    min-height: 170px;
+}
+.center-col {
+    width: 381px;
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+}
+.widget-area-6 .punica-entry-list-widget > ul > li {
+    width: 153px;
+}
+.punica-home-2 .center-col {
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    border-left: none;
+}
+.punica-featured-news-slider.loading {
+    background-position: center 150px;
+}
+.punica-top-banner {
+    display: none;
+}
+.punica-header-2 .punica-logo {
+    float: none !important;
+    text-align: center;
+}
+.punica-home-3 .center-col,
+.punica-home-6 .center-col,
+.punica-one-sidebar .center-col {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0px;
+    border-right: none;
+}
+.punica-home-3 .right-sidebar {
+    padding-left: 0;
+    border-left: none;
+    width: 100%;
+}
+.punica-home-3 .punica-featured-news-slider .flex-direction-nav a {
+    top: 125px;
+}
+.punica-featured-news-widget .older-post li {
+    width: 50%;
+}
+.punica-home-3 .punica-featured-news-widget .older-post li {
+    width: 25%;
+}
+#punica-main-content .punica-entry-list-3-widget .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.punica-home-6 .sidebar {
+    width: 100%;
+    padding-left: 0px;
+}
+.punica-featured-news-slider .flex-direction-nav a {
+    top: 125px;
+}
+.punica-home-6 .punica-featured-news-slider .flex-direction-nav a {
+    top: 90px;
+}
+.punica-home-2 .punica-featured-news-slider .flex-direction-nav a {
+    top: 110px;
+}
+.tagline-box ul li {
+    margin: 10px 0 0;
+    display: block;
+}
+.punica-flex-shop-slider ul li .entry-content .more-link {
+    display: none;
+}
+.punica-flex-shop-slider ul li .entry-content h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 22px;
+}
+.punica-flex-shop-slider ul li .entry-content {
+    padding: 20px 20px 15px;
+}
+.punica-featured-shop-widget .older-post li .entry-content {
+    bottom: 0px;
+}
+.punica-entry-list li .entry-thumb {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.punica-entry-list-2 .element {
+    width: 210px;
+}
+.punica-blog-2 .masonry-wrapper .pagination {
+    border-top: none;
+}
+#comments .comments-list .children {
+    margin-left: 0;
+}
+#comments-form .input-block, #contact-form .input-block {
+    width: 100%;
+}
+.punica-entry-box-slider.loading {
+    min-height: 340px;
+}
+.punica-header-3 .punica-header-middle .punica-adv-widget a img {
+    width: 100%;
+}
+
+.punica-footer-3 .widget-area-6 .punica-entry-list-widget > ul {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.punica-left-col {
+    width: 100%;
+    border-right: none;
+    padding-right: 0;
+}
+.punica-left-col .col-md-4 {
+    margin-top: 30px;
+}
+.punica-left-col .col-md-4:first-child {
+    margin-top: 0px;
+}
+.punica-right-col {
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    border-left: none;
+    margin-top: 30px;
+    border-top: 1px solid #757575;
+    padding-top: 20px;
+    overflow: hidden;
+}
+.punica-contact-widget .contact-thumb {
+    float: left;
+    margin-right: 20px;
+    width: 166px;
+}
+.elements-box .punica-button {
+    margin-bottom: 5px;
+}
+#punica-main-content .widget .widget-title {
+    font-size: 18px;
+    line-height: 22px;
+}
+#punica-main-content .punica-slider-carousel-widget .punica-slider-carousel .item .entry-item .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 20px;
+}
+.punica-slider-carousel .item .entry-item .entry-content {
+    padding: 25px 20px 20px;
+}
+.right-sidebar,
+.punica-home-2 .right-sidebar {
+    border-left: none;
+    padding-left: 0;
+    width: 100%;
+}
+.punica-adv-widget {
+    display: none;
+}
+#punica-main-content .punica-home-slider ul li .flex-caption .entry-title {
+    font-size: 16px;
+    line-height: 22px;
+}
+.punica-home-slider ul li .flex-caption {
+    padding: 10px 15px 10px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-prev {
+    left: 20px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-next {
+    right: 20px;
+}
+
+.punica-product-list-widget ul li .add-cart-btn {
+    padding: 5px 10px;
+}
+.punica-home-6 .center-col {
+    border-right: none;
+}
+#punica-main-content .punica-featured-news-slider .slides li .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.widget-area-1 {
+    padding-right: 0;
+    width: 100%;
+    border-right: none;
+}
+.widget-area-2 {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+#bottom-menu li {
+    margin: 0 0 0 15px;
+}
+#bottom-menu li a {
+    font-size: 13px;
+}
+.punica-home-3 .col-md-4 {
+    width: 100%;
+}
+.punica-one-sidebar .right-sidebar {
+    width: 100%;
+}
+.punica-header-3 .punica-logo img, .punica-header-4 .punica-logo img {
+    width: auto;
+}
+.punica-header-3 .punica-logo, 
+.punica-header-4 .punica-logo {
+    margin-bottom: 30px;
+}
+.punica-entry-header-widget ul {
+    margin: 0 -10px;
+}
+.punica-entry-header-widget ul li {
+    border-left: none;
+    padding: 0 10px;
+}
+.punica-footer-2 .punica-footer-bottom .col-md-2 {
+    margin-top: 30px;
+}
+.punica-footer-2 .punica-footer-bottom .col-md-2:first-child {
+    margin-top: 0px;
+}
+.punica-footer-2 .punica-footer-bottom {
+    padding-top: 40px;
+}
+.punica-footer-2 .punica-footer-bottom .punica-end,
+.punica-footer-3 .punica-footer-bottom .punica-end {
+    text-align: center;
+}
+.punica-footer-2 .punica-footer-bottom .punica-end .social-links,
+.punica-footer-2 .punica-footer-bottom .punica-end #copyright,
+.punica-footer-3 .punica-footer-bottom .punica-end .social-links,
+.punica-footer-3 .punica-footer-bottom .punica-end #copyright {
+    float: none;
+}
+.punica-footer-2 .punica-footer-bottom .punica-end .social-links,
+.punica-footer-3 .punica-footer-bottom .punica-end .social-links {
+    display: inline-block;
+}
+.punica-error-404 .col-md-5 h2 {
+    text-align: center;
+    line-height: 100px;
+    margin-bottom: 50px;
+}
+.punica-error-404 .col-md-7 {
+    text-align: center;
+}
+.left-sidebar,
+.punica-home-2 .left-sidebar {
+    border-right: none;
+    padding-right: 0;
+    width: 100%;
+}
+.sidebar .punica-entry-list-widget > ul > li .entry-thumb,
+.punica-entry-slider-widget .latest-item .punica-entry-slider ul li .entry-thumb {
+    float: left;
+    margin-right: 20px;
+    width: 160px;
+}
+.punica-entry-slider-widget .latest-item .punica-entry-slider ul li .entry-content {
+    overflow: hidden;
+}
+.punica-entry-list-widget > ul > li {
+    width: 100%;
+}
+.punica-home-3 .punica-featured-news-widget .older-post li {
+    width: 50%;
+}
+.punica-home-3 .widget-area-3 .punica-entry-list-widget .entry-content, 
+.punica-home-3 .widget-area-3 .punica-entry-list-widget > ul > li:first-child .entry-content {
+    float: none;
+    width: auto;
+    padding: 0;
+}
+.punica-home-3 .widget-area-3 .punica-entry-list-widget .entry-thumb, 
+.punica-home-3 .widget-area-3 .punica-entry-list-widget > ul > li:first-child .entry-thumb {
+    padding-right: 20px;
+}
+#secondary-menu li a {
+    font-size: 11px;
+    padding: 0 5px;
+}
+.punica-product-list-widget ul li {
+    width: 50%;
+}
+.punica-header-4 .punica-entry-header-widget ul li {
+    width: 100%;
+}
+.punica-trending-post-widget header .entry-categories {
+    text-align: left;
+}
+.punica-trending-post-widget header .entry-categories span {
+    left: 0;
+    margin-left: 0;
+}
+.punica-footer-3 #bottom-menu {
+    display: none;
+}
+.punica-home-7 .widget-area-1 {
+    width: 100%;
+    padding-right: 0;
+}
+.punica-home-7 .widget-area-2 {
+    width: 100%;
+}
+.widget-area-12, .widget-area-13,
+.punica-home-2 .widget-area-12, .punica-home-2 .widget-area-13 {
+    width: 100%;
+}
+.widget-area-12 {
+    margin-right: 0;
+}
+
+
+}
+
+
+
+@media only screen and (max-width: 479px) {
+	
+/* =========================================================
+Colunms
+============================================================ */
+body {
+    padding: 0;
+}
+.wrapper {
+    width: 280px;
+}
+#top-contact-info {
+    display: none;
+}
+#main-menu,
+#top-menu,
+#bottom-menu,
+.punica-home-slider ul li .flex-caption .entry-categories {
+    display: none;
+}
+#main-nav > i,
+.mobile-menu-wrapper,
+.top-mobile-menu-wrapper,
+#top-nav > .menu-icon,
+.bottom-mobile-menu-wrapper,
+#bottom-nav > .menu-icon {
+    display: block;
+}
+#bottom-nav > .menu-icon,
+#bottom-mobile-menu {
+    text-align: left;
+}
+.punica-home-slider.loading {
+    min-height: 110px;
+}
+.center-col {
+    width: 381px;
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+}
+.widget-area-6 .punica-entry-list-widget > ul > li {
+    width: 100%;
+}
+.punica-home-2 .center-col {
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    border-left: none;
+}
+.punica-featured-news-slider.loading {
+    background-position: center 150px;
+}
+.punica-top-banner {
+    display: none;
+}
+.punica-header-2 .punica-logo {
+    float: none !important;
+    text-align: center;
+}
+.punica-home-3 .center-col,
+.punica-home-6 .center-col,
+.punica-one-sidebar .center-col {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0px;
+    border-right: none;
+}
+.punica-home-3 .right-sidebar {
+    padding-left: 0;
+    border-left: none;
+    width: 100%;
+}
+.punica-home-3 .punica-featured-news-slider .flex-direction-nav a {
+    top: 70px;
+}
+.punica-featured-news-widget .older-post li {
+    width: 50%;
+}
+.punica-home-3 .punica-featured-news-widget .older-post li {
+    width: 25%;
+}
+#punica-main-content .punica-entry-list-3-widget .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.punica-home-6 .sidebar {
+    width: 100%;
+    padding-left: 0px;
+}
+.punica-featured-news-slider .flex-direction-nav a {
+    top: 70px;
+}
+.punica-home-6 .punica-featured-news-slider .flex-direction-nav a {
+    top: 130px;
+}
+.punica-home-2 .punica-featured-news-slider .flex-direction-nav a {
+    top: 70px;
+}
+.tagline-box ul li {
+    margin: 10px 0 0;
+    display: block;
+}
+.punica-flex-shop-slider ul li .entry-content .more-link {
+    display: none;
+}
+.punica-flex-shop-slider ul li .entry-content h2 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 22px;
+}
+.punica-flex-shop-slider ul li .entry-content {
+    padding: 10px 10px 5px;
+}
+.punica-featured-shop-widget .older-post li .entry-content {
+    bottom: 0px;
+}
+.punica-entry-list li .entry-thumb {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.punica-entry-list-2 .element {
+    width: 280px;
+}
+.punica-blog-2 .masonry-wrapper .pagination {
+    border-top: none;
+}
+#comments .comments-list .children {
+    margin-left: 0;
+}
+#comments-form .input-block, #contact-form .input-block {
+    width: 100%;
+}
+.punica-entry-box-slider.loading {
+    min-height: 250px;
+}
+.punica-header-3 .punica-header-middle .punica-adv-widget a img {
+    width: 100%;
+}
+
+.punica-footer-3 .widget-area-6 .punica-entry-list-widget > ul {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.punica-left-col {
+    width: 100%;
+    border-right: none;
+    padding-right: 0;
+}
+.punica-left-col .col-md-4 {
+    margin-top: 30px;
+}
+.punica-left-col .col-md-4:first-child {
+    margin-top: 0px;
+}
+.punica-right-col {
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    border-left: none;
+    margin-top: 30px;
+    border-top: 1px solid #757575;
+    padding-top: 20px;
+    overflow: hidden;
+}
+.punica-contact-widget .contact-thumb {
+    float: left;
+    margin-right: 20px;
+    width: 166px;
+}
+.elements-box .punica-button {
+    margin-bottom: 5px;
+}
+.punica-entry-list-2-widget .older-post > li {
+    width: 100%;
+}
+#punica-main-content .widget .widget-title {
+    font-size: 18px;
+    line-height: 22px;
+}
+#punica-main-content .punica-slider-carousel-widget .punica-slider-carousel .item .entry-item .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 20px;
+}
+.punica-slider-carousel .item .entry-item .entry-content {
+    padding: 25px 20px 20px;
+}
+.right-sidebar,
+.punica-home-2 .right-sidebar {
+    border-left: none;
+    padding-left: 0;
+    width: 100%;
+}
+.punica-adv-widget {
+    display: none;
+}
+#punica-main-content .punica-home-slider ul li .flex-caption .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.punica-home-slider ul li .flex-caption {
+    padding: 10px 15px 10px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-prev {
+    left: 20px;
+}
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div.owl-next {
+    right: 20px;
+}
+
+.punica-product-list-widget ul li .add-cart-btn {
+    padding: 5px 10px;
+}
+.punica-home-6 .center-col {
+    border-right: none;
+}
+#punica-main-content .punica-featured-news-slider .slides li .entry-content .entry-title {
+    font-size: 14px;
+    line-height: 22px;
+}
+.widget-area-1 {
+    padding-right: 0;
+    width: 100%;
+    border-right: none;
+}
+.widget-area-2 {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.punica-must-read-widget ul li {
+    width: 100%;
+    float: none;
+}
+#bottom-menu li {
+    margin: 0 0 0 15px;
+}
+#bottom-menu li a {
+    font-size: 13px;
+}
+.punica-home-3 .col-md-4 {
+    width: 100%;
+}
+.punica-one-sidebar .right-sidebar {
+    width: 100%;
+}
+.punica-header-3 .punica-logo img, .punica-header-4 .punica-logo img {
+    width: auto;
+}
+.punica-header-3 .punica-logo, 
+.punica-header-4 .punica-logo {
+    margin-bottom: 10px;
+}
+.punica-entry-header-widget ul {
+    margin: 0 -10px;
+}
+.punica-entry-header-widget ul li {
+    border-left: none;
+    padding: 0 10px;
+    width: 100%;
+}
+.punica-footer-2 .punica-footer-bottom .col-md-2 {
+    margin-top: 30px;
+}
+.punica-footer-2 .punica-footer-bottom .col-md-2:first-child {
+    margin-top: 0px;
+}
+.punica-footer-2 .punica-footer-bottom {
+    padding-top: 40px;
+}
+.punica-footer-2 .punica-footer-bottom .punica-end,
+.punica-footer-3 .punica-footer-bottom .punica-end {
+    text-align: center;
+}
+.punica-footer-2 .punica-footer-bottom .punica-end .social-links,
+.punica-footer-2 .punica-footer-bottom .punica-end #copyright,
+.punica-footer-3 .punica-footer-bottom .punica-end .social-links,
+.punica-footer-3 .punica-footer-bottom .punica-end #copyright {
+    float: none;
+}
+.punica-footer-2 .punica-footer-bottom .punica-end .social-links,
+.punica-footer-3 .punica-footer-bottom .punica-end .social-links {
+    display: inline-block;
+}
+.punica-error-404 .col-md-5 h2 {
+    text-align: center;
+    line-height: 100px;
+    margin-bottom: 50px;
+}
+.punica-error-404 .col-md-7 {
+    text-align: center;
+}
+.left-sidebar,
+.punica-home-2 .left-sidebar {
+    border-right: none;
+    padding-right: 0;
+    width: 100%;
+}
+
+.punica-entry-slider-widget .latest-item .punica-entry-slider ul li .entry-content {
+    overflow: hidden;
+}
+.punica-entry-list-widget > ul > li {
+    width: 100%;
+}
+.punica-home-3 .punica-featured-news-widget .older-post {
+    margin: -15px 0 5px;
+}
+.punica-home-3 .punica-featured-news-widget .older-post li,
+.punica-home-3 .widget-area-3 .punica-entry-list-widget .entry-thumb, 
+.punica-home-3 .widget-area-3 .punica-entry-list-widget > ul > li:first-child .entry-thumb {
+    width: 100%;
+    padding: 0;
+}
+.punica-home-3 .widget-area-3 .punica-entry-list-widget .entry-thumb, 
+.punica-home-3 .widget-area-3 .punica-entry-list-widget > ul > li:first-child .entry-thumb {
+    margin-bottom: 15px;
+}
+.punica-home-3 .widget-area-3 .punica-entry-list-widget .entry-content, 
+.punica-home-3 .widget-area-3 .punica-entry-list-widget > ul > li:first-child .entry-content {
+    float: none;
+    width: auto;
+    padding-left: 0;
+}
+#secondary-menu li a {
+    font-size: 11px;
+    padding: 0 10px;
+}
+.punica-product-list-widget ul li {
+    width: 50%;
+}
+.punica-header-4 .punica-entry-header-widget ul li,
+.punica-entry-list-widget > ul > li:first-child .entry-thumb,
+.punica-entry-list-widget > ul > li:first-child .entry-content,
+.punica-home-2 .punica-entry-list-2-widget .older-post > li,
+.punica-entry-box .entry-thumb audio {
+    width: 100%;
+}
+.punica-logo img {
+    max-width: 280px;
+}
+.sidebar .punica-socials-link-widget ul li {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+.punica-article-nothumb-widget > ul > li,
+.punica-entry-list-2-widget .latest-item > ul > li,
+.punica-featured-shop-widget .older-post li {
+    width: 100%;
+}
+.pagination ul li a, .pagination ul li span {
+    width: 35px;
+    height: 35px;
+    line-height: 33px;
+}
+.widget-area-7 {
+    width: 100%;
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+.widget-area-8 {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+    margin-right: 0;
+}
+.punica-flex-shop-slider ul li .entry-categories,
+.punica-footer-3 #bottom-menu {
+    display: none;
+}
+.punica-entry-slider .flex-direction-nav a {
+    top: 170px;
+}
+.punica-entry-box .entry-title {
+    font-size: 16px;
+    line-height: 22px;
+}
+.punica-entry-box footer,
+.punica-comment-pagination {
+    font-size: 12px;
+}
+.punica-entry-box footer .prev-post i {
+    margin-right: 5px;
+}
+.punica-entry-box footer .next-post i {
+    margin-left: 5px;
+}
+.comment-body header {
+    padding-right: 0;
+}
+.comment-body .comment-button {
+    position: static;
+    margin-top: 10px;
+}
+.accordion-title h3,
+#toggle-view h6 {
+    text-align: right;
+}
+.punica-error-404 .col-md-7 h4 {
+    font-size: 30px;
+}
+.punica-home-7 .widget-area-1 {
+    width: 100%;
+    padding-right: 0;
+}
+.punica-home-7 .widget-area-2 {
+    width: 100%;
+}
+.punica-entry-list-2-widget .latest-item,
+#punica-main-content .punica-entry-list-2-widget .older-post {
+    width: 100%;
+}
+.widget-area-12, .widget-area-13,
+.punica-home-2 .widget-area-12, .punica-home-2 .widget-area-13 {
+    width: 100%;
+}
+.widget-area-12 {
+    margin-right: 0;
+}
+.punica-list-carousel-wrapper .owl-theme .owl-controls .owl-buttons div {
+    top: 170px;
+}
+.punica-entry-header-widget {
+    display: none;
+}
+
+
+
+}

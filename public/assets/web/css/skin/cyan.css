@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*== Color A ==*/
+a:hover, a:focus, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
+#main-menu > li ul li a:hover,
+#main-menu > li > a:hover,
+#top-contact-info ul li a:hover,
+.regular-checkbox:checked + label:after,
+.widget_archive ul li a:hover, 
+.widget_nav_menu ul li a:hover, 
+.widget_categories ul li a:hover,
+.pagination ul li a, 
+.pagination ul li span,
+.punica-twitter-widget #tweets ul li:after,
+.punica-entry-box .tag-box a:hover,
+.search-submit:hover span,
+#main-menu > li ul li.current-menu-item > a,
+.punica-comment-pagination span,
+.punica-header-2 #main-menu > li.current-menu-item > a,
+#secondary-menu li a:hover,
+#punica-main-content .punica-shop-slider-widget .entry-content .entry-title a:hover, 
+#punica-main-content .punica-featured-shop-widget .older-post li .entry-content .entry-title a:hover,
+.punica-product-list-widget ul li .product-title a:hover,
+.punica-product-list-widget ul li .add-cart-btn:hover,
+.punica-product-short-list-widget ul li .product-title a:hover, 
+.recent-review-product-list li .product-title a:hover,
+.tagline-box ul li,
+.masonry-wrapper .pagination ul li a:hover, 
+.masonry-wrapper .pagination ul li span.current,
+#theme-option .open-close-button,
+.punica-footer-3 .punica-footer-bottom .punica-entry-list-widget .entry-content .entry-categories:hover,
+.punica-footer-2 .punica-footer-bottom a:hover, 
+.punica-footer-3 .punica-footer-bottom a:hover,
+.punica-line-button,
+.punica-error-404 .col-md-5 h2,
+.punica-error-404 .col-md-7 h4,
+#main-nav > i,
+#top-nav > .menu-icon, #bottom-nav > .menu-icon,
+.load-more:hover,
+.search-box .search-form .search-submit:hover span,
+#top-menu li a:hover {
+	color:#1abc9c;
+}
+
+/*== Background A ==*/
+*::-moz-selection,
+::-moz-selection,
+#main-menu > li.current-menu-item > a,
+.pagination ul li span.current, 
+.pagination ul li a:hover,
+.newsletter-form .submit,
+.accordion-title span,
+.comment-body .comment-button a,
+#submit-comment, #submit-contact,
+.punica-header-2 .punica-header-bottom,
+.punica-header-2 .search-box .search-form .search-text, 
+.punica-header-2 .search-box .search-form .search-submit,
+.theme-opt-wrapper .reset,
+.punica-flex-footer-widget .flex-control-nav li a.flex-active,
+.regular-radio:checked + label:after,
+.list-container-1 ul li.active a,
+.punica-button,
+#toggle-view li span,
+#mobile-menu,
+#mobile-menu li a,
+#top-mobile-menu, 
+#bottom-mobile-menu,
+#top-mobile-menu li a, 
+#bottom-mobile-menu li a,
+.punica-home-slider ul li .entry-categories,
+.punica-entry-list-widget .entry-content .entry-categories,
+.punica-entry-slider-widget .latest-item .punica-entry-slider ul li .entry-item .entry-categories,
+.punica-featured-news-slider .slides li .entry-content .entry-categories,
+.punica-featured-news-widget .older-post .entry-item .entry-categories,
+.punica-list-carousel .entry-item .entry-categories,
+.punica-must-read-widget ul li .entry-item .entry-categories {
+	background-color:#1abc9c;
+}
+
+/*----- Background B -----*/
+.punica-entry-slider .flex-direction-nav a,
+.related-post .owl-theme .owl-controls .owl-buttons div,
+.related-post .entry-item .entry-content,
+.punica-home-slider .flex-direction-nav a, 
+.punica-featured-news-slider .flex-direction-nav a, 
+.punica-flex-shop-slider .flex-direction-nav a, 
+.punica-entry-box-slider .flex-direction-nav a,
+.punica-home-slider ul li .flex-caption,
+.punica-shop-slider-widget .owl-theme .owl-controls .owl-buttons div, 
+.punica-slider-carousel-widget .owl-theme .owl-controls .owl-buttons div,
+.punica-flex-shop-slider ul li .entry-content,
+.punica-flex-footer-widget .entry-item .entry-content,
+.punica-slider-carousel .item .entry-item .entry-content,
+.punica-entry-slider-widget .latest-item .punica-entry-slider ul li .entry-item .entry-icon,
+#punica-main-content .punica-featured-news-slider .slides li .entry-item .entry-icon, 
+.punica-featured-news-widget .older-post .entry-item .entry-icon,
+.punica-list-carousel-widget .entry-item .entry-icon,
+.punica-entry-list-widget > ul > li .entry-item .entry-icon,
+.punica-gallery-widget .owl-theme .owl-controls .owl-buttons div {
+	background-color: rgba(26,188,156,.6);
+}
+
+/*----- Background C -----*/
+.comment-body .comment-button a:hover,
+#submit-comment:hover, #submit-contact:hover,
+.newsletter-form .submit:hover,
+.theme-opt-wrapper .reset:hover,
+.punica-button:hover {
+	background-color: #000;
+}
+
+/*== Border A ==*/
+.punica-header-bottom,
+.punica-article-nothumb-widget > ul > li header .entry-categories,
+#punica-main-content .widget .widget-title,
+.punica-featured-news-slider .slides li .entry-thumb,
+.left-sidebar,
+.right-sidebar,
+.center-col,
+.punica-footer-top,
+.pagination ul li a, 
+.pagination ul li span,
+.breadcrumb,
+.accordion-title h3,
+.punica-twitter-widget #tweets ul li,
+.newsletter-form .email:focus,
+blockquote,
+.punica-entry-box .social-links,
+#comments-form .input-block input:focus, 
+#comments-form .textarea-block textarea:focus, 
+#contact-form .input-block input:focus, 
+#contact-form .textarea-block textarea:focus,
+.punica-product-list-widget ul li .add-cart-btn:hover,
+.punica-header-extra .wrapper,
+.punica-home-3 .right-sidebar,
+.punica-home-3 .center-col,
+.widget-area-7,
+.widget-area-8,
+.punica-entry-header-widget ul li .entry-thumb,
+.widget_tag_cloud a:hover,
+.list-container-1,
+.punica-line-button,
+.punica-button,
+#toggle-view h6,
+#punica-contact-info-box .contact-title, #contact-box .contact-title {
+	border-color:#1abc9c;
+}
+
+.punica-line-button:hover,
+.punica-button:hover {
+	border-color:#000;
+}
