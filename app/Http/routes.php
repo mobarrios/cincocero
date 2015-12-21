@@ -61,10 +61,10 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function() {
 });
 
 
-Route::get('web',function(){
-
-    return view('tfc.web.index');
-});
+//Route::get('web',function(){
+//
+//    return view('tfc.web.index');
+//});
 
 Route::get('template',function(){
 
