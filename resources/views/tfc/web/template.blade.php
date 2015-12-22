@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/colorbox.css" media="all" />
     <link rel="stylesheet" href="css/color-options.css" media="all" />
     <link rel="stylesheet" href="css_mas/style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="css/responsive.css" rel="stylesheet">
     <script src="js/modernizr.custom.js"></script>
 
@@ -51,45 +52,7 @@
 
         <div class="wrapper clearfix">
 
-            <nav id="main-nav" class="pull-left">
-
-                <ul id="main-menu" class="clearfix">
-                    <li class="current-menu-item">
-                        <a href="#"><img src="images/logo-white.png"></a></li>
-                    <li class="current-menu-item">
-                        <a href="index.html">Home</a></li>
-                    <li>
-                        <a href="reglamento.html">Reglamento</a></li>
-                    <li>
-                        <a href="noticias.html">Noticias</a></li>
-                    <li>
-                        <a href="sedes.html">Sedes</a></li>
-                    <li><a href="galeria.html">Galeria de Fotos</a></li>
-                    <li><a href="inscripcion.html">Inscripcion</a></li>
-                    <li><a href="contactanos.html">Contactanos</a></li>
-                </ul>
-                <!-- main-menu -->
-
-                <i class='fa fa-align-justify'></i>
-
-                <div class="mobile-menu-wrapper">
-                    <ul id="mobile-menu">
-                        <li class="current-menu-item">
-                            <a href="index.html">Home</a></li>
-
-                        <li>
-                            <a href="reglamento.html">Reglamento</a></li>
-                        <li>
-                            <a href="sedes.html">Sedes</a></li>
-                        <li><a href="galeria.html">Galeria de Fotos</a></li>
-                        <li><a href="inscripcion.html">Inscripcion</a></li>
-                        <li><a href="contactanos.html">Contactanos</a></li>
-                    </ul>
-                    <!-- mobile-menu -->
-                </div>
-                <!-- mobile-menu-wrapper -->
-
-            </nav>
+            @include('tfc/web/menu/menuTemplate')
             <!-- main-nav -->
 
 

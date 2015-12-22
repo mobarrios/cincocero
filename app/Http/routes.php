@@ -58,6 +58,10 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function() {
         return view('tfc/web/contactanos');
     });
 
+    Route::get('principal', function(){
+        return view('tfc/web/principal');
+    });
+
 });
 
 

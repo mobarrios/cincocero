@@ -257,8 +257,13 @@ jQuery(document).ready(function () {
       if( obj.next().is(':hidden') ) {
           obj.parent().find(jQuery('.active')).removeClass('active').next().slideUp(300);
           obj.toggleClass('active').next().slideDown(300);
-                              
+      }else{
+          obj.next().slideUp(300);
+          obj.parent().find(jQuery('.active')).removeClass('active').next().slideUp(300);
+          obj.removeClass('active');
       }
+
+
   jQuery('.accordion-title span').html('+');
       if (obj.hasClass('active')) {
           obj.find('span').first().html('-');              
