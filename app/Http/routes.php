@@ -23,6 +23,49 @@ use App\Helpers\ImagesHelper;
 //Session::put('languaje','es_ES');
 
 //Route::group(['middleware'=>'changeLanguaje'],function(){
+
+Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function() {
+
+    Route::get('/', function(){
+        return view('tfc/web/index');
+    });
+
+    Route::get('reglamento', function(){
+        return view('tfc/web/reglamento');
+    });
+
+    Route::get('noticias', function(){
+        return view('tfc/web/noticias');
+    });
+
+    Route::get('sedes', function(){
+        return view('tfc/web/sedes');
+    });
+
+    Route::get('galeria', function(){
+        return view('tfc/web/galeria');
+    });
+
+    Route::get('inscripcion', function(){
+        return view('tfc/web/inscripcion');
+    });
+
+    Route::get('contactanos', function(){
+        return view('tfc/web/contactanos');
+    });
+
+    Route::get('principal', function(){
+        return view('tfc/web/principal');
+    });
+
+});
+
+
+//Route::get('web',function(){
+//
+//    return view('tfc.web.index');
+//});
+
 Route::get('template',function(){
 
     return view('test');
@@ -83,6 +126,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
                     Route::get('init', ['as'=>'init','uses'=>'\App\Http\Controllers\config\InitController@getInit']);
                     Route::get('update', ['as'=>'update','uses'=>'\App\Http\Controllers\config\InitController@getUpdate']);
+
 
 
                 });
