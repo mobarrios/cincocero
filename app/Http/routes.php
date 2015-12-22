@@ -25,10 +25,6 @@ use App\Helpers\ImagesHelper;
 //Route::group(['middleware'=>'changeLanguaje'],function(){
 
 Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function() {
-//    Route::get('/', [
-//        'as' => 'Expedientes.index',
-//        'uses' => 'ExpedienteController@index'
-//    ]);
 
     Route::get('/', function(){
         return view('tfc/web/index');
