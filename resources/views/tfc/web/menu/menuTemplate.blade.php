@@ -20,6 +20,7 @@
     {{--<i class='fa fa-align-justify'></i>--}}
 
     <div class="mobile-menu-wrapper">
+        <a href="{{asset('/web')}}"><img src="images/logo-white.png"></a>
         <ul id="mobile-menu">
             <li class="current-menu-item">
                 <a href="{{asset('/web/principal')}}">Home</a></li>

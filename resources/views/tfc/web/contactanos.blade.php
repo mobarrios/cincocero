@@ -52,25 +52,4 @@
             <!-- elements-box -->
 
         </div>
-        <!-- center-col -->
-
-        <div class="sidebar right-sidebar widget-area-5">
-
-            <div class="widget widget_nav_menu">
-                <h2 class="widget-title">MENU</h2>
-                <div class="menu-all-pages-container">
-                    <ul class="menu" id="menu-all-pages">
-                        </span>
-                        <br><br><br>
-                        </span>
-                    </ul>
-                </div>
-            </div>
-            <!-- widget_nav_menu --><!-- punica-socials-link-widget --><!-- widget --><!-- punica-news-letter-widget --><!-- punica-adv-widget --><!-- punica-twitter-widget --><!-- punica-poll-widget -->
-
-        </div>
-        <!-- right-sidebar -->
-
-        <div class="clear"></div>
-        <!-- widget-area-6 -->
     @endsection

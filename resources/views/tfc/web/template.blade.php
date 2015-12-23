@@ -124,28 +124,28 @@
 
     <div class="wrapper clearfix">
 
-        <div class="center-col">
+        {{--<div class="center-col">--}}
 
-            <center>
-                <div class="breadcrumb clearfix">inscripcion online<span class="bottom-line"></span>
-                </div></center>
+            {{--<center>--}}
+                {{--<div class="breadcrumb clearfix">inscripcion online<span class="bottom-line"></span>--}}
+                {{--</div></center>--}}
             <!-- breadcrumb -->
 
-            <div class="elements-box">
+            {{--<div class="elements-box">--}}
 
                 @yield('content')
 
-                <p>&nbsp;</p>
-                <center><!-- row --></center>
+                {{--<p>&nbsp;</p>--}}
+                {{--<center><!-- row --></center>--}}
                 <!-- row --><!-- row --><!-- row -->
 
-                <div class="row"></div>
+                {{--<div class="row"></div>--}}
                 <!-- row --><!-- row --><!-- row --><!-- row --><!-- row --><!-- row -->
 
-            </div>
+            {{--</div>--}}
             <!-- elements-box -->
 
-        </div>
+        {{--</div>--}}
         <!-- center-col -->
 
         <div class="sidebar right-sidebar widget-area-5">
