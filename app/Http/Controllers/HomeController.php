@@ -23,8 +23,16 @@ class HomeController extends Controller {
 
     public function __construct()
     {
-
         $this->view = 'home';
         $this->data['sectionName'] = 'Bienvenido';
+    }
+
+    public function getIndex()
+    {
+        $ruta_home  = Auth::user()->Perfil()->first()->home;
+        $this->view = $ruta_home;
+
+        return view($this->view)->with($this->data);
+
     }
 }
