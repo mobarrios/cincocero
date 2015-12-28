@@ -28,7 +28,8 @@ return array(
     //profiles
     'profiles' =>
         [
-            'profile'=>['string','100']
+            'profile'=>['string','100'],
+            'home' => ['string','50']
         ],
 
     //permissions
