@@ -46,7 +46,7 @@ class ProfileRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'PERFIL' =>    ['data' => 'profile','relation' => null],
-
+                'RUTA' =>    ['data' => 'home','relation' => null],
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],
         ];
