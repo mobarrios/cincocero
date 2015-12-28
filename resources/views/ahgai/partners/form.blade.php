@@ -13,12 +13,23 @@
         {!! Form::textCustom('last_name', 'Apellido Asociado')!!}
 
 
-
-        {!! Form::textCustom('mail', 'Mail')!!}
-
         {!! Form::textCustom('phone', 'Tel.')!!}
 
         {!! Form::selectCustom('establecimientos_id','Establecimiento Relacionado', $establecimientos) !!}
+
+        <hr>
+
+        {!! Form::textCustom('mail', 'Mail (Usuario de Sistema)')!!}
+
+
+        {!! Form::label('Password') !!}
+        {!! Form::password('password',['class'=>'form-control']) !!}
+
+        {!! Form::label('Confirmar Password') !!}
+        {!! Form::password('password_confirmation',['class'=>'form-control']) !!}
+
+
+
 
 
 

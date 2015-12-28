@@ -24,6 +24,7 @@ class InitController extends Controller {
     {
         if(Auth::check())
             Config::set('database.connections.mysql.database', Auth::user()->db);
+
     }
 
     public function getInit()
@@ -35,8 +36,6 @@ class InitController extends Controller {
     public function getUpdate()
     {
         $this->schemaCreate(Config('ahgai.ahgaiDb'));
-
-
     }
 
 

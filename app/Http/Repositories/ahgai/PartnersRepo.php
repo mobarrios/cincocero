@@ -29,8 +29,11 @@ class PartnersRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'last_name'   => 'required',
-            'mail'   => 'required|unique:users,email',
+            //'mail'   => 'required|unique:users,email',
             'establecimientos_id' => 'required',
+            'password'      => 'required|between:4,20|confirmed',
+            'password_confirmation' =>'required',
+
 
         ];
     }
@@ -41,7 +44,6 @@ class PartnersRepo extends BaseRepo {
 
             'name'      => 'required',
             'last_name'  => 'required',
-            'mail'      => 'required',
             'establecimientos_id' => 'required',
         ];
     }
