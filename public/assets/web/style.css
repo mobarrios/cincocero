@@ -1741,7 +1741,7 @@ a,
 .punica-footer-bottom {
     text-align: center;
     color: #919191;
-    padding: 15px 0 10px;
+    padding: 0 0 10px;
 }
 .punica-footer-bottom a {
     color: #919191;
@@ -1953,7 +1953,7 @@ a,
     background-color: #000000;
     color: #e8e8e8;
     text-align: left;
-    padding-top: 50px;
+    /*padding-top: 50px;*/
 }
 .punica-footer-2 .punica-footer-bottom a,
 .punica-footer-3 .punica-footer-bottom a {
@@ -2002,7 +2002,7 @@ a,
     font-family: Open Sans, "arial", sans-serif;
 }
 .punica-footer-3 .punica-footer-bottom {
-    padding-top: 35px;
+    /*padding-top: 35px;*/
 }
 .punica-left-col {
     float: left;
@@ -3569,4 +3569,10 @@ blockquote {
     padding: 10px 30px;
     display: inline-block;
     margin: 0;
+}
+
+.punica-footer{
+    position: absolute !important;
+    width: 100% !important;
+    bottom: 0px !important;
 }
