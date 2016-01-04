@@ -182,7 +182,7 @@
 
             <div class="punica-end clearfix">
                 <ul class="social-links clearfix">
-                    <li><span>Seguinos a través de:</span></li>
+                    <li><span>Seguinos a travÃ©s de:</span></li>
                     <li><a href="#" class="fa fa-facebook"></a></li>
                     <li><a href="#" class="fa fa-twitter"></a></li>
                 </ul>

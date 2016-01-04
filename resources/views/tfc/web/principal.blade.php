@@ -31,8 +31,8 @@
             <!-- punica-entry-list-widget -->
 
             <div class="widget punica-entry-slider-widget">
-                <h2 class="widget-title clearfix">El CLima</h2>
-                <iframe src="clima.html" width="220" height="250" frameborder="0" border="0" scrolling="no" allowfullscreen></iframe>
+                <h2 class="widget-title clearfix">El clima</h2>
+                <iframe src="{{asset("web/clima")}}" width="220" height="250" frameborder="0" border="0" scrolling="no" allowfullscreen></iframe>
                 <!-- latest-item -->
 
                 <!-- older-post -->
@@ -212,18 +212,18 @@
                 <h2 class="widget-title"><img src="images/f11.png" width="201" height="38" alt=""/></h2>
                 <div class="menu-all-pages-container">
                     <ul class="menu" id="menu-all-pages">
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="destacado.html">Destacado de la Fecha</a></li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/destacado")}}">Destacado de la Fecha</a></li>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>LIGA TFC CHAMPIONS</b></li>
 
 
                         <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie A</a>
                             <ul class="sub-menu">
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="resultado.html">Posiciones y Resultados</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="proxima_fecha.html">Proxima Fecha</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="fixture.html">Fixture</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="sancion.html">Sanciones</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="goleador.html">Goleadores</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="fairplay.html">Fair Play</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/resultado")}}">Posiciones y Resultados</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/proxima_fecha")}}">Proxima Fecha</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/fixture")}}">Fixture</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/sancion")}}">Sanciones</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/goleador")}}">Goleadores</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/fairplay")}}">Fair Play</a></li>
                             </ul>
                         </li>
 

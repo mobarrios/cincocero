@@ -58,6 +58,36 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function() {
         return view('tfc/web/principal');
     });
 
+
+
+    Route::get('resultado', function(){
+        return view('tfc/web/resultado');
+    });
+    Route::get('proxima_fecha', function(){
+        return view('tfc/web/proxima_fecha');
+    });
+    Route::get('fixture', function(){
+        return view('tfc/web/fixture');
+    });
+    Route::get('sancion', function(){
+        return view('tfc/web/sancion');
+    });
+    Route::get('goleador', function(){
+        return view('tfc/web/goleador');
+    });
+    Route::get('fairplay', function(){
+        return view('tfc/web/fairplay');
+    });
+
+    Route::get('destacado', function(){
+        return view('tfc/web/destacado');
+    });
+
+    Route::get('clima', function(){
+        return view('tfc/web/clima');
+    });
+
+
 });
 
 
