@@ -28,7 +28,7 @@
                     </tr>
                     <tr>
                       <td colspan="2" align="center" class="active"><img src="escudos/01.png" width="35" height="35" alt=""/></td>
-                      <td colspan="2" align="center" class="active"><a href="la_cantera.html">La Cantera</a></td>
+                      <td colspan="2" align="center" class="active"><a href="{{asset("web/la_cantera")}}">La Cantera</a></td>
                       <td colspan="2" align="center" class="active">13</td>
                       <td colspan="2" align="center" class="active">5</td>
                       <td colspan="2" align="center" class="active">4</td>

@@ -14,7 +14,7 @@
         <!-- Main Menu -->
         <div class="inner-nav desktop-nav">
             <ul class="clearlist">
-                <li><a href="/" class="mn-has-sub active">Home </a></li>
+                <li><a href="{{asset('web/principal')}}" class="mn-has-sub active">Home </a></li>
                 <li><a href={{asset("web/reglamento")}}>Reglamento</a></li>
                 <li><a href={{asset("web/noticias")}} class="mn-has-sub">Noticias </a></li>
                 <li><a href={{asset("web/sedes")}} class="mn-has-sub">Sedes </a></li>

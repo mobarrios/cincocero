@@ -88,6 +88,11 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function() {
     });
 
 
+    Route::get('la_cantera', function(){
+        return view('tfc/web/la_cantera');
+    });
+
+
 });
 
 
