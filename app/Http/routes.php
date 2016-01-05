@@ -93,6 +93,15 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function() {
     });
 
 
+    Route::get('la_guapeada', function(){
+        return view('tfc/web/la_guapeada');
+    });
+
+    Route::get('galeria', function(){
+        return view('tfc/web/jugador');
+    });
+
+
 });
 
 

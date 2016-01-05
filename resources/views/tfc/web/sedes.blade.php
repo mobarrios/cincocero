@@ -17,7 +17,7 @@
                                             <header> <span class="entry-date">Noviembre 12, 2015</span> </header>
                                             <h6 class="entry-title">La Guapeada</h6>
                                             <p>&nbsp;</p>
-                                            <a href="la_guapeada.html" class="more-link">ampliar ...</a> </div>
+                                            <a href="{{asset('/web/la_guapeada')}}" class="more-link">ampliar ...</a> </div>
                                         <!-- entry-content -->
                                     </article>
                                     <!-- entry-item -->
