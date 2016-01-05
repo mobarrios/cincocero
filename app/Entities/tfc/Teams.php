@@ -7,7 +7,7 @@ class Teams extends Entity{
 
     protected $table = 'teams';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name','password'];
 
 
     public function Matches()

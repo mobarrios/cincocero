@@ -19,6 +19,7 @@ return array(
     'teams' =>
         [
             'name'    => ['string','50'],
+            'password' => ['string','50'],
         ],
 
     'players' =>
