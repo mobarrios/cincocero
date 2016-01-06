@@ -24,7 +24,7 @@ class TeamsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
         ];
     }
 
@@ -44,6 +44,7 @@ class TeamsRepo extends BaseRepo {
             [
                 'Escudo' =>    ['data' => 'images','relation'=> null],
                 'Equipo' =>  ['data' => 'name','relation' => null],
+                'Password' => ['data' => 'password', 'relation' => null],
 
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],

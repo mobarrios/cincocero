@@ -213,11 +213,6 @@ Route::get('pdf',function(){
 
 
 
-Route::get('pass',function(){
-
-
-    return RandomText(5);
-});
 
 
 /*

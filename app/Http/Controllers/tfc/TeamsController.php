@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Teams;
+use App\Helpers\RandomHelper;
 use App\Http\Repositories\tfc\TeamsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -60,12 +61,36 @@ class TeamsController extends Controller {
 
     }
 
-    public function requestCustom($request = null)
+    // post new item
+    public function postNew(Request $request, ImagesHelper $image)
     {
-        $newRequest         = $request;
+        $random = new RandomHelper();
+        $text   =  $random->RandomText(7, time().$request['name']);
 
-        return $newRequest;
+        $request['password'] = strtolower($text);
+
+        //if in controller custom
+        // $request = $this->requestCustom($request);
+
+        // validation rules form repo
+        $this->validate($request, $this->rules);
+
+
+        // method crear in repo
+        $model = $this->repo->create($request);
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);
+        }
+
+        // redirect with errors messages language
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+
     }
+
+
 
    
 }
