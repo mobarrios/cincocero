@@ -9,52 +9,31 @@
                         <!-- punica-featured-news-slider -->
                         <div class="masonry-wrapper">
                             <ul class="punica-entry-list clearfix">
-                                <li class="element">
-                                    <article class="entry-item">
-                                        <div class="entry-thumb hover-effect"> <a href="#"><img src="noticias/001.jpg" alt="" /></a> </div>
-                                        <!-- entry-thumb -->
-                                        <div class="entry-content">
-                                            <header> <span class="entry-date">Noviembre 12, 2015</span> </header>
-                                            <h6 class="entry-title">La Guapeada</h6>
-                                            <p>&nbsp;</p>
-                                            <a href="{{asset('/web/la_guapeada')}}" class="more-link">ampliar ...</a> </div>
-                                        <!-- entry-content -->
-                                    </article>
-                                    <!-- entry-item -->
-                                </li>
-                                <!-- element -->
-                                <li class="element">
-                                    <article class="entry-item">
-                                        <div class="entry-thumb hover-effect"> <a href="#"><img src="noticias/002.jpg" alt="" /></a> </div>
-                                        <!-- entry-thumb -->
-                                        <div class="entry-content">
-                                            <header> <span class="entry-date">Noviembre 12, 2015</span> </header>
-                                            <h6 class="entry-title">Foetra</h6>
-                                            <p>&nbsp;</p>
-                                            <a href="#" class="more-link">ampliar ...</a> </div>
-                                        <!-- entry-content -->
-                                    </article>
-                                    <!-- entry-item -->
-                                </li>
-                                <!-- element -->
-                                <li class="element">
-                                    <article class="entry-item">
-                                        <div class="entry-thumb hover-effect"> <a href="#"><img src="noticias/003.jpg" alt="" /></a> </div>
-                                        <!-- entry-thumb -->
-                                        <div class="entry-content">
-                                            <header> <span class="entry-date">Noviembre 12, 2015</span> </header>
-                                            <h6 class="entry-title">AEFIP</h6>
-                                            <p>&nbsp;</p>
-                                            <a href="#" class="more-link">ampliar ...</a> </div>
-                                        <!-- entry-content -->
-                                    </article>
-                                    <!-- entry-item -->
-                                </li>
-                                <!-- element -->
-                                <li class="element">
-                                    <!-- entry-item --></li>
-                                <!-- element -->
-                                <!-- element -->
+
+                                @foreach($sedes as $sede)
+                                    <li class="element">
+                                        <article class="entry-item">
+                                            <div class="entry-thumb hover-effect">
+                                                <a href="#">
+                                                 <img src="{{$sede->Images[0]->image}}" alt="{{$sede->Images[0]->image}}" />
+                                                </a>
+
+                                            </div>
+                                            <!-- entry-thumb -->
+                                            <div class="entry-content">
+                                                <header>
+                                                    <span class="entry-date">{{$sede->address}}</span>
+                                                </header>
+                                                <h1 class="entry-title">{{$sede->name}}</h1>
+                                                <p>&nbsp;</p>
+                                                <a href="{{'web/sede_detalle/'.$sede->id}}" class="more-link">ampliar ...</a> </div>
+                                            <!-- entry-content -->
+                                        </article>
+                                        <!-- entry-item -->
+                                    </li>
+                                @endforeach
+
+
                             </ul>
                             <!-- punica-entry-list -->
                             <!-- pagination -->
