@@ -41,6 +41,9 @@
 
 <body>
 
+@include('messages')
+
+
 <div id="wrapper">
 
    @yield('menu')
@@ -53,8 +56,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     @yield('mainContent')
-                    @include('messages')
-
                 </div>
                 <!-- /.col-lg-12 -->
 
