@@ -79,7 +79,7 @@
                 <ul id="main-menu" class="clearfix">
                     <li class="current-menu-item"></li>
                     <li class="current-menu-item">
-                        <a href="principal.html"><img src="assets/web/torn/btn1.png" width="200" height="59" alt=""/></a></li>
+                        <a href="{{asset('/web/principal')}}"><img src="assets/web/torn/btn1.png" width="200" height="59" alt=""/></a></li>
                     <li>
                         <a href="#"><img src="assets/web/torn/btn2.png" width="200" height="59" alt=""/></a></li>
                     <li>
