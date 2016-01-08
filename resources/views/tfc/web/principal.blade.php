@@ -1,7 +1,7 @@
 @extends('tfc/web/template')
     @section("content")
-        {{$colorTop = "#C4CD0D"}}
-        {{$colorBottom = "#005020"}}
+        {!! $colorTop = "#C4CD0D"!!}
+        {!!$colorBottom = "#005020"!!}
 
         <div class="clear"></div>
 
