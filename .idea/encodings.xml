@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/clima.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/contactanos.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/destacado.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/fairplay.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/fixture.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/goleador.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/index.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/inscripcion.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/jugador.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/la_cantera.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/la_guapeada.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/menu/menuIndex.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/menu/menuTemplate.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/noticias.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/principal.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/processForm.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/proxima_fecha.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/reglamento.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/resultado.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/sancion.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/sede_detalle.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/sedes.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/template.blade.php" charset="UTF-8" />
   </component>
 </project>

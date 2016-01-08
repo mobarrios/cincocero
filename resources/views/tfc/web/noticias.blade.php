@@ -22,7 +22,7 @@
                                                 <div class="entry-content">
                                                     <header> <span class="entry-date">Noviembre 12, 2015</span> </header>
                                                     <h6 class="entry-title"><a href="#">Arranca la 7ma fecha</a></h6>
-                                                    <p>Todo preparado y armado para el arranque de la 7ma fecha del torneo de Bunesliga A, los equipos estan listos, las canchas y arbitros tambiÈn, solo falta definir los horarios.</p>
+                                                    <p>Todo preparado y armado para el arranque de la 7ma fecha del torneo de Bunesliga A, los equipos estan listos, las canchas y arbitros tambi√©n, solo falta definir los horarios.</p>
                                                 </div>
                                                 <!-- entry-content -->
                                             </article>
@@ -50,7 +50,7 @@
                                                 <div class="entry-content">
                                                     <header> <span class="entry-date">Noviembre 12, 2015</span> </header>
                                                     <h6 class="entry-title"><a href="#">Al mal tiempo..</a></h6>
-                                                    <p>El Servicio MeteorolÛgico Nacional anunciÛ que esta noche,  seguir·n las lluvias y tormentas. A pesar de las inclemencias que puedan sucitar, las canchas escurren perfectamente y seguro podremos jugar durante el fin de semana..</p>
+                                                    <p>El Servicio Meteorol√≥gico Nacional anunci√≥ que esta noche,  seguir√°n las lluvias y tormentas. A pesar de las inclemencias que puedan sucitar, las canchas escurren perfectamente y seguro podremos jugar durante el fin de semana..</p>
                                                 </div>
                                                 <!-- entry-content -->
                                             </article>
@@ -64,7 +64,7 @@
                                                 <div class="entry-content">
                                                     <header> <span class="entry-date">Noviembre 12, 2015</span> </header>
                                                     <h6 class="entry-title"><a href="#">Sigue enfocado</a></h6>
-                                                    <p>Racing se entrenÛ este jueves por la maÒana pensando en el partido ante Estudiantes por la Liguilla pre-Libertadores. </p>
+                                                    <p>Racing se entren√≥ este jueves por la ma√±ana pensando en el partido ante Estudiantes por la Liguilla pre-Libertadores. </p>
                                                 </div>
                                                 <!-- entry-content -->
                                             </article>
@@ -79,7 +79,7 @@
                                             <li><a href="#" class="prev page-numbers"><i class="fa fa-caret-left"></i></a></li>
                                             <li><a href="#" class="page-numbers">1</a></li>
                                             <li><span class="page-numbers current">2</span></li>
-                                            <li><span class="page-numbers dots">Ö</span></li>
+                                            <li><span class="page-numbers dots">‚Ä¶</span></li>
                                             <li><a href="#" class="page-numbers">8</a></li>
                                             <li><a class="next page-numbers" href="#"><i class="fa fa-caret-right"></i></a></li>
                                         </ul>
