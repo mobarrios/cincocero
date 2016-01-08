@@ -1,5 +1,8 @@
 @extends('tfc/web/template')
     @section("content")
+        {{$colorTop = "#C4CD0D"}}
+        {{$colorBottom = "#005020"}}
+
         <div class="clear"></div>
 
         <div class="sidebar left-sidebar widget-area-4">
@@ -48,9 +51,16 @@
         <div class="center-col">
 
             <div class="widget-area-3">
-
                 <div class="widget punica-featured-news-widget">
-                    <h2 class="widget-title clearfix"><img src="images/tabla_pos.png" width="600" height="70" alt=""/></h2>
+                    <h2 class="widget-title clearfix">
+                        <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
+                            <div class="color-top" style="background-color: {{$colorTop}};"></div>
+                            <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                                <h2>TABLA DE POSICIONES</h2>
+                            </div>
+                        </div>
+                        {{--<img src="{{asset('assets/web/images/tabla_pos.png')}}" width="600" height="70" alt=""/>--}}
+                    </h2>
                     <!-- punica-featured-news-slider -->
                     <ul class="older-post clearfix">
                         <div class="row"><br>
@@ -70,7 +80,7 @@
                                         <td colspan="2" align="center" class="info">DIF</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/01.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/01.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center" class="active"><a href="{{asset("web/la_cantera")}}">La Cantera</a></td>
                                         <td colspan="2" align="center" class="active">13</td>
                                         <td colspan="2" align="center" class="active">5</td>
@@ -82,7 +92,7 @@
                                         <td colspan="2" align="center" class="active">16</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/02.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/02.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center">Derby</td>
                                         <td colspan="2" align="center">13</td>
                                         <td colspan="2" align="center">5</td>
@@ -94,7 +104,7 @@
                                         <td colspan="2" align="center">16</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/03.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/03.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center" class="active">Stoke City</td>
                                         <td colspan="2" align="center" class="active">13</td>
                                         <td colspan="2" align="center" class="active">5</td>
@@ -106,7 +116,7 @@
                                         <td colspan="2" align="center" class="active">16</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/04.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/04.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center">Arlekin FC</td>
                                         <td colspan="2" align="center">13</td>
                                         <td colspan="2" align="center">5</td>
@@ -118,7 +128,7 @@
                                         <td colspan="2" align="center">16</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/05.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/05.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center" class="active">La Amistad</td>
                                         <td colspan="2" align="center" class="active">13</td>
                                         <td colspan="2" align="center" class="active">5</td>
@@ -130,7 +140,7 @@
                                         <td colspan="2" align="center" class="active">16</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/06.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/06.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center">Cabo Verde</td>
                                         <td colspan="2" align="center">13</td>
                                         <td colspan="2" align="center">5</td>
@@ -142,7 +152,7 @@
                                         <td colspan="2" align="center">16</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/07.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/07.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center" class="active">El Tano</td>
                                         <td colspan="2" align="center" class="active">13</td>
                                         <td colspan="2" align="center" class="active">5</td>
@@ -154,7 +164,7 @@
                                         <td colspan="2" align="center" class="active">16</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/08.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/08.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center">Clandestino</td>
                                         <td colspan="2" align="center">13</td>
                                         <td colspan="2" align="center">5</td>
@@ -166,7 +176,7 @@
                                         <td colspan="2" align="center">16</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/09.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/09.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center" class="active">Drognitz</td>
                                         <td colspan="2" align="center" class="active">13</td>
                                         <td colspan="2" align="center" class="active">5</td>
@@ -178,7 +188,7 @@
                                         <td colspan="2" align="center" class="active">16</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" align="center" class="active"><img src="escudos/10.png" width="35" height="35" alt=""/></td>
+                                        <td colspan="2" align="center" class="active"><img src="{{asset('assets/web/escudos/10.png')}}" width="35" height="35" alt=""/></td>
                                         <td colspan="2" align="center">Colo Colo</td>
                                         <td colspan="2" align="center">13</td>
                                         <td colspan="2" align="center">5</td>
@@ -209,7 +219,15 @@
         <div class="sidebar right-sidebar widget-area-5">
 
             <div class="widget widget_nav_menu">
-                <h2 class="widget-title"><img src="images/f11.png" width="201" height="38" alt=""/></h2>
+                <h2 class="widget-title">
+                    <div class="categoria-container-xs titulo-categoria-xs" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
+                        <div class="color-top" style="background-color: {{$colorTop}};"></div>
+                        <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                            <h2>FUTBOL 11</h2>
+                        </div>
+                    </div>
+                    {{--<img src="{{asset('assets/web/images/f11.png')}}" width="201" height="38" alt=""/>--}}
+                </h2>
                 <div class="menu-all-pages-container">
                     <ul class="menu" id="menu-all-pages">
                         <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/destacado")}}">Destacado de la Fecha</a></li>
