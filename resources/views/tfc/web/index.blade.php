@@ -45,7 +45,8 @@
                         <div class="home-text">
                           <div align="center">
                               @foreach($data as $categoria)
-                                  <a href={!! route($categoria->id) !!}><IMG SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>
+                                  {{--<a href="web/{!! $categoria->id !!}/principal"><img SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>--}}
+                                  <a href="{!! route('principal',$categoria->id) !!}"><img SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>
                               @endforeach
 
                                   {{--<a href=><IMG SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>--}}

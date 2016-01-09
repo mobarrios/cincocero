@@ -1,5 +1,6 @@
 @extends('tfc/web/template')
     @section("content")
+        {{--{!! dd($torneos) !!}--}}
         {{$colorTop = "#C4CD0D"}}
         {{$colorBottom = "#005020"}}
 

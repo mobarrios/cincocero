@@ -4,7 +4,9 @@ namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Sedes;
+use App\Entities\tfc\Tournaments;
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\tfc\TournamentsRepo;
 
 
 class WebController extends Controller {
@@ -54,10 +56,10 @@ class WebController extends Controller {
         return view('tfc/web/contactenos');
     }
 
-    public function Principal()
+    public function Principal($id,Tournaments $torneos)
     {
-        $data = Categories::all();
-        return view('tfc/web/principal',compact('data'));
+        $torneos = $torneos->where('categories_id',$id)->get();
+        return view('tfc/web/principal',compact('torneos'));
     }
 
     public function Resultado()
