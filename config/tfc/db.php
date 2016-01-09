@@ -34,6 +34,8 @@ return array(
     'categories' =>
         [
             'name'    => ['string','50'],
+            'color_top' => ['string','50'],
+            'color_bottom' => ['string','50']
         ],
 
     'seasons' =>
