@@ -26,6 +26,11 @@
     <link href="assets/css/dataTables.fontAwesome.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico" /> 
 
+    <link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
+
+
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -90,6 +95,8 @@
 <script src="assets/js/tinymce/tinymce.min.js"></script>
 <script src="assets/js/jquery_datepicker_es.js"></script>
 <script src="assets/js/custom.js"></script>
+
+<script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
 
 @yield('js')
 </body>
