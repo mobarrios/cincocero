@@ -8,7 +8,17 @@ class FormBuilder extends \Collective\Html\FormBuilder {
     public $contentClass    = 'form-group';
     public $dateClass       = ['class'=>'form-control datepicker'];
     public $textAreaClass   = ['class'=>'form-control mytextarea'];
+    public $colorPicker     = ['class'=>'form-control demo'];
 
+
+
+
+    public function colorPicker($name = null, $label = null)
+    {
+        $input = parent::text($name,null, $this->colorPicker);
+
+        return $this->buildDiv($label, $input);
+    }
 
     public function textAreaCustom($name = null,$label = null)
     {
