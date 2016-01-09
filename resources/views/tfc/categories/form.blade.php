@@ -10,8 +10,11 @@
 
         {!! Form::textCustom('name', 'Nombre Categoría')!!}
 
+        {!! Form::colorPicker('color_top','Color 1') !!}
+        {!! Form::colorPicker('color_bottom','Color 2') !!}
 
-        {!! Form::imageCustom('image','Imagen')!!}
+
+        {!! Form::imageCustom('image','Logo')!!}
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
