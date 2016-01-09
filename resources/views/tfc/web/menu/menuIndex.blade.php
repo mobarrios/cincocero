@@ -1,4 +1,5 @@
 <!-- Navigation panel -->
+
 <nav class="main-nav dark transparent stick-fixed">
     <div class="full-wrapper relative clearfix">
         <!-- Logo ( * your text or image into link tag *) -->
@@ -14,7 +15,7 @@
         <!-- Main Menu -->
         <div class="inner-nav desktop-nav">
             <ul class="clearlist">
-                <li><a href="{{asset('web/principal')}}" class="mn-has-sub active">Home </a></li>
+                {{--<li><a href="{{asset('web/principal')}}" class="mn-has-sub active">Home </a></li>--}}
                 <li><a href={{asset("web/reglamento")}}>Reglamento</a></li>
                 <li><a href={{asset("web/noticias")}} class="mn-has-sub">Noticias </a></li>
                 <li><a href={{asset("web/sedes")}} class="mn-has-sub">Sedes </a></li>

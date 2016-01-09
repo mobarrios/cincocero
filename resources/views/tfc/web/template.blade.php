@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/web/css/color-options.css" media="all" />
     <link rel="stylesheet" href="assets/web/css_mas/style.css">
     <link rel="stylesheet" href="assets/web/style.css">
+    <link rel="stylesheet" href="assets/web/css/fonts.css">
     <link href="assets/web/css/responsive.css" rel="stylesheet">
     <script src="assets/web/js/modernizr.custom.js"></script>
 
@@ -44,7 +45,6 @@
 </head>
 
 <body class="punica-header-3 punica-footer-3 punica-home-1">
-
 
 
 <div class="punica-header"><!-- punica-header-top --><!-- punica-header-middle -->

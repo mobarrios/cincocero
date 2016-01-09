@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\tfc;
 
+use App\Entities\tfc\Categories;
 use App\Entities\tfc\Sedes;
 use App\Http\Controllers\Controller;
 
@@ -10,7 +11,8 @@ class WebController extends Controller {
 
     public function Index()
     {
-        return view('tfc/web/index');
+        $data = Categories::all();
+        return view('tfc/web/index',compact('data'));
     }
 
     public function Reglamento()
@@ -54,7 +56,8 @@ class WebController extends Controller {
 
     public function Principal()
     {
-        return view('tfc/web/principal');
+        $data = Categories::all();
+        return view('tfc/web/principal',compact('data'));
     }
 
     public function Resultado()

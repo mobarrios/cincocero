@@ -44,7 +44,15 @@
                     <div class="home-content">
                         <div class="home-text">
                           <div align="center">
-                            <a href="principal.html"><IMG SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a><IMG SRC="torn/btn2.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0><IMG SRC="torn/btn3.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0><br><IMG SRC="torn/btn4.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0><IMG SRC="torn/btn5.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0>
+                              @foreach($data as $categoria)
+                                  <a href={!! route($categoria->id) !!}><IMG SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>
+                              @endforeach
+
+                                  {{--<a href=><IMG SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>--}}
+                              {{--<IMG SRC="torn/btn2.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0>--}}
+                              {{--<IMG SRC="torn/btn3.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0><br>--}}
+                              {{--<IMG SRC="torn/btn4.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0>--}}
+                              {{--<IMG SRC="torn/btn5.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0>--}}
                           </div>
                         </div>
                     </div>
