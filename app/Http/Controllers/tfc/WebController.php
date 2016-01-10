@@ -56,10 +56,11 @@ class WebController extends Controller {
         return view('tfc/web/contactenos');
     }
 
-    public function Principal($id,Tournaments $torneos)
+    public function Principal($id,Tournaments $torneos,Categories $categorias)
     {
+        $categoria = $categorias->find($id);
         $torneos = $torneos->where('categories_id',$id)->get();
-        return view('tfc/web/principal',compact('torneos'));
+        return view('tfc/web/principal',compact('torneos','categoria'));
     }
 
     public function Resultado()
