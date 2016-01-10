@@ -46,10 +46,10 @@
                           <div align="center">
                               @foreach($data as $categoria)
                                   {{--<a href="web/{!! $categoria->id !!}/principal"><img SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>--}}
-                                  <a href="{!! route('principal',$categoria->id) !!}"><img SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>
+                                  <a href="{!! route('principal',$categoria->id) !!}"><img src="{{ asset($categoria->images->first()->image) }}" width="200" height="59" border="0" hspace="0"></a>
                               @endforeach
 
-                                  {{--<a href=><IMG SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>--}}
+                                  <a href=><IMG SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>
                               {{--<IMG SRC="torn/btn2.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0>--}}
                               {{--<IMG SRC="torn/btn3.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0><br>--}}
                               {{--<IMG SRC="torn/btn4.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0>--}}
