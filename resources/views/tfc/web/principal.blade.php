@@ -1,8 +1,5 @@
 @extends('tfc/web/template')
     @section("content")
-        {!! $colorTop = "#C4CD0D"!!}
-        {!!$colorBottom = "#005020"!!}
-
         <div class="clear"></div>
 
         <div class="sidebar left-sidebar widget-area-4">
@@ -13,10 +10,6 @@
                     <li>
                         <article class="entry-item standard-post clearfix">
                             <div class="entry-thumb hover-effect">
-
-
-
-
                                 <a class="twitter-timeline" href="https://twitter.com/FutbolCompany" data-widget-id="362267109901889536">Tweets por el @The Futbol Company.</a>
 
                                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/ˆhttp:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -53,9 +46,9 @@
             <div class="widget-area-3">
                 <div class="widget punica-featured-news-widget">
                     <h2 class="widget-title clearfix">
-                        <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
-                            <div class="color-top" style="background-color: {{$colorTop}};"></div>
-                            <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                        <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$categoria->color_bottom}};border-top-color: {{$categoria->color_bottom}};border-left-color: {{$categoria->color_bottom}}">
+                            <div class="color-top" style="background-color: {{$categoria->color_top}};"></div>
+                            <div class="color-bottom" style="background-color: {{$categoria->color_bottom}};">
                                 <h2>TABLA DE POSICIONES</h2>
                             </div>
                         </div>
@@ -220,9 +213,9 @@
 
             <div class="widget widget_nav_menu">
                 <h2 class="widget-title">
-                    <div class="categoria-container-xs titulo-categoria-xs" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
-                        <div class="color-top" style="background-color: {{$colorTop}};"></div>
-                        <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                    <div class="categoria-container-xs titulo-categoria-xs" style="border-bottom-color: {{$categoria->color_bottom}};border-top-color: {{$categoria->color_bottom}};border-left-color: {{$categoria->color_bottom}}">
+                        <div class="color-top" style="background-color: {{$categoria->color_top}};"></div>
+                        <div class="color-bottom" style="background-color: {{$categoria->color_bottom}};">
                             <h2>FUTBOL 11</h2>
                         </div>
                     </div>

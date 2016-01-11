@@ -41,6 +41,7 @@ class CategoriesRepo extends BaseRepo {
         // arma la cabecera de la table 'nombre',  data  = database column , relation = relatioships in entities
         $header  =  ['columns' =>
             [
+                'Logo' => ['data'=> 'images' ,'relation' => null],
                 'Categoria' =>  ['data' => 'name','relation' => null],
 
 

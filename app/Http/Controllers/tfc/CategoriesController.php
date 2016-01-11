@@ -38,9 +38,9 @@ class CategoriesController extends Controller {
 
 
         //images
-        $this->data['imgQuantityMax']   = 0;
-        $this->data['imagePath']        = null;
-        $this->data['entityImg']        = null;
+        $this->data['imgQuantityMax']   = 1;
+        $this->data['imagePath']        = 'uploads/tfc/'.$module.'/images/';
+        $this->data['entityImg']        = $module;
 
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');

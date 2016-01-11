@@ -14,6 +14,9 @@
         {!! Form::textCustom('hour', 'Hora')!!}
         {!! Form::textCustom('name', 'Nro. Partido')!!}
 
+
+        {!! Form::text('home_teams_id',\App\Entities\tfc\Teams::find(2)->name ) !!}
+
         {!! Form::textCustom('home_teams_id', 'Equipo 1')!!}
         {!! Form::textCustom('away_teams_id', 'Equipo 2')!!}
 

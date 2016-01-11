@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/web/css/color-options.css" media="all" />
     <link rel="stylesheet" href="assets/web/css_mas/style.css">
     <link rel="stylesheet" href="assets/web/style.css">
+    <link rel="stylesheet" href="assets/web/css/fonts.css">
     <link href="assets/web/css/responsive.css" rel="stylesheet">
     <script src="assets/web/js/modernizr.custom.js"></script>
 
@@ -77,15 +78,22 @@
 
                 <ul id="main-menu" class="clearfix">
                     <li class="current-menu-item"></li>
-                    <li class="current-menu-item">
-                        <a href="{{asset('/web/principal')}}"><img src="assets/web/torn/btn1.png" width="200" height="59" alt=""/></a></li>
-                    <li>
-                        <a href="#"><img src="assets/web/torn/btn2.png" width="200" height="59" alt=""/></a></li>
-                    <li>
-                        <a href="#"><img src="assets/web/torn/btn3.png" width="200" height="59" alt=""/></a></li>
-                    <li>
-                        <a href="#"><img src="assets/web/torn/btn4.png" width="200" height="59" alt=""/></a> </li>
-                    <li><a href="#"><img src="assets/web/torn/btn5.png" width="200" height="59" alt=""/></a></li>
+                    @foreach($categorias as $cat)
+                        <li class="current-menu-item">
+                            <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" width="150" height="59" alt=""/></a></li>
+                        <li>
+                    @endforeach
+                    {{--<li class="current-menu-item">--}}
+                        {{--<a href="{{asset('/web/principal')}}"><img src="assets/web/torn/btn1.png" width="200" height="59" alt=""/></a></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#"><img src="assets/web/torn/btn2.png" width="200" height="59" alt=""/></a></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#"><img src="assets/web/torn/btn3.png" width="200" height="59" alt=""/></a></li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#"><img src="assets/web/torn/btn4.png" width="200" height="59" alt=""/></a> </li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#"><img src="assets/web/torn/btn5.png" width="200" height="59" alt=""/></a>--}}
+                    {{--</li>--}}
 
                 </ul>
                 <!-- main-menu -->
@@ -148,21 +156,7 @@
         {{--</div>--}}
         <!-- center-col -->
 
-        <div class="sidebar right-sidebar widget-area-5">
 
-            <div class="widget widget_nav_menu">
-                <h2 class="widget-title">MENU</h2>
-                <div class="menu-all-pages-container">
-                    <ul class="menu" id="menu-all-pages">
-                        </span>
-                        <br><br><br>
-                        </span>
-                    </ul>
-                </div>
-            </div>
-            <!-- widget_nav_menu --><!-- punica-socials-link-widget --><!-- widget --><!-- punica-news-letter-widget --><!-- punica-adv-widget --><!-- punica-twitter-widget --><!-- punica-poll-widget -->
-
-        </div>
         <!-- right-sidebar -->
 
         <div class="clear"></div>

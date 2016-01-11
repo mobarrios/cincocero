@@ -2449,6 +2449,23 @@ a.logo:hover{
 }
 
 .bg-dark a:hover,
+.bg-dark-lighter a,
+.bg-dark-alfa-30 a,
+.bg-dark-alfa-50 a,
+.bg-dark-alfa-70 a,
+.bg-dark-alfa-90 a,
+.bg-dark-alfa a,
+.bg-color a,
+.bg-color-lighter a,
+.bg-color-alfa-30 a,
+.bg-color-alfa-50 a,
+.bg-color-alfa-70 a,
+.bg-color-alfa-90 a,
+.bg-color-alfa a{
+    text-decoration: none;
+}
+
+.bg-dark a:hover,
 .bg-dark-lighter a:hover,
 .bg-dark-alfa-30 a:hover,
 .bg-dark-alfa-50 a:hover,

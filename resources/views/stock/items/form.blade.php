@@ -16,6 +16,8 @@
 
         {!! Form::imageCustom('image','Foto')!!}
 
+        {!! Form::colorPicker('col','color')!!}
+        {!! Form::colorPicker('col1','color1')!!}
 
         <hr>
 

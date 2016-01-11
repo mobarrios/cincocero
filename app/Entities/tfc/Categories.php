@@ -7,7 +7,7 @@ class Categories extends Entity{
 
     protected $table = 'categories';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name','color_top','color_bottom'];
 
     public function Tournaments()
     {

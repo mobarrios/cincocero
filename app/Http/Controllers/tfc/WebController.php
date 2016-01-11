@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers\tfc;
 
+use App\Entities\tfc\Categories;
 use App\Entities\tfc\Sedes;
+use App\Entities\tfc\Tournaments;
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\tfc\TournamentsRepo;
 
 
 class WebController extends Controller {
 
     public function Index()
     {
-        return view('tfc/web/index');
+        $data['categories'] = Categories::all();
+
+        return view('tfc/web/index')->with($data);
     }
 
     public function Reglamento()
@@ -52,9 +57,13 @@ class WebController extends Controller {
         return view('tfc/web/contactenos');
     }
 
-    public function Principal()
+    public function Principal($id,Tournaments $torneos,Categories $categorias)
     {
-        return view('tfc/web/principal');
+        $data['categorias'] = $categorias->all();
+        $data['categoria'] = $categorias->find($id);
+        $data['torneos'] = $torneos->where('categories_id',$id)->get();
+
+        return view('tfc/web/principal')->with($data);
     }
 
     public function Resultado()

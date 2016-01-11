@@ -9,7 +9,12 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
     Route::resource('galeria','WebController@Galeria');
     Route::resource('inscripcion','WebController@Inscripcion');
     Route::resource('contactenos','WebController@Contactenos');
-    Route::resource('principal','WebController@Principal');
+//    Route::resource('principal','WebController@Principal');
+
+    Route::get('{id}/principal',[
+        'as' => 'principal',
+        'uses' => 'WebController@Principal'
+    ]);
 
     Route::resource('resultado','WebController@Resultado');
     Route::resource('proxima_fecha','WebController@ProximaFecha');
