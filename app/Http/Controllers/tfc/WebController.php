@@ -13,8 +13,9 @@ class WebController extends Controller {
 
     public function Index()
     {
-        $data = Categories::all();
-        return view('tfc/web/index',compact('data'));
+        $data['categories'] = Categories::all();
+
+        return view('tfc/web/index')->with($data);
     }
 
     public function Reglamento()
