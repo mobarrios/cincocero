@@ -223,49 +223,61 @@
                 </h2>
                 <div class="menu-all-pages-container">
                     <ul class="menu" id="menu-all-pages">
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/destacado")}}">Destacado de la Fecha</a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>LIGA TFC CHAMPIONS</b></li>
+                        @foreach($torneos as $torneo)
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/destacado")}}"><b>{{$torneo->name}}</b></a></li>
+                            @foreach($fases->where('tournaments_id',$torneo->id) as $fases)
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">{{$fases->name}}</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/resultado")}}">Posiciones y Resultados</a></li>
+                                </ul>
+                            @endforeach
+                        @endforeach
 
 
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie A</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/resultado")}}">Posiciones y Resultados</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/proxima_fecha")}}">Proxima Fecha</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/fixture")}}">Fixture</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/sancion")}}">Sanciones</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/goleador")}}">Goleadores</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/fairplay")}}">Fair Play</a></li>
-                            </ul>
-                        </li>
 
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>TORNEO LIGA TFC CHAMPIONS</b></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>
-                            </ul>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>TORNEO BUNDESLIGA</b></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie A</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie C</a></li>
-                            </ul>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>TORNEO PREMIER LEAGUE</b></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie A</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie C</a></li>
-                            </ul>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>TORNEO LEGA CALCIO</b></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie A</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie C</a></li>
-                            </ul>
-                            <br>
+
+                        {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/destacado")}}">Destacado de la Fecha</a></li>--}}
+                        {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>LIGA TFC CHAMPIONS</b></li>--}}
+
+
+                        {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie A</a>--}}
+                            {{--<ul class="sub-menu">--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/resultado")}}">Posiciones y Resultados</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/proxima_fecha")}}">Proxima Fecha</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/fixture")}}">Fixture</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/sancion")}}">Sanciones</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/goleador")}}">Goleadores</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{asset("web/fairplay")}}">Fair Play</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+
+                        {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>--}}
+                        {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>TORNEO LIGA TFC CHAMPIONS</b></a>--}}
+                            {{--<ul class="sub-menu">--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>--}}
+                            {{--</ul>--}}
+                        {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>TORNEO BUNDESLIGA</b></a>--}}
+                            {{--<ul class="sub-menu">--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie A</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie C</a></li>--}}
+                            {{--</ul>--}}
+                        {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>TORNEO PREMIER LEAGUE</b></a>--}}
+                            {{--<ul class="sub-menu">--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie A</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie C</a></li>--}}
+                            {{--</ul>--}}
+                        {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><b>TORNEO LEGA CALCIO</b></a>--}}
+                            {{--<ul class="sub-menu">--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie A</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie B</a></li>--}}
+                                {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Serie C</a></li>--}}
+                            {{--</ul>--}}
+                            {{--<br>--}}
                     </ul>
                 </div>
             </div>
-            <!-- widget_nav_menu --><!-- punica-socials-link-widget --><!-- punica-trending-post-widget --><!-- punica-news-letter-widget --><!-- punica-twitter-widget --><!-- punica-poll-widget --><!-- widget -->
 
         </div>
         <!-- right-sidebar -->

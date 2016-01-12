@@ -1,7 +1,5 @@
 @extends('tfc/web/template')
     @section('content')
-      {{$colorTop = "#C4CD0D"}}
-      {{$colorBottom = "#005020"}}
         <div class="center-col">
             
             <div class="breadcrumb clearfix"><span class="widget-title clearfix"><img src="assets/web/images/tch.png" width="718" height="59" alt=""/></span><span class="bottom-line"></span>
@@ -11,9 +9,9 @@
             <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
-                  <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
-                    <div class="color-top" style="background-color: {{$colorTop}};"></div>
-                    <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                  <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$categoria->color_bottom}};border-top-color: {{$categoria->color_bottom}};border-left-color: {{$categoria->color_bottom}}">
+                    <div class="color-top" style="background-color: {{$categoria->color_top}};"></div>
+                    <div class="color-bottom" style="background-color: {{$categoria->color_bottom}};">
                       <h2>FIXTURE</h2>
                     </div>
                   </div>

@@ -56,9 +56,6 @@
             @include('tfc/web/menu/menuTemplate')
             <!-- main-nav -->
 
-
-            <!--search-box-->
-
         </div>
         <!-- wrapper -->
 
@@ -83,18 +80,6 @@
                             <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" width="150" height="59" alt=""/></a></li>
                         <li>
                     @endforeach
-                    {{--<li class="current-menu-item">--}}
-                        {{--<a href="{{asset('/web/principal')}}"><img src="assets/web/torn/btn1.png" width="200" height="59" alt=""/></a></li>--}}
-                    {{--<li>--}}
-                        {{--<a href="#"><img src="assets/web/torn/btn2.png" width="200" height="59" alt=""/></a></li>--}}
-                    {{--<li>--}}
-                        {{--<a href="#"><img src="assets/web/torn/btn3.png" width="200" height="59" alt=""/></a></li>--}}
-                    {{--<li>--}}
-                        {{--<a href="#"><img src="assets/web/torn/btn4.png" width="200" height="59" alt=""/></a> </li>--}}
-                    {{--<li>--}}
-                        {{--<a href="#"><img src="assets/web/torn/btn5.png" width="200" height="59" alt=""/></a>--}}
-                    {{--</li>--}}
-
                 </ul>
                 <!-- main-menu -->
 
@@ -102,12 +87,11 @@
 
                 <div class="mobile-menu-wrapper">
                     <ul id="mobile-menu">
-                        <li><a href="#"><img src="assets/web/torn/btn1.png" width="200" height="59" alt=""/></a></li>
-                        <li><a href="#"><img src="assets/web/torn/btn2.png" width="200" height="59" alt=""/></a></li>
-                        <li><a href="#"><img src="assets/web/torn/btn3.png" width="200" height="59" alt=""/></a></li>
-                        <li><a href="#"><img src="assets/web/torn/btn4.png" width="200" height="59" alt=""/></a></li>
-                        <li><a href="#"><img src="assets/web/torn/btn5.png" width="200" height="59" alt=""/></a></li>
-
+                        @foreach($categorias as $cat)
+                            <li class="current-menu-item">
+                                <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" width="150" height="59" alt=""/></a></li>
+                            <li>
+                        @endforeach
                     </ul>
                     <!-- mobile-menu -->
                 </div>
@@ -132,30 +116,7 @@
 
     <div class="wrapper clearfix">
 
-        {{--<div class="center-col">--}}
-
-            {{--<center>--}}
-                {{--<div class="breadcrumb clearfix">inscripcion online<span class="bottom-line"></span>--}}
-                {{--</div></center>--}}
-            <!-- breadcrumb -->
-
-            {{--<div class="elements-box">--}}
-
-                @yield('content')
-
-                {{--<p>&nbsp;</p>--}}
-                {{--<center><!-- row --></center>--}}
-                <!-- row --><!-- row --><!-- row -->
-
-                {{--<div class="row"></div>--}}
-                <!-- row --><!-- row --><!-- row --><!-- row --><!-- row --><!-- row -->
-
-            {{--</div>--}}
-            <!-- elements-box -->
-
-        {{--</div>--}}
-        <!-- center-col -->
-
+        @yield('content')
 
         <!-- right-sidebar -->
 
