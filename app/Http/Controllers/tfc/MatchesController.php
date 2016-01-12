@@ -7,9 +7,11 @@ use App\Entities\tfc\Matches;
 use App\Entities\tfc\Sedes;
 use App\Http\Repositories\tfc\MatchesRepo as Repo;
 use App\Http\Controllers\Controller;
+
+use App\Http\Repositories\tfc\TablasRepo;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
-
+use Illuminate\Support\Facades\Session;
 
 
 class MatchesController extends Controller {
@@ -45,8 +47,9 @@ class MatchesController extends Controller {
         $this->data['entityImg']        = $module;
 
         //selects
-        // $this->data['sedes']      = Sedes::lists('name','id');
-        $this->data['canchas']        = Canchas::lists('name','id');
+         $this->data['status']          = [1 => 'Por Jugar', 2 => 'Finalizado', 3 => 'Suspendido'];
+
+         $this->data['canchas']         = Canchas::lists('name','id');
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -110,5 +113,31 @@ class MatchesController extends Controller {
         // redirect with errors messages language
 
         return redirect()->route('fasesFixture',$request->all()['fases_id'])->withErrors(trans('messages.editItem'));
+    }
+
+
+    //Carga resultado de los partidos
+
+    public function getResult($id = null)
+    {
+
+        $this->data['match'] = Matches::find($id);
+
+        return view('tfc.matches.result')->with($this->data);
+    }
+
+    public function postResult(Request $request, TablasRepo $tabla)
+    {
+        $match = Matches::find($request->matches_id);
+        $match->home_goals = $request->home_goals;
+        $match->away_goals = $request->away_goals;
+        $match->status = 2;
+        $match->save();
+
+        //recalcula tabla
+        $tabla->calculaTabla($request->matches_id);
+
+
+        return redirect()->route('fasesFixture', Session::get('fases_id') );
     }
 }

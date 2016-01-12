@@ -15,12 +15,11 @@
         {!! Form::textCustom('name', 'Nro. Partido')!!}
 
 
-        {!! Form::text('home_teams_id',\App\Entities\tfc\Teams::find(2)->name ) !!}
 
         {!! Form::textCustom('home_teams_id', 'Equipo 1')!!}
         {!! Form::textCustom('away_teams_id', 'Equipo 2')!!}
 
-        {!! Form::textCustom('status', 'Estado')!!}
+        {!! Form::selectCustom('status', 'Estado', $status)!!}
 
         {!! Form::selectCustom('canchas_id','Cancha',$canchas)!!}
 

@@ -14,4 +14,22 @@ class Teams extends Entity{
     {
         return $this->hasMany(Matches::getClass());
     }
+
+
+    public function Players()
+    {
+        return $this->hasMany(Players::getClass());
+    }
+
+    public function PlayersList()
+    {
+        $players  = Players::where('teams_id',$this->attributes['id'])->get();
+
+        return $players;
+    }
+
+    public function Tablas()
+    {
+        return $this->hasMany(Tablas::getClass());
+    }
 }

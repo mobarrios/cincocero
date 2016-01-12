@@ -9,6 +9,7 @@ Route::get('delete'.$module.'/{id?}', ['middleware'=>'roles','data'=> $module.'-
 Route::get('new'.$module.'/{id?}',    ['middleware'=>'roles','data'=> $module.'-store' ,'as'=> $module.'GetNew', 'uses'=> $controller.'@getNew']);
 Route::get('fixture'.$module.'/{id?}', ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module.'Fixture', 'uses'=> $controller.'@getDetail']);
 
+Route::get('tabla'.$module.'/{id?}', ['middleware' => 'roles','data'=>$module.'-list' , 'as' => $module.'Tabla', 'uses'=>$controller.'@getTabla']);
 
 Route::post('postNew'.$module,          ['as'=> $module.'PostNew', 'uses'=> $controller.'@postNew']);
 Route::post('postEdit'.$module.'/{id?}', ['as'=>$module.'PostEdit', 'uses'=> $controller.'@postEdit']);

@@ -3,6 +3,7 @@
 namespace App\Http\Repositories\tfc;
 
 use App\Entities\tfc\Players;
+use App\Entities\tfc\Teams;
 use App\Http\Repositories\BaseRepo;
 
 class PlayersRepo extends BaseRepo {
@@ -12,21 +13,14 @@ class PlayersRepo extends BaseRepo {
         return new Players;
     }
 
-    public function createCustom($datos = null)
-    {
-        $data = $datos->all();
-
-        return;
-    }
-
 
     public function Rules()
     {
         return [
             'name'   => 'required',
             'last_name'   => 'required',
-
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+            'teams_id' => 'required',
         ];
     }
 
@@ -35,8 +29,8 @@ class PlayersRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'last_name'   => 'required',
-
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+            'teams_id' => 'required',
         ];
     }
 
@@ -53,7 +47,7 @@ class PlayersRepo extends BaseRepo {
                 'Tel' =>  ['data' => 'phone','relation' => null],
                 'Cel' =>  ['data' => 'cel','relation' => null],
 
-                //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
+                'Equipo' =>['data' => 'Teams','relation' => 'name'],
             ],
         ];
 

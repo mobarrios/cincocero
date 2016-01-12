@@ -36,13 +36,18 @@
                         <td>{{$match->date}}</td>
                         <td>{{$match->hour}}</td>
                         <td>{{$match->HomeTeam->name}} </td>
-                        <td><label class="label label-danger">0</label></td>
-                        <td><label class="label label-danger">0</label></td>
+                        <td><label class="label label-danger">{{$match->home_goals}}</label></td>
+                        <td><label class="label label-danger">{{$match->away_goals}}</label></td>
                         <td>{{$match->AwayTeam->name}}</td>
                         <td>{{$match->Canchas->Sedes->name or 'a Conf.'}}</td>
                         <td>{{$match->Canchas->name or 'a Conf.'}}</td>
                         <td>{{$match->status}}</td>
-                        <td><a href="{{route('matchesGetEdit',[$match->id,$fases->fases_id] )}}" class="btn btn-xs btn-default">Editar</a> </td>
+                        <td>
+
+                            <a href="{{route('matchesGetResult',[$match->id] )}}" class="btn btn-xs btn-default">Resultado</a>
+                            <a href="{{route('matchesGetEdit',[$match->id,$fases->fases_id] )}}" class="btn btn-xs btn-default">Editar</a>
+                        </td>
+
 
                     </tr>
                 @endforeach

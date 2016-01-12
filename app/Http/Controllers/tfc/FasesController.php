@@ -5,13 +5,14 @@ namespace App\Http\Controllers\tfc;
 use App\Entities\tfc\Fases;
 use App\Entities\tfc\FasesWeek;
 use App\Entities\tfc\Matches;
+use App\Entities\tfc\Tablas;
 use App\Entities\tfc\Teams;
 use App\Helpers\FixtureHelper;
 use App\Http\Repositories\tfc\FasesRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
-
+use Illuminate\Support\Facades\Session;
 
 
 class FasesController extends Controller {
@@ -139,9 +140,21 @@ class FasesController extends Controller {
     {
         $this->data['week']     = FasesWeek::where('fases_id',$id)->get();
 
-
-
+        Session::put('fases_id',$id);
 
         return view($this->detail)->with($this->data);
+    }
+
+    public function getTabla($fases_id)
+    {
+        $this->data['tablas'] =  Tablas::where('fases_id',$fases_id)
+                                ->orderBy('pts','DESC')
+                                ->orderBy('pj','DESC')
+                                ->orderBy('dg','DESC')
+                                ->get();
+
+        $this->data['pos'] = 1;
+
+        return view('tfc.fases.tablas')->with($this->data);
     }
 }

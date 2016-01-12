@@ -7,7 +7,7 @@ class Matches extends Entity{
 
     protected $table = 'matches';
 
-    protected $fillable = ['name','hour','date','home_team','away_team','status','fases_week_id','canchas_id'];
+    protected $fillable = ['name','hour','date','home_team','away_team','status','fases_week_id','canchas_id','home_goals','away_goals'];
 
 
     public function FasesWeek()
@@ -46,4 +46,5 @@ class Matches extends Entity{
     {
         return [0 => 'Por Jugar', 1 => 'Finalizado', 2 => 'Suspendido'];
     }
+
 }

@@ -14,6 +14,8 @@
         {!! Form::textCustom('phone', 'Tel. ')!!}
         {!! Form::textCustom('cel', 'Cel. ')!!}
 
+        {!! Form::selectCustom('teams_id','Equipo',$teams) !!}
+
 
 
 

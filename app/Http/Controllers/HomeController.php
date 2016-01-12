@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller {
 
+
+
+
     public $view ;
     public $data;
 
@@ -36,3 +39,10 @@ class HomeController extends Controller {
 
     }
 }
+
+
+//session variables
+/*
+    fases_id;
+
+*/
