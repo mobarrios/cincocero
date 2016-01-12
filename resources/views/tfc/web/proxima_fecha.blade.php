@@ -1,15 +1,24 @@
 @extends('tfc/web/template')
     @section('content')
+
+        {{$colorTop = "#C4CD0D"}}
+        {{$colorBottom = "#005020"}}
         <div class="center-col">
             
-            <div class="breadcrumb clearfix"><span class="widget-title clearfix"><img src="images/tch.png" width="718" height="59" alt=""/></span><span class="bottom-line"></span>
+            <div class="breadcrumb clearfix"><span class="widget-title clearfix"><img src="assets/web/images/tch.png" width="718" height="59" alt=""/></span><span class="bottom-line"></span>
             </div>
             <!-- breadcrumb -->
 
             <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
-                  <p><img src="images/prox_fecha.png" width="600" height="70" alt=""/></p>
+                    <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
+                        <div class="color-top" style="background-color: {{$colorTop}};"></div>
+                        <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                            <h2>PRÓXIMA FECHA</h2>
+                        </div>
+                    </div>
+                  {{--<p><img src="assets/web/images/prox_fecha.png" width="600" height="70" alt=""/></p>--}}
                   <p>&nbsp;</p>
                 </div>
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">

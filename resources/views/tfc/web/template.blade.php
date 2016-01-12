@@ -56,9 +56,6 @@
             @include('tfc/web/menu/menuTemplate')
             <!-- main-nav -->
 
-
-            <!--search-box-->
-
         </div>
         <!-- wrapper -->
 
@@ -78,16 +75,11 @@
 
                 <ul id="main-menu" class="clearfix">
                     <li class="current-menu-item"></li>
-                    <li class="current-menu-item">
-                        <a href="{{asset('/web/principal')}}"><img src="assets/web/torn/btn1.png" width="200" height="59" alt=""/></a></li>
-                    <li>
-                        <a href="#"><img src="assets/web/torn/btn2.png" width="200" height="59" alt=""/></a></li>
-                    <li>
-                        <a href="#"><img src="assets/web/torn/btn3.png" width="200" height="59" alt=""/></a></li>
-                    <li>
-                        <a href="#"><img src="assets/web/torn/btn4.png" width="200" height="59" alt=""/></a> </li>
-                    <li><a href="#"><img src="assets/web/torn/btn5.png" width="200" height="59" alt=""/></a></li>
-
+                    @foreach($categorias as $cat)
+                        <li class="current-menu-item">
+                            <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" width="150" height="59" alt=""/></a></li>
+                        <li>
+                    @endforeach
                 </ul>
                 <!-- main-menu -->
 
@@ -95,12 +87,11 @@
 
                 <div class="mobile-menu-wrapper">
                     <ul id="mobile-menu">
-                        <li><a href="#"><img src="assets/web/torn/btn1.png" width="200" height="59" alt=""/></a></li>
-                        <li><a href="#"><img src="assets/web/torn/btn2.png" width="200" height="59" alt=""/></a></li>
-                        <li><a href="#"><img src="assets/web/torn/btn3.png" width="200" height="59" alt=""/></a></li>
-                        <li><a href="#"><img src="assets/web/torn/btn4.png" width="200" height="59" alt=""/></a></li>
-                        <li><a href="#"><img src="assets/web/torn/btn5.png" width="200" height="59" alt=""/></a></li>
-
+                        @foreach($categorias as $cat)
+                            <li class="current-menu-item">
+                                <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" width="150" height="59" alt=""/></a></li>
+                            <li>
+                        @endforeach
                     </ul>
                     <!-- mobile-menu -->
                 </div>
@@ -125,45 +116,8 @@
 
     <div class="wrapper clearfix">
 
-        {{--<div class="center-col">--}}
+        @yield('content')
 
-            {{--<center>--}}
-                {{--<div class="breadcrumb clearfix">inscripcion online<span class="bottom-line"></span>--}}
-                {{--</div></center>--}}
-            <!-- breadcrumb -->
-
-            {{--<div class="elements-box">--}}
-
-                @yield('content')
-
-                {{--<p>&nbsp;</p>--}}
-                {{--<center><!-- row --></center>--}}
-                <!-- row --><!-- row --><!-- row -->
-
-                {{--<div class="row"></div>--}}
-                <!-- row --><!-- row --><!-- row --><!-- row --><!-- row --><!-- row -->
-
-            {{--</div>--}}
-            <!-- elements-box -->
-
-        {{--</div>--}}
-        <!-- center-col -->
-
-        <div class="sidebar right-sidebar widget-area-5">
-
-            <div class="widget widget_nav_menu">
-                <h2 class="widget-title">MENU</h2>
-                <div class="menu-all-pages-container">
-                    <ul class="menu" id="menu-all-pages">
-                        </span>
-                        <br><br><br>
-                        </span>
-                    </ul>
-                </div>
-            </div>
-            <!-- widget_nav_menu --><!-- punica-socials-link-widget --><!-- widget --><!-- punica-news-letter-widget --><!-- punica-adv-widget --><!-- punica-twitter-widget --><!-- punica-poll-widget -->
-
-        </div>
         <!-- right-sidebar -->
 
         <div class="clear"></div>

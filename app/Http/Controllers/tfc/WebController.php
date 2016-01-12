@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Categories;
+use App\Entities\tfc\Fases;
 use App\Entities\tfc\Sedes;
 use App\Entities\tfc\Tournaments;
 use App\Http\Controllers\Controller;
@@ -57,11 +58,14 @@ class WebController extends Controller {
         return view('tfc/web/contactenos');
     }
 
-    public function Principal($id,Tournaments $torneos,Categories $categorias)
+    public function Principal($id,Tournaments $torneos,Categories $categorias,Fases $fases)
     {
-        $categoria = $categorias->find($id);
-        $torneos = $torneos->where('categories_id',$id)->get();
-        return view('tfc/web/principal',compact('torneos','categoria'));
+        $data['categorias'] = $categorias->all();
+        $data['categoria'] = $categorias->find($id);
+        $data['torneos'] = $torneos->where('categories_id',$id)->get();
+        $data['fases'] = $fases->all();
+
+        return view('tfc/web/principal')->with($data);
     }
 
     public function Resultado()
@@ -72,10 +76,16 @@ class WebController extends Controller {
     {
         return view('tfc/web/proxima_fecha');
     }
-    public function Fixture()
+    public function Fixture($id,Tournaments $torneos,Categories $categorias,Fases $fases)
     {
-        return view('tfc/web/fixture');
+        $data['categorias'] = $categorias->all();
+        $data['categoria'] = $categorias->find($id);
+        $data['torneos'] = $torneos->where('categories_id',$id)->get();
+        $data['fases'] = $fases->all();
+
+        return view('tfc/web/fixture')->with($data);
     }
+
     public function Sancion()
     {
         return view('tfc/web/sancion');
