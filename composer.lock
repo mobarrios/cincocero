@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "83dadc801e327cad04f01e4ae08b1994",
-    "content-hash": "ca19a219066fab2e053b78c96b72131a",
+    "hash": "49dae70a7595bdf62646f83e8196a883",
+    "content-hash": "1f4abeb618ead2ed409ada8d63ebb8fa",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -621,16 +621,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.0.34",
+            "version": "v5.0.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "98dbaafe8e2781f86b1b858f8610be0d7318b153"
+                "reference": "b11c8ab88245f920b30e5f30e16b141ac8d461d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/98dbaafe8e2781f86b1b858f8610be0d7318b153",
-                "reference": "98dbaafe8e2781f86b1b858f8610be0d7318b153",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b11c8ab88245f920b30e5f30e16b141ac8d461d3",
+                "reference": "b11c8ab88245f920b30e5f30e16b141ac8d461d3",
                 "shasum": ""
             },
             "require": {
@@ -743,7 +743,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-12-04 23:20:49"
+            "time": "2015-06-09 13:12:19"
         },
         {
             "name": "laravelcollective/html",
@@ -1521,25 +1521,25 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v2.8.1",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "eaa3320e32f09a01dc432c6efbe8051aee59cfef"
+                "reference": "4613311fd46e146f506403ce2f8a0c71d402d2a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/eaa3320e32f09a01dc432c6efbe8051aee59cfef",
-                "reference": "eaa3320e32f09a01dc432c6efbe8051aee59cfef",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/4613311fd46e146f506403ce2f8a0c71d402d2a3",
+                "reference": "4613311fd46e146f506403ce2f8a0c71d402d2a3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.5.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -1570,7 +1570,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-05 17:37:59"
+            "time": "2015-12-05 17:45:07"
         },
         {
             "name": "symfony/debug",
@@ -3445,25 +3445,25 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.1",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "ac84cbb98b68a6abbc9f5149eb96ccc7b07b8966"
+                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/ac84cbb98b68a6abbc9f5149eb96ccc7b07b8966",
-                "reference": "ac84cbb98b68a6abbc9f5149eb96ccc7b07b8966",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/3df409958a646dad2bc5046c3fb671ee24a1a691",
+                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.5.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -3490,7 +3490,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-26 13:37:56"
+            "time": "2015-12-26 13:39:53"
         }
     ],
     "aliases": [],
