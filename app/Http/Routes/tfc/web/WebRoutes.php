@@ -16,7 +16,13 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
         'uses' => 'WebController@Principal'
     ]);
 
-    Route::resource('resultado','WebController@Resultado');
+    Route::get('{id}/resultado',[
+        'as' => 'resultado',
+        'uses' => 'WebController@Resultado'
+    ]);
+
+
+//    Route::resource('resultado','WebController@Resultado');
     Route::resource('proxima_fecha','WebController@ProximaFecha');
 
     Route::get('{id}/fixture',[

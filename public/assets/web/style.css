@@ -3611,7 +3611,6 @@ blockquote {
     border-left-style: solid;
     border-top-style: solid;
     margin: auto;
-    overflow: hidden;
 }
 
 .titulo-categoria{
@@ -3635,7 +3634,7 @@ blockquote {
 
 .categoria-container-xs .color-bottom{
     margin-top:0;
-    height:70%;
+    height:auto;
 }
 
 .color-bottom>h2{
@@ -3648,8 +3647,7 @@ blockquote {
 }
 
 .titulo-categoria-xs .color-bottom>h2{
-    font-size:1.3em;
-    line-height: 0;
+    font-size:1em;
     text-align:left;
     font-family: 'Conv_HANDGOTL';
 }
