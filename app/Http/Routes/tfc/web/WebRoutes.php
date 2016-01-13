@@ -4,9 +4,9 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
 {
     Route::resource('/','WebController@Index');
     Route::resource('reglamento','WebController@Reglamento');
-    Route::resource('noticias','WebController@Noticias');
+//    Route::resource('noticias','WebController@Noticias');
     Route::resource('sedes','WebController@Sedes');
-    Route::resource('galeria','WebController@Galeria');
+//    Route::resource('galeria','WebController@Galeria');
     Route::resource('inscripcion','WebController@Inscripcion');
     Route::resource('contactenos','WebController@Contactenos');
 //    Route::resource('principal','WebController@Principal');
@@ -14,6 +14,16 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
     Route::get('{id}/principal',[
         'as' => 'principal',
         'uses' => 'WebController@Principal'
+    ]);
+
+    Route::get('galeria',[
+        'as' => 'galeria',
+        'uses' => 'WebController@Galeria'
+    ]);
+
+    Route::get('noticias',[
+        'as' => 'noticias',
+        'uses' => 'WebController@Noticias'
     ]);
 
     Route::get('{id}/resultado',[
