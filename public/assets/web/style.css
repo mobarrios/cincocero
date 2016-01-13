@@ -3611,6 +3611,7 @@ blockquote {
     border-left-style: solid;
     border-top-style: solid;
     margin: auto;
+    position:relative;
     overflow: hidden;
 }
 
@@ -3635,7 +3636,13 @@ blockquote {
 
 .categoria-container-xs .color-bottom{
     margin-top:0;
-    height:70%;
+    height:64%;
+    margin-top:7%;
+}
+
+.categoria-container-xs .color-top{
+    position:absolute;
+    top:0;
 }
 
 .color-bottom>h2{
@@ -3648,8 +3655,10 @@ blockquote {
 }
 
 .titulo-categoria-xs .color-bottom>h2{
-    font-size:1.3em;
-    line-height: 0;
+    font-size:.7em;
     text-align:left;
     font-family: 'Conv_HANDGOTL';
+    padding:0;
+    padding-left:5px;
+    line-height: 1.7em;
 }

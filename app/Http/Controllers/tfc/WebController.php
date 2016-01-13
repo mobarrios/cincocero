@@ -8,6 +8,7 @@ use App\Entities\tfc\Sedes;
 use App\Entities\tfc\Teams;
 use App\Entities\tfc\Tournaments;
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\tfc\CategoriesRepo;
 use App\Http\Repositories\tfc\TournamentsRepo;
 
 
@@ -70,9 +71,11 @@ class WebController extends Controller {
         return view('tfc/web/principal')->with($data);
     }
 
-    public function Resultado()
+    public function Resultado($id,Categories $categorias)
     {
-        return view('tfc/web/resultado');
+        $data['categorias'] = $categorias->all();
+        $data['categoria'] = $categorias->find($id);
+        return view('tfc/web/resultado')->with($data);
     }
     public function ProximaFecha()
     {
