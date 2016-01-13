@@ -20,7 +20,7 @@
                                     <div class="item">
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="http://lorempixel.com/200/225/sports"><img src="http://lorempixel.com/200/225/sports" title="Me and my syster" alt="" /></a>
+                                                <a class="group1" href="http://www.achost.com.ar/images/logoachost.jpg"><img src="http://www.achost.com.ar/images/logoachost.jpg" title="Me and my syster" alt="" /></a>
                                             </div>
                                         </article>
                                         <!-- entry-item -->
@@ -30,7 +30,7 @@
                                     <div class="item">
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="http://lorempixel.com/200/225/sports"><img src="http://lorempixel.com/200/225/sports" title="Me and my syster" alt="" /></a>
+                                                <a class="group1" href="http://www.achost.com.ar/images/logoachost.jpg"><img src="http://www.achost.com.ar/images/logoachost.jpg" title="Me and my syster" alt="" /></a>
                                             </div>
                                         </article>
                                         <!-- entry-item -->
@@ -40,7 +40,7 @@
                                     <div class="item">
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="http://lorempixel.com/200/225/sports"><img src="http://lorempixel.com/200/225/sports" title="Me and my syster" alt="" /></a>
+                                                <a class="group1" href="http://www.achost.com.ar/images/logoachost.jpg"><img src="http://www.achost.com.ar/images/logoachost.jpg" title="Me and my syster" alt="" /></a>
                                             </div>
                                         </article>
                                         <!-- entry-item -->
@@ -73,7 +73,7 @@
                                     <div class="item">
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="http://lorempixel.com/200/225/sports"><img src="http://lorempixel.com/200/225/sports" title="Me and my syster" alt="" /></a>
+                                                <a class="group1" href="http://www.achost.com.ar/images/logoachost.jpg"><img src="http://www.achost.com.ar/images/logoachost.jpg" title="Me and my syster" alt="" /></a>
                                             </div>
                                         </article>
                                         <!-- entry-item -->
@@ -83,7 +83,7 @@
                                     <div class="item">
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="http://lorempixel.com/200/225/sports"><img src="http://lorempixel.com/200/225/sports" title="Me and my syster" alt="" /></a>
+                                                <a class="group1" href="http://www.achost.com.ar/images/logoachost.jpg"><img src="http://www.achost.com.ar/images/logoachost.jpg" title="Me and my syster" alt="" /></a>
                                             </div>
                                         </article>
                                         <!-- entry-item -->
@@ -93,7 +93,7 @@
                                     <div class="item">
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="http://lorempixel.com/200/225/sports"><img src="http://lorempixel.com/200/225/sports" title="Me and my syster" alt="" /></a>
+                                                <a class="group1" href="http://www.achost.com.ar/images/logoachost.jpg"><img src="http://www.achost.com.ar/images/logoachost.jpg" title="Me and my syster" alt="" /></a>
                                             </div>
                                         </article>
                                         <!-- entry-item -->
@@ -125,7 +125,7 @@
                                     <div class="item">
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="http://lorempixel.com/200/225/sports"><img src="http://lorempixel.com/200/225/sports" title="Me and my syster" alt="" /></a>
+                                                <a class="group1" href="http://www.achost.com.ar/images/logoachost.jpg"><img src="http://www.achost.com.ar/images/logoachost.jpg" title="Me and my syster" alt="" /></a>
                                             </div>
                                         </article>
                                         <!-- entry-item -->
@@ -135,7 +135,7 @@
                                     <div class="item">
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="http://lorempixel.com/200/225/sports"><img src="http://lorempixel.com/200/225/sports" title="Me and my syster" alt="" /></a>
+                                                <a class="group1" href="http://www.achost.com.ar/images/logoachost.jpg"><img src="http://www.achost.com.ar/images/logoachost.jpg" title="Me and my syster" alt="" /></a>
                                             </div>
                                         </article>
                                         <!-- entry-item -->
@@ -145,7 +145,7 @@
                                     <div class="item">
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="http://lorempixel.com/200/225/sports"><img src="http://lorempixel.com/200/225/sports" title="Me and my syster" alt="" /></a>
+                                                <a class="group1" href="http://www.achost.com.ar/images/logoachost.jpg"><img src="http://www.achost.com.ar/images/logoachost.jpg" title="Me and my syster" alt="" /></a>
                                             </div>
                                         </article>
                                         <!-- entry-item -->

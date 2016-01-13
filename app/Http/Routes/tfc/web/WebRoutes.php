@@ -16,9 +16,9 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
         'uses' => 'WebController@Principal'
     ]);
 
-    Route::get('{id}/galeria',[
-        'as' => 'principal',
-        'uses' => 'WebController@Principal'
+    Route::get('galeria',[
+        'as' => 'galeria',
+        'uses' => 'WebController@Galeria'
     ]);
 
     Route::get('noticias',[
