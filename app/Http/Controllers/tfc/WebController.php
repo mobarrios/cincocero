@@ -25,9 +25,10 @@ class WebController extends Controller {
         return view('tfc/web/reglamento');
     }
 
-    public function Noticias()
+    public function Noticias(Categories $categorias)
     {
-        return view('tfc/web/noticias');
+        $data['categorias'] = $categorias->all();
+        return view('tfc/web/noticias')->with($data);
     }
 
     public function Sedes()
@@ -44,9 +45,10 @@ class WebController extends Controller {
         return view('tfc/web/sede_detalle')->with($data);
     }
 
-    public function Galeria()
+    public function Galeria(Categories $categorias)
     {
-        return view('tfc/web/galeria');
+        $data['categorias'] = $categorias->all();
+        return view('tfc/web/galeria')->with($data);
     }
 
     public function Inscripcion()
