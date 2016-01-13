@@ -75,7 +75,7 @@
 
                 <ul id="main-menu" class="clearfix">
                     <li class="current-menu-item"></li>
-                    @foreach($categorias as $cat)
+                    @foreach(\App\Entities\tfc\Categories::all() as $cat)
                         <li class="current-menu-item">
                             <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" width="150" height="59" alt=""/></a></li>
                         <li>
@@ -87,7 +87,7 @@
 
                 <div class="mobile-menu-wrapper">
                     <ul id="mobile-menu">
-                        @foreach($categorias as $cat)
+                        @foreach(\App\Entities\tfc\Categories::all() as $cat)
                             <li class="current-menu-item">
                                 <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" width="150" height="59" alt=""/></a></li>
                             <li>

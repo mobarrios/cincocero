@@ -5,6 +5,7 @@ namespace App\Http\Controllers\tfc;
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Fases;
 use App\Entities\tfc\Sedes;
+use App\Entities\tfc\Teams;
 use App\Entities\tfc\Tournaments;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\tfc\CategoriesRepo;
@@ -53,7 +54,8 @@ class WebController extends Controller {
 
     public function Inscripcion()
     {
-        return view('tfc/web/inscripcion');
+        $data['teams'] = Teams::orderBy('name','DESC')->lists('name','id');
+        return view('tfc/web/inscripcion')->with($data);
     }
 
     public function Contactenos()
