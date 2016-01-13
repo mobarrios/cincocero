@@ -8,6 +8,8 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
+        {!! Form::textCustom('dni', 'DNI ')!!}
+
         {!! Form::textCustom('name', 'Nombre Juagdor')!!}
         {!! Form::textCustom('last_name', 'Apellido Juagdor')!!}
         {!! Form::textCustom('mail', 'Mail ')!!}
@@ -16,8 +18,7 @@
 
         {!! Form::selectCustom('teams_id','Equipo',$teams) !!}
 
-
-
+        {!! Form::selectCustom('status','Estado',$status) !!}
 
 
         {!! Form::imageCustom('image','Imagen')!!}
