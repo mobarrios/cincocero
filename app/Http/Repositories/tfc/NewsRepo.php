@@ -49,7 +49,7 @@ class NewsRepo extends BaseRepo {
                 'Fecha' =>  ['data' => 'date','relation' => null],
                 'Tìtulo' =>  ['data' => 'title','relation' => null],
                 'Desc.' =>['data' => 'description','relation' => null],
-                'Detalle' =>['data' => 'detail','relation' => null],
+                'Detalle' =>['data' => 'detaile','relation' => null],
 
             ],
         ];

@@ -32,7 +32,7 @@
                             <div class="panel-body">
                                 <h4 class="text-center">Categoria : {{$cat->name}}</h4>
 
-                                    @foreach($cat->Tournaments as $torneo )
+                                    @foreach(\App\Entities\tfc\Tournaments::where('seasons_id',$season->id)->where('categories_id',$cat->id)->get() as $torneo )
 
                                         <table class="table table-condensed table-bordered">
                                             <th colspan="2"> {{$torneo->name}}</th>
@@ -76,12 +76,9 @@
 
                 @endforeach
 
+        </div>
 
-
-
-
-
-            </div>
+        </div>
 
         </div>
         @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Fases;
+use App\Entities\tfc\News;
 use App\Entities\tfc\Players;
 use App\Entities\tfc\Sedes;
 use App\Entities\tfc\Teams;
@@ -31,6 +32,8 @@ class WebController extends Controller {
 
     public function Noticias(Categories $categorias)
     {
+        $data['noticias']   = News::orderBy('date','DESC')->paginate(10);
+
         $data['categorias'] = $categorias->all();
         return view('tfc/web/noticias')->with($data);
     }
@@ -68,6 +71,8 @@ class WebController extends Controller {
 
     public function Principal($id,Tournaments $torneos,Categories $categorias,Fases $fases)
     {
+        $data['noticias']   = News::orderBy('date','DESC')->paginate(5);
+
         $data['categorias'] = $categorias->all();
         $data['categoria'] = $categorias->find($id);
         $data['torneos'] = $torneos->where('categories_id',$id)->get();
@@ -168,7 +173,7 @@ class WebController extends Controller {
         $player->last_name  = $request->last_name;
         $player->mail       = $request->mail;
         $player->teams_id   = $request->teams_id;
-        $player->status     = 2;
+        $player->status     = 1;
         $player->save();
 
         return redirect()->back()->withErrors('INSCRIPCION CARGADA CORRECTAMENTE. Se le enviara un mail con la confirmacion de la inscripcion.');

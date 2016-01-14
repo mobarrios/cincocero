@@ -20,6 +20,9 @@
 
         {!! Form::selectCustom('status','Estado',$status) !!}
 
+        <div class="motivo">
+            {!! Form::textAreaCustom('motivo','Motivo Deshabilitacion') !!}
+        </div>
 
         {!! Form::imageCustom('image','Imagen')!!}
         <hr>
@@ -29,4 +32,9 @@
 
     @endsection
 
+@section('js')
+    <script>
+        $('.motivo').hidden('hidden');
+    </script>
+@endsection
 @stop
