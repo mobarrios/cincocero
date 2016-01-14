@@ -13,7 +13,6 @@
 
 
         {!! Form::textCustom('name', 'Nombre de la foto')!!}
-        {!! Form::textAreaCustom('detail','Detalle') !!}
 
 
         <hr>
