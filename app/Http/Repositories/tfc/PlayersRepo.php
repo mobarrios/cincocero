@@ -21,6 +21,7 @@ class PlayersRepo extends BaseRepo {
             'last_name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
             'teams_id' => 'required',
+            'dni' => 'required|unique:players,dni',
         ];
     }
 
@@ -41,11 +42,14 @@ class PlayersRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'Imagen' =>    ['data' => 'images','relation'=> null],
+                'DNI'=> ['data' => 'dni', 'relation'=>null],
                 'Nombre' =>  ['data' => 'name','relation' => null],
                 'Apellido' =>  ['data' => 'last_name','relation' => null],
                 'Mail' =>  ['data' => 'mail','relation' => null],
                 'Tel' =>  ['data' => 'phone','relation' => null],
                 'Cel' =>  ['data' => 'cel','relation' => null],
+
+                'Estado' => ['data'=>'status','relation' => null],
 
                 'Equipo' =>['data' => 'Teams','relation' => 'name'],
             ],

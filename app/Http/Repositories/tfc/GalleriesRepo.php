@@ -2,14 +2,15 @@
 
 namespace App\Http\Repositories\tfc;
 
+use App\Entities\tfc\Galleries;
 use App\Entities\tfc\News;
 use App\Http\Repositories\BaseRepo;
 
-class NewsRepo extends BaseRepo {
+class GalleriesRepo extends BaseRepo {
 
     public function getModel()
     {
-        return new News;
+        return new Galleries();
     }
 
     public function createCustom($datos = null)
@@ -24,18 +25,16 @@ class NewsRepo extends BaseRepo {
     public function Rules()
     {
         return [
-            'date'   => 'required',
-            'title'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'name'   => 'required',
+            'imagen'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
         ];
     }
 
     public function RulesEdit($id = null)
     {
         return [
-            'date'   => 'required',
-            'title'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'name'   => 'required',
+            'imagen'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
         ];
     }
 
@@ -46,11 +45,7 @@ class NewsRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'Imagen' =>    ['data' => 'images','relation'=> null],
-                'Fecha' =>  ['data' => 'date','relation' => null],
-                'Tìtulo' =>  ['data' => 'title','relation' => null],
-                'Desc.' =>['data' => 'description','relation' => null],
-                'Detalle' =>['data' => 'detaile','relation' => null],
-
+                'Name' =>  ['data' => 'name','relation' => null]
             ],
         ];
 

@@ -21,6 +21,7 @@ class ImagesHelper
 
         $img = Image::make(public_path($path).$file);
         //$img->fit(640,480);
+
         $img->save();
 
 

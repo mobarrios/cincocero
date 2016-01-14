@@ -44,8 +44,8 @@ class PlayersController extends Controller {
         $this->data['entityImg'] = $module;
 
         //selects
-        //$this->data['roomsTypes']     = RoomsTypes::lists('name','id');
-        $this->data['teams'] = Teams::lists('name', 'id');
+        $this->data['status']       = ['1'=>'activo','2'=>'inactivo'];
+        $this->data['teams']        = Teams::lists('name', 'id');
 
         //data for validation
         $this->rules = $this->repo->Rules();

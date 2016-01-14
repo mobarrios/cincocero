@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/web/style.css">
     <link rel="stylesheet" href="assets/web/css/fonts.css">
     <link href="assets/web/css/responsive.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
     <script src="assets/web/js/modernizr.custom.js"></script>
     <script src="assets/web/js/custom.js" charset="utf-8"></script>
 

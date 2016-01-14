@@ -51,4 +51,7 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
 
     Route::resource('sede_detalle','WebController@SedeDetalle');
 
+
+    Route::post('registracion',['as'=>'postRegistration','uses'=>'WebController@postRegistration']);
+
 });

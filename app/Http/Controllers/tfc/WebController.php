@@ -4,12 +4,17 @@ namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Fases;
+use App\Entities\tfc\News;
+use App\Entities\tfc\Galleries;
+use App\Entities\tfc\Players;
 use App\Entities\tfc\Sedes;
 use App\Entities\tfc\Teams;
 use App\Entities\tfc\Tournaments;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\tfc\CategoriesRepo;
 use App\Http\Repositories\tfc\TournamentsRepo;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 
 class WebController extends Controller {
@@ -28,6 +33,8 @@ class WebController extends Controller {
 
     public function Noticias(Categories $categorias)
     {
+        $data['noticias']   = News::orderBy('date','DESC')->paginate(10);
+
         $data['categorias'] = $categorias->all();
         return view('tfc/web/noticias')->with($data);
     }
@@ -46,9 +53,10 @@ class WebController extends Controller {
         return view('tfc/web/sede_detalle')->with($data);
     }
 
-    public function Galeria(Categories $categorias)
+    public function Galeria(Categories $categorias,Galleries $galeria)
     {
-        $data['categorias'] = $categorias->all();
+        $data['galeria'] = $galeria->all();
+//        $data['categorias'] = $categorias->all();
         return view('tfc/web/galeria')->with($data);
     }
 
@@ -65,6 +73,8 @@ class WebController extends Controller {
 
     public function Principal($id,Tournaments $torneos,Categories $categorias,Fases $fases)
     {
+        $data['noticias']   = News::orderBy('date','DESC')->paginate(5);
+
         $data['categorias'] = $categorias->all();
         $data['categoria'] = $categorias->find($id);
         $data['torneos'] = $torneos->where('categories_id',$id)->get();
@@ -124,5 +134,50 @@ class WebController extends Controller {
     public function Jugador()
     {
         return view('tfc/web/jugador');
+    }
+
+
+
+    // Inscripcion
+
+    public function postRegistration(Request $request)
+    {
+
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'dni' =>'required|unique:players,dni',
+                'last_name' => 'required',
+                'name'=>'required',
+                'mail'=>'required',
+                'teams_id'=>'required',
+                'password'=>'required'
+            ]);
+
+        if($validator->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($validator->messages());
+        }
+
+        $team = Teams::find($request->teams_id);
+
+        //return  $team->password .'<br>'. $request->password;
+
+
+        if($request->password != $team->password)
+                return redirect()->back()->withInput()->withErrors('Password del Equipo = '.$team->name.', Incorrecto');
+
+
+        $player             = new Players();
+        $player->dni        = $request->dni;
+        $player->name       = $request->name;
+        $player->last_name  = $request->last_name;
+        $player->mail       = $request->mail;
+        $player->teams_id   = $request->teams_id;
+        $player->status     = 1;
+        $player->save();
+
+        return redirect()->back()->withErrors('INSCRIPCION CARGADA CORRECTAMENTE. Se le enviara un mail con la confirmacion de la inscripcion.');
     }
 }
