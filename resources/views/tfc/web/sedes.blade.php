@@ -15,7 +15,7 @@
                                         <article class="entry-item">
                                             <div class="entry-thumb hover-effect">
                                                 <a href="#">
-                                                 <img src="{{$sede->Images[0]->image}}" alt="{{$sede->Images[0]->image}}" />
+                                                 <img src="{{$sede->images->first()->image}}" alt="{{$sede->Images[0]->image}}" />
                                                 </a>
 
                                             </div>

@@ -16,8 +16,8 @@
           </h2>
 
           {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/destacado")}}"><b>{{$torneo->name}}</b></a></li>--}}
-          @foreach($fases->where('tournaments_id',$torneo->id) as $fases)
-            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">{{$fases->name}}</a>
+          @foreach($fases->where('tournaments_id',$torneo->id) as $fas)
+            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">{{$fas->name}}</a>
               <ul class="sub-menu">
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('resultado')}}">Posiciones y Resultados</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/proxima_fecha")}}">Proxima Fecha</a></li>

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/web/css/fonts.css">
     <link href="assets/web/css/responsive.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
     <script src="assets/web/js/modernizr.custom.js"></script>
     <script src="assets/web/js/custom.js" charset="utf-8"></script>
 
@@ -160,8 +161,13 @@
 <script src="assets/web/js/retina.js"></script>
 <script src="assets/web/js/bootstrap.min.js"></script>
 <script src="assets/web/js/colorswitch.js"></script>
+<<<<<<< HEAD
 
 
+=======
+<script src="assets/web/js/custom.js" charset="utf-8"></script>
+@yield('js')
+>>>>>>> 636e85fb94c4fd7171eccb23175bd9557a948938
 </body>
 
 </html>
