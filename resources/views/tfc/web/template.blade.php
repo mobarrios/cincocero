@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/web/css/fonts.css">
     <link href="assets/web/css/responsive.css" rel="stylesheet">
     <script src="assets/web/js/modernizr.custom.js"></script>
-
+    <script src="assets/web/js/custom.js" charset="utf-8"></script>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 
@@ -159,7 +159,7 @@
 <script src="assets/web/js/retina.js"></script>
 <script src="assets/web/js/bootstrap.min.js"></script>
 <script src="assets/web/js/colorswitch.js"></script>
-<script src="assets/web/js/custom.js" charset="utf-8"></script>
+
 
 </body>
 
