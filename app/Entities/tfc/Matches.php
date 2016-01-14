@@ -7,7 +7,7 @@ class Matches extends Entity{
 
     protected $table = 'matches';
 
-    protected $fillable = ['name','hour','date','home_team','away_team','status','fases_week_id','canchas_id','home_goals','away_goals'];
+    protected $fillable = ['name','hour','date','home_team','away_team','status','fases_week_id','canchas_id','home_goals','away_goals','walk_over','walk_over_motivo'];
 
 
     public function FasesWeek()
@@ -46,5 +46,19 @@ class Matches extends Entity{
     {
         return [0 => 'Por Jugar', 1 => 'Finalizado', 2 => 'Suspendido'];
     }
+
+    public function MatchesDetails()
+    {
+        return $this->hasMany(MatchesDetails::getClass());
+    }
+
+    public function detailByPlayer($players_id = null)
+    {
+       return $this->MatchesDetails()->where('players_id',$players_id);
+    }
+
+
+
+
 
 }

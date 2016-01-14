@@ -4,6 +4,7 @@ namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Canchas;
 use App\Entities\tfc\Matches;
+use App\Entities\tfc\MatchesDetails;
 use App\Entities\tfc\Sedes;
 use App\Http\Repositories\tfc\MatchesRepo as Repo;
 use App\Http\Controllers\Controller;
@@ -128,14 +129,88 @@ class MatchesController extends Controller {
 
     public function postResult(Request $request, TablasRepo $tabla)
     {
+
+
         $match = Matches::find($request->matches_id);
         $match->home_goals = $request->home_goals;
         $match->away_goals = $request->away_goals;
+        $match->walk_over_motivo = $request->walk_over_motivo;
+
+        if($request->walk_over == 'on')
+            $match->walk_over = 1;
+
         $match->status = 2;
         $match->save();
 
         //recalcula tabla
         $tabla->calculaTabla($request->matches_id);
+
+
+
+            foreach ($request->yellow as $yellow => $player) {
+
+
+
+                    if($match->MatchesDetails()->where('players_id',$yellow)->count() == 0)
+                    {
+                        $detail                 = new MatchesDetails();
+                        $detail->matches_id     = $request->matches_id;
+                        $detail->players_id     = $yellow;
+                        $detail->yellow         = $player;
+                        $detail->save();
+
+                    }else{
+
+                        $detail             = MatchesDetails::where('matches_id',$match->id)->where('players_id',$yellow)->first();
+                        $detail->yellow     = $player;
+                        $detail->save();
+                    }
+
+
+            }
+
+        foreach ($request->red as $red => $player) {
+
+
+                if($match->MatchesDetails()->where('players_id',$red)->count() == 0)
+                {
+                    $detail                 = new MatchesDetails();
+                    $detail->matches_id     = $request->matches_id;
+                    $detail->players_id     = $red;
+                    $detail->red         = $player;
+                    $detail->save();
+
+                }else{
+
+                    $detail             = MatchesDetails::where('matches_id',$match->id)->where('players_id',$red)->first();
+                    $detail->red        = $player;
+                    $detail->save();
+                }
+
+
+        }
+
+
+
+                foreach($request->goals as $player => $goal) {
+
+                        if($match->MatchesDetails()->where('players_id',$player)->count() == 0)
+                        {
+                            $detail                 = new MatchesDetails();
+                            $detail->matches_id     = $request->matches_id;
+                            $detail->players_id     = $player;
+                            $detail->goals          = $goal;
+                            $detail->save();
+
+                        }else{
+
+                            $detail         = MatchesDetails::where('matches_id',$match->id)->where('players_id',$player)->first();
+                            $detail->goals  = $goal;
+                            $detail->save();
+                        }
+
+
+                }
 
 
         return redirect()->route('fasesFixture', Session::get('fases_id') );

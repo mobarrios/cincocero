@@ -39,7 +39,7 @@ class TeamsController extends Controller {
 
 
         //images
-        $this->data['imgQuantityMax']   = 1;
+        $this->data['imgQuantityMax']   = 2;
         $this->data['imagePath']        = 'uploads/tfc/'.$module.'/images/';
         $this->data['entityImg']        = $module;
 

@@ -42,7 +42,7 @@ class TeamsRepo extends BaseRepo {
         // arma la cabecera de la table 'nombre',  data  = database column , relation = relatioships in entities
         $header  =  ['columns' =>
             [
-                'Escudo' =>    ['data' => 'images','relation'=> null],
+                'Imagenes' =>    ['data' => 'images','relation'=> null],
                 'Equipo' =>  ['data' => 'name','relation' => null],
                 'Password' => ['data' => 'password', 'relation' => null],
 
