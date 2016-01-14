@@ -1,19 +1,15 @@
 @extends('tfc/web/template')
     @section('content')
-      {{$colorTop = "#C4CD0D"}}
-      {{$colorBottom = "#005020"}}
+      @include('tfc/web/leftbar/leftbar')
+
         <div class="center-col">
-            
-            <div class="breadcrumb clearfix"><span class="widget-title clearfix"><img src="assets/web/images/tch.png" width="718" height="59" alt=""/></span><span class="bottom-line"></span>
-            </div>
-            <!-- breadcrumb -->
 
             <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
-                  <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
-                    <div class="color-top" style="background-color: {{$colorTop}};"></div>
-                    <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                  <div class="categoria-container titulo-categoria" style="border-bottom-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-top-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-left-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}">
+                    <div class="color-top" style="background-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_top}};"></div>
+                    <div class="color-bottom" style="background-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};">
                       <h2>TABLA DE POSICIONES</h2>
                     </div>
                   </div>
@@ -156,9 +152,9 @@
                     </tr>
                   </tbody>
                 </table>
-              <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
-                <div class="color-top" style="background-color: {{$colorTop}};"></div>
-                <div class="color-bottom" style="background-color: {{$colorBottom}};">
+              <div class="categoria-container titulo-categoria" style="border-bottom-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-top-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-left-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}">
+                <div class="color-top" style="background-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_top}};"></div>
+                <div class="color-bottom" style="background-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};">
                   <h2>RESULTADO DE LA FECHA</h2>
                 </div>
               </div>
@@ -219,4 +215,7 @@
             <!-- elements-box -->
 
         </div>
+
+      {{--@include('tfc/web/sidebar/sidebar)--}}
+      @include('tfc/web/sidebar/sidebar')
     @endsection

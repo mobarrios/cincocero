@@ -14,6 +14,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Repositories\tfc\CategoriesRepo;
 use App\Http\Repositories\tfc\TournamentsRepo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -31,12 +32,11 @@ class WebController extends Controller {
         return view('tfc/web/reglamento');
     }
 
-    public function Noticias(Categories $categorias)
+    public function Noticias()
     {
         $data['noticias']   = News::orderBy('date','DESC')->paginate(10);
 
-        $data['categorias'] = $categorias->all();
-        return view('tfc/web/noticias')->with($data);
+         return view('tfc/web/noticias')->with($data);
     }
 
     public function Sedes()
@@ -65,26 +65,23 @@ class WebController extends Controller {
         return view('tfc/web/inscripcion')->with($data);
     }
 
-    public function Contactenos()
+    public function Contactanos()
     {
-        return view('tfc/web/contactenos');
+        return view('tfc/web/contactanos');
     }
 
     public function Principal($id,Tournaments $torneos,Categories $categorias,Fases $fases)
     {
         $data['noticias']   = News::orderBy('date','DESC')->paginate(5);
 
-        $data['categorias'] = $categorias->all();
-        $data['categoria'] = $categorias->find($id);
+        Session::put('categoria',$categorias->find($id));
         $data['torneos'] = $torneos->where('categories_id',$id)->get();
-        $data['fases'] = $fases->all();
 
         return view('tfc/web/principal')->with($data);
     }
 
     public function Resultado($id,Categories $categorias)
     {
-        $data['categorias'] = $categorias->all();
         $data['categoria'] = $categorias->find($id);
         return view('tfc/web/resultado')->with($data);
     }
@@ -94,7 +91,7 @@ class WebController extends Controller {
     }
     public function Fixture($id,Tournaments $torneos,Categories $categorias,Fases $fases)
     {
-        $data['categorias'] = $categorias->all();
+         
         $data['categoria'] = $categorias->find($id);
         $data['torneos'] = $torneos->where('categories_id',$id)->get();
         $data['fases'] = $fases->all();
