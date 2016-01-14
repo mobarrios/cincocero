@@ -7,7 +7,7 @@ class Players extends Entity{
 
     protected $table = 'players';
 
-    protected $fillable = ['name','last_name','mail','phone','cel','teams_id','dni','status'];
+    protected $fillable = ['name','last_name','mail','phone','cel','teams_id','dni','status','motivo'];
 
 
     public function Teams()

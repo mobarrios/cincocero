@@ -34,7 +34,21 @@
 
 @section('js')
     <script>
-        $('.motivo').hidden('hidden');
+
+        if($("select[name='status']").val() == 2)
+            $('.motivo').css('display','block');
+        else
+            $('.motivo').css('display','none');
+
+
+        $("select[name='status']").on('change',function(){
+
+            if($(this).val() == 2)
+                $('.motivo').css('display','block');
+            else
+                $('.motivo').css('display','none');
+
+        });
     </script>
 @endsection
 @stop
