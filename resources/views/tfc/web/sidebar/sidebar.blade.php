@@ -4,7 +4,8 @@
 
     <div class="menu-all-pages-container">
       <ul class="menu" id="menu-all-pages">
-        @foreach(\App\Entities\tfc\Tournaments::where('categories_id',\Illuminate\Support\Facades\Session::get('categoria')->id)->get() as $torneo)
+
+        @foreach(\App\Entities\tfc\Tournaments::where('categories_id',Session::get('categoria')->id)->get() as $torneo)
           <h2 class="widget-title">
             <div class="categoria-container-xs titulo-categoria-xs" style="border-bottom-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-top-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-left-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}">
               <div class="color-top" style="background-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_top}};"></div>
@@ -16,7 +17,7 @@
           </h2>
 
           {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/destacado")}}"><b>{{$torneo->name}}</b></a></li>--}}
-          @foreach(\App\Entities\tfc\Fases::where('tournaments_id',$torneo->id) as $fas)
+          @foreach(\App\Entities\tfc\Fases::where('tournaments_id',$torneo->id)->get() as $fas)
             <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">{{$fas->name}}</a>
               <ul class="sub-menu">
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('resultado',$fas->id)}}">Posiciones y Resultados</a></li>
