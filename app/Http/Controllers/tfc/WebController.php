@@ -50,10 +50,9 @@ class WebController extends Controller {
         return view('tfc/web/sede_detalle')->with($data);
     }
 
-    public function Galeria(Categories $categorias,Galleries $galeria)
+    public function Galeria(Galleries $galeria)
     {
         $data['galeria'] = $galeria->all();
-//        $data['categorias'] = $categorias->all();
         return view('tfc/web/galeria')->with($data);
     }
 

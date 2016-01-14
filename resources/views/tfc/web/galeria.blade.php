@@ -38,7 +38,7 @@
                     </div>
                     <!-- col-md-12 -->
                 </div><br>
-                
+
                 </div>
                 <!-- punica-featured-news-widget -->
                 <!-- punica-entry-list-2-widget -->
