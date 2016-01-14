@@ -65,9 +65,9 @@ class WebController extends Controller {
         return view('tfc/web/inscripcion')->with($data);
     }
 
-    public function Contactenos()
+    public function Contactanos()
     {
-        return view('tfc/web/contactenos');
+        return view('tfc/web/contactanos');
     }
 
     public function Principal($id,Tournaments $torneos,Categories $categorias,Fases $fases)
