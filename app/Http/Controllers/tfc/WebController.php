@@ -5,6 +5,7 @@ namespace App\Http\Controllers\tfc;
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Fases;
 use App\Entities\tfc\News;
+use App\Entities\tfc\Galleries;
 use App\Entities\tfc\Players;
 use App\Entities\tfc\Sedes;
 use App\Entities\tfc\Teams;
@@ -52,9 +53,10 @@ class WebController extends Controller {
         return view('tfc/web/sede_detalle')->with($data);
     }
 
-    public function Galeria(Categories $categorias)
+    public function Galeria(Categories $categorias,Galleries $galeria)
     {
-        $data['categorias'] = $categorias->all();
+        $data['galeria'] = $galeria->all();
+//        $data['categorias'] = $categorias->all();
         return view('tfc/web/galeria')->with($data);
     }
 

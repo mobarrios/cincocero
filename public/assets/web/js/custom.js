@@ -1,3 +1,4 @@
+
 "use strict";
 
 
@@ -9,7 +10,7 @@ jQuery(document).ready(function () {
 
   Modernizr.load([
     {
-      load: 'js/superfish.js',
+      load: 'assets/web/js/superfish.js',
       complete: function () {
 
           //Main menu
@@ -26,7 +27,7 @@ jQuery(document).ready(function () {
   ============================================================ */
   Modernizr.load([
     {
-      load: 'js/jquery.navgoco.js',
+      load: 'assets/web/js/jquery.navgoco.js',
       complete: function () {
 
           jQuery('#mobile-menu').navgoco({accordion: true});
@@ -43,7 +44,7 @@ jQuery(document).ready(function () {
   ============================================================ */
   Modernizr.load([
     {
-      load: 'js/jquery.navgoco.js',
+      load: 'assets/web/js/jquery.navgoco.js',
       complete: function () {
 
           jQuery('#top-mobile-menu').navgoco({accordion: true});
@@ -60,7 +61,7 @@ jQuery(document).ready(function () {
   ============================================================ */
   Modernizr.load([
     {
-      load: 'js/jquery.navgoco.js',
+      load: 'assets/web/js/jquery.navgoco.js',
       complete: function () {
 
           jQuery('#bottom-mobile-menu').navgoco({accordion: true});
@@ -77,7 +78,7 @@ jQuery(document).ready(function () {
   ============================================================ */
   Modernizr.load([
     {
-      load: 'js/jquery.flexslider-min.js',
+      load: 'assets/web/js/jquery.flexslider-min.js',
       complete: function () {
         jQuery('.punica-home-slider').flexslider({
           animation: "slide",
@@ -96,7 +97,7 @@ jQuery(document).ready(function () {
 
   Modernizr.load([
     {
-      load: 'js/jquery.flexslider-min.js',
+      load: 'assets/web/js/jquery.flexslider-min.js',
       complete: function () {
         jQuery('.punica-featured-news-slider').flexslider({
           animation: "slide",
@@ -116,7 +117,7 @@ jQuery(document).ready(function () {
 
   Modernizr.load([
     {
-      load: 'js/jquery.flexslider-min.js',
+      load: 'assets/web/js/jquery.flexslider-min.js',
       complete: function () {
         jQuery('.punica-entry-slider').flexslider({
           animation: "slide",
@@ -136,7 +137,7 @@ jQuery(document).ready(function () {
 
   Modernizr.load([
     {
-      load: 'js/jquery.flexslider-min.js',
+      load: 'assets/web/js/jquery.flexslider-min.js',
       complete: function () {
         jQuery('.punica-flex-footer').flexslider({
           animation: "slide",
@@ -157,7 +158,7 @@ jQuery(document).ready(function () {
 
   Modernizr.load([
     {
-      load: 'js/jquery.flexslider-min.js',
+      load: 'assets/web/js/jquery.flexslider-min.js',
       complete: function () {
         jQuery('.punica-flex-shop-slider').flexslider({
           animation: "slide",
@@ -178,7 +179,7 @@ jQuery(document).ready(function () {
 
   Modernizr.load([
     {
-      load: 'js/jquery.flexslider-min.js',
+      load: 'assets/web/js/jquery.flexslider-min.js',
       complete: function () {
         jQuery('.punica-entry-box-slider').flexslider({
           animation: "slide",
@@ -203,7 +204,7 @@ jQuery(document).ready(function () {
   if (jQuery('#tweets').length > 0) {
     Modernizr.load([
       {
-        load: ['js/jquery.timeago.js','js/jquery.tweetable.js'],
+        load: ['assets/web/js/jquery.timeago.js','assets/web/js/jquery.tweetable.js'],
         complete: function () {
             jQuery('#tweets').tweetable({
                 username: 'PunicaTheme',
@@ -278,7 +279,7 @@ jQuery(document).ready(function () {
 
     Modernizr.load([
       {
-        load: 'js/owl.carousel.js',
+        load: 'assets/web/js/owl.carousel.js',
         complete: function () {
             jQuery('.punica-shop-owl-carousel').owlCarousel({
                 items : 3,
@@ -299,7 +300,7 @@ jQuery(document).ready(function () {
   if (jQuery('.punica-slider-carousel').length > 0) {
     Modernizr.load([
       {
-        load: 'js/owl.carousel.js',
+        load: 'assets/web/js/owl.carousel.js',
         complete: function () {
             jQuery('.punica-slider-carousel').owlCarousel({
                 items : 3,
@@ -319,7 +320,7 @@ jQuery(document).ready(function () {
   if (jQuery('.related-post-carousel').length > 0) {
     Modernizr.load([
       {
-        load: 'js/owl.carousel.js',
+        load: 'assets/web/js/owl.carousel.js',
         complete: function () {
             jQuery('.related-post-carousel').owlCarousel({
                 items : 3,
@@ -340,7 +341,7 @@ jQuery(document).ready(function () {
   if (jQuery('.punica-carousel-imgs').length > 0) {
     Modernizr.load([
       {
-        load: 'js/owl.carousel.js',
+        load: 'assets/web/js/owl.carousel.js',
         complete: function () {
             jQuery('.punica-carousel-imgs').owlCarousel({
                 items : 4,
@@ -361,7 +362,7 @@ jQuery(document).ready(function () {
   if (jQuery('.punica-list-carousel').length > 0) {
     Modernizr.load([
       {
-        load: 'js/owl.carousel.js',
+        load: 'assets/web/js/owl.carousel.js',
         complete: function () {
             jQuery('.punica-list-carousel').owlCarousel({
                 items : 4,
@@ -382,7 +383,7 @@ jQuery(document).ready(function () {
   if (jQuery('.punica-gallery-carousel').length > 0) {
     Modernizr.load([
       {
-        load: 'js/owl.carousel.js',
+        load: 'assets/web/js/owl.carousel.js',
         complete: function () {
             jQuery('.punica-gallery-carousel').owlCarousel({
                 items : 1,
@@ -404,7 +405,7 @@ jQuery(document).ready(function () {
   ============================================================ */
   Modernizr.load([
     {
-      load: 'js/jquery.colorbox.js',
+      load: 'assets/web/js/jquery.colorbox.js',
       complete: function () {
         jQuery(".group1").colorbox({rel:'group1'});
       }
@@ -419,7 +420,7 @@ jQuery(document).ready(function () {
   if (jQuery('.punica-entry-list-2').length > 0) {
     Modernizr.load([
       {
-        load: ['js/masonry.pkgd.js','js/imagesloaded.js'],
+        load: ['assets/web/js/masonry.pkgd.js','assets/web/js/imagesloaded.js'],
         complete: function () {
           var $container = jQuery('.punica-entry-list-2');
           // initialize
@@ -445,7 +446,7 @@ jQuery(document).ready(function () {
 
     Modernizr.load([
       {
-        load: ['js/jquery.form.js','js/jquery.validate.js'],
+        load: ['assets/web/js/jquery.form.js','assets/web/js/jquery.validate.js'],
         complete: function () {
 
           jQuery('#comments-form').validate({
@@ -513,7 +514,7 @@ jQuery(document).ready(function () {
 
     Modernizr.load([
       {
-        load: ['js/jquery.form.js','js/jquery.validate.js'],
+        load: ['assets/web/js/jquery.form.js','assets/web/js/jquery.validate.js'],
         complete: function () {
 
           jQuery('#contact-form').validate({
