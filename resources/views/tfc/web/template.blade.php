@@ -161,13 +161,8 @@
 <script src="assets/web/js/retina.js"></script>
 <script src="assets/web/js/bootstrap.min.js"></script>
 <script src="assets/web/js/colorswitch.js"></script>
-<<<<<<< HEAD
-
-
-=======
 <script src="assets/web/js/custom.js" charset="utf-8"></script>
 @yield('js')
->>>>>>> 636e85fb94c4fd7171eccb23175bd9557a948938
 </body>
 
 </html>

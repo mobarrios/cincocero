@@ -22,6 +22,20 @@ class ImagesHelper
         $img = Image::make(public_path($path).$file);
         //$img->fit(640,480);
 
+        if($img->height() >= 480) {
+
+            $img->resize(null, 480, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+
+        }elseif($img->width() >= 640) {
+
+            $img->resize(640, null , function ($constraint) {
+                $constraint->aspectRatio();
+            });
+        }
+
+
         $img->save();
 
 
