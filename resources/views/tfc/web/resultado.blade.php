@@ -56,24 +56,28 @@
                 <p>&nbsp;</p>
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
                   <tbody>
-                  <tr>
-                      <td colspan="6" align="center" class="success">Fecha 6 - 05/12/2015</td>
-                    </tr>
-                    <tr>
-                      <td align="center" class="success">Equipo</td>
-                      <td align="center" class="success"></td>
-                      <td align="center" class="success"></td>
-                      <td align="center" class="success">Equipo</td>
-                    </tr>
-                    @foreach($tablas as $t)
-
+                  @foreach($detallePartidos as $detalle)
+                      @if($detalle->matches->fasesWeek->fases->id == $idFase)
                       <tr>
-                        <td align="center" class="active">Arlekin FC</td>
-                        <td align="center" class="active">0</td>
-                        <td align="center" class="active">3</td>
-                        <td align="center" class="active">El Tano</td>
+                          <td colspan="6" align="center" class="success">Fecha {!! $detalle->matches->fasesWeek->name !!} - {!! $detalle->matches->date !!}</td>
                       </tr>
-                    @endforeach
+                      <tr>
+                        <td align="center" class="success">Equipo</td>
+                        <td align="center" class="success"></td>
+                        <td align="center" class="success"></td>
+                        <td align="center" class="success">Equipo</td>
+                      </tr>
+                      @foreach($tablas as $t)
+
+                        <tr>
+                          <td align="center" class="active">Arlekin FC</td>
+                          <td align="center" class="active">0</td>
+                          <td align="center" class="active">3</td>
+                          <td align="center" class="active">El Tano</td>
+                        </tr>
+                      @endforeach
+                      @endif
+                  @endforeach
                   </tbody>
                 </table>
                 <p>&nbsp;</p>

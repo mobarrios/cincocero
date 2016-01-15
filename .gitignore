@@ -2,7 +2,7 @@
 .env.php
 .DS_Store
 Thumbs.db
-
+.env
 /public/uploads
 /node_modules
 

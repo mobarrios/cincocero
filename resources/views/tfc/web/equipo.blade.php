@@ -25,7 +25,7 @@
                             <br>
                           </p>
                           <div class="col-md-12 col-sm-12 mb-20">
-                          <p><h2 class="widget-title clearfix"><img src="{!! $equipo->images->first()->image !!}" width="35" height="35" alt=""/> {!! $equipo->name !!}</h2><br>
+                          <p><h2 class="widget-title clearfix"><img src="{!! $equipo->images->first()->image or 'assets/web/images/teamDefault2.png'!!}" width="35" height="35" alt=""/> {!! $equipo->name !!}</h2><br>
                           </p>
                           <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
                           <tbody>
@@ -39,9 +39,9 @@
                             @foreach($equipo->players as $jugadores)
                                 <tr>
                                   <td colspan="2" align="center"><a href="{!! route('jugador',$jugadores->id) !!}">{!! $jugadores->FullName() !!}</a></td>
-                                  <td colspan="2" align="center">2</td>
-                                  <td colspan="2" align="center">1</td>
-                                  <td colspan="2" align="center">6 goles</td>
+                                  <td colspan="2" align="center">{!! $jugadores->Amarillas($jugadores->id)!!}</td>
+                                  <td colspan="2" align="center">{!! $jugadores->Rojas($jugadores->id)!!}</td>
+                                  <td colspan="2" align="center">{!! $jugadores->Goles($jugadores->id)!!} goles</td>
                                 </tr>
                             @endforeach
                           </tbody>
