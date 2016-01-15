@@ -4,10 +4,12 @@ namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Fases;
+use App\Entities\tfc\Matches;
 use App\Entities\tfc\News;
 use App\Entities\tfc\Galleries;
 use App\Entities\tfc\Players;
 use App\Entities\tfc\Sedes;
+use App\Entities\tfc\Tablas;
 use App\Entities\tfc\Teams;
 use App\Entities\tfc\Tournaments;
 use App\Http\Controllers\Controller;
@@ -80,9 +82,14 @@ class WebController extends Controller {
         return view('tfc/web/principal')->with($data);
     }
 
-    public function Resultado($id,Categories $categorias)
+    public function Resultado($id,Tablas $tablas,Matches $partidos)
     {
-        $data['categoria'] = $categorias->find($id);
+//        $data['partidos'] = $partidos->whereHas('tablas',function($q) use ($id){
+//                    $q->where('fases_id',$id);
+//                }
+//        )->get();
+        $data['tablas'] = $tablas->where('fases_id',$id)->get();
+
         return view('tfc/web/resultado')->with($data);
     }
     public function ProximaFecha()
@@ -97,6 +104,21 @@ class WebController extends Controller {
         $data['fases'] = $fases->all();
 
         return view('tfc/web/fixture')->with($data);
+    }
+
+    public function Equipo($id,Teams $equipos,Matches $matches)
+    {
+        $data['matches'] = $matches->all();
+        $data['equipo'] = $equipos->find($id);
+
+        return view('tfc/web/equipo')->with($data);
+    }
+
+
+    public function Jugador($id,Players $jugador)
+    {
+        $data['jugador'] = $jugador->find($id);
+        return view('tfc/web/jugador')->with($data);
     }
 
     public function Sancion()
@@ -119,17 +141,10 @@ class WebController extends Controller {
     {
         return view('tfc/web/clima');
     }
-    public function LaCantera()
-    {
-        return view('tfc/web/la_cantera');
-    }
+
     public function LaGuapeada()
     {
         return view('tfc/web/la_guapeada');
-    }
-    public function Jugador()
-    {
-        return view('tfc/web/jugador');
     }
 
 

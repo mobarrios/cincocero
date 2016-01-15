@@ -1,46 +1,6 @@
 @extends('tfc/web/template')
     @section('content')
-        <div class="sidebar left-sidebar widget-area-4">
-
-            <div class="widget punica-entry-list-widget">
-                <h2 class="widget-title clearfix">Ultimas Noticias</h2>
-                <ul class="clearfix">
-                    <li>
-                        <article class="entry-item standard-post clearfix">
-                            <div class="entry-thumb hover-effect">
-                                
-                                
-                                
-                                
-                                <a class="twitter-timeline" href="https://twitter.com/FutbolCompany" data-widget-id="362267109901889536">Tweets por el @The Futbol Company.</a>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/ˆhttp:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            </div>
-                            
-                            
-                            
-                            <!-- entry-thumb --><!-- entry-content -->                            
-                        </article>
-                        <!-- entry-item -->
-                    </li>
-                    <li><!-- entry-item --><!-- entry-item -->                    </li>
-                </ul>
-            </div>
-            <!-- punica-entry-list-widget -->
-
-            <div class="widget punica-entry-slider-widget">
-                <h2 class="widget-title clearfix">El CLima</h2>
-              <iframe src="clima.html" width="220" height="250" frameborder="0" border="0" scrolling="no" allowfullscreen></iframe>
-                <!-- latest-item -->
-                
-                <!-- older-post -->
-            </div>
-            <!-- punica-entry-slider-widget --><!-- widget_archive -->
-
-            <div class="widget punica-adv-widget"></div>
-            <!-- punica-adv-widget -->
-            
-        </div>
+        @include('tfc/web/leftbar/leftbar')
         <!-- left-sidebar -->
 
         <div class="center-col">
@@ -48,7 +8,15 @@
             <div class="widget-area-3">
 
                 <div class="widget punica-featured-news-widget">
-                    <h2 class="widget-title clearfix"><img src="images/tch.png" width="718" height="59" alt=""/></h2>
+                    <h2 class="widget-title clearfix">
+                        <div class="categoria-container titulo-categoria" style="border-bottom-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif">
+                            <div class="color-top" style="background-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_top}}@else{{'#0f5128'}}@endif;"></div>
+                            <div class="color-bottom" style="background-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif;">
+                                <h2>{!! $jugador->teams->name !!}</h2></h2>
+                            </div>
+                        </div>
+                        {{--<img src="{{asset('assets/web/images/tabla_pos.png')}}" width="600" height="70" alt=""/>--}}
+                    </h2>
                     <!-- punica-featured-news-slider -->
                     <ul class="older-post clearfix">
                         <div class="row">
@@ -57,19 +25,18 @@
                             <br>
                           </p>
                           <div class="col-md-12 col-sm-12 mb-20">
-                          <p><img src="images/jug.png" width="600" height="70" alt=""/>                          </p>
                           <section class="about-author clearfix">
                             <div class="author-content">
                               <h5><a href="#"></a></h5>
                               <table width="100%" border="0">
                       <tbody>
                         <tr>
-                          <td width="18%"><img src="noticias/grillo15.jpg" width="141%" height="203" alt=""/></td>
+                          <td width="18%"><img src="{!! $jugador->images->first()->image !!}" width="141%" height="203" alt=""/></td>
                           <td width="8%">&nbsp;</td>
                           <td width="74%"><table width="100%">
                             <tbody>
                               <tr>
-                                <td><p>FAUSTO GRILLO</p>
+                                <td><p>{!! $jugador->FullName() !!}</p>
                                   <p><strong>Posición:</strong></p></td>
                               </tr>
                               <tr>
@@ -144,5 +111,7 @@
             <!-- widget-area-3 --><!-- widget-area-12 --><!-- widget-area-13 --><!-- widget-area-14 -->
 
         </div>
-        <!-- center-col -->      
+        <!-- center-col -->
+
+    @include('tfc/web/sidebar/sidebar')
     @endsection
