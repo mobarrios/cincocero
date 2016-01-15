@@ -40,14 +40,52 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
         'uses' => 'WebController@Fixture'
     ]);
 
-    Route::resource('sancion','WebController@Sancion');
-    Route::resource('goleador','WebController@Goleador');
-    Route::resource('fairplay','WebController@Fairplay');
+    Route::get('{id}/equipo',[
+        'as' => 'equipo',
+        'uses' => 'WebController@Equipo'
+    ]);
+
+    Route::get('{id}/jugador',[
+        'as' => 'jugador',
+        'uses' => 'WebController@Jugador'
+    ]);
+
+
+//    TRUCHADAS COMO PARA QUE ANDE LA RUTA NOMAS
+    Route::get('{id}/proximaFecha',[
+        'as' => 'proximaFecha',
+        'uses' => 'WebController@Equipo'
+    ]);
+
+    Route::get('{id}/proximaFecha',[
+        'as' => 'proximaFecha',
+        'uses' => 'WebController@Equipo'
+    ]);
+
+    Route::get('{id}/sancion',[
+        'as' => 'sancion',
+        'uses' => 'WebController@Equipo'
+    ]);
+
+    Route::get('{id}/goleador',[
+        'as' => 'goleador',
+        'uses' => 'WebController@Equipo'
+    ]);
+
+    Route::get('{id}/fairplay',[
+        'as' => 'fairplay',
+        'uses' => 'WebController@Equipo'
+    ]);
+
+//    Route::resource('sancion','WebController@Sancion');
+//    Route::resource('goleador','WebController@Goleador');
+//    Route::resource('fairplay','WebController@Fairplay');
     Route::resource('destacado','WebController@Destacado');
     Route::resource('clima','WebController@Clima');
-    Route::resource('la_cantera','WebController@LaCantera');
+//    Route::resource('la_cantera','WebController@LaCantera');
     Route::resource('la_guapeada','WebController@LaGuapeada');
-    Route::resource('jugador','WebController@Jugador');
+//    Route::resource('jugador','WebController@Jugador');
+//    Route::resource('proxima_fecha','WebController@Jugador');
 
     Route::resource('sede_detalle','WebController@SedeDetalle');
 

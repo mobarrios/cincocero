@@ -3,8 +3,6 @@
     <ul id="main-menu" class="clearfix">
         <li class="current-menu-item">
             <a href="{{asset('/web')}}"><img src="assets/web/images/logo-white.png"></a></li>
-        <li class="current-menu-item">
-            <a href="{{asset('/web/principal')}}">Home</a></li>
         <li>
             <a href="{{asset('/web/reglamento')}}">Reglamento</a></li>
         <li>

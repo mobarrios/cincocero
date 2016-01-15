@@ -26,11 +26,11 @@
 
                   <li class="element">
                   <article class="entry-item">
-                    <div class="entry-thumb hover-effect"> <a href="#"><img src="{{asset($noticia->images->first()->image)}}" alt="" /></a> </div>
+                    <div class="entry-thumb hover-effect"> <img src="{{asset($noticia->images->first()->image)}}" alt="" /></div>
                     <!-- entry-thumb -->
                     <div class="entry-content">
                       <header> <span class="entry-date">{{ date('F d, Y', strtotime($noticia->date)) }}</span> </header>
-                      <h6 class="entry-title"><a href="#">{{$noticia->title}}</a></h6>
+                      <h6 class="entry-title">{{$noticia->title}}</h6>
                       <p>{!! $noticia->detail !!}</p>
                     </div>
                     <!-- entry-content -->
