@@ -31,6 +31,7 @@
             <tbody>
 
                 @foreach($fases->Matches as $match)
+                    {!! $match->HomeTeam->name !!}<br>
                     <tr>
                         <td>{{$match->name}}</td>
                         <td>{{$match->date}}</td>

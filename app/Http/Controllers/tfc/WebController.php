@@ -4,6 +4,7 @@ namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Fases;
+use App\Entities\tfc\FasesWeek;
 use App\Entities\tfc\Matches;
 use App\Entities\tfc\MatchesDetails;
 use App\Entities\tfc\News;
@@ -83,11 +84,12 @@ class WebController extends Controller {
         return view('tfc/web/principal')->with($data);
     }
 
-    public function Resultado($id,Tablas $tablas,MatchesDetails $detallePartidos)
+    public function Resultado($id,Tablas $tablas,MatchesDetails $detallePartidos,FasesWeek $fasesWeek)
     {
-        $data['idFase'] = $id;
-        $data['detallePartidos'] = $detallePartidos->all();
+//        $data['idFase'] = $id;
+//        $data['detallePartidos'] = $detallePartidos->all();
         $data['tablas'] = $tablas->where('fases_id',$id)->get();
+        $data['resultado']  = $fasesWeek->where('fases_id',$id)->get();
 
         return view('tfc/web/resultado')->with($data);
     }

@@ -56,10 +56,10 @@
                 <p>&nbsp;</p>
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
                   <tbody>
-                  @foreach($detallePartidos as $detalle)
-                      @if($detalle->matches->fasesWeek->fases->id == $idFase)
+                  @foreach($resultado as $res)
+                    @foreach($res->matches->where('status','2') as $match)
                       <tr>
-                          <td colspan="6" align="center" class="success">Fecha {!! $detalle->matches->fasesWeek->name !!} - {!! $detalle->matches->date !!}</td>
+                          <td colspan="6" align="center" class="success">Fecha {!! $res->name !!} - {!! $match->date !!} - {!! $match->hour !!} hs</td>
                       </tr>
                       <tr>
                         <td align="center" class="success">Equipo</td>
@@ -67,16 +67,14 @@
                         <td align="center" class="success"></td>
                         <td align="center" class="success">Equipo</td>
                       </tr>
-                      @foreach($tablas as $t)
 
                         <tr>
-                          <td align="center" class="active">Arlekin FC</td>
-                          <td align="center" class="active">0</td>
-                          <td align="center" class="active">3</td>
-                          <td align="center" class="active">El Tano</td>
+                          <td align="center" class="active">{!! $match->homeTeam->name !!}</td>
+                          <td align="center" class="active">{!! $match->home_goals !!}</td>
+                          <td align="center" class="active">{!! $match->away_goals !!}</td>
+                          <td align="center" class="active">{!! $match->awayTeam->name !!}</td>
                         </tr>
-                      @endforeach
-                      @endif
+                    @endforeach
                   @endforeach
                   </tbody>
                 </table>
