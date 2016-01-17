@@ -32,6 +32,11 @@ class Matches extends Entity{
 
 
 
+    public function getHourAttribute($value)
+    {
+        return $value.' hs';
+    }
+
     public function getDateAttribute($value)
     {
         return date('d-m-Y',strtotime($value));
