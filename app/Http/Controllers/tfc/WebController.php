@@ -21,8 +21,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-
 class WebController extends Controller {
+
+    public function __construct(){
+
+        if(!Session::has('categoria'))
+        {
+            return redirect()->to('web/');
+        }
+
+    }
 
     public function Index()
     {
@@ -78,31 +86,32 @@ class WebController extends Controller {
     {
         $data['noticias']   = News::orderBy('date','DESC')->paginate(5);
 
-        Session::put('categoria',$categorias->find($id));
         $data['torneos'] = $torneos->where('categories_id',$id)->get();
+
+        Session::put('categoria',$categorias->find($id));
 
         return view('tfc/web/principal')->with($data);
     }
 
-    public function Resultado($id,Tablas $tablas,MatchesDetails $detallePartidos,FasesWeek $fasesWeek)
+    public function Resultado($id,Tablas $tablas,FasesWeek $fasesWeek)
     {
-//        $data['idFase'] = $id;
-//        $data['detallePartidos'] = $detallePartidos->all();
-        $data['tablas'] = $tablas->where('fases_id',$id)->get();
+        $data['tablas'] = $tablas->where('fases_id',$id)->orderBy('pts','desc')->get();
         $data['resultado']  = $fasesWeek->where('fases_id',$id)->get();
 
         return view('tfc/web/resultado')->with($data);
     }
-    public function ProximaFecha()
+    public function ProximaFecha($id,FasesWeek $fasesWeek)
     {
-        return view('tfc/web/proxima_fecha');
+        $data['fase'] = $fasesWeek->where('fases_id',$id)->whereHas('matches',function($q){
+                    $q->where('status',1);
+                })->orderBy('created_at','asc')
+                    ->first();
+
+        return view('tfc/web/proxima_fecha')->with($data);
     }
-    public function Fixture($id,Tournaments $torneos,Categories $categorias,Fases $fases)
+    public function Fixture($id,FasesWeek $fases)
     {
-         
-        $data['categoria'] = $categorias->find($id);
-        $data['torneos'] = $torneos->where('categories_id',$id)->get();
-        $data['fases'] = $fases->all();
+        $data['fases'] = $fases->where('fases_id',$id)->get();
 
         return view('tfc/web/fixture')->with($data);
     }
@@ -122,14 +131,32 @@ class WebController extends Controller {
         return view('tfc/web/jugador')->with($data);
     }
 
-    public function Sancion()
+    public function Sancion($id,Matches $matches,FasesWeek $fasesWeek)
     {
-        return view('tfc/web/sancion');
+        $data['ultimaFecha'] = $fasesWeek->where('fases_id',$id)
+                        ->whereHas('matches',function($q){
+                            $q->where('status',2);
+                        })
+                        ->orderBy('name','des')
+                        ->first();
+
+        $data['partidos'] = $matches->where('status',2)
+                            ->where('fases_week_id',$data['ultimaFecha']->id)
+                            ->get();
+
+        return view('tfc/web/sancion')->with($data);
     }
-    public function Goleador()
+
+    public function Goleador($id,Matches $matches)
     {
-        return view('tfc/web/goleador');
+        $data['matches'] = $matches->where('status',2)
+                            ->whereHas('fasesWeek',function ($q) use($id){
+                                $q->where('fases_id',$id);
+                            })->get();
+
+        return view('tfc/web/goleador')->with($data);
     }
+
     public function FairPlay()
     {
         return view('tfc/web/fair_play');

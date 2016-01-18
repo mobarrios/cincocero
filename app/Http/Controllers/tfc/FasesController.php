@@ -108,19 +108,31 @@ class FasesController extends Controller {
 
             for ($c = 1; $c <= $fixture->partidosXFechas() ; $c++) {
 
+
+                if($fixture->getCruces()[$f][$c]['A'] != 'Libre')
+                    $home = $fixture->getCruces()[$f][$c]['A'] ;
+                else
+                    $home = null;
+
+                if($fixture->getCruces()[$f][$c]['B'] != 'Libre')
+                    $away  = $fixture->getCruces()[$f][$c]['B'] ;
+                else
+                    $away = null;
+
+
                 //agrega matches
                 $match = new Matches();
                 $match->name = $c;
                 $match->fases_week_id = $week->id;
-                $match->home_teams_id = $fixture->getCruces()[$f][$c]['A'];
-                $match->away_teams_id = $fixture->getCruces()[$f][$c]['B'];
+                $match->home_teams_id = $home ;
+                $match->away_teams_id = $away;
 
                 $match->save();
 
             }
 
         }
-
+return;
 
 
 

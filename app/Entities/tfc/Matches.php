@@ -18,6 +18,7 @@ class Matches extends Entity{
     public function HomeTeam()
     {
         return $this->belongsTo(Teams::getClass(),'home_teams_id');
+
     }
 
     public function AwayTeam()
@@ -31,6 +32,11 @@ class Matches extends Entity{
     }
 
 
+
+    public function getHourAttribute($value)
+    {
+        return $value.' hs';
+    }
 
     public function getDateAttribute($value)
     {

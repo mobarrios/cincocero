@@ -1,23 +1,17 @@
 @extends('tfc/web/template')
     @section('content')
-        {{$colorTop = "#C4CD0D"}}
-        {{$colorBottom = "#005020"}}
+        @include('tfc/web/leftbar/leftbar')
         <div class="center-col">
             
-            <div class="breadcrumb clearfix"><span class="widget-title clearfix"><img src="assets/web/images/tch.png" width="718" height="59" alt=""/></span><span class="bottom-line"></span>
-            </div>
-            <!-- breadcrumb -->
-
             <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
-                    <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
-                        <div class="color-top" style="background-color: {{$colorTop}};"></div>
-                        <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                    <div class="categoria-container titulo-categoria" style="border-bottom-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif">
+                        <div class="color-top" style="background-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_top}}@else{{'#0f5128'}}@endif;"></div>
+                        <div class="color-bottom" style="background-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif;">
                             <h2>SANCIONES DE LA FECHA</h2>
                         </div>
                     </div>
-                  {{--<p><img src="assets/web/images/sancionados_fecha.png" width="600" height="70" alt=""/></p>--}}
                   <p>&nbsp;</p>
                 </div>
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
@@ -28,43 +22,16 @@
                       <td colspan="2" align="center" class="danger">Jugador</td>
                       <td colspan="2" align="center" class="danger">Sancion</td>
                     </tr>
-                    <tr>
-                      <td colspan="2" align="center" class="active">5</td>
-                      <td colspan="2" align="center" class="active">Cabo Verde</td>
-                      <td colspan="2" align="center" class="active">Canfora Emiliano</td>
-                      <td colspan="2" align="center" class="active">1 fecha</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">5</td>
-                      <td colspan="2" align="center"><table border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                          <tr>
-                            <td></td>
-                            <td>La Cantera</td>
-                          </tr>
-                        </tbody>
-                      </table></td>
-                      <td colspan="2" align="center">Skrypka Gaston Sebastian</td>
-                      <td colspan="2" align="center">1 fecha</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center" class="active">5</td>
-                      <td colspan="2" align="center" class="active">La Amistad</td>
-                      <td colspan="2" align="center" class="active">Bogado Adrian</td>
-                      <td colspan="2" align="center" class="active">1 fecha</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">5</td>
-                      <td colspan="2" align="center">Arlekin FC</td>
-                      <td colspan="2" align="center">Denis Roldan</td>
-                      <td colspan="2" align="center">1 fecha</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center" class="active">5</td>
-                      <td colspan="2" align="center" class="active">El Tano</td>
-                      <td colspan="2" align="center" class="active">Brea Alan Nahuel</td>
-                      <td colspan="2" align="center" class="active">1 fecha</td>
-                    </tr>
+                    @foreach($partidos as $p)
+                        @foreach(\App\Entities\tfc\MatchesDetails::where('matches_id',$p->id)->where('red',1)->get() as $detalle)
+                            <tr>
+                              <td colspan="2" align="center" class="active">{!! $ultimaFecha->name !!}</td>
+                              <td colspan="2" align="center" class="active">{!! $detalle->players->teams->name !!}</td>
+                              <td colspan="2" align="center" class="active">{!! $detalle->players->FullName() !!}</td>
+                              <td colspan="2" align="center" class="active">1 fecha</td>
+                            </tr>
+                        @endforeach
+                    @endforeach
                   </tbody>
                 </table>
                 <p>&nbsp;</p>
@@ -79,4 +46,5 @@
 
         </div>
         <!-- center-col -->
+        @include('tfc/web/sidebar/sidebar')
     @endsection

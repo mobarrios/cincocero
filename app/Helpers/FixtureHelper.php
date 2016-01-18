@@ -57,7 +57,7 @@ class FixtureHelper
     * de cantidad de cuadros impares.
     * @var string
     */
-    private $_libre             = 'libre';
+    private $_libre             = 'Libre';
 
     /**
     * Metodo __construct.

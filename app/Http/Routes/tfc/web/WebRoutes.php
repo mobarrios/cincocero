@@ -33,7 +33,7 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
 
 
 //    Route::resource('resultado','WebController@Resultado');
-    Route::resource('proxima_fecha','WebController@ProximaFecha');
+
 
     Route::get('{id}/fixture',[
         'as' => 'fixture',
@@ -50,27 +50,25 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
         'uses' => 'WebController@Jugador'
     ]);
 
-
-//    TRUCHADAS COMO PARA QUE ANDE LA RUTA NOMAS
     Route::get('{id}/proximaFecha',[
         'as' => 'proximaFecha',
-        'uses' => 'WebController@Equipo'
-    ]);
-
-    Route::get('{id}/proximaFecha',[
-        'as' => 'proximaFecha',
-        'uses' => 'WebController@Equipo'
+        'uses' => 'WebController@ProximaFecha'
     ]);
 
     Route::get('{id}/sancion',[
         'as' => 'sancion',
-        'uses' => 'WebController@Equipo'
+        'uses' => 'WebController@Sancion'
     ]);
+
 
     Route::get('{id}/goleador',[
         'as' => 'goleador',
-        'uses' => 'WebController@Equipo'
+        'uses' => 'WebController@Goleador'
     ]);
+
+//    TRUCHADAS COMO PARA QUE ANDE LA RUTA NOMAS
+
+
 
     Route::get('{id}/fairplay',[
         'as' => 'fairplay',

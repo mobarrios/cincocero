@@ -14,5 +14,11 @@ class MatchesDetails extends Entity{
         return $this->belongsTo(Matches::getClass());
     }
 
+    public function Players()
+    {
+        return $this->belongsTo(Players::getClass());
+    }
+
+
 
 }
