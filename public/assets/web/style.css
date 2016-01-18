@@ -208,7 +208,7 @@ a:hover, a:focus, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6
 	text-decoration: none;
 	outline: none;
 	font-family: "Open Sans", arial, sans-serif;
-	font-size: 10px;
+	/*font-size: 10px;*/
 }
 
 a {
