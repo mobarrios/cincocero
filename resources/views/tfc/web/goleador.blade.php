@@ -1,19 +1,14 @@
 @extends('tfc/web/template')
     @section('content')
-        {{$colorTop = "#C4CD0D"}}
-        {{$colorBottom = "#005020"}}
+        @include('tfc/web/leftbar/leftbar')
         <div class="center-col">
             
-            <div class="breadcrumb clearfix"><span class="widget-title clearfix"><img src="assets/web/images/tch.png" width="718" height="59" alt=""/></span><span class="bottom-line"></span>
-            </div>
-            <!-- breadcrumb -->
-
-            <div class="elements-box">
+           <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
-                    <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
-                        <div class="color-top" style="background-color: {{$colorTop}};"></div>
-                        <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                    <div class="categoria-container titulo-categoria" style="border-bottom-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif">
+                        <div class="color-top" style="background-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_top}}@else{{'#0f5128'}}@endif;"></div>
+                        <div class="color-bottom" style="background-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif;">
                             <h2>GOLEADORES DEL CAMPEONATO</h2>
                         </div>
                     </div>
@@ -28,66 +23,20 @@
                       <td colspan="2" align="center" class="warning">Equipo</td>
                       <td colspan="2" align="center" class="warning">Goles</td>
                     </tr>
-                    <tr>
-                      <td colspan="2" align="center">1</td>
-                      <td colspan="2" align="center">Villalba Gustavo Fabian</td>
-                      <td colspan="2" align="center">La Cantera</td>
-                      <td colspan="2" align="center">6 goles</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">2</td>
-                      <td colspan="2" align="center">Mansilla Facundo</td>
-                      <td colspan="2" align="center">Stoke City</td>
-                      <td colspan="2" align="center">5 goles</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">3</td>
-                      <td colspan="2" align="center">Rios Matias Gabriel</td>
-                      <td colspan="2" align="center">Stoke City</td>
-                      <td colspan="2" align="center">5 goles</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">4</td>
-                      <td colspan="2" align="center">Castro Santiago</td>
-                      <td colspan="2" align="center">Derby</td>
-                      <td colspan="2" align="center">4 goles</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">5</td>
-                      <td colspan="2" align="center">Carlos</td>
-                      <td colspan="2" align="center">Stoke City</td>
-                      <td colspan="2" align="center">3 goles</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">6</td>
-                      <td colspan="2" align="center">Camino Facundo</td>
-                      <td colspan="2" align="center">La Cantera</td>
-                      <td colspan="2" align="center">2 goles</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">7</td>
-                      <td colspan="2" align="center">Azcona Gabriel</td>
-                      <td colspan="2" align="center">La Cantera</td>
-                      <td colspan="2" align="center">2 goles</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">8</td>
-                      <td colspan="2" align="center">Gonzalez Mauro</td>
-                      <td colspan="2" align="center">La Amistad</td>
-                      <td colspan="2" align="center">2 goles</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">9</td>
-                      <td colspan="2" align="center">Lopez Sebastian</td>
-                      <td colspan="2" align="center">Drognitz</td>
-                      <td colspan="2" align="center">2 goles</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" align="center">10</td>
-                      <td colspan="2" align="center">Montaña Juan Ignacio</td>
-                      <td colspan="2" align="center">Clandestino</td>
-                      <td colspan="2" align="center">2 goles</td>
-                    </tr>
+                    @foreach($matches as $m)
+                        @foreach($m->matchesDetails as $detalle)
+
+                            {{$detalle->groupBy('players_id')->get()}}
+
+                            <tr>
+                          <td colspan="2" align="center">1</td>
+                          <td colspan="2" align="center">{!! $detalle->players->FullName() !!}</td>
+                          <td colspan="2" align="center">{!! $detalle->players->teams->name !!}</td>
+                          <td colspan="2" align="center">{!! $detalle->goals !!} goles</td>
+                        </tr>
+
+                        @endforeach
+                    @endforeach
                   </tbody>
                 </table>
                 <p>&nbsp;</p>
@@ -102,4 +51,5 @@
 
         </div>
         <!-- center-col -->
+        @include('tfc/web/sidebar/sidebar')
     @endsection

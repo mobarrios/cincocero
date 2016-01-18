@@ -23,10 +23,9 @@
               <ul class="punica-entry-list clearfix">
 
                   @foreach($noticias as $noticia)
-
                   <li class="element">
                   <article class="entry-item">
-                    <div class="entry-thumb hover-effect"> <img src="{{asset($noticia->images->first()->image)}}" alt="" /></div>
+                    <div class="entry-thumb hover-effect"> <img src="{!! $noticia->images->first()->image or 'assets/web/images/noticiasDefault.jpg'!!}" alt="" /></div>
                     <!-- entry-thumb -->
                     <div class="entry-content">
                       <header> <span class="entry-date">{{ date('F d, Y', strtotime($noticia->date)) }}</span> </header>

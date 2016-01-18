@@ -21,8 +21,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-
 class WebController extends Controller {
+
+    public function __construct(){
+
+        if(!Session::has('categoria'))
+        {
+            return redirect()->to('web/');
+        }
+
+    }
 
     public function Index()
     {
@@ -78,15 +86,16 @@ class WebController extends Controller {
     {
         $data['noticias']   = News::orderBy('date','DESC')->paginate(5);
 
-        Session::put('categoria',$categorias->find($id));
         $data['torneos'] = $torneos->where('categories_id',$id)->get();
+
+        Session::put('categoria',$categorias->find($id));
 
         return view('tfc/web/principal')->with($data);
     }
 
     public function Resultado($id,Tablas $tablas,FasesWeek $fasesWeek)
     {
-        $data['tablas'] = $tablas->where('fases_id',$id)->get();
+        $data['tablas'] = $tablas->where('fases_id',$id)->orderBy('pts','desc')->get();
         $data['resultado']  = $fasesWeek->where('fases_id',$id)->get();
 
         return view('tfc/web/resultado')->with($data);
@@ -138,9 +147,14 @@ class WebController extends Controller {
         return view('tfc/web/sancion')->with($data);
     }
 
-    public function Goleador()
+    public function Goleador($id,Matches $matches)
     {
-        return view('tfc/web/goleador');
+        $data['matches'] = $matches->where('status',2)
+                            ->whereHas('fasesWeek',function ($q) use($id){
+                                $q->where('fases_id',$id);
+                            })->get();
+
+        return view('tfc/web/goleador')->with($data);
     }
 
     public function FairPlay()

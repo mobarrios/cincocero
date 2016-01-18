@@ -11,32 +11,19 @@
                   
                 <div class="row">
                     <div class="col-md-12 col-sm-12 mb-20">
-                        
-                        
-                        <div class="carousel-imgs-container">
-                            <div class="carousel-imgs-wrapper">
-
-                                <div class="owl-carousel punica-carousel-imgs">
-                                @foreach($galeria as $gal)
-                                    <div class="item">
-                                        <article class="entry-item">
-                                            <div class="entry-thumb hover-effect">
-                                                <a class="group1" href="{!! $gal->images->first()->image !!}"><img src="{!! $gal->images->first()->image !!}" title="{!! $gal->name !!}" alt="{!! $gal->name !!}" /></a>
-                                            </div>
-                                        </article>
-                                        <!-- entry-item -->
-                                    </div>
-                                @endforeach
-                                    <!-- item -->
+                        @foreach($galeria as $gal)
+                            <div class="col-xs-3 pull-left" style="margin-top:15px">
+                                <div class="item item-galeria">
+                                    <article class="entry-item">
+                                        <div class="entry-thumb hover-effect">
+                                            <a class="group1" href="{!! $gal->images->first()->image !!}"><img src="{!! $gal->images->first()->image !!}" title="{!! $gal->name !!}" alt="{!! $gal->name !!}" /></a>
+                                        </div>
+                                    </article>
+                                <!-- entry-item -->
                                 </div>
-                                <!-- punica-carousel-imgs -->
                             </div>
-                            <!-- carousel-imgs-wrapper -->
-
-                        </div>
-                        <!-- carousel-imgs-container -->
+                        @endforeach
                     </div>
-                    <!-- col-md-12 -->
                 </div><br>
 
                 </div>
