@@ -32,4 +32,5 @@ class Teams extends Entity{
     {
         return $this->hasMany(Tablas::getClass());
     }
+
 }
