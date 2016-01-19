@@ -36,6 +36,10 @@ class Players extends Entity{
         return $detalle;
     }
 
+    public function Sanciones()
+    {
+        return $this->hasMany(Sanciones::getClass());
+    }
 
 
 

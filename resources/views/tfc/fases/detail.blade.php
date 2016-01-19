@@ -58,6 +58,7 @@
 
             </tbody>
        </table>
+       <a href='{{route('sanciones',$fases->id)}}'class="btn btn-xs btn-default btn-block "> Sanciones <span class="badge danger">1</span></a>
 
     @endforeach
 

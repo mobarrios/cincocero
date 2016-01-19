@@ -19,6 +19,11 @@ class FasesWeek extends Entity{
         return $this->hasMany(Matches::getClass());
     }
 
+    public function Sancion()
+    {
+        return $this->hasMany(Sanciones::getClass());
+    }
+
 
 
 }
