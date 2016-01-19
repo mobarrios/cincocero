@@ -24,4 +24,6 @@ class Fases extends Entity{
         return $this->hasMany(FasesWeek::getClass());
     }
 
+//    fases->weeks->matches->matchesdetail
+
 }

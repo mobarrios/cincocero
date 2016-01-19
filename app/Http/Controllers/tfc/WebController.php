@@ -18,6 +18,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Repositories\tfc\CategoriesRepo;
 use App\Http\Repositories\tfc\TournamentsRepo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -157,12 +158,16 @@ class WebController extends Controller {
         return view('tfc/web/goleador')->with($data);
     }
 
-    public function FairPlay($id,MatchesDetails $matchesDetails)
+    public function FairPlay($id,Tablas $tablas,Fases $fases)
     {
-//        $data['matches'] = $matchesDetails->count()
+//        $data['fairPlay'] = $tablas->where('fases_id',$id)->get();
+//        $data['fase'] = $fases->find($id);
 
+        $q = "SELECT SUM(yellow) as yellow,SUM(red) as red,teams.name as name FROM matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id = teams.id JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases_week.id = matches.fases_week_id JOIN fases ON fases_week.fases_id= fases.id WHERE fases.id = ? GROUP BY players.teams_id";
 
-        return view('tfc/web/fair_play');
+        $data['fairPlay'] = DB::select($q,array($id));
+
+        return view('tfc/web/fair_play')->with($data);
     }
 
 
