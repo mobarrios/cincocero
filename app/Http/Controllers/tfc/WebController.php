@@ -160,10 +160,15 @@ class WebController extends Controller {
         return view('tfc/web/goleador')->with($data);
     }
 
-    public function FairPlay()
+    public function FairPlay($id,MatchesDetails $matchesDetails)
     {
+//        $data['matches'] = $matchesDetails->count()
+
+
         return view('tfc/web/fair_play');
     }
+
+
     public function Destacado()
     {
         return view('tfc/web/destacado');
