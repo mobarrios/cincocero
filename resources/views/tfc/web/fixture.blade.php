@@ -24,10 +24,10 @@
                         <div class="col-xs-6">
                             <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
                                 <tr>
-                                    <td colspan="2" align="center" class="success">Fecha {{$fase->name}}</td>
+                                    <td colspan="2" align="center" class="success">Fecha </td>
                                     <td colspan="2" align="center" class="success">&nbsp;</td>
                                     <td colspan="2" align="center" class="success">&nbsp;</td>
-                                    <td colspan="2" align="center" class="success">1</td>
+                                    <td colspan="2" align="center" class="success">{{$fase->name}}</td>
 
                                 </tr>
                                 @foreach($fase->Matches as $match)
