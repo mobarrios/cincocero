@@ -1,5 +1,6 @@
 @extends('tfc/web/template')
     @section('content')
+        @include('tfc/web/leftbar/leftbar')
         <div class="center-col">
 
             <center>
@@ -15,7 +16,7 @@
                         <div class="col-md-8 col-md-offset-2">
 
 
-                            {!! Form::open(['route'=>'postRegistration','class'=>'form contact-form']) !!}
+                            {!! Form::open(['route'=>'postRegistration','class'=>'form contact-form','files' => true]) !!}
 
                             <div class="mb-20 mb-md-10">
                                 <ul>
@@ -39,6 +40,16 @@
                                 </div>
                                 <div class="mb-20 mb-md-10">
                                     {!! Form::text('mail',null ,['class'=>'input-md form-control','placeholder'=>'E-Mail']) !!}
+                                </div>
+                                <div class="mb-20 mb-md-10">
+                                    {!! Form::text('phone',null ,['class'=>'input-md form-control','placeholder'=>'Teléfono fijo']) !!}
+                                </div>
+                                <div class="mb-20 mb-md-10">
+                                    {!! Form::text('cel',null ,['class'=>'input-md form-control','placeholder'=>'Celular']) !!}
+                                </div>
+                                <div class="mb-20 mb-md-10 form-group">
+                                    <label for="image">FOTO DEL JUGADOR</label>
+                                    {!! Form::file('image',['class'=>'input-md form-control','accept' => 'image/JPEG,image/png']) !!}
                                 </div>
                                 <hr>
                                 <div class="mb-20 mb-md-10">
