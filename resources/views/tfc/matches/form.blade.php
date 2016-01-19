@@ -14,10 +14,13 @@
         {!! Form::textCustom('hour', 'Hora')!!}
         {!! Form::textCustom('name', 'Nro. Partido')!!}
 
-
-
-        {!! Form::textCustom('home_teams_id', 'Equipo 1')!!}
-        {!! Form::textCustom('away_teams_id', 'Equipo 2')!!}
+        @if(isset($model))
+            {!! Form::textCustom('home_teams_id', 'Equipo 1', $model->homeTeam->name)!!}
+            {!! Form::textCustom('away_teams_id', 'Equipo 2', $model->awayTeam->name)!!}
+        @else
+            {!! Form::textCustom('home_teams_id', 'Equipo 1')!!}
+            {!! Form::textCustom('away_teams_id', 'Equipo 2')!!}
+        @endif
 
         {!! Form::selectCustom('status', 'Estado', $status)!!}
 
