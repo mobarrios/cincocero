@@ -5,6 +5,7 @@ namespace App\Services\Html;
 class FormBuilder extends \Collective\Html\FormBuilder {
 
     public $inputClass      = ['class'=>'form-control'];
+    public $inputClassDisabled      = ['class'=>'form-control','disabled'=>'disabled'];
     public $contentClass    = 'form-group';
     public $dateClass       = ['class'=>'form-control datepicker'];
     public $textAreaClass   = ['class'=>'form-control mytextarea'];
@@ -37,6 +38,13 @@ class FormBuilder extends \Collective\Html\FormBuilder {
     public function textCustom($name = null, $label = null)
     {
         $input = parent::text($name,null, $this->inputClass);
+
+        return $this->buildDiv($label, $input);
+    }
+
+    public function textCustomEdit($name = null, $val, $label = null)
+    {
+        $input = parent::text($name,$val, $this->inputClassDisabled);
 
         return $this->buildDiv($label, $input);
     }

@@ -15,8 +15,9 @@
         {!! Form::textCustom('name', 'Nro. Partido')!!}
 
         @if(isset($model))
-            {!! Form::textCustom('home_teams_id', 'Equipo 1', $model->homeTeam->name)!!}
-            {!! Form::textCustom('away_teams_id', 'Equipo 2', $model->awayTeam->name)!!}
+            {!! Form::textCustomEdit('home_teams_id', $model->homeTeam->name, 'Equipo 1')!!}
+            {!! Form::textCustomEdit('away_teams_id', $model->awayTeam->name, 'Equipo 2')!!}
+{{--            {!! Form::textCustom('away_teams_id', 'Equipo 2', $model->awayTeam->name,['disabled' => 'disabled'])!!}--}}
         @else
             {!! Form::textCustom('home_teams_id', 'Equipo 1')!!}
             {!! Form::textCustom('away_teams_id', 'Equipo 2')!!}
