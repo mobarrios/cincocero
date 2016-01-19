@@ -66,14 +66,13 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
         'uses' => 'WebController@Goleador'
     ]);
 
-//    TRUCHADAS COMO PARA QUE ANDE LA RUTA NOMAS
-
-
 
     Route::get('{id}/fairplay',[
         'as' => 'fairplay',
-        'uses' => 'WebController@Equipo'
+        'uses' => 'WebController@FairPlay'
     ]);
+
+
 
 //    Route::resource('sancion','WebController@Sancion');
 //    Route::resource('goleador','WebController@Goleador');

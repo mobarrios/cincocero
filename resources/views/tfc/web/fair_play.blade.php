@@ -1,7 +1,6 @@
 @extends('tfc/web/template')
   @section('content')
-      {{$colorTop = "#C4CD0D"}}
-      {{$colorBottom = "#005020"}}
+      @include('tfc/web/leftbar/leftbar')
       <div class="center-col">
             
             <div class="breadcrumb clearfix"><span class="widget-title clearfix"><img src="assets/web/images/tch.png" width="718" height="59" alt=""/></span><span class="bottom-line"></span>
@@ -11,9 +10,9 @@
             <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
-                  <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$colorBottom}};border-top-color: {{$colorBottom}};border-left-color: {{$colorBottom}}">
-                    <div class="color-top" style="background-color: {{$colorTop}};"></div>
-                    <div class="color-bottom" style="background-color: {{$colorBottom}};">
+                  <div class="categoria-container titulo-categoria" style="border-bottom-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif">
+                    <div class="color-top" style="background-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_top}}@else{{'#0f5128'}}@endif;"></div>
+                    <div class="color-bottom" style="background-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif;">
                       <h2>FAIR PLAY</h2>
                     </div>
                   </div>
@@ -113,4 +112,5 @@
 
         </div>
         <!-- center-col -->
+      @include('tfc/web/sidebar/sidebar')
     @endsection
