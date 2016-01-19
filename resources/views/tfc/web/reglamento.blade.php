@@ -1,6 +1,6 @@
 
 @extends('tfc/web/template')
-    @section('content')
+    @section('content')@include('tfc/web/leftbar/leftbar')
       <div class="center-col">
 
         <center>
