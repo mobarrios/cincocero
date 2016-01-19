@@ -39,21 +39,14 @@
 
                                                 @foreach($torneo->Fases as $fases)
                                                 <tr>
-                                                <td>
+                                                <td class="col-xs-10">
                                                   {{$fases->name}}
                                                 </td>
 
-                                                    <td>
+                                                    <td class="col-xs-2">
                                                         <a href="{{route('fasesFixture',$fases->id)}}" class="btn btn-xs btn-success">Fixture</a>
                                                         <a href="{{route('fasesTabla',$fases->id)}}"class="btn btn-xs btn-success">Tabla</a>
-
-                                                         <a href="{{route('fasesFixture',$fases->id)}}"class="btn btn-xs btn-success">Sanciones</a>
-                                                         <a href="{{route('fasesFixture',$fases->id)}}"class="btn btn-xs btn-success">Goleadores</a>
-                                                        <a href="{{route('fasesFixture',$fases->id)}}"class="btn btn-xs btn-success">FairPlay</a></td>
-
-
-
-                                                </tr>
+                                                     </tr>
 
                                                 @endforeach
 
