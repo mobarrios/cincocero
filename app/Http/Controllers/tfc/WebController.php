@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\tfc;
 
+use App\Entities\Images;
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Fases;
 use App\Entities\tfc\FasesWeek;
@@ -109,8 +110,10 @@ class WebController extends Controller {
 
         return view('tfc/web/proxima_fecha')->with($data);
     }
+
     public function Fixture($id,FasesWeek $fases)
     {
+
         $data['fases'] = $fases->where('fases_id',$id)->get();
 
         return view('tfc/web/fixture')->with($data);
@@ -191,7 +194,9 @@ class WebController extends Controller {
                 'name'=>'required',
                 'mail'=>'required',
                 'teams_id'=>'required',
-                'password'=>'required'
+                'password'=>'required',
+                'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+                'cel'=>'required'
             ]);
 
         if($validator->fails())
@@ -211,11 +216,15 @@ class WebController extends Controller {
         $player             = new Players();
         $player->dni        = $request->dni;
         $player->name       = $request->name;
+        $player->cel        = $request->cel;
+        $player->phone      = $request->phone;
         $player->last_name  = $request->last_name;
         $player->mail       = $request->mail;
         $player->teams_id   = $request->teams_id;
         $player->status     = 1;
         $player->save();
+
+        
 
         return redirect()->back()->withErrors('INSCRIPCION CARGADA CORRECTAMENTE. Se le enviara un mail con la confirmacion de la inscripcion.');
     }

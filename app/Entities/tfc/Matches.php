@@ -17,12 +17,18 @@ class Matches extends Entity{
 
     public function HomeTeam()
     {
-        return $this->belongsTo(Teams::getClass(),'home_teams_id');
+        if(is_null( $this->belongsTo(Teams::getClass(),'home_teams_id') ))
+            return 'Libre';
+
+            return $this->belongsTo(Teams::getClass(),'home_teams_id');
 
     }
 
     public function AwayTeam()
     {
+        if(is_null( $this->belongsTo(Teams::getClass(),'away_teams_id') ))
+            return 'Libre';
+
         return $this->belongsTo(Teams::getClass(),'away_teams_id');
     }
 
@@ -62,6 +68,7 @@ class Matches extends Entity{
     {
        return $this->MatchesDetails()->where('players_id',$players_id);
     }
+
 
 
 

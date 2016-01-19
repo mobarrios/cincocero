@@ -31,21 +31,24 @@
             <tbody>
 
                 @foreach($fases->Matches as $match)
-                    {!! $match->HomeTeam->name !!}<br>
+
                     <tr>
                         <td>{{$match->name}}</td>
                         <td>{{$match->date}}</td>
                         <td>{{$match->hour}}</td>
-                        <td>{{$match->HomeTeam->name}} </td>
+
+                        <td>{{$match->HomeTeam->name or 'Libre' }} </td>
                         <td><label class="label label-danger">{{$match->home_goals}}</label></td>
                         <td><label class="label label-danger">{{$match->away_goals}}</label></td>
-                        <td>{{$match->AwayTeam->name}}</td>
+                        <td>{{$match->AwayTeam->name or 'Libre'}}</td>
                         <td>{{$match->Canchas->Sedes->name or 'a Conf.'}}</td>
                         <td>{{$match->Canchas->name or 'a Conf.'}}</td>
                         <td>{{$match->status}}</td>
                         <td>
 
-                            <a href="{{route('matchesGetResult',[$match->id] )}}" class="btn btn-xs btn-default">Resultado</a>
+                            @if(!is_null($match->AwayTeam) )
+                             <a href="{{route('matchesGetResult',[$match->id] )}}" class="btn btn-xs btn-default">Resultado</a>
+                            @endif
                             <a href="{{route('matchesGetEdit',[$match->id,$fases->fases_id] )}}" class="btn btn-xs btn-default">Editar</a>
                         </td>
 
