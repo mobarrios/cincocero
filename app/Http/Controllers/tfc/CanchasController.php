@@ -67,5 +67,12 @@ class CanchasController extends Controller {
 
         return $newRequest;
     }
+
+    public function cambiarCanchas($id){
+        $q = $this->repo->getModel()
+                ->where('sedes_id',$id)
+                ->lists('name','id');
+        return $q;
+    }
    
 }

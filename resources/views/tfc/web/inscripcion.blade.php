@@ -55,6 +55,11 @@
                                 <div class="mb-20 mb-md-10">
                                     {!! Form::select('teams_id',['0'=>'Seleccionar Equipo'] + $teams ,['class'=>'input-md form-control','required'=>'required']) !!}
                                 </div>
+                                <div class="mb-20 mb-md-10 form-group">
+                                    <label>Acepta <a href="#">TÉRMINOS Y CONDICIONES</a> del sitio
+                                    {!! Form::checkbox('terms','terms',['class'=>'input-md form-control','required'=>'required']) !!}
+                                    </label>
+                                </div>
                                 <div class="form-group">
                                     <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password"  required>
                                 </div>

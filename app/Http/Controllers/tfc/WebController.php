@@ -155,10 +155,10 @@ class WebController extends Controller {
 
     public function Goleador($id,Matches $matches)
     {
-        $data['matches'] = $matches->where('status',2)
-                            ->whereHas('fasesWeek',function ($q) use($id){
-                                $q->where('fases_id',$id);
-                            })->get();
+        $q = "SELECT SUM(matches_details.goals) AS goals, CONCAT(players.last_name,' ',players.name) as players, teams.name as teams FROM matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id = teams.id JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON matches.fases_week_id = fases_week.id WHERE fases_week.fases_id = ?
+GROUP BY matches_details.players_id ORDER BY goals DESC";
+
+        $data['goleadores'] = DB::select($q,array($id));
 
         return view('tfc/web/goleador')->with($data);
     }

@@ -50,7 +50,14 @@ class MatchesController extends Controller {
         //selects
          $this->data['status']          = [1 => 'Por Jugar', 2 => 'Finalizado', 3 => 'Suspendido'];
 
-         $this->data['canchas']         = Canchas::lists('name','id');
+        $this->data['sedes']            = Sedes::lists('name','id');
+
+//        $this->data['canchas']         = Canchas::lists('name','id');
+
+        $this->data['canchas'] = Canchas::where('sedes_id',Sedes::first()->id)->lists('name','id');
+
+         $this->data['canchasEdit']     = Canchas::all();
+
 
         //data for validation
         $this->rules                = $this->repo->Rules();

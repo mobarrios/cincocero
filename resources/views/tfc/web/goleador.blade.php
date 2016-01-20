@@ -23,20 +23,18 @@
                       <td colspan="2" align="center" class="warning">Equipo</td>
                       <td colspan="2" align="center" class="warning">Goles</td>
                     </tr>
-                    @foreach($matches as $m)
-                        @foreach($m->matchesDetails as $detalle)
-
-                            {{$detalle->groupBy('players_id')->get()}}
-
+                    @if(empty($goleadores))
+                        @include('tfc/web/includes/sinDatos')
+                    @else
+                        @foreach($goleadores as $ind => $g)
                             <tr>
-                          <td colspan="2" align="center">1</td>
-                          <td colspan="2" align="center">{!! $detalle->players->FullName() !!}</td>
-                          <td colspan="2" align="center">{!! $detalle->players->teams->name !!}</td>
-                          <td colspan="2" align="center">{!! $detalle->goals !!} goles</td>
-                        </tr>
-
+                              <td colspan="2" align="center">{!! $ind+1 !!}</td>
+                              <td colspan="2" align="center">{!! $g->players !!}</td>
+                              <td colspan="2" align="center">{!! $g->teams !!}</td>
+                              <td colspan="2" align="center">{!! $g->goals !!} goles</td>
+                            </tr>
                         @endforeach
-                    @endforeach
+                    @endif
                   </tbody>
                 </table>
                 <p>&nbsp;</p>

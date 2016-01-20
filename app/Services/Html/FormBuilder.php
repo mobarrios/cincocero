@@ -57,6 +57,14 @@ class FormBuilder extends \Collective\Html\FormBuilder {
     }
 
 
+    public function selectCustomEdit($name = null , $label = null, $entity = null, $selected)
+    {
+        $input = parent::select($name,['0'=>'Seleccionar'] + $entity ,$selected,$this->inputClass);
+
+        return $this->buildDiv( $label, $input);
+    }
+
+
 
     public function buildDiv( $label = null, $input = null)
     {

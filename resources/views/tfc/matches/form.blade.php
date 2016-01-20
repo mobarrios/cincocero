@@ -15,23 +15,34 @@
         {!! Form::textCustom('name', 'Nro. Partido')!!}
 
         @if(isset($model))
-            {!! Form::textCustomEdit('home_teams_id', $model->homeTeam->name, 'Equipo 1')!!}
-            {!! Form::textCustomEdit('away_teams_id', $model->awayTeam->name, 'Equipo 2')!!}
-{{--            {!! Form::textCustom('away_teams_id', 'Equipo 2', $model->awayTeam->name,['disabled' => 'disabled'])!!}--}}
+            @if(is_null($model->homeTeam))
+                {!! Form::textCustomEdit('home_teams_id', "Libre", 'Equipo 1')!!}
+            @else
+                {!! Form::textCustomEdit('home_teams_id', $model->homeTeam->name, 'Equipo 1')!!}
+            @endif
+            @if(is_null($model->awayTeam))
+                {!! Form::textCustomEdit('away_teams_id', "Libre", 'Equipo 2')!!}
+            @else
+                {!! Form::textCustomEdit('away_teams_id', $model->awayTeam->name, 'Equipo 2')!!}
+            @endif
         @else
             {!! Form::textCustom('home_teams_id', 'Equipo 1')!!}
             {!! Form::textCustom('away_teams_id', 'Equipo 2')!!}
         @endif
 
         {!! Form::selectCustom('status', 'Estado', $status)!!}
-
-        {!! Form::selectCustom('canchas_id','Cancha',$canchas)!!}
+        @if(isset($model) && !is_null($model->canchas))
+            {!! Form::selectCustomEdit('sedes_id','Sede',$sedes,$model->canchas->sedes->id)!!}
+        @else
+            {!! Form::selectCustomEdit('sedes_id','Sede',$sedes,\App\Entities\tfc\Sedes::first()->id)!!}
+        @endif
+        @if(isset($model) && !is_null($model->canchas) && !is_null($model->canchas->sedes))
+            {!! Form::selectCustomEdit('canchas_id','Cancha',$canchasEdit->where('sedes_id',$model->canchas->sedes->id)->lists('name','id'),$model->canchas->id) !!}
+        @else
+            {!! Form::selectCustom('canchas_id','Cancha',$canchas) !!}
+        @endif
 
         {!! Form::hidden('fases_id',$fases_id) !!}
-
-
-
-
 
 
         <hr>
@@ -40,5 +51,7 @@
         {!! Form::close()!!}
 
     @endsection
-
+    @section('js')
+        <script src="assets/web/js/cambiarCancha.js"></script>
+    @endsection
 @stop
