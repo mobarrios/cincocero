@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\tfc;
 
+use App\Entities\Images;
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Fases;
 use App\Entities\tfc\FasesWeek;
@@ -14,6 +15,7 @@ use App\Entities\tfc\Sedes;
 use App\Entities\tfc\Tablas;
 use App\Entities\tfc\Teams;
 use App\Entities\tfc\Tournaments;
+use App\Helpers\ImagesHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\tfc\CategoriesRepo;
 use App\Http\Repositories\tfc\TournamentsRepo;
@@ -21,6 +23,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Repositories\tfc\PlayersRepo;
 
 class WebController extends Controller {
 
@@ -110,8 +113,10 @@ class WebController extends Controller {
 
         return view('tfc/web/proxima_fecha')->with($data);
     }
+
     public function Fixture($id,FasesWeek $fases)
     {
+
         $data['fases'] = $fases->where('fases_id',$id)->get();
 
         return view('tfc/web/fixture')->with($data);
@@ -186,9 +191,8 @@ class WebController extends Controller {
 
     // Inscripcion
 
-    public function postRegistration(Request $request)
+    public function postRegistration(Request $request , PlayersRepo $player, ImagesHelper $image)
     {
-
 
         $validator = Validator::make(
             $request->all(),
@@ -197,14 +201,17 @@ class WebController extends Controller {
                 'last_name' => 'required',
                 'name'=>'required',
                 'mail'=>'required',
-                'teams_id'=>'required',
-                'password'=>'required'
+                'teams_id'=>'required|not_in:0',
+                'password'=>'required',
+                'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+                'cel'=>'required'
             ]);
 
         if($validator->fails())
         {
             return redirect()->back()->withInput()->withErrors($validator->messages());
         }
+
 
         $team = Teams::find($request->teams_id);
 
@@ -214,15 +221,26 @@ class WebController extends Controller {
         if($request->password != $team->password)
                 return redirect()->back()->withInput()->withErrors('Password del Equipo = '.$team->name.', Incorrecto');
 
-
+        /*
         $player             = new Players();
         $player->dni        = $request->dni;
         $player->name       = $request->name;
+        $player->cel        = $request->cel;
+        $player->phone      = $request->phone;
         $player->last_name  = $request->last_name;
         $player->mail       = $request->mail;
         $player->teams_id   = $request->teams_id;
         $player->status     = 1;
         $player->save();
+*/
+        $request['status'] = 1;
+
+        $model =  $player->create($request);
+
+        if($request->hasFile('image'))
+        {
+            $image->upload('players', $model->id  ,$request->file('image') ,'uploads/tfc/players/images/');
+        }
 
         return redirect()->back()->withErrors('INSCRIPCION CARGADA CORRECTAMENTE. Se le enviara un mail con la confirmacion de la inscripcion.');
     }

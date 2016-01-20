@@ -49,11 +49,11 @@
                                 </div>
                                 <div class="mb-20 mb-md-10 form-group">
                                     <label for="image">FOTO DEL JUGADOR</label>
-                                    {!! Form::file('image',['class'=>'input-md form-control','accept' => 'image/JPEG,image/png']) !!}
+                                    {!! Form::file('image',['class'=>'input-md form-control','required']) !!}
                                 </div>
                                 <hr>
                                 <div class="mb-20 mb-md-10">
-                                    {!! Form::select('teams_id',['0'=>'Seleccionar Equipo'] + $teams ,['class'=>'input-md form-control']) !!}
+                                    {!! Form::select('teams_id',['0'=>'Seleccionar Equipo'] + $teams ,['class'=>'input-md form-control','required'=>'required']) !!}
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password"  required>
