@@ -160,9 +160,6 @@ class WebController extends Controller {
 
     public function FairPlay($id,Tablas $tablas,Fases $fases)
     {
-//        $data['fairPlay'] = $tablas->where('fases_id',$id)->get();
-//        $data['fase'] = $fases->find($id);
-
         $q = "SELECT SUM(yellow) as yellow,SUM(red) as red,teams.name as name FROM matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id = teams.id JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases_week.id = matches.fases_week_id JOIN fases ON fases_week.fases_id= fases.id WHERE fases.id = ? GROUP BY players.teams_id";
 
         $data['fairPlay'] = DB::select($q,array($id));
