@@ -17,7 +17,7 @@
                     <a class="" aria-expanded="true" data-toggle="collapse" data-parent="#accordion" href="#{{$season->id}}">
                        {{$season->name}}
                     </a>
-                    <small class="text-success pull-right"> {{$season->from}}   {{$season->to}}</small>
+                    <small class="text-success pull-right"> </small>
 
                 </h4>
 

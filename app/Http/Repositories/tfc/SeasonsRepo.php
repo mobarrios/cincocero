@@ -25,8 +25,8 @@ class SeasonsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'from'   => 'required|date',
-            'to'   => 'required|date|after:from',
+            //'from'   => 'required|date',
+            //'to'   => 'required|date|after:from',
 
 
             //'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
@@ -37,8 +37,8 @@ class SeasonsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'from'   => 'required|date',
-            'to'   => 'required|date|after:from',
+           // 'from'   => 'required|date',
+           // 'to'   => 'required|date|after:from',
            // 'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
         ];
     }
