@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Conv_HANDGOTL';
     src: url('../fonts/HANDGOTL.eot');
@@ -3580,9 +3581,7 @@ blockquote {
 }
 
 .punica-footer{
-    position: absolute !important;
     width: 100% !important;
-    bottom: 0px !important;
 }
 
 
@@ -3687,3 +3686,98 @@ blockquote {
     width: 163px;
     height:122px;
 }
+
+.selectEquipos select{
+    width:100%;
+}
+
+.terms{
+    color: #376906;
+    font-family:helvetica;
+    text-decoration: underline !important;
+}
+
+.terms:hover{
+    font-size:auto;
+    font-weight:auto;
+    color: #376906;
+    font-family:helvetica;
+    text-decoration: none !important;
+}
+
+
+.nav,.nav2,.coder{
+    display:inline-block;
+}
+
+.nav{
+    color:white;
+}
+
+.nav2{
+    color:#1D1D1D;
+}
+
+.coder{
+    color:#D4801C;
+}
+
+#copyright *{
+    font-family:helvetica;
+    font-weight: bold;
+}
+
+
+#copyright *:hover{
+    font-family:helvetica;
+    font-weight: bold;
+
+}
+
+.punica-end+a{
+    font-family:helvetica;
+    font-weight: normal;
+
+    color: #b6b6b6;
+    opacity: .7;
+    font-size:10px;
+    float:right;
+    margin-top:-5px;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+}
+
+.punica-end+a:hover{
+    text-decoration:underline !important;
+    opacity:1;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

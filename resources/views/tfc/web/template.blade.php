@@ -143,9 +143,10 @@
                     <li><a href="#" class="fa fa-twitter"></a></li>
                 </ul>
                 <!-- social-links -->
-                <p id="copyright">Copyright &copy; 2015 . TheFutbolCompany.com - Designed By  <a href="http://www.navcoder.net" target="_blank">Navcoder.net</a></p>
+                <p id="copyright">Copyright &copy; 2015 . TheFutbolCompany.com - Designed By  <a href="http://www.navcoder.net" target="_blank" class="navcoder"><span class="nav">Nav</span><span class="coder">{coder}</span></a></p>
             </div>
-
+            <a href="" data-toggle="modal" data-target="#termYcond">Términos y condiciones</a>
+            <span class="clearfix"></span>
         </div>
         <!-- wrapper -->
 
@@ -155,6 +156,57 @@
 </footer>
 <!-- punica-footer -->
 
+
+<!-- Modal -->
+<div class="modal fade" id="termYcond" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="myModalLabel" style="color:#376906;">TÉRMINOS Y CONDICIONES DE <span class="nav2">NAV</span><span class="coder">{CODER}</span></h4>
+            </div>
+            <div class="modal-body">
+                <h4>Términos y Condiciones del Uso</h4>
+
+                <h4>1. Introducción</h4>
+                <p>Navcoder invita a Ud. a visitar su sitio Web y le informa los Términos y Condiciones que regulan la utilización del mismo y con los cuales se considera que Ud. presta conformidad por dicha utilización.</p>
+                <h4>2. Información</h4>
+                <p>Toda información o recomendación proporcionada en este sitio Web tiene la función de orientar y asistir a quien lo visita y es brindada de buena fe por Navcoder Sin embargo, Navcoder no asume responsabilidad por la utilización, aplicación y/o procesamiento que los usuarios pudieren darle a dicha información ni otorga garantía sobre la exactitud de sus contenidos.</p>
+                <p>Por tal motivo, Navcoder no se responsabiliza por cualquier decisión o medida que Ud. pudiere adoptar basándose en la información contenida en este sitio Web, ni por los perjuicios que se deriven de ella. La utilización de dicha información es de riesgo exclusivo del usuario.</p>
+                <p>La información incluida en este sitio podrá actualizarse y/o modificarse periódicamente, por lo tanto la misma no debe interpretarse como definitiva.</p>
+                <p>Navcoder no asume responsabilidad por los virus o vicios informáticos que el usuario pudiere contraer visitando nuestro sitio Web.</p>
+                <h4>3. Vínculos con sitios externos</h4>
+                <p>Este sitio Web puede incluir vínculos con sitios Web externos que no pertenecen a Navcoder y de los cuales éste no se responsabiliza por su contenido o cualquier consecuencia que pudieren derivar del ingreso a los mismos y/o su utilización.</p>
+                <p>La función de los vínculos que aparecen en esta página es exclusivamente la de informarle a Ud. sobre la existencia de otras fuentes de información en Internet, donde podrá eventualmente ampliar los datos ofrecidos en este sitio e informarse sobre servicios y/o productos. Dichos vínculos no suponen una sugerencia, invitación o recomendación para la visita de los lugares de destino.</p>
+                <h4>4. Derechos de autor y propiedad intelectual</h4>
+                <p>Este sitio Web contiene material, incluyendo, sin carácter taxativo, textos, fotografías, y otras imágenes y sonido, que se halla protegido por derechos de autor y/u otros derechos de propiedad intelectual. Los derechos de autor y otros derechos de propiedad intelectual sobre dicho material pertenecen a Navcoder o han sido otorgados bajo licencia a Navcoder por el/los titular/es de dichos derechos, de forma tal que Navcoder puede utilizar este material como parte de este sitio Web.
+                    <br>
+                Todas las marcas comerciales incluidas en este sitio Web son de propiedad de Navcoder o han sido otorgadas bajo licencia o autorización a Navcoder por el/los titular/es de dichas marcas para su utilización en este sitio Web.
+                    <br>
+                La reproducción de los contenidos descriptos precedentemente se encuentra prohibida, salvo previa autorización por escrito de Navcoder, salvo que se destinen a un uso exclusivamente personal y sin que en ningún caso el usuario adquiera derecho alguno sobre los mismos.</p>
+                <h4>5. Modificaciones de estos Términos y Condiciones</h4>
+                <p>Navcoder se reserva el derecho de modificar en cualquier momento, en forma unilateral y a su solo juicio, los presentes Términos y Condiciones. Al navegar por este sitio Web, Ud. acepta estar obligado por los Términos y Condiciones que se encuentran vigente a tal fecha y por lo tanto debe verificar previamente los mismos cada vez que visita este sitio.</p>
+
+                <h4>6. Dudas e Inquietudes</h4>
+                <p>En caso de tener inquietudes con relación a los presentes Términos y Condiciones, sírvase contactarse con nosotros enviándonos un e-mail a info@navcder.net.</p>
+
+                <h4>7. Ley Aplicable y Jurisdicción</h4>
+                <p>Los presentes Términos y Condiciones se rigen por la legislación de la República Argentina. Los usuarios del sitio Web de Navcoder se someten a la jurisdicción de los Tribunales Ordinarios de la Ciudad Autónoma de Buenos Aires de la República Argentina, renunciando a cualquier otro fuero o jurisdicción que resultara aplicable.</p>
+
+                <h4>Política de Privacidad</h4>
+                <p>El ingreso de datos personales del usuario en el sitio Web de Navcoder no constituye requisito para navegar por el mismo. El usuario que decide ingresar sus datos personales manifiesta conocer y aceptar lo siguiente:
+                    <ul>
+                        <li>(i) El destinatario de dichos datos personales es Navcoder, quien podrá utilizar los mismos a los fines del desarrollo de su actividad comercial. Asimismo, los datos personales brindados por el usuario serán incorporados al banco de datos de Navcoder y podrán ser utilizados por Navcoder. a los efectos de elaborar estadísticas generales, sin identificar al usuario, realizarle consultas o comunicarse con él.</li>
+                        <li>(ii) El aporte de los datos personales es facultativo para el usuario.</li>
+                        <li>(iii) El usuario garantiza la veracidad y certeza de los datos personales que ingresa en este sitio Web, por lo que asume la correspondiente responsabilidad en caso que los mismos resulten ser inexactos. Navcoder.  no asume ninguna responsabilidad en el caso de inexactitud de los datos personales ingresados por el usuario en este sitio Web.</li>
+                    </ul>
+                El usuario que ingrese sus datos personales podrá en cualquier momento solicitar que se le informe el contenido de los mismos y podrá solicitar las rectificaciones o supresiones que entienda convenientes.
+                <br>
+                El usuario al visitar el sitio Web de Navcoder. presta conformidad para la instalación de dispositivos informáticos (cookies) a los efectos de facilitar la utilización y comunicación por el usuario de nuestro sitio en futuras visitas y permitir la elaboración de análisis estadísticos.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="assets/web/js/jquery-1.10.2.min.js"></script>
 <script src="assets/web/js/retina.js"></script>
