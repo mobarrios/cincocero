@@ -20,10 +20,6 @@
                     <!-- punica-featured-news-slider -->
                     <ul class="older-post clearfix">
                         <div class="row">
-                          <p><br>
-                            <br>
-                            <br>
-                          </p>
                           <div class="col-md-12 col-sm-12 mb-20">
                           <p><h2 class="widget-title clearfix"><img src="{!! $equipo->images->first()->image or 'assets/web/images/teamDefault2.png'!!}" width="35" height="35" alt=""/> {!! $equipo->name !!}</h2><br>
                           </p>

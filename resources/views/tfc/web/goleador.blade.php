@@ -18,7 +18,6 @@
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
                   <tbody>
                     <tr>
-                      <td colspan="2" align="center" class="warning">Posicion</td>
                       <td colspan="2" align="center" class="warning">Jugador</td>
                       <td colspan="2" align="center" class="warning">Equipo</td>
                       <td colspan="2" align="center" class="warning">Goles</td>
@@ -28,7 +27,6 @@
                     @else
                         @foreach($goleadores as $ind => $g)
                             <tr>
-                              <td colspan="2" align="center">{!! $ind+1 !!}</td>
                               <td colspan="2" align="center">{!! $g->players !!}</td>
                               <td colspan="2" align="center">{!! $g->teams !!}</td>
                               <td colspan="2" align="center">{!! $g->goals !!} goles</td>

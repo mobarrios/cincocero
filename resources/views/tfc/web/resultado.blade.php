@@ -66,7 +66,7 @@
                         @foreach($res->matches->where('status','2') as $match)
 
                           <tr>
-                              <td colspan="6" align="center" class="success">Fecha {!! $res->name !!} - {!! $match->date !!} - {!! $match->hour !!} hs</td>
+                              <td colspan="6" align="center" class="success">Fecha {!! $res->name !!} - {!! $match->date !!} - {!! $match->hour !!}</td>
                           </tr>
                           <tr>
                             <td align="center" class="success">Equipo</td>
