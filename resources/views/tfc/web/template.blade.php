@@ -143,9 +143,10 @@
                     <li><a href="#" class="fa fa-twitter"></a></li>
                 </ul>
                 <!-- social-links -->
-                <p id="copyright">Copyright &copy; 2015 . TheFutbolCompany.com - Designed By  <a href="http://www.navcoder.net" target="_blank">Navcoder.net</a></p>
+                <p id="copyright">Copyright &copy; 2015 . TheFutbolCompany.com - Designed By  <a href="http://www.navcoder.net" target="_blank" class="navcoder"><span class="nav">Nav</span><span class="coder">{coder}</span></a></p>
             </div>
-
+            <a href="" data-toggle="modal" data-target="#termYcond">Términos y condiciones</a>
+            <span class="clearfix"></span>
         </div>
         <!-- wrapper -->
 
@@ -155,6 +156,21 @@
 </footer>
 <!-- punica-footer -->
 
+
+<!-- Modal -->
+<div class="modal fade" id="termYcond" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="myModalLabel" style="color:#376906;">TÉRMINOS Y CONDICIONES DE <span class="nav2">NAV</span><span class="coder">{CODER}</span></h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="assets/web/js/jquery-1.10.2.min.js"></script>
 <script src="assets/web/js/retina.js"></script>
