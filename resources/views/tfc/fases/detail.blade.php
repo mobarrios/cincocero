@@ -59,7 +59,12 @@
 
             </tbody>
        </table>
-       <a href='{{route('sanciones',$fases->id)}}'class="btn btn-xs btn-default btn-block "> Sanciones @if(($fases->Sancion->count()!=0 )) <span class="label label-danger ">{{$fases->Sancion->count()}}</span> @endif</a>
+
+       <div class="btn-group">
+           <a href='{{route('sanciones',$fases->id)}}'class="btn btn-md btn-default "> Sanciones @if(($fases->Sancion->count()!=0 )) <span class="label label-danger ">{{$fases->Sancion->count()}}</span> @endif</a>
+           <a href='{{route('sanciones',$fases->id)}}'class="btn btn-md btn-default "> Destacados</a>
+
+       </div>
     <hr>
     @endforeach
 

@@ -58,6 +58,7 @@ class TeamsController extends Controller {
         $this->data['routeNew']     = $module.'GetNew';
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
+        $this->data['routeDetail']  = 'players';
 
     }
 
