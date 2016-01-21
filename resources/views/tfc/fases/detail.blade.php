@@ -43,12 +43,22 @@
                         <td>{{$match->AwayTeam->name or 'Libre'}}</td>
                         <td>{{$match->Canchas->Sedes->name or 'a Conf.'}}</td>
                         <td>{{$match->Canchas->name or 'a Conf.'}}</td>
-                        <td>{{$match->status}}</td>
+                        <td>
+                            @if($match->status == 1)
+                                <label class="label label-primary" >Por Jugar</label>
+                            @elseif($match->status == 2)
+                                <label class="label label-success" >Finalizado</label>
+                            @elseif($match->status == 3)
+                                <label class="label label-danger" >Suspendido</label>
+                            @endif
+                        </td>
                         <td>
 
                             @if(!is_null($match->AwayTeam) )
                                 <a href="{{route('matchesGetFicha',[$match->id] )}}" target='blank' class="btn btn-xs btn-default">Ficha</a>
-                                <a href="{{route('matchesGetResult',[$match->id] )}}" class="btn btn-xs btn-default">Resultado</a>
+                                @if($match->status == 1)
+                                    <a href="{{route('matchesGetResult',[$match->id] )}}" class="btn btn-xs btn-default">Resultado</a>
+                                @endif
                             @endif
                             <a href="{{route('matchesGetEdit',[$match->id,$fases->fases_id] )}}" class="btn btn-xs btn-default">Editar</a>
                         </td>
@@ -62,7 +72,7 @@
 
        <div class="btn-group">
            <a href='{{route('sanciones',$fases->id)}}'class="btn btn-md btn-default "> Sanciones @if(($fases->Sancion->count()!=0 )) <span class="label label-danger ">{{$fases->Sancion->count()}}</span> @endif</a>
-           <a href='{{route('sanciones',$fases->id)}}'class="btn btn-md btn-default "> Destacados</a>
+           <a href='{{route('destacados',$fases->id)}}'class="btn btn-md btn-default "> Destacados</a>
 
        </div>
     <hr>

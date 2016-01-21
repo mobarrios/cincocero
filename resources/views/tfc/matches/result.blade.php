@@ -2,7 +2,7 @@
 
 @section('content')
 
-{!! Form::model($match , ['route'=>'matchesPostResult']) !!}
+{!! Form::model($match , ['route'=>'matchesPostResult','id'=>'form']) !!}
 
 {!! Form::hidden('matches_id', $match->id) !!}
 
@@ -98,6 +98,10 @@
 {!! Form::close()!!}
 @endsection
 
+    @section('js')
+        <script>
 
+        </script>
+    @endsection
 @stop
 

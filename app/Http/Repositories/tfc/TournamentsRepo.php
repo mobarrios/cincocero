@@ -58,8 +58,8 @@ class TournamentsRepo extends BaseRepo {
                //'Temporada' =>    ['data' => 'images','relation'=> null],
                 'Torneos' =>  ['data' => 'name','relation' => null],
 
-                'Inicio' =>  ['data' => 'from','relation' => null],
-                'Fin' =>  ['data' => 'to','relation' => null],
+                //'Inicio' =>  ['data' => 'from','relation' => null],
+                //'Fin' =>  ['data' => 'to','relation' => null],
 
 
 
