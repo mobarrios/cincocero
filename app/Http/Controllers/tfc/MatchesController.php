@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Repositories\tfc\TablasRepo;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
+use PDF;
 use Illuminate\Support\Facades\Session;
 
 
@@ -222,4 +223,20 @@ class MatchesController extends Controller {
 
         return redirect()->route('fasesFixture', Session::get('fases_id') );
     }
+
+
+    // get Ficha de Partido
+    public function getFicha($matches_id = null)
+    {
+        $data['match']  = Matches::find($matches_id);
+
+
+        $pdf = PDF::loadView('tfc.matches.ficha',$data);
+        $pdf->setOrientation('landscape');
+
+        return $pdf->stream();
+
+
+    }
+
 }

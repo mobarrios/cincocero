@@ -38,8 +38,8 @@
                         <td>{{$match->hour}}</td>
 
                         <td>{{$match->HomeTeam->name or 'Libre' }} </td>
-                        <td><label class="label label-danger">{{$match->home_goals}}</label></td>
-                        <td><label class="label label-danger">{{$match->away_goals}}</label></td>
+                        <td><h4><label class="label label-info">{{$match->home_goals}}</label></h4></td>
+                        <td><h4><label class="label label-info">{{$match->away_goals}}</label></h4></td>
                         <td>{{$match->AwayTeam->name or 'Libre'}}</td>
                         <td>{{$match->Canchas->Sedes->name or 'a Conf.'}}</td>
                         <td>{{$match->Canchas->name or 'a Conf.'}}</td>
@@ -47,7 +47,8 @@
                         <td>
 
                             @if(!is_null($match->AwayTeam) )
-                             <a href="{{route('matchesGetResult',[$match->id] )}}" class="btn btn-xs btn-default">Resultado</a>
+                                <a href="{{route('matchesGetFicha',[$match->id] )}}" target='blank' class="btn btn-xs btn-default">Ficha</a>
+                                <a href="{{route('matchesGetResult',[$match->id] )}}" class="btn btn-xs btn-default">Resultado</a>
                             @endif
                             <a href="{{route('matchesGetEdit',[$match->id,$fases->fases_id] )}}" class="btn btn-xs btn-default">Editar</a>
                         </td>
@@ -58,8 +59,8 @@
 
             </tbody>
        </table>
-       <a href='{{route('sanciones',$fases->id)}}'class="btn btn-xs btn-default btn-block "> Sanciones <span class="badge danger">1</span></a>
-
+       <a href='{{route('sanciones',$fases->id)}}'class="btn btn-xs btn-default btn-block "> Sanciones @if(($fases->Sancion->count()!=0 )) <span class="label label-danger ">{{$fases->Sancion->count()}}</span> @endif</a>
+    <hr>
     @endforeach
 
 @endsection

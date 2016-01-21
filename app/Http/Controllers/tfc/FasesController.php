@@ -73,6 +73,7 @@ class FasesController extends Controller {
         return $newRequest;
     }
 
+
     //go to form new
     public function getNew($id = null)
     {
@@ -132,9 +133,6 @@ class FasesController extends Controller {
             }
 
         }
-return;
-
-
 
 
         // if has image uploaded

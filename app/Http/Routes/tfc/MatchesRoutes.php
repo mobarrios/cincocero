@@ -10,6 +10,7 @@ Route::get('new'.$module,            ['middleware'=>'roles','data'=> $module.'-s
 
 Route::get('result'.$module.'/{id?}', ['middleware'=>'roles','data'=> $module.'-edit' ,'as' => $module.'GetResult','uses' => $controller.'@getResult']);
 
+Route::get('ficha'.$module.'/{id?}', ['middleware'=>'roles','data'=> $module.'-list' ,'as' => $module.'GetFicha','uses' => $controller.'@getFicha']);
 
 Route::post('postNew'.$module,          ['as'=> $module.'PostNew', 'uses'=> $controller.'@postNew']);
 Route::post('postEdit'.$module.'/{id}', ['as'=> $module.'PostEdit', 'uses'=> $controller.'@postEdit']);
