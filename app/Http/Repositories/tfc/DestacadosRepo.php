@@ -2,14 +2,14 @@
 
 namespace App\Http\Repositories\tfc;
 
-use App\Entities\tfc\Teams;
+use App\Entities\tfc\Destacados;
 use App\Http\Repositories\BaseRepo;
 
-class TeamsRepo extends BaseRepo {
+class DestacadosRepo extends BaseRepo {
 
     public function getModel()
     {
-        return new Teams;
+        return new Destacados();
     }
 
     public function createCustom($datos = null)
@@ -20,19 +20,22 @@ class TeamsRepo extends BaseRepo {
     }
 
 
+
     public function Rules()
     {
         return [
-            'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+            'teams_id'   => 'required',
+            'players_id'   => 'required',
+            'fases_week_id' => 'required',
         ];
     }
 
     public function RulesEdit($id = null)
     {
         return [
-            'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'teams_id'   => 'required',
+            'players_id'   => 'required',
+            'fases_week_id' => 'required',
         ];
     }
 
@@ -42,12 +45,10 @@ class TeamsRepo extends BaseRepo {
         // arma la cabecera de la table 'nombre',  data  = database column , relation = relatioships in entities
         $header  =  ['columns' =>
             [
-                'Imagenes' =>   ['data' => 'images','relation'=> null],
-                'Equipo' =>     ['data' => 'name','relation' => null],
-                'Password' =>   ['data' => 'password', 'relation' => null],
+                //'Imagen' =>    ['data' => 'images','relation'=> null],
+                'Jugador' =>  ['data' => 'players_id','relation' => null],
+                'Equipo' => ['data'=>'teams_id','relation' => null]
 
-
-                //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],
         ];
 

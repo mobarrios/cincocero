@@ -8,8 +8,8 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
-        {!! Form::dateCustom('from', 'Fecha de Inicio')!!}
-        {!! Form::dateCustom('to', 'Fecha de Cierre')!!}
+        {{-- Form::dateCustom('from', 'Fecha de Inicio')}
+        { Form::dateCustom('to', 'Fecha de Cierre')--}}
 
 
         {!! Form::textCustom('name', 'Nombre Temporada')!!}

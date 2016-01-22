@@ -8,6 +8,18 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
+
+        @if(\Illuminate\Support\Facades\Session::has('teams_id'))
+            <label><h3>{{\App\Entities\tfc\Teams::find(Session::get('teams_id'))->name}}</h3></label>
+            {!!Form::hidden('teams_id',Session::get('teams_id'))!!}
+
+            <h5>Administrador  {!! Form::checkbox('admin')!!} </h5>
+
+        @else
+            {!! Form::selectCustom('teams_id','Equipo',$teams) !!}
+        @endif
+
+
         {!! Form::textCustom('dni', 'DNI ')!!}
 
         {!! Form::textCustom('name', 'Nombre Juagdor')!!}
@@ -15,8 +27,6 @@
         {!! Form::textCustom('mail', 'Mail ')!!}
         {!! Form::textCustom('phone', 'Tel. ')!!}
         {!! Form::textCustom('cel', 'Cel. ')!!}
-
-        {!! Form::selectCustom('teams_id','Equipo',$teams) !!}
 
         {!! Form::selectCustom('status','Estado',$status) !!}
 

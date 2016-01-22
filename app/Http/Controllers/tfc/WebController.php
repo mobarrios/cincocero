@@ -4,6 +4,7 @@ namespace App\Http\Controllers\tfc;
 
 use App\Entities\Images;
 use App\Entities\tfc\Categories;
+use App\Entities\tfc\Destacados;
 use App\Entities\tfc\Fases;
 use App\Entities\tfc\FasesWeek;
 use App\Entities\tfc\Matches;
@@ -173,9 +174,21 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
     }
 
 
-    public function Destacado()
+    public function Destacado($id,Destacados $destacados)
     {
-        return view('tfc/web/destacado');
+        $data['jugadorDestacado'] = $destacados->where('players_id','>',0)
+                                        ->whereHas('fasesWeeks',function($q) use($id){
+                                            $q->where('fases_id',$id);
+                                        })->orderBy('id','des')
+                                        ->first();
+
+        $data['equipoDestacado'] = $destacados->where('teams_id','>',0)
+                                        ->whereHas('fasesWeeks',function($q) use($id){
+                                            $q->where('fases_id',$id);
+                                        })->orderBy('id','des')
+                                        ->first();
+
+        return view('tfc/web/destacado')->with($data);
     }
     public function Clima()
     {

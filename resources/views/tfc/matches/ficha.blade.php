@@ -88,9 +88,9 @@
             <tr class="trTable">
                 <td>{{$match->date}}</td>
                 <td>Bundesliga</td>
-                <td>{{$match->Canchas->Sedes->name}}</td>
-                <td>{{$match->Canchas->name}}</td>
-                <td>{{$match->FasesWeek->Fases->name}}</td>
+                <td>{{$match->Canchas->Sedes->name or ''}}</td>
+                <td>{{$match->Canchas->name or '' }}</td>
+                <td>{{$match->FasesWeek->Fases->name }}</td>
                 <td>{{$match->hour}}</td>
             </tr>
 

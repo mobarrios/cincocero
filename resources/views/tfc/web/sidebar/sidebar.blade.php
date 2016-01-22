@@ -19,6 +19,7 @@
           @foreach(\App\Entities\tfc\Fases::where('tournaments_id',$torneo->id)->get() as $fas)
             <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">{{$fas->name}}</a>
               <ul class="sub-menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('destacado',$fas->id)}}">Destacado de la fecha</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('resultado',$fas->id)}}">Posiciones y Resultados</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route("proximaFecha",$fas->id)}}">Proxima Fecha</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("fixture",$fas->id)}}">Fixture</a></li>

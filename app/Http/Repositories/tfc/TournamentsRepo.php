@@ -25,8 +25,8 @@ class TournamentsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'from'   => 'required|date',
-            'to'   => 'required|date|after:from',
+            //'from'   => 'required|date',
+            //'to'   => 'required|date|after:from',
             //'categories_id' => 'required',
             //'series_id' => 'required',
 
@@ -39,8 +39,8 @@ class TournamentsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'from'   => 'required|date',
-            'to'   => 'required|date|after:from',
+            //'from'   => 'required|date',
+            //'to'   => 'required|date|after:from',
             //'categories_id' => 'required',
             //'series_id' => 'required',
 
@@ -58,8 +58,8 @@ class TournamentsRepo extends BaseRepo {
                //'Temporada' =>    ['data' => 'images','relation'=> null],
                 'Torneos' =>  ['data' => 'name','relation' => null],
 
-                'Inicio' =>  ['data' => 'from','relation' => null],
-                'Fin' =>  ['data' => 'to','relation' => null],
+                //'Inicio' =>  ['data' => 'from','relation' => null],
+                //'Fin' =>  ['data' => 'to','relation' => null],
 
 
 

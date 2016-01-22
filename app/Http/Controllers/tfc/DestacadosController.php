@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers\tfc;
 
+use App\Entities\tfc\FasesWeek;
+use App\Entities\tfc\Players;
+use App\Entities\tfc\Destacados;
 use App\Entities\tfc\Teams;
-use App\Helpers\RandomHelper;
-use App\Http\Repositories\tfc\TeamsRepo as Repo;
+use App\Http\Repositories\tfc\DestacadosRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
+use Illuminate\Support\Facades\Session;
 
 
-
-class TeamsController extends Controller {
+class DestacadosController extends Controller {
 
     public   $module;
     public   $repo;
@@ -25,7 +27,7 @@ class TeamsController extends Controller {
 
     public function __construct(Repo $repo)
     {
-        $module = 'teams';
+        $module = 'destacados';
 
         //data from entities
         $this->repo                 = $repo;
@@ -35,17 +37,19 @@ class TeamsController extends Controller {
         //data for views
         $this->view                 = 'tfc.'.$module.'.index';
         $this->form                 = 'tfc.'.$module.'.form';
-        $this->data['sectionName']  = 'Equipos';
+        $this->data['sectionName']  = 'Destacados de la Fecha';
 
 
         //images
-        $this->data['imgQuantityMax']   = 2;
+        $this->data['imgQuantityMax']   = 0;
         $this->data['imagePath']        = 'uploads/tfc/'.$module.'/images/';
         $this->data['entityImg']        = $module;
 
         //selects
-        //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
-        //$this->data['currency']        = Currency::lists('name','id');
+        $this->data['players']           = Players::lists('name','id');
+        $this->data['teams']             = Teams::lists('name','id');
+
+        //$this->data['weeks']             = Currency::lists('name','id');
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -58,24 +62,26 @@ class TeamsController extends Controller {
         $this->data['routeNew']     = $module.'GetNew';
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
-        $this->data['routeDetail']  = 'players';
+    }
 
+    //index
+    public function getIndex($fases_week_id = null)
+    {
+        Session::put('fases_week_id', $fases_week_id);
+
+        $this->data['models'] = Destacados::where('fases_week_id',$fases_week_id)->get();
+
+        return view($this->view)->with($this->data);
     }
 
     // post new item
     public function postNew(Request $request, ImagesHelper $image)
     {
-        $random = new RandomHelper();
-        $text   =  $random->RandomText(7, time().$request['name']);
-
-        $request['password'] = strtolower($text);
-
         //if in controller custom
         // $request = $this->requestCustom($request);
 
         // validation rules form repo
         $this->validate($request, $this->rules);
-
 
         // method crear in repo
         $model = $this->repo->create($request);
@@ -87,11 +93,8 @@ class TeamsController extends Controller {
         }
 
         // redirect with errors messages language
-        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+        return redirect()->route($this->data['route'],Session::get('fases_week_id'))->withErrors(trans('messages.newItem'));
 
     }
 
-
-
-   
 }

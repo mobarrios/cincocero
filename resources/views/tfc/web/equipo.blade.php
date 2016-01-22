@@ -17,12 +17,16 @@
                             </div>
                         </div>
                     </h2>
+
                     <!-- punica-featured-news-slider -->
                     <ul class="older-post clearfix">
                         <div class="row">
                           <div class="col-md-12 col-sm-12 mb-20">
-                          <p><h2 class="widget-title clearfix"><img src="{!! $equipo->images->first()->image or 'assets/web/images/teamDefault2.png'!!}" width="35" height="35" alt=""/> {!! $equipo->name !!}</h2><br>
-                          </p>
+                          <p><h2 class="widget-title clearfix"><img src="{!! $equipo->images->first()->image or 'assets/web/images/teamDefault2.png'!!}" width="35" height="35" alt=""/> {!! $equipo->name !!}</h2></p>
+                              <br>
+                          @if(count($equipo->images) > 1)
+                            <img src="{!! $equipo->images->last()->image!!}" alt="" class="img-responsive col-xs-12">
+                          @endif
                           <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
                           <tbody>
                             <tr>

@@ -8,8 +8,10 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
+        {{--
         {!! Form::dateCustom('from', 'Fecha Inicio ')!!}
         {!! Form::dateCustom('to', 'Fecha Final')!!}
+        --}}
 
         {!! Form::textCustom('name', 'Nombre Torneo')!!}
 

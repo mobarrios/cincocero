@@ -21,6 +21,7 @@
 
 
 
+
                 <th class="no-sort" style="width: 12%;" ></th>
             </tr>
             </thead>
@@ -52,12 +53,19 @@
                         @else
                             <span class="label label-danger">Inactivo</span>
                         @endif
+
+                    @if(\Illuminate\Support\Facades\Session::has('teams_id'))
+
+                        @if($model->admin == 1)
+                            <span class="label label-default">Administrador</span>
+                        @endif
+
+                    @endif
                     </td>
 
 
 
                     <td>
-
 
                         <a class="btn btn-xs btn-default" href="{{route($routeEdit,$model->id)}}">
                             <i class="fa fa-edit"></i>
