@@ -100,17 +100,27 @@ class WebController extends Controller {
 
     public function Resultado($id,Tablas $tablas,FasesWeek $fasesWeek)
     {
-        $data['tablas'] = $tablas->where('fases_id',$id)->orderBy('pts','desc')->get();
-        $data['resultado']  = $fasesWeek->where('fases_id',$id)->get();
+        $data['tablas']     = $tablas->where('fases_id',$id)->orderBy('pts','desc')->get();
+        $data['resultado']  = $fasesWeek->where('fases_id',$id)->where('active',1)->get();
+
 
         return view('tfc/web/resultado')->with($data);
     }
     public function ProximaFecha($id,FasesWeek $fasesWeek)
     {
-        $data['fase'] = $fasesWeek->where('fases_id',$id)->whereHas('matches',function($q){
+        /*$data['fase'] = $fasesWeek->where('fases_id',$id)
+                ->whereHas('matches',function($q){
                     $q->where('status',1);
                 })->orderBy('created_at','asc')
                     ->first();
+        */
+        $actual = $fasesWeek->where('fases_id',$id)
+                        ->where('active',1)
+                        ->first();
+
+        $proxima = $actual->name + 1;
+
+        $data['fase'] = $fasesWeek->where('fases_id',$id)->where('name',$proxima)->first();
 
         return view('tfc/web/proxima_fecha')->with($data);
     }
@@ -140,6 +150,7 @@ class WebController extends Controller {
 
     public function Sancion($id,Matches $matches,FasesWeek $fasesWeek)
     {
+        /*
         $data['ultimaFecha'] = $fasesWeek->where('fases_id',$id)
                         ->whereHas('matches',function($q){
                             $q->where('status',2);
@@ -150,6 +161,13 @@ class WebController extends Controller {
         $data['partidos'] = $matches->where('status',2)
                             ->where('fases_week_id',$data['ultimaFecha']->id)
                             ->get();
+*/
+
+
+
+        $data['fases'] = $fasesWeek->where('fases_id',$id)->where('active',1)->first();
+
+
 
         return view('tfc/web/sancion')->with($data);
     }
@@ -174,17 +192,17 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
     }
 
 
-    public function Destacado($id,Destacados $destacados)
+    public function Destacado($id , Destacados $destacados)
     {
         $data['jugadorDestacado'] = $destacados->where('players_id','>',0)
                                         ->whereHas('fasesWeeks',function($q) use($id){
-                                            $q->where('fases_id',$id);
+                                            $q->where('fases_id',$id)->where('active',1);
                                         })->orderBy('id','des')
                                         ->first();
 
         $data['equipoDestacado'] = $destacados->where('teams_id','>',0)
                                         ->whereHas('fasesWeeks',function($q) use($id){
-                                            $q->where('fases_id',$id);
+                                            $q->where('fases_id',$id)->where('active',1);
                                         })->orderBy('id','des')
                                         ->first();
 

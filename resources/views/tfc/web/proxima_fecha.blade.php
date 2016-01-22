@@ -18,36 +18,39 @@
                 @if(count($fase) == 0)
                     @include('tfc/web/includes/sinDatos')
                 @else
+                    <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
+                        <tbody>
+                        <tr>
+                            <td colspan="2" align="center" class="success">Fecha N° {!! $fase->name !!}</td>
+                            <td colspan="2" align="center" class="success">&nbsp;</td>
+                            <td colspan="2" align="center" class="success">&nbsp;</td>
+                            <td colspan="2" align="center" class="success">&nbsp;</td>
+                            <td colspan="2" align="center" class="success">&nbsp;</td>
+                            <td colspan="2" align="center" class="success"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center" class="success">Equipo</td>
+                            <td colspan="2" align="center" class="success">&nbsp;</td>
+                            <td colspan="2" align="center" class="success">Equipo</td>
+                            <td colspan="2" align="center" class="success">Hora</td>
+                            <td colspan="2" align="center" class="success">Sede</td>
+                            <td colspan="2" align="center" class="success">Campo</td>
+                        </tr>
                     @foreach($fase->matches as $partido)
-                        <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
-                          <tbody>
+
                             <tr>
-                                <td colspan="2" align="center" class="success">Fecha N° {!! $fase->name !!} - {!! $partido->date !!}</td>
-                                <td colspan="2" align="center" class="success">&nbsp;</td>
-                                <td colspan="2" align="center" class="success">&nbsp;</td>
-                                <td colspan="2" align="center" class="success">&nbsp;</td>
-                                <td colspan="2" align="center" class="success">&nbsp;</td>
-                                <td colspan="2" align="center" class="success"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" align="center" class="success">Equipo</td>
-                                <td colspan="2" align="center" class="success">&nbsp;</td>
-                                <td colspan="2" align="center" class="success">Equipo</td>
-                                <td colspan="2" align="center" class="success">Hora</td>
-                                <td colspan="2" align="center" class="success">Sede</td>
-                                <td colspan="2" align="center" class="success">Campo</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" align="center">{!! $partido->homeTeam->name !!}</td>
+                                <td colspan="2" align="center">{!! $partido->homeTeam->name or 'Libre'!!}</td>
                                 <td colspan="2" align="center">vs</td>
-                                <td colspan="2" align="center">{!! $partido->awayTeam->name !!}</td>
+                                <td colspan="2" align="center">{!! $partido->awayTeam->name  or 'Libre'!!}</td>
                                 <td colspan="2" align="center">{!! $partido->hour or 'A confirmar'!!}</td>
-                                <td colspan="2" align="center">{!! $partido->canchas->sedes->name !!}</td>
-                                <td colspan="2" align="center">{!! $partido->canchas->name !!}</td>
+                                <td colspan="2" align="center">{!! $partido->canchas->sedes->name or ''!!}</td>
+                                <td colspan="2" align="center">{!! $partido->canchas->name or ''!!}</td>
                             </tr>
-                          </tbody>
-                        </table>
+
                     @endforeach
+                        </tbody>
+                    </table>
+
                 @endif
                 <p>&nbsp;</p>
                 <center><!-- row --></center>

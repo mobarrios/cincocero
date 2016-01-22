@@ -7,7 +7,15 @@
 
        <table class="table">
 
-           <tr><td colspan="11" class="bg-success text-center">FECHA {{$fases->name}}</td></tr>
+           <tr>
+               <td colspan="11" class="bg-success text-center">FECHA {{$fases->name}} <span class="pull-right">
+                       @if($fases->active)
+                       <input  name="active" data="{{$fases->id}}" checked>
+                        @else
+                       <input  name="active" data="{{$fases->id}}">
+                       @endif
+                   </span></td>
+            </tr>
                 <tr>
 
                     <td>Nro.</td>
@@ -79,6 +87,28 @@
     @endforeach
 
 @endsection
+
+    @section('js')
+        <script>
+            $('input[name="active"]').checkboxpicker({
+
+                defaultClass: 'btn-xs btn-default',
+                offClass: 'btn-xs btn-danger',
+                onClass: 'btn-xs btn-success',
+                offLabel: 'No',
+                onLabel: 'Actual'
+            });
+
+            $('input[name="active"]').on('change',function(){
+
+                if($(this).prop('checked'))
+                    window.location.href = 'fasesWeekChange/1/'+$(this).attr('data');
+                else
+                    window.location.href = 'fasesWeekChange/0/'+$(this).attr('data');
+            });
+
+        </script>
+    @endsection
 
 @stop
 

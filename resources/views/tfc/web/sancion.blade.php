@@ -22,22 +22,21 @@
                       <td colspan="2" align="center" class="danger">Jugador</td>
                       <td colspan="2" align="center" class="danger">Sancion</td>
                     </tr>
-                    @if(count($partidos) == 0)
+
+
+
+                    @if($fases->Sancion->count() == 0)
                         @include('tfc/web/includes/sinDatos')
                     @else
-                        @foreach($partidos as $p)
-                            @if(count(\App\Entities\tfc\MatchesDetails::where('matches_id',$p->id)->where('red',1)->get()) == 0)
-                                @include('tfc/web/includes/sinDatos')
-                            @else
-                                @foreach(\App\Entities\tfc\MatchesDetails::where('matches_id',$p->id)->where('red',1)->get() as $detalle)
+
+                        @foreach($fases->sancion as $p)
                                     <tr>
-                                      <td colspan="2" align="center" class="active">{!! $ultimaFecha->name !!}</td>
-                                      <td colspan="2" align="center" class="active">{!! $detalle->players->teams->name !!}</td>
-                                      <td colspan="2" align="center" class="active">{!! $detalle->players->FullName() !!}</td>
-                                      <td colspan="2" align="center" class="active">1 fecha</td>
+                                        <td colspan="2" align="center" class="active">{!! $p->created_at!!} </td>
+                                      <td colspan="2" align="center" class="active">{!! $p->players->teams->name !!}</td>
+                                      <td colspan="2" align="center" class="active">{!! $p->players->FullName() !!}</td>
+                                      <td colspan="2" align="center" class="active">{!! $p->end_fases_week_id!!}</td>
                                     </tr>
-                                @endforeach
-                            @endif
+
                         @endforeach
                     @endif
                   </tbody>
