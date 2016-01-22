@@ -74,6 +74,13 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
 
 
 
+    Route::get('{id}/destacado',[
+        'as' => 'destacado',
+        'uses' => 'WebController@Destacado'
+    ]);
+
+
+
 //    Route::resource('sancion','WebController@Sancion');
 //    Route::resource('goleador','WebController@Goleador');
 //    Route::resource('fairplay','WebController@Fairplay');

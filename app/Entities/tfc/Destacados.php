@@ -19,6 +19,10 @@ class Destacados extends Entity{
         return $this->belongsTo(Teams::getClass());
     }
 
+    public function fasesWeeks()
+    {
+        return $this->belongsTo(FasesWeek::getClass(),'fases_week_id');
+    }
 
 
 }
