@@ -64,9 +64,9 @@
 
                             @if(!is_null($match->AwayTeam) )
                                 <a href="{{route('matchesGetFicha',[$match->id] )}}" target='blank' class="btn btn-xs btn-default">Ficha</a>
-                                @if($match->status == 1)
+
                                     <a href="{{route('matchesGetResult',[$match->id] )}}" class="btn btn-xs btn-default">Resultado</a>
-                                @endif
+
                             @endif
                             <a href="{{route('matchesGetEdit',[$match->id,$fases->fases_id] )}}" class="btn btn-xs btn-default">Editar</a>
                         </td>
