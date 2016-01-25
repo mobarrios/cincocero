@@ -46,8 +46,8 @@
                         <td>{{$match->hour}}</td>
 
                         <td>{{$match->HomeTeam->name or 'Libre' }} </td>
-                        <td><h4><label class="label label-info">{{$match->home_goals}}</label></h4></td>
-                        <td><h4><label class="label label-info">{{$match->away_goals}}</label></h4></td>
+                        <td><h4><label class="label label-info">{{$match->home_goals or '-'}}</label></h4></td>
+                        <td><h4><label class="label label-info">{{$match->away_goals or '-'}}</label></h4></td>
                         <td>{{$match->AwayTeam->name or 'Libre'}}</td>
                         <td>{{$match->Canchas->Sedes->name or 'a Conf.'}}</td>
                         <td>{{$match->Canchas->name or 'a Conf.'}}</td>
