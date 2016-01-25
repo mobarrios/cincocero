@@ -1443,9 +1443,11 @@ a,
 .widget_nav_menu ul li:before,
 .widget_categories ul li:before {
     font-family: 'FontAwesome';
-    content: "\f115";
+    content: "\f114";
+    /*content: "\f115";*/
     margin-right: 10px;
 }
+
 .sidebar .widget_archive ul li {
     padding-top: 10px;
 }
