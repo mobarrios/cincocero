@@ -81,7 +81,7 @@
 <p>
 <h6 class="entry-title">Nota:</h6>
 </p>
-<p>{!! $jugadorDestacado->nota !!}</p>
+<p>{!! $equipoDestacado->nota !!}</p>
 <p>&nbsp;</p>
 
                 @endif
