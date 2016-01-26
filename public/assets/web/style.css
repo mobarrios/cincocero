@@ -1439,6 +1439,11 @@ a,
     font-size: 11px;
     color: #404040;
 }
+
+.folder-open,.folder-close{
+    cursor:pointer;
+}
+
 .folder-close:before {
     font-family: 'FontAwesome';
     content: "\f114";

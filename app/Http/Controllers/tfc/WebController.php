@@ -103,9 +103,10 @@ class WebController extends Controller {
         $data['tablas']     = $tablas->where('fases_id',$id)->orderBy('pts','desc')->get();
         $data['resultado']  = $fasesWeek->where('fases_id',$id)->where('active',1)->get();
 
-
+        Session::put('fase',$id);
         return view('tfc/web/resultado')->with($data);
     }
+
     public function ProximaFecha($id,FasesWeek $fasesWeek)
     {
         /*$data['fase'] = $fasesWeek->where('fases_id',$id)
@@ -122,6 +123,7 @@ class WebController extends Controller {
 
         $data['fase'] = $fasesWeek->where('fases_id',$id)->where('name',$proxima)->first();
 
+        Session::put('fase',$id);
         return view('tfc/web/proxima_fecha')->with($data);
     }
 
@@ -129,7 +131,7 @@ class WebController extends Controller {
     {
 
         $data['fases'] = $fases->where('fases_id',$id)->get();
-
+        Session::put('fase',$id);
         return view('tfc/web/fixture')->with($data);
     }
 
@@ -137,7 +139,7 @@ class WebController extends Controller {
     {
         $data['matches'] = $matches->all();
         $data['equipo'] = $equipos->find($id);
-
+        Session::put('fase',$id);
         return view('tfc/web/equipo')->with($data);
     }
 
@@ -168,7 +170,7 @@ class WebController extends Controller {
         $data['fases'] = $fasesWeek->where('fases_id',$id)->where('active',1)->first();
 
 
-
+        Session::put('fase',$id);
         return view('tfc/web/sancion')->with($data);
     }
 
@@ -178,7 +180,7 @@ class WebController extends Controller {
 GROUP BY matches_details.players_id ORDER BY goals DESC";
 
         $data['goleadores'] = DB::select($q,array($id));
-
+        Session::put('fase',$id);
         return view('tfc/web/goleador')->with($data);
     }
 
@@ -187,7 +189,7 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
         $q = "SELECT SUM(yellow) as yellow,SUM(red) as red,teams.name as name FROM matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id = teams.id JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases_week.id = matches.fases_week_id JOIN fases ON fases_week.fases_id= fases.id WHERE fases.id = ? GROUP BY players.teams_id";
 
         $data['fairPlay'] = DB::select($q,array($id));
-
+        Session::put('fase',$id);
         return view('tfc/web/fair_play')->with($data);
     }
 
@@ -205,7 +207,7 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
                                             $q->where('fases_id',$id)->where('active',1);
                                         })->orderBy('id','des')
                                         ->first();
-
+        Session::put('fase',$id);
         return view('tfc/web/destacado')->with($data);
     }
     public function Clima()
