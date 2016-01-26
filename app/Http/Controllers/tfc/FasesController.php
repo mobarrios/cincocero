@@ -50,7 +50,7 @@ class FasesController extends Controller {
 
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
-        $this->data['teams']             = Teams::all();
+        $this->data['teams']             = Teams::orderBy('name','ASC')->get();
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -166,5 +166,22 @@ class FasesController extends Controller {
         $this->data['pos'] = 1;
 
         return view('tfc.fases.tablas')->with($this->data);
+    }
+
+    public function FasesWeekChange($action = null, $fases_week_id = null)
+    {
+        $f = FasesWeek::where('fases_id',Session::get('fases_id'))->where('active',1)->first();
+       if(!is_null($f))
+       {
+           $f->active = 0;
+           $f->save();
+       }
+
+
+        $fw = FasesWeek::find($fases_week_id);
+        $fw->active = $action;
+        $fw->save();
+
+        return redirect()->back();
     }
 }

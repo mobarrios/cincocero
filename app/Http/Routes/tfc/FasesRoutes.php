@@ -10,6 +10,7 @@ Route::get('new'.$module.'/{id?}',    ['middleware'=>'roles','data'=> $module.'-
 Route::get('fixture'.$module.'/{id?}', ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module.'Fixture', 'uses'=> $controller.'@getDetail']);
 
 Route::get('tabla'.$module.'/{id?}', ['middleware' => 'roles','data'=>$module.'-list' , 'as' => $module.'Tabla', 'uses'=>$controller.'@getTabla']);
+Route::get('fasesWeekChange/{action?}/{id?}',['middleware' => 'roles', 'data' => $module.'-edit','as'=> $module.'fasesChange', 'uses'=>$controller.'@fasesWeekChange']);
 
 Route::post('postNew'.$module,          ['as'=> $module.'PostNew', 'uses'=> $controller.'@postNew']);
 Route::post('postEdit'.$module.'/{id?}', ['as'=>$module.'PostEdit', 'uses'=> $controller.'@postEdit']);

@@ -29,7 +29,8 @@ class PlayersController extends Controller {
 
         //data from entities
         $this->repo = $repo;
-        $this->data['models'] = $repo->ListAll();
+        //$this->data['models'] = $repo->ListAll();
+        $this->data['models'] = Players::orderBy('last_name','ASC')->get();
         $this->data['tableHeader'] = $repo->tableHeader();
 
         //data for views
@@ -45,7 +46,7 @@ class PlayersController extends Controller {
 
         //selects
         $this->data['status']       = ['1'=>'activo','2'=>'inactivo'];
-        $this->data['teams']        = Teams::lists('name', 'id');
+        $this->data['teams']        = Teams::orderBy('name','ASC')->lists('name','id');
 
         //data for validation
         $this->rules = $this->repo->Rules();
@@ -85,10 +86,8 @@ class PlayersController extends Controller {
         if(isset($request->admin))
         {
             $admin = Players::where('teams_id',Session::get('teams_id'))->where('admin',1)->first();
-            if(!is_null($admin)) {
-                $admin->admin = 0;
-                $admin->save();
-            }
+            $admin->admin = 0;
+            $admin->save();
 
             $request['admin'] = 1;
         }
@@ -124,7 +123,8 @@ class PlayersController extends Controller {
         if(isset($request['admin']))
         {
             $admin = Players::where('teams_id',Session::get('teams_id'))->where('admin',1)->first();
-            if(!is_null($admin)) {
+            if(!is_null($admin))
+            {
                 $admin->admin = 0;
                 $admin->save();
             }

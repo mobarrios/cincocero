@@ -45,7 +45,8 @@ class SancionesController extends Controller {
         $this->data['entityImg']        = $module;
 
         //selects
-        $this->data['players']           = Players::lists('name','id');
+        $this->data['players']             = Players::orderBy('last_name','ASC')->get()->lists('full_name','id');
+
         //$this->data['weeks']             = Currency::lists('name','id');
 
         //data for validation

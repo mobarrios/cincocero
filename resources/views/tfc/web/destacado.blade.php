@@ -15,20 +15,21 @@
                   {{--<p><img src="assets/web/images/jug.png" width="600" height="70" alt=""/></p>--}}
                   <p>&nbsp;</p>
                 </div>
-
+                @if(!is_null($jugadorDestacado))
                 <table width="100%" border="0">
                   <tbody>
                     <tr>
-                      <td width="18%"><img src="{!! $jugadorDestacado->players->images->first()->image !!}" width="180" height="195" alt=""/></td>
+                      <td width="18%"><img src="{!! $jugadorDestacado->players->images->first()->image or '' !!}" width="180" height="195" alt=""/></td>
                       <td width="8%">&nbsp;</td>
                       <td width="74%"><table width="100%">
                         <tbody>
                           <tr>
-                            <td><h6 class="entry-title"> {!! $jugadorDestacado->players->fullName ()!!}</h6>
+                            <td><h6 class="entry-title"> {!! $jugadorDestacado->players->fullName()!!}</h6>
                               <p>                              
-                              <h6 class="entry-title">Categoría:
+                                 <h6 class="entry-title">Categoría:
                                 </p>
-                              </h6></td>
+                              </h6>
+                            </td>
                           </tr>
                           <tr>
                             <td> {!! $jugadorDestacado->fasesWeeks->fases->tournaments->name !!}</td>
@@ -50,6 +51,7 @@
                     </tr>
                   </tbody>
                 </table>
+                @endif
                 <p>&nbsp;</p>
 
                 <div class="categoria-container titulo-categoria" style="border-bottom-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if(\Illuminate\Support\Facades\Session::has('categoria')){{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}@else{{'#95b114'}}@endif">
@@ -59,10 +61,12 @@
                     </div>
                 </div>
                 {{--<p><img src="assets/web/images/equipo_fecha.png" width="600" height="70" alt=""/></p>--}}
+
+                @if(!is_null($equipoDestacado))
                 <table width="100%" border="0">
                   <tbody>
                     <tr>
-                      {{--<td width="18%"><img src="{!! $equipoDestacado->teams->images->last()->image !!}" width="450" height="302" alt=""/></td>--}}
+                      <td width="18%"><img src="{!! $equipoDestacado->teams->images->first()->image  or ''!!}" width="450" height="302" alt=""/></td>
                     </tr>
                   </tbody>
                 </table>
@@ -72,16 +76,17 @@
                         </p>
 <p>
 <h6 class="entry-title">Categoria:</h6>
-                !! $jugadorDestacado->fasesWeeks->fases->tournaments->name !!}
+                {!! $jugadorDestacado->fasesWeeks->fases->tournaments->name !!}
 </p>
 <p>
 <h6 class="entry-title">Nota:</h6>
 </p>
-<p>!! $jugadorDestacado->nota !!}</p>
+<p>{!! $equipoDestacado->nota !!}</p>
 <p>&nbsp;</p>
 
-
+                @endif
         </div>
+
         </div>
 
         <!-- center-col -->

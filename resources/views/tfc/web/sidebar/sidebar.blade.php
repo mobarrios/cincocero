@@ -17,7 +17,7 @@
 
           {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/destacado")}}"><b>{{$torneo->name}}</b></a></li>--}}
           @foreach(\App\Entities\tfc\Fases::where('tournaments_id',$torneo->id)->get() as $fas)
-            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">{{$fas->name}}</a>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom @if(Session::get('fase') == $fas->id)folder-open @else folder-close" @endif <a href="javascript:void(0)">{{$fas->name}}</a>
               <ul class="sub-menu">
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('destacado',$fas->id)}}">Destacado de la fecha</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('resultado',$fas->id)}}">Posiciones y Resultados</a></li>
@@ -27,6 +27,7 @@
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("goleador",$fas->id)}}">Goleadores</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("fairplay",$fas->id)}}">Fair Play</a></li>
               </ul>
+            </li>
           @endforeach
         @endforeach
       </ul>
@@ -35,3 +36,7 @@
 
 </div>
 <!-- right-sidebar -->
+
+@section('js')
+  <script src="assets/web/js/openFolder.js"></script>
+@endsection

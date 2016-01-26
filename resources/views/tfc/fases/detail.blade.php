@@ -7,7 +7,15 @@
 
        <table class="table">
 
-           <tr><td colspan="11" class="bg-success text-center">FECHA {{$fases->name}}</td></tr>
+           <tr>
+               <td colspan="11" class="bg-success text-center">FECHA {{$fases->name}} <span class="pull-right">
+                       @if($fases->active)
+                       <input  name="active" data="{{$fases->id}}" checked>
+                        @else
+                       <input  name="active" data="{{$fases->id}}">
+                       @endif
+                   </span></td>
+            </tr>
                 <tr>
 
                     <td>Nro.</td>
@@ -38,8 +46,8 @@
                         <td>{{$match->hour}}</td>
 
                         <td>{{$match->HomeTeam->name or 'Libre' }} </td>
-                        <td><h4><label class="label label-info">{{$match->home_goals}}</label></h4></td>
-                        <td><h4><label class="label label-info">{{$match->away_goals}}</label></h4></td>
+                        <td><h4><label class="label label-info">{{$match->home_goals or '-'}}</label></h4></td>
+                        <td><h4><label class="label label-info">{{$match->away_goals or '-'}}</label></h4></td>
                         <td>{{$match->AwayTeam->name or 'Libre'}}</td>
                         <td>{{$match->Canchas->Sedes->name or 'a Conf.'}}</td>
                         <td>{{$match->Canchas->name or 'a Conf.'}}</td>
@@ -56,9 +64,9 @@
 
                             @if(!is_null($match->AwayTeam) )
                                 <a href="{{route('matchesGetFicha',[$match->id] )}}" target='blank' class="btn btn-xs btn-default">Ficha</a>
-                                @if($match->status == 1)
+
                                     <a href="{{route('matchesGetResult',[$match->id] )}}" class="btn btn-xs btn-default">Resultado</a>
-                                @endif
+
                             @endif
                             <a href="{{route('matchesGetEdit',[$match->id,$fases->fases_id] )}}" class="btn btn-xs btn-default">Editar</a>
                         </td>
@@ -79,6 +87,28 @@
     @endforeach
 
 @endsection
+
+    @section('js')
+        <script>
+            $('input[name="active"]').checkboxpicker({
+
+                defaultClass: 'btn-xs btn-default',
+                offClass: 'btn-xs btn-danger',
+                onClass: 'btn-xs btn-success',
+                offLabel: 'No',
+                onLabel: 'Actual'
+            });
+
+            $('input[name="active"]').on('change',function(){
+
+                if($(this).prop('checked'))
+                    window.location.href = 'fasesWeekChange/1/'+$(this).attr('data');
+                else
+                    window.location.href = 'fasesWeekChange/0/'+$(this).attr('data');
+            });
+
+        </script>
+    @endsection
 
 @stop
 

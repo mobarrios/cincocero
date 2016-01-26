@@ -616,7 +616,7 @@ a,
     float: left;
     width: 45%;
     padding-right: 20px;
-    border-right: 1px solid #000;
+    /*border-right: 1px solid #000;*/
 }
 .punica-home-6 .widget-area-1 {
     padding-right: 0px;
@@ -625,7 +625,7 @@ a,
 .widget-area-2 {
     float: left;
     width: 55%;
-    border-left: 1px solid #000;
+    /*border-left: 1px solid #000;*/
     padding-left: 20px;
     margin-left: -1px;
 }
@@ -647,8 +647,8 @@ a,
     line-height: 20px;
     text-transform: uppercase;
     text-align: center;
-    border-top: 1px solid #000;
-    border-bottom: 5px solid #000;
+    /*border-top: 1px solid #000;*/
+    /*border-bottom: 5px solid #000;*/
     padding: 10px 0;
     margin: 0 0 20px;
 }
@@ -882,7 +882,7 @@ a,
 .pagination ul li span {
     width: 40px;
     height: 40px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     display: block;
     text-align: center;
     line-height: 38px;
@@ -902,8 +902,8 @@ a,
 .center-col {
     width: 762px;
     padding: 0 20px 30px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    /*border-left: 1px solid #000;*/
+    /*border-right: 1px solid #000;*/
     float: left;
     margin: 0 -1px;
 }
@@ -1300,11 +1300,11 @@ a,
 }
 .left-sidebar {
     padding-right: 20px;
-    border-right: 1px solid #000;
+    /*border-right: 1px solid #000;*/
 }
 .right-sidebar {
     padding-left: 20px;
-    border-left: 1px solid #000;
+    /*border-left: 1px solid #000;*/
 }
 .sidebar .widget > ul > li {
     border-top: 1px solid #e1e1e1;
@@ -1439,13 +1439,38 @@ a,
     font-size: 11px;
     color: #404040;
 }
-.widget_archive ul li:before,
-.widget_nav_menu ul li:before,
-.widget_categories ul li:before {
+
+.folder-open,.folder-close{
+    cursor:pointer;
+}
+
+.folder-close:before {
+    font-family: 'FontAwesome';
+    content: "\f114";
+    /*content: "\f115";*/
+    margin-right: 10px;
+}
+
+.folder-close>.sub-menu{
+    display:none;
+    transition:all 1s;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+}
+
+.folder-open>.sub-menu{
+    display:block;
+    transition:all 1s;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+}
+
+.folder-open:before {
     font-family: 'FontAwesome';
     content: "\f115";
     margin-right: 10px;
 }
+
 .sidebar .widget_archive ul li {
     padding-top: 10px;
 }

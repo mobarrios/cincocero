@@ -36,7 +36,7 @@
                       @foreach($tablas as $tab)
                         <tr>
                           <td colspan="2" align="center" class="active"><img src="{!! $tab->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35" alt=""/></td>
-                          <td colspan="2" align="center" class="active"><a href="{{route('equipo',$tab->teams->id)}}">{!! $tab->teams->name !!}</a></td>
+                          <td colspan="2" align="center" class="active"><a href="{{route('equipo',$tab->teams->id)}}">{!! $tab->teams->name or '' !!}</a></td>
                           <td colspan="2" align="center" class="active">{!! $tab->pts !!}</td>
                           <td colspan="2" align="center" class="active">{!! $tab->pj !!}</td>
                           <td colspan="2" align="center" class="active">{!! $tab->pg !!}</td>
@@ -59,29 +59,35 @@
                 <p>&nbsp;</p>
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
                   <tbody>
+
                   @foreach($resultado as $res)
-                      @if(count($res->matches->where('status','2')) == 0)
-                        @include('tfc/web/includes/sinDatos')
+
+                      @if($res->count() == 0)
+                          @include('tfc/web/includes/sinDatos')
                       @else
-                        @foreach($res->matches->where('status','2') as $match)
 
                           <tr>
-                              <td colspan="6" align="center" class="success">Fecha {!! $res->name !!} - {!! $match->date !!} - {!! $match->hour !!}</td>
+                              <td colspan="6" align="center" class="success">Fecha {!! $res->name !!}</td>
                           </tr>
                           <tr>
-                            <td align="center" class="success">Equipo</td>
-                            <td align="center" class="success"></td>
-                            <td align="center" class="success"></td>
-                            <td align="center" class="success">Equipo</td>
+                              <td align="center" class="success">Equipo</td>
+                              <td align="center" class="success"></td>
+                              <td align="center" class="success"></td>
+                              <td align="center" class="success">Equipo</td>
                           </tr>
+                            @foreach($res->Matches as $match)
 
-                            <tr>
-                              <td align="center" class="active">{!! $match->homeTeam->name !!}</td>
-                              <td align="center" class="active">{!! $match->home_goals !!}</td>
-                              <td align="center" class="active">{!! $match->away_goals !!}</td>
-                              <td align="center" class="active">{!! $match->awayTeam->name !!}</td>
-                            </tr>
-                        @endforeach
+
+
+
+                                <tr>
+                                  <td align="center" class="active">{!! $match->HomeTeam->name or 'Libre' !!}</td>
+                                  <td align="center" class="active">{!! $match->home_goals !!}</td>
+                                  <td align="center" class="active">{!! $match->away_goals !!}</td>
+                                  <td align="center" class="active">{!! $match->AwayTeam->name or 'Libre' !!}</td>
+                                </tr>
+                            @endforeach
+
                       @endif
                     @endforeach
                   </tbody>

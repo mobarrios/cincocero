@@ -7,7 +7,7 @@ class FasesWeek extends Entity{
 
     protected $table = 'fases_week';
 
-    protected $fillable = ['name','fases_id'];
+    protected $fillable = ['name','fases_id','active'];
 
     public function Fases()
     {

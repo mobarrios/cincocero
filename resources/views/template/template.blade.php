@@ -97,6 +97,8 @@
 <script src="assets/js/custom.js"></script>
 
 <script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
+<script src="assets/js/bootstrap-checkbox.min.js" ></script>
+
 
 @yield('js')
 </body>
