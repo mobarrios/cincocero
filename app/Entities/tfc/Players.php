@@ -16,6 +16,11 @@ class Players extends Entity{
         return $this->belongsTo(Teams::getClass());
     }
 
+    public function getFullNameAttribute()
+    {
+        return $this->last_name .' '. $this->name;
+    }
+
     public function FullName()
     {
         return $this->attributes['last_name'].' '.$this->attributes['name'];

@@ -11,8 +11,8 @@
 
         {!! Form::textCustom('name', 'Nro. Partido')!!}
         {!! Form::dateCustom('date', 'Fecha')!!}
-        {!! Form::textCustom('hour', 'Hora')!!}
-        {!! Form::textCustom('name', 'Nro. Partido')!!}
+        {!! Form::selectCustom('hour', 'Hora',$hour)!!}
+
 
         @if(isset($model))
             @if(is_null($model->homeTeam))

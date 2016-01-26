@@ -237,7 +237,8 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
                 'teams_id'=>'required|not_in:0',
                 'password'=>'required',
                 'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
-                'cel'=>'required'
+                'cel'=>'required',
+                'terms' => 'required'
             ]);
 
         if($validator->fails())
@@ -267,6 +268,7 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
         $player->save();
 */
         $request['status'] = 1;
+        $request['admin'] = 0;
 
         $model =  $player->create($request);
 

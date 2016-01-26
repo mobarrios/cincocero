@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="mb-20 mb-md-10 form-group">
                                     <label for="image">FOTO DEL JUGADOR</label>
-                                    {!! Form::file('image',['class'=>'input-md form-control','required']) !!}
+                                    {!! Form::file('image',['class'=>'input-md form-control']) !!}
                                 </div>
                                 <div class="mb-20 mb-md-10 form-group selectEquipos">
                                     {!! Form::select('teams_id',['0'=>'Seleccionar Equipo'] + $teams ,['class'=>'input-md form-control','required'=>'required']) !!}
