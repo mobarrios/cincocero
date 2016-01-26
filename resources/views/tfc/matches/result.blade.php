@@ -9,7 +9,7 @@
 
 <div class="row">
     <div class="table-responsive col-xs-6">
-        <h3 class="text-center">{{$match->HomeTeam->name}} {!! Form::text('home_goals',null,['size'=>'1']) !!}</h3>
+        <h3 class="text-center">{{$match->HomeTeam->name}} {!! Form::text('home_goals',null,['size'=>'1','id'=>'home_goals']) !!}</h3>
 
         <table class="table">
             <thead>
@@ -27,12 +27,12 @@
                                  {{$player->FullName()}}
                             </td>
                             <td>
-                                <input type="text" size="1" name="goals[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->goals or '0' }}"> </td>
+                                <input class="home_player_goals" type="text" size="1" name="goals[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->goals or '0' }}"> </td>
                             <td>
-                                <input type="text" size="1" name="yellow[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->yellow or '0' }}"> </td>
+                                <input class="home_player_yellow" type="text" size="1" name="yellow[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->yellow or '0' }}"> </td>
                             </td>
                             <td>
-                                <input type="text" size="1" name="red[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->red or '0' }}"> </td>
+                                <input class="home_player_red" type="text" size="1" name="red[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->red or '0' }}"> </td>
                             </td>
 
                         </tr>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="table-responsive col-xs-6">
-        <h3 class="text-center">{!! Form::text('away_goals',null,['size'=>'1']) !!} {{$match->AwayTeam->name}} </h3>
+        <h3 class="text-center">{!! Form::text('away_goals',null,['size'=>'1','id'=>'away_goals']) !!} {{$match->AwayTeam->name}} </h3>
         <table class="table">
             <thead>
             <tr>
@@ -59,12 +59,12 @@
                         {{$player->FullName()}}
                     </td>
                     <td>
-                        <input type="text" size="1" name="goals[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->goals or '0' }}"> </td>
+                        <input class="away_player_goals" type="text" size="1" name="goals[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->goals or '0' }}"> </td>
                     <td>
-                        <input type="text" size="1" name="yellow[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->yellow or '0' }}"> </td>
+                        <input class="away_player_yellow" type="text" size="1" name="yellow[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->yellow or '0' }}"> </td>
                     </td>
                     <td>
-                        <input type="text" size="1" name="red[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->red or '0' }}"> </td>
+                        <input class="away_player_red" type="text" size="1" name="red[{{$player->id}}]" value="{{$match->detailByPlayer($player->id)->first()->red or '0' }}"> </td>
 
                     </td>
 
@@ -102,6 +102,73 @@
 
     @section('js')
         <script>
+
+
+            //validation total goals home
+            $('.home_player_goals').on('change',function(){
+                var sum = 0;
+
+                $('.home_player_goals').each(function () {
+                    sum = parseInt(sum) + parseInt($(this).val());
+                });
+
+               if(sum > $('#home_goals').val() || $(this).val() > $('#home_goals').val())
+               {
+                   alert('la cantidad de goles supera el total del equipo !');
+                   $(this).val(0);
+               }
+            });
+
+            //validation total goals away
+            $('.away_player_goals').on('change',function(){
+                var sum = 0;
+
+                $('.away_player_goals').each(function () {
+                    sum = parseInt(sum) + parseInt($(this).val());
+                });
+
+                if(sum > $('#away_goals').val() || $(this).val() > $('#away_goals').val())
+                {
+                    alert('la cantidad de goles supera el total del equipo !');
+                    $(this).val(0);
+                }
+            });
+
+            // validation yellow card
+            $('.home_player_yellow').on('change',function(){
+                if($(this).val() > 2 )
+                {
+                    alert('Las amarillas no pueden ser mas de  2');
+                    $(this).val(0);
+                }
+            });
+
+            $('.away_player_yellow').on('change',function(){
+                if($(this).val() > 2 )
+                {
+                    alert('Las amarillas no pueden ser mas de  2');
+                    $(this).val(0);
+                }
+            });
+
+            //validation red card
+            $('.home_player_red').on('change',function(){
+                if($(this).val() > 1 )
+                {
+                    alert('Las red no pueden ser mas de  1');
+                    $(this).val(0);
+                }
+            });
+
+            $('.away_player_red').on('change',function(){
+                if($(this).val() > 1 )
+                {
+                    alert('Las rojas no pueden ser mas de  1');
+                    $(this).val(0);
+                }
+            });
+
+
 
         </script>
     @endsection
