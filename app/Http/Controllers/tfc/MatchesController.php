@@ -50,12 +50,13 @@ class MatchesController extends Controller {
 
         //selects
          $this->data['status']          = [1 => 'Por Jugar', 2 => 'Finalizado', 3 => 'Suspendido'];
+        $this->data['hour' ]            = ['10:00'=>'10:00','11:45'=>'11:45','13:30'=>'13:30','15:15'=>'15:15'];
 
         $this->data['sedes']            = Sedes::lists('name','id');
 
 //        $this->data['canchas']         = Canchas::lists('name','id');
 
-        $this->data['canchas'] = Canchas::where('sedes_id',Sedes::first()->id)->lists('name','id');
+        $this->data['canchas']          = Canchas::where('sedes_id',Sedes::first()->id)->lists('name','id');
 
          $this->data['canchasEdit']     = Canchas::all();
 
@@ -99,6 +100,16 @@ class MatchesController extends Controller {
 
         // validation rules form repo
         $this->validate($request, $this->rulesEdit);
+
+        $date =date('Y-m-d',strtotime($request->date));
+
+        $match = Matches::where('date',$date)
+            ->where('canchas_id',$request->canchas_id)
+            ->where('hour',$request->hour)
+            ->get();
+
+        if($match->count() == 1)
+            return redirect()->back()->withErrors('La cancha ya se encuentra asignada a otro partido a esta hora.')->withInput();
 
 
 
