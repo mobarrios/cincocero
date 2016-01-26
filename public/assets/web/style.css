@@ -1439,12 +1439,30 @@ a,
     font-size: 11px;
     color: #404040;
 }
-.widget_archive ul li:before,
-.widget_nav_menu ul li:before,
-.widget_categories ul li:before {
+.folder-close:before {
     font-family: 'FontAwesome';
     content: "\f114";
     /*content: "\f115";*/
+    margin-right: 10px;
+}
+
+.folder-close>.sub-menu{
+    display:none;
+    transition:all 1s;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+}
+
+.folder-open>.sub-menu{
+    display:block;
+    transition:all 1s;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+}
+
+.folder-open:before {
+    font-family: 'FontAwesome';
+    content: "\f115";
     margin-right: 10px;
 }
 
