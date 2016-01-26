@@ -35,6 +35,7 @@
         h2{
             font-size:120%;
         }
+
         #container{
             margin:0 auto;
             width:60%;
@@ -52,9 +53,15 @@
             padding:.2em 20px;
             background:#eee;
         }
-        .margin1
+
+        .trTable>td
         {
-            height:150px !important;
+            height: 50px !important;
+
+        }
+
+        .vc{
+            width:10% !important;
         }
     </style>
 
@@ -78,7 +85,7 @@
                 <th style="text-align: center">Serie</th>
                 <th style="text-align: center">Hora</th>
             </tr>
-            <tr>
+            <tr class="trTable">
                 <td>{{$match->date}}</td>
                 <td>Bundesliga</td>
                 <td>{{$match->Canchas->Sedes->name or ''}}</td>
@@ -97,16 +104,16 @@
             <tr>
                 <th>Nombre</th>
                 <th>Firma</th>
-                <th>N°</th>
-                <th>Amarilla</th>
-                <th>Roja</th>
-                <th>Goles</th>
+                <th class="vc">N°</th>
+                <th class="vc">Amar.</th>
+                <th class="vc">Roja</th>
+                <th class="vc">Goles</th>
                 <th>Observaciones</th>
             </tr>
             <?php  $countH = 0; ?>
             @foreach($match->HomeTeam->Players as $player)
 
-                <tr class="margin1">
+                <tr class="trTable">
                     <td>{{$player->fullName()}}</td>
                     <td></td>
                     <td></td>
@@ -121,7 +128,7 @@
 
 
             @for($i = $countH ; $i <  20 ; $i++)
-            <tr>
+            <tr class="trTable">
                 <td>.</td>
                 <td></td>
                 <td></td>
@@ -151,7 +158,7 @@
         <?php  $countA = 0; ?>
         @foreach($match->AwayTeam->Players as $player)
 
-            <tr>
+            <tr class="trTable">
                 <td>{{$player->fullName()}}</td>
                 <td></td>
                 <td></td>
@@ -166,7 +173,7 @@
 
 
         @for($i = $countA ; $i <  20 ; $i++)
-            <tr>
+            <tr class="trTable">
                 <td>.</td>
                 <td></td>
                 <td></td>
