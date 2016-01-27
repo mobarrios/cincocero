@@ -113,8 +113,15 @@
 </div>
 <!-- punica-header -->
 
+    @if(Session::has('categoria'))
+        <ol class="breadcrumb">
+            <li>{!! Session::get('categoria')->name!!}</li>
+            @if(Session::has('fase'))
+                <li class="active">{!! \App\Entities\tfc\Fases::find(Session::get('fase'))->name !!}</li>
+            @endif
+        </ol>
+    @endif
 <div id="punica-main-content">
-
     <div class="wrapper clearfix">
 
         @yield('content')
