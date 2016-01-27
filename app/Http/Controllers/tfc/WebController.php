@@ -183,7 +183,7 @@ fases_week.id WHERE fases_week.fases_id = ? AND goals != 0
 GROUP BY matches_details.players_id ORDER BY goals DESC";
 
         $data['goleadores'] = DB::select($q,array($id));
-        
+
         Session::put('fase',$id);
         return view('tfc/web/goleador')->with($data);
     }
