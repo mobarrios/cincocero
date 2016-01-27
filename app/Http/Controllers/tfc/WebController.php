@@ -127,6 +127,27 @@ class WebController extends Controller {
         return view('tfc/web/proxima_fecha')->with($data);
     }
 
+    public function FechaActual($id,FasesWeek $fasesWeek)
+    {
+        /*$data['fase'] = $fasesWeek->where('fases_id',$id)
+                ->whereHas('matches',function($q){
+                    $q->where('status',1);
+                })->orderBy('created_at','asc')
+                    ->first();
+        */
+        $data['fase']  = $fasesWeek->where('fases_id',$id)
+            ->where('active',1)
+            ->first();
+
+        //$data['fase'] = $actual->name + 1;
+
+        //$data['fase'] = $fasesWeek->where('fases_id',$id)->where('name',$proxima)->first();
+
+        Session::put('fase',$id);
+
+        return view('tfc/web/fecha_actual')->with($data);
+    }
+
     public function Fixture($id,FasesWeek $fases)
     {
 

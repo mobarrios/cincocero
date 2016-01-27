@@ -55,6 +55,11 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
         'uses' => 'WebController@ProximaFecha'
     ]);
 
+    Route::get('{id}/fechaActual',[
+        'as' => 'fechaActual',
+        'uses' => 'WebController@FechaActual'
+    ]);
+
     Route::get('{id}/sancion',[
         'as' => 'sancion',
         'uses' => 'WebController@Sancion'
