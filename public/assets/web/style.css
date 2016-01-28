@@ -1,4 +1,5 @@
 
+
 @font-face {
     font-family: 'Conv_HANDGOTL';
     src: url('../fonts/HANDGOTL.eot');
@@ -649,7 +650,7 @@ a,
     text-align: center;
     /*border-top: 1px solid #000;*/
     /*border-bottom: 5px solid #000;*/
-    padding: 10px 0;
+    /*padding: 10px 0;*/
     margin: 0 0 20px;
 }
 #punica-main-content .widget > ul > li {
@@ -1295,15 +1296,15 @@ a,
 */
 .sidebar {
     float: left;
-    width: 220px;
+    width: 210px;
     padding-bottom: 30px;
 }
+
 .left-sidebar {
-    padding-right: 20px;
-    /*border-right: 1px solid #000;*/
+    margin-right: 10px !important;
 }
 .right-sidebar {
-    padding-left: 20px;
+    margin-left: 10px !important;
     /*border-left: 1px solid #000;*/
 }
 .sidebar .widget > ul > li {

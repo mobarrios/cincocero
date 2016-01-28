@@ -1,3 +1,4 @@
+
 body{
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 13px;
@@ -44,6 +45,11 @@ body{
 {
     background-color: #ffffff;
     border-color: #0d524c;
+    margin:auto;
+    text-align:center;
+}
+
+.sidebar *{
 }
 
 a{
@@ -53,6 +59,7 @@ a{
 .fa{
     color:#000000;
 }
+
 .page-header{
     color: #ffffff;
     text-shadow: 2px 2px grey;
