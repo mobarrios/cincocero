@@ -47,7 +47,7 @@
                               @foreach($categories as $categoria)
 
                                   {{--<a href="web/{!! $categoria->id !!}/principal"><img SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>--}}
-                                  <a href="{{ route('principal',$categoria->id) }}" style="padding:3%"><img src="{{($categoria->images->count() != 0)?$categoria->images->first()->image : ''}}" width="150" height="59" border="0" hspace="0">
+                                  <a href="{{ route('principal',$categoria->id) }}" style="padding:3%"><img src="{{($categoria->images->count() != 0)?$categoria->images->first()->image : ''}}" width="215" border="0" hspace="0">
                                   </a>
 
                               @endforeach

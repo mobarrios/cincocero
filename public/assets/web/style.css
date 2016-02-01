@@ -2739,17 +2739,26 @@ a,
 [17. Blog Page / #blogpage ]
 */
 .breadcrumb {
-    background-color: #fff;
+    background-color: #000;
     border-radius: 0;
-    border-top: 1px solid #000;
-    border-bottom: 5px solid #000;
-    font-size: 16px;
+    border-bottom: 5px solid #4e90c6;
+    border-top: 1px solid rgba(235, 235, 235, 0.32);
+    font-size: 13px;
     text-transform: uppercase;
     font-weight: 700;
     font-family: Open Sans, "arial", sans-serif;
-    padding: 10px 0;
-    margin: 0 0 20px;
-    color: #000;
+    /*padding: 10px 0;*/
+    margin: 0 0 10px;
+    color: rgba(235, 235, 235, 0.46);
+}
+
+.breadcrumb .active{
+    color: #ffffff;
+}
+
+
+.breadcrumb li{
+    margin-bottom:0;
 }
 
 .punica-entry-list li {
