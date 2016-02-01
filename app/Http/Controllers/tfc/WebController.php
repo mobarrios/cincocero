@@ -78,7 +78,7 @@ class WebController extends Controller {
 
     public function Inscripcion()
     {
-        $data['teams'] = Teams::orderBy('name','DESC')->lists('name','id');
+        $data['teams'] = Teams::orderBy('name','asc')->lists('name','id');
         return view('tfc/web/inscripcion')->with($data);
     }
 
@@ -262,7 +262,6 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
                 'teams_id'=>'required|not_in:0',
                 'password'=>'required',
                 'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
-                'cel'=>'required',
                 'terms' => 'required'
             ]);
 

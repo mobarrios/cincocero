@@ -21,6 +21,7 @@
                       <td colspan="2" align="center" class="danger">Equipo</td>
                       <td colspan="2" align="center" class="danger">Jugador</td>
                       <td colspan="2" align="center" class="danger">Sancion</td>
+                      <td colspan="2" align="center" class="danger">Motivo</td>
                     </tr>
 
 
@@ -35,6 +36,7 @@
                                       <td colspan="2" align="center" class="active">{!! $p->players->teams->name !!}</td>
                                       <td colspan="2" align="center" class="active">{!! $p->players->FullName() !!}</td>
                                       <td colspan="2" align="center" class="active">{!! $p->end_fases_week_id!!}</td>
+                                      <td colspan="2" align="center" class="active">{!! $p->sancion->sancion!!}</td>
                                     </tr>
 
                         @endforeach
