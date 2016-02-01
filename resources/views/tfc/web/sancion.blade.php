@@ -36,7 +36,7 @@
                                       <td colspan="2" align="center" class="active">{!! $p->players->teams->name !!}</td>
                                       <td colspan="2" align="center" class="active">{!! $p->players->FullName() !!}</td>
                                       <td colspan="2" align="center" class="active">{!! $p->end_fases_week_id!!}</td>
-                                      <td colspan="2" align="center" class="active">{!! $p->sancion->sancion!!}</td>
+                                      <td colspan="2" align="center" class="active">{!! $p->sancion!!}</td>
                                     </tr>
 
                         @endforeach
