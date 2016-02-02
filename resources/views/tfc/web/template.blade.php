@@ -112,12 +112,12 @@
 
 </div>
 <!-- punica-header -->
-
-    @if(Session::has('categoria'))
+    @if(isset($_COOKIE['categoria']))
         <ol class="breadcrumb">
-            <li>{!! Session::get('categoria')->name!!}</li>
-            @if(Session::has('fase'))
-                <li class="active">{!! \App\Entities\tfc\Fases::find(Session::get('fase'))->name !!}</li>
+            <li>{!! json_decode($_COOKIE["categoria"])->name !!}</li>
+            @if(isset($_COOKIE['fase']))
+                <li>{!! \App\Entities\tfc\Fases::find($_COOKIE['fase'])->tournaments->name !!}</li>
+                <li class="active">{!! \App\Entities\tfc\Fases::find($_COOKIE['fase'])->name !!}</li>
             @endif
         </ol>
     @endif
