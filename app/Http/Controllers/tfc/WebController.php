@@ -94,10 +94,10 @@ class WebController extends Controller {
 
         $data['torneos'] = $torneos->where('categories_id',$id)->get();
 
-        Session::put("categoria",$categorias->find($id));
+        $data['categoriaActual'] = $categorias->find($id);
 
-        setcookie("categoria",$categorias->find($id));
-        setcookie("fase", "", time() - 3600);
+//        // setcookie("categoria",$categorias->find($id));
+        // setcookie("fase", "", time() - 3600);
 
         return view('tfc/web/principal')->with($data)->withCookie(cookie()->forever('categoria',$categorias->find($id) ));
     }
@@ -107,8 +107,9 @@ class WebController extends Controller {
         $data['tablas']     = $tablas->where('fases_id',$id)->orderBy('pts','desc')->orderBy('dg','desc')->get();
         $data['resultado']  = $fasesWeek->where('fases_id',$id)->where('active',1)->get();
 
-        setcookie("fase",$id);
-        setcookie("categoria",$fases->find($id)->tournaments->categories);
+        $data['faseActual'] = $fases->find($id);
+        // setcookie("fase",$id);
+        // setcookie("categoria",$fases->find($id)->tournaments->categories);
 
         return view('tfc/web/resultado')->with($data);
     }
@@ -128,9 +129,9 @@ class WebController extends Controller {
         $proxima = $actual->name + 1;
 
         $data['fase'] = $fasesWeek->where('fases_id',$id)->where('name',$proxima)->first();
-
-        setcookie("fase",$id);
-        setcookie("categoria",$fases->find($id)->tournaments->categories);
+        $data['faseActual'] = $fases->find($id);
+        // setcookie("fase",$id);
+        // setcookie("categoria",$fases->find($id)->tournaments->categories);
 
         return view('tfc/web/proxima_fecha')->with($data);
     }
@@ -146,25 +147,25 @@ class WebController extends Controller {
         $data['fase']  = $fasesWeek->where('fases_id',$id)
             ->where('active',1)
             ->first();
-
+        $data['faseActual'] = $fases->find($id);
         //$data['fase'] = $actual->name + 1;
 
         //$data['fase'] = $fasesWeek->where('fases_id',$id)->where('name',$proxima)->first();
 
-        setcookie("fase",$id);
-        setcookie("categoria",$fases->find($id)->tournaments->categories);
+        // setcookie("fase",$id);
+        // setcookie("categoria",$fases->find($id)->tournaments->categories);
 
         return view('tfc/web/fecha_actual')->with($data);
     }
 
-    public function Fixture($id,FasesWeek $fases)
+    public function Fixture($id,FasesWeek $fasesWeek,Fases $fases)
     {
 
-        $data['fases'] = $fases->where('fases_id',$id)->get();
+        $data['fases'] = $fasesWeek->where('fases_id',$id)->get();
 
-
-        setcookie("fase",$id);
-        setcookie("categoria",$data["fases"]->first()->Fases->tournaments->categories);
+        $data['faseActual'] = $fases->find($id);
+        // setcookie("fase",$id);
+        // setcookie("categoria",$data["fases"]->first()->Fases->tournaments->categories);
 
         return view('tfc/web/fixture')->with($data);
     }
@@ -173,42 +174,28 @@ class WebController extends Controller {
     {
         $data['matches'] = $matches->all();
         $data['equipo'] = $equipos->find($id);
-
-        setcookie("fase",$id);
-        setcookie("categoria",$fases->find($id)->tournaments->categories);
+        $data['faseActual'] = $fases->find($id);
+        // setcookie("fase",$id);
+        // setcookie("categoria",$fases->find($id)->tournaments->categories);
 
         return view('tfc/web/equipo')->with($data);
     }
 
 
-    public function Jugador($id,Players $jugador, Fases $fases)
+    public function Jugador($id,Players $jugador, Fases $fases,$faseId)
     {
         $data['jugador'] = $jugador->find($id);
+        $data['faseActual'] = $fases->find($faseId);
 
         return view('tfc/web/jugador')->with($data);
     }
 
     public function Sancion($id,Matches $matches,FasesWeek $fasesWeek, Fases $fases)
     {
-        /*
-        $data['ultimaFecha'] = $fasesWeek->where('fases_id',$id)
-                        ->whereHas('matches',function($q){
-                            $q->where('status',2);
-                        })
-                        ->orderBy('name','des')
-                        ->first();
-
-        $data['partidos'] = $matches->where('status',2)
-                            ->where('fases_week_id',$data['ultimaFecha']->id)
-                            ->get();
-*/
-
-
-
         $data['fases'] = $fasesWeek->where('fases_id',$id)->where('active',1)->first();
-
-        setcookie("fase",$id);
-        setcookie("categoria",$fases->find($id)->tournaments->categories);
+        $data['faseActual'] = $fases->find($id);
+        // setcookie("fase",$id);
+        // setcookie("categoria",$fases->find($id)->tournaments->categories);
 
         return view('tfc/web/sancion')->with($data);
     }
@@ -222,9 +209,9 @@ fases_week.id WHERE fases_week.fases_id = ? AND goals != 0
 GROUP BY matches_details.players_id ORDER BY goals DESC";
 
         $data['goleadores'] = DB::select($q,array($id));
-
-        setcookie("fase",$id);
-        setcookie("categoria",$fases->find($id)->tournaments->categories);
+        $data['faseActual'] = $fases->find($id);
+        // setcookie("fase",$id);
+        // setcookie("categoria",$fases->find($id)->tournaments->categories);
 
         return view('tfc/web/goleador')->with($data);
     }
@@ -234,9 +221,10 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
         $q = "SELECT SUM(yellow) as yellow,SUM(red) as red,teams.name as name FROM matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id = teams.id JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases_week.id = matches.fases_week_id JOIN fases ON fases_week.fases_id= fases.id WHERE fases.id = ? GROUP BY players.teams_id";
 
         $data['fairPlay'] = DB::select($q,array($id));
-        setcookie("fase",$id);
+        $data['faseActual'] = $fases->find($id);
+        // setcookie("fase",$id);
 
-        setcookie("categoria",$fases->find($id)->tournaments->categories);
+        // setcookie("categoria",$fases->find($id)->tournaments->categories);
 
         return view('tfc/web/fair_play')->with($data);
     }
@@ -255,8 +243,10 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
                                             $q->where('fases_id',$id)->where('active',1);
                                         })->orderBy('id','des')
                                         ->first();
-        setcookie("fase",$id);
-        setcookie("categoria",$fases->find($id)->tournaments->categories);
+
+        $data['faseActual'] = $fases->find($id);
+        // setcookie("fase",$id);
+        // setcookie("categoria",$fases->find($id)->tournaments->categories);
 
         return view('tfc/web/destacado')->with($data);
     }

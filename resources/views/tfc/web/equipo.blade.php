@@ -38,7 +38,7 @@
 {{--                            {!! dd($equipo->players->first()) !!}--}}
                             @foreach($equipo->players as $jugadores)
                                 <tr>
-                                  <td colspan="2" align="center"><a href="{!! route('jugador',$jugadores->id) !!}">{!! $jugadores->FullName() !!}</a></td>
+                                  <td colspan="2" align="center"><a href="{!! route('jugador',[$jugadores->id,$faseActual->id]) !!}">{!! $jugadores->FullName() !!}</a></td>
                                   <td colspan="2" align="center">{!! $jugadores->Amarillas($jugadores->id)!!}</td>
                                   <td colspan="2" align="center">{!! $jugadores->Rojas($jugadores->id)!!}</td>
                                   <td colspan="2" align="center">{!! $jugadores->Goles($jugadores->id)!!} goles</td>

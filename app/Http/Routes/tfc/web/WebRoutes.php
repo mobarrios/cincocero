@@ -45,7 +45,7 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
         'uses' => 'WebController@Equipo'
     ]);
 
-    Route::get('{id}/jugador',[
+    Route::get('{id}/jugador/{faseId}',[
         'as' => 'jugador',
         'uses' => 'WebController@Jugador'
     ]);

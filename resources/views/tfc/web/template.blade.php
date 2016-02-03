@@ -112,15 +112,21 @@
 
 </div>
 <!-- punica-header -->
-    @if(isset($_COOKIE['categoria']))
+    @if(isset($categoriaActual))
         <ol class="breadcrumb">
-            <li>{!! json_decode($_COOKIE["categoria"])->name !!}</li>
-            @if(isset($_COOKIE['fase']))
-                <li>{!! \App\Entities\tfc\Fases::find($_COOKIE['fase'])->tournaments->name !!}</li>
-                <li class="active">{!! \App\Entities\tfc\Fases::find($_COOKIE['fase'])->name !!}</li>
-            @endif
+            <li class="active">{!! $categoriaActual->name !!}</li>
         </ol>
     @endif
+    @if(isset($faseActual))
+        <ol class="breadcrumb">
+            <li>{!! $faseActual->tournaments->categories->name !!}</li>
+            <li>{!! $faseActual->tournaments->name !!}</li>
+            <li class="active">{!! $faseActual->name !!}</li>
+        </ol>
+    @endif
+            @if(isset($_COOKIE['fase']))
+
+            @endif
 <div id="punica-main-content">
     <div class="wrapper clearfix">
 
