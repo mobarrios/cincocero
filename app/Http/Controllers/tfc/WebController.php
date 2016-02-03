@@ -104,7 +104,7 @@ class WebController extends Controller {
 
     public function Resultado($id,Tablas $tablas,FasesWeek $fasesWeek,Fases $fases)
     {
-        $data['tablas']     = $tablas->where('fases_id',$id)->orderBy('pts','desc')->get();
+        $data['tablas']     = $tablas->where('fases_id',$id)->orderBy('pts','desc')->orderBy('dg','desc')->get();
         $data['resultado']  = $fasesWeek->where('fases_id',$id)->where('active',1)->get();
 
         setcookie("fase",$id);
@@ -161,8 +161,10 @@ class WebController extends Controller {
     {
 
         $data['fases'] = $fases->where('fases_id',$id)->get();
+
+
         setcookie("fase",$id);
-        setcookie("categoria",$data["fases"]->tournaments->categories);
+        setcookie("categoria",$data["fases"]->first()->Fases->tournaments->categories);
 
         return view('tfc/web/fixture')->with($data);
     }

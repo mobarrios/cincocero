@@ -78,12 +78,14 @@
     <div class="col-xs-12"><hr></div>
 
     <div class="col-xs-12">
-        <div class="'col-xs-3">
-            <label>WalkOver</label>
+        <label>WalkOver</label>
+        {!! Form::checkbox('walk_over',null,null, ['id'=>'walkover'])!!}
+        <div class="walk_div" hidden="true">
 
-            {!! Form::checkbox('walk_over',null,['id'=>'walkover'])!!}
             {!! Form::text('walk_over_motivo',null,['class'=>'form-control','placeholder'=>'Motivo del Walkover']) !!}
 
+            <label>Puntos no asignado a ningun equipo</label>
+            {!! Form::checkbox('walk_over_no_ptos',null,null,['id'=>'walk_over_no_ptos'])!!}
         </div>
     </div>
 
@@ -103,6 +105,18 @@
     @section('js')
         <script>
 
+            $('#walkover').on('change',function(){
+
+                if($(this).is(':checked'))
+                {
+                    $('.walk_div').attr('hidden',false);
+                }
+                else
+                {
+                    $('.walk_div').attr('hidden',true);
+                }
+
+            });
 
             //validation total goals home
             $('.home_player_goals').on('change',function(){

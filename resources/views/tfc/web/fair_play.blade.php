@@ -23,8 +23,9 @@
                       <td colspan="2" align="center" class="active">Equipo</td>
                       <td colspan="2" align="center" class="active"><img src="assets/web/images/roja.png" width="20" height="26" alt=""/></td>
                       <td colspan="2" align="center" class="active"><img src="assets/web/images/amarilla.png" width="20" height="26" alt=""/></td>
-                      {{--<td colspan="2" align="center" class="active">Pts</td>--}}
+                      <td colspan="2" align="center" class="active">Pts</td>
                     </tr>
+
                     @if(count($fairPlay) == 0)
                       @include('tfc/web/includes/sinDatos')
                     @else
@@ -32,8 +33,9 @@
                         <tr>
                           <td colspan="2" align="center" class="active">{!! $ind+1 !!}</td>
                           <td colspan="2" align="center" class="active">{!! $f->name !!}</td>
-                          <td colspan="2" align="center" class="active">{!! $f->yellow !!}</td>
                           <td colspan="2" align="center" class="active">{!! $f->red !!}</td>
+                          <td colspan="2" align="center" class="active">{!! $f->yellow !!}</td>
+                            <td colspan="2" align="center" class="active">{{ ( $f->yellow * 1 ) + ($f->red * 3)   }}</td>
                         </tr>
                       @endforeach
                     @endif

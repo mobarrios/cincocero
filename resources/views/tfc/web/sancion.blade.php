@@ -17,29 +17,30 @@
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
                   <tbody>
                     <tr>
-                      <td colspan="2" align="center" class="danger">Fecha</td>
+                        <td colspan="2" align="center" class="danger">Hasta Fecha</td>
                       <td colspan="2" align="center" class="danger">Equipo</td>
                       <td colspan="2" align="center" class="danger">Jugador</td>
-                      <td colspan="2" align="center" class="danger">Sancion</td>
+
                       <td colspan="2" align="center" class="danger">Motivo</td>
                     </tr>
 
 
+                    @if(!is_null($fases))
+                        @if($fases->Sancion->count() == 0)
+                            @include('tfc/web/includes/sinDatos')
+                        @else
 
-                    @if($fases->Sancion->count() == 0)
-                        @include('tfc/web/includes/sinDatos')
-                    @else
+                            @foreach($fases->sancion as $p)
+                                        <tr>
+                                            <td colspan="2" align="center" class="active">{!! $p->EndSancion->name!!}</td>
+                                          <td colspan="2" align="center" class="active">{!! $p->players->teams->name !!}</td>
+                                          <td colspan="2" align="center" class="active">{!! $p->players->FullName() !!}</td>
 
-                        @foreach($fases->sancion as $p)
-                                    <tr>
-                                        <td colspan="2" align="center" class="active">{!! $p->created_at!!} </td>
-                                      <td colspan="2" align="center" class="active">{!! $p->players->teams->name !!}</td>
-                                      <td colspan="2" align="center" class="active">{!! $p->players->FullName() !!}</td>
-                                      <td colspan="2" align="center" class="active">{!! $p->end_fases_week_id!!}</td>
-                                      <td colspan="2" align="center" class="active">{!! $p->sancion!!}</td>
-                                    </tr>
+                                          <td colspan="2" align="center" class="active">{!! $p->sancion!!}</td>
+                                        </tr>
 
-                        @endforeach
+                            @endforeach
+                        @endif
                     @endif
                   </tbody>
                 </table>

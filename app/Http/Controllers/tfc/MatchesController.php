@@ -156,10 +156,15 @@ class MatchesController extends Controller {
         $match->walk_over_motivo = $request->walk_over_motivo;
 
         if($request->walk_over == 'on')
+
             $match->walk_over = 1;
 
         $match->status = 2;
         $match->save();
+
+        if($request->walk_over_no_ptos != 'on')
+        {
+
 
         //recalcula tabla
         $tabla->calculaTabla($request->matches_id);
@@ -231,6 +236,7 @@ class MatchesController extends Controller {
 
                 }
 
+        }
 
         return redirect()->route('fasesFixture', Session::get('fases_id') );
     }
