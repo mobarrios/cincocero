@@ -3741,57 +3741,6 @@ blockquote {
 }
 
 
-.nav,.nav2,.coder{
-    display:inline-block;
-}
-
-.nav{
-    color:white;
-}
-
-.nav2{
-    color:#1D1D1D;
-}
-
-.coder{
-    color:#D4801C;
-}
-
-#copyright *{
-    font-family:helvetica;
-    font-weight: bold;
-}
-
-
-#copyright *:hover{
-    font-family:helvetica;
-    font-weight: bold;
-
-}
-
-.punica-end+a{
-    font-family:helvetica;
-    font-weight: normal;
-
-    color: #b6b6b6;
-    opacity: .7;
-    font-size:10px;
-    float:right;
-    margin-top:-5px;
-    transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-}
-
-.punica-end+a:hover{
-    text-decoration:underline !important;
-    opacity:1;
-    transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-}
-
-
 
 
 
