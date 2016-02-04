@@ -7,9 +7,9 @@
             <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
-                  <div class="categoria-container titulo-categoria" style="border-bottom-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-top-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-left-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}">
-                    <div class="color-top" style="background-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_top}};"></div>
-                    <div class="color-bottom" style="background-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};">
+                  <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$categoriaActual->color_bottom}};border-top-color: {{$categoriaActual->color_bottom}};border-left-color: {{$categoriaActual->color_bottom}}">
+                    <div class="color-top" style="background-color: {{$categoriaActual->color_top}};"></div>
+                    <div class="color-bottom" style="background-color: {{$categoriaActual->color_bottom}};">
                       <h2>TABLA DE POSICIONES</h2>
                     </div>
                   </div>
@@ -36,7 +36,7 @@
                       @foreach($tablas as $tab)
                         <tr>
                           <td colspan="2" align="center" class="active"><img src="{!! $tab->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35" alt=""/></td>
-                          <td colspan="2" align="center" class="active"><a href="{{route('equipo',$tab->teams->id)}}">{!! $tab->teams->name or '' !!}</a></td>
+                          <td colspan="2" align="center" class="active"><a href="{{route('equipo',[$categoriaActual->id,$tab->teams->id])}}">{!! $tab->teams->name or '' !!}</a></td>
                           <td colspan="2" align="center" class="active">{!! $tab->pts !!}</td>
                           <td colspan="2" align="center" class="active">{!! $tab->pj !!}</td>
                           <td colspan="2" align="center" class="active">{!! $tab->pg !!}</td>
@@ -50,9 +50,9 @@
                     @endif
                   </tbody>
                 </table>
-              <div class="categoria-container titulo-categoria" style="border-bottom-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-top-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};border-left-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}}">
-                <div class="color-top" style="background-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_top}};"></div>
-                <div class="color-bottom" style="background-color: {{\Illuminate\Support\Facades\Session::get('categoria')->color_bottom}};">
+              <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$categoriaActual->color_bottom}};border-top-color: {{$categoriaActual->color_bottom}};border-left-color: {{$categoriaActual->color_bottom}}">
+                <div class="color-top" style="background-color: {{$categoriaActual->color_top}};"></div>
+                <div class="color-bottom" style="background-color: {{$categoriaActual->color_bottom}};">
                   <h2>RESULTADO DE LA FECHA</h2>
                 </div>
               </div>

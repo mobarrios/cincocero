@@ -26,7 +26,7 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
         'uses' => 'WebController@Noticias'
     ]);
 
-    Route::get('{id}/resultado',[
+    Route::get('{categoriaId}/resultado/{id}',[
         'as' => 'resultado',
         'uses' => 'WebController@Resultado'
     ]);
@@ -35,51 +35,51 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
 //    Route::resource('resultado','WebController@Resultado');
 
 
-    Route::get('{id}/fixture',[
+    Route::get('{categoriaId}/fixture/{id}',[
         'as' => 'fixture',
         'uses' => 'WebController@Fixture'
     ]);
 
-    Route::get('{id}/equipo',[
+    Route::get('{categoriaId}/equipo/{id}',[
         'as' => 'equipo',
         'uses' => 'WebController@Equipo'
     ]);
 
-    Route::get('{id}/jugador/{faseId}',[
+    Route::get('{categoriaId}/{id}/jugador/{faseId}',[
         'as' => 'jugador',
         'uses' => 'WebController@Jugador'
     ]);
 
-    Route::get('{id}/proximaFecha',[
+    Route::get('{categoriaId}/proximaFecha/{id}',[
         'as' => 'proximaFecha',
         'uses' => 'WebController@ProximaFecha'
     ]);
 
-    Route::get('{id}/fechaActual',[
+    Route::get('{categoriaId}/fechaActual/{id}',[
         'as' => 'fechaActual',
         'uses' => 'WebController@FechaActual'
     ]);
 
-    Route::get('{id}/sancion',[
+    Route::get('{categoriaId}/sancion/{id}',[
         'as' => 'sancion',
         'uses' => 'WebController@Sancion'
     ]);
 
 
-    Route::get('{id}/goleador',[
+    Route::get('{categoriaId}/goleador/{id}',[
         'as' => 'goleador',
         'uses' => 'WebController@Goleador'
     ]);
 
 
-    Route::get('{id}/fairplay',[
+    Route::get('{categoriaId}/fairplay/{id}',[
         'as' => 'fairplay',
         'uses' => 'WebController@FairPlay'
     ]);
 
 
 
-    Route::get('{id}/destacado',[
+    Route::get('{categoriaId}/destacado/{id}',[
         'as' => 'destacado',
         'uses' => 'WebController@Destacado'
     ]);
