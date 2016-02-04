@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="table-responsive">
-        <table id="dataTable" class=" table table-bordered">
+        <table  class=" table table-bordered">
             <thead>
                 <td>Pos.</td>
                 <td>Equipo</td>
