@@ -278,6 +278,7 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
     public function postRegistration(Request $request , PlayersRepo $player, ImagesHelper $image)
     {
 
+
         $validator = Validator::make(
             $request->all(),
             [
@@ -299,11 +300,17 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
 
         $team = Teams::find($request->teams_id);
 
+
         //return  $team->password .'<br>'. $request->password;
 
 
         if($request->password != $team->password)
-                return redirect()->back()->withInput()->withErrors('Password del Equipo = '.$team->name.', Incorrecto');
+            return redirect()->back()->withInput()->withErrors('Password del Equipo = '.$team->name.', Incorrecto');
+
+
+        if($team->PlayersListActive()->count() >= 25 )
+            return redirect()->back()->withInput()->withErrors('El equipo  ( '.$team->name.' ) ESTA COMPLETO.');
+
 
         /*
         $player             = new Players();
@@ -318,7 +325,7 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
         $player->save();
 */
         $request['status'] = 1;
-        $request['admin'] = 0;
+        $request['admin']  = 0;
 
         $model =  $player->create($request);
 
