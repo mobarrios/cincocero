@@ -31,7 +31,7 @@
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 
     <script src="assets/web/js/retina.js"></script>
-    <script src="assets/web/js/bootstrap.min.js"></script>
+    {{--<script src="assets/web/js/bootstrap.min.js"></script>--}}
     <script src="assets/web/js/colorswitch.js"></script>
     <script src="assets/web/js/custom.js" charset="utf-8"></script>
     <script src="http://www.navcoder.net/terminosycondiciones/modernizr.js"></script>
@@ -147,28 +147,6 @@
 
     </div>
     <!-- wrapper -->
-
-    {{--<div class="container-fluid">--}}
-        {{--<div class="row">--}}
-            {{--<footer style="background-color:#000">--}}
-                {{--<div class="punica-end footer-left clearfix">--}}
-                    {{--<ul class="social-links clearfix">--}}
-                        {{--<li><span>Seguinos a través de:</span></li>--}}
-                        {{--<!--<li><a href="#" class="fa fa-facebook"></a></li>-->--}}
-                        {{--<!--<li><a href="#" class="fa fa-twitter"></a></li>-->--}}
-                        {{--<li><a href="#" class="fa fa-google-plus"></a></li>--}}
-                    {{--</ul>--}}
-                    {{--<div class="cr">--}}
-                        {{--<p id="copyright">Copyright &copy; 2016 - Designed By  <a href="http://www.navcoder.net" target="_blank" class="navcoder"><span class="nav">Nav</span><span class="coder">{coder}</span></a></p>--}}
-                    {{--</div>--}}
-                    {{--<a href="http://www.navcoder.net/navcoder.net/modal.php" data-toggle="modal" data-target="#termYcond" class="tyc">Términos y condiciones</a>--}}
-                    {{--<span class="clearfix"></span>--}}
-                {{--</div>--}}
-            {{--</footer>--}}
-
-        {{--</div>--}}
-
-<!-- punica-main-content -->
 
 
 </div>
