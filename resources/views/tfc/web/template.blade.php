@@ -4,11 +4,12 @@
     <base href="{{ asset('') }}"/>
 
     <meta charset="utf-8">
-    <title>The Futbol Company. Profesionales en Futbol Amaterus.</title>
+    <title>The Futbol Company. Profesionales en Futbol Amateur.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="assets/web/css/bootstrap.css" media="screen" />
+
     <link rel="stylesheet" href="assets/web/css/font-awesome.css" media="all" />
     <link rel="stylesheet" href="assets/web/css/superfish.css" media="all" />
     <link rel="stylesheet" href="assets/web/css/owl.carousel.css" media="all" />
@@ -17,17 +18,20 @@
     <link rel="stylesheet" href="assets/web/css/colorbox.css" media="all" />
     <link rel="stylesheet" href="assets/web/css/color-options.css" media="all" />
     <link rel="stylesheet" href="assets/web/css_mas/style.css">
-    <link rel="stylesheet" href="assets/web/style.css">
-    <link rel="stylesheet" href="assets/web/css/fonts.css">
-    <link rel="stylesheet" href="http://navcoder.net/navcoder.net/copyright.css">
-    <link href="assets/web/css/responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/web/css/fonts.css">
+    <link rel="stylesheet" href="http://www.navcoder.net/navcoder.net/copyright.css">
+
     <link href="assets/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/web/style.css">
+    <link href="assets/web/css/responsive.css" rel="stylesheet">
+
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
     <script src="assets/web/js/modernizr.custom.js"></script>
     <script src="assets/web/js/custom.js" charset="utf-8"></script>
-
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 
+
+    <script src="http://www.navcoder.net/terminosycondiciones/modernizr.js"></script>
     <!--[if lt IE 9]>
     <script src="assets/web/js/respond.min.js"></script>
     <link rel="stylesheet" href="assets/web/css/ie.css" type="text/css" media="all" />
@@ -141,65 +145,32 @@
     </div>
     <!-- wrapper -->
 
+
 </div>
-<!-- punica-main-content -->
 
-<footer class="punica-footer"><!-- punica-footer-top -->
-
-    <div class="punica-footer-bottom">
-
-        <div class="wrapper"><!-- punica-left-col --><!-- punica-right-col -->
-
-            <div class="punica-end clearfix">
-                <ul class="social-links clearfix">
-                    <li><span>Seguinos a través de:</span></li>
-                    <li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                </ul>
-                <!-- social-links -->
-                <p id="copyright">Copyright &copy; 2015 . TheFutbolCompany.com - Designed By  <a href="http://www.navcoder.net" target="_blank" class="navcoder"><span class="nav">Nav</span><span class="coder">{coder}</span></a></p>
+<div class="container-fluid">
+    <div class="row">
+        <footer style="background-color:#000">
+            <div class="punica-end footer-right clearfix" data-href="http://www.navcoder.net/terminosycondiciones/footerLeftWeb.php">
             </div>
-            <a href="http://www.navcoder.net/navcoder.net/modal.php" data-toggle="modal" data-target="#termYcond">Términos y condiciones</a>
-            <span class="clearfix"></span>
-        </div>
-        <!-- wrapper -->
+        </footer>
 
-        <!-- Modal -->
-                <div class="modal fade" id="termYcond" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title text-center" id="myModalLabel" style="color:#376906;">TÉRMINOS Y CONDICIONES DE <span class="nav2">NAV</span><span class="coder">{CODER}</span></h4>
-                           </div>
-                            <div class="modal-body"></div>
-                        </div>
-                    </div>
-                </div>
     </div>
-    <!-- punica-footer-bottom -->
 
-</footer>
-<!-- punica-footer -->
-
+</div>
 
 <script src="assets/web/js/jquery-1.10.2.min.js"></script>
 <script src="assets/web/js/retina.js"></script>
-<script src="assets/web/js/bootstrap.min.js"></script>
+{{--<script src="assets/web/js/bootstrap.min.js"></script>--}}
 <script src="assets/web/js/colorswitch.js"></script>
 <script src="assets/web/js/custom.js" charset="utf-8"></script>
-<script type="text/javascript">
-    $('#copyright a').click(function(e) {
-        e.preventDefault();
-        var modal = $('#termYcond'), modalBody = $('.modal-body');
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var href = $(".punica-end").attr("data-href");
+            $(".punica-end").load(href);
+        });
+    </script>
 
-        modal
-                .on('show.bs.modal', function () {
-                    modalBody.load(e.currentTarget.href)
-                })
-                .modal();
-    });
-</script>
 @yield('js')
 </body>
 
