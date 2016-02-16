@@ -151,9 +151,13 @@ class MatchesController extends Controller {
 
 
         $match = Matches::find($request->matches_id);
-        $match->home_goals = $request->home_goals;
-        $match->away_goals = $request->away_goals;
-        $match->walk_over_motivo = $request->walk_over_motivo;
+
+        if($request->home_goals != ''  || $request->away_goals != '')
+        {
+            $match->home_goals = $request->home_goals;
+            $match->away_goals = $request->away_goals;
+            $match->walk_over_motivo = $request->walk_over_motivo;
+        }
 
         if($request->walk_over == 'on')
 
