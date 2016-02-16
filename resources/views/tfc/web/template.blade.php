@@ -4,7 +4,7 @@
     <base href="{{ asset('') }}"/>
 
     <meta charset="utf-8">
-    <title>The Futbol Company. Profesionales en Futbol Amaterus.</title>
+    <title>The Futbol Company. Profesionales en Futbol Amateur.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,22 +18,19 @@
     <link rel="stylesheet" href="assets/web/css/colorbox.css" media="all" />
     <link rel="stylesheet" href="assets/web/css/color-options.css" media="all" />
     <link rel="stylesheet" href="assets/web/css_mas/style.css">
-    <link rel="stylesheet" href="assets/web/css/fonts.css">
+        <link rel="stylesheet" href="assets/web/css/fonts.css">
     <link rel="stylesheet" href="http://www.navcoder.net/navcoder.net/copyright.css">
 
-    <link href="assets/web/css/responsive.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/web/style.css">
+    <link href="assets/web/css/responsive.css" rel="stylesheet">
+
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
-    <script src="assets/web/js/jquery-1.10.2.min.js"></script>
     <script src="assets/web/js/modernizr.custom.js"></script>
     <script src="assets/web/js/custom.js" charset="utf-8"></script>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 
-    <script src="assets/web/js/retina.js"></script>
-    {{--<script src="assets/web/js/bootstrap.min.js"></script>--}}
-    <script src="assets/web/js/colorswitch.js"></script>
-    <script src="assets/web/js/custom.js" charset="utf-8"></script>
+
     <script src="http://www.navcoder.net/terminosycondiciones/modernizr.js"></script>
     <!--[if lt IE 9]>
     <script src="assets/web/js/respond.min.js"></script>
@@ -162,7 +159,11 @@
 
 </div>
 
-
+<script src="assets/web/js/jquery-1.10.2.min.js"></script>
+<script src="assets/web/js/retina.js"></script>
+{{--<script src="assets/web/js/bootstrap.min.js"></script>--}}
+<script src="assets/web/js/colorswitch.js"></script>
+<script src="assets/web/js/custom.js" charset="utf-8"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             var href = $(".punica-end").attr("data-href");
