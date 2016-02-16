@@ -426,6 +426,7 @@ a,
     border-bottom: 5px solid #000;
     border-top: none;
     border-bottom: none;
+    position: relative;
 }
 .punica-header-3 #main-menu > li > a,
 .punica-sub-page #main-menu > li > a {
@@ -3740,13 +3741,50 @@ blockquote {
     text-decoration: none !important;
 }
 
+.redes{
+    top:56px;
+    right:15px;
+    width:200px;
+    height:50px;
+    position: absolute !important;
+    z-index: 99999;
+    text-align: right;
+}
 
+@media (max-width: 1120px) {
+    .redes{
+        top:70px;
+    }
+    .redes li a:hover{
+        font:normal normal normal 14px/1 FontAwesome;
+        font-size: 1.7em !important;
+    }
+}
 
+.redes li{
+    list-style-type: none;
+    display:inline-block;
+    color:white;
+    margin:auto 5px;
+    color:#b9b9b9;
+}
 
+.redes li .fa-facebook-square{
+    color: #0069d9;
+}
 
+.redes li .fa-twitter-square{
+    color: #00a7d9;
+}
 
+.redes li a{
+    font-size: 1.7em;
+}
 
-
+.redes li a:hover,.redes li a:active,.redes li a:visited,.redes li a:focus{
+    font:normal normal normal 14px/1 FontAwesome;
+    font-size: 1.8em;
+}
 
 
 

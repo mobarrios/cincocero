@@ -13,6 +13,11 @@
         <li><a href="{{asset('/web/inscripcion')}}">Inscripcion</a></li>
         <li><a href="{{asset('/web/contactanos')}}">Contactanos</a></li>
     </ul>
+    <ul class="redes">
+        <li><span>Seguinos a través de:</span></li>
+        <li><a href="#" class="fa fa-facebook-square"></a></li>
+        <li><a href="#" class="fa fa-twitter-square"></a></li>
+    </ul>
     <!-- main-menu -->
 
     {{--<i class='fa fa-align-justify'></i>--}}
@@ -35,5 +40,6 @@
         <!-- mobile-menu -->
     </div>
     <!-- mobile-menu-wrapper -->
+
 
 </nav>
