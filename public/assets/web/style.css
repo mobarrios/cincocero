@@ -3769,13 +3769,10 @@ blockquote {
     color:#b9b9b9;
 }
 
-.redes li .fa-facebook-square{
-    color: #0069d9;
+.redes li .fa{
+    color: #ffffff;
 }
 
-.redes li .fa-twitter-square{
-    color: #00a7d9;
-}
 
 .redes li a{
     font-size: 1.7em;
