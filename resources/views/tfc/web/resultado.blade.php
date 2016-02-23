@@ -19,7 +19,7 @@
               <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
                   <tbody>
                     <tr>
-                      <td colspan="2" align="center" class="info">Escudo</td>
+                      <td colspan="2" align="center" class="info"></td>
                       <td colspan="2" align="center" class="info">Equipo</td>
                       <td colspan="2" align="center" class="info">Pts.</td>
                       <td colspan="2" align="center" class="info">PJ</td>
