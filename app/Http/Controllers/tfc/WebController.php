@@ -227,7 +227,10 @@ GROUP BY matches_details.players_id ORDER BY goals DESC";
 
     public function FairPlay($categoriaId,$id,Tablas $tablas,Fases $fases,Categories $categories)
     {
-        $q = "SELECT SUM(yellow) as yellow,SUM(red) as red,teams.name as name FROM matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id = teams.id JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases_week.id = matches.fases_week_id JOIN fases ON fases_week.fases_id= fases.id WHERE fases.id = ? GROUP BY players.teams_id";
+        $q = "SELECT SUM(yellow) as yellow,SUM(red) as red,teams.name as name,SUM(yellow) + (SUM(red)*3) as puntos FROM
+matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id = teams.id
+JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases_week.id = matches.fases_week_id JOIN
+ fases ON fases_week.fases_id= fases.id WHERE fases.id = ? GROUP BY players.teams_id ORDER BY puntos DESC";
 
         $data['fairPlay'] = DB::select($q,array($id));
         $data['faseActual'] = $fases->find($id);

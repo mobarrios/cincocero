@@ -1,4 +1,4 @@
-<div class="sidebar left-sidebar widget-area-4">
+<div class="sidebar left-sidebar widget-area-4 hidden-xs">
 
     <div class="widget punica-entry-list-widget">
         <h2 class="widget-title clearfix">Ultimas Noticias</h2>

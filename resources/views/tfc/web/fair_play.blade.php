@@ -35,7 +35,7 @@
                           <td colspan="2" align="center" class="active">{!! $f->name !!}</td>
                           <td colspan="2" align="center" class="active">{!! $f->red !!}</td>
                           <td colspan="2" align="center" class="active">{!! $f->yellow !!}</td>
-                            <td colspan="2" align="center" class="active">{{ ( $f->yellow * 1 ) + ($f->red * 3)   }}</td>
+                            <td colspan="2" align="center" class="active">{{ $f->puntos }}</td>
                         </tr>
                       @endforeach
                     @endif
