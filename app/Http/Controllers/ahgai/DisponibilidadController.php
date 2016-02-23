@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\ahgai;
 
+use App\Entities\ahgai\Disponibilidad;
+
+
 use App\Entities\ahgai\Rooms;
-
-
-use App\Http\Repositories\ahgai\RoomsRepo as Repo;
+use App\Http\Repositories\ahgai\DisponibilidadRepo as Repo;
 use App\Http\Controllers\Controller;
 
 
-class RoomsController extends Controller {
+class DisponibilidadController extends Controller {
 
     public   $module;
     public   $repo;
@@ -23,7 +24,7 @@ class RoomsController extends Controller {
 
     public function __construct(Repo $repo)
     {
-        $module = 'rooms';
+        $module = 'disponibilidad';
 
         //data from entities
         $this->repo                 = $repo;
@@ -31,19 +32,19 @@ class RoomsController extends Controller {
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
-        $this->view                 = 'ahgai.rooms.index';
-        $this->form                 = 'ahgai.rooms.form';
-        $this->data['sectionName']  = 'Habitaciones';
+        $this->view                 = 'ahgai.'.$module.'.index';
+        $this->form                 = 'ahgai.'.$module.'.form';
+        $this->data['sectionName']  = 'Disponibilidad de Establecimientos';
 
 
         //images
-        $this->data['imgQuantityMax']   = 3;
-        $this->data['imagePath']        = null;
-        $this->data['entityImg']        = null;
+        $this->data['imgQuantityMax']   = 0;
+        $this->data['imagePath']        = 'uploads/ahgai/'.$module.'/images/';
+        $this->data['entityImg']        = $module;
 
         //selects
-        //$this->data['categories']           = EstablecimientosCategories::lists('id','id');
-
+        $this->data['rooms']      = Rooms::lists('tipo','id');
+        //$this->data['currency']        = Currency::lists('name','id');
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -58,4 +59,5 @@ class RoomsController extends Controller {
         $this->data['routePostEdit']= $module.'PostEdit';
 
     }
+
 }

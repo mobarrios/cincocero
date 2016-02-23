@@ -15,6 +15,9 @@ Route::post('mail',['as'=>'mail','uses'=>'\App\Http\Controllers\ahgai\WebControl
 
 Route::get('galeria',['as'=>'galery','uses'=>'\App\Http\Controllers\ahgai\WebController@getGaleryIndex']);
 
-Route::get('resultado',function(){return view('ahgai/web/filter');});
+
+Route::post('resultado',['as'=>'resultado','uses'=>'\App\Http\Controllers\ahgai\WebController@postResultado']);
+Route::post('msg',['as'=>'searchMail','uses'=>'\App\Http\Controllers\ahgai\WebController@postMessage']);
+
 
 Route::get('noticia/{id}',['as'=>'news_detail','uses'=>'\App\Http\Controllers\ahgai\WebController@getNewsDetail']);

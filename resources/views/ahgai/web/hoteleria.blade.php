@@ -5,109 +5,38 @@
             <h4 class="page-title">Hoteleria</h4>
         </div>
 
-        <div class="container">
-            <form>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-hightlight"></i>
-                            <label>A:</label>
-                            <input class="typeahead form-control" placeholder="Ciudad, Nombre de hotel, Codigo postal" type="text" />
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="input-daterange" data-date-format="d MM, D">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-hightlight"></i>
-                                        <label>Check in:</label>
-                                        <input class="form-control" name="start" type="text" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-hightlight"></i>
-                                        <label>Check out:</label>
-                                        <input class="form-control" name="end" type="text" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group form-group- form-group-select-plus">
-                                    <label>Personas:</label>
-                                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
-                                        <label class="btn btn-primary">
-                                            <input type="radio" name="options" />1</label>
-                                        <label class="btn btn-primary active">
-                                            <input type="radio" name="options" />2</label>
-                                        <label class="btn btn-primary">
-                                            <input type="radio" name="options" />3</label>
-                                        <label class="btn btn-primary">
-                                            <input type="radio" name="options" />4</label>
-                                        <label class="btn btn-primary">
-                                            <input type="radio" name="options" />4+</label>
-                                    </div>
-                                    <select class="form-control hidden">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option selected="selected">5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-select-plus">
-                                    <label>Habitaciones</label>
-                                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
-                                        <label class="btn btn-primary active">
-                                            <input type="radio" name="options" />1</label>
-                                        <label class="btn btn-primary">
-                                            <input type="radio" name="options" />2</label>
-                                        <label class="btn btn-primary">
-                                            <input type="radio" name="options" />3</label>
-                                        <label class="btn btn-primary">
-                                            <input type="radio" name="options" />4</label>
-                                        <label class="btn btn-primary">
-                                            <input type="radio" name="options" />4+</label>
-                                    </div>
-                                    <select class="form-control hidden">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option selected="selected">5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input class="btn btn-primary mt10" type="submit" value="Buscar hoteles" />
-            </form>
-            <div class="gap gap-small"></div>
-        </div>
+        <div class="col-md-3">
+            <aside class="booking-filters text-white">
+                <h3>Filtrar por:</h3>
+                <ul class="list booking-filters-list">
 
+                    <li>
+                        <h5 class="booking-filters-title">Categorías</h5>
+                        <div class="checkbox">
+                            <label class="">
+                                <div class="i-check"><input style="position: absolute; opacity: 0;" class="i-check" type="checkbox"><ins style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;" class="iCheck-helper"></ins></div>5 star (220)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="">
+                                <div class="i-check"><input style="position: absolute; opacity: 0;" class="i-check" type="checkbox"><ins style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;" class="iCheck-helper"></ins></div>4 star (112)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="">
+                                <div class="i-check"><input style="position: absolute; opacity: 0;" class="i-check" type="checkbox"><ins style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;" class="iCheck-helper"></ins></div>3 star (75)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="">
+                                <div class="i-check"><input style="position: absolute; opacity: 0;" class="i-check" type="checkbox"><ins style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;" class="iCheck-helper"></ins></div>2 star (60)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="">
+                                <div class="i-check"><input style="position: absolute; opacity: 0;" class="i-check" type="checkbox"><ins style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;" class="iCheck-helper"></ins></div>1 star (20)</label>
+                        </div>
+                    </li>
+
+                </ul>
+            </aside>
+        </div>
         <h3 class="mb20">Hoteles 5 Estrellas</h3>
 
         <div class="row row-wrap">
@@ -116,21 +45,39 @@
 
                 <div class="col-md-3">
                     <div class="thumb">
-                        <a class="hover-img" href="#">
-                            {{--<img src="web/img/h02.jpg" alt="Hotel 2" title="{{$hotel->name}}" />--}}
-                            <img src="{{$hotel->images->first()->image}}" alt="Image Alternative text" title="{{$hotel->name}}" />
-                                <div class="hover-inner hover-inner-block hover-inner-bottom hover-inner-bg-black hover-hold">
-                                <div class="text-small">
-                                    <h5>{{$hotel->name}}</h5>
-                                    <p>{{$hotel->address}}</p>
-                                    <p class="mb0">{{$hotel->web}}</p>
-                                </div>
-                            </div>
-                        </a>
+                        <header class="thumb-header">
+                            <a class="hover-img" href="#">
+                                <img src="{{$hotel->images->first()->image}}" alt="Image Alternative text" title="hotel 1">
+                                <h6 class="hover-title-center">Ver.</h6>
+                            </a>
+                        </header>
+                        <div class="thumb-caption">
+                            <ul class="icon-group text-tiny text-color">
+                                <li><i class="fa fa-star"></i>
+                                </li>
+                                <li><i class="fa fa-star"></i>
+                                </li>
+                                <li><i class="fa fa-star"></i>
+                                </li>
+                                <li><i class="fa fa-star"></i>
+                                </li>
+                                <li><i class="fa fa-star-o"></i>
+                                </li>
+                            </ul>
+                            <h5 class="thumb-title"><a class="text-darken" href="#">{{$hotel->name}}</a></h5>
+                            <p class="mb0"><small>{{$hotel->address}}</small>
+                            </p>
+                            <p class="mb0 text-darken"><small>{{$hotel->web}}</small>
+                            </p>
+                        </div>
                     </div>
                 </div>
+
+
             @endforeach
 
         </div>
     @endsection
+
+
 @stop

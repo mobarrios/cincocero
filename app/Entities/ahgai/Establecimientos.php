@@ -20,5 +20,9 @@ class Establecimientos extends Entity{
         return $this->hasMany(Partners::getClass());
     }
 
+    public function Disponibilidad()
+    {
+        return $this->hasMany(Disponibilidad::getClass());
+    }
 
 }

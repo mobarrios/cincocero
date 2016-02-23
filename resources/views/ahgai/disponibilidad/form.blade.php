@@ -9,16 +9,10 @@
         @endif
 
 
-        {!! Form::textCustom('name', 'Nombre Establecieminto')!!}
+        {!! Form::selectCustom('rooms_types_id', 'Habitación',$rooms)!!}
+        {!! Form::dateCustom('from', 'Fecha Desde')!!}
+        {!! Form::dateCustom('to', 'Fecha Hasta')!!}
 
-        {!! Form::textCustom('address', 'Dirección')!!}
-        {!! Form::textCustom('web', 'Web')!!}
-
-        {!! Form::selectCustom('categories_id','Categoria de Establecimiento', $categories)!!}
-
-
-
-        {!! Form::imageCustom('image','Foto')!!}
 
 
 

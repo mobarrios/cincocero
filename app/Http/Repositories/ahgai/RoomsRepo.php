@@ -16,14 +16,14 @@ class RoomsRepo extends BaseRepo {
     public function Rules()
     {
         return [
-            'name'   => 'required',
+            'tipo'   => 'required',
         ];
     }
 
     public function RulesEdit($id = null)
     {
         return [
-            'name'   => 'required',
+            'tipo'   => 'required',
         ];
     }
 
@@ -35,7 +35,7 @@ class RoomsRepo extends BaseRepo {
             [
                 //'Imagen' =>    ['data' => 'images','relation'=> null],
                 //'Codigo' =>    ['data' => 'code','relation' => null],
-                'Categorias de Establecimientos' =>  ['data' => 'name','relation' => null],
+                'Tipos de Habitaciones de Establecimientos' =>  ['data' => 'tipo','relation' => null],
                 //'Desc.' =>     ['data' => 'description','relation' => null],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],

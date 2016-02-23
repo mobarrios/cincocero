@@ -7,7 +7,11 @@ class Rooms extends Entity{
 
     protected $table = 'rooms';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['tipo','establecimientos_id'];
 
 
+    public function Disponibilidad()
+    {
+        return $this->hasMany(Disponibilidad::getClass());
+    }
 }

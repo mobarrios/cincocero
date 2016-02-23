@@ -91,7 +91,7 @@
 <script src="web/js/custom.js"></script>
 
 <script src="web/js/parallax.js"></script>
-
+<script src="web/js/icheck.js"></script>
 
 </body>
 

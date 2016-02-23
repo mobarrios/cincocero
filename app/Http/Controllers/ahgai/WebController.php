@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\ahgai;
 
 
+use App\Entities\ahgai\Disponibilidad;
 use App\Entities\ahgai\Establecimientos;
 use App\Entities\ahgai\Galeries;
 use App\Entities\ahgai\News;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class WebController extends Controller
 {
@@ -66,5 +68,46 @@ class WebController extends Controller
     {
         echo "Envio de mail con los datos de :";
         dd($request->request);
+    }
+
+    public function postResultado(Request $request)
+    {
+        $from    =  date('Y-m-d',strtotime($request->start));
+        $to      =  date('Y-m-d',strtotime($request->end));
+
+        $data['from']   = $request->start;
+        $data['to']     = $request->end;
+
+        $data['dispo'] = Disponibilidad::where('from','<=',$from)
+            ->where('to','>=',$to)
+            ->where('rooms_types_id',$request->rooms_types_id)
+            ->get();
+
+        return view('ahgai.web.filter')->with($data);
+    }
+
+    public function postMessage(Request $request)
+    {
+        if($request->select)
+
+            foreach ($request->select as $v =>  $htl) {
+
+                Mail::raw('Tiene una notificacion en el sistema de disponibilidad.', function($message)
+                {
+                    $message->from('mbarrios@navcoder', 'Sistema Ahgai');
+                    $message->subject('Consulta de Disponibilidad.');
+                    $message->to('manuelobarrios@gmail.com');
+                });
+
+                echo $v;
+                echo $request->name;
+                echo $request->email;
+                echo $request->mesaje;
+            }
+
+
+        return redirect()->route('webHome');
+
+       // return view('ahgai.web.filter');
     }
 }

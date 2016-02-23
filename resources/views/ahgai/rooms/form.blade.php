@@ -9,7 +9,7 @@
         @endif
 
 
-        {!! Form::textCustom('name', 'Nombre Categoria')!!}
+        {!! Form::textCustom('tipo', 'Nombre Categoria')!!}
 
 
 
