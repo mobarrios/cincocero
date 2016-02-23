@@ -11,29 +11,40 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Helpers\ImagesHelper;
+use Illuminate\Support\Facades\Session;
+use App\Helpers\BreadCrumbHelper;
 
 
 abstract class Controller extends BaseController
 {
    // use DispatchesJobs,
-    use ValidatesRequests;
+    use         ValidatesRequests;
+
 
 
     //index
     public function getIndex()
     {
+        $bc = new BreadCrumbHelper();
+        $bc->index($this->data['sectionName'], $this->data['route']);
+
         return view($this->view)->with($this->data);
     }
 
     //go to form new
     public function getNew()
     {
+        $bc = new BreadCrumbHelper();
+        $bc->create('Crear '.$this->data['sectionName'], $this->data['routeNew']);
+
         return view($this->form)->with($this->data);
     }
 
     // go to form with model
     public function getEdit($id)
     {
+        $bc = new BreadCrumbHelper();
+        $bc->create('Editar '.$this->data['sectionName'], $this->data['routeEdit']);
 
         $this->data['model'] = $this->repo->getModel()->find($id);
 

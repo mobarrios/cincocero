@@ -31,16 +31,6 @@ class ItemsRepo extends BaseRepo {
         ];
     }
 
-    public function createCustom($datos = null)
-    {
-        $data = $datos->all();
-
-        $data['name'] = $data['name'].'PPP';
-
-        return;
-    }
-
-
 
     public function tableHeader()
     {

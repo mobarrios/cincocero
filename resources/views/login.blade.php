@@ -1,70 +1,73 @@
-@extends('template/template')
+<!DOCTYPE html>
+<html>
 
-@section('css')
-    <style>
-       #page-wrapper{
-           position: none;
-           margin: 0 0 0 0px;
-           padding: 0 0px;
-           border-left: 0px ;
-           min-height: 1px;
-        }
-       .btn-success {
-           color: #fff;
-           background-color: #1ab394;
-           border-color: #4cae4c;
-       }
-    </style>
-@endsection
-    @section('mainContent')
+<base href="{{asset('')}}">
+<head>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="login-panel panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">LogIn</h3>
-                        </div>
-                        <div class="panel-body">
-                            {!!Form::open(['route'=>'postLogin'])!!}
-                            <form role="form">
-                                <fieldset>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                                    <div class="form-group">
-                                        {!!Form::label('E-mail') !!}
-                                        <div class="input-group">
-                                            {!!Form::text('email',null,['class'=>'form-control'])!!}
-                                            <span class="input-group-addon"><i class="fa fa-user"></i> </span>
-                                        </div>
-                                    </div>
+    <title>INSPINIA | Login</title>
 
-                                    <div class="form-group">
-                                        {!!Form::label('Password') !!}
-                                        <div class="input-group">
-                                            {!!Form::password('password',['class'=>'form-control'])!!}
-                                            <span class="input-group-addon"><i class="fa fa-lock"></i> </span>
-                                        </div>
+    <link href="assets/inspinia/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="remember" value="Remember Me" type="checkbox">No cerrar sesion
-                                        </label>
-                                    </div>
+    <link href="assets/inspinia/css/animate.css" rel="stylesheet">
+    <link href="assets/inspinia/css/style.css" rel="stylesheet">
 
+</head>
 
-                                        {!!Form::submit(trans('messages.btnAccess'),['class'=>'btn btn-md btn-block btn-success'])!!}
-                                        {!!Form::close()!!}
+<body class="gray-bg">
 
-                                </fieldset>
-                            </form>
-                        </div>
+<div class="middle-box text-center loginscreen animated fadeInDown">
+    <div>
+        <div>
+
+            <h1 class="logo-name">{nc}</h1>
+
+        </div>
+        <h3>Nav { Coder }</h3>
+
+        {!!Form::open(['route'=>'postLogin'])!!}
+        <form role="form">
+            <fieldset>
+
+                <div class="form-group">
+
+                    <div class="input-group">
+                        {!!Form::text('email',null,['class'=>'form-control'])!!}
+                        <span class="input-group-addon"><i class="fa fa-user"></i> </span>
                     </div>
                 </div>
-            </div>
-        </div>
+
+                <div class="form-group">
+
+                    <div class="input-group">
+                        {!!Form::password('password',['class'=>'form-control'])!!}
+                        <span class="input-group-addon"><i class="fa fa-lock"></i> </span>
+                    </div>
+
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input name="remember" value="Remember Me" type="checkbox">No cerrar sesion
+                    </label>
+                </div>
 
 
-    @endsection
+                {!!Form::submit(trans('messages.btnAccess'),['class'=>'btn btn-block btn-primary m-t'])!!}
+                {!!Form::close()!!}
 
-@stop
+            </fieldset>
+        </form>
+
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="assets/inspinia/js/jquery-2.1.1.js"></script>
+<script src="assets/inspinia/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

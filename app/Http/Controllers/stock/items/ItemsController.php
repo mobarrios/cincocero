@@ -56,11 +56,5 @@ class ItemsController extends Controller {
 
     }
 
-    public function requestCustom($request = null)
-    {
-        $newRequest         = $request;
-        $newRequest['nm']   = 'dadas';
 
-        return $newRequest;
-    }
 }
