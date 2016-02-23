@@ -27,7 +27,7 @@
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
     <script src="assets/web/js/modernizr.custom.js"></script>
-    <script src="assets/web/js/custom.js" charset="utf-8"></script>
+    {{--<script src="assets/web/js/custom.js" charset="utf-8"></script>--}}
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 
 

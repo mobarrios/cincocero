@@ -407,7 +407,10 @@ jQuery(document).ready(function () {
     {
       load: 'assets/web/js/jquery.colorbox.js',
       complete: function () {
-        jQuery(".group1").colorbox({rel:'group1'});
+          jQuery(".group1").colorbox({rel:'group1',current:'',title:function(){
+              var title = jQuery(this).find('img').attr('title');
+              return title;
+          }});
       }
     }
   ]);

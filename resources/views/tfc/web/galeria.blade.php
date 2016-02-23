@@ -5,7 +5,7 @@
             
             <center>
               <div class="widget-area-3">
-                <div class="widget punica-featured-news-widget">
+                <div class="widget ">
                   <h2 class="widget-title clearfix">Galeria de Imagenes</h2>
                   <!-- punica-featured-news-slider -->
                   
@@ -15,8 +15,8 @@
                             <div class="col-xs-3 pull-left" style="margin-top:15px">
                                 <div class="item item-galeria">
                                     <article class="entry-item">
-                                        <div class="entry-thumb hover-effect">
-                                            <a class="group1" href="{!! $gal->images->first()->image !!}"><img src="{!! $gal->images->first()->image !!}" title="{!! $gal->name !!}" alt="{!! $gal->name !!}" /></a>
+                                        <div class="entry-thumb hover-effect slides">
+                                            <a class="group1" href="{!! $gal->images->first()->image !!}"><img src="{!! $gal->images->first()->image !!}" title="{!! $gal->name !!}" alt="{!! $gal->name !!}" data-toggle="modal" data-target="#myModal"/></a>
                                         </div>
                                     </article>
                                 <!-- entry-item -->
@@ -35,4 +35,18 @@
 
         </div>
         <!-- center-col -->
+
+
+    <div class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 @endsection
