@@ -16,12 +16,12 @@
                   <p>&nbsp;</p>
                 </div>
                 @if(!is_null($jugadorDestacado))
-                <table width="100%" border="0">
+                <table width="100%" border="0" class="table-responsive">
                   <tbody>
                     <tr>
                       <td width="18%"><img src="{!! $jugadorDestacado->players->images->first()->image or '' !!}" width="180" height="195" alt=""/></td>
                       <td width="8%">&nbsp;</td>
-                      <td width="74%"><table width="100%">
+                      <td width="74%"><table width="100%" class="table-responsive">
                         <tbody>
                           <tr>
                             <td><h6 class="entry-title"> {!! $jugadorDestacado->players->fullName()!!}</h6>
@@ -63,7 +63,7 @@
                 {{--<p><img src="assets/web/images/equipo_fecha.png" width="600" height="70" alt=""/></p>--}}
 
                 @if(!is_null($equipoDestacado))
-                <table width="100%" border="0">
+                <table width="100%" border="0"  class="table-responsive">
                   <tbody>
                     <tr>
                       <td width="18%"><img src="{!! $equipoDestacado->teams->images->first()->image  or ''!!}" width="450" height="302" alt=""/></td>
@@ -72,13 +72,13 @@
                 </table>
                 <p>
                 <h6 class="entry-title">Equipo:</h6>
+                        <p>
                         {!! $equipoDestacado->teams->name !!}
                         </p>
-<p>
 <h6 class="entry-title">Categoria:</h6>
+<p>
                 {!! $jugadorDestacado->fasesWeeks->fases->tournaments->name !!}
 </p>
-<p>
 <h6 class="entry-title">Nota:</h6>
 </p>
 <p>{!! $equipoDestacado->nota !!}</p>

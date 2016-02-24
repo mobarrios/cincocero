@@ -15,7 +15,7 @@
                   {{--<p><img src="assets/web/images/goleador.png" width="600" height="70" alt=""/></p>--}}
                   <p>&nbsp;</p>
                 </div>
-                <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
+                <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                   <tbody>
                     <tr>
                       <td colspan="2" align="center" class="warning">Jugador</td>

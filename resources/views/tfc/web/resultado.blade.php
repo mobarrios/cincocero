@@ -16,7 +16,7 @@
                   {{--<p><img src="assets/web/images/tabla_pos.png" width="600" height="70" alt=""/></p>--}}
                   <p>&nbsp;</p>
                 </div>
-              <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
+              <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                   <tbody>
                     <tr>
                       <td colspan="2" align="center" class="info"></td>
@@ -57,7 +57,7 @@
                 </div>
               </div>
                 <p>&nbsp;</p>
-                <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
+                <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                   <tbody>
 
                   @foreach($resultado as $res)
