@@ -6,6 +6,10 @@
             {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
         @else
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
+
+            {!! Form::hidden('categories_id',$categories_id)!!}
+            {!! Form::hidden('seasons_id',$seasons_id)!!}
+
         @endif
 
         {{--
@@ -15,9 +19,6 @@
 
         {!! Form::textCustom('name', 'Nombre Torneo')!!}
 
-
-        {!! Form::hidden('categories_id',$categories_id)!!}
-        {!! Form::hidden('seasons_id',$seasons_id)!!}
 
 
 

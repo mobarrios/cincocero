@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Fases;
+use App\Entities\tfc\FasesTeams;
 use App\Entities\tfc\FasesWeek;
 use App\Entities\tfc\Matches;
 use App\Entities\tfc\Tablas;
@@ -127,6 +128,7 @@ class FasesController extends Controller {
                 $match->fases_week_id = $week->id;
                 $match->home_teams_id = $home ;
                 $match->away_teams_id = $away;
+                $match->status = 1;
 
                 $match->save();
 
@@ -183,5 +185,22 @@ class FasesController extends Controller {
         $fw->save();
 
         return redirect()->back();
+    }
+
+    public function getDel($id)
+    {
+
+        //$this->repo->week()->delete();
+        //$this->repo->Teams()->delete();
+
+
+        FasesTeams::where('fases_id',$id)->delete();
+        $fw = FasesWeek::where('fases_id',$id)->first();
+        $mt = Matches::where('fases_week_id',$fw->id)->delete();
+        $fw->delete();
+
+        $this->repo->delete($id);
+
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
     }
 }
