@@ -4,7 +4,7 @@
 
         @include('tfc/web/leftbar/leftbar')
 
-        @include('tfc/web/includes/noticias')
+        @include('tfc/web/includes/destacados')
 
         @include('tfc/web/sidebar/sidebar')
 

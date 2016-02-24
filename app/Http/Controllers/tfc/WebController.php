@@ -88,9 +88,23 @@ class WebController extends Controller {
         return view('tfc/web/contactanos');
     }
 
-    public function Principal($id,Tournaments $torneos,Categories $categorias,Fases $fases)
+    public function Principal($id,Tournaments $torneos,Categories $categorias,Fases $fases,Destacados $destacados)
     {
-        $data['noticias']   = News::orderBy('date','DESC')->paginate(5);
+        $data['jugadorDestacado'] = $destacados->where('players_id','>',0)
+            ->whereHas('fasesWeeks',function($q) use($id){
+                $q->where('fases_id',$id)->where('active',1);
+            })->orderBy('id','des')
+            ->first();
+
+        $data['equipoDestacado'] = $destacados->where('teams_id','>',0)
+            ->whereHas('fasesWeeks',function($q) use($id){
+                $q->where('fases_id',$id)->where('active',1);
+            })->orderBy('id','des')
+            ->first();
+
+        $data['faseActual'] = $fases->find($id);
+
+        $data['categoriaActual'] = $categorias->find($id);
 
         $data['torneos'] = $torneos->where('categories_id',$id)->get();
 
