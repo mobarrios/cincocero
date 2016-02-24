@@ -19,5 +19,9 @@ class Sanciones extends Entity{
     {
         return $this->belongsTo(FasesWeek::getClass(),'end_fases_week_id');
 
+    }public function StartSancion()
+    {
+        return $this->belongsTo(FasesWeek::getClass(),'fases_week_id');
+
     }
 }

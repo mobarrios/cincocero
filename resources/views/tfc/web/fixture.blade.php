@@ -22,7 +22,7 @@
 
 
                         <div class="col-xs-6">
-                            <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
+                            <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                                 <tr>
                                     <td colspan="2" align="center" class="success">Fecha </td>
                                     <td colspan="2" align="center" class="success">&nbsp;</td>

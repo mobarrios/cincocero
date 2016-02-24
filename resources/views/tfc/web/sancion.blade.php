@@ -14,10 +14,11 @@
                     </div>
                   <p>&nbsp;</p>
                 </div>
-                <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
+                <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                   <tbody>
                     <tr>
-                        <td colspan="2" align="center" class="danger">Hasta Fecha</td>
+                      <td colspan="2" align="center" class="danger">Desde Fecha</td>
+                      <td colspan="2" align="center" class="danger">Hasta Fecha</td>
                       <td colspan="2" align="center" class="danger">Equipo</td>
                       <td colspan="2" align="center" class="danger">Jugador</td>
 
@@ -32,7 +33,8 @@
 
                             @foreach($fases->sancion as $p)
                                         <tr>
-                                            <td colspan="2" align="center" class="active">{!! $p->EndSancion->name!!}</td>
+                                          <td colspan="2" align="center" class="active">{!! $p->StartSancion->name!!}</td>
+                                          <td colspan="2" align="center" class="active">{!! $p->EndSancion->name!!}</td>
                                           <td colspan="2" align="center" class="active">{!! $p->players->teams->name !!}</td>
                                           <td colspan="2" align="center" class="active">{!! $p->players->FullName() !!}</td>
 

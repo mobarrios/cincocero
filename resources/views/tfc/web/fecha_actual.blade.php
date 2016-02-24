@@ -18,7 +18,7 @@
                 @if(count($fase) == 0)
                     @include('tfc/web/includes/sinDatos')
                 @else
-                    <table border="1" bordercolor="#dddddd" class="table table-hover table-striped">
+                    <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                         <tbody>
                         <tr>
                             <td colspan="2" align="center" class="success">Fecha N° {!! $fase->name !!}</td>
