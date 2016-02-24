@@ -10,6 +10,11 @@ class Teams extends Entity{
     protected $fillable = ['name','password'];
 
 
+    public function Fases()
+    {
+        return $this->belongsToMany(Fases::getClass(),'fases_teams');
+    }
+
     public function Matches()
     {
         return $this->hasMany(Matches::getClass());

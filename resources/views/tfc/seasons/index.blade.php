@@ -35,23 +35,32 @@
                                     @foreach(\App\Entities\tfc\Tournaments::where('seasons_id',$season->id)->where('categories_id',$cat->id)->get() as $torneo )
 
                                         <table class="table table-condensed table-bordered">
-                                            <th colspan="2"> {{$torneo->name}}</th>
+                                            <th colspan="3"> {{$torneo->name}}
+                                                <span class="pull-right"> <a href="{{route('tournamentsGetEdit',$torneo->id)}}" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span></a></span>
+                                            </th>
 
                                                 @foreach($torneo->Fases as $fases)
                                                 <tr>
-                                                <td class="col-xs-10">
-                                                  {{$fases->name}}
-                                                </td>
+                                                    <td class="col-xs-10">
+                                                      {{$fases->name}}
+                                                    </td>
 
                                                     <td class="col-xs-2">
                                                         <a href="{{route('fasesFixture',$fases->id)}}" class="btn btn-xs btn-success">Fixture</a>
                                                         <a href="{{route('fasesTabla',$fases->id)}}"class="btn btn-xs btn-success">Tabla</a>
-                                                     </tr>
+                                                    </td>
+
+                                                    <td class="col-xs-1">
+                                                        <a href="{{route('fasesGetEdit',$fases->id)}}" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span></a>
+                                                        {{--<a href="{{route('fasesGetDel',$fases->id)}}"class="delete btn btn-xs btn-default"><span class="fa fa-trash"></span></a>--}}
+                                                    </td>
+                                                </tr>
+
 
                                                 @endforeach
 
                                             <tfoot>
-                                            <td colspan="2">
+                                            <td colspan="3">
                                                 <a href="{{route('fasesGetNew',$torneo->id)}}" class="btn btn-xs btn-block">Nueva Fase</a>
                                             </td>
                                             </tfoot>
