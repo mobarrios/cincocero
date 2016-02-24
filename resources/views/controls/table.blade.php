@@ -7,7 +7,9 @@
         @foreach($tableHeader['columns'] as $column => $data)
             <th>{{$column}}</th>
         @endforeach
+
         <th class="no-sort" style="width: 12%;" ></th>
+
     </tr>
     </thead>
     {{--<tfoot>
@@ -27,7 +29,7 @@
                 @if(isset($routeDetail))
                      <a href="{{route($routeDetail, $model->id)}}">{{$model->id}}</a>
                 @else
-                     {{$model->id}}
+                       {{$model->id}}
                 @endif
 
 
@@ -43,7 +45,7 @@
                             @if(is_null($model->$column['data']))
                                <td></td>
                             @else
-                                <td style="width: 15%;">
+                                <td style="width: 5%;">
                                     @foreach($model->$column['data'] as $image)
                                             <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
                                                  <img width="100%;" src="{{$image->image}}" >
@@ -53,20 +55,24 @@
                             @endif
 
                         @else
+<<<<<<< HEAD
 
                                  <td>{{$model->$column['data']}}</td>
 
+=======
+                              <td>{{$model->$column['data']}}</td>
+>>>>>>> 08c145218165bbc79eab454d5c9ac98f61b92331
                          @endif
                     @endif
 
                 @endforeach
 
-            <td >
+            <td>
 
-                <a class="btn btn-xs btn-default" href="{{route($routeEdit,$model->id)}}">
-                    <i class="fa fa-edit"></i>
+                <a class="btn btn-sm btn-white" href="{{route($routeEdit,$model->id)}}">
+                    <i class="fa fa-pencil"></i>
                 </a>
-                <a class="btn btn-xs btn-default" href="{{route($routeDel ,$model->id)}}">
+                <a class="btn btn-sm btn-white" href="{{route($routeDel ,$model->id)}}">
                     <i class="delete fa fa-trash"></i>
                 </a>
 

@@ -1,41 +1,61 @@
-
-
-<div class="panel side panel-default">
-    <div class="panel-heading">
-
-    </div>
-    <div clss="panel-body">
-        <ul class="nav nav-pills nav-stacked">
-
-            <li><a href="{{route('home')}}">Home <span class="sr-only">(current)</span></a></li>
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="text-center nav-header" style="background-image: none">
+                <strong>The Futbol Company</strong>
+            </li>
+            <li>
+                <a class="menu" data-id="0" href="{{route('home')}}"><i class="fa fa-home"></i> <span class="nav-label">Home <span class="label label-primary pull-right">NEW</span></span></a>
+            </li>
 
 
             @foreach(\App\Entities\Menus::where('main',0)->get() as $menu)
 
                 @if($menu->routes == '' )
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                            {{$menu->name}} <span class="caret"></span>
+                    <li>
+                        <a href="#" >
+                            {{$menu->name}}<span class="fa arrow"></span>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="nav nav-second-level collapse">
                             @foreach(\App\Entities\Menus::where('main',$menu->id)->get() as $sub)
-                                    <li><a href="{{route($sub->routes)}}">{{$sub->name}}</a></li>
+                                <li><a class="menu" data-id="{{$sub->id}}" href="{{route($sub->routes)}}">{{$sub->name}}</a></li>
                             @endforeach
                         </ul>
                     </li>
                 @else
-                    <li><a href="{{route($menu->routes)}}">{{$menu->name}}</a></li>
+                    <li><a class="menu" data-id="{{$menu->id}}" href="{{route($menu->routes)}}">{{$menu->name}}</a></li>
                 @endif
 
             @endforeach
 
 
 
+
         </ul>
+
     </div>
+</nav>
+
+@section('js')
+<script>
+
+    $(document).ready(function(){
+
+        var menu_id = localStorage.getItem('menu_id');
+
+        $('a[data-id='+menu_id+']').parent().addClass('active');
+
+        $('a[data-id='+menu_id+']').parent().parent().addClass('in').parent().addClass('active');
 
 
+    });
+
+   $('.menu').on('click',function()
+   {
+       localStorage.setItem('menu_id',$(this).attr('data-id'));
+   });
 
 
-</div>
+</script>
 
+@endsection
