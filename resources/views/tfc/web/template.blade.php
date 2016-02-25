@@ -84,7 +84,6 @@
                     @foreach(\App\Entities\tfc\Categories::all() as $cat)
                         <li class="current-menu-item">
                             <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" width="150" height="59" alt=""/></a></li>
-                        <li>
                     @endforeach
                 </ul>
                 <!-- main-menu -->
@@ -96,7 +95,7 @@
                         @foreach(\App\Entities\tfc\Categories::all() as $cat)
                             <li class="current-menu-item">
                                 <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" width="150" height="59" alt=""/></a></li>
-                            <li>
+
                         @endforeach
                     </ul>
                     <!-- mobile-menu -->
@@ -117,11 +116,11 @@
 
 </div>
 <!-- punica-header -->
-    @if(isset($categoriaActual))
-        <ol class="breadcrumb">
-            <li class="active">{!! $categoriaActual->name !!}</li>
-        </ol>
-    @endif
+    {{--@if(isset($categoriaActual))--}}
+        {{--<ol class="breadcrumb">--}}
+            {{--<li class="active">{!! $categoriaActual->name !!}</li>--}}
+        {{--</ol>--}}
+    {{--@endif--}}
     @if(isset($faseActual))
         <ol class="breadcrumb">
             <li>{!! $faseActual->tournaments->categories->name !!}</li>

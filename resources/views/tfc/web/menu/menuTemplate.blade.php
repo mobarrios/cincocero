@@ -37,6 +37,10 @@
         </ul>
         <!-- mobile-menu -->
     </div>
+            @foreach(\App\Entities\tfc\Categories::all() as $cat)
+                <li class="current-menu-item">
+                    <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" class="img-responsive col-xs-3" alt=""/></a></li>
+            @endforeach
     <!-- mobile-menu-wrapper -->
 
 
