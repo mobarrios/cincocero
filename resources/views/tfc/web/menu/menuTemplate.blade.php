@@ -34,13 +34,15 @@
             <li><a href="{{asset('/web/galeria')}}">Galeria de Fotos</a></li>
             <li><a href="{{asset('/web/inscripcion')}}">Inscripcion</a></li>
             <li><a href="{{asset('/web/contactanos')}}">Contactanos</a></li>
+            <hr>
+            @foreach(\App\Entities\tfc\Categories::all() as $cat)
+                <li class="current-menu-item">
+                    <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" class="img-responsive" alt=""/></a></li>
+            @endforeach
         </ul>
         <!-- mobile-menu -->
     </div>
-            @foreach(\App\Entities\tfc\Categories::all() as $cat)
-                <li class="current-menu-item">
-                    <a href="{{route('principal',$cat->id)}}"><img src="{{$cat->images->first()->image}}" class="img-responsive col-xs-3" alt=""/></a></li>
-            @endforeach
+
     <!-- mobile-menu-wrapper -->
 
 
