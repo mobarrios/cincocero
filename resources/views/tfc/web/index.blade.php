@@ -43,19 +43,12 @@
                     <!-- Hero Content -->
                     <div class="home-content">
                         <div class="home-text">
-                          <div align="center">
+                          <div align="center" style="margin-top: -50px;">
                               @foreach($categories as $categoria)
-
-                                  {{--<a href="web/{!! $categoria->id !!}/principal"><img SRC="torn/btn1.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace=0></a>--}}
                                   <a href="{{ route('principal',$categoria->id) }}" style="padding:3%"><img src="{{($categoria->images->count() != 0)?$categoria->images->first()->image : ''}}" width="215" height="63" border="0" hspace="0">
                                   </a>
 
                               @endforeach
-
-                              {{--<IMG SRC="torn/btn2.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0>--}}
-                              {{--<IMG SRC="torn/btn3.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0><br>--}}
-                              {{--<IMG SRC="torn/btn4.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0>--}}
-                              {{--<IMG SRC="torn/btn5.png" WIDTH=200 HEIGHT=59 BORDER=0 hspace= 0>--}}
                           </div>
                         </div>
                     </div>
@@ -68,7 +61,6 @@
 
         </div>
         <!-- End Page Wrap -->
-        
         
         <!-- JS -->
         <script type="text/javascript" src="assets/web/js_mas/jquery-1.11.2.min.js"></script>
