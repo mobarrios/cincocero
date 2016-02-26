@@ -5,6 +5,7 @@ namespace App\Http\Controllers\tfc;
 use App\Entities\tfc\FasesWeek;
 use App\Entities\tfc\Players;
 use App\Entities\tfc\Sanciones;
+use App\Entities\tfc\SancionesDetails;
 use App\Http\Repositories\tfc\SancionesRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -47,7 +48,7 @@ class SancionesController extends Controller {
         //selects
         $this->data['players']             = Players::orderBy('last_name','ASC')->get()->lists('full_name','id');
 
-        //$this->data['weeks']             = Currency::lists('name','id');
+        $this->data['sancionesDetails']    = SancionesDetails::lists('name','name');
 
         //data for validation
         $this->rules                = $this->repo->Rules();

@@ -8,14 +8,7 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
-
-        {!! Form::selectCustom('players_id','Jugador Sancionado',$players)!!}
-
-        {!! Form::selectCustom('sancion','Sanción',$sancionesDetails)!!}
-
-
-        {!! Form::selectCustom('end_fases_week_id','Fecha Limite Sanción',$weeks)!!}
-
+        {!! Form::textCustom('name', 'Nombre Categoría')!!}
 
         <hr>
 

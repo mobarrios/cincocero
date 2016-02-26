@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Canchas;
+use App\Entities\tfc\Horarios;
 use App\Entities\tfc\Matches;
 use App\Entities\tfc\MatchesDetails;
 use App\Entities\tfc\Sedes;
@@ -50,11 +51,11 @@ class MatchesController extends Controller {
 
         //selects
          $this->data['status']          = [1 => 'Por Jugar', 2 => 'Finalizado', 3 => 'Suspendido'];
-        $this->data['hour' ]            = ['10:00'=>'10:00','11:45'=>'11:45','13:30'=>'13:30','15:15'=>'15:15'];
+        //$this->data['hour' ]            = ['10:00'=>'10:00','11:45'=>'11:45','13:30'=>'13:30','15:15'=>'15:15'];
 
         $this->data['sedes']            = Sedes::lists('name','id');
 
-//        $this->data['canchas']         = Canchas::lists('name','id');
+        $this->data['hour']             = Horarios::lists('name','name');
 
         $this->data['canchas']          = Canchas::where('sedes_id',Sedes::first()->id)->lists('name','id');
 
