@@ -116,9 +116,16 @@
 
                 @if($player->FasesWeekSanciones($match->FasesWeek->id))
                     <tr class="trTable" bgcolor="#d3d3d3">
+                        <td>{{$player->fullName()}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>SANCIONADO</td>
+                    </tr>
                 @else
                     <tr class="trTable" >
-                @endif
                         <td>{{$player->fullName()}}</td>
                         <td></td>
                         <td></td>
@@ -127,6 +134,7 @@
                         <td></td>
                         <td></td>
                     </tr>
+                @endif
 
                 <?php $countH++  ?>
             @endforeach
@@ -166,17 +174,26 @@
 
             @if($player->FasesWeekSanciones($match->FasesWeek->id))
                 <tr class="trTable" bgcolor="#d3d3d3">
+                    <td>{{$player->fullName()}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>SANCIONADO</td>
+                </tr>
             @else
                 <tr class="trTable" >
+                    <td>{{$player->fullName()}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
             @endif
-                <td>{{$player->fullName()}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+
             <?php $countA++  ?>
         @endforeach
 
