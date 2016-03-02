@@ -113,15 +113,21 @@
             <?php  $countH = 0; ?>
             @foreach($match->HomeTeam->Players as $player)
 
-                <tr class="trTable">
-                    <td>{{$player->fullName()}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+
+                @if($player->FasesWeekSanciones($match->FasesWeek->id))
+                    <tr class="trTable" bgcolor="#d3d3d3">
+                @else
+                    <tr class="trTable" >
+                @endif
+                        <td>{{$player->fullName()}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
                 <?php $countH++  ?>
             @endforeach
 
@@ -144,7 +150,7 @@
 
     <table cellspacing="0" cellpadding="0">
         <tr>
-            <th colspan="7">{{$match->HomeTeam->name}}</th>
+            <th colspan="7">{{$match->AwayTeam->name}}</th>
         </tr>
         <tr>
             <th>Nombre</th>
@@ -158,7 +164,11 @@
         <?php  $countA = 0; ?>
         @foreach($match->AwayTeam->Players as $player)
 
-            <tr class="trTable">
+            @if($player->FasesWeekSanciones($match->FasesWeek->id))
+                <tr class="trTable" bgcolor="#d3d3d3">
+            @else
+                <tr class="trTable" >
+            @endif
                 <td>{{$player->fullName()}}</td>
                 <td></td>
                 <td></td>

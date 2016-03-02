@@ -46,6 +46,17 @@ class Players extends Entity{
         return $this->hasMany(Sanciones::getClass());
     }
 
+    public function FasesWeekSanciones($fasesWeekid = null)
+    {
+
+        $sancion = Sanciones::where('players_id',$this->attributes['id'])->where('end_fases_week_id','>=',$fasesWeekid)->get();
+
+        if($sancion->count() != 0)
+            return(true);
+        else
+            return(false);
+
+    }
 
 
 }

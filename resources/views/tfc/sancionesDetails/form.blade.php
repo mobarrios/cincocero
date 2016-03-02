@@ -8,7 +8,7 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
-        {!! Form::textCustom('name', 'Nombre Categoría')!!}
+        {!! Form::textCustom('name', 'Nombre Sanción')!!}
 
         <hr>
 
