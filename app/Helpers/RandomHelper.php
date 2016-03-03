@@ -9,6 +9,12 @@ class RandomHelper
     {
         $key = "";
 
+
+        $pattern = str_replace(' ', '-', $pattern);
+
+        $pattern =  preg_replace('/[^A-Za-z0-9\-]/', '', $pattern);
+
+
         for($i=0;$i<$length;$i++)
         {
             $key .= $pattern{rand(0,strlen($pattern)-1)};
