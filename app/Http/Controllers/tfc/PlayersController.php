@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\tfc;
 
+use App\Entities\Images;
 use App\Entities\tfc\Players;
 use App\Entities\tfc\Teams;
 use App\Http\Repositories\tfc\PlayersRepo as Repo;
