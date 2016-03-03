@@ -14,24 +14,28 @@
         body{
             margin:0;
             padding:0;
-            font:70% Arial, Helvetica, sans-serif;
+            font:40% Arial, Helvetica, sans-serif;
             color:#555;
-            line-height:150%;
+            line-height:100%;
             text-align:left;
         }
+
         a{
             text-decoration:none;
             color:#057fac;
         }
+
         a:hover{
             text-decoration:none;
             color:#999;
         }
+
         h1{
-            font-size:140%;
+            font-size:100%;
             margin:0 20px;
             line-height:80px;
         }
+
         h2{
             font-size:120%;
         }
@@ -39,30 +43,49 @@
         #container{
             margin:0 auto;
             width:60%;
-            background:#fff;
-            padding-bottom:20px;
+            /*background:#fff;*/
+            padding-bottom:10px;
         }
+
         #content{margin:0 20px;}
+
         p.sig{
             margin:0 auto;
             width:680px;
             padding:1em 0;
         }
+
         form{
-            margin:1em 0;
+            margin:5px 0;
             padding:.2em 20px;
-            background:#eee;
+            /*background:#eee;*/
         }
 
         .trTable>td
         {
-            height: 50px !important;
+            height: 15px !important;
 
+        }
+
+        td{
+              font-size:7pt !important;
+              border-color:black !important;
+              background-color: white !important;
+          }
+
+        th{
+            border-color:black !important;
+            font-size:10pt !important;
         }
 
         .vc{
             width:10% !important;
         }
+
+        .sancionado{
+            /*background-color: #b3b3b3 !important;*/
+        }
+
     </style>
 
 </head>
@@ -72,8 +95,6 @@
 
     <h1><img src="logo-white.png" width="306" height="70" alt=""/></h1>
     <h1>Grilla TFC - Partido del Día</h1>
-
-
 
         <!-- all you need with Tablecloth is a regular, well formed table. No need for id's, class names... -->
         <table cellspacing="0" cellpadding="0">
@@ -115,7 +136,7 @@
 
 
                 @if($player->FasesWeekSanciones($match->FasesWeek->id))
-                    <tr class="trTable" bgcolor="#d3d3d3">
+                    <tr class="trTable" bgcolor="#ddd !important">
                         <td>{{$player->fullName()}}</td>
                         <td></td>
                         <td></td>
@@ -173,7 +194,7 @@
         @foreach($match->AwayTeam->Players as $player)
 
             @if($player->FasesWeekSanciones($match->FasesWeek->id))
-                <tr class="trTable" bgcolor="#d3d3d3">
+                <tr class="trTable" bgcolor="#ddd !important">
                     <td>{{$player->fullName()}}</td>
                     <td></td>
                     <td></td>
@@ -213,7 +234,7 @@
 
 
     </table>
-
+    <br>
     <h2>Resultado Final</h2>
 
         <table width="38%" cellpadding="0" cellspacing="0">
