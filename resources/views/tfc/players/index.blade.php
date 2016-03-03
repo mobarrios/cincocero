@@ -40,9 +40,14 @@
                 <tr>
                     <td>{{$model->id}}</td>
                     <td style="width: 15%;">
+                        @if($model->Images->count() > 0)
                             <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
-                                <img width="100%;" src="{{$model->Images->first()->image or ''}}" >
+                                <img width="100%;" src="{{$model->Images->first()->image}}" >
                             </a>
+                        @else
+                            <i class='fa fa-user' style="font-size:50px;text-align:center;width: 100%;color: rgb(174, 174, 174);"></i>
+                        @endif
+
                     </td>
                     <td>{{$model->dni}}</td>
                     <td>{{$model->fullName()}}</td>
