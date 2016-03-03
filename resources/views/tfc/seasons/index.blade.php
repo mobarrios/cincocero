@@ -72,7 +72,10 @@
 
                             </div>
                             <div class="panel-footer">
-                                <a href="{{route('tournamentsGetNew',[$season->id, $cat->id])}}" class="btn btn-xs btn-block">Nuevo Torneo</a>
+                                <a href="{{route('tournamentsGetNew',[$season->id, $cat->id])}}"    class="btn btn-xs btn-default">Nuevo Torneo</a>
+                                <a href="{{route('tournamentsDestacadosPlayersGetNew',[$season->id, $cat->id])}}"     class="btn btn-xs btn-default">Jugador Destacado</a>
+                                <a href="{{route('tournamentsDestacadosTeamsGetNew',[$season->id, $cat->id])}}"     class="btn btn-xs btn-default">Equipo Destacado</a>
+
                             </div>
                         </div>
 

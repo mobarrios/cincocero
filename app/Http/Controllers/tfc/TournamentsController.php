@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Fases;
+use App\Entities\tfc\Players;
+use App\Entities\tfc\Teams;
 use App\Entities\tfc\Tournaments;
 use App\Http\Repositories\tfc\TournamentsRepo as Repo;
 use App\Http\Controllers\Controller;
@@ -68,6 +70,19 @@ class TournamentsController extends Controller {
         $this->data['seasons_id']   = $season_id;
 
         return view($this->form)->with($this->data);
+    }
+
+    public function destacadosPlayersGetNew()
+    {
+        $this->data['players']  = Players::orderBy('teams_id','ASC')->lists('name','id');
+        return view('tfc.tournaments.formPlayersDestacados')->with($this->data);
+    }
+
+
+    public function destacadosTeamsGetNew()
+    {
+        $this->data['teams']    = Teams::orderBy('name','ASC')->lists('name','id');
+        return view('tfc.tournaments.formTeamsDestacados')->with($this->data);
     }
 
 
