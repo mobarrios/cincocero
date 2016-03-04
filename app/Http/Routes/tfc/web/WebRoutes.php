@@ -101,4 +101,6 @@ Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
 
     Route::post('registracion',['as'=>'postRegistration','uses'=>'WebController@postRegistration']);
 
+    Route::post('contacto',['as'=>'postContact','uses'=>'WebController@postContact']);
+
 });
