@@ -367,12 +367,14 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
                 'tema' => 'required',
                 'message' => 'required'
             ]);
-        
+
         if ($validator->fails()) {
             return "Complete correctamente los campos anteriores";
         }else{
-            mail('fernandoalf@hotmail.com','Contacto desde la web',$request->message);
-            return "Envio el mail";
+            if(mail('fernandoalf@hotmail.com','Contacto desde la web',$request->message))
+                return "Envio el mail";
+            else
+                "No se pudo enviar el mail.";
         }
 
     }
