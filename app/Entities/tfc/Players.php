@@ -55,7 +55,11 @@ class Players extends Entity{
             return(true);
         else
             return(false);
+    }
 
+    public function DestacadosCategories()
+    {
+        return $this->hasMany(DestacadosCategories::getClass());
     }
 
 

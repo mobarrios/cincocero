@@ -3,15 +3,24 @@
     @section('content')
 
         @if(isset($model))
-            {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
+            {!! Form::model($model, ['route'=>['tournamentsDestacadosPlayersPostNew',$model->id], 'files' =>'true'] )!!}
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="{{$model->Players->Images->first()->image or 'aa'}}">
+                        <h3> {{$model->Players->fullName}}</h3>
+                    </div>
+                </div>
+            </div>
         @else
-            {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
+            {!! Form::open(['route' => 'tournamentsDestacadosPlayersPostNew' , 'files'=>'true']) !!}
         @endif
 
         {!! Form::selectCustom('players_id','Jugador Destacado',$players)!!}
-        {!! Form::textAreaCustom('nota','Observaciones') !!}
+        {!! Form::textAreaCustom('observations','Observaciones') !!}
 
         <hr>
+
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
         {!! Form::close()!!}
@@ -19,18 +28,6 @@
     @endsection
 
 
-@section('js')
-    <script>
-        $("select[name=players_id]").on('change',function(){
-            if($("select[name=teams_id]").val() != 0)
-                alert('seleccionar un Jugador o un Equipo a la vez.');
-        });
 
-        $("select[name=teams_id]").on('change',function(){
-            if($("select[name=players_id]").val() != 0)
-                alert('seleccionar un Jugador o un Equipo a la vez.');
-        });
-    </script>
-@endsection
 
 @stop

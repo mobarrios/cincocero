@@ -11,6 +11,9 @@ Route::get('new'.$module.'/{season?}/{category?}',    ['middleware'=>'roles','da
 Route::get('newDestacadoJugador'.$module.'/{season?}/{category?}',    ['middleware'=>'roles','data'=> $module.'-store' ,'as'=> $module.'DestacadosPlayersGetNew', 'uses'=> $controller.'@destacadosPlayersGetNew']);
 Route::get('newDestacadoEquipo'.$module.'/{season?}/{category?}',    ['middleware'=>'roles','data'=> $module.'-store' ,'as'=> $module.'DestacadosTeamsGetNew', 'uses'=> $controller.'@destacadosTeamsGetNew']);
 
+Route::post('postDestacadoJugador'.$module,    ['middleware'=>'roles','data'=> $module.'-store' ,'as'=> $module.'DestacadosPlayersPostNew', 'uses'=> $controller.'@destacadosPlayersPostNew']);
+Route::post('postDestacadoEquipo'.$module,     ['middleware'=>'roles','data'=> $module.'-store' ,'as'=> $module.'DestacadosTeamsPostNew', 'uses'=> $controller.'@destacadosTeamsPostNew']);
+
 
 Route::post('postNew'.$module,          ['as'=> $module.'PostNew', 'uses'=> $controller.'@postNew']);
 Route::post('postEdit'.$module.'/{id}', ['as'=>$module.'PostEdit', 'uses'=> $controller.'@postEdit']);
