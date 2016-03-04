@@ -13,21 +13,21 @@ $name = $_POST["name"];
 $email = $_POST["email"];
 $message = $_POST["message"];
 $temp_msg = "
-Message: ".$message;
+Mensaje: ".$message;
 
 // Test input values for errors
 $errors = array();
 if(strlen($name) < 2) {
 	if(!$name) {
-		$errors[] = "You must enter a name.";
+		$errors[] = "Tenés que ingresar un nombre.";
 	} else {
-		$errors[] = "Name must be at least 2 characters.";
+		$errors[] = "El nombre debe tener mas de 2 caracteres";
 	}
 }
 if(!$email) {
-	$errors[] = "You must enter an email.";
+	$errors[] = "Ingresá un mail..";
 } else if(!validEmail($email)) {
-	$errors[] = "You must enter a valid email.";
+	$errors[] = "Ingresá un mail válido.";
 }
 if(strlen($message) < 10) {
 	if(!$message) {
