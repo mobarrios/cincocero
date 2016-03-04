@@ -353,4 +353,32 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
         return redirect()->back()->withErrors('INSCRIPCION CARGADA CORRECTAMENTE. Se le enviara un mail con la confirmacion de la inscripcion.');
     }
+
+    // Contacto
+
+    public function postContact(Request $request)
+    {
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => 'required',
+                'email' => 'required|email',
+                'tema' => 'required',
+                'message' => 'required'
+            ]);
+
+        if ($validator->fails()) {
+            return "Complete correctamente los campos anteriores";
+        }else{
+            if(mail('fernandoalf@hotmail.com','Contacto desde la web',$request->message))
+                return "Envio el mail";
+            else
+                "No se pudo enviar el mail.";
+        }
+
+    }
+
+
+
 }

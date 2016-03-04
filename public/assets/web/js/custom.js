@@ -532,6 +532,10 @@ jQuery(document).ready(function () {
                     required: true,
                     email: true
                 },
+                tema: {
+                    required: true,
+                    minlength: 3
+                },
                 message: {
                     required: true,
                     minlength: 10
@@ -542,30 +546,29 @@ jQuery(document).ready(function () {
             // when the user does something horrid
             messages: {
                 name: {
-                    required: "Please enter your name.",
-                    minlength: jQuery.format("At least {0} characters required.")
+                    required: "Por favor ingrese un nombre."
                 },
                 email: {
-                    required: "Please enter your email.",
-                    email: "Please enter a valid email."
+                    required: "Por favor ingrese su email.",
+                    email: "Por favor ingrese un mail válido."
                 },
-                url: {
-                    required: "Please enter your url.",
-                    url: "Please enter a valid url."
+                tema: {
+                    required: "Por favor ingrese un tema.",
+                    minlength: jQuery.format("Ingrese un mínimo de {0}.")
                 },
                 message: {
-                    required: "Please enter a message.",
-                    minlength: jQuery.format("At least {0} characters required.")
+                    required: "Por favor ingrese un mensaje.",
+                    minlength: jQuery.format("Ingrese un mínimo de {0}.")
                 }
             },
             
             // Use Ajax to send everything to processForm.php
             submitHandler: function(form) {
-                jQuery("#submit-contact").attr("value", "Sending...");
+                jQuery("#submit-contact").attr("value", "Enviando...");
                 jQuery(form).ajaxSubmit({
                     success: function(responseText, statusText, xhr, $form) {
                         jQuery("#response").html(responseText).hide().slideDown("fast");
-                        jQuery("#submit-contact").attr("value", "Submit");
+                        jQuery("#submit-contact").attr("value", "ENVIAR MENSAJE");
                     }
                 });
                 return false;

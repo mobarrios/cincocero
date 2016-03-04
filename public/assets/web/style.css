@@ -252,27 +252,27 @@ a,
 [Clear Floated Elements]
 */
 
-.clear {  
-    clear: both;  
-    display: block;  
-    overflow: hidden;  
-    visibility: hidden;  
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
     width: 0;  height: 0;
 }
 .clearfix:before, .clearfix:after{
-    content: '.';  
-    display: block;  
-    overflow: hidden;  
-    visibility: hidden;  
-    font-size: 0;  
-    line-height: 0;  
-    width: 0;  
+    content: '.';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
     height: 0;
 }
-.clearfix:after{  
+.clearfix:after{
     clear: both;
 }
-.clearfix{  
+.clearfix{
     zoom: 1;
 }
 
@@ -344,11 +344,11 @@ a,
     background: #000;
     z-index: 99999;
     width: 200px;
-    display: none; 
+    display: none;
 }
 #top-mobile-menu ul,
 #bottom-mobile-menu ul {
-    z-index: 99999; 
+    z-index: 99999;
 }
 #top-mobile-menu li,
 #bottom-mobile-menu li {
@@ -367,7 +367,7 @@ a,
 }
 #top-mobile-menu > li > a:hover,
 #bottom-mobile-menu > li > a:hover {
-    background: #f1f1f1; 
+    background: #f1f1f1;
     color: #000;
 }
 
@@ -387,7 +387,7 @@ a,
 }
 #top-mobile-menu .open > a,
 #bottom-mobile-menu .open > a {
-    border-bottom: 1px solid #fff; 
+    border-bottom: 1px solid #fff;
 }
 #top-mobile-menu li a .caret,
 #bottom-mobile-menu li a .caret {
@@ -538,13 +538,13 @@ a,
     background: #000;
     z-index: 99999;
     width: 250px;
-    display: none; 
+    display: none;
 }
 .kp-header-2 #mobile-menu {
     top: 46px;
 }
 #mobile-menu ul {
-    z-index: 99999; 
+    z-index: 99999;
 }
 #mobile-menu li {
     margin: 0;
@@ -560,7 +560,7 @@ a,
     position: relative;
 }
 #mobile-menu > li > a:hover {
-    background: #f1f1f1; 
+    background: #f1f1f1;
     color: #000;
 }
 
@@ -576,7 +576,7 @@ a,
     text-transform: none;
 }
 #mobile-menu .open > a {
-    border-bottom: 1px solid #fff; 
+    border-bottom: 1px solid #fff;
 }
 #mobile-menu li a .caret {
     position: absolute;
@@ -1616,7 +1616,7 @@ a,
     font-weight: 700;
     font-family: Open Sans, "arial", sans-serif;
 }
-.punica-poll-widget ul li input[type="radio"], 
+.punica-poll-widget ul li input[type="radio"],
 .punica-poll-widget ul li input[type="checkbox"] {
     margin: 2px 10px 0 0;
     float: left;
@@ -1910,7 +1910,7 @@ a,
     padding-top: 15px;
 }
 .punica-featured-news-widget .older-post {
-    margin: -15px -10px 5px;    
+    margin: -15px -10px 5px;
 }
 .punica-featured-news-widget .older-post li {
     float: left;
@@ -2355,7 +2355,7 @@ a,
 }
 .punica-product-list-widget ul {
     margin: -20px -10px 20px;
-    
+
 }
 .punica-product-list-widget ul li {
     float: left;
@@ -2813,7 +2813,7 @@ a,
 .masonry-wrapper .pagination ul li:first-child {
     margin: 0;
 }
-.masonry-wrapper .pagination ul li a, 
+.masonry-wrapper .pagination ul li a,
 .masonry-wrapper .pagination ul li span {
     border: none;
     font-size: 24px;
@@ -2824,7 +2824,7 @@ a,
     font-style: italic;
     font-weight: 400;
 }
-.masonry-wrapper .pagination ul li span.current, 
+.masonry-wrapper .pagination ul li span.current,
 .masonry-wrapper .pagination ul li a:hover {
 	background: none;
 	font-family: "Open Sans", arial, sans-serif;
