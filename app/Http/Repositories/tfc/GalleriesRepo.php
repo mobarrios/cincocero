@@ -26,7 +26,7 @@ class GalleriesRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'imagen'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'imagen'  => 'image|mimes:jpeg,jpg,png,bmp|max:5120'
         ];
     }
 
@@ -34,7 +34,7 @@ class GalleriesRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'imagen'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'imagen'  => 'image|mimes:jpeg,jpg,png,bmp|max:5120'
         ];
     }
 
