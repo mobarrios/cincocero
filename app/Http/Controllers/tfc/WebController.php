@@ -5,6 +5,7 @@ namespace App\Http\Controllers\tfc;
 use App\Entities\Images;
 use App\Entities\tfc\Categories;
 use App\Entities\tfc\Destacados;
+use App\Entities\tfc\DestacadosCategories;
 use App\Entities\tfc\Fases;
 use App\Entities\tfc\FasesWeek;
 use App\Entities\tfc\Matches;
@@ -90,6 +91,7 @@ class WebController extends Controller {
 
     public function Principal($id,Tournaments $torneos,Categories $categorias,Fases $fases,Destacados $destacados)
     {
+        /*
         $data['jugadorDestacado'] = $destacados->where('players_id','>',0)
             ->whereHas('fasesWeeks',function($q) use($id){
                 $q->where('fases_id',$id)->where('active',1);
@@ -101,6 +103,12 @@ class WebController extends Controller {
                 $q->where('fases_id',$id)->where('active',1);
             })->orderBy('id','des')
             ->first();
+        */
+
+        $data['jugadorDestacado'] = DestacadosCategories::where('categories_id',$id)->where('players_id','!=','null')->first();
+
+        $data['equipoDestacado'] = DestacadosCategories::where('categories_id',$id)->where('teams_id','!=','null')->first();
+
 
         $data['faseActual'] = $fases->find($id);
 
@@ -270,6 +278,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
                                             $q->where('fases_id',$id)->where('active',1);
                                         })->orderBy('id','des')
                                         ->first();
+
 
         $data['faseActual'] = $fases->find($id);
         $data['categoriaActual'] = $categories->find($categoriaId);
