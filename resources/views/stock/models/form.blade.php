@@ -9,15 +9,10 @@
         @endif
 
 
-        {!! Form::textCustom('name', 'Articulo')!!}
+        {!! Form::textCustom('name', 'Modelo')!!}
 
-        {!! Form::selectCustom('brands_id', 'Marca',$brands)!!}
-
-        {!! Form::dateCustom('date','Dia') !!}
         {!! Form::imageCustom('image','Foto')!!}
 
-        {!! Form::colorPicker('col','color')!!}
-        {!! Form::colorPicker('col1','color1')!!}
 
         <hr>
 

@@ -36,6 +36,8 @@
     <link href="assets/inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="assets/inspinia/css/plugins/chosen/chosen.css" rel="stylesheet">
     <link href="assets/inspinia/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
+
 
 
     <!--
@@ -182,7 +184,12 @@
 
 <link href="assets/inspinia/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
+<script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
 
+<script src="assets/js/jquery_datepicker_es.js"></script>
+
+
+<script src="assets/js/custom.js"></script>
 
 @yield('js')
 
