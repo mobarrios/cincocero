@@ -13,8 +13,13 @@
     <link href="assets/inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <link href="assets/inspinia/css/animate.css" rel="stylesheet">
+    <link href="assets/inspinia/css/plugins/toastr/toastr.min.css" rel="stylesheet">
     <link href="assets/inspinia/css/style.css" rel="stylesheet">
 
+    <!-- Mainly scripts -->
+    <script src="assets/inspinia/js/jquery-2.1.1.js"></script>
+    <script src="assets/inspinia/js/bootstrap.min.js"></script>
+    <script src="assets/inspinia/js/plugins/toastr/toastr.min.js"></script>
 </head>
 
 <body class="gray-bg">
@@ -23,7 +28,7 @@
     <div>
         <div>
 
-            <h1 class="logo-name">{nc}</h1>
+            <h1 class="logo-name" style="color: rgba(0, 198, 160, 0.14);">{nc}</h1>
 
         </div>
         <h3>Nav { Coder }</h3>
@@ -63,11 +68,15 @@
 
     </div>
 </div>
+@include('messages')
 
-<!-- Mainly scripts -->
-<script src="assets/inspinia/js/jquery-2.1.1.js"></script>
-<script src="assets/inspinia/js/bootstrap.min.js"></script>
-
+<script>
+    if ($('#msg').length){
+        toastr.options.closeButton = true;
+        toastr.options.positionClass = 'toast-bottom-full-width';
+        toastr.success($('.error'));
+    }
+</script>
 </body>
 
 </html>

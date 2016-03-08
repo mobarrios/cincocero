@@ -1,4 +1,5 @@
 @extends('index')
+
     @section('content')
         <div class="col-lg-6">
             <div class="ibox float-e-margins">
@@ -7,7 +8,7 @@
                 </div>
             </div>
 
-                <div class="ibox float-e-margins">
+            <div class="ibox float-e-margins">
                 <div class="ibox-content">
                     <div>
                         <table class="table">
@@ -54,8 +55,16 @@
                 <div class="ibox-content">
                     <h1>{{Auth::user()->name}} {{Auth::user()->last_name}}</h1>
                     <div class="m-b-sm">
-                        <button class="btn btn-warning btn-circle btn-lg btn-outline" type="button"><i class="fa fa-user"></i>
-                        </button>
+                            @if(Auth::user()->images->count() > 0)
+                                <div class="btn btn-warning btn-circle btn-lg btn-outline div-profile-image">
+                                    <img src="{!! Auth::user()->images->first()->image !!}" alt="foto de perfil">
+                                </div>
+                            @else
+                            {{-- SI EL PETE NO TIENE IMAGEN QUE LE PONGA EL ICONITO --}}
+                                <button class="btn btn-warning btn-circle btn-lg btn-outline" type="button">
+                                    <i class="fa fa-user"></i>
+                                </button>
+                            @endif
                     </div>
                     <p class="font-bold">Ultima Conexión : <strong>hace 2 dias</strong></p>
                 </div>
@@ -95,6 +104,7 @@
                 </div>
             </div>
         </div>
+        <div class="clearfix"></div>
 
 
 
