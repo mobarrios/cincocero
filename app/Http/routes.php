@@ -67,7 +67,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                 require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
 
-                $route_files = File::allFiles(__DIR__ . '/Routes/stock');
+                $route_files = File::allFiles(__DIR__ . '/Routes/hogar');
 
                 foreach ($route_files as $partial)
                 {
