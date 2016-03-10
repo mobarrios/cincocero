@@ -51,7 +51,7 @@ class FasesController extends Controller {
 
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
-        $this->data['teams']             = Teams::orderBy('name','ASC')->get();
+        $this->data['teams']             = Teams::where('status',1)->orderBy('name','ASC')->get();
 
         //data for validation
         $this->rules                = $this->repo->Rules();

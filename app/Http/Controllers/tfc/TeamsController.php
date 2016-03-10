@@ -29,7 +29,7 @@ class TeamsController extends Controller {
 
         //data from entities
         $this->repo                 = $repo;
-        $this->data['models']       = $repo->ListAll();
+        $this->data['models']       = Teams::orderBy('status','ASC')->get();
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
@@ -44,6 +44,8 @@ class TeamsController extends Controller {
         $this->data['entityImg']        = $module;
 
         //selects
+        $this->data['status']       = ['1'=>'activo','2'=>'inactivo'];
+
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
         //$this->data['currency']        = Currency::lists('name','id');
 
