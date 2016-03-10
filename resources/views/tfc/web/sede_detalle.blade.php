@@ -68,12 +68,13 @@
                 // Si hay resultados encontrados, centramos y repintamos el mapa
                 // esto para eliminar cualquier pin antes puesto
                 var mapOptions = {
+                    zoom: 16,
                     center: results[0].geometry.location,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
                 map = new google.maps.Map($("#map_canvas").get(0), mapOptions);
                 // fitBounds acercará el mapa con el zoom adecuado de acuerdo a lo buscado
-                map.fitBounds(results[0].geometry.viewport);
+//                map.fitBounds(results[0].geometry.viewport);
                 // Dibujamos un marcador con la ubicación del primer resultado obtenido
                 var markerOptions = { position: results[0].geometry.location }
                 var marker = new google.maps.Marker(markerOptions);
@@ -81,7 +82,7 @@
             } else {
                 // En caso de no haber resultados o que haya ocurrido un error
                 // lanzamos un mensaje con el error
-                alert("No se encontrá la ubicación");
+//                alert("No se encontrá la ubicación");
             }
         }
     </script>
