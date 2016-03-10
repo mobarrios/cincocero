@@ -80,7 +80,7 @@ class WebController extends Controller {
 
     public function Inscripcion()
     {
-        $data['teams'] = Teams::orderBy('name','asc')->lists('name','id');
+        $data['teams'] = Teams::where('status',1)->orderBy('name','asc')->lists('name','id');
         return view('tfc/web/inscripcion')->with($data);
     }
 
