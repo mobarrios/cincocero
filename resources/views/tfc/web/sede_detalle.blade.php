@@ -18,7 +18,7 @@
                         <!-- punica-entry-list-2-widget -->
                     </div>
                     <p>Unite al torneo más competitivo,   jugá en campos profesionales  con instalaciones de primer  nivel y en un ambiente tranquilo.</p>
-                    <p><img src="{!! $sedes->images->first()->image!!}" class="center-block" width="600" height="338" alt="{!! $sedes->name !!}"/></p>
+                    <p><img src="{!! $sedes->images->first()->image or ""!!}" class="center-block" width="600" height="338" alt="{!! $sedes->name !!}"/></p>
                     <p>&nbsp;</p>
                     <p><span class="entry-title">Donde Estamos</span></p>
                     <p><span class="entry-title">Telefono: {!! $sedes->phone !!}</span></p>
@@ -52,7 +52,15 @@
         var geocoder = new google.maps.Geocoder();
         // Hacemos la petición indicando la dirección e invocamos la función
         // geocodeResult enviando todo el resultado obtenido
-        geocoder.geocode({ 'address': address}, geocodeResult);
+        if(geocoder.geocode({ 'address': address}, geocodeResult))
+            geocoder.geocode({ 'address': address}, geocodeResult);
+        else{
+            var coords = address.split(",");
+            var lat = parseFloat(coords[0]);
+            var lng = parseFloat(coords[1]);
+            var latlng = new google.maps.LatLng(lat, lng);
+            geocoder.geocode({ 'latLng': latlng}, geocodeResult);
+        }
 
         function geocodeResult(results, status) {
             // Verificamos el estatus

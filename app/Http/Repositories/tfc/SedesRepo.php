@@ -26,7 +26,7 @@ class SedesRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'address'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:5120'
         ];
     }
 
@@ -35,7 +35,7 @@ class SedesRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'address'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:5120'
         ];
     }
 

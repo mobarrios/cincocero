@@ -26,7 +26,7 @@ class CanchasRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'sedes_id'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:3072'
         ];
     }
 
@@ -35,7 +35,7 @@ class CanchasRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'sedes_id'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:3072'
         ];
     }
 
