@@ -4,7 +4,7 @@
       <div class="center-col">
 
         <center>
-          <div class="breadcrumb clearfix">ReGLAMENTO<span class="bottom-line"></span>
+          <div class="breadcrumb clearfix">REGLAMENTO<span class="bottom-line"></span>
           </div></center>
         <!-- breadcrumb -->
 

@@ -7,12 +7,12 @@
             <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
-                  <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$categoriaActual->color_bottom}};border-top-color: {{$categoriaActual->color_bottom}};border-left-color: {{$categoriaActual->color_bottom}}">
-                    <div class="color-top" style="background-color: {{$categoriaActual->color_top}};"></div>
-                    <div class="color-bottom" style="background-color: {{$categoriaActual->color_bottom}};">
-                      <h2>TABLA DE POSICIONES</h2>
+                    <div class="categoria-container titulo-categoria" style="border-bottom-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif">
+                        <div class="color-top" style="background-color: @if($categoriaActual){{$categoriaActual->color_top}}@else{{'#0f5128'}}@endif;"></div>
+                        <div class="color-bottom" style="background-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif;">
+                            <h2>TABLA DE POSICIONES</h2>
+                        </div>
                     </div>
-                  </div>
                   {{--<p><img src="assets/web/images/tabla_pos.png" width="600" height="70" alt=""/></p>--}}
                   <p>&nbsp;</p>
                 </div>
