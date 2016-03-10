@@ -9,9 +9,11 @@
         @endif
 
         {!! Form::textCustom('name', 'Nombre Equipo')!!}
+        {!! Form::selectCustom('status','Estado',$status) !!}
 
         {!! Form::imageCustom('image','Escudo')!!}
         <hr>
+
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
         {!! Form::close()!!}

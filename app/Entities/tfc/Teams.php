@@ -7,7 +7,7 @@ class Teams extends Entity{
 
     protected $table = 'teams';
 
-    protected $fillable = ['name','password'];
+    protected $fillable = ['name','password','status'];
 
 
     public function Fases()
