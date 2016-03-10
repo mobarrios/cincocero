@@ -31,7 +31,18 @@
                       <td colspan="2" align="center" class="info">DIF</td>
                     </tr>
                     @if(count($tablas) == 0)
-                      @include('tfc/web/includes/sinDatos')
+                        <tr>
+                            <td colspan="2" align="center" class="active"><img src="assets/web/images/teamDefault.png" width="35" height="35" alt=""/></td>
+                            <td colspan="2" align="center" class="active"><a href="">-</a></td>
+                            <td colspan="2" align="center" class="active">0</td>
+                            <td colspan="2" align="center" class="active">0</td>
+                            <td colspan="2" align="center" class="active">0</td>
+                            <td colspan="2" align="center" class="active">0</td>
+                            <td colspan="2" align="center" class="active">0</td>
+                            <td colspan="2" align="center" class="active">0</td>
+                            <td colspan="2" align="center" class="active">0</td>
+                            <td colspan="2" align="center" class="active">0</td>
+                        </tr>
                     @else
                       @foreach($tablas as $tab)
                         <tr>
@@ -60,12 +71,10 @@
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                   <tbody>
 
-                  @foreach($resultado as $res)
-
-                      @if($res->count() == 0)
+                      @if($resultado->count() == 0)
                           @include('tfc/web/includes/sinDatos')
                       @else
-
+                        @foreach($resultado as $res)
                           <tr>
                               <td colspan="6" align="center" class="success">Fecha {!! $res->name !!}</td>
                           </tr>
@@ -88,8 +97,8 @@
                                 </tr>
                             @endforeach
 
+                        @endforeach
                       @endif
-                    @endforeach
                   </tbody>
                 </table>
                 <p>&nbsp;</p>

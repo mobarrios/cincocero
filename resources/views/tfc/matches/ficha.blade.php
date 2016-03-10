@@ -18,6 +18,9 @@
             color:#555;
             line-height:100%;
             text-align:left;
+            width:100%;
+            height:100%;
+            position: relative;
         }
 
         a{
@@ -86,18 +89,60 @@
             /*background-color: #b3b3b3 !important;*/
         }
 
+
+        #res > table{
+            width:49%;
+            margin-top:0;
+        }
+
+        #local{
+            position:absolute;
+            left:0;
+        }
+
+        #visitante{
+            position:absolute;
+            right:0;
+        }
+
+        #resultadoFinal{
+            position: absolute;
+            top:0;
+            left:50%;
+        }
+
+        #bottom{
+            position:absolute;
+            bottom:5px;
+            border:1px solid black;
+        }
+
     </style>
 
 </head>
 
 <body>
+    <div id="resultadoFinal">
+        <h2>Resultado Final</h2>
+
+        <table width="50%" cellpadding="0" cellspacing="0" style="margin-top:0">
+            <tr>
+                <th width="50%">{{$match->HomeTeam->name}}</th>
+                <td width="50%">.</td>
+            </tr>
+            <tr>
+                <th>{{$match->AwayTeam->name}}</th>
+                <td>.</td>
+            </tr>
+        </table>
+    </div>
 
 
-    <h1><img src="logo-white.png" width="306" height="70" alt=""/></h1>
+    {{--<h1><img src="logo-white.png" width="306" height="70" alt=""/></h1>--}}
     <h1>Grilla TFC - Partido del Día</h1>
 
         <!-- all you need with Tablecloth is a regular, well formed table. No need for id's, class names... -->
-        <table cellspacing="0" cellpadding="0">
+        <table cellspacing="0" cellpadding="0" style="margin-top:0">
             <tr>
                 <th style="text-align: center">Dia</th>
                 <th style="text-align: center">Torneo</th>
@@ -117,170 +162,163 @@
 
         </table>
 
-
-        <table cellspacing="0" cellpadding="0">
-            <tr>
-                <th colspan="7">{{$match->HomeTeam->name}}</th>
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <th>Firma</th>
-                <th class="vc">N°</th>
-                <th class="vc">Amar.</th>
-                <th class="vc">Roja</th>
-                <th class="vc">Goles</th>
-                <th>Observaciones</th>
-            </tr>
-            <?php  $countH = 0; ?>
-            @foreach($match->HomeTeam->Players as $player)
+        <div id="res">
 
 
-                @if($player->FasesWeekSanciones($match->FasesWeek->id))
-                    <tr class="trTable" bgcolor="#ddd !important">
-                        <td>{{$player->fullName()}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>SANCIONADO</td>
-                    </tr>
-                @else
-                    <tr class="trTable" >
-                        <td>{{$player->fullName()}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                @endif
-
-                <?php $countH++  ?>
-            @endforeach
-
-
-
-            @for($i = $countH ; $i <  20 ; $i++)
-            <tr class="trTable">
-                <td>.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            @endfor
-
-
-        </table>
-
-    <table cellspacing="0" cellpadding="0">
-        <tr>
-            <th colspan="7">{{$match->AwayTeam->name}}</th>
-        </tr>
-        <tr>
-            <th>Nombre</th>
-            <th>Firma</th>
-            <th>N°</th>
-            <th>Amarilla</th>
-            <th>Roja</th>
-            <th>Goles</th>
-            <th>Observaciones</th>
-        </tr>
-        <?php  $countA = 0; ?>
-        @foreach($match->AwayTeam->Players as $player)
-
-            @if($player->FasesWeekSanciones($match->FasesWeek->id))
-                <tr class="trTable" bgcolor="#ddd !important">
-                    <td>{{$player->fullName()}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>SANCIONADO</td>
+        <table cellspacing="0" cellpadding="0" id="local">
+                <tr>
+                    <th colspan="7">{{$match->HomeTeam->name}}</th>
                 </tr>
-            @else
-                <tr class="trTable" >
-                    <td>{{$player->fullName()}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Firma</th>
+                    <th class="vc">N°</th>
+                    <th class="vc">Amar.</th>
+                    <th class="vc">Roja</th>
+                    <th class="vc">Goles</th>
+                    <th>Observaciones</th>
                 </tr>
-            @endif
-
-            <?php $countA++  ?>
-        @endforeach
+                <?php  $countH = 0; ?>
+                @foreach($match->HomeTeam->Players as $player)
 
 
+                    @if($player->FasesWeekSanciones($match->FasesWeek->id))
+                        <tr class="trTable" bgcolor="#ddd !important">
+                            <td>{{$player->fullName()}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>SANCIONADO</td>
+                        </tr>
+                    @else
+                        <tr class="trTable" >
+                            <td>{{$player->fullName()}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    @endif
 
-        @for($i = $countA ; $i <  20 ; $i++)
-            <tr class="trTable">
-                <td>.</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        @endfor
+                    <?php $countH++  ?>
+                @endforeach
 
 
-    </table>
+
+                @for($i = $countH ; $i <  25 ; $i++)
+                    <tr class="trTable">
+                        <td>.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                @endfor
+
+
+            </table>
+
+            <table cellspacing="0" cellpadding="0" id="visitante">
+                <tr>
+                    <th colspan="7">{{$match->AwayTeam->name}}</th>
+                </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Firma</th>
+                    <th>N°</th>
+                    <th>Amarilla</th>
+                    <th>Roja</th>
+                    <th>Goles</th>
+                    <th>Observaciones</th>
+                </tr>
+                <?php  $countA = 0; ?>
+                @foreach($match->AwayTeam->Players as $player)
+
+                    @if($player->FasesWeekSanciones($match->FasesWeek->id))
+                        <tr class="trTable" bgcolor="#ddd !important">
+                            <td>{{$player->fullName()}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>SANCIONADO</td>
+                        </tr>
+                    @else
+                        <tr class="trTable" >
+                            <td>{{$player->fullName()}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    @endif
+
+                    <?php $countA++  ?>
+                @endforeach
+
+
+
+                @for($i = $countA ; $i <  25 ; $i++)
+                    <tr class="trTable">
+                        <td>.</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                @endfor
+
+
+            </table>
+        </div>
     <br>
-    <h2>Resultado Final</h2>
 
-        <table width="38%" cellpadding="0" cellspacing="0">
-            <tr>
-                <th width="18%">{{$match->HomeTeam->name}}</th>
-                <td width="82%">.</td>
-            </tr>
-            <tr>
-                <th>{{$match->AwayTeam->name}}</th>
-                <td>.</td>
-            </tr>
-        </table>
+        <div id="bottom">
 
-        <h2>&nbsp;</h2>
+            <h2>&nbsp;</h2>
 
-        <table cellspacing="0" cellpadding="0">
-            <tr>
-                <td>&nbsp;</td>
-                <th>Nombre</th>
-                <th>Firma</th>
-            </tr>
-            <tr>
-                <th>Arbitro</th>
-                <td>.</td>
-                <td>.</td>
-            </tr>
-            <tr>
-                <th>Juez de Linea 1</th>
-                <td>.</td>
-                <td>.</td>
-            </tr>
-            <tr>
-                <th>Juez de Linea 2</th>
-                <td>.</td>
-                <td>.</td>
-            </tr>
-        </table>
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>&nbsp;</td>
+                    <th>Nombre</th>
+                    <th>Firma</th>
+                </tr>
+                <tr>
+                    <th>Arbitro</th>
+                    <td>.</td>
+                    <td>.</td>
+                </tr>
+                <tr>
+                    <th>Juez de Linea 1</th>
+                    <td>.</td>
+                    <td>.</td>
+                </tr>
+                <tr>
+                    <th>Juez de Linea 2</th>
+                    <td>.</td>
+                    <td>.</td>
+                </tr>
+            </table>
 
-        <h2>Observaciones</h2>
+            <h2>Observaciones</h2>
 
-        <table width="38%" cellpadding="0" cellspacing="0">
-            <tr>
-                <td width="82%">Campo de Observaciones</td>
-            </tr>
-        </table>
-
+            <table width="38%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="82%">Campo de Observaciones</td>
+                </tr>
+            </table>
+        </div>
 
 
 

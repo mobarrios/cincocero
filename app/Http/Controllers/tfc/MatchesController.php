@@ -254,7 +254,7 @@ class MatchesController extends Controller {
 
 
         $pdf = PDF::loadView('tfc.matches.ficha',$data);
-        $pdf->setPaper('A4');
+        $pdf->setPaper('A4', 'landscape');
 
         return $pdf->stream();
 
