@@ -130,7 +130,9 @@
 
 @section('js')
     <script>
-        $('#dob').datepicker();
+        $('#dob').datepicker({
+            changeYear: true
+        });
         $.datepicker.regional['es'] = {
             closeText: 'Cerrar',
             prevText: '<Ant',
