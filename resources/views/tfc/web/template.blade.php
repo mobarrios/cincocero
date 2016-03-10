@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/web/css/colorbox.css" media="all" />
     <link rel="stylesheet" href="assets/web/css/color-options.css" media="all" />
     <link rel="stylesheet" href="assets/web/css_mas/style.css">
-        <link rel="stylesheet" href="assets/web/css/fonts.css">
+    <link rel="stylesheet" href="assets/web/css/fonts.css">
     <link rel="stylesheet" href="http://www.navcoder.net/navcoder.net/copyright.css">
 
     <link href="assets/css/custom.css" rel="stylesheet">
@@ -48,6 +48,7 @@
     <link rel="apple-touch-icon" href="assets/web/img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/web/img/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="assets/web/img/apple-touch-icon-114x114.png">
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
 
 </head>
 
@@ -159,6 +160,7 @@
 </div>
 
 <script src="assets/web/js/jquery-1.10.2.min.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
 <script src="assets/web/js/retina.js"></script>
 {{--<script src="assets/web/js/bootstrap.min.js"></script>--}}
 <script src="assets/web/js/colorswitch.js"></script>
