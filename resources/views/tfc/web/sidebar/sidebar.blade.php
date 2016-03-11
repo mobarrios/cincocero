@@ -21,7 +21,6 @@
               <ul class="sub-menu">
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('destacado',[$categoriaActual->id,$fas->id])}}">Destacado de la fecha</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('resultado',[$categoriaActual->id,$fas->id])}}">Posiciones y Resultados</a></li>
-<<<<<<< HEAD
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route("fechaActual",[$categoriaActual->id,$fas->id])}}">Proxima Fecha</a></li>
                 {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route("proximaFecha",[$categoriaActual->id,$fas->id])}}">Proxima Fecha</a></li>--}}
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("fixture",[$categoriaActual->id,$fas->id])}}">Fixture</a></li>
