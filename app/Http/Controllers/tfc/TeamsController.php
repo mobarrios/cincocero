@@ -29,7 +29,7 @@ class TeamsController extends Controller {
 
         //data from entities
         $this->repo                 = $repo;
-        $this->data['models']       = Teams::orderBy('status','ASC')->get();
+        $this->data['models']       = Teams::orderBy('status','ASC')->orderBy('name','ASC')->get();
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
