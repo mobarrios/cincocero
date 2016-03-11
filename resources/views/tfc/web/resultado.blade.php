@@ -46,7 +46,7 @@
                       <td colspan="2" align="center" class="info">DIF</td>
                     </tr>
                     @if(count($tablas) == 0)
-                        @foreach($tablas as $tab)
+                        @foreach($faseActual->Teams as $team)
                             <tr>
                                 <td colspan="2" align="center" class="active"><img src="{!! $team->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35" alt=""/></td>
                                 <td colspan="2" align="center" class="active"><a href="{{route('equipo',[$categoriaActual->id,$team->id])}}">{!! $team->name or '-' !!}</a></td>
