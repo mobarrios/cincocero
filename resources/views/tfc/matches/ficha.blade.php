@@ -14,7 +14,7 @@
         body{
             margin:0;
             padding:0;
-            font:40% Arial, Helvetica, sans-serif;
+            font:12px Arial, Helvetica, sans-serif !important;
             color:#555;
             line-height:100%;
             text-align:left;
@@ -40,7 +40,7 @@
         }
 
         h2{
-            font-size:120%;
+            font-size:100%;
         }
 
         #container{
@@ -71,14 +71,14 @@
         }
 
         td{
-              font-size:7pt !important;
+              /*font-size:7pt !important;*/
               border-color:black !important;
               background-color: white !important;
           }
 
         th{
             border-color:black !important;
-            font-size:10pt !important;
+            /*font-size:10pt !important;*/
         }
 
         .vc{
@@ -107,14 +107,22 @@
 
         #resultadoFinal{
             position: absolute;
-            top:0;
-            left:50%;
+            bottom:130px;
+            left:65%;
+            width:30%;
+        }
+
+        #resultadoFinal > tr,#resultadoFinal > td{
+            border-width: 1px !important;
+            border-style: solid !important;
+            border-color:black !important;
+            height:50px !important;
         }
 
         #bottom{
             position:absolute;
             bottom:5px;
-            border:1px solid black;
+            width:60%;
         }
 
     </style>
@@ -125,14 +133,14 @@
     <div id="resultadoFinal">
         <h2>Resultado Final</h2>
 
-        <table width="50%" cellpadding="0" cellspacing="0" style="margin-top:0">
-            <tr>
-                <th width="50%">{{$match->HomeTeam->name}}</th>
-                <td width="50%">.</td>
+        <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid black;">
+            <tr style="border:1px solid black;">
+                <td width="50%" style="border:1px solid black;">{{$match->HomeTeam->name}}</td>
+                <td width="50%" style="border:1px solid black;">.</td>
             </tr>
-            <tr>
-                <th>{{$match->AwayTeam->name}}</th>
-                <td>.</td>
+            <tr style="border:1px solid black;">
+                <td width="50%" style="border:1px solid black;">{{$match->AwayTeam->name}}</td>
+                <td width="50%" style="border:1px solid black;">.</td>
             </tr>
         </table>
     </div>
