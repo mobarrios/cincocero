@@ -5,7 +5,22 @@
         <div class="center-col">
 
             <div class="elements-box">
-
+                <div class="categoria-container titulo-categoria" style="border-bottom-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif">
+                    <div class="color-top" style="background-color: @if($categoriaActual){{$categoriaActual->color_top}}@else{{'#0f5128'}}@endif;"></div>
+                    <div class="color-bottom" style="background-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif;">
+                        <h2>EQUIPOS</h2>
+                    </div>
+                </div>
+                <div class="row bg-white margin-bottom margin-top">
+                   @foreach($faseActual->Teams as $team)
+                        <div class="resultado">
+                            <img src="{!! $team->images->first()->image or 'assets/web/images/teamDefault.png' !!}" alt="{!! $team->name !!}" class="img-responsive">
+                            <div class="caption">
+                                <h3>{!! $team->name !!}</h3>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
                     <div class="categoria-container titulo-categoria" style="border-bottom-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif">
                         <div class="color-top" style="background-color: @if($categoriaActual){{$categoriaActual->color_top}}@else{{'#0f5128'}}@endif;"></div>
@@ -69,7 +84,7 @@
               </div>
                 <p>&nbsp;</p>
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
-                  <tbody>
+                  <tbody class="borders">
 
                       @if($resultado->count() == 0)
                           @include('tfc/web/includes/sinDatos')
@@ -79,6 +94,7 @@
                               <td colspan="6" align="center" class="success">Fecha {!! $res->name !!}</td>
                           </tr>
                           <tr>
+                              <td align="center" class="success">Fecha</td>
                               <td align="center" class="success">Equipo</td>
                               <td align="center" class="success"></td>
                               <td align="center" class="success"></td>
@@ -90,6 +106,7 @@
 
 
                                 <tr>
+                                  <td align="center" class="active">{!! $match->date or '-' !!}</td>
                                   <td align="center" class="active">{!! $match->HomeTeam->name or 'Libre' !!}</td>
                                   <td align="center" class="active">{!! $match->home_goals !!}</td>
                                   <td align="center" class="active">{!! $match->away_goals !!}</td>

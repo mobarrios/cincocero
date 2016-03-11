@@ -3793,15 +3793,34 @@ blockquote {
     text-align: center;
 }
 
+.bg-white{
+    background-color: white;
+}
 
+.margin-bottom{
+    margin-bottom:10px;
+}
+.margin-top{
+    margin-top:10px;
+}
 
+.resultado{
+    display: inline-block;
+    margin:5px;
+    padding:5px;
+    text-align: center;
+    width:40px;
+}
 
+.resultado h3{
+    font-size: 10px;
+    font-weight: normal;
+}
 
+.resultado img{
+    max-height:35px;
 
-
-
-
-
+}
 
 
 
