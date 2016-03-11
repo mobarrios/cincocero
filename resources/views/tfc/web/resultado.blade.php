@@ -5,22 +5,22 @@
         <div class="center-col">
 
             <div class="elements-box">
-                {{--<div class="categoria-container titulo-categoria" style="border-bottom-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif">--}}
-                    {{--<div class="color-top" style="background-color: @if($categoriaActual){{$categoriaActual->color_top}}@else{{'#0f5128'}}@endif;"></div>--}}
-                    {{--<div class="color-bottom" style="background-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif;">--}}
-                        {{--<h2>EQUIPOS</h2>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="row bg-white margin-bottom margin-top">--}}
-                   {{--@foreach($faseActual->Teams as $team)--}}
-                        {{--<div class="resultado">--}}
-                            {{--<img src="{!! $team->images->first()->image or 'assets/web/images/teamDefault.png' !!}" alt="{!! $team->name !!}" class="img-responsive">--}}
-                            {{--<div class="caption">--}}
-                                {{--<h3>{!! $team->name !!}</h3>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--@endforeach--}}
-                {{--</div>--}}
+                <div class="categoria-container titulo-categoria" style="border-bottom-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif">
+                    <div class="color-top" style="background-color: @if($categoriaActual){{$categoriaActual->color_top}}@else{{'#0f5128'}}@endif;"></div>
+                    <div class="color-bottom" style="background-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif;">
+                        <h2>EQUIPOS</h2>
+                    </div>
+                </div>
+                <div class="row bg-white margin-bottom margin-top">
+                   @foreach($faseActual->Teams as $team)
+                        <div class="resultado col-xs-2">
+                            <img src="{!! $team->images->first()->image or 'assets/web/images/teamDefault.png' !!}" alt="{!! $team->name !!}" class="img-responsive">
+                            <div class="caption">
+                                <h3>{!! $team->name !!}</h3>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
                     <div class="categoria-container titulo-categoria" style="border-bottom-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif">
                         <div class="color-top" style="background-color: @if($categoriaActual){{$categoriaActual->color_top}}@else{{'#0f5128'}}@endif;"></div>
@@ -46,7 +46,7 @@
                       <td colspan="2" align="center" class="info">DIF</td>
                     </tr>
                     @if(count($tablas) == 0)
-                        @foreach($faseActual->Teams as $team)
+                        @foreach($tablas as $tab)
                             <tr>
                                 <td colspan="2" align="center" class="active"><img src="{!! $team->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35" alt=""/></td>
                                 <td colspan="2" align="center" class="active"><a href="{{route('equipo',[$categoriaActual->id,$team->id])}}">{!! $team->name or '-' !!}</a></td>
@@ -135,3 +135,4 @@
 
       @include('tfc/web/sidebar/sidebar')
     @endsection
+
