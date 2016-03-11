@@ -22,7 +22,7 @@
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('destacado',[$categoriaActual->id,$fas->id])}}">Destacado de la fecha</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('resultado',[$categoriaActual->id,$fas->id])}}">Posiciones y Resultados</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route("fechaActual",[$categoriaActual->id,$fas->id])}}">Próxima Fecha</a></li>
-git                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("fixture",[$categoriaActual->id,$fas->id])}}">Fixture</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("fixture",[$categoriaActual->id,$fas->id])}}">Fixture</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("sancion",[$categoriaActual->id,$fas->id])}}">Sanciones</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("goleador",[$categoriaActual->id,$fas->id])}}">Goleadores</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("fairplay",[$categoriaActual->id,$fas->id])}}">Fair Play</a></li>
