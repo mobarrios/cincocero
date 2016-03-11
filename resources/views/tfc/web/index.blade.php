@@ -43,9 +43,9 @@
                     <!-- Hero Content -->
                     <div class="home-content">
                         <div class="home-text">
-                          <div align="center" style="margin-top: -50px;">
+                          <div align="center">
                               @foreach($categories as $categoria)
-                                  <a href="{{ route('principal',$categoria->id) }}" style="padding:3%"><img src="{{($categoria->images->count() != 0)?$categoria->images->first()->image : ''}}" width="215" height="63" border="0" hspace="0">
+                                  <a href="{{ route('principal',$categoria->id) }}"><img src="{{($categoria->images->count() != 0)?$categoria->images->first()->image : ''}}" width="215" height="63" border="0" hspace="0">
                                   </a>
 
                               @endforeach
