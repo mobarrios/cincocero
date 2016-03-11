@@ -107,22 +107,46 @@
 
         #resultadoFinal{
             position: absolute;
-            bottom:130px;
+            bottom:100px;
             left:65%;
             width:30%;
         }
 
-        #resultadoFinal > tr,#resultadoFinal > td{
-            border-width: 1px !important;
-            border-style: solid !important;
-            border-color:black !important;
-            height:50px !important;
-        }
 
         #bottom{
             position:absolute;
-            bottom:5px;
+            bottom:90px;
             width:60%;
+        }
+
+        #bottom table *{
+            height:25px !important;
+        }
+
+        #resultadoFinal *, #bottom *{
+            border:none;
+        }
+
+        #resultadoFinal div table td{
+            /*border:1px solid black !important;*/
+            background-color: #ddd !important;
+            padding:5px 0;
+        }
+
+        #observaciones{
+            position: absolute;
+            bottom:30px;
+        }
+
+        #observaciones *{
+            border:none;
+
+        }
+
+        img{
+            position:absolute;
+            bottom:0;
+            right:0;
         }
 
     </style>
@@ -130,23 +154,25 @@
 </head>
 
 <body>
+    <img src="logo-white.png" width="306" height="70" alt=""/>
+
     <div id="resultadoFinal">
         <h2>Resultado Final</h2>
-
-        <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid black;">
-            <tr style="border:1px solid black;">
-                <td width="50%" style="border:1px solid black;">{{$match->HomeTeam->name}}</td>
-                <td width="50%" style="border:1px solid black;">.</td>
-            </tr>
-            <tr style="border:1px solid black;">
-                <td width="50%" style="border:1px solid black;">{{$match->AwayTeam->name}}</td>
-                <td width="50%" style="border:1px solid black;">.</td>
-            </tr>
-        </table>
+        <div>
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="50%">{{$match->HomeTeam->name}}</td>
+                    <td width="50%">.</td>
+                </tr>
+                <hr>
+                <tr>
+                    <td width="50%">{{$match->AwayTeam->name}}</td>
+                    <td width="50%">.</td>
+                </tr>
+            </table>
+        </div>
     </div>
 
-
-    {{--<h1><img src="logo-white.png" width="306" height="70" alt=""/></h1>--}}
     <h1>Grilla TFC - Partido del Día</h1>
 
         <!-- all you need with Tablecloth is a regular, well formed table. No need for id's, class names... -->
@@ -319,14 +345,16 @@
                 </tr>
             </table>
 
-            <h2>Observaciones</h2>
-
-            <table width="38%" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td width="82%">Campo de Observaciones</td>
-                </tr>
-            </table>
         </div>
+            <div id="observaciones">
+                <h2>Observaciones</h2>
+
+                <table width="38%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="82%">Campo de Observaciones</td>
+                    </tr>
+                </table>
+            </div>
 
 
 
