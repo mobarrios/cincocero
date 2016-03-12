@@ -3,9 +3,10 @@
       @include('tfc/web/leftbar/leftbar')
 
         <div class="center-col">
-
+            <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
+
                     <div class="categoria-container titulo-categoria" style="border-bottom-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif">
                         <div class="color-top" style="background-color: @if($categoriaActual){{$categoriaActual->color_top}}@else{{'#0f5128'}}@endif;"></div>
                         <div class="color-bottom" style="background-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif;">
@@ -14,8 +15,7 @@
                     </div>
                   {{--<p><img src="assets/web/images/tabla_pos.png" width="600" height="70" alt=""/></p>--}}
                   <p>&nbsp;</p>
-                </div>
-              <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
+                <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                   <tbody>
 
                     @if(count($tablas) == 0)
@@ -100,6 +100,7 @@
                 <div class="row"></div>
                 <!-- row --><!-- row --><!-- row --><!-- row --><!-- row --><!-- row -->
 
+                </div>
             </div>
             <!-- elements-box -->
 
