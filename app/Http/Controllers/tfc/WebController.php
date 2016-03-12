@@ -24,6 +24,7 @@ use App\Http\Repositories\tfc\TournamentsRepo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Repositories\tfc\PlayersRepo;
@@ -368,19 +369,32 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
     public function postContact(Request $request)
     {
 
+        Mail::raw('Tiene una notificacion en el sistema de disponibilidad.', function($message)
+        {
+            $message->from('mbarrios@navcoder', 'Sistema Ahgai');
+            $message->subject('Consulta de Disponibilidad.');
+            $message->to('manuelobarrios@gmail.com');
+        });
+
+
+
         $validator = Validator::make(
             $request->all(),
             [
-                'name' => 'required',
-                'email' => 'required|email',
-                'tema' => 'required',
-                'message' => 'required'
+                'name'      => 'required',
+                'email'     => 'required|email',
+                'tema'      => 'required',
+                'message'   => 'required'
             ]);
+
+
+
+
 
         if ($validator->fails()) {
             return "Complete correctamente los campos anteriores";
         }else{
-            if(mail('fernandoalf@hotmail.com','Contacto desde la web',$request->message))
+            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$request->message))
                 return "Envio el mail";
             else
                 "No se pudo enviar el mail.";
