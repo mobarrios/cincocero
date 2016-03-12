@@ -28,7 +28,7 @@
                                                 </header>
                                                 <h1 class="entry-title">{{$sede->name}}</h1>
                                                 <p>&nbsp;</p>
-                                                <a href="{{'web/sede_detalle/'.$sede->id}}" class="more-link">ampliar ...</a> </div>
+                                                <a href="{{'web/sede_detalle/'.$sede->id}}" class="more-link">Ver mapa ...</a> </div>
                                             <!-- entry-content -->
                                         </article>
                                         <!-- entry-item -->

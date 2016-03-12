@@ -3810,17 +3810,31 @@ blockquote {
     margin:5px;
     padding:5px;
     text-align: center;
-    width:40px;
+    vertical-align: top;
 }
 
-.resultado h3{
+.resultado .caption h3{
     font-size: 10px;
     font-weight: normal;
+    width:90%;
+    height:20px;
+    overflow: hidden;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+
+.resultado .caption h3:hover{
+    height:auto;
+    overflow: visible;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
 }
 
 .resultado img{
     max-height:35px;
-
+    margin:auto;
 }
 
 
