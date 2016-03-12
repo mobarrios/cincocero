@@ -89,5 +89,11 @@
 
 @endsection
 
+@section('js')
+<script>
+    $('#dataTable').page('false');
+
+</script>
+@endsection
 @stop
 

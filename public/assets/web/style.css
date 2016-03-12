@@ -2750,6 +2750,7 @@ a,
     /*padding: 10px 0;*/
     margin: 0 0 10px;
     color: rgba(235, 235, 235, 0.46);
+    text-align: center;
 }
 
 .breadcrumb .active{
@@ -3793,15 +3794,48 @@ blockquote {
     text-align: center;
 }
 
+.bg-white{
+    background-color: white;
+}
 
+.margin-bottom{
+    margin-bottom:10px;
+}
+.margin-top{
+    margin-top:10px;
+}
 
+.resultado{
+    display: inline-block;
+    margin:5px;
+    padding:5px;
+    text-align: center;
+    vertical-align: top;
+}
 
+.resultado .caption h3{
+    font-size: 10px;
+    font-weight: normal;
+    width:90%;
+    height:20px;
+    overflow: hidden;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
 
+.resultado .caption h3:hover{
+    height:auto;
+    overflow: visible;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
 
-
-
-
-
+.resultado img{
+    max-height:35px;
+    margin:auto;
+}
 
 
 

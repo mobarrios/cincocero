@@ -3,10 +3,10 @@
       @include('tfc/web/leftbar/leftbar')
 
         <div class="center-col">
-
             <div class="elements-box">
 
                 <div class="row"><!-- col-md-4 --><!-- col-md-8 -->
+
                     <div class="categoria-container titulo-categoria" style="border-bottom-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif">
                         <div class="color-top" style="background-color: @if($categoriaActual){{$categoriaActual->color_top}}@else{{'#0f5128'}}@endif;"></div>
                         <div class="color-bottom" style="background-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif;">
@@ -15,35 +15,24 @@
                     </div>
                   {{--<p><img src="assets/web/images/tabla_pos.png" width="600" height="70" alt=""/></p>--}}
                   <p>&nbsp;</p>
-                </div>
-              <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
+                <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                   <tbody>
-                    <tr>
-                      <td colspan="2" align="center" class="info"></td>
-                      <td colspan="2" align="center" class="info">Equipo</td>
-                      <td colspan="2" align="center" class="info">Pts.</td>
-                      <td colspan="2" align="center" class="info">PJ</td>
-                      <td colspan="2" align="center" class="info">PG</td>
-                      <td colspan="2" align="center" class="info">PE</td>
-                      <td colspan="2" align="center" class="info">PP</td>
-                      <td colspan="2" align="center" class="info">GF</td>
-                      <td colspan="2" align="center" class="info">GC</td>
-                      <td colspan="2" align="center" class="info">DIF</td>
-                    </tr>
+
                     @if(count($tablas) == 0)
-                        <tr>
-                            <td colspan="2" align="center" class="active"><img src="assets/web/images/teamDefault.png" width="35" height="35" alt=""/></td>
-                            <td colspan="2" align="center" class="active"><a href="">-</a></td>
-                            <td colspan="2" align="center" class="active">0</td>
-                            <td colspan="2" align="center" class="active">0</td>
-                            <td colspan="2" align="center" class="active">0</td>
-                            <td colspan="2" align="center" class="active">0</td>
-                            <td colspan="2" align="center" class="active">0</td>
-                            <td colspan="2" align="center" class="active">0</td>
-                            <td colspan="2" align="center" class="active">0</td>
-                            <td colspan="2" align="center" class="active">0</td>
-                        </tr>
+                        @include('tfc/web/includes/sinDatos')
                     @else
+                        <tr>
+                            <td colspan="2" align="center" class="info"></td>
+                            <td colspan="2" align="center" class="info">Equipo</td>
+                            <td colspan="2" align="center" class="info">Pts.</td>
+                            <td colspan="2" align="center" class="info">PJ</td>
+                            <td colspan="2" align="center" class="info">PG</td>
+                            <td colspan="2" align="center" class="info">PE</td>
+                            <td colspan="2" align="center" class="info">PP</td>
+                            <td colspan="2" align="center" class="info">GF</td>
+                            <td colspan="2" align="center" class="info">GC</td>
+                            <td colspan="2" align="center" class="info">DIF</td>
+                        </tr>
                       @foreach($tablas as $tab)
                         <tr>
                           <td colspan="2" align="center" class="active"><img src="{!! $tab->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35" alt=""/></td>
@@ -69,7 +58,7 @@
               </div>
                 <p>&nbsp;</p>
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
-                  <tbody>
+                  <tbody class="borders">
 
                       @if($resultado->count() == 0)
                           @include('tfc/web/includes/sinDatos')
@@ -79,6 +68,7 @@
                               <td colspan="6" align="center" class="success">Fecha {!! $res->name !!}</td>
                           </tr>
                           <tr>
+                              <td align="center" class="success">Fecha</td>
                               <td align="center" class="success">Equipo</td>
                               <td align="center" class="success"></td>
                               <td align="center" class="success"></td>
@@ -90,6 +80,7 @@
 
 
                                 <tr>
+                                  <td align="center" class="active">{!! $match->date or '-' !!}</td>
                                   <td align="center" class="active">{!! $match->HomeTeam->name or 'Libre' !!}</td>
                                   <td align="center" class="active">{!! $match->home_goals !!}</td>
                                   <td align="center" class="active">{!! $match->away_goals !!}</td>
@@ -109,6 +100,7 @@
                 <div class="row"></div>
                 <!-- row --><!-- row --><!-- row --><!-- row --><!-- row --><!-- row -->
 
+                </div>
             </div>
             <!-- elements-box -->
 
@@ -116,3 +108,4 @@
 
       @include('tfc/web/sidebar/sidebar')
     @endsection
+

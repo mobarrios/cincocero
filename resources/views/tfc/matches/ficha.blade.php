@@ -14,7 +14,7 @@
         body{
             margin:0;
             padding:0;
-            font:40% Arial, Helvetica, sans-serif;
+            font:12px Arial, Helvetica, sans-serif !important;
             color:#555;
             line-height:100%;
             text-align:left;
@@ -40,7 +40,7 @@
         }
 
         h2{
-            font-size:120%;
+            font-size:100%;
         }
 
         #container{
@@ -71,14 +71,14 @@
         }
 
         td{
-              font-size:7pt !important;
+              /*font-size:7pt !important;*/
               border-color:black !important;
               background-color: white !important;
           }
 
         th{
             border-color:black !important;
-            font-size:10pt !important;
+            /*font-size:10pt !important;*/
         }
 
         .vc{
@@ -107,14 +107,46 @@
 
         #resultadoFinal{
             position: absolute;
-            top:0;
-            left:50%;
+            bottom:100px;
+            left:65%;
+            width:30%;
         }
+
 
         #bottom{
             position:absolute;
-            bottom:5px;
-            border:1px solid black;
+            bottom:90px;
+            width:60%;
+        }
+
+        #bottom table *{
+            height:25px !important;
+        }
+
+        #resultadoFinal *, #bottom *{
+            border:none;
+        }
+
+        #resultadoFinal div table td{
+            /*border:1px solid black !important;*/
+            background-color: #ddd !important;
+            padding:5px 0;
+        }
+
+        #observaciones{
+            position: absolute;
+            bottom:30px;
+        }
+
+        #observaciones *{
+            border:none;
+
+        }
+
+        img{
+            position:absolute;
+            bottom:0;
+            right:0;
         }
 
     </style>
@@ -122,23 +154,25 @@
 </head>
 
 <body>
+    <img src="logo-white.png" width="306" height="70" alt=""/>
+
     <div id="resultadoFinal">
         <h2>Resultado Final</h2>
-
-        <table width="50%" cellpadding="0" cellspacing="0" style="margin-top:0">
-            <tr>
-                <th width="50%">{{$match->HomeTeam->name}}</th>
-                <td width="50%">.</td>
-            </tr>
-            <tr>
-                <th>{{$match->AwayTeam->name}}</th>
-                <td>.</td>
-            </tr>
-        </table>
+        <div>
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="50%">{{$match->HomeTeam->name}}</td>
+                    <td width="50%">.</td>
+                </tr>
+                <hr>
+                <tr>
+                    <td width="50%">{{$match->AwayTeam->name}}</td>
+                    <td width="50%">.</td>
+                </tr>
+            </table>
+        </div>
     </div>
 
-
-    {{--<h1><img src="logo-white.png" width="306" height="70" alt=""/></h1>--}}
     <h1>Grilla TFC - Partido del Día</h1>
 
         <!-- all you need with Tablecloth is a regular, well formed table. No need for id's, class names... -->
@@ -311,14 +345,16 @@
                 </tr>
             </table>
 
-            <h2>Observaciones</h2>
-
-            <table width="38%" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td width="82%">Campo de Observaciones</td>
-                </tr>
-            </table>
         </div>
+            <div id="observaciones">
+                <h2>Observaciones</h2>
+
+                <table width="38%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="82%">Campo de Observaciones</td>
+                    </tr>
+                </table>
+            </div>
 
 
 

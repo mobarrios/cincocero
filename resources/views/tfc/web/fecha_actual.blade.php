@@ -9,7 +9,7 @@
                     <div class="categoria-container titulo-categoria" style="border-bottom-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif; border-top-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif ;border-left-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif">
                         <div class="color-top" style="background-color: @if($categoriaActual){{$categoriaActual->color_top}}@else{{'#0f5128'}}@endif;"></div>
                         <div class="color-bottom" style="background-color: @if($categoriaActual){{$categoriaActual->color_bottom}}@else{{'#95b114'}}@endif;">
-                            <h2>FECHA ACTUAL</h2>
+                            <h2>PRÓXIMA FECHA</h2>
                         </div>
                     </div>
 
@@ -21,14 +21,12 @@
                     <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                         <tbody>
                         <tr>
-                            <td colspan="2" align="center" class="success">Fecha N° {!! $fase->name !!}</td>
-                            <td colspan="2" align="center" class="success">&nbsp;</td>
-                            <td colspan="2" align="center" class="success">&nbsp;</td>
-                            <td colspan="2" align="center" class="success">&nbsp;</td>
-                            <td colspan="2" align="center" class="success">&nbsp;</td>
-                            <td colspan="2" align="center" class="success"></td>
+
+                            <td colspan="14" align="center" class="success">Fecha N° {!! $fase->name !!}</td>
+
                         </tr>
                         <tr>
+                            <td colspan="2" align="center" class="success">Fecha</td>
                             <td colspan="2" align="center" class="success">Equipo</td>
                             <td colspan="2" align="center" class="success">&nbsp;</td>
                             <td colspan="2" align="center" class="success">Equipo</td>
@@ -39,6 +37,7 @@
                     @foreach($fase->matches as $partido)
 
                             <tr>
+                                <td colspan="2" align="center">{!! $partido->date!!}</td>
                                 <td colspan="2" align="center">{!! $partido->homeTeam->name or 'Libre'!!}</td>
                                 <td colspan="2" align="center">vs</td>
                                 <td colspan="2" align="center">{!! $partido->awayTeam->name  or 'Libre'!!}</td>
