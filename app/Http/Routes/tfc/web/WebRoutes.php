@@ -1,8 +1,14 @@
 <?php
 
-Route::group(['prefix' => 'web', 'namespace' => 'tfc'], function()
+Route::group(['namespace' => 'tfc'], function()
 {
-    Route::resource('/','WebController@Index');
+//    Route::resource('/','WebController@Index');
+    Route::get('/',[
+       'as' => 'web',
+        'uses' => 'WebController@Index'
+    ]);
+
+
     Route::resource('reglamento','WebController@Reglamento');
 //    Route::resource('noticias','WebController@Noticias');
     Route::resource('sedes','WebController@Sedes');

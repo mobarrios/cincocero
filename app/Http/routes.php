@@ -37,16 +37,16 @@ Route::get('template',function(){
     return view('test');
 });
 
-Route::get('',function(){
-
-    return redirect()->route('login');
-});
+//Route::get('',function(){
+//
+//    return redirect()->route('login');
+//});
 
 
 
 
 //login pasa x middle company para chequear la empresa
-Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
+Route::get('/cpanel', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
 
         //pasa para cambiar la conexion a la db segun la empresa

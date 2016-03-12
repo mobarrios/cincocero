@@ -24,7 +24,7 @@
 
     <div class="widget punica-entry-slider-widget">
         <h2 class="widget-title clearfix">El clima</h2>
-        <iframe src="{{asset("web/clima")}}" width="220" height="250" frameborder="0" border="0" scrolling="no" allowfullscreen></iframe>
+        <iframe src="{{asset("clima")}}" width="220" height="250" frameborder="0" border="0" scrolling="no" allowfullscreen></iframe>
         <!-- latest-item -->
 
         <!-- older-post -->
