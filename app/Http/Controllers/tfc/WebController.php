@@ -392,7 +392,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
 
 
-            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$request->message))
+            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$msg))
                 return "Se Envio correctamente su mail.";
             else
                 "No se pudo enviar el mail.";
