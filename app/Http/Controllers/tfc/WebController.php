@@ -385,16 +385,14 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
         }else{
 
 
-
-            $msg  = 'Tema:'.$request->tema.'"\r\n"';
-            $msg .= 'Nombre: '.$request->name.'"\r\n"';
-            $msg .= 'From: '.$request->email.'"\r\n"';
+            $msg  = 'Tema:'.$request->tema.'<br>';
+            $msg .= 'Nombre: '.$request->name.'<br>';
+            $msg .= 'From: '.$request->email.'<br>';
             $msg .= $request->message;
 
 
 
-
-            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$msg))
+            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$request->message))
                 return "Se Envio correctamente su mail.";
             else
                 "No se pudo enviar el mail.";
