@@ -377,14 +377,24 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
                 'message'   => 'required'
             ]);
 
-        
+
 
 
         if ($validator->fails()) {
             return "Complete correctamente los campos anteriores";
         }else{
-            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$request->message))
-                return "Envio el mail";
+
+            // Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+            // More headers
+            $headers .= 'From:'.$request->email.'"\r\n"';
+
+
+
+            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$request->message,$headers))
+                return "Se Envio correctamente su mail.";
             else
                 "No se pudo enviar el mail.";
         }
