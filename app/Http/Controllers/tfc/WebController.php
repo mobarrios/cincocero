@@ -384,16 +384,17 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
             return "Complete correctamente los campos anteriores";
         }else{
 
-            // Always set content-type when sending HTML email
-            $headers = "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-            // More headers
-            $headers .= 'From:'.$request->email.'"\r\n"';
 
 
+            $msg  = 'Tema:'.$request->tema.'"\r\n"';
+            $msg .= 'Nombre: '.$request->name.'"\r\n"';
+            $msg .= 'From: '.$request->email.'"\r\n"';
+            $msg .= $request->message;
 
-            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$request->message,$headers))
+
+
+
+            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$msg))
                 return "Se Envio correctamente su mail.";
             else
                 "No se pudo enviar el mail.";
