@@ -387,8 +387,8 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type: text/html; UTF-8" . "\r\n";
-            $headers .= "From: admin@server.thefutbolcompany.com.ar" . "\r\n" .
-                "Reply-To: '.$request->email.'" . "\r\n" .
+            $headers .= "From: tfc@thefutbolcompany.com" . "\r\n" .
+                "Reply-To: $request->email" . "\r\n" .
 
 
             $msg  = 'Tema:'.$request->tema.'<br>';
