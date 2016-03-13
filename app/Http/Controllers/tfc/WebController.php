@@ -368,16 +368,6 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
     public function postContact(Request $request)
     {
-
-        Mail::raw('Tiene una notificacion en el sistema de disponibilidad.', function($message)
-        {
-            $message->from('mbarrios@navcoder', 'Sistema Ahgai');
-            $message->subject('Consulta de Disponibilidad.');
-            $message->to('manuelobarrios@gmail.com');
-        });
-
-
-
         $validator = Validator::make(
             $request->all(),
             [
@@ -387,8 +377,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
                 'message'   => 'required'
             ]);
 
-
-
+        
 
 
         if ($validator->fails()) {
