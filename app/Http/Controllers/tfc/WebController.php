@@ -385,6 +385,10 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
         }else{
 
 
+            // Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
             $msg  = 'Tema:'.$request->tema.'<br>';
             $msg .= 'Nombre: '.$request->name.'<br>';
             $msg .= 'From: '.$request->email.'<br>';
@@ -392,7 +396,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
 
 
-            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$msg))
+            if(mail('manuelobarrios@gmail.com','Contacto desde la web',$msg,$headers))
                 return "Se Envio correctamente su mail.";
             else
                 "No se pudo enviar el mail.";
