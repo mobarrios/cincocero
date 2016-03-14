@@ -351,7 +351,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
         $player->status     = 1;
         $player->save();
 */
-        $request['status'] = 2;
+        $request['status'] = 1;
         $request['admin']  = 0;
 
         $model =  $player->create($request);
