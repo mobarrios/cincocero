@@ -351,7 +351,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
         $player->status     = 1;
         $player->save();
 */
-        $request['status'] = 1;
+        $request['status'] = 2;
         $request['admin']  = 0;
 
         $model =  $player->create($request);
@@ -360,6 +360,13 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
         {
             $image->upload('players', $model->id  ,$request->file('image') ,'uploads/tfc/players/images/');
         }
+
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type: text/html; UTF-8" . "\r\n";
+        $headers .= "From: tfc@thefutbolcompany.com" . "\r\n" .
+            "Reply-To: $request->mail" . "\r\n" .
+
+        mail($request->mail,'Inscripción a TFC.','Registración correcta al sistema.  Atte. TFC',$headers);
 
         return redirect()->back()->withErrors('INSCRIPCION CARGADA CORRECTAMENTE. Se le enviara un mail con la confirmacion de la inscripcion.');
     }
