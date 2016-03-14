@@ -67,7 +67,9 @@
                         <a class="btn btn-xs btn-default" href="{{route($routeDel ,$model->id)}}">
                             <i class="delete fa fa-trash"></i>
                         </a>
-
+                        <a class="btn btn-xs btn-default" href="{{route('players' ,$model->id)}}">
+                            <i class="fa fa-user"></i>
+                        </a>
                     </td>
                 </tr>
             @endforeach
