@@ -18,6 +18,7 @@
                 <th>Equipo</th>
                 <th>Password</th>
                 <th>Estado</th>
+                <th>Jugadores</th>
 
                 <th class="no-sort" style="width: 12%;" ></th>
             </tr>
@@ -44,10 +45,11 @@
                         @else
                             <i class='fa fa-camera' style="font-size:50px;text-align:center;width: 100%;color: rgb(174, 174, 174);"></i>
                         @endif
-
                     </td>
 
-                    <td>{{$model->name}}</td>
+                    <td>
+                        {{$model->name}}
+                    </td>
                     <td>{{$model->password}}</td>
                     <td>
                         @if($model->status == 1)
@@ -56,6 +58,10 @@
                             <span class="label label-danger">Inactivo</span>
                         @endif
                     </td>
+                    <td>
+                        <label class="label label-warning">{{$model->Players->count()}}</label>
+                    </td>
+
 
 
 
