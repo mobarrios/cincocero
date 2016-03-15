@@ -20,7 +20,8 @@
                                 <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-print"></i> </button>
                             </div>
 
-                            <strong>Registros Encontrados 61.</strong>
+                            Registros Encontrados <strong>{{$models->count()}}.</strong>
+
 
                         </div>
 

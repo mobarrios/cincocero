@@ -2,24 +2,8 @@
 
 namespace App\Services\Html;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 use App\Entities\stock\Categories;
 
-class FormBuilder extends \Collective\Html\FormBuilder {
-
-    public function selectCategories()
-    {
-        $categories = Categories::lists('name','id');
-
-        $input = Form::select('a',$categories);
-
-        return $input;
-    }
-=======
-
-=======
->>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
 class FormBuilder extends \Collective\Html\FormBuilder {
 
     public $inputClass      = ['class'=>'form-control'];
@@ -56,12 +40,9 @@ class FormBuilder extends \Collective\Html\FormBuilder {
     {
         $input = parent::text($name,null, $this->inputClass);
 
-<<<<<<< HEAD
->>>>>>> master
-=======
         return $this->buildDiv($label, $input);
     }
->>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
+
 
     public function selectCustom($name = null , $label = null, $entity = null)
     {

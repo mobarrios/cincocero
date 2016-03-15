@@ -2,18 +2,6 @@
 
     @section('content')
 
-<<<<<<< HEAD
-        <div class="row">
-            <div class="col-xs-12">
-                <a href="{{route($routeNew)}}"  class="pull-right btn btn-xs btn-info">{{trans('messages.btnNew')}}</a>
-            </div>
-            <hr>
-            <div class="col-xs-12">
-                @include('controls.table')
-            </div>
-        </div>
-=======
-
 
 
                     <div class="m-b-lg">
@@ -31,7 +19,8 @@
                                 <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-print"></i> </button>
                             </div>
 
-                            <strong>Registros Encontrados 61.</strong>
+                            Registros Encontrados <strong>{{$models->count()}}.</strong>
+
 
                         </div>
 
@@ -46,9 +35,6 @@
                         </span>
                     </div>
 
-
-
->>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
 
     @endsection
 

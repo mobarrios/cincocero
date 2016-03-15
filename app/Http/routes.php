@@ -35,28 +35,17 @@ Route::get('',function(){
 
 
 
-<<<<<<< HEAD
+
     //pasa para cambiar la conexion a la db segun la empresa
     //Route::group(['middleware'=>'changeDb'],function(){
-=======
->>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
+
 
 //login pasa x middle company para chequear la empresa
 Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
 
-<<<<<<< HEAD
-            require(__DIR__. '/Routes/CrudRoutes.php');
-            require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
-            require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
-            require(__DIR__. '/Routes/stock/categories/CategoriesRoutes.php');
 
             require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
-=======
-        //pasa para cambiar la conexion a la db segun la empresa
- //   Route::group(['middleware'=>'changeDb'],function()
-  //     {
->>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
 
 //Config::set('constants.global_db',$request->id);
 
@@ -75,9 +64,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
                // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
-                require(__DIR__. '/Routes/CrudRoutes.php');
-                require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
-                require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+
                 require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
 
@@ -121,11 +108,8 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
             return redirect()->back();
         }]);
 
-<<<<<<< HEAD
-    //});
-=======
+
   //});
->>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
 
 //});
 
