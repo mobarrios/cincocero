@@ -21,6 +21,7 @@
                         <li><a href="{{route('user')}}">Users</a></li>
                         <li><a href="{{route('profiles')}}">Profiles</a></li>
                         <li><a href="{{route('modules')}}">Modulos</a></li>
+                        <li><a href="{{route('menus')}}">Menu</a></li>
 
                     </ul>
                 </li>

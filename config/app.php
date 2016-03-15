@@ -152,6 +152,12 @@ return [
 
         //macro From
         'App\Services\Html\HtmlServiceProvider',
+        //excel
+        'Maatwebsite\Excel\ExcelServiceProvider',
+        //pdf
+        'Barryvdh\DomPDF\ServiceProvider',
+
+
 
 
     ],
@@ -207,6 +213,11 @@ return [
         'Html'      => 'Collective\Html\HtmlFacade',
         'Image' => 'Intervention\Image\Facades\Image',
 
-	],
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+        'PDF' => 'Barryvdh\DomPDF\Facade',
+
+
+
+    ],
 
 ];

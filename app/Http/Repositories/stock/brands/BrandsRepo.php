@@ -16,15 +16,25 @@ class BrandsRepo extends BaseRepo {
     public function Rules()
     {
         return [
+<<<<<<< HEAD
             //'code'   => 'required|unique:items,code',
             'name'   => 'required'
+=======
+            'name'   => 'required',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+>>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
         ];
     }
 
     public function RulesEdit($id = null)
     {
         return [
+<<<<<<< HEAD
             'name'   => 'required'
+=======
+            'name'   => 'required',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
+>>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
         ];
     }
 
@@ -35,9 +45,13 @@ class BrandsRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'Imagen' =>    ['data' => 'images','relation'=> null],
+<<<<<<< HEAD
                 //'Codigo' =>    ['data' => 'code','relation' => null],
                 'Marca'  =>  ['data' => 'name','relation' => null],
                 //'Desc.' =>     ['data' => 'description','relation' => null],
+=======
+                'Marca' =>       ['data' => 'name','relation' => null],
+>>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

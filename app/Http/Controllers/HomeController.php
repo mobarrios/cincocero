@@ -14,6 +14,8 @@ namespace App\Http\Controllers;
 //use App\Http\Helpers\Helper;
 
 
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller {
 
     public $view ;
@@ -23,5 +25,14 @@ class HomeController extends Controller {
     {
         $this->view = 'home';
         $this->data['sectionName'] = 'Bienvenido';
+    }
+
+    public function getIndex()
+    {
+        $ruta_home  = Auth::user()->Perfil()->first()->home;
+        $this->view = $ruta_home;
+
+        return view($this->view)->with($this->data);
+
     }
 }

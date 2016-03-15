@@ -1,4 +1,4 @@
-<nav class="navbar navbar-static-top navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top ">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -8,17 +8,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
+            <a  class="navbar-brand" ><div class="logo"><strong>nav</strong> { coder }</div></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-
-                <li><a href="{{route('home')}}">Home <span class="sr-only">(current)</span></a></li>
 
 
 
+<<<<<<< HEAD
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stock <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -34,9 +32,11 @@
             </ul>
 
 
+=======
+>>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}} <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"> </span>  {{Auth::user()->name}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{route('userProfileEdit')}}">Perfil</a></li>
                         <li role="separator" class="divider"></li>
@@ -48,3 +48,4 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+

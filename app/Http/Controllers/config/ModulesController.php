@@ -7,6 +7,10 @@ use App\Http\Repositories\config\ModulesRepo as Repo;
 use App\Http\Repositories\config\PermissionsRepo;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schema;
+use App\Helpers\ImagesHelper;
+use Illuminate\Http\Request;
 
 
 class ModulesController extends Controller {
@@ -33,6 +37,13 @@ class ModulesController extends Controller {
 
         //data for validation
         $this->rules                = $this->repo->Rules();
+        $this->rulesEdit            = $this->repo->RulesEdit();
+
+
+        //images
+        $this->data['imgQuantityMax']   = 0;
+        $this->data['imagePath']        = null;
+        $this->data['entityImg']        = null;
 
         //data routes
         $this->data['route']        = 'modules';
@@ -50,7 +61,10 @@ class ModulesController extends Controller {
         $permission->save();
 
         return redirect()->back()->withErrors(trans('messages.changePermissions'));
-
     }
+
+
+
+
 
 }

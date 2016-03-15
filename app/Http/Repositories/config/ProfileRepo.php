@@ -32,6 +32,12 @@ class ProfileRepo extends BaseRepo {
             'profile'   => 'required',
         ];
     }
+    public function RulesEdit($id = null)
+    {
+        return [
+            'profile'   => 'required',
+        ];
+    }
 
 
     public function tableHeader()
@@ -40,7 +46,7 @@ class ProfileRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'PERFIL' =>    ['data' => 'profile','relation' => null],
-
+                'RUTA' =>    ['data' => 'home','relation' => null],
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],
         ];
@@ -50,7 +56,9 @@ class ProfileRepo extends BaseRepo {
 
     public function create($datos)
     {
-        $model =  $this->model->create($datos->all());
+        $model =  $this->model->fill($datos->all());
+        $model->save();
+
         $modules = Modules::all();
 
 

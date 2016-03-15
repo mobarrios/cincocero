@@ -8,6 +8,7 @@
 
 namespace App\Http\Repositories;
 
+
 abstract class BaseRepo {
 
     protected $model;
@@ -26,15 +27,25 @@ abstract class BaseRepo {
 
     public function create($datos)
     {
-        return $this->model->create($datos->all());
+
+        //return $this->model->create($datos->request->all());
+
+        $model = new $this->model();
+        $model->fill($datos->all());
+        $model->save();
+
+        //$this->createCustom($datos);
+
+        return $model;
+
     }
 
     public function edit($id, $datos)
     {
+
         $model = $this->model->find($id);
         $model->fill($datos->all());
         $model->save();
-
     }
 
     public function delete($id)
@@ -44,7 +55,7 @@ abstract class BaseRepo {
 
     public function ListAll()
     {
-        $qry = $this->model->all();
+        $qry = $this->model->paginate(1);
         return $qry;
     }
 }

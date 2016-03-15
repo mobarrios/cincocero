@@ -16,15 +16,18 @@ class ItemsRepo extends BaseRepo {
     public function Rules()
     {
         return [
-            'code'   => 'required|unique:items,code',
-            'name'   => 'required'
+           // 'code'   => 'required|unique:items,code',
+            'name'   => 'required',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+
         ];
     }
 
     public function RulesEdit($id = null)
     {
         return [
-            'name'   => 'required'
+            'name'   => 'required',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
         ];
     }
 
@@ -35,9 +38,9 @@ class ItemsRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'Imagen' =>    ['data' => 'images','relation'=> null],
-                'Codigo' =>    ['data' => 'code','relation' => null],
+                //'Codigo' =>    ['data' => 'code','relation' => null],
                 'Articulo' =>  ['data' => 'name','relation' => null],
-                'Desc.' =>     ['data' => 'description','relation' => null],
+                'Marca' =>     ['data' => 'Brands','relation' => 'name'],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

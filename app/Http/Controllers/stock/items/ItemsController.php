@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\stock\items;
 
+use App\Entities\stock\Brands;
 use App\Entities\stock\Items;
 use App\Http\Repositories\stock\items\ItemsRepo as Repo;
 use App\Http\Controllers\Controller;
@@ -39,8 +40,7 @@ class ItemsController extends Controller {
         $this->data['entityImg']        = 'items';
 
         //selects
-        $this->data['brands']           = Items::lists('name','id');
-
+        $this->data['brands']           = Brands::lists('name','id');
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -55,4 +55,6 @@ class ItemsController extends Controller {
         $this->data['routePostEdit']= 'itemsPostEdit';
 
     }
+
+
 }

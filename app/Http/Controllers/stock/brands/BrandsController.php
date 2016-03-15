@@ -27,6 +27,12 @@ class BrandsController extends Controller {
         $this->form                 = 'stock.brands.form';
         $this->data['sectionName']  = 'Marcas';
 
+        //images
+        $this->data['imgQuantityMax']   = 1;
+        $this->data['imagePath']        = 'uploads/brands/images/';
+        $this->data['entityImg']        = 'brands';
+
+
         //data for validation
         $this->rules                = $this->repo->Rules();
         $this->rulesEdit            = $this->repo->RulesEdit();

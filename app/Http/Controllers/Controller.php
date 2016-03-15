@@ -11,30 +11,41 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Helpers\ImagesHelper;
-use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Session;
+use App\Helpers\BreadCrumbHelper;
 
 
 abstract class Controller extends BaseController
 {
    // use DispatchesJobs,
-    use ValidatesRequests;
+    use         ValidatesRequests;
+
 
 
     //index
     public function getIndex()
     {
+        $bc = new BreadCrumbHelper();
+        $bc->index($this->data['sectionName'], $this->data['route']);
+
         return view($this->view)->with($this->data);
     }
 
     //go to form new
     public function getNew()
     {
+        $bc = new BreadCrumbHelper();
+        $bc->create('Crear '.$this->data['sectionName'], $this->data['routeNew']);
+
         return view($this->form)->with($this->data);
     }
 
     // go to form with model
     public function getEdit($id)
     {
+        $bc = new BreadCrumbHelper();
+        $bc->create('Editar '.$this->data['sectionName'], $this->data['routeEdit']);
+
         $this->data['model'] = $this->repo->getModel()->find($id);
 
         return view($this->form)->with($this->data);
@@ -65,10 +76,7 @@ abstract class Controller extends BaseController
                 $imgHelp->deleteFile($imagen->image);
                 $imagen->delete();
             }
-
-
         }
-
 
         return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
     }
@@ -77,6 +85,9 @@ abstract class Controller extends BaseController
     // post new item
     public function postNew(Request $request, ImagesHelper $image)
     {
+        //if in controller custom
+       // $request = $this->requestCustom($request);
+
         // validation rules form repo
         $this->validate($request, $this->rules);
 
@@ -97,8 +108,12 @@ abstract class Controller extends BaseController
 
     public function postEdit($id = null, Request $request, ImagesHelper $image)
     {
+        //if in controller custom
+       // $request = $this->requestCustom($request);
+
         // validation rules form repo
-        $this->validate($request, $this->rule);
+        $this->validate($request, $this->rulesEdit);
+
 
             // if has image uploaded
             if($request->hasFile('image'))

@@ -1,11 +1,14 @@
-<table id="dataTable" class="display table table-striped" style="width: 100%; cellspacing: 0;">
+<div class="table-responsive">
+<table id="dataTable" class="display table  table-striped" style="width: 100%; cellspacing: 0;">
     <thead>
     <tr>
         <th class="no-sort" style="width: 1%;">#</th>
         @foreach($tableHeader['columns'] as $column => $data)
             <th>{{$column}}</th>
         @endforeach
+
         <th class="no-sort" style="width: 12%;" ></th>
+
     </tr>
     </thead>
     {{--<tfoot>
@@ -25,7 +28,7 @@
                 @if(isset($routeDetail))
                      <a href="{{route($routeDetail, $model->id)}}">{{$model->id}}</a>
                 @else
-                     {{$model->id}}
+                       {{$model->id}}
                 @endif
 
 
@@ -40,27 +43,35 @@
                             @if(is_null($model->$column['data']))
                                <td></td>
                             @else
-                                <td>
+                                <td style="width: 5%;">
                                     @foreach($model->$column['data'] as $image)
-                                        <img class="thumbnail" src="{{$image->image}}" width="50px">
+                                            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
+                                                 <img width="100%;" src="{{$image->image}}" >
+                                            </a>
                                     @endforeach
                                 </td>
                             @endif
 
                         @else
-
                               <td>{{$model->$column['data']}}</td>
                          @endif
                     @endif
 
                 @endforeach
 
-            <td >
-                <a href="{{route($routeEdit,$model->id)}}" class="btn btn-xs btn-success">{{trans('messages.btnEdit')}}</a>
-                <a href="{{route($routeDel ,$model->id)}}" class="delete btn btn-xs btn-danger">{{trans('messages.btnDel')}}</a>
+            <td>
+
+                <a class="btn btn-sm btn-white" href="{{route($routeEdit,$model->id)}}">
+                    <i class="fa fa-pencil"></i>
+                </a>
+                <a class="btn btn-sm btn-white" href="{{route($routeDel ,$model->id)}}">
+                    <i class="delete fa fa-trash"></i>
+                </a>
+
             </td>
         </tr>
     @endforeach
 
     </tbody>
 </table>
+</div>

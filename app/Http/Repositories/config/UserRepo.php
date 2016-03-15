@@ -10,6 +10,7 @@ namespace App\Http\Repositories\config;
 
 use App\Entities\User;
 use App\Http\Repositories\BaseRepo;
+use Illuminate\Support\Facades\Auth;
 
 class UserRepo extends BaseRepo {
 
@@ -28,7 +29,8 @@ class UserRepo extends BaseRepo {
 
     public function ListAll()
     {
-        $qry = $this->model->all();
+
+        $qry = $this->model->where('db',Auth::user()->db)->get();
         return $qry;
     }
 
@@ -49,13 +51,48 @@ class UserRepo extends BaseRepo {
         return [
             'name'          => 'required',
             'last_name'     => 'required',
-            'email'         =>'required|unique:users,email',
-            'password'      =>'required|between:4,20|confirmed',
+           // 'email'         => 'required|unique:users,email',
+            'password'      => 'required|between:4,20|confirmed',
             'password_confirmation' =>'required',
+           // 'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+
 
         ];
-
     }
+
+    public function RulesEdit($id = null)
+    {
+        return [
+            'name'          => 'required',
+            'last_name'     => 'required',
+
+
+            //'password'      =>'required|between:4,20|confirmed',
+            //'password_confirmation' =>'required',
+        ];
+    }
+
+    public function RulesPassword()
+    {
+        return [
+            //'name'          => 'required',
+            //'last_name'     => 'required',
+            'password'              =>'required|between:4,20|confirmed',
+            'password_confirmation' =>'required',
+        ];
+    }
+
+    public function RulesImages()
+    {
+        return [
+            //'name'          => 'required',
+            //'last_name'     => 'required',
+            //'password'              =>'required|between:4,20|confirmed',
+            //'password_confirmation' =>'required',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+        ];
+    }
+
 
 
 }

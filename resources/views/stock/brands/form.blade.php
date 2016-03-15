@@ -8,6 +8,7 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
+<<<<<<< HEAD
 
         {!! Form::label('Marca')!!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}
@@ -34,6 +35,10 @@
             </table>
         @endif
 
+=======
+        {!! Form::textCustom('name', 'Marca')!!}
+        {!! Form::imageCustom('image','Imagen')!!}
+>>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}

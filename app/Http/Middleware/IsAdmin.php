@@ -24,7 +24,7 @@ class IsAdmin
     public function handle($request, Closure $next  )
     {
 
-        if(Auth::user()->id != '1') {
+        if(Auth::user()->profiles_id != '1') {
 
             return redirect()->back()->withErrors(trans('messages.access'));
         }

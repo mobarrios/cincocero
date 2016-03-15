@@ -10,53 +10,101 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-use App\Http\Controllers\Auth\AuthController ;
-use Intervention\Image\ImageManagerStatic as Image;
+//use App\Http\Controllers\Auth\AuthController ;
+//use Intervention\Image\ImageManagerStatic as Image;
 use App\Helpers\ImagesHelper;
 
+
     // lista de empresas para mejorar acceso
-    Route::get('',function(){
-       return view('company_list');
-    });
+    //Route::get('',function(){
+    //   return view('company_list');
+    // });
 
 //Session::put('languaje','es_ES');
 
 //Route::group(['middleware'=>'changeLanguaje'],function(){
+Route::get('template',function(){
+
+    return view('test');
+});
+
+Route::get('',function(){
+
+    return redirect()->route('login');
+});
 
 
-    //login pasa x middle company para chequear la empresa
-    Route::get('login/id={id}', ['middleware'=>['company'],'as'=>'login','uses'=>'LoginController@getLogin']);
 
+<<<<<<< HEAD
     //pasa para cambiar la conexion a la db segun la empresa
     //Route::group(['middleware'=>'changeDb'],function(){
+=======
+>>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
 
-        Route::post('postLogin',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
+//login pasa x middle company para chequear la empresa
+Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
-        Route::group(['middleware' => ['auth']], function()
-        {
-            Route::get('home', ['as'=>'home','uses'=>'HomeController@getIndex']);
-           // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
+<<<<<<< HEAD
             require(__DIR__. '/Routes/CrudRoutes.php');
             require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
             require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
             require(__DIR__. '/Routes/stock/categories/CategoriesRoutes.php');
 
             require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
+=======
+        //pasa para cambiar la conexion a la db segun la empresa
+ //   Route::group(['middleware'=>'changeDb'],function()
+  //     {
+>>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
 
-            //logout
-            Route::get('logout',['as'=>'logout','uses'=>'LoginController@getLogout']);
+//Config::set('constants.global_db',$request->id);
 
-            //only super user
-            Route::group(['prefix'=>'config','middleware'=>'isAdmin'],function()
+
+           //Route::post('postLogin', ['as'=>'postLogin','uses'=>'LoginController@postLogin']);
+        Route::post('postLogin', ['as'=>'postLogin','uses'=>'LoginController@postLogin']);
+
+
+            Route::group(['middleware' => ['auth']], function()
             {
-                require(__DIR__ . '/Routes/config/ConfigRoutes.php');
-                require(__DIR__ . '/Routes/config/UsersRoutes.php');
-                require(__DIR__ . '/Routes/config/ProfilesRoutes.php');
-                require(__DIR__ . '/Routes/config/ModulesRoutes.php');
-            });
 
-        });
+                //logout
+                Route::get('logout',['as'=>'logout','uses'=>'LoginController@getLogout']);
+
+                Route::get('home', ['as'=>'home','uses'=>'HomeController@getIndex']);
+
+               // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
+
+                require(__DIR__. '/Routes/CrudRoutes.php');
+                require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
+                require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
+                require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
+
+
+                $route_files = File::allFiles(__DIR__ . '/Routes/stock');
+
+                foreach ($route_files as $partial)
+                {
+                    require_once $partial->getPathName();
+                }
+
+
+                //only super user
+                Route::group(['prefix'=>'config','middleware'=>'isAdmin'],function()
+                {
+                    require(__DIR__ . '/Routes/config/ConfigRoutes.php');
+                    require(__DIR__ . '/Routes/config/UsersRoutes.php');
+                    require(__DIR__ . '/Routes/config/ProfilesRoutes.php');
+                    require(__DIR__ . '/Routes/config/MenusRoutes.php');
+                    require(__DIR__ . '/Routes/config/ModulesRoutes.php');
+
+                    Route::get('init', ['as'=>'init','uses'=>'\App\Http\Controllers\config\InitController@getInit']);
+                    Route::get('update', ['as'=>'update','uses'=>'\App\Http\Controllers\config\InitController@getUpdate']);
+
+
+                });
+
+            });
 
 
 
@@ -73,15 +121,43 @@ use App\Helpers\ImagesHelper;
             return redirect()->back();
         }]);
 
+<<<<<<< HEAD
     //});
+=======
+  //});
+>>>>>>> f1b98233366ecf4d2ac81e49abe3f46210c0e58b
 
 //});
 
+/*
+Route::group(['prefix'=>'ws'],function(){
+    require(__DIR__ . '/Routes/ws/wsContentRoutes.php');
+});
+
+*/
+Route::get('xls',function(){
+    Excel::create('Laravel Excel', function($excel) {
+
+        $excel->sheet('Excel sheet', function($sheet) {
+
+            $sheet->setOrientation('landscape');
+
+        });
+
+    })->export('xls');
+});
+
+Route::get('pdf',function(){
+    $pdf = App::make('dompdf.wrapper');
+    $pdf->loadHTML('<h1>Test</h1>');
+    return $pdf->stream();
+});
 
 
 
 
 
+/*
 Route::get('changeLanguaje/{lang}',function($lang){
 
     Session::put('languaje',$lang);
@@ -92,19 +168,23 @@ Route::get('changeLanguaje/{lang}',function($lang){
 
 
 
-//test
-Route::get('test',function()
-{
-   // $a = Image::make('a.JPG')->resize(100,200);
+    //test
+    Route::get('test',function() {
 
-   // $a->crop(150,200,100,100)->save('crop.jpg');
-   // dd($a);
+        // $a = Image::make('a.JPG')->resize(100,200);
 
-    echo(\Illuminate\Support\Facades\Crypt::encrypt('tadeom2475'));
-    /*
-    Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
-    Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
-    Artisan::call('make:migration',	['name'=>'PepitoMigration']);
-*/
-});
+        // $a->crop(150,200,100,100)->save('crop.jpg');
+        // dd($a);
+
+
+        echo(\Illuminate\Support\Facades\Crypt::encrypt('admin_stock'));
+
+        /*
+        Artisan::call('make:controller',['name'=>'App\Http\Controllers\PepitoController']);
+        Artisan::call('make:model',		['name'=>'App\Entities\PepitoModel']);
+        Artisan::call('make:migration',	['name'=>'PepitoMigration']);
+    */
+   // });
+
+//});
 
