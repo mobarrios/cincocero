@@ -193,12 +193,11 @@ class FasesController extends Controller {
         //$this->repo->week()->delete();
         //$this->repo->Teams()->delete();
 
-
         FasesTeams::where('fases_id',$id)->delete();
+
         $fw = FasesWeek::where('fases_id',$id)->first();
         $mt = Matches::where('fases_week_id',$fw->id)->delete();
         $fw->delete();
-
         $this->repo->delete($id);
 
         return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));

@@ -41,7 +41,7 @@
 
                                                 @foreach($torneo->Fases as $fases)
                                                 <tr>
-                                                    <td class="col-xs-10">
+                                                    <td class="col-xs-9">
                                                       {{$fases->name}}
                                                     </td>
 
@@ -50,9 +50,9 @@
                                                         <a href="{{route('fasesTabla',$fases->id)}}"class="btn btn-xs btn-success">Tabla</a>
                                                     </td>
 
-                                                    <td class="col-xs-1">
+                                                    <td class="col-xs-2">
                                                         <a href="{{route('fasesGetEdit',$fases->id)}}" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span></a>
-                                                        {{--<a href="{{route('fasesGetDel',$fases->id)}}"class="delete btn btn-xs btn-default"><span class="fa fa-trash"></span></a>--}}
+                                                        <a href="{{route('fasesGetDel',$fases->id)}}"class="delete btn btn-xs btn-danger"><span class="fa fa-trash"></span></a>
                                                     </td>
                                                 </tr>
 

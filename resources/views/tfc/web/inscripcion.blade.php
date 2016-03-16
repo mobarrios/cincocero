@@ -48,7 +48,7 @@
                                     {!! Form::text('cel',null ,['class'=>'input-md form-control','placeholder'=>'Celular']) !!}
                                 </div>
                                 <div class="mb-20 mb-md-10 form-group">
-                                    <label for="image">FOTO DEL JUGADOR</label>
+                                    <label for="image">FOTO DEL JUGADOR <small>(Tamaño máximo 1mb)</small></label>
                                     {!! Form::file('image',['class'=>'input-md form-control']) !!}
                                 </div>
                                 <div class="mb-20 mb-md-10 form-group selectEquipos">
@@ -146,7 +146,7 @@
             dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
             weekHeader: 'Sm',
             dateFormat: 'dd/mm/yy',
-//            firstDay: 1,
+            firstDay: 1,
             isRTL: false,
             showMonthAfterYear: false,
             yearSuffix: ''
