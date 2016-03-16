@@ -38,7 +38,7 @@
     <link href="assets/inspinia/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
     <link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
 
-
+    <link href="assets/inspinia/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
 
     <!--
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -186,8 +186,10 @@
 
 <script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
 
-<script src="assets/js/jquery_datepicker_es.js"></script>
+<script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
+
+<script src="assets/js/jquery_datepicker_es.js"></script>
 
 <script src="assets/js/custom.js"></script>
 
@@ -195,6 +197,10 @@
 
 <script>
     $(document).ready(function(){
+
+        $('.datepicker').datepicker({
+            languaje :'es'
+        });
 
         $('#logout').on('click',function(){
             localStorage.setItem('menu_id',0);

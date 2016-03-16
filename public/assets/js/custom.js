@@ -59,6 +59,7 @@ $('.datepicker').datepicker({
 });
 
 
+
 tinymce.init({
     plugins: "textcolor",
     statusbar: false,
