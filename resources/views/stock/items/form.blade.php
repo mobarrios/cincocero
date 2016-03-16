@@ -14,18 +14,8 @@
         {!! Form::selectCustom('models_id', 'Modelo',$modelos)!!}
 
         {!! Form::dateCustom('date','Dia') !!}
-<<<<<<< HEAD
 
-        <div class="form-group" id="data_1">
-            <label class="font-noraml">Simple data input format</label>
-            <div class="input-group date">
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="03/04/2014">
-            </div>
-        </div>
-        {!! Form::imageCustom('image','Foto')!!}
-=======
         {!! Form::fileCustom('image','Foto')!!}
->>>>>>> 9d38bec7542d647c021fe66d6e4d335d01386f5d
 
         {!! Form::colorPicker('col','color')!!}
         {!! Form::colorPicker('col1','color1')!!}
