@@ -16,7 +16,7 @@
           </h2>
 
           {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{asset("web/destacado")}}"><b>{{$torneo->name}}</b></a></li>--}}
-          @foreach(\App\Entities\tfc\Fases::where('tournaments_id',$torneo->id)->orderBy('id','asc')->get() as $fas)
+          @foreach(\App\Entities\tfc\Fases::where('tournaments_id',$torneo->id)->orderBy('name','asc')->get() as $fas)
             <li class="menu-item menu-item-type-custom menu-item-object-custom @if(isset($faseActual) && $faseActual->id == $fas->id)folder-open @else folder-close" @endif <a href="javascript:void(0)">{{$fas->name}}</a>
               <ul class="sub-menu">
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('destacado',[$categoriaActual->id,$fas->id])}}">Destacado de la fecha</a></li>
