@@ -11,7 +11,7 @@
 
         {!! Form::textCustom('name', 'Modelo')!!}
 
-        {!! Form::imageCustom('image','Foto')!!}
+        {!! Form::fileCustom('image','Foto')!!}
 
 
         <hr>

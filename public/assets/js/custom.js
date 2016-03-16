@@ -42,6 +42,7 @@ $('#changeLanguaje').on('change',function(){
     window.location.href = "changeLanguaje/"+this.value;
 });
 
+<<<<<<< HEAD
 $('#dataTable').DataTable({
     columnDefs: [
         { targets: 'no-sort', orderable: false }
@@ -73,6 +74,33 @@ tinymce.init({
 
 
 });
+=======
+//$('#dataTable').DataTable({
+//    columnDefs: [
+//        { targets: 'no-sort', orderable: false }
+//    ],
+//    "order": [[ 1, "asc" ]],
+//    "language": {
+//        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+//    }
+//
+//});
+
+
+//tinymce.init({
+//    plugins: "textcolor",
+//    statusbar: false,
+//
+//
+//    selector: ".mytextarea",
+//    toolbar: [
+//        "undo redo | styleselect | bold italic | forecolor backcolor alignleft aligncenter alignright",
+//    ],
+//    menubar: false
+//
+//
+//});
+>>>>>>> 9d38bec7542d647c021fe66d6e4d335d01386f5d
 
 var $lightbox = $('#lightbox');
 
@@ -97,3 +125,9 @@ $lightbox.on('shown.bs.modal', function (e) {
     $lightbox.find('.modal-dialog').css({'width': $img.width()});
     $lightbox.find('.close').removeClass('hidden');
 });
+
+
+    //datepicker en forms
+//$('.datepicker').datepicker({
+//    dateFormat: "dd-mm-yy"
+//});

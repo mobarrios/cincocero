@@ -27,6 +27,7 @@
 
     <link href="assets/inspinia/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/inspinia/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
     <!-- Toastr style -->
     <link href="assets/inspinia/css/plugins/toastr/toastr.min.css" rel="stylesheet">
     <!-- Gritter -->
@@ -38,13 +39,23 @@
     <link href="assets/inspinia/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
     <link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
 
+<<<<<<< HEAD
     <link href="assets/inspinia/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+=======
+    <script src="assets/inspinia/js/jquery-2.1.1.js"></script>
+    <!-- jQuery UI -->
+    <script src="assets/inspinia/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="assets/inspinia/js/bootstrap.min.js"></script>
 
+    <link href="assets/inspinia/css/plugins/datapicker/datepicker3.css" rel="stylesheet" type="text/css" media="all" >
+>>>>>>> 9d38bec7542d647c021fe66d6e4d335d01386f5d
+
+    <link rel="stylesheet" href="assets/css/inputFile.css">
     <!--
+    <link href="assets/css/custom.css" rel="stylesheet">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/metisMenu.css" rel="stylesheet">
     <link href="assets/css/sb-admin-2.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/jquery-ui.css" rel="stylesheet" >
     <link href="assets/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -64,6 +75,8 @@
     --!>
 
     <![endif]-->
+
+
 
     @yield('css')
 </head>
@@ -142,8 +155,7 @@
 /#wrapper -->
 
 <!-- Mainly scripts -->
-<script src="assets/inspinia/js/jquery-2.1.1.js"></script>
-<script src="assets/inspinia/js/bootstrap.min.js"></script>
+
 <script src="assets/inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="assets/inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
@@ -160,10 +172,8 @@
 
 <!-- Custom and plugin javascript -->
 <script src="assets/inspinia/js/inspinia.js"></script>
-<script src="assets/inspinia/js/plugins/pace/pace.min.js"></script>
 
-<!-- jQuery UI -->
-<script src="assets/inspinia/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="assets/inspinia/js/plugins/pace/pace.min.js"></script>
 
 <!-- GITTER -->
 <script src="assets/inspinia/js/plugins/gritter/jquery.gritter.min.js"></script>
@@ -182,18 +192,27 @@
 
 <script src="assets/inspinia/js/plugins/iCheck/icheck.min.js"></script>
 
-<link href="assets/inspinia/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+
 
 <script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
 
+<<<<<<< HEAD
 <script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
+=======
+
+
+<script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js" ></script>
+>>>>>>> 9d38bec7542d647c021fe66d6e4d335d01386f5d
 
 <script src="assets/js/jquery_datepicker_es.js"></script>
 
 <script src="assets/js/custom.js"></script>
 
+<script src="assets/js/inputFile.js"></script>
+
 @yield('js')
+
 
 <script>
     $(document).ready(function(){
@@ -214,11 +233,21 @@
 
         $('.i-checks').iCheck({
             checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green',
+            radioClass: 'iradio_square-green'
         });
-    });
 
+
+
+        $('.datepicker').datepicker();
+
+        $('.datepicker').val("17-03-2016");
+
+
+
+        });
 </script>
+
+{{--<script src="assets/js/jquery_datepicker_es.js"></script>--}}
 
 </body>
 
