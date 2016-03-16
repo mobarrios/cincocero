@@ -131,7 +131,8 @@
 @section('js')
     <script>
         $('#dob').datepicker({
-            changeYear: true
+            changeYear: true,
+            yearRange: "c-60:c"
         });
         $.datepicker.regional['es'] = {
             closeText: 'Cerrar',
@@ -145,7 +146,7 @@
             dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
             weekHeader: 'Sm',
             dateFormat: 'dd/mm/yy',
-            firstDay: 1,
+//            firstDay: 1,
             isRTL: false,
             showMonthAfterYear: false,
             yearSuffix: ''
