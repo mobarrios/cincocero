@@ -18,7 +18,7 @@ class ItemsRepo extends BaseRepo {
         return [
            // 'code'   => 'required|unique:items,code',
             'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
 
         ];
     }
@@ -27,7 +27,7 @@ class ItemsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
         ];
     }
 
