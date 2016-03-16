@@ -14,11 +14,13 @@
         {!! Form::selectCustom('models_id', 'Modelo',$modelos)!!}
 
         {!! Form::dateCustom('date','Dia') !!}
+
         {!! Form::fileCustom('image','Foto')!!}
 
         {!! Form::colorPicker('col','color')!!}
         {!! Form::colorPicker('col1','color1')!!}
 
+        {!! Form::hidden('brands_id',1)!!}
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}

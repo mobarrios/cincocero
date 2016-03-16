@@ -107,8 +107,12 @@ class FormBuilder extends \Collective\Html\FormBuilder {
                 }
         }
 
-        return "<label>".$label."</label><div class='form-group'>
-            <!-- image-preview-filename input [CUT FROM HERE]-->
+        return "<div class='".$this->contentClass."'>
+
+        <label>".$label."</label>
+        <table>
+            ".$td['column']."
+        </table>
             <div class='input-group image-preview'>
                 <input type='text' class='form-control image-preview-filename' disabled='disabled'> <!-- don't give a name === doesn't send on POST/GET -->
                 <span class='input-group-btn'>

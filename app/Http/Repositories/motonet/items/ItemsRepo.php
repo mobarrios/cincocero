@@ -18,7 +18,7 @@ class ItemsRepo extends BaseRepo {
         return [
            // 'code'   => 'required|unique:items,code',
             'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
 
         ];
     }
@@ -27,7 +27,7 @@ class ItemsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
         ];
     }
 
@@ -40,7 +40,7 @@ class ItemsRepo extends BaseRepo {
                 'Imagen' =>    ['data' => 'images','relation'=> null],
                 //'Codigo' =>    ['data' => 'code','relation' => null],
                 'Articulo' =>  ['data' => 'name','relation' => null],
-                'Modelo' =>     ['data' => 'Brands','relation' => 'name'],
+                'Modelo' =>     ['data' => 'Models','relation' => 'name'],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],
