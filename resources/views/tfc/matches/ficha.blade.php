@@ -201,7 +201,7 @@
 
         <table cellspacing="0" cellpadding="0" id="local">
                 <tr>
-                    <th colspan="7">{{$match->HomeTeam->name}}</th>
+                    <th colspan="8">{{$match->HomeTeam->name}}</th>
                 </tr>
                 <tr>
                     <th>Nombre</th>
@@ -264,7 +264,7 @@
 
             <table cellspacing="0" cellpadding="0" id="visitante">
                 <tr>
-                    <th colspan="7">{{$match->AwayTeam->name}}</th>
+                    <th colspan="8">{{$match->AwayTeam->name}}</th>
                 </tr>
                 <tr>
                     <th>Nombre</th>
