@@ -205,6 +205,7 @@
                 </tr>
                 <tr>
                     <th>Nombre</th>
+                    <th>DNI</th>
                     <th>Firma</th>
                     <th class="vc">N°</th>
                     <th class="vc">Amar.</th>
@@ -219,6 +220,7 @@
                     @if($player->FasesWeekSanciones($match->FasesWeek->id))
                         <tr class="trTable" bgcolor="#ddd !important">
                             <td>{{$player->fullName()}}</td>
+                            <td>{{$player->dni}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -229,6 +231,7 @@
                     @else
                         <tr class="trTable" >
                             <td>{{$player->fullName()}}</td>
+                            <td>{{$player->dni}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -245,6 +248,7 @@
 
                 @for($i = $countH ; $i <  25 ; $i++)
                     <tr class="trTable">
+                        <td>.</td>
                         <td>.</td>
                         <td></td>
                         <td></td>
@@ -264,6 +268,7 @@
                 </tr>
                 <tr>
                     <th>Nombre</th>
+                    <th>DNI</th>
                     <th>Firma</th>
                     <th>N°</th>
                     <th>Amarilla</th>
@@ -277,6 +282,7 @@
                     @if($player->FasesWeekSanciones($match->FasesWeek->id))
                         <tr class="trTable" bgcolor="#ddd !important">
                             <td>{{$player->fullName()}}</td>
+                            <td>{{$player->dni}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -287,6 +293,7 @@
                     @else
                         <tr class="trTable" >
                             <td>{{$player->fullName()}}</td>
+                            <td>{{$player->dni}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -304,6 +311,7 @@
                 @for($i = $countA ; $i <  25 ; $i++)
                     <tr class="trTable">
                         <td>.</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
