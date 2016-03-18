@@ -66,8 +66,7 @@
 
         .trTable>td
         {
-            height: 15px !important;
-
+            height: 19px !important;
         }
 
         td{
@@ -107,16 +106,16 @@
 
         #resultadoFinal{
             position: absolute;
-            bottom:100px;
+            bottom:-15px;
             left:65%;
-            width:30%;
+            width:200px;
         }
 
 
         #bottom{
             position:absolute;
-            bottom:90px;
-            width:60%;
+            bottom:0;
+            width:30%;
         }
 
         #bottom table *{
@@ -135,7 +134,12 @@
 
         #observaciones{
             position: absolute;
-            bottom:30px;
+            bottom:0;
+            left:35%;
+            background-color: #ddd !important;
+            width:250px;
+            height: 100px;
+            padding:5px;
         }
 
         #observaciones *{
@@ -145,8 +149,12 @@
 
         img{
             position:absolute;
-            bottom:0;
+            bottom:100px;
             right:0;
+        }
+
+        tr{
+            height: 100px !important;
         }
 
     </style>
@@ -154,7 +162,7 @@
 </head>
 
 <body>
-    <img src="logo-white.png" width="306" height="70" alt=""/>
+    <img src="assets/web/images/logo_chico.png" width="100" alt=""/>
 
     <div id="resultadoFinal">
         <h2>Resultado Final</h2>
@@ -185,7 +193,7 @@
                 <th style="text-align: center">Serie</th>
                 <th style="text-align: center">Hora</th>
             </tr>
-            <tr class="trTable">
+            <tr class="trTable" style="height: 200px !important;">
                 <td>{{$match->date}}</td>
                 <td>Bundesliga</td>
                 <td>{{$match->Canchas->Sedes->name or ''}}</td>
@@ -206,7 +214,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>DNI</th>
-                    <th>Firma</th>
+                    <th style="width:100px;">Firma</th>
                     <th class="vc">N°</th>
                     <th class="vc">Amar.</th>
                     <th class="vc">Roja</th>
@@ -269,7 +277,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>DNI</th>
-                    <th>Firma</th>
+                    <th style="width:100px;">Firma</th>
                     <th>N°</th>
                     <th>Amarilla</th>
                     <th>Roja</th>
@@ -291,7 +299,7 @@
                             <td>SANCIONADO</td>
                         </tr>
                     @else
-                        <tr class="trTable" >
+                        <tr class="trTable"  style="height: 200px !important;">
                             <td>{{$player->fullName()}}</td>
                             <td>{{$player->dni}}</td>
                             <td></td>
@@ -358,8 +366,8 @@
                 <h2>Observaciones</h2>
 
                 <table width="38%" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td width="82%">Campo de Observaciones</td>
+                    <tr bgcolor="#ddd !important">
+                        {{--<td width="82%">Campo de Observaciones</td>--}}
                     </tr>
                 </table>
             </div>
