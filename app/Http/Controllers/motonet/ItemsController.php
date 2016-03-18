@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\stock\items;
+namespace App\Http\Controllers\motonet;
 
-use App\Entities\stock\Brands;
-use App\Entities\stock\Items;
-use App\Entities\stock\Models;
-use App\Http\Repositories\stock\items\ItemsRepo as Repo;
+use App\Entities\motonet\Models;
+use App\Http\Repositories\motonet\ItemsRepo as Repo;
 use App\Http\Controllers\Controller;
 
 
@@ -30,8 +28,8 @@ class ItemsController extends Controller {
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
-        $this->view                 = 'stock.items.index';
-        $this->form                 = 'stock.items.form';
+        $this->view                 = 'motonet.items.index';
+        $this->form                 = 'motonet.items.form';
         $this->data['sectionName']  = 'Articulos';
 
 

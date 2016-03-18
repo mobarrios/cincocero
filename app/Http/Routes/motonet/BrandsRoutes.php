@@ -1,7 +1,7 @@
 <?php
 
-$module = 'items';
-$controller = '\App\Http\Controllers\stock\items\ItemsController';
+$module = 'brands';
+$controller = '\App\Http\Controllers\motonet\BrandsController';
 
 Route::get('list'.$module,           ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module,'uses'=> $controller.'@getIndex']);
 Route::get('edit'.$module.'/{id}',   ['middleware'=>'roles','data'=> $module.'-edit' ,'as'=> $module.'GetEdit','uses'=> $controller.'@getEdit']);

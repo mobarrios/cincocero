@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\stock\brands;
+namespace App\Http\Repositories\motonet;
 
-use App\Entities\stock\Brands;
+use App\Entities\motonet\Brands;
 use App\Http\Repositories\BaseRepo;
 
 class BrandsRepo extends BaseRepo {

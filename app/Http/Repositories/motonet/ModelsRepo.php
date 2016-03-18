@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\stock;
+namespace App\Http\Repositories\motonet;
 
-use App\Entities\stock\Models;
+use App\Entities\motonet\Models;
 use App\Http\Repositories\BaseRepo;
 
 class ModelsRepo extends BaseRepo {

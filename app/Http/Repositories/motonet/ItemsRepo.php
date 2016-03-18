@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\stock\items;
+namespace App\Http\Repositories\motonet;
 
-use App\Entities\stock\Items;
+use App\Entities\motonet\Items;
 use App\Http\Repositories\BaseRepo;
 
 class ItemsRepo extends BaseRepo {
@@ -40,7 +40,7 @@ class ItemsRepo extends BaseRepo {
                 'Imagen' =>    ['data' => 'images','relation'=> null],
                 //'Codigo' =>    ['data' => 'code','relation' => null],
                 'Articulo' =>  ['data' => 'name','relation' => null],
-                'Modelo' =>     ['data' => 'Models','relation' => 'name'],
+                //'Modelo' =>     ['data' => 'Models','relation' => 'name'],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

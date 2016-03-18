@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\stock;
+namespace App\Http\Controllers\motonet;
 
-use App\Entities\stock\Models;
-use App\Http\Repositories\stock\ModelsRepo as Repo;
+use App\Entities\motonet\Models;
+use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
@@ -32,14 +32,14 @@ class ModelsController extends Controller {
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
-        $this->view                 = 'stock.'.$module.'.index';
-        $this->form                 = 'stock.'.$module.'.form';
+        $this->view                 = 'motonet.'.$module.'.index';
+        $this->form                 = 'motonet.'.$module.'.form';
         $this->data['sectionName']  = 'Modelos de Productos';
 
 
         //images
         $this->data['imgQuantityMax']   = 1;
-        $this->data['imagePath']        = 'uploads/stock/'.$module.'/images/';
+        $this->data['imagePath']        = 'uploads/motonet/'.$module.'/images/';
         $this->data['entityImg']        = $module;
 
         //selects

@@ -1,5 +1,5 @@
 <?php
-namespace App\Entities\stock;
+namespace App\Entities\motonet;
 
 use \App\Entities\Entity;
 

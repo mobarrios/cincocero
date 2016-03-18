@@ -10,17 +10,15 @@
 
 
         {!! Form::textCustom('name', 'Articulo')!!}
+        {!! Form::textCustom('detail', 'Detalle')!!}
 
-        {!! Form::selectCustom('models_id', 'Modelo',$modelos)!!}
-
-        {!! Form::dateCustom('date','Dia') !!}
 
         {!! Form::fileCustom('image','Foto')!!}
 
         {!! Form::colorPicker('col','color')!!}
-        {!! Form::colorPicker('col1','color1')!!}
 
-        {!! Form::hidden('brands_id',1)!!}
+
+
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
@@ -40,9 +38,9 @@
             currentText: 'Hoy',
             monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
             monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-            dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-            dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miï¿½rcoles', 'Jueves', 'Viernes', 'Sï¿½bado'],
+            dayNamesShort: ['Dom','Lun','Mar','Miï¿½','Juv','Vie','Sï¿½b'],
+            dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sï¿½'],
             weekHeader: 'Sm',
             dateFormat: 'dd/mm/yy',
             firstDay: 1,

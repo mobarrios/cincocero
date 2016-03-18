@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\stock\brands;
+namespace App\Http\Controllers\motonet;
 
-use App\Http\Repositories\stock\brands\BrandsRepo as Repo;
+use App\Http\Repositories\motonet\BrandsRepo as Repo;
 use App\Http\Controllers\Controller;
 
 
@@ -23,8 +23,8 @@ class BrandsController extends Controller {
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
-        $this->view                 = 'stock.brands.index';
-        $this->form                 = 'stock.brands.form';
+        $this->view                 = 'motonet.brands.index';
+        $this->form                 = 'motonet.brands.form';
         $this->data['sectionName']  = 'Marcas';
 
         //images
