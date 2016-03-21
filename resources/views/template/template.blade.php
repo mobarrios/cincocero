@@ -39,16 +39,12 @@
     <link href="assets/inspinia/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
     <link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
 
-<<<<<<< HEAD
-    <link href="assets/inspinia/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
-=======
     <script src="assets/inspinia/js/jquery-2.1.1.js"></script>
     <!-- jQuery UI -->
     <script src="assets/inspinia/js/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script src="assets/inspinia/js/bootstrap.min.js"></script>
 
     <link href="assets/inspinia/css/plugins/datapicker/datepicker3.css" rel="stylesheet" type="text/css" media="all" >
->>>>>>> 9d38bec7542d647c021fe66d6e4d335d01386f5d
 
     <link rel="stylesheet" href="assets/css/inputFile.css">
     <!--
@@ -196,14 +192,8 @@
 
 <script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
 
-<<<<<<< HEAD
-<script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js"></script>
-
-=======
-
 
 <script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js" ></script>
->>>>>>> 9d38bec7542d647c021fe66d6e4d335d01386f5d
 
 <script src="assets/js/jquery_datepicker_es.js"></script>
 

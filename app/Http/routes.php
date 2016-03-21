@@ -28,10 +28,12 @@ Route::get('template',function(){
     return view('test');
 });
 
+
 Route::get('',function(){
 
     return redirect()->route('login');
 });
+
 
 
 
