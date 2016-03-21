@@ -2,7 +2,7 @@
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
             <li class="text-center nav-header" style="background-image: none">
-                <strong>The Futbol Company</strong>
+                <strong>Motonet</strong>
             </li>
             <li>
                 <a class="menu" data-id="0" href="{{route('home')}}"><i class="fa fa-home"></i> <span class="nav-label">Home <span class="label label-primary pull-right">NEW</span></span></a>
