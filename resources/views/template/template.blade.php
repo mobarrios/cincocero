@@ -193,7 +193,6 @@
 <script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
 
 
-
 <script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js" ></script>
 
 
