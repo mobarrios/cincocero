@@ -15,12 +15,17 @@
 use App\Helpers\ImagesHelper;
 
 
+
+
     // lista de empresas para mejorar acceso
     //Route::get('',function(){
     //   return view('company_list');
     // });
 
 //Session::put('languaje','es_ES');
+
+
+Route::get('ml/{id?}', ['as'=>'ml','uses'=>'\App\Http\Controllers\ws\MercadolibreController@getItem']);
 
 //Route::group(['middleware'=>'changeLanguaje'],function(){
 Route::get('template',function(){
