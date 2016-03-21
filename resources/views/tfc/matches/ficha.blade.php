@@ -90,72 +90,124 @@
 
 
         #res > table{
-            width:49%;
+            width:100%;
             margin-top:0;
         }
 
-        #local{
-            position:absolute;
-            left:0;
-        }
+        /*#local{*/
+            /*position:absolute;*/
+            /*left:0;*/
+        /*}*/
 
-        #visitante{
-            position:absolute;
-            right:0;
-        }
+        /*#visitante{*/
+            /*position:absolute;*/
+            /*right:0;*/
+        /*}*/
 
-        #resultadoFinal{
-            position: absolute;
-            bottom:-15px;
-            left:65%;
-            width:200px;
-        }
+        /*#resultadoFinal{*/
+            /*position: absolute;*/
+            /*bottom:-15px;*/
+            /*left:65%;*/
+            /*width:200px;*/
+        /*}*/
 
 
-        #bottom{
-            position:absolute;
-            bottom:0;
-            width:30%;
-        }
+        /*#bottom{*/
+            /*position:absolute;*/
+            /*bottom:0;*/
+            /*width:30%;*/
+        /*}*/
 
-        #bottom table *{
-            height:25px !important;
-        }
+        /*#bottom table *{*/
+            /*height:25px !important;*/
+        /*}*/
 
-        #resultadoFinal *, #bottom *{
-            border:none;
-        }
+        /*#resultadoFinal *, #bottom *{*/
+            /*border:none;*/
+        /*}*/
 
-        #resultadoFinal div table td{
-            /*border:1px solid black !important;*/
-            background-color: #ddd !important;
-            padding:5px 0;
-        }
+        /*#resultadoFinal div table td{*/
+            /*/!*border:1px solid black !important;*!/*/
+            /*background-color: #ddd !important;*/
+            /*padding:5px 0;*/
+        /*}*/
 
-        #observaciones{
-            position: absolute;
-            bottom:0;
-            left:35%;
-            background-color: #ddd !important;
-            width:250px;
-            height: 100px;
-            padding:5px;
-        }
+        /*#observaciones{*/
+            /*position: absolute;*/
+            /*bottom:0;*/
+            /*left:35%;*/
+            /*background-color: #ddd !important;*/
+            /*width:250px;*/
+            /*height: 100px;*/
+            /*padding:5px;*/
+        /*}*/
 
-        #observaciones *{
-            border:none;
+        /*#observaciones *{*/
+            /*border:none;*/
 
-        }
+        /*}*/
 
-        img{
-            position:absolute;
-            bottom:10s nada
-            o0px;
-            right:0;
-        }
+        /*img{*/
+            /*position:absolute;*/
+            /*bottom:100px;*/
+            /*right:0;*/
+        /*}*/
 
         tr{
             height: 100px !important;
+        }
+
+        .clear{
+            clear:both;
+        }
+
+        /*.tabla-bottom{*/
+            /*position:absolute;*/
+            /*top:0;*/
+        /*}*/
+
+        .arbitraje{
+            width: 60%;
+            float: right;
+        }
+
+        .arbitraje tr td:first-child{
+            width:100px;
+        }
+
+        .tabla-bottom img,.tabla-bottom #bottom, #resultadoFinal {
+            display: inline-block;
+        }
+
+        .tabla-bottom img{
+            margin-left: -20px;
+        }
+
+        .tabla-bottom #bottom{
+            margin-left:20px;
+            margin-top: -10px;
+            width:600px;
+        }
+
+        .tabla-bottom #bottom td{
+            height:25px;
+        }
+
+        .tabla-bottom{
+            margin-bottom: -200px;
+        }
+
+        #resultadoFinal{
+            margin-top:-100px !important;
+            margin-left:-200px;
+        }
+
+        #resultadoFinal *{
+            margin-top:0;
+        }
+
+        .observ{
+            margin-top: -100px;
         }
 
     </style>
@@ -163,24 +215,68 @@
 </head>
 
 <body>
-    <img src="assets/web/images/logo_chico.png" width="100" alt=""/>
 
-    <div id="resultadoFinal">
-        <h2>Resultado Final</h2>
-        <div>
-            <table width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td width="50%">{{$match->HomeTeam->name}}</td>
-                    <td width="50%">.</td>
-                </tr>
-                <hr>
-                <tr>
-                    <td width="50%">{{$match->AwayTeam->name}}</td>
-                    <td width="50%">.</td>
-                </tr>
-            </table>
+    <div class="tabla-bottom">
+        <img src="assets/web/images/logo_chico.png" width="100" alt=""/>
+
+        <div id="bottom">
+
+            {{--<h2>&nbsp;</h2>--}}
+
+            <div class="arbitraje">
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>&nbsp;</td>
+                        <th>Nombre</th>
+                        <th>Firma</th>
+                    </tr>
+                    <tr>
+                        <th>Arbitro</th>
+                        <td>.</td>
+                        <td>.</td>
+                    </tr>
+                    <tr>
+                        <th>Juez de Linea 1</th>
+                        <td>.</td>
+                        <td>.</td>
+                    </tr>
+                    <tr>
+                        <th>Juez de Linea 2</th>
+                        <td>.</td>
+                        <td>.</td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
+        <div id="resultadoFinal">
+            <h2>Resultado Final</h2>
+            <div>
+                <table width="20%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="50%">{{$match->HomeTeam->name}}</td>
+                        <td width="50%">{{$match->AwayTeam->name}}</td>
+                    </tr>
+                    <tr>
+                        <td width="50%" height="50px;">.</td>
+                        <td width="50%" height="50px;">.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
     </div>
+    <div class="observ">
+        <h2>Observaciones</h2>
+
+        <table width="38%" cellpadding="0" cellspacing="0">
+            <tr bgcolor="#ddd !important">
+                {{--<td width="82%">Campo de Observaciones</td>--}}
+            </tr>
+        </table>
+
+    </div>
+
 
     <h1>Grilla TFC - Partido del Día</h1>
 
@@ -270,7 +366,7 @@
 
 
             </table>
-
+            <hr>
             <table cellspacing="0" cellpadding="0" id="visitante">
                 <tr>
                     <th colspan="8">{{$match->AwayTeam->name}}</th>
@@ -320,7 +416,7 @@
                 @for($i = $countA ; $i <  25 ; $i++)
                     <tr class="trTable">
                         <td>.</td>
-                        <td></td>
+                        <td>.</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -333,45 +429,6 @@
 
             </table>
         </div>
-    <br>
-
-        <div id="bottom">
-
-            <h2>&nbsp;</h2>
-
-            <table cellspacing="0" cellpadding="0">
-                <tr>
-                    <td>&nbsp;</td>
-                    <th>Nombre</th>
-                    <th>Firma</th>
-                </tr>
-                <tr>
-                    <th>Arbitro</th>
-                    <td>.</td>
-                    <td>.</td>
-                </tr>
-                <tr>
-                    <th>Juez de Linea 1</th>
-                    <td>.</td>
-                    <td>.</td>
-                </tr>
-                <tr>
-                    <th>Juez de Linea 2</th>
-                    <td>.</td>
-                    <td>.</td>
-                </tr>
-            </table>
-
-        </div>
-            <div id="observaciones">
-                <h2>Observaciones</h2>
-
-                <table width="38%" cellpadding="0" cellspacing="0">
-                    <tr bgcolor="#ddd !important">
-                        {{--<td width="82%">Campo de Observaciones</td>--}}
-                    </tr>
-                </table>
-            </div>
 
 
 
