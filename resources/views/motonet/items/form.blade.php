@@ -10,7 +10,7 @@
 
 
         {!! Form::textCustom('name', 'Articulo')!!}
-        {!! Form::textCustom('detail', 'Detalle')!!}
+        {{-- Form::textCustom('detail', 'Detalle') --}}
 
 
         {!! Form::fileCustom('image','Foto')!!}
