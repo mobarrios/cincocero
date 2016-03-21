@@ -32,11 +32,11 @@ Route::get('template',function(){
 
     return view('test');
 });
+require(__DIR__. '/Routes/motonet/webRoutes.php');
 
+Route::get('/',function(){
 
-Route::get('',function(){
-
-    return redirect()->route('login');
+    return redirect()->route('index');
 });
 
 

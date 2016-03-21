@@ -1,8 +1,8 @@
 <?php
-Route::group(['prefix' => 'sectores', 'namespace' => 'Sectores'], function() {
+Route::group(['prefix'=>'web','namespace' => 'motonet'], function() {
     Route::get('',[
         'as' => 'index',
-        'uses' => 'webcontroller'
+        'uses' => 'webController@index'
     ]);
 
 });
