@@ -149,7 +149,8 @@
 
         img{
             position:absolute;
-            bottom:100px;
+            bottom:10s nada
+            o0px;
             right:0;
         }
 
