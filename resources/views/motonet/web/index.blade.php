@@ -7,7 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>INSPINIA - Landing Page</title>
+    <title>Motonet
+    </title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -23,29 +24,29 @@
 <div class="navbar-wrapper">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-header page-scroll">
+            <div class="navbar-header page-scroll col-xs-pull-left">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo.jpg" alt="motonet" width="50" class="img-responsive"></a>
+                <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo.jpg" alt="motonet" width="100px" class="img-responsive"></a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
+            <div id="navbar" class="navbar-collapse collapse pull-right">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="page-scroll" href="#page-top">Home</a></li>
-                    <li><a class="page-scroll" href="#features">Features</a></li>
-                    <li><a class="page-scroll" href="#team">Team</a></li>
-                    <li><a class="page-scroll" href="#testimonials">Testimonials</a></li>
-                    <li><a class="page-scroll" href="#pricing">Pricing</a></li>
-                    <li><a class="page-scroll" href="#contact">Contact</a></li>
+                    <li><a class="page-scroll" href="#page-top">Destacados</a></li>
+                    <li><a class="page-scroll" href="#features">100cc</a></li>
+                    <li><a class="page-scroll" href="#team">150cc</a></li>
+                    <li><a class="page-scroll" href="#testimonials">600cc</a></li>
+                    <li><a class="page-scroll" href="#pricing">1000cc</a></li>
+                    <li><a class="page-scroll" href="#contact">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
-<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+<div id="inSlider" class="carousel carousel-fade hidden-xs" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#inSlider" data-slide-to="0" class="active"></li>
         <li data-target="#inSlider" data-slide-to="1"></li>
@@ -54,18 +55,15 @@
         <div class="item active">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>We craft<br/>
-                        brands, web apps,<br/>
-                        and user interfaces<br/>
-                        we are IN+ studio</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                    <h1>Rouser<br/>
+                        50% off</h1>
+                    <p>Robustes y elegancia para ciudad.</p>
                     <p>
-                        <a class="btn btn-lg btn-primary" href="#" role="button">READ MORE</a>
-                        <a class="caption-link" href="#" role="button">Inspinia Theme</a>
+                        <a class="btn btn-lg btn-primary" href="#" role="button">VER</a>
                     </p>
                 </div>
                 <div class="carousel-image wow zoomIn">
-                    <img src="img/landing/laptop.png" alt="laptop"/>
+                    <img src="assets/web/img/rouser.png" class="img-responsive" alt="laptop"/>
                 </div>
             </div>
             <!-- Set background for slide in css -->
@@ -74,10 +72,16 @@
         </div>
         <div class="item">
             <div class="container">
-                <div class="carousel-caption blank">
-                    <h1>We create meaningful <br/> interfaces that inspire.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                <div class="carousel-caption">
+                    <h1>Honda CBR<br/>
+                        Calidad y excelencia</h1>
+                    <p>Promo CBR250 hasta el 31/3.</p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="#" role="button">VER</a>
+                    </p>
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <img src="assets/web/img/cbr.jpg" class="img-responsive" alt="cbr"/>
                 </div>
             </div>
             <!-- Set background for slide in css -->
