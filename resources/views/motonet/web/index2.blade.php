@@ -20,7 +20,7 @@
     <!-- Custom styles for this template -->
     <link href="assets/inspinia/css/style.css" rel="stylesheet">
 </head>
-<body class="landing-page">
+<body id="page-top" class="landing-page">
 <div class="navbar-wrapper">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -33,24 +33,19 @@
                 </button>
                 <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo.jpg" alt="motonet" width="100px" class="img-responsive"></a>
             </div>
-            {{--<div id="navbar" class="navbar-collapse collapse pull-right">--}}
-                {{--<ul class="nav navbar-nav navbar-right">--}}
-                    {{--<li><a class="page-scroll" href="#page-top">Destacados</a></li>--}}
-                    {{--<li><a class="page-scroll" href="#features">100cc</a></li>--}}
-                    {{--<li><a class="page-scroll" href="#team">150cc</a></li>--}}
-                    {{--<li><a class="page-scroll" href="#testimonials">600cc</a></li>--}}
-                    {{--<li><a class="page-scroll" href="#pricing">1000cc</a></li>--}}
-                    {{--<li><a class="page-scroll" href="#contact">Contacto</a></li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
+            <div id="navbar" class="navbar-collapse collapse pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="page-scroll" href="#page-top">Destacados</a></li>
+                    <li><a class="page-scroll" href="#features">100cc</a></li>
+                    <li><a class="page-scroll" href="#team">150cc</a></li>
+                    <li><a class="page-scroll" href="#testimonials">600cc</a></li>
+                    <li><a class="page-scroll" href="#pricing">1000cc</a></li>
+                    <li><a class="page-scroll" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 </div>
-
-<div class="buscador">
-
-</div>
-
 <div id="inSlider" class="carousel carousel-fade hidden-xs" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#inSlider" data-slide-to="0" class="active"></li>
