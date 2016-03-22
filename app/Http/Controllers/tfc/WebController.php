@@ -197,11 +197,11 @@ class WebController extends Controller {
         return view('tfc/web/fixture')->with($data);
     }
 
-    public function Equipo($categoriaId,$id,Teams $equipos,Matches $matches, Fases $fases,Categories $categories)
+    public function Equipo($categoriaId,$faseId,$id,Teams $equipos,Matches $matches, Fases $fases,Categories $categories)
     {
         $data['matches'] = $matches->all();
         $data['equipo'] = $equipos->find($id);
-        $data['faseActual'] = $fases->find($id);
+        $data['faseActual'] = $fases->find($faseId);
         $data['categoriaActual'] = $categories->find($categoriaId);
         // setcookie("fase",$id);
         // setcookie("categoria",$fases->find($id)->tournaments->categories);

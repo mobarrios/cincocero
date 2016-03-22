@@ -46,7 +46,7 @@ Route::group(['namespace' => 'tfc'], function()
         'uses' => 'WebController@Fixture'
     ]);
 
-    Route::get('{categoriaId}/equipo/{id}',[
+    Route::get('{categoriaId}/{faseId}/equipo/{id}',[
         'as' => 'equipo',
         'uses' => 'WebController@Equipo'
     ]);
