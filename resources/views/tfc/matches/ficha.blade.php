@@ -89,69 +89,6 @@
         }
 
 
-        #res > table{
-            width:100%;
-            margin-top:0;
-        }
-
-        /*#local{*/
-            /*position:absolute;*/
-            /*left:0;*/
-        /*}*/
-
-        /*#visitante{*/
-            /*position:absolute;*/
-            /*right:0;*/
-        /*}*/
-
-        /*#resultadoFinal{*/
-            /*position: absolute;*/
-            /*bottom:-15px;*/
-            /*left:65%;*/
-            /*width:200px;*/
-        /*}*/
-
-
-        /*#bottom{*/
-            /*position:absolute;*/
-            /*bottom:0;*/
-            /*width:30%;*/
-        /*}*/
-
-        /*#bottom table *{*/
-            /*height:25px !important;*/
-        /*}*/
-
-        /*#resultadoFinal *, #bottom *{*/
-            /*border:none;*/
-        /*}*/
-
-        /*#resultadoFinal div table td{*/
-            /*/!*border:1px solid black !important;*!/*/
-            /*background-color: #ddd !important;*/
-            /*padding:5px 0;*/
-        /*}*/
-
-        /*#observaciones{*/
-            /*position: absolute;*/
-            /*bottom:0;*/
-            /*left:35%;*/
-            /*background-color: #ddd !important;*/
-            /*width:250px;*/
-            /*height: 100px;*/
-            /*padding:5px;*/
-        /*}*/
-
-        /*#observaciones *{*/
-            /*border:none;*/
-
-        /*}*/
-
-        /*img{*/
-            /*position:absolute;*/
-            /*bottom:100px;*/
-            /*right:0;*/
-        /*}*/
 
         tr{
             height: 100px !important;
@@ -161,10 +98,7 @@
             clear:both;
         }
 
-        /*.tabla-bottom{*/
-            /*position:absolute;*/
-            /*top:0;*/
-        /*}*/
+
 
         .arbitraje{
             width: 60%;
@@ -301,7 +235,7 @@
 
         </table>
 
-        <div id="res">
+
 
 
         <table cellspacing="0" cellpadding="0" id="local">
@@ -367,7 +301,7 @@
 
             </table>
             <hr>
-            <table cellspacing="0" cellpadding="0" id="visitante">
+            <table cellspacing="0" cellpadding="0">
                 <tr>
                     <th colspan="8">{{$match->AwayTeam->name}}</th>
                 </tr>
