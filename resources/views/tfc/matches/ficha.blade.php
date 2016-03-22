@@ -292,7 +292,7 @@
             </tr>
             <tr class="trTable" style="height: 200px !important;">
                 <td>{{$match->date}}</td>
-                <td>{{$match->FasesWeek->Fases->Tournament->name}}</td>
+                <td>{{$match->FasesWeek->Fases->Tournaments->name}}</td>
                 <td>{{$match->Canchas->Sedes->name or ''}}</td>
                 <td>{{$match->Canchas->name or '' }}</td>
                 <td>{{$match->FasesWeek->Fases->name }}</td>
