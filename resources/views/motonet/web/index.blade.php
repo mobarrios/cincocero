@@ -33,6 +33,12 @@
                 </button>
                 <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo.jpg" alt="motonet" width="100px" class="img-responsive"></a>
             </div>
+            <div class="redes">
+                <ul>
+                    <li><a href="#" target="_blank" class="fa fa-facebook-square"></a></li>
+                    <li><a href="#" target="_blank" class="fa fa-twitter-square"></a></li>
+                </ul>
+            </div>
             {{--<div id="navbar" class="navbar-collapse collapse pull-right">--}}
                 {{--<ul class="nav navbar-nav navbar-right">--}}
                     {{--<li><a class="page-scroll" href="#page-top">Destacados</a></li>--}}
@@ -47,7 +53,7 @@
     </nav>
 </div>
 
-<div class="buscador">
+<div class="buscador col-xs-12">
 
 </div>
 
