@@ -11,6 +11,7 @@ use App\Entities\tfc\Teams;
 use App\Helpers\FixtureHelper;
 use App\Http\Repositories\tfc\FasesRepo as Repo;
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\tfc\TablasRepo;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
 use Illuminate\Support\Facades\Session;
@@ -201,5 +202,11 @@ class FasesController extends Controller {
         $this->repo->delete($id);
 
         return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
+    }
+
+    public function recalcularTabla(TablasRepo $tablasRepo)
+    {
+
+        return $tablasRepo->recalcular();
     }
 }

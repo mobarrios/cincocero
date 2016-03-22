@@ -2,9 +2,13 @@
 
 @section('content')
 
-{!! Form::model($match , ['route'=>'matchesPostResult','id'=>'form']) !!}
+    {!! Form::model($match , ['route'=>'matchesPostResult','id'=>'form']) !!}
 
-{!! Form::hidden('matches_id', $match->id) !!}
+    @if($match->status == 2)
+        {!! Form::hidden('edit','1') !!}
+    @endif
+
+        {!! Form::hidden('matches_id', $match->id) !!}
 
 
 <div class="row">
@@ -74,7 +78,7 @@
         </table>
 
     </div>
-    @if($match->status == 1)
+
     <div class="col-xs-12"><hr></div>
 
     <div class="col-xs-12">
@@ -91,11 +95,16 @@
 
     <div class="col-xs-12"><br></div>
 
-
-    <div class="col-xs-12">
-        <input type="submit" class="btn btn-block btn-default" value="Cargar Resultado" >
-        <br>
-    </div>
+    @if($match->status == 1)
+        <div class="col-xs-12">
+            <input type="submit" class="btn btn-block btn-default" value="Cargar Resultado" >
+            <br>
+        </div>
+    @else
+        <div class="col-xs-12">
+            <input type="submit" class="btn btn-block btn-default" value="Editar Resultado" >
+            <br>
+        </div>
     @endif
 
 </div>
@@ -104,6 +113,14 @@
 
     @section('js')
         <script>
+
+            $(document).ready()
+            {
+                if($('#walkover').attr('checked'))
+                {
+                    $('.walk_div').attr('hidden',false);
+                }
+            }
 
             $('#walkover').on('change',function(){
 

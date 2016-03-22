@@ -16,6 +16,9 @@ Route::post('postNew'.$module,          ['as'=> $module.'PostNew', 'uses'=> $con
 Route::post('postEdit'.$module.'/{id}', ['as'=> $module.'PostEdit', 'uses'=> $controller.'@postEdit']);
 Route::post('postResult'.$module ,      ['as' => $module.'PostResult','uses'=>$controller.'@postResult']);
 
+Route::post('editResult'.$module.'/{id?}', ['middleware'=>'roles','data'=> $module.'-edit' ,'as' => $module.'PostEditResult','uses' => $controller.'@postEditResult']);
+
+
 
 
 

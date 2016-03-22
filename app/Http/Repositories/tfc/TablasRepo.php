@@ -3,6 +3,9 @@
 namespace App\Http\Repositories\tfc;
 
 //use App\Entities\tfc\Teams;
+use App\Entities\tfc\Fases;
+use App\Entities\tfc\FasesTeams;
+use App\Entities\tfc\FasesWeek;
 use App\Entities\tfc\Matches;
 use App\Entities\tfc\Tablas;
 use App\Http\Repositories\BaseRepo;
@@ -208,12 +211,96 @@ class TablasRepo extends BaseRepo {
 
         }
 
-
-
         return Session::get('fases_id');
     }
 
+    public function reCalculaTabla( $match_id = null)
+    {
+        $match     = Matches::find($match_id);
+
+        $tablaHome = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->home_teams_id)->first();
+        $tablaAway = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->away_teams_id)->first();
 
 
+        if($match->home_goals > $match->away_goals)
+        {
+                $tablaHome->pts          = $tablaHome->pts - 3;
+                $tablaHome->pj           = $tablaHome->pj - 1;
+                $tablaHome->pg           = $tablaHome->pg - 1;
+                $tablaHome->pe           = $tablaHome->pe - 0;
+                $tablaHome->pp           = $tablaHome->pp - 0;
+                $tablaHome->gf           = $tablaHome->gf - $match->home_goals;
+                $tablaHome->gc           = $tablaHome->gc - $match->away_goals;
+                $tablaHome->dg           = $tablaHome->dg - ($match->home_goals - $match->away_goals);
+                $tablaHome->save();
+
+                $tablaAway->pts          = $tablaAway->pts - 0;
+                $tablaAway->pj           = $tablaAway->pj - 1;
+                $tablaAway->pg           = $tablaAway->pg - 0;
+                $tablaAway->pe           = $tablaAway->pe - 0;
+                $tablaAway->pp           = $tablaAway->pp - 1;
+                $tablaAway->gf           = $tablaAway->gf - $match->away_goals;
+                $tablaAway->gc           = $tablaAway->gc - $match->home_goals;
+                $tablaAway->dg           = $tablaAway->dg - ($match->away_goals - $match->home_goals);
+                $tablaAway->save();
+
+        }
+        else if($match->home_goals < $match->away_goals)
+        {
+
+
+                $tablaAway->pts          = $tablaAway->pts - 3;
+                $tablaAway->pj           = $tablaAway->pj - 1;
+                $tablaAway->pg           = $tablaAway->pg - 1;
+                $tablaAway->pe           = $tablaAway->pe - 0;
+                $tablaAway->pp           = $tablaAway->pp - 0;
+                $tablaAway->gf           = $tablaAway->gf - $match->away_goals;
+                $tablaAway->gc           = $tablaAway->gc - $match->home_goals;
+                $tablaAway->dg           = $tablaAway->dg -($match->away_goals - $match->home_goals);
+                $tablaAway->save();
+
+
+                $tablaHome->pts          = $tablaHome->pts - 0;
+                $tablaHome->pj           = $tablaHome->pj - 1;
+                $tablaHome->pg           = $tablaHome->pg - 0;
+                $tablaHome->pe           = $tablaHome->pe - 0;
+                $tablaHome->pp           = $tablaHome->pp - 1;
+                $tablaHome->gf           = $tablaHome->gf - $match->home_goals;
+                $tablaHome->gc           = $tablaHome->gc - $match->away_goals;
+                $tablaHome->dg           = $tablaHome->dg -($match->home_goals - $match->away_goals);
+                $tablaHome->save();
+
+        }
+        else
+        {
+
+
+                $tablaHome->pts          = $tablaHome->pts - 1;
+                $tablaHome->pj           = $tablaHome->pj - 1;
+                $tablaHome->pg           = $tablaHome->pg - 0;
+                $tablaHome->pe           = $tablaHome->pe - 1;
+                $tablaHome->pp           = $tablaHome->pp - 0;
+                $tablaHome->gf           = $tablaHome->gf - $match->home_goals;
+                $tablaHome->gc           = $tablaHome->gc - $match->away_goals;
+                $tablaHome->dg           = $tablaHome->dg -($match->home_goals - $match->away_goals);
+                $tablaHome->save();
+
+
+
+
+                $tablaAway->pts          = $tablaAway->pts - 1;
+                $tablaAway->pj           = $tablaAway->pj - 1;
+                $tablaAway->pg           = $tablaAway->pg - 0;
+                $tablaAway->pe           = $tablaAway->pe - 1;
+                $tablaAway->pp           = $tablaAway->pp - 0;
+                $tablaAway->gf           = $tablaAway->gf - $match->away_goals;
+                $tablaAway->gc           = $tablaAway->gc - $match->home_goals;
+                $tablaAway->dg           = $tablaAway->dg -($match->away_goals - $match->home_goals);
+                $tablaAway->save();
+
+        }
+
+        return Session::get('fases_id');
+    }
 
 }

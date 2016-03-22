@@ -153,16 +153,28 @@ class MatchesController extends Controller {
 
         $match = Matches::find($request->matches_id);
 
+        // si edita el partido , borra los datos de la tabla actuales y los vuevle a cargar con los datos nuevos
+
+        if($request->edit == 1){
+            $tabla->reCalculaTabla($request->matches_id);
+        }
+
+
         if($request->home_goals != ''  || $request->away_goals != '')
         {
-            $match->home_goals = $request->home_goals;
-            $match->away_goals = $request->away_goals;
-            $match->walk_over_motivo = $request->walk_over_motivo;
+            $match->home_goals          = $request->home_goals;
+            $match->away_goals          = $request->away_goals;
+            $match->walk_over_motivo    = $request->walk_over_motivo;
         }
 
         if($request->walk_over == 'on')
-
             $match->walk_over = 1;
+        else
+        {
+            $match->walk_over           = 0;
+            $match->walk_over_motivo    = '';
+        }
+
 
         $match->status = 2;
         $match->save();
@@ -170,10 +182,8 @@ class MatchesController extends Controller {
         if($request->walk_over_no_ptos != 'on')
         {
 
-
         //recalcula tabla
         $tabla->calculaTabla($request->matches_id);
-
 
 
             foreach ($request->yellow as $yellow => $player) {
@@ -258,7 +268,24 @@ class MatchesController extends Controller {
 
         return $pdf->stream();
 
-
     }
+
+    //Edita resultado de los partidos
+
+    public function postEditResult( Request $request, TablasRepo $tablasRepo)
+    {
+        $id                 = $request->matches_id;
+        $match              = Matches::find($id);
+        $resultado_anterior =  $match;
+
+        $tablasRepo->reCalculaTabla($request->matches_id);
+
+        $tablasRepo->calculaTabla($request->matches_id);
+
+
+       // return view('tfc.matches.result')->with($this->data);
+    }
+
+
 
 }
