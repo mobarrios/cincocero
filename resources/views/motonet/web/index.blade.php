@@ -18,7 +18,7 @@
     <link href="assets/inspinia/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/inspinia/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body class="landing-page">
 <div class="navbar-wrapper">
