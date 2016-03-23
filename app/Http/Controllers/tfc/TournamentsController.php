@@ -51,6 +51,16 @@ class TournamentsController extends Controller {
         $this->data['series']          = Fases::lists('name','id');
         //$this->data['currency']        = Currency::lists('name','id');
 
+        $this->data['teams']            = Teams::WhereHas('FasesTeams',function($q){
+
+            $q->where('fases_id',Session::get('fases_id'));
+        })
+            ->where('status',1)
+            ->orderBy('name','ASC')
+            ->get()
+            ->lists('name','id');
+
+        
         //data for validation
         $this->rules                = $this->repo->Rules();
         $this->rulesEdit            = $this->repo->RulesEdit();

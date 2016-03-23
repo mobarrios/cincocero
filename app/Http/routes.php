@@ -114,6 +114,10 @@ Route::get('/cpanel', ['as'=>'login','uses'=>'LoginController@getLogin']);
             return redirect()->back();
         }]);
 
+        //search route
+
+        Route::get('search/{param1?}/{param2?}','SearchController@getSearch');
+
   //});
 
 //});

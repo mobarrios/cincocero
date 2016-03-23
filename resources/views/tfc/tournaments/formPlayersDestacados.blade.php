@@ -16,7 +16,12 @@
             {!! Form::open(['route' => 'tournamentsDestacadosPlayersPostNew' , 'files'=>'true']) !!}
         @endif
 
-        {!! Form::selectCustom('players_id','Jugador Destacado',$players)!!}
+        {!! Form::selectCustom('teams_id','Equipo',$teams) !!}
+
+        {{-- Form::selectCustom('players_id','Jugador Sancionado',$players) --}}
+        <select name="players_id" id="players" class="form-control">
+        </select>
+
         {!! Form::textAreaCustom('observations','Observaciones') !!}
 
         <hr>
@@ -27,6 +32,28 @@
 
     @endsection
 
+    @section('js')
+        <script>
+            $("select[name='teams_id']").on('change',function() {
+
+                $('#players').html('');
+
+                var teams_id = $(this).val();
+
+                $.ajax({url: "search/playersByTeams/"+teams_id,
+                    success: function(result)
+                    {
+                        $.each(result, function(key,value){
+
+                            $('#players').append('<option value='+value['id']+' >'+value['last_name']+' '+value['name']+'</option>');
+                            console.log(value['id']);
+                        });
+                    }
+                });
+
+            });
+        </script>
+    @endsection
 
 
 

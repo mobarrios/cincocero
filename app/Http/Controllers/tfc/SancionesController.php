@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\tfc;
 
+use App\Entities\tfc\FasesTeams;
 use App\Entities\tfc\FasesWeek;
 use App\Entities\tfc\Players;
 use App\Entities\tfc\Sanciones;
 use App\Entities\tfc\SancionesDetails;
+use App\Entities\tfc\Teams;
 use App\Http\Repositories\tfc\SancionesRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -46,7 +48,16 @@ class SancionesController extends Controller {
         $this->data['entityImg']        = $module;
 
         //selects
-        $this->data['players']             = Players::orderBy('last_name','ASC')->get()->lists('full_name','id');
+        //$this->data['players']        = Players::where('status',1)->orderBy('last_name','ASC')->get()->lists('full_name','id');
+        $this->data['teams']            = Teams::WhereHas('FasesTeams',function($q){
+
+                                                    $q->where('fases_id',Session::get('fases_id'));
+                                             })
+                                                ->where('status',1)
+                                                ->orderBy('name','ASC')
+                                                ->get()
+                                                ->lists('name','id');
+
 
         $this->data['sancionesDetails']    = SancionesDetails::lists('name','name');
 
