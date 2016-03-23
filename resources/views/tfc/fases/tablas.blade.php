@@ -18,21 +18,47 @@
             </thead>
             <tbody>
 
-            @foreach($tablas as $tabla)
-                <tr>
-                <td>{{$pos}}</td>
-                <td>{{$tabla->Teams->name}} </td>
-                <td>{{$tabla->pts}} </td>
-                <td>{{$tabla->pj}} </td>
-                <td>{{$tabla->pg}} </td>
-                <td>{{$tabla->pe}} </td>
-                <td>{{$tabla->pp}} </td>
-                <td>{{$tabla->gf}} </td>
-                <td>{{$tabla->gc}} </td>
-                <td>{{$tabla->dg}} </td>
-                </tr>
-                <?php $pos++ ?>
+            @foreach($teams as $team)
+
+                <?php
+                   $a =  \App\Entities\tfc\Tablas::where('fases_id',$fases_id)
+                           ->where('teams_id',$team->id)->first();
+                ?>
+                @if(!is_null($a))
+                    @if($a->count() != 0)
+                            <tr>
+                                <td>{{$pos}}</td>
+                                <td>{{$team->name}} </td>
+                                <td>{{$a->pts}} </td>
+                                <td>{{$a->pj}} </td>
+                                <td>{{$a->pg}} </td>
+                                <td>{{$a->pe}} </td>
+                                <td>{{$a->pp}} </td>
+                                <td>{{$a->gf}} </td>
+                                <td>{{$a->gc}} </td>
+                                <td>{{$a->dg}} </td>
+                            </tr>
+                        <?php $pos++ ?>
+                    @endif
+                @else
+
+                        <tr>
+                            <td>-</td>
+                            <td>{{$team->name}} </td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+
+                    @endif
+
             @endforeach
+
 
             </tbody>
 

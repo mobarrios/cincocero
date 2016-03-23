@@ -155,8 +155,10 @@ class MatchesController extends Controller {
 
         // si edita el partido , borra los datos de la tabla actuales y los vuevle a cargar con los datos nuevos
 
+
+
         if($request->edit == 1){
-            $tabla->reCalculaTabla($request->matches_id);
+            $tabla->reCalculaTabla($request->matches_id , $request->walk_over_no_ptos);
         }
 
 
@@ -175,20 +177,21 @@ class MatchesController extends Controller {
             $match->walk_over_motivo    = '';
         }
 
+        if($request->walk_over_no_ptos == 'on')
+        {
+            $match->walk_over_no_ptos = 1;
+
+        }
 
         $match->status = 2;
         $match->save();
 
         if($request->walk_over_no_ptos != 'on')
         {
-
-        //recalcula tabla
-        $tabla->calculaTabla($request->matches_id);
-
+            //recalcula tabla
+            $tabla->calculaTabla($request->matches_id);
 
             foreach ($request->yellow as $yellow => $player) {
-
-
 
                     if($match->MatchesDetails()->where('players_id',$yellow)->count() == 0)
                     {
@@ -204,33 +207,25 @@ class MatchesController extends Controller {
                         $detail->yellow     = $player;
                         $detail->save();
                     }
-
-
             }
 
-        foreach ($request->red as $red => $player) {
+            foreach ($request->red as $red => $player) {
 
+                    if($match->MatchesDetails()->where('players_id',$red)->count() == 0)
+                    {
+                        $detail                 = new MatchesDetails();
+                        $detail->matches_id     = $request->matches_id;
+                        $detail->players_id     = $red;
+                        $detail->red            = $player;
+                        $detail->save();
 
-                if($match->MatchesDetails()->where('players_id',$red)->count() == 0)
-                {
-                    $detail                 = new MatchesDetails();
-                    $detail->matches_id     = $request->matches_id;
-                    $detail->players_id     = $red;
-                    $detail->red         = $player;
-                    $detail->save();
+                    }else{
 
-                }else{
-
-                    $detail             = MatchesDetails::where('matches_id',$match->id)->where('players_id',$red)->first();
-                    $detail->red        = $player;
-                    $detail->save();
-                }
-
-
-        }
-
-
-
+                        $detail             = MatchesDetails::where('matches_id',$match->id)->where('players_id',$red)->first();
+                        $detail->red        = $player;
+                        $detail->save();
+                    }
+            }
                 foreach($request->goals as $player => $goal) {
 
                         if($match->MatchesDetails()->where('players_id',$player)->count() == 0)
@@ -247,11 +242,10 @@ class MatchesController extends Controller {
                             $detail->goals  = $goal;
                             $detail->save();
                         }
-
-
                 }
-
         }
+
+
 
         return redirect()->route('fasesFixture', Session::get('fases_id') );
     }

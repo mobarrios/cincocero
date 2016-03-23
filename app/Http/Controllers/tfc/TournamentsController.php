@@ -60,7 +60,7 @@ class TournamentsController extends Controller {
             ->get()
             ->lists('name','id');
 
-        
+
         //data for validation
         $this->rules                = $this->repo->Rules();
         $this->rulesEdit            = $this->repo->RulesEdit();

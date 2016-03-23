@@ -68,12 +68,6 @@ class FasesController extends Controller {
 
     }
 
-    public function requestCustom($request = null)
-    {
-        $newRequest = $request;
-
-        return $newRequest;
-    }
 
 
     //go to form new
@@ -160,12 +154,18 @@ class FasesController extends Controller {
 
     public function getTabla($fases_id)
     {
+
+       $this->data['teams'] = Teams::WhereHas('FasesTeams',function($q) use($fases_id){
+            $q->where('fases_id',$fases_id);
+        })->get();
+
         $this->data['tablas'] =  Tablas::where('fases_id',$fases_id)
                                 ->orderBy('pts','DESC')
                                 ->orderBy('pj','DESC')
                                 ->orderBy('dg','DESC')
                                 ->get();
 
+        $this->data['fases_id'] = $fases_id;
         $this->data['pos'] = 1;
 
         return view('tfc.fases.tablas')->with($this->data);
