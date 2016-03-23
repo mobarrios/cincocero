@@ -127,8 +127,25 @@ class WebController extends Controller {
 
     public function Resultado($categoriaId,$id,Tablas $tablas,FasesWeek $fasesWeek,Fases $fases,Categories $categories)
     {
-        $data['tablas']     = $tablas->where('fases_id',$id)->orderBy('pts','desc')->orderBy('dg','desc')->get();
+        $arr_teams = [];
+        $data['teams']  = Teams::whereHas('FasesTeams', function($q) use ($id){
+                                    $q->where('fases_id',$id);
+                                        })->orderBy('name','ASC')
+                                    ->get();
+
+        foreach($data['teams']  as $t)
+        {
+            $tabla = $tablas->where('fases_id',$id)->where('teams_id',$t->id);
+
+           // echo $tabla->count();
+       }
+      //  return;
+
+        $data['arr_teams'] = $arr_teams;
+        $data['tablas']    = $tablas->where('fases_id',$id);
+
         $data['resultado']  = $fasesWeek->where('fases_id',$id)->where('active',1)->get();
+
 
         $data['faseActual'] = $fases->find($id);
         $data['categoriaActual'] = $categories->find($categoriaId);
