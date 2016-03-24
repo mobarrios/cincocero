@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\Brands;
 use App\Entities\motonet\Models;
 use App\Http\Repositories\motonet\ItemsRepo as Repo;
 use App\Http\Controllers\Controller;
@@ -39,7 +40,7 @@ class ItemsController extends Controller {
         $this->data['entityImg']        = 'items';
 
         //selects
-        $this->data['modelos']           = Models::lists('name','id');
+        $this->data['brands']           = Brands::lists('name','id');
 
         //data for validation
         $this->rules                = $this->repo->Rules();
