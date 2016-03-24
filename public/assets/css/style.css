@@ -4192,6 +4192,11 @@ a.close-canvas-menu:hover {
 .m-t-xl {
     margin-top: 40px;
 }
+
+.m-t-155{
+    margin-top: 155px;
+}
+
 .m-t-n-xxs {
     margin-top: -1px;
 }
@@ -8333,4 +8338,15 @@ body.md-skin {
 
 .buscador{
     background-color: #0187CE;
+	height:50px;
 }
+
+
+.buscador form{
+	padding-top: 10px;
+}
+
+
+
+
+
