@@ -6783,6 +6783,8 @@ body.landing-page {
     max-height: 470px;
 }
 .landing-page .carousel-fade .carousel-inner .item {
+    padding-top: 5px;
+    padding-botom: 5px;
     opacity: 0;
     -webkit-transition-property: opacity;
     transition-property: opacity;
@@ -6796,12 +6798,28 @@ body.landing-page {
     opacity: 0;
     z-index: 1;
 }
+
+.landing-page .carousel-fade .carousel-inner .arrows:before{
+    font-size:55px !important;
+
+}
+
+.landing-page .carousel-fade .carousel-inner .left{
+    left:-10px !important;
+}
+
+.landing-page .carousel-fade .carousel-inner .right{
+    right:-10px !important;;
+}
+
 .landing-page .carousel-fade .carousel-inner .next.left,
 .landing-page .carousel-fade .carousel-inner .prev.right {
     opacity: 1;
 }
 .landing-page .carousel-fade .carousel-control {
     z-index: 2;
+    top:215px;
+    font-size:55px;
 }
 .landing-page .carousel-control.left,
 .landing-page .carousel-control.right {
@@ -6815,6 +6833,7 @@ body.landing-page {
 }
 .landing-page .carousel-inner {
     overflow: hidden;
+    border-bottom: 10px solid rgb(119, 119, 119);
 }
 .landing-page .carousel-caption {
     position: absolute;
@@ -6840,7 +6859,10 @@ body.landing-page {
 .landing-page .carousel-image {
     position: absolute;
     left: 0;
-    top: 110px;
+    top: 5px;
+    bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     width:100%;
     height:auto;
 }
@@ -8303,8 +8325,8 @@ body.md-skin {
 }
 
 #inSlider{
-    margin-top:50px;
-    padding-bottom:15px;
+    margin-top:5px;
+    /*padding-bottom:15px;*/
 }
 
 .landing-page .navbar-default {

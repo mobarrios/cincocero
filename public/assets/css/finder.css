@@ -434,6 +434,10 @@
 	background: #fff url('arrow.png') right center no-repeat;
 }
 
+#finder>select:disabled{
+    opacity: .65;
+}
+
 #finder>.input-group-addon{
 	margin-top:-3px;
 	width:36px;
@@ -445,7 +449,6 @@
 	margin:auto;
 	padding:0;
 }
-
 
 
 
