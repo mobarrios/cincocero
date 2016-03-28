@@ -131,6 +131,16 @@ class FasesController extends Controller {
 
         }
 
+        //agrega los datos a la tabla de posiciones
+        foreach($teams as $t)
+        {
+            $newTabla = new Tablas();
+            $newTabla->teams_id = $t;
+            $newTabla->fases_id = $model->id;
+            $newTabla->save();
+        }
+
+
 
         // if has image uploaded
         if($request->hasFile('image'))
@@ -152,12 +162,15 @@ class FasesController extends Controller {
         return view($this->detail)->with($this->data);
     }
 
-    public function getTabla($fases_id)
+    public function getTabla($fases_id ,TablasRepo $tabla)
     {
+        // si no hay equipos en la tabla los crea
+        $tabla->getTabla($fases_id);
 
-       $this->data['teams'] = Teams::WhereHas('FasesTeams',function($q) use($fases_id){
-            $q->where('fases_id',$fases_id);
-        })->get();
+
+       //$this->data['teams'] = Teams::WhereHas('FasesTeams',function($q) use($fases_id){
+       //     $q->where('fases_id',$fases_id);
+       // })->get();
 
         $this->data['tablas'] =  Tablas::where('fases_id',$fases_id)
                                 ->orderBy('pts','DESC')

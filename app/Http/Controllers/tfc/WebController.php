@@ -127,6 +127,7 @@ class WebController extends Controller {
 
     public function Resultado($categoriaId,$id,Tablas $tablas,FasesWeek $fasesWeek,Fases $fases,Categories $categories)
     {
+        /*
         $arr_teams = [];
         $data['teams']  = Teams::whereHas('FasesTeams', function($q) use ($id){
                                     $q->where('fases_id',$id);
@@ -140,12 +141,17 @@ class WebController extends Controller {
            // echo $tabla->count();
        }
       //  return;
-
-        $data['arr_teams'] = $arr_teams;
-        $data['tablas']    = $tablas->where('fases_id',$id);
+        */
+        //$data['arr_teams'] = $arr_teams;
+        //$data['tablas']    = $tablas->where('fases_id',$id);
 
         $data['resultado']  = $fasesWeek->where('fases_id',$id)->where('active',1)->get();
 
+        $data['tablas'] =  Tablas::where('fases_id',$id)
+            ->orderBy('pts','DESC')
+            ->orderBy('pj','DESC')
+            ->orderBy('dg','DESC')
+            ->get();
 
         $data['faseActual'] = $fases->find($id);
         $data['categoriaActual'] = $categories->find($categoriaId);

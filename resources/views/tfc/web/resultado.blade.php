@@ -18,45 +18,6 @@
                 <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                   <tbody>
 
-                    @if(count($tablas) == 0)
-                        <tr>
-                            <td colspan="2" align="center" class="info"></td>
-                            <td colspan="2" align="center" class="info">Equipo</td>
-                            <td colspan="2" align="center" class="info">Pts.</td>
-                            <td colspan="2" align="center" class="info">PJ</td>
-                            <td colspan="2" align="center" class="info">PG</td>
-                            <td colspan="2" align="center" class="info">PE</td>
-                            <td colspan="2" align="center" class="info">PP</td>
-                            <td colspan="2" align="center" class="info">GF</td>
-                            <td colspan="2" align="center" class="info">GC</td>
-                            <td colspan="2" align="center" class="info">DIF</td>
-                        </tr>
-                        @foreach($teams as $team)
-                            <tr>
-                                <td colspan="2"><img src="{!! $team->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35" alt=""/></td>
-                                <td colspan="2">{{$team->name}}</td>
-                                <td colspan="2" ></td>
-                                <td colspan="2"></td>
-                                <td colspan="2"></td>
-                                <td colspan="2"></td>
-                                <td colspan="2"></td>
-                                <td colspan="2"></td>
-                                <td colspan="2"></td>
-                                <td colspan="2"></td>
-                            </tr>
-                        @endforeach
-                    @else
-
-                        @foreach($teams as $team)
-                            {!! dd($tablas) !!}}
-                            <?php
-                                $id = $team->id;
-                                $t  = $tablas->where('teams_id','=', $id)->get();
-                                    var_dump($t);
-                            ?>
-                            <hr>
-                        @endforeach
-
 
                         <tr>
                             <td colspan="2" align="center" class="info"></td>
@@ -75,9 +36,6 @@
 
                         @foreach($tablas as $tab)
 
-                          @if(!array_has($arr_teams,$tab->teams->id))
-                              <td>dasdas</td>
-                          @endif
                           <tr>
                               <td colspan="2" align="center" class="active"><img src="{!! $tab->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35" alt=""/></td>
                               <td colspan="2" align="center" class="active"><a href="{{route('equipo',[$categoriaActual->id,$faseActual->id,$tab->teams->id])}}">{!! $tab->teams->name or '' !!}</a></td>
@@ -91,7 +49,6 @@
                               <td colspan="2" align="center" class="active">{!! $tab->dg !!}</td>
                           </tr>
                       @endforeach
-                    @endif
 
                   </tbody>
                 </table>
