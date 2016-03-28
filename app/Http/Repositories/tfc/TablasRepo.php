@@ -20,13 +20,14 @@ class TablasRepo extends BaseRepo {
     }
 
 
-    public function calculaTabla( $match_id = null)
+    public function calculaTabla( $match_id = null,$walk_over_no_ptos = null)
     {
         $match     = Matches::find($match_id);
 
         $tablaHome = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->home_teams_id)->first();
         $tablaAway = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->away_teams_id)->first();
 
+        
 
         if($match->home_goals > $match->away_goals)
         {
@@ -221,12 +222,11 @@ class TablasRepo extends BaseRepo {
     public function reCalculaTabla( $match_id = null , $walk_over_no_ptos = null)
     {
 
-
-
         $match     = Matches::find($match_id);
 
         $tablaHome = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->home_teams_id)->first();
         $tablaAway = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->away_teams_id)->first();
+
 
 
         if($match->home_goals > $match->away_goals)

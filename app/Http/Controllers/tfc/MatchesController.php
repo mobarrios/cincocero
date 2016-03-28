@@ -155,11 +155,29 @@ class MatchesController extends Controller {
 
         // si edita el partido , borra los datos de la tabla actuales y los vuevle a cargar con los datos nuevos
 
-
-
+        //si edita el partido vuelve los datos atras
         if($request->edit == 1){
+
             $tabla->reCalculaTabla($request->matches_id , $request->walk_over_no_ptos);
         }
+
+        // si el walk over esta on
+        if($request->walk_over == 'on')
+        {
+            $match->walk_over = 1;
+
+                if($request->walk_over_no_ptos == 'on')
+                {
+                    $match->walk_over_no_ptos = 1;
+                }
+        }
+        else
+        {
+            $match->walk_over           = 0;
+            $match->walk_over_motivo    = '';
+        }
+
+
 
 
         if($request->home_goals != ''  || $request->away_goals != '')
@@ -167,20 +185,6 @@ class MatchesController extends Controller {
             $match->home_goals          = $request->home_goals;
             $match->away_goals          = $request->away_goals;
             $match->walk_over_motivo    = $request->walk_over_motivo;
-        }
-
-        if($request->walk_over == 'on')
-            $match->walk_over = 1;
-        else
-        {
-            $match->walk_over           = 0;
-            $match->walk_over_motivo    = '';
-        }
-
-        if($request->walk_over_no_ptos == 'on')
-        {
-            $match->walk_over_no_ptos = 1;
-
         }
 
         $match->status = 2;
