@@ -6931,7 +6931,7 @@ body.landing-page {
 }
 .landing-page .gray-section {
     background: #f4f4f4;
-    margin-top: 60px;
+    padding-top: 60px;
 }
 .landing-page .team-member {
     text-align: center;
@@ -7000,7 +7000,7 @@ body.landing-page {
 .landing-page .contact {
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    margin-top: 60px;
+
 }
 .landing-page section.timeline {
     padding-bottom: 30px;
@@ -8369,6 +8369,20 @@ body.md-skin {
 }
 
 
+#destacados h1{
+    font-weight: bold;
+    border-bottom: 2px solid #333333;
+    margin-bottom: 25px;
+    color: #666666;
+    line-height: 1em;
+}
 
+.ibox .btn-primary{
+    border-color: #0187CE;
+    color: #0187CE;
+    background-color: #fff;
+}
 
-
+.ibox .product-imitation img{
+    width:80%;
+}
