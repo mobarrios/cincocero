@@ -51,11 +51,7 @@ class TournamentsController extends Controller {
         $this->data['series']          = Fases::lists('name','id');
         //$this->data['currency']        = Currency::lists('name','id');
 
-        $this->data['teams']            = Teams::WhereHas('FasesTeams',function($q){
-
-            $q->where('fases_id',Session::get('fases_id'));
-        })
-            ->where('status',1)
+        $this->data['teams']           = Teams::where('status',1)
             ->orderBy('name','ASC')
             ->get()
             ->lists('name','id');
@@ -92,6 +88,7 @@ class TournamentsController extends Controller {
         Session::put('categories_id', $cat_id);
 
         $destacado = DestacadosCategories::where('seasons_id',$season_id)->where('categories_id',$cat_id)->get();
+
 
 
         if($destacado->count() != 0)
