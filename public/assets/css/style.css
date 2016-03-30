@@ -3721,6 +3721,8 @@ code {
     margin-bottom: 25px;
     margin-top: 0;
     padding: 0;
+    max-height: 470px;
+    min-height: 424px;
 }
 .ibox.collapsed .ibox-content {
     display: none;
@@ -5242,7 +5244,7 @@ del {
 }
 .product-imitation {
     text-align: center;
-    padding: 90px 0;
+    padding: 40px 0;
     background-color: #f8f8f9;
     color: #bebec3;
     font-weight: 600;
