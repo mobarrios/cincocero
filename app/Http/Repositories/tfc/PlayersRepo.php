@@ -19,7 +19,7 @@ class PlayersRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'last_name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:6144',
             'teams_id' => 'required',
             'dni' => 'required|unique:players,dni',
         ];
@@ -30,7 +30,7 @@ class PlayersRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'last_name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:6144',
             'teams_id' => 'required',
         ];
     }
