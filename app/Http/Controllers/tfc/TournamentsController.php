@@ -87,7 +87,7 @@ class TournamentsController extends Controller {
         Session::put('seasons_id', $season_id);
         Session::put('categories_id', $cat_id);
 
-        $destacado = DestacadosCategories::where('seasons_id',$season_id)->where('categories_id',$cat_id)->get();
+        $destacado = DestacadosCategories::where('players_id','<>','null')->where('seasons_id',$season_id)->where('categories_id',$cat_id)->get();
 
 
 
@@ -112,7 +112,7 @@ class TournamentsController extends Controller {
 
     public function destacadosPlayersPostNew(Request $request)
     {
-        $destacado = DestacadosCategories::where('seasons_id',Session::get('seasons_id'))->where('categories_id',Session::get('categories_id'))->get();
+        $destacado = DestacadosCategories::where('players_id','<>','null')->where('seasons_id',Session::get('seasons_id'))->where('categories_id',Session::get('categories_id'))->get();
 
           if($destacado->count() == 0 ){
 
@@ -147,7 +147,7 @@ class TournamentsController extends Controller {
         Session::put('seasons_id', $season_id);
         Session::put('categories_id', $cat_id);
 
-        $destacado = DestacadosCategories::where('seasons_id',$season_id)->where('categories_id',$cat_id)->get();
+        $destacado = DestacadosCategories::where('teams_id','<>','null')->where('seasons_id',$season_id)->where('categories_id',$cat_id)->get();
 
 
         if($destacado->count() != 0)
@@ -173,7 +173,7 @@ class TournamentsController extends Controller {
 
     public function destacadosTeamsPostNew(Request $request)
     {
-        $destacado = DestacadosCategories::where('seasons_id',Session::get('seasons_id'))->where('categories_id',Session::get('categories_id'))->get();
+        $destacado = DestacadosCategories::where('teams_id','<>','null')->where('seasons_id',Session::get('seasons_id'))->where('categories_id',Session::get('categories_id'))->get();
 
         if($destacado->count() == 0 ){
 
