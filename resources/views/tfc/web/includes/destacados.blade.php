@@ -61,7 +61,13 @@
       <table width="100%" border="0"  class="table-responsive">
         <tbody>
         <tr>
-          <td width="18%"><img src="{!! $equipoDestacado->teams->images->first()->image  or ''!!}" width="450" height="302" alt=""/></td>
+          <td width="18%">
+            @if($equipoDestacado->teams->images->count() > 1)
+              <img src="{!! $equipoDestacado->teams->images->last()->image  or ''!!}" width="450" height="302" alt=""/>
+            @elseif($equipoDestacado->teams->images->first()->image)
+              <img src="{!! $equipoDestacado->teams->images->first()->image  or ''!!}" width="450" height="302" alt=""/>
+            @endif
+          </td>
         </tr>
         </tbody>
       </table>
