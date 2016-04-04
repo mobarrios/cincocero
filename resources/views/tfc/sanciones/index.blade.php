@@ -13,6 +13,7 @@
                 <th>Jugador</th>
                 <th>Sancion</th>
                 <th>Hasta Fecha</th>
+                <th></th>
             </thead>
 
             @foreach($models as $model)
@@ -21,6 +22,14 @@
                     <td>{{$model->Players->fullName()}}</td>
                     <td>{!! $model->sancion !!}</td>
                     <td>{{$model->endSancion->name}}</td>
+                    <td>
+                        <a class="btn btn-xs btn-default" href="{{route('sancionesGetEdit',$model->id)}}">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="delete btn btn-xs btn-default" href="{{route('sancionesGetDel' ,$model->id)}}">
+                            <i class="delete fa fa-trash"></i>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </table>
