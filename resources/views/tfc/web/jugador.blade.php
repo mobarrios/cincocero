@@ -36,10 +36,7 @@
                           <td width="74%"><table width="100%">
                             <tbody>
                               <tr>
-                                <td><p>{!! $jugador->FullName() !!}</p><p><strong>DNI:</strong> {!! $jugador->dni !!}</p></td>
-                              </tr>
-                              <tr>
-                                <td><strong>Mail:</strong> {!! $jugador->mail !!}</td>
+                                <td><p>{!! $jugador->FullName() !!}</p></td>
                               </tr>
                               <tr>
                                   <td><strong>Equipo:</strong> {!! $jugador->teams->name !!}</td>
