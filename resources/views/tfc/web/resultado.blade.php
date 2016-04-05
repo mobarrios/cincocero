@@ -52,44 +52,8 @@
 
                   </tbody>
                 </table>
-              <div class="categoria-container titulo-categoria" style="border-bottom-color: {{$categoriaActual->color_bottom}};border-top-color: {{$categoriaActual->color_bottom}};border-left-color: {{$categoriaActual->color_bottom}}">
-                <div class="color-top" style="background-color: {{$categoriaActual->color_top}};"></div>
-                <div class="color-bottom" style="background-color: {{$categoriaActual->color_bottom}};">
-                  <h2>RESULTADO DE LA FECHA</h2>
-                </div>
-              </div>
-                <p>&nbsp;</p>
-                <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
-                  <tbody class="borders">
 
-                      @if($resultado->count() == 0)
-                          @include('tfc/web/includes/sinDatos')
-                      @else
-                        @foreach($resultado as $res)
-                          <tr>
-                              <td colspan="6" align="center" class="success">Fecha {!! $res->name !!}</td>
-                          </tr>
-                          <tr>
-                              <td align="center" class="success">Fecha</td>
-                              <td align="center" class="success">Equipo</td>
-                              <td align="center" class="success"></td>
-                              <td align="center" class="success"></td>
-                              <td align="center" class="success">Equipo</td>
-                          </tr>
-                            @foreach($res->Matches as $match)
-                                <tr>
-                                  <td align="center" class="active">{!! $match->date or '-' !!}</td>
-                                  <td align="center" class="active">{!! $match->HomeTeam->name or 'Libre' !!}</td>
-                                  <td align="center" class="active">{!! $match->home_goals !!}</td>
-                                  <td align="center" class="active">{!! $match->away_goals !!}</td>
-                                  <td align="center" class="active">{!! $match->AwayTeam->name or 'Libre' !!}</td>
-                                </tr>
-                            @endforeach
 
-                        @endforeach
-                      @endif
-                  </tbody>
-                </table>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <center><!-- row --></center>
