@@ -159,6 +159,10 @@
             top: 230px;
         }
 
+        #local .nombre,#visitante .nombre{
+            text-transform: lowercase !important;
+        }
+
     </style>
 
 </head>
@@ -176,7 +180,7 @@
                 <table cellspacing="0" cellpadding="0">
                     <tr>
                         <td>&nbsp;</td>
-                        <th>Nombre</th>
+                        <th class="nombre">Nombre</th>
                         <th>Firma</th>
                     </tr>
                     <tr>
@@ -258,7 +262,7 @@
                         <th colspan="8">{{$match->HomeTeam->name}}</th>
                     </tr>
                     <tr>
-                        <th>Nombre</th>
+                        <th class="nombre">Nombre</th>
                         <th class="dni">DNI</th>
                         <th style="width:100px;">Firma</th>
                         <th class="vc">N°</th>
@@ -321,7 +325,7 @@
                         <th colspan="8">{{$match->AwayTeam->name}}</th>
                     </tr>
                     <tr>
-                        <th>Nombre</th>
+                        <th class="nombre">Nombre</th>
                         <th class="dni">DNI</th>
                         <th style="width:100px;">Firma</th>
                         <th>N°</th>
