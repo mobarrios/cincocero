@@ -245,6 +245,7 @@ class WebController extends Controller {
 
     public function Sancion($categoriaId,$id,Matches $matches,FasesWeek $fasesWeek, Fases $fases,Categories $categories)
     {
+
         $data['fases'] = $fasesWeek->where('fases_id',$id)->where('active',1)->first()->id;
 
 //        $data['sanciones'] = $sanciones->where('end_fases_week_id','<=',$data['fases'])->get();
