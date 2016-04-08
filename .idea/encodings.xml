@@ -26,6 +26,7 @@
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/reglamento.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/resultado.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/sancion.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/tfc/web/sancion2.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/sede_detalle.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/sedes.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/tfc/web/sidebar/sidebar.blade.php" charset="UTF-8" />
