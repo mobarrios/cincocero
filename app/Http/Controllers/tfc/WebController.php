@@ -13,6 +13,7 @@ use App\Entities\tfc\MatchesDetails;
 use App\Entities\tfc\News;
 use App\Entities\tfc\Galleries;
 use App\Entities\tfc\Players;
+use App\Entities\tfc\Sanciones;
 use App\Entities\tfc\Sedes;
 use App\Entities\tfc\Tablas;
 use App\Entities\tfc\Teams;
@@ -244,8 +245,14 @@ class WebController extends Controller {
 
     public function Sancion($categoriaId,$id,Matches $matches,FasesWeek $fasesWeek, Fases $fases,Categories $categories)
     {
-        $data['fases'] = $fasesWeek->where('fases_id',$id)->where('active',1)->first();
+        $data['fases'] = $fasesWeek->where('fases_id',$id)->where('active',1)->first()->id;
+
+//        $data['sanciones'] = $sanciones->where('end_fases_week_id','<=',$data['fases'])->get();
+        $data['faseWeekActual'] = $fasesWeek->find($data['fases'])->name;
+//        dd($data['sanciones']->first()->EndSancion->name);
+
         $data['faseActual'] = $fases->find($id);
+
         $data['categoriaActual'] = $categories->find($categoriaId);
 
         // setcookie("fase",$id);

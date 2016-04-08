@@ -27,33 +27,20 @@
 
 
                     @if(!is_null($fases))
-                        @if(\App\Entities\tfc\Sanciones::count() == 0)
+                        @if($fases->Sancion->count() == 0)
                             @include('tfc/web/includes/sinDatos')
                         @else
 
-                            {{--@foreach($fases->sancion as $p)--}}
-                                        {{--<tr>--}}
-                                          {{--<td colspan="2" align="center" class="active">{!! $p->StartSancion->name!!}</td>--}}
-                                          {{--<td colspan="2" align="center" class="active">{!! $p->EndSancion->name!!}</td>--}}
-                                          {{--<td colspan="2" align="center" class="active">{!! $p->players->teams->name !!}</td>--}}
-                                          {{--<td colspan="2" align="center" class="active">{!! $p->players->FullName() !!}</td>--}}
+                            @foreach($fases->sancion as $p)
+                                        <tr>
+                                          <td colspan="2" align="center" class="active">{!! $p->StartSancion->name!!}</td>
+                                          <td colspan="2" align="center" class="active">{!! $p->EndSancion->name!!}</td>
+                                          <td colspan="2" align="center" class="active">{!! $p->players->teams->name !!}</td>
+                                          <td colspan="2" align="center" class="active">{!! $p->players->FullName() !!}</td>
 
-                                          {{--<td colspan="2" align="center" class="active">{!! $p->sancion!!}</td>--}}
-                                        {{--</tr>--}}
+                                          <td colspan="2" align="center" class="active">{!! $p->sancion!!}</td>
+                                        </tr>
 
-                            {{--@endforeach--}}
-
-                            @foreach(\App\Entities\tfc\Sanciones::get() as $p)
-                                @if($p->EndSancion->name >= $faseWeekActual)
-                                    <tr>
-                                        <td colspan="2" align="center" class="active">{!! $p->StartSancion->name!!}</td>
-                                        <td colspan="2" align="center" class="active">{!! $p->EndSancion->name!!}</td>
-                                        <td colspan="2" align="center" class="active">{!! $p->players->teams->name !!}</td>
-                                        <td colspan="2" align="center" class="active">{!! $p->players->FullName() !!}</td>
-
-                                        <td colspan="2" align="center" class="active">{!! $p->sancion!!}</td>
-                                    </tr>
-                                @endif
                             @endforeach
                         @endif
                     @endif
