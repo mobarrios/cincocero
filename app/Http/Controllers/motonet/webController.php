@@ -16,4 +16,8 @@ class webController extends Controller {
         return view('motonet/web/index');
     }
 
+    public function detail(){
+        return view('motonet/web/detail');
+    }
+
 }
