@@ -259,7 +259,7 @@
 
         <table cellspacing="0" cellpadding="0" id="local">
                     <tr>
-                        <th colspan="8">{{$match->HomeTeam->name}}</th>
+                        <th colspan="7">{{$match->HomeTeam->name}}</th>
                     </tr>
                     <tr>
                         <th class="nombre">Nombre</th>
@@ -269,7 +269,6 @@
                         <th class="vc">A</th>
                         <th class="vc">R</th>
                         <th class="vc">G</th>
-                        <th>Ob</th>
                     </tr>
                     <?php  $countH = 0; ?>
                     @foreach($match->HomeTeam->Players as $player)
@@ -284,7 +283,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>S</td>
+
                             </tr>
                         @else
                             <tr class="trTable" >
@@ -295,7 +294,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
+
                             </tr>
                         @endif
 
@@ -313,7 +312,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
+
                         </tr>
                     @endfor
 
@@ -322,7 +321,7 @@
 
         <table cellspacing="0" cellpadding="0" id="visitante">
                     <tr>
-                        <th colspan="8">{{$match->AwayTeam->name}}</th>
+                        <th colspan="7">{{$match->AwayTeam->name}}</th>
                     </tr>
                     <tr>
                         <th class="nombre">Nombre</th>
@@ -332,7 +331,7 @@
                         <th>A</th>
                         <th>R</th>
                         <th>G</th>
-                        <th>Ob</th>
+
                     </tr>
                     <?php  $countA = 0; ?>
                     @foreach($match->AwayTeam->Players as $player)
@@ -346,7 +345,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>S</td>
+
                             </tr>
                         @else
                             <tr class="trTable"  style="height: 200px !important;">
@@ -357,7 +356,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
+
                             </tr>
                         @endif
 
@@ -375,7 +374,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
+
                         </tr>
                     @endfor
 
