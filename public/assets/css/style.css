@@ -3721,6 +3721,8 @@ code {
     margin-bottom: 25px;
     margin-top: 0;
     padding: 0;
+    max-height: 470px;
+    min-height: 424px;
 }
 .ibox.collapsed .ibox-content {
     display: none;
@@ -5242,7 +5244,7 @@ del {
 }
 .product-imitation {
     text-align: center;
-    padding: 90px 0;
+    padding: 40px 0;
     background-color: #f8f8f9;
     color: #bebec3;
     font-weight: 600;
@@ -6783,6 +6785,8 @@ body.landing-page {
     max-height: 470px;
 }
 .landing-page .carousel-fade .carousel-inner .item {
+    padding-top: 5px;
+    padding-botom: 5px;
     opacity: 0;
     -webkit-transition-property: opacity;
     transition-property: opacity;
@@ -6796,12 +6800,28 @@ body.landing-page {
     opacity: 0;
     z-index: 1;
 }
+
+.landing-page .carousel-fade .carousel-inner .arrows:before{
+    font-size:55px !important;
+
+}
+
+.landing-page .carousel-fade .carousel-inner .left{
+    left:-10px !important;
+}
+
+.landing-page .carousel-fade .carousel-inner .right{
+    right:-10px !important;;
+}
+
 .landing-page .carousel-fade .carousel-inner .next.left,
 .landing-page .carousel-fade .carousel-inner .prev.right {
     opacity: 1;
 }
 .landing-page .carousel-fade .carousel-control {
     z-index: 2;
+    top:215px;
+    font-size:55px;
 }
 .landing-page .carousel-control.left,
 .landing-page .carousel-control.right {
@@ -6815,6 +6835,7 @@ body.landing-page {
 }
 .landing-page .carousel-inner {
     overflow: hidden;
+    border-bottom: 10px solid rgb(119, 119, 119);
 }
 .landing-page .carousel-caption {
     position: absolute;
@@ -6840,7 +6861,10 @@ body.landing-page {
 .landing-page .carousel-image {
     position: absolute;
     left: 0;
-    top: 110px;
+    top: 5px;
+    bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     width:100%;
     height:auto;
 }
@@ -6909,7 +6933,7 @@ body.landing-page {
 }
 .landing-page .gray-section {
     background: #f4f4f4;
-    margin-top: 60px;
+    padding-top: 60px;
 }
 .landing-page .team-member {
     text-align: center;
@@ -6978,7 +7002,7 @@ body.landing-page {
 .landing-page .contact {
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    margin-top: 60px;
+
 }
 .landing-page section.timeline {
     padding-bottom: 30px;
@@ -8303,8 +8327,8 @@ body.md-skin {
 }
 
 #inSlider{
-    margin-top:50px;
-    padding-bottom:15px;
+    margin-top:5px;
+    /*padding-bottom:15px;*/
 }
 
 .landing-page .navbar-default {
@@ -8347,6 +8371,20 @@ body.md-skin {
 }
 
 
+#destacados h1{
+    font-weight: bold;
+    border-bottom: 2px solid #333333;
+    margin-bottom: 25px;
+    color: #666666;
+    line-height: 1em;
+}
 
+.ibox .btn-primary{
+    border-color: #0187CE;
+    color: #0187CE;
+    background-color: #fff;
+}
 
-
+.ibox .product-imitation img{
+    width:80%;
+}
