@@ -3722,7 +3722,6 @@ code {
     margin-top: 0;
     padding: 0;
     max-height: 470px;
-    min-height: 424px;
 }
 .ibox.collapsed .ibox-content {
     display: none;
@@ -5251,11 +5250,22 @@ del {
 }
 .cart-product-imitation {
     text-align: center;
-    padding-top: 30px;
+    position:relative;
     height: 80px;
     width: 80px;
     background-color: #f8f8f9;
+    overflow: hidden;
 }
+
+.cart-product-imitation img{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
 .product-imitation.xl {
     padding: 120px 0;
 }
@@ -8336,7 +8346,9 @@ body.md-skin {
 }
 
 .redes{
-    float:right;
+    position: absolute;
+    top: 0px;
+    right: 20px;
 }
 
 .redes ul li{
@@ -8387,4 +8399,22 @@ body.md-skin {
 
 .ibox .product-imitation img{
     width:80%;
+}
+
+
+.mt-30{
+    margin-top: 30px !important;
+    height:100%;
+}
+
+.gray-bg{
+    height: 100%;
+}
+
+.pt-30{
+    padding-top:30px !important;
+}
+
+body{
+    background-color: #f3f3f4 !important;
 }

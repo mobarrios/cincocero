@@ -20,4 +20,12 @@ class webController extends Controller {
         return view('motonet/web/detail');
     }
 
+    public function grid(){
+        return view('motonet/web/grid');
+    }
+
+    public function resumen(){
+        return view('motonet/web/resumen');
+    }
+
 }

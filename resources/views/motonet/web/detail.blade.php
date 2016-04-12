@@ -12,34 +12,15 @@
             padding: 5px 10px;
             font-weight: inherit;
         }
+
     </style>
 @endsection
 
 @section('content')
 
-<div>
-
-
+<div >
     <div class="gray-bg">
-        <div class="row wrapper border-bottom white-bg page-heading">
-            <div class="col-lg-12">
-                <h2>E-commerce product detail</h2>
-                <ol class="breadcrumb">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a>E-commerce</a>
-                    </li>
-                    <li class="active">
-                        <strong>Product detail</strong>
-                    </li>
-                </ol>
-            </div>
-            <div class="col-lg-2">
-
-            </div>
-        </div>
+        @include('motonet/web/includes/breadcrumbs')
 
         <div class="wrapper wrapper-content animated fadeInRight">
 
@@ -57,17 +38,17 @@
 
                                         <div>
                                             <div class="image-imitation">
-                                                [IMAGE 1]
+                                                [IMAGEN 1]
                                             </div>
                                         </div>
                                         <div>
                                             <div class="image-imitation">
-                                                [IMAGE 2]
+                                                [IMAGEN 2]
                                             </div>
                                         </div>
                                         <div>
                                             <div class="image-imitation">
-                                                [IMAGE 3]
+                                                [IMAGEN 3]
                                             </div>
                                         </div>
 
@@ -78,57 +59,48 @@
                                 <div class="col-md-7">
 
                                     <h2 class="font-bold m-b-xs">
-                                        Desktop publishing software
+                                        Cuatriciclo BKS 500 4×4
                                     </h2>
-                                    <small>Many desktop publishing packages and web page editors now.</small>
+                                    <small>Blackstone trae a la Argentina los Cuatriciclos LINHAI –  Reconocidos a nivel Mundial.
+                                        <br></small>
                                     <div class="m-t-md">
-                                        <h2 class="product-main-price">$406,602 <small class="text-muted">Exclude Tax</small> </h2>
+                                        <h2 class="product-main-price">$14106</h2>
                                     </div>
                                     <hr>
 
-                                    <h4>Product description</h4>
+                                    <h4>Descripción</h4>
 
                                     <div class="small text-muted">
-                                        It is a long established fact that a reader will be distracted by the readable
-                                        content of a page when looking at its layout. The point of using Lorem Ipsum is
-
-                                        <br/>
-                                        <br/>
-                                        There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered alteration in some form, by injected humour, or randomised words
-                                        which don't look even slightly believable.
+                                        Linhai se ha posicionado en el mercado como una de las mejores marcas de Cuatriciclos de alta gama. Con presencia en casi todo el mundo, es Nro 1 en ventas en países muy exigentes y competitivos como Francia y Alemania.
                                     </div>
                                     <dl class="small m-t-md">
-                                        <dt>Description lists</dt>
-                                        <dd>A description list is perfect for defining terms.</dd>
-                                        <dt>Euismod</dt>
-                                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                        <dt>Malesuada porta</dt>
-                                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                        <dt>Motor</dt>
+                                        <dd>Monocilíndrico de 4 tiempos</dd>
+                                        <dt>Cilindrada</dt>
+                                        <dd>493.0 cc</dd>
+                                        <dt>Potencia</dt>
+                                        <dd>38 HP</dd>
+                                        <dd>Velocidad</dd>
+                                        <dt>95 km/h</dt>
                                     </dl>
                                     <hr>
 
                                     <div>
                                         <div class="btn-group">
-                                            <button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</button>
-                                            <button class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist </button>
-                                            <button class="btn btn-white btn-sm"><i class="fa fa-envelope"></i> Contact with author </button>
+                                            <a class="btn btn-primary btn-sm" href="{!! route('resumen') !!}"> Comprar</a>
                                         </div>
                                     </div>
-
-
 
                                 </div>
                             </div>
 
                         </div>
-                        <div class="ibox-footer">
-                            <span class="pull-right">
-                                Full stock - <i class="fa fa-clock-o"></i> 14.04.2016 10:04 pm
-                            </span>
-                            The generated Lorem Ipsum is therefore always free
-                        </div>
+                        {{--<div class="ibox-footer">--}}
+                            {{--<span class="pull-right">--}}
+                                {{--Full stock - <i class="fa fa-clock-o"></i> 14.04.2016 10:04 pm--}}
+                            {{--</span>--}}
+                            {{--The generated Lorem Ipsum is therefore always free--}}
+                        {{--</div>--}}
                     </div>
 
                 </div>
@@ -138,14 +110,6 @@
 
 
 
-        </div>
-        <div class="footer">
-            <div class="pull-right">
-                10GB of <strong>250GB</strong> Free.
-            </div>
-            <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
-            </div>
         </div>
 
     </div>

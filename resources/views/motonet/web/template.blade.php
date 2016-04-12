@@ -43,12 +43,6 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header page-scroll col-xs-pull-left">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo.jpg" alt="motonet" width="100px" class="img-responsive"></a>
             </div>
             <div class="redes">
@@ -73,7 +67,7 @@
 <div class="row m-t-155">
 	<div class="container-fluid">
 		<div class="buscador">
-			<form action="" method="get" id="finder" class="center-block">
+			<form action="{!! route('productGrid') !!}" method="get" id="finder" class="center-block">
 				 <div class="input-group-addon"><i class="fa fa-search"></i></div>
 				 <input type="text" name="find" placeholder="Buscar"/>
 				 {{--<select name="categoria" id="categoria">--}}
