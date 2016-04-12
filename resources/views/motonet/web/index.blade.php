@@ -25,7 +25,7 @@
                                 Many desktop publishing packages and web page editors now.
                             </div>
                             <div class="m-t text-righ">
-                                <a href="{!! route('detail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
+                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
                             </div>
                         </div>
                     </div>
