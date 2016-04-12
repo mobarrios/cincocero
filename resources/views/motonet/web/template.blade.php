@@ -119,6 +119,8 @@
 @yield('content')
 
 
+@yield('js')
+
 <script>
 
     $(document).ready(function () {
@@ -174,7 +176,7 @@
 
 </script>
 
-@yield('js')
+
 
 </body>
 </html>

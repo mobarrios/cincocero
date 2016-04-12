@@ -1,45 +1,172 @@
 @extends('motonet/web/template')
 
 @section('css')
-    <link rel="stylesheet" href="assets/css/detalleProducto.css">
+    <link href="assets/inspinia/css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="assets/inspinia/css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <style>
+        .btn-group .btn-primary{
+            background-color: #0187CE;
+            border-color: #0187CE;
+            color: #FFFFFF;
+            font-size: 12px;
+            padding: 5px 10px;
+            font-weight: inherit;
+        }
+    </style>
 @endsection
 
 @section('content')
 
-    <div class="wrapper wrapper-content animated fadeInRight">
-        <div class="img-producto col-xs-12 col-sm-10 col-sm-offset-1 col-md-5">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+<div>
+
+
+    <div class="gray-bg">
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>E-commerce product detail</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a>E-commerce</a>
+                    </li>
+                    <li class="active">
+                        <strong>Product detail</strong>
+                    </li>
                 </ol>
+            </div>
+            <div class="col-lg-2">
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="{!! asset('assets/web/img/moto.png') !!}" alt="moto">
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="ibox product-detail">
+                        <div class="ibox-content">
+
+                            <div class="row">
+                                <div class="col-md-5">
+
+
+                                    <div class="product-images">
+
+                                        <div>
+                                            <div class="image-imitation">
+                                                [IMAGE 1]
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="image-imitation">
+                                                [IMAGE 2]
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="image-imitation">
+                                                [IMAGE 3]
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-7">
+
+                                    <h2 class="font-bold m-b-xs">
+                                        Desktop publishing software
+                                    </h2>
+                                    <small>Many desktop publishing packages and web page editors now.</small>
+                                    <div class="m-t-md">
+                                        <h2 class="product-main-price">$406,602 <small class="text-muted">Exclude Tax</small> </h2>
+                                    </div>
+                                    <hr>
+
+                                    <h4>Product description</h4>
+
+                                    <div class="small text-muted">
+                                        It is a long established fact that a reader will be distracted by the readable
+                                        content of a page when looking at its layout. The point of using Lorem Ipsum is
+
+                                        <br/>
+                                        <br/>
+                                        There are many variations of passages of Lorem Ipsum available, but the majority
+                                        have suffered alteration in some form, by injected humour, or randomised words
+                                        which don't look even slightly believable.
+                                    </div>
+                                    <dl class="small m-t-md">
+                                        <dt>Description lists</dt>
+                                        <dd>A description list is perfect for defining terms.</dd>
+                                        <dt>Euismod</dt>
+                                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                        <dt>Malesuada porta</dt>
+                                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                    </dl>
+                                    <hr>
+
+                                    <div>
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</button>
+                                            <button class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist </button>
+                                            <button class="btn btn-white btn-sm"><i class="fa fa-envelope"></i> Contact with author </button>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="ibox-footer">
+                            <span class="pull-right">
+                                Full stock - <i class="fa fa-clock-o"></i> 14.04.2016 10:04 pm
+                            </span>
+                            The generated Lorem Ipsum is therefore always free
+                        </div>
                     </div>
-                    <div class="item">
-                        <img src="{!! asset('assets/web/img/cuatri.png') !!}" alt="cuatri">
-                    </div>
-                    <div class="item">
-                        <img src="{!! asset('assets/web/img/cuatri.png') !!}" alt="cuatri">
-                    </div>
+
                 </div>
+            </div>
+           
 
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="fa fa-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+
+
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
             </div>
         </div>
 
     </div>
+</div>
+
+@endsection
+
+@section('js')
+<!-- slick carousel-->
+<script src="assets/inspinia/js/plugins/slick/slick.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+
+        $('.product-images').slick({
+            dots: true
+        });
+
+    });
+
+</script>
+
 @endsection

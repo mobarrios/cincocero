@@ -2,7 +2,7 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/public/assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/resources/views/motonet/web/detail.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/motonet/web/detail2.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/motonet/web/includes/slider.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/motonet/web/index.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/motonet/web/template.blade.php" charset="UTF-8" />

@@ -6,6 +6,7 @@ Route::group(['namespace' => 'motonet'], function() {
     ]);
 
     Route::get('detail',[
+
         'as' => 'detail',
         'uses' => 'webController@detail'
     ]);
