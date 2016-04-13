@@ -1,7 +1,7 @@
 @extends('motonet/web/template')
 
 @section('content')
-    @include('motonet/web/includes/slider')
+    {{--@include('motonet/web/includes/slider')--}}
 
     <section id="destacados" class="gray-section contact">
         <div class="container">
