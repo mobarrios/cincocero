@@ -75,7 +75,7 @@
 
                     <div class="ibox">
                         <div class="ibox-title">
-                            <h5>Cart Summary</h5>
+                            <h5>Pedido</h5>
                         </div>
                         <div class="ibox-content">
                             <span>
@@ -87,7 +87,7 @@
 
                             <hr/>
                             <span class="text-muted small">
-                                *For United States, France and Germany applicable sales tax will be applied
+                                *Verifique el pedido y los montos antes de terminar el pago.
                             </span>
                         </div>
                     </div>
@@ -132,12 +132,12 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <small>
-                                                <strong>Expiry date:</strong> 10/16
+                                                <strong>Hasta:</strong> 10/16
                                             </small>
                                         </div>
                                         <div class="col-sm-6 text-right">
                                             <small>
-                                                <strong>Name:</strong> David Williams
+                                                <strong>Nombre:</strong> Juan Perez
                                             </small>
                                         </div>
                                     </div>
@@ -152,12 +152,12 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <small>
-                                                <strong>Expiry date:</strong> 10/16
+                                                <strong>Hasta:</strong> 10/16
                                             </small>
                                         </div>
                                         <div class="col-sm-6 text-right">
                                             <small>
-                                                <strong>Name:</strong> Anna Smith
+                                                <strong>Nombre:</strong> Juan Perez
                                             </small>
                                         </div>
                                     </div>
@@ -172,12 +172,12 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <small>
-                                                <strong>Expiry date:</strong> 10/16
+                                                <strong>Hasta:</strong> 10/16
                                             </small>
                                         </div>
                                         <div class="col-sm-6 text-right">
                                             <small>
-                                                <strong>Name:</strong> Morgan Stanch
+                                                <strong>Nombre:</strong> Juan Perez
                                             </small>
                                         </div>
                                     </div>
@@ -209,21 +209,18 @@
 
                                                     <div class="row">
                                                         <div class="col-md-10">
-                                                            <h2>Summary</h2>
-                                                            <strong>Product:</strong>: Name of product <br>
-                                                            <strong>Price:</strong>: <span class="text-navy">$452.90</span>
+                                                            <h2>Resumen</h2>
+                                                            <strong>Producto:</strong>: Nombre del producto <br>
+                                                            <strong>Precio:</strong>: <span class="text-navy">$14106 </span>
 
                                                             <p class="m-t">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                                nisi ut aliquip ex ea commodo consequat.
+                                                                Linhai se ha posicionado en el mercado como una de las mejores marcas de Cuatriciclos de alta gama. Con presencia en casi todo el mundo, es Nro 1 en ventas en países muy exigentes y competitivos como Francia y Alemania.
 
                                                             </p>
 
                                                             <a class="btn btn-success">
                                                                 <i class="fa fa-cc-paypal">
-                                                                    Purchase via PayPal
+                                                                    Pagar
                                                                 </i>
                                                             </a>
 
@@ -243,7 +240,7 @@
                                                     <i class="fa fa-cc-discover text-danger"></i>
                                                 </div>
                                                 <h5 class="panel-title">
-                                                    <a class="" aria-expanded="true" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Credit Card</a>
+                                                    <a class="" aria-expanded="true" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Tarjeta de crédito</a>
                                                 </h5>
                                             </div>
                                             <div style="" aria-expanded="true" id="collapseTwo" class="panel-collapse collapse in">
@@ -251,21 +248,13 @@
 
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <h2>Summary</h2>
-                                                            <strong>Product:</strong>: Name of product <br>
-                                                            <strong>Price:</strong>: <span class="text-navy">$452.90</span>
+                                                            <h2>Resumen</h2>
+                                                            <strong>Producto:</strong>: Nombre del producto <br>
+                                                            <strong>Precio:</strong>: <span class="text-navy">$14106 </span>
 
                                                             <p class="m-t">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                                nisi ut aliquip ex ea commodo consequat.
+                                                                Linhai se ha posicionado en el mercado como una de las mejores marcas de Cuatriciclos de alta gama. Con presencia en casi todo el mundo, es Nro 1 en ventas en países muy exigentes y competitivos como Francia y Alemania.
 
-                                                            </p>
-                                                            <p>
-                                                                Duis aute irure dolor
-                                                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                                                nulla pariatur. Excepteur sint occaecat cupidatat.
                                                             </p>
                                                         </div>
                                                         <div class="col-md-8">
@@ -274,7 +263,7 @@
                                                                 <div class="row">
                                                                     <div class="col-xs-12">
                                                                         <div class="form-group">
-                                                                            <label>CARD NUMBER</label>
+                                                                            <label>NÚMERO DE TARJETA</label>
                                                                             <div class="input-group">
                                                                                 <input class="form-control" name="Number" placeholder="Valid Card Number" required="" type="text">
                                                                                 <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
@@ -285,28 +274,28 @@
                                                                 <div class="row">
                                                                     <div class="col-xs-7 col-md-7">
                                                                         <div class="form-group">
-                                                                            <label>EXPIRATION DATE</label>
+                                                                            <label>FECHA VENCIMIENTO</label>
                                                                             <input class="form-control" name="Expiry" placeholder="MM / YY" required="" type="text">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-xs-5 col-md-5 pull-right">
                                                                         <div class="form-group">
-                                                                            <label>CV CODE</label>
-                                                                            <input class="form-control" name="CVC" placeholder="CVC" required="" type="text">
+                                                                            <label>CS</label>
+                                                                            <input class="form-control" name="CS" placeholder="***" required="" type="text">
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-xs-12">
                                                                         <div class="form-group">
-                                                                            <label>NAME OF CARD</label>
-                                                                            <input class="form-control" name="nameCard" placeholder="NAME AND SURNAME" type="text">
+                                                                            <label>NOMBRE Y APELLIDO</label>
+                                                                            <input class="form-control" name="nameCard" placeholder="NOMBRE Y APELLIDO" type="text">
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-xs-12">
-                                                                        <button class="btn btn-primary" type="submit">Make a payment!</button>
+                                                                        <button class="btn btn-primary" type="submit">Realizar pago!</button>
                                                                     </div>
                                                                 </div>
                                                             </form>
@@ -314,11 +303,6 @@
                                                         </div>
 
                                                     </div>
-
-
-
-
-
 
                                                 </div>
                                             </div>
