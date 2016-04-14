@@ -406,26 +406,26 @@
     }
 }
 
-#finder{
+.finder{
 	margin:auto;
 	text-align:center;
 }
 
-#finder>*{
+.finder>*{
 	display:inline-block;
 	margin-left: -3px;
 	height:30px;
 	background-color: rgb(255, 255, 255);
-	border: 1px solid RGB(229, 230, 231);
+	border: 1px solid rgb(229, 230, 231);
 	padding: 5px;
 }
 
-#finder>*:last-child{
+.finder>*:last-child{
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
 
-#finder>select{
+.finder>select{
 	padding:0;
 	padding-right:15px;
 	appearance: none;
@@ -434,18 +434,18 @@
 	background: #fff url('arrow.png') right center no-repeat;
 }
 
-#finder>select:disabled{
+.finder>select:disabled{
     opacity: .65;
 }
 
-#finder>.input-group-addon{
+.finder>.input-group-addon{
 	margin-top:-3px;
 	width:36px;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 }
 
-#finder>.input-group-addon>i{
+.finder>.input-group-addon>i{
 	margin:auto;
 	padding:0;
 }

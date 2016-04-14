@@ -4447,7 +4447,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
     max-width: 400px;
     z-index: 100;
     margin: 0 auto;
-    padding-top: 40px;
+    padding-top: 8px;
 }
 .lockscreen.middle-box {
     width: 200px;
@@ -8397,14 +8397,12 @@ body.md-skin {
     transition: all .5s;
 }
 
-.buscador{
-    background-color: #0187CE;
-	height:50px;
-}
-
-
 .buscador form{
 	padding-top: 10px;
+}
+
+.finder input[name="find"]{
+    max-width: 500px;
 }
 
 
