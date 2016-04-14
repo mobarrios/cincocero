@@ -1,31 +1,36 @@
 @extends('index')
 
     @section('content')
+        <div class="panel">
 
-        @if(isset($model))
-            {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
-        @else
-            {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
-        @endif
+            <div class="panel-body">
+
+                @if(isset($model))
+                    {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
+                @else
+                    {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
+                @endif
 
 
-        {!! Form::textCustom('name', 'Articulo')!!}
+                {!! Form::textCustom('name', 'Articulo')!!}
 
-        {!! Form::selectCustom('models_id', 'Modelo',$modelos)!!}
+                {!! Form::selectCustom('models_id', 'Modelo',$modelos)!!}
 
-        {!! Form::dateCustom('date','Dia') !!}
+                {!! Form::dateCustom('date','Dia') !!}
 
-        {!! Form::fileCustom('image','Foto')!!}
+                {!! Form::fileCustom('image','Foto')!!}
 
-        {!! Form::colorPicker('col','color')!!}
-        {!! Form::colorPicker('col1','color1')!!}
+                {!! Form::colorPicker('col','color')!!}
+                {!! Form::colorPicker('col1','color1')!!}
 
-        {!! Form::hidden('brands_id',1)!!}
-        <hr>
+                {!! Form::hidden('brands_id',1)!!}
+            </div>
 
-        {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
-        {!! Form::close()!!}
+            <div class="panel-footer">
 
+                {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
+                {!! Form::close()!!}
+            </div>
     @endsection
 
 @section('js')
@@ -40,9 +45,9 @@
             currentText: 'Hoy',
             monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
             monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-            dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-            dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miï¿½rcoles', 'Jueves', 'Viernes', 'Sï¿½bado'],
+            dayNamesShort: ['Dom','Lun','Mar','Miï¿½','Juv','Vie','Sï¿½b'],
+            dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sï¿½'],
             weekHeader: 'Sm',
             dateFormat: 'dd/mm/yy',
             firstDay: 1,

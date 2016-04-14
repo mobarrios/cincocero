@@ -1,5 +1,5 @@
-<div class="table-responsive">
-<table id="dataTable" class="display table  table-striped" style="width: 100%; cellspacing: 0;">
+
+    <table id="dataTable" class="table table-striped table-hover">
     <thead>
     <tr>
         <th class="no-sort" style="width: 1%;">#</th>
@@ -61,10 +61,10 @@
 
             <td>
 
-                <a class="btn btn-sm btn-white" href="{{route($routeEdit,$model->id)}}">
+                <a class="btn btn-sm btn-default" href="{{route($routeEdit,$model->id)}}">
                     <i class="fa fa-pencil"></i>
                 </a>
-                <a class="btn btn-sm btn-white" href="{{route($routeDel ,$model->id)}}">
+                <a class="btn btn-sm btn-default" href="{{route($routeDel ,$model->id)}}">
                     <i class="delete fa fa-trash"></i>
                 </a>
 
@@ -74,4 +74,3 @@
 
     </tbody>
 </table>
-</div>

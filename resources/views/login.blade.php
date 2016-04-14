@@ -1,82 +1,104 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <base href="{{asset('')}}">
+
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>INSPINIA | Login</title>
-
-    <link href="assets/inspinia/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <link href="assets/inspinia/css/animate.css" rel="stylesheet">
-    <link href="assets/inspinia/css/plugins/toastr/toastr.min.css" rel="stylesheet">
-    <link href="assets/inspinia/css/style.css" rel="stylesheet">
-
-    <!-- Mainly scripts -->
-    <script src="assets/inspinia/js/jquery-2.1.1.js"></script>
-    <script src="assets/inspinia/js/bootstrap.min.js"></script>
-    <script src="assets/inspinia/js/plugins/toastr/toastr.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin App + jQuery">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <title>{nc} Sistema de Administración</title>
+    <!-- =============== VENDOR STYLES ===============-->
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="assets/angle/vendor/fontawesome/css/font-awesome.min.css">
+    <!-- SIMPLE LINE ICONS-->
+    <link rel="stylesheet" href="assets/angle/vendor/simple-line-icons/css/simple-line-icons.css">
+    <!-- =============== BOOTSTRAP STYLES ===============-->
+    <link rel="stylesheet" href="assets/angle/css/bootstrap.css" id="bscss">
+    <!-- =============== APP STYLES ===============-->
+    <link rel="stylesheet" href="assets/angle/css/app.css" id="maincss">
 </head>
 
-<body class="gray-bg">
+<body>
+<div class="wrapper">
+    <div class="block-center mt-xl wd-xl">
+        <!-- START panel-->
+        <div class="panel panel-dark panel-flat">
 
-<div class="middle-box text-center loginscreen animated fadeInDown">
-    <div>
-        <div>
+            <div class="panel-heading text-center">
+                Sistema de Administración
+            </div>
+            <div class="panel-body">
+                <p class="text-center pv">Ingreso al Sistema</p>
+                <hr>
 
-            <h1 class="logo-name" style="color: rgba(0, 198, 160, 0.14);">{nc}</h1>
+                {!!Form::open(['route'=>'postLogin'])!!}
 
-        </div>
-        <h3>Nav { Coder }</h3>
-
-        {!!Form::open(['route'=>'postLogin'])!!}
-        <form role="form">
-            <fieldset>
-
-                <div class="form-group">
-
-                    <div class="input-group">
-                        {!!Form::text('email',null,['class'=>'form-control'])!!}
-                        <span class="input-group-addon"><i class="fa fa-user"></i> </span>
+                <div class="form-group has-feedback">
+                        <label for="signupInputEmail1" class="text-muted">Email</label>
+                        <input name="email" type="email" placeholder="Enter email"  required class="form-control">
+                        <span class="fa fa-envelope form-control-feedback text-muted"></span>
                     </div>
-                </div>
-
-                <div class="form-group">
-
-                    <div class="input-group">
-                        {!!Form::password('password',['class'=>'form-control'])!!}
-                        <span class="input-group-addon"><i class="fa fa-lock"></i> </span>
+                    <div class="form-group has-feedback">
+                        <label for="signupInputPassword1" class="text-muted">Password</label>
+                        <input name="password" type="password" placeholder="Password"  required class="form-control">
+                        <span class="fa fa-lock form-control-feedback text-muted"></span>
                     </div>
-
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input name="remember" value="Remember Me" type="checkbox">No cerrar sesion
-                    </label>
-                </div>
+                    <div class="checkbox c-checkbox pull-left mt0">
+                        <label>
+                            <input   name="remember" type="checkbox">
+                            <span class="fa fa-check"></span>Recordarme
+                        </label>
+                    </div>
 
 
                 {!!Form::submit(trans('messages.btnAccess'),['class'=>'btn btn-block btn-primary m-t'])!!}
                 {!!Form::close()!!}
-
-            </fieldset>
-        </form>
+            </div>
+        </div>
+        <!-- END panel-->
+        <div class="p-lg text-center">
+            <span>&copy;</span>
+            <span>2016</span>
+            <span>-</span>
+            <span>{nc}nav_coder</span>
+            <br>
+            <span>www.navcoder.net</span>
+        </div>
 
     </div>
+
 </div>
+
 @include('messages')
 
+<!-- =============== VENDOR SCRIPTS ===============-->
+<!-- MODERNIZR-->
+<script src="assets/angle/vendor/modernizr/modernizr.custom.js"></script>
+<!-- JQUERY-->
+<script src="assets/angle/vendor/jquery/dist/jquery.js"></script>
+<!-- BOOTSTRAP-->
+<script src="assets/angle/vendor/bootstrap/dist/js/bootstrap.js"></script>
+<!-- STORAGE API-->
+<script src="assets/angle/vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+<!-- PARSLEY-->
+<script src="assets/angle/vendor/parsleyjs/dist/parsley.min.js"></script>
+<!-- =============== APP SCRIPTS ===============-->
+<script src="assets/angle/js/app.js"></script>
+
 <script>
+
+
     if ($('#msg').length){
-        toastr.options.closeButton = true;
-        toastr.options.positionClass = 'toast-bottom-full-width';
-        toastr.success($('.error'));
+
+        $.notify($('.error').text(),{
+            status:'success',
+            pos:'bottom-right'
+        });
     }
 </script>
+
 </body>
+
 
 </html>

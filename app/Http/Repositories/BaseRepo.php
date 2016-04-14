@@ -55,7 +55,7 @@ abstract class BaseRepo {
 
     public function ListAll()
     {
-        $qry = $this->model->paginate(5);
+        $qry = $this->model->get();
         return $qry;
     }
 }

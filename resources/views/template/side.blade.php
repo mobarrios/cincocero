@@ -1,90 +1,74 @@
-<nav class="navbar-default navbar-static-side" role="navigation">
-    <div class="sidebar-collapse">
-        <ul class="nav metismenu" id="side-menu">
-            <li class="text-center nav-header" style="background-image: none">
-                <strong>The Futbol Company</strong>
-            </li>
-            <li>
-                <a class="menu" data-id="0" href="{{route('home')}}"><i class="fa fa-home"></i> <span class="nav-label">Home <span class="label label-primary pull-right">NEW</span></span></a>
+<div class="aside-inner">
+    <nav data-sidebar-anyclick-close="" class="sidebar">
+        <!-- START sidebar nav-->
+        <ul class="nav">
+            <!-- Iterates over all sidebar items-->
+            <li class="nav-heading ">
+                <span data-localize="sidebar.heading.HEADER">Menu Principal</span>
             </li>
 
+            <li>
+                <a class="menu" data-id="0" href="{{route('home')}}" title="Home">
+                    <em class="icon-home"></em>
+                    <span data-localize="sidebar.nav.DOCUMENTATION">Home</span>
+                </a>
+            </li>
 
             @foreach(\App\Entities\Menus::where('main',0)->get() as $menu)
 
                 @if($menu->routes == '' )
                     <li>
-                        <a href="#" >
-                            {{$menu->name}}<span class="fa arrow"></span>
+                        <a href="#{{$menu->name}}" data-toggle="collapse">
+                            <span >{{$menu->name}}</span>
                         </a>
-                        <ul class="nav nav-second-level collapse">
+
+                        <ul id="{{$menu->name}}" class="nav sidebar-subnav collapse">
                             @foreach(\App\Entities\Menus::where('main',$menu->id)->get() as $sub)
-                                <li><a class="menu" data-id="{{$sub->id}}" href="{{route($sub->routes)}}">{{$sub->name}}</a></li>
+                                <li class="">
+                                    <a class="menu" data-id="{{$sub->id}}" href="{{route($sub->routes)}}">
+                                        <span>{{$sub->name}}</span>
+                                    </a>
+                                </li>
                             @endforeach
+
                         </ul>
                     </li>
+
                 @else
-                    <li><a class="menu" data-id="{{$menu->id}}" href="{{route($menu->routes)}}">{{$menu->name}}</a></li>
+                    <li class=" ">
+                        <a class="menu" data-id="{{$menu->id}}" href="{{route($menu->routes)}}" title="Home">
+                            <em class="icon-home"></em>
+                            <span data-localize="sidebar.nav.DOCUMENTATION">{{$menu->name}}</span>
+                        </a>
+                    </li>
                 @endif
+
 
             @endforeach
 
-
-            <!--
-
-            <li>
-                <a href="#">
-                    <i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span>
-                </a>
-                <ul class="nav nav-second-level collapse">
-                    <li>
-                        <a href="#">Third Level <span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="{{route('items')}}">Items</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li><a href="#">Second Level Item</a></li>
-                    <li>
-                        <a href="#">Second Level Item</a></li>
-                    <li>
-                        <a href="#">Second Level Item</a></li>
-                </ul>
-            </li>
-            !-->
-
         </ul>
-
-    </div>
-</nav>
+        <!-- END sidebar nav-->
+    </nav>
+</div>
 
 @section('js')
-<script>
+    <script>
+        $(document).ready(function(){
 
-    $(document).ready(function(){
+            var menu_id = localStorage.getItem('menu_id');
 
-        var menu_id = localStorage.getItem('menu_id');
+            $('a[data-id='+menu_id+']').parent().addClass('active');
 
-        $('a[data-id='+menu_id+']').parent().addClass('active');
-
-        $('a[data-id='+menu_id+']').parent().parent().addClass('in').parent().addClass('active');
-
-
-    });
-
-   $('.menu').on('click',function()
-   {
-       localStorage.setItem('menu_id',$(this).attr('data-id'));
-   });
+            $('a[data-id='+menu_id+']').parent().parent().addClass('in').parent().addClass('active');
 
 
-</script>
+        });
 
+        $('.menu').on('click',function()
+        {
+            localStorage.setItem('menu_id',$(this).attr('data-id'));
+        });
+
+
+    </script>
 @endsection
