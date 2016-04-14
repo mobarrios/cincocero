@@ -16,7 +16,7 @@ class ItemsRepo extends BaseRepo {
     public function Rules()
     {
         return [
-           // 'code'   => 'required|unique:items,code',
+            'code'   => 'required|unique:items,code',
             'name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
 
@@ -38,7 +38,7 @@ class ItemsRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'Imagen' =>    ['data' => 'images','relation'=> null],
-                //'Codigo' =>    ['data' => 'code','relation' => null],
+                'Codigo' =>    ['data' => 'code','relation' => null],
                 'Articulo' =>  ['data' => 'name','relation' => null],
                 //'Modelo' =>     ['data' => 'Models','relation' => 'name'],
 

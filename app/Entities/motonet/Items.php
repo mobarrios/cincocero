@@ -7,7 +7,7 @@ class Items extends Entity{
 
     protected $table = 'items';
 
-    protected $fillable = ['name','models_id'];
+    protected $fillable = ['name','models_id','code'];
 
     public function Models()
     {

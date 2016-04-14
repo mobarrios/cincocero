@@ -8,7 +8,7 @@
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
 
-
+        {!! Form::textCustom('code', 'Codigo')!!}
         {!! Form::textCustom('name', 'Articulo')!!}
         {{-- Form::textCustom('detail', 'Detalle') --}}
 
