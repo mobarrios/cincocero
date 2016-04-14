@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/resources/views/motonet/web/detail.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/motonet/web/grid.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/motonet/web/includes/breadcrumbs.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/motonet/web/includes/menu.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/motonet/web/includes/slider.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/motonet/web/index.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/motonet/web/resumen.blade.php" charset="UTF-8" />

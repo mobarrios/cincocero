@@ -12,7 +12,7 @@
 
     <base href="{!! asset('') !!}">
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/inspinia/css/bootstrap.css" rel="stylesheet">
 
     <link href="assets/inspinia/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
@@ -24,6 +24,9 @@
     <link href="assets/inspinia/css/animate.css" rel="stylesheet">
 	<!-- Finder -->
     <link href="assets/css/finder.css" rel="stylesheet">
+
+    <!-- Menu -->
+    <link href="assets/css/menu.css" rel="stylesheet">
 
     @yield('css')
 	
@@ -112,49 +115,7 @@
     {{--</a>--}}
 </div>
 
-	<div class="m-t-15 container-fluid">
-		<div class="buscador">
-			<form action="{!! route('productGrid') !!}" method="get" id="finder" class="center-block">
-				 <div class="input-group-addon"><i class="fa fa-search"></i></div>
-				 <input type="text" name="find" placeholder="Buscar"/>
-				 {{--<select name="categoria" id="categoria">--}}
-				 	{{--<option value="0">Categoria</option>--}}
-				 	{{--<option value="1">Categoria 1</option>--}}
-				 	{{--<option value="2">Categoria 2</option>--}}
-				 	{{--<option value="3">Categoria 3</option>--}}
-				 	{{--<option value="4">Categoria 4</option>--}}
-				 	{{--<option value="5">Categoria 5</option>--}}
-				 {{--</select>--}}
-				 {{--<select name="producto" id="producto" >--}}
-				 	{{--<option value="0">Producto</option>--}}
-				 	{{--<option value="1">Producto 1</option>--}}
-				 	{{--<option value="2">Producto 2</option>--}}
-				 	{{--<option value="3">Producto 3</option>--}}
-				 	{{--<option value="4">Producto 4</option>--}}
-					{{--<option value="5">Producto 5</option>--}}
-				 {{--</select>--}}
-				 {{--<select name="marca" id="marca">--}}
-				 	{{--<option value="0">Marca</option>--}}
-				 	{{--<option value="1">Marca 1</option>--}}
-				 	{{--<option value="2">Marca 2</option>--}}
-				 	{{--<option value="3">Marca 3</option>--}}
-				 	{{--<option value="4">Marca 4</option>--}}
-					{{--<option value="5">Marca 5</option>--}}
-				 {{--</select>--}}
-				 {{--<select name="modelo" id="modelo">--}}
-				 	{{--<option value="0">Modelo</option>--}}
-				 	{{--<option value="1">Modelo 1</option>--}}
-				 	{{--<option value="2">Modelo 2</option>--}}
-				 	{{--<option value="3">Modelo 3</option>--}}
-				 	{{--<option value="4">Modelo 4</option>--}}
-					{{--<option value="5">Modelo 5</option>--}}
-				 {{--</select>--}}
-                <button type="submit">Buscar <i class="fa fa-caret-right fa-pull-right"></i></button>
-			</form>
-		
-		
-		</div>
-	</div>
+	@include('motonet/web/includes/menu')
 
 
 @yield('content')
