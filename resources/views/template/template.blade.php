@@ -1,249 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <base href="{{asset('')}}">
 
 <head>
-
-
-    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin App + jQuery">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <title>{nc} nav_coder</title>
 
-    <title>NAVCODER</title>
+    <!-- =============== VENDOR STYLES ===============-->
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="assets/angle/vendor/fontawesome/css/font-awesome.min.css">
+    <!-- SIMPLE LINE ICONS-->
+    <link rel="stylesheet" href="assets/angle/vendor/simple-line-icons/css/simple-line-icons.css">
+    <!-- ANIMATE.CSS-->
+    <link rel="stylesheet" href="assets/angle/vendor/animate.css/animate.min.css">
+    <!-- WHIRL (spinners)-->
+    <link rel="stylesheet" href="assets/angle/vendor/whirl/dist/whirl.css">
+    <!-- =============== PAGE VENDOR STYLES ===============-->
 
 
-    <style>
+    <!-- =============== BOOTSTRAP STYLES ===============-->
+    <link rel="stylesheet" href="assets/angle/css/bootstrap.css" id="bscss">
+    <!-- =============== APP STYLES ===============-->
+    <link rel="stylesheet" href="assets/angle/css/app.css" id="maincss">
+    <link href="assets/angle/css/theme-b.css" rel="stylesheet" id="autoloaded-stylesheet">
 
-        .md-skin .navbar-static-side{
-            -webkit-box-shadow: none !important;
-            -moz-box-shadow: none !important;
-            box-shadow: none !important;
-        }
-    </style>
-
-    <link href="assets/inspinia/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="assets/inspinia/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
-    <!-- Toastr style -->
-    <link href="assets/inspinia/css/plugins/toastr/toastr.min.css" rel="stylesheet">
-    <!-- Gritter -->
-    <link href="assets/inspinia/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
-    <link href="assets/inspinia/css/animate.css" rel="stylesheet">
-    <link href="assets/inspinia/css/style.css" rel="stylesheet">
-    <link href="assets/inspinia/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="assets/inspinia/css/plugins/chosen/chosen.css" rel="stylesheet">
-    <link href="assets/inspinia/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
-    <link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
-
-    <script src="assets/inspinia/js/jquery-2.1.1.js"></script>
-    <!-- jQuery UI -->
-    <script src="assets/inspinia/js/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="assets/inspinia/js/bootstrap.min.js"></script>
-
-    <link href="assets/inspinia/css/plugins/datapicker/datepicker3.css" rel="stylesheet" type="text/css" media="all" >
-
-    <link rel="stylesheet" href="assets/css/inputFile.css">
-    <!--
-    <link href="assets/css/custom.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/metisMenu.css" rel="stylesheet">
-    <link href="assets/css/sb-admin-2.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/jquery-ui.css" rel="stylesheet" >
     <link href="assets/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/dataTables.fontAwesome.css" rel="stylesheet">
 
-    <link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
-    -->
-
-
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    --!>
-
-    <![endif]-->
+    <link href="assets/inspinia/css/plugins/datapicker/datepicker3.css" rel="stylesheet" type="text/css" media="all" >
 
 
 
     @yield('css')
+
 </head>
 
-<body class="md-skin fixed-nav">
-<div id="wrapper">
+<body>
+<div class="wrapper">
+    <!-- top navbar-->
+    <header class="topnavbar-wrapper">
+        <!-- START Top Navbar-->
+        @include('template.navBar')
+        <!-- END Top Navbar-->
+    </header>
+    <!-- sidebar-->
+    <aside class="aside">
+        <!-- START Sidebar (left)-->
+        @include('template.side')
+        <!-- END Sidebar (left)-->
+    </aside>
 
-    @include('messages')
+    <!-- Main section-->
+    <section>
+        <!-- Page content-->
+        <div class="content-wrapper">
 
-    @yield('side')
-
-    <div id="page-wrapper" class="gray-bg">
-        <div class="row border-bottom">
-            @yield('menu')
-        </div>
-        <div class="row wrapper border-bottom white-bg page-heading">
-            <div class="col-lg-10">
-                <h2><span class="text-navy">{{$sectionName}}</span></h2>
-                <ol class="breadcrumb">
-                    <li>
-                        <a href="{{route('home')}}">Home</a>
-                    </li>
-                        @if(\Illuminate\Support\Facades\Session::has('bread'))
-                            @foreach(\Illuminate\Support\Facades\Session::get('bread') as $section )
-                                @foreach($section as $s => $r)
-                                    <li> <a href="{{route($r)}}">{{$s}}</a></li>
-                                @endforeach
-                            @endforeach
-                        @endif
-                </ol>
-            </div>
-            <div class="col-lg-2">
-
-            </div>
-        </div>
-
-        <div class="wrapper wrapper-content  animated fadeInRight">
+            <h3>{{$sectionName}} </h3>
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="ibox">
-                        <div class="ibox-content">
-                            @yield('content')
-                        </div>
-                    </div>
-                </div>
+                @yield('content')
             </div>
         </div>
-
-        <div class="footer">
-            <div class="pull-right">
-                DB: <strong>{{Auth::user()->db}}</strong> | Perfil <strong>{{Auth::user()->db}}</strong>
-            </div>
-            <div>
-                <strong>Copyright</strong> NavCoder &copy; 2014
-            </div>
-        </div>
-
-    </div>
+    </section>
+    <!-- Page footer-->
+    <footer>
+        @include('template.footer')
+    </footer>
 </div>
 
+<!-- =============== VENDOR SCRIPTS ===============-->
 
-<!--
+<script src="assets/js/custom.js"></script>
+<!-- MODERNIZR-->
+<script src="assets/angle/vendor/modernizr/modernizr.custom.js"></script>
+<!-- MATCHMEDIA POLYFILL-->
+<script src="assets/angle/vendor/matchMedia/matchMedia.js"></script>
+<!-- JQUERY-->
+<script src="assets/angle/vendor/jquery/dist/jquery.js"></script>
 
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/metisMenu.min.js"></script>
-<script src="assets/js/sb-admin-2.js"></script>
+<!-- BOOTSTRAP-->
+<script src="assets/angle/vendor/bootstrap/dist/js/bootstrap.js"></script>
+<!-- STORAGE API-->
+<script src="assets/angle/vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+<!-- JQUERY EASING-->
+<script src="assets/angle/vendor/jquery.easing/js/jquery.easing.js"></script>
+<!-- ANIMO-->
+<script src="assets/angle/vendor/animo.js/animo.js"></script>
+<!-- SLIMSCROLL-->
+<script src="assets/angle/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- SCREENFULL-->
+<script src="assets/angle/vendor/screenfull/dist/screenfull.js"></script>
+<!-- LOCALIZE-->
+<script src="assets/angle/vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+<!-- RTL demo-->
+<script src="assets/angle/js/demo/demo-rtl.js"></script>
+<!-- =============== PAGE VENDOR SCRIPTS ===============-->
+
+<!-- =============== APP SCRIPTS ===============-->
+<script src="assets/angle/js/app.js"></script>
+
 <script src="assets/js/jquery.dataTables.min.js"></script>
 <script src="assets/js/dataTables.bootstrap.min.js"></script>
-<script src="assets/js/jquery-ui.js"></script>
-<script src="assets/js/tinymce/tinymce.min.js"></script>
-<script src="assets/js/jquery_datepicker_es.js"></script>
-<script src="assets/js/custom.js"></script>
 
-<script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
-/#wrapper -->
-
-<!-- Mainly scripts -->
-
-<script src="assets/inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="assets/inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-<!-- Flot -->
-<script src="assets/inspinia/js/plugins/flot/jquery.flot.js"></script>
-<script src="assets/inspinia/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-<script src="assets/inspinia/js/plugins/flot/jquery.flot.spline.js"></script>
-<script src="assets/inspinia/js/plugins/flot/jquery.flot.resize.js"></script>
-<script src="assets/inspinia/js/plugins/flot/jquery.flot.pie.js"></script>
-
-<!-- Peity -->
-<script src="assets/inspinia/js/plugins/peity/jquery.peity.min.js"></script>
-<script src="assets/inspinia/js/demo/peity-demo.js"></script>
-
-<!-- Custom and plugin javascript -->
-<script src="assets/inspinia/js/inspinia.js"></script>
-
-<script src="assets/inspinia/js/plugins/pace/pace.min.js"></script>
-
-<!-- GITTER -->
-<script src="assets/inspinia/js/plugins/gritter/jquery.gritter.min.js"></script>
-
-<!-- Sparkline -->
-<script src="assets/inspinia/js/plugins/sparkline/jquery.sparkline.min.js"></script>
-
-<!-- Sparkline demo data  -->
-<script src="assets/inspinia/js/demo/sparkline-demo.js"></script>
-
-<!-- ChartJS-->
-<script src="assets/inspinia/js/plugins/chartJs/Chart.min.js"></script>
-
-<!-- Toastr -->
-<script src="assets/inspinia/js/plugins/toastr/toastr.min.js"></script>
-
-<script src="assets/inspinia/js/plugins/iCheck/icheck.min.js"></script>
-
-
+<link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
 
 <script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f09122d8b511bb03fdffd94b9f107d2c4a9a24c2
 <script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js" ></script>
 
-
 <script src="assets/js/jquery_datepicker_es.js"></script>
 
-<script src="assets/js/custom.js"></script>
 
-<script src="assets/js/inputFile.js"></script>
 
 @yield('js')
-
-
 <script>
-    $(document).ready(function(){
 
-        $('.datepicker').datepicker({
-            languaje :'es'
-        });
+    $('.datepicker').datepicker({
+        languaje :'es'
+    });
 
-        $('#logout').on('click',function(){
-            localStorage.setItem('menu_id',0);
-        });
 
-        if ($('#msg').length){
-            toastr.options.closeButton = true;
-            toastr.options.positionClass = 'toast-bottom-full-width';
-            toastr.success($('.error'));
+    $('#dataTable').DataTable({
+        columnDefs: [
+            { targets: 'no-sort', orderable: false }
+        ],
+        "order": [[ 1, "asc" ]],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
         }
+    });
 
-        $('.i-checks').iCheck({
-            checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green'
+    //color picker
+    $(function(){
+        var colpick = $('.demo').each( function() {
+            $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                inline: $(this).attr('data-inline') === 'true',
+                letterCase: 'lowercase',
+                opacity: false,
+                change: function(hex, opacity) {
+                    if(!hex) return;
+                    if(opacity) hex += ', ' + opacity;
+                    try {
+                        console.log(hex);
+                    } catch(e) {}
+                    $(this).select();
+                },
+                theme: 'bootstrap'
+            });
         });
 
-
-
-        $('.datepicker').datepicker();
-
-        $('.datepicker').val("17-03-2016");
-
-
-
+        var $inlinehex = $('#inlinecolorhex h3 small');
+        $('#inlinecolors').minicolors({
+            inline: true,
+            theme: 'bootstrap',
+            change: function(hex) {
+                if(!hex) return;
+                $inlinehex.html(hex);
+            }
         });
+    });
 </script>
-
-{{--<script src="assets/js/jquery_datepicker_es.js"></script>--}}
-
 </body>
-
 
 </html>

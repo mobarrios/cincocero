@@ -1,23 +1,25 @@
 @extends('index')
 
     @section('content')
-
-        @if(isset($model))
-            {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
-        @else
-            {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
-        @endif
-
-
-        {!! Form::textCustom('name', 'Categoria')!!}
-
-        {!! Form::fileCustom('image','Foto')!!}
+        <div class="panel">
+            <div class="panel-body">
+                @if(isset($model))
+                    {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
+                @else
+                    {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
+                @endif
 
 
-        <hr>
+                {!! Form::textCustom('name', 'Categoria')!!}
 
-        {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
-        {!! Form::close()!!}
+                {!! Form::fileCustom('image','Foto')!!}
+
+            </div>
+            <div class="panel-footer">
+
+                {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
+                {!! Form::close()!!}
+        </div>
 
     @endsection
 

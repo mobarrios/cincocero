@@ -1,0 +1,1 @@
+<span>&copy; 2016 - {nc} nav_coder</span>

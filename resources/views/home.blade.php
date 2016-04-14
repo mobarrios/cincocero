@@ -2,15 +2,8 @@
 
     @section('content')
         <div class="col-lg-6">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content navy-bg ">
-                    <strong>{{ trans('messages.welcome') }}</strong>
-                </div>
-            </div>
-
-            <div class="ibox float-e-margins">
-                <div class="ibox-content">
-                    <div>
+            <div class="panel panel-default">
+                    <div class="panel panel-body">
                         <table class="table">
                             <tbody>
                             <tr>
@@ -44,20 +37,18 @@
 
                             </tbody>
                         </table>
-                    </div>
-
                 </div>
             </div>
         </div>
 
         <div class="col-lg-6">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content">
+            <div class="panel panel-default">
+                <div class="panel panel-body">
                     <h1>{{Auth::user()->name}} {{Auth::user()->last_name}}</h1>
                     <div class="m-b-sm">
                             @if(Auth::user()->images->count() > 0)
-                                <div class="btn btn-warning btn-circle btn-lg btn-outline div-profile-image">
-                                    <img src="{!! Auth::user()->images->first()->image !!}" alt="foto de perfil">
+                                <div>
+                                    <img class=" img-thumbnail img-circle" width="100" src="{!! Auth::user()->images->first()->image !!}" alt="foto de perfil">
                                 </div>
                             @else
                             {{-- SI EL PETE NO TIENE IMAGEN QUE LE PONGA EL ICONITO --}}
@@ -72,13 +63,14 @@
         </div>
 
         <div class="col-lg-6">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content">
+            <div class="panel panel-default">
+                <div class="panel panel-body">
                     <h2>Tareas Pendientes</h2>
                     <small>Tareas a por realizar para el usuario.</small>
                     <ul class="todo-list m-t small-list">
                         <li>
                             <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
+
                             <span class="m-l-xs todo-completed">Dar de Alta Usuarios</span>
 
                         </li>

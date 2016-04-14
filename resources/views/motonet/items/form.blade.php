@@ -1,6 +1,8 @@
 @extends('index')
 
     @section('content')
+    <div class="panel">
+        <div class="panel-body">
 
         @if(isset($model))
             {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
@@ -15,19 +17,19 @@
         {!! Form::selectCustom('brands_id','Marca',$brands) !!}
 
 
-
-
         {!! Form::fileCustom('image','Foto')!!}
 
         {!! Form::colorPicker('col','color')!!}
 
 
 
-        <hr>
+        </div>
+        <div class="panel-footer">
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
         {!! Form::close()!!}
 
+         </div>
     @endsection
 
     @section('js')

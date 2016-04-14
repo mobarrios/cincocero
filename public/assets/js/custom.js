@@ -42,17 +42,16 @@ $('#changeLanguaje').on('change',function(){
     window.location.href = "changeLanguaje/"+this.value;
 });
 
-//$('#dataTable').DataTable({
-//    columnDefs: [
-//        { targets: 'no-sort', orderable: false }
-//    ],
-//    "order": [[ 1, "asc" ]],
-//    "language": {
-//        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-//    }
-//
-//});
+$('#dataTable').DataTable({
+    columnDefs: [
+        { targets: 'no-sort', orderable: false }
+    ],
+    "order": [[ 1, "asc" ]],
+    "language": {
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+    }
 
+});
 
 //tinymce.init({
 //    plugins: "textcolor",

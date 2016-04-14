@@ -11,7 +11,7 @@
  Target Server Version : 50709
  File Encoding         : utf-8
 
- Date: 03/18/2016 13:14:11 PM
+ Date: 04/14/2016 19:21:41 PM
 */
 
 SET NAMES utf8;
@@ -29,7 +29,14 @@ CREATE TABLE `brands` (
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `image` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+--  Records of `brands`
+-- ----------------------------
+BEGIN;
+INSERT INTO `brands` VALUES ('1', null, '2016-03-21 15:48:08', '2016-03-21 15:48:08', 'Yamaha', null), ('2', null, '2016-03-21 15:48:15', '2016-03-21 15:48:15', 'Honda', null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `categories`
@@ -42,7 +49,14 @@ CREATE TABLE `categories` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+--  Records of `categories`
+-- ----------------------------
+BEGIN;
+INSERT INTO `categories` VALUES ('1', null, '2016-03-21 16:02:36', '2016-03-21 16:02:36', 'Motos'), ('2', null, '2016-03-21 16:03:54', '2016-03-21 16:03:54', 'Cuatricilos'), ('3', null, '2016-03-21 16:04:25', '2016-03-21 16:04:25', 'Generadores'), ('4', null, '2016-03-21 16:05:06', '2016-03-21 16:05:06', 'Seguridad');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `clients`
@@ -93,13 +107,13 @@ CREATE TABLE `images` (
   `image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `entity_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Records of `images`
 -- ----------------------------
 BEGIN;
-INSERT INTO `images` VALUES ('1', '2016-03-16 16:18:51', '2016-03-16 16:18:51', null, 'items', 'uploads/items/images/1458145130.jpg', '1');
+INSERT INTO `images` VALUES ('1', '2016-03-16 16:18:51', '2016-03-16 16:18:51', null, 'items', 'uploads/items/images/1458145130.jpg', '1'), ('2', '2016-03-21 15:52:46', '2016-03-21 15:52:46', null, 'brands', 'uploads/brands/images/1458575565.jpg', '2'), ('3', '2016-03-21 15:53:18', '2016-03-21 15:53:18', null, 'brands', 'uploads/brands/images/1458575598.png', '1'), ('4', '2016-04-06 13:09:14', '2016-04-06 13:09:14', null, 'items', 'uploads/items/images/1459948154.jpg', '2');
 COMMIT;
 
 -- ----------------------------
@@ -140,13 +154,13 @@ CREATE TABLE `items` (
   UNIQUE KEY `items_code_unique` (`code`),
   KEY `items_providers_id_foreign` (`providers_id`),
   KEY `items_brands_id_foreign` (`brands_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 --  Records of `items`
 -- ----------------------------
 BEGIN;
-INSERT INTO `items` VALUES ('1', null, '2016-03-16 16:18:50', '2016-03-16 16:18:50', '', 'Honda Cg 150 Titan New 0km Cuotas Sin Interes !!! ', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0000-00-00', '0', '0', '', null, '0.00', '0.00', '', '', '', '', '', '', '', null, null, '');
+INSERT INTO `items` VALUES ('1', null, '2016-03-16 16:18:50', '2016-04-06 13:08:50', '123456', 'Honda Cg 150 Titan New 0km Cuotas Sin Interes !!! ', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0000-00-00', '0', '0', '', null, '0.00', '0.00', '', '', '', '', '', '', '', null, null, ''), ('2', null, '2016-04-06 13:09:14', '2016-04-06 13:09:14', '534534543', 'Yamaha 1234', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0000-00-00', '0', '0', '', null, '0.00', '0.00', '', '', '', '', '', '', '', null, null, '');
 COMMIT;
 
 -- ----------------------------
@@ -202,7 +216,7 @@ CREATE TABLE `menus` (
 --  Records of `menus`
 -- ----------------------------
 BEGIN;
-INSERT INTO `menus` VALUES ('1', '2016-03-15 14:47:57', '2016-03-15 14:48:59', null, 'Artículos', '', '0'), ('2', '2016-03-15 14:49:24', '2016-03-15 14:49:24', null, 'Lista de Artículos', 'items', '1'), ('3', '2016-03-15 14:49:36', '2016-03-15 14:49:36', null, 'Marcas', 'brands', '1'), ('4', '2016-03-15 14:50:32', '2016-03-15 14:50:32', null, 'Modelos', 'models', '1'), ('5', '2016-03-15 14:50:57', '2016-03-16 13:53:22', null, 'Categorías', 'items', '1'), ('6', '2016-03-15 14:51:27', '2016-03-15 14:51:27', null, 'Compras', '', '0'), ('9', '2016-03-15 14:58:52', '2016-03-15 14:58:52', null, 'Ventas', '', '0'), ('12', '2016-03-15 15:00:43', '2016-03-15 15:00:43', null, 'Administración', '', '0');
+INSERT INTO `menus` VALUES ('1', '2016-03-15 14:47:57', '2016-03-15 14:48:59', null, 'Artículos', '', '0'), ('2', '2016-03-15 14:49:24', '2016-03-15 14:49:24', null, 'Lista de Artículos', 'items', '1'), ('3', '2016-03-15 14:49:36', '2016-03-15 14:49:36', null, 'Marcas', 'brands', '1'), ('4', '2016-03-15 14:50:32', '2016-03-15 14:50:32', null, 'Modelos', 'models', '1'), ('5', '2016-03-15 14:50:57', '2016-03-21 16:01:56', null, 'Categorías', 'categories', '1'), ('6', '2016-03-15 14:51:27', '2016-03-15 14:51:27', null, 'Compras', '', '0'), ('9', '2016-03-15 14:58:52', '2016-03-15 14:58:52', null, 'Ventas', '', '0'), ('12', '2016-03-15 15:00:43', '2016-03-15 15:00:43', null, 'Administración', '', '0');
 COMMIT;
 
 -- ----------------------------
@@ -216,7 +230,14 @@ CREATE TABLE `models` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `name` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `models`
+-- ----------------------------
+BEGIN;
+INSERT INTO `models` VALUES ('1', '2016-03-21 15:48:50', '2016-03-21 15:48:50', null, 'CG 150 Titan');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `modules`
@@ -453,7 +474,7 @@ CREATE TABLE `users` (
 --  Records of `users`
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES ('1', null, null, '2016-03-16 13:54:27', 'admin_motonet', 'admin_motonet', 'admin_motonet', '$2y$10$tT9hkF3i69YkTnz8PQ6.m.5cw.WeHSn4W.EQ8V4mRW/rMJ8.eEq.i', 'UwAWnKkciaAAhCQltDuMiIFiGGMAIM2IR9qzB0rhUgHfejr00Fl691CHDEG9', '1', 'motonet', null), ('2', null, '2016-03-15 15:31:08', '2016-03-16 15:42:07', 'supervisor', 'supervisor', 'supervisor@motonet.com', '$2y$10$SgtOdSNa05NIFOE5/3zAreVn5ASPA078rTDdd48.oQncaHNIuoEse', 'LBVS5T9BFuusVTUkxAJXx7JBU38mLLktiPDYqGKTFCbgTv4JhrEYPCTdOMkC', '2', 'motonet', null);
+INSERT INTO `users` VALUES ('1', null, null, '2016-03-21 16:02:04', 'admin_motonet', 'admin_motonet', 'admin_motonet', '$2y$10$tT9hkF3i69YkTnz8PQ6.m.5cw.WeHSn4W.EQ8V4mRW/rMJ8.eEq.i', '84h0Q2tcPoSf3O7hJgsEaBxzyRyTulgipGjQHIZTqJs0sTQFK1HJseW2xH4D', '1', 'motonet', null), ('2', null, '2016-03-15 15:31:08', '2016-04-13 20:19:59', 'supervisor', 'supervisor', 'supervisor@motonet.com', '$2y$10$SgtOdSNa05NIFOE5/3zAreVn5ASPA078rTDdd48.oQncaHNIuoEse', 'J3LMmnJCSFPFezKjvdKPX3fqBlaETiDM1yIQGmPMRoDTSlMDLALgDRTTUttN', '2', 'motonet', null);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

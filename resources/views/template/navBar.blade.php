@@ -1,33 +1,45 @@
-<nav class="navbar navbar-default navbar-fixed-top ">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a  class="navbar-brand" ><div class="logo"><strong>nav</strong> { coder }</div></a>
-        </div>
+<nav role="navigation" class="navbar topnavbar">
+    <!-- START navbar header-->
+    <div class="navbar-header">
+        <a href="" class="navbar-brand">
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        </a>
+    </div>
+    <!-- END navbar header-->
+    <!-- START Nav wrapper-->
+    <div class="nav-wrapper">
+        <!-- START Left navbar-->
+        <ul class="nav navbar-nav">
+            <li>
+                <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+                <a href="#" data-trigger-resize="" data-toggle-state="aside-collapsed" class="hidden-xs">
+                    <em class="fa fa-navicon"></em>
+                </a>
+                <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
+                <a href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="visible-xs sidebar-toggle">
+                    <em class="fa fa-navicon"></em>
+                </a>
+            </li>
 
+            <li>
 
+            </li>
+            <!-- END lock screen-->
+        </ul>
+        <!-- END Left navbar-->
+        <!-- START Right Navbar-->
+        <ul class="nav navbar-nav navbar-right">
+            <!-- Search icon-->
+            <li>
+                <a href="{{route('logout')}}" title="Lock screen">
+                    <em class="icon-logout"></em>
+                </a>
+            </li>
+            <!-- Fullscreen (only desktops)-->
 
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"> </span>  {{Auth::user()->name}} <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{route('userProfileEdit')}}">Perfil</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="{{route('logout')}}">Salir</a></li>
-                    </ul>
-                </li>
-            </ul>
+        </ul>
+        <!-- END Right Navbar-->
+    </div>
+    <!-- END Nav wrapper-->
 
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
 </nav>
-
