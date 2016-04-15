@@ -27,7 +27,9 @@
 
 
                     @if(!is_null($fases))
-                        @if(\App\Entities\tfc\Sanciones::count() == 0)
+                        @if(\App\Entities\tfc\Sanciones::whereHas('endSancion', function($q) use ($faseActual){
+                                            $q->where('fases_id', $faseActual->id);
+                                        })->count() == 0)
                             @include('tfc/web/includes/sinDatos')
                         @else
 
@@ -43,7 +45,9 @@
 
                             {{--@endforeach--}}
 
-                            @foreach(\App\Entities\tfc\Sanciones::get() as $p)
+                            @foreach(\App\Entities\tfc\Sanciones::whereHas('endSancion', function($q) use ($faseActual){
+                                            $q->where('fases_id', $faseActual->id);
+                                        })->get() as $p)
                                 @if($p->EndSancion->name >= $faseWeekActual)
                                     <tr>
                                         <td colspan="2" align="center" class="active">{!! $p->StartSancion->name!!}</td>

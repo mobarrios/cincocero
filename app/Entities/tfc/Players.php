@@ -23,7 +23,8 @@ class Players extends Entity{
 
     public function FullName()
     {
-        return $this->attributes['last_name'].' '.$this->attributes['name'];
+
+        return ucwords(strtolower($this->attributes['last_name']).' '.strtolower($this->attributes['name']));
     }
 
     public function Amarillas($id){
