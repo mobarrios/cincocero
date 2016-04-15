@@ -15,8 +15,6 @@
 use App\Helpers\ImagesHelper;
 
 
-
-
     // lista de empresas para mejorar acceso
     //Route::get('',function(){
     //   return view('company_list');
@@ -24,25 +22,31 @@ use App\Helpers\ImagesHelper;
 
 //Session::put('languaje','es_ES');
 
-
-Route::get('ml/{id?}', ['as'=>'ml','uses'=>'\App\Http\Controllers\ws\MercadolibreController@getItem']);
-
 //Route::group(['middleware'=>'changeLanguaje'],function(){
+
+require(__DIR__ . '/Routes/tfc/web/WebRoutes.php');
+
+
+//Route::get('web',function(){
+//
+//    return view('tfc.web.index');
+//});
+
 Route::get('template',function(){
 
     return view('test');
 });
 
-Route::get('',function(){
-
-    return redirect()->route('login');
-});
+//Route::get('',function(){
+//
+//    return redirect()->route('login');
+//});
 
 
 
 
 //login pasa x middle company para chequear la empresa
-Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
+Route::get('/cpanel', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
 
         //pasa para cambiar la conexion a la db segun la empresa
@@ -66,13 +70,10 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
                // Route::get('dispositivos',            ['middleware' => ['roles:dispostivo-listar'] , 'as'=>'dispositivos','uses'=>'DispositivosController@getIndex']);
 
-                require(__DIR__. '/Routes/CrudRoutes.php');
-                require(__DIR__. '/Routes/stock/items/ItemsRoutes.php');
-                require(__DIR__. '/Routes/stock/brands/BrandsRoutes.php');
                 require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
 
-                $route_files = File::allFiles(__DIR__ . '/Routes/stock');
+                $route_files = File::allFiles(__DIR__ . '/Routes/tfc');
 
                 foreach ($route_files as $partial)
                 {
@@ -93,6 +94,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                     Route::get('update', ['as'=>'update','uses'=>'\App\Http\Controllers\config\InitController@getUpdate']);
 
 
+
                 });
 
             });
@@ -111,6 +113,10 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
             return redirect()->back();
         }]);
+
+        //search route
+
+        Route::get('search/{param1?}/{param2?}','SearchController@getSearch');
 
   //});
 
@@ -135,8 +141,11 @@ Route::get('xls',function(){
 });
 
 Route::get('pdf',function(){
-    $pdf = App::make('dompdf.wrapper');
-    $pdf->loadHTML('<h1>Test</h1>');
+
+    $pdf = PDF::loadView('tfc.matches.ficha');
+
+   // $pdf = App::make('dompdf.wrapper');
+   // $pdf->loadHTML('<h1>Test</h1>');
     return $pdf->stream();
 });
 

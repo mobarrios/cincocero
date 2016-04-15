@@ -1,12 +1,11 @@
 @extends('template/template')
 
+    @section('menu')
+        @include('template/menu')
+    @endsection
 
     @section('side')
         @include('template/side')
-    @endsection
-
-    @section('menu')
-        @include('template/menu')
     @endsection
 
     @section('mainContent')

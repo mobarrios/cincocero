@@ -19,6 +19,14 @@ class UserRepo extends BaseRepo {
         return new User;
     }
 
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        return;
+    }
+
+
     public function ListAndPaginate($paginate = 50, $search = null)
     {
         $qry = $this->model->orderBy('name')

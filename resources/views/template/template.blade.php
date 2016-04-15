@@ -1,168 +1,106 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <base href="{{asset('')}}">
 
 <head>
+
+
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Bootstrap Admin App + jQuery">
-    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-    <title>{nc} nav_coder</title>
-
-    <!-- =============== VENDOR STYLES ===============-->
-    <!-- FONT AWESOME-->
-    <link rel="stylesheet" href="assets/angle/vendor/fontawesome/css/font-awesome.min.css">
-    <!-- SIMPLE LINE ICONS-->
-    <link rel="stylesheet" href="assets/angle/vendor/simple-line-icons/css/simple-line-icons.css">
-    <!-- ANIMATE.CSS-->
-    <link rel="stylesheet" href="assets/angle/vendor/animate.css/animate.min.css">
-    <!-- WHIRL (spinners)-->
-    <link rel="stylesheet" href="assets/angle/vendor/whirl/dist/whirl.css">
-    <!-- =============== PAGE VENDOR STYLES ===============-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
 
-    <!-- =============== BOOTSTRAP STYLES ===============-->
-    <link rel="stylesheet" href="assets/angle/css/bootstrap.css" id="bscss">
-    <!-- =============== APP STYLES ===============-->
-    <link rel="stylesheet" href="assets/angle/css/app.css" id="maincss">
-    <link href="assets/angle/css/theme-b.css" rel="stylesheet" id="autoloaded-stylesheet">
+    <title>NAVCODER</title>
 
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/metisMenu.css" rel="stylesheet">
+    <link href="assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jquery-ui.css" rel="stylesheet" >
     <link href="assets/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/dataTables.fontAwesome.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" /> 
 
-    <link href="assets/inspinia/css/plugins/datapicker/datepicker3.css" rel="stylesheet" type="text/css" media="all" >
+    <link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
 
 
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+
+    <![endif]-->
 
     @yield('css')
-
 </head>
 
 <body>
-<div class="wrapper">
-    <!-- top navbar-->
-    <header class="topnavbar-wrapper">
-        <!-- START Top Navbar-->
-        @include('template.navBar')
-        <!-- END Top Navbar-->
-    </header>
-    <!-- sidebar-->
-    <aside class="aside">
-        <!-- START Sidebar (left)-->
-        @include('template.side')
-        <!-- END Sidebar (left)-->
-    </aside>
 
-    <!-- Main section-->
-    <section>
-        <!-- Page content-->
-        <div class="content-wrapper">
+@include('messages')
 
-            <h3>{{$sectionName}} </h3>
+
+<div id="wrapper">
+
+   @yield('menu')
+
+    <!-- Page Content -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+
+
             <div class="row">
-                @yield('content')
+                <div class="col-lg-12">
+                    @yield('mainContent')
+                </div>
+                <!-- /.col-lg-12 -->
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
+
+    <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" alt="" />
+                </div>
             </div>
         </div>
-    </section>
-    <!-- Page footer-->
-    <footer>
-        @include('template.footer')
-    </footer>
+    </div>
+
 </div>
+<!-- /#wrapper -->
 
-<!-- =============== VENDOR SCRIPTS ===============-->
-
-<script src="assets/js/custom.js"></script>
-<!-- MODERNIZR-->
-<script src="assets/angle/vendor/modernizr/modernizr.custom.js"></script>
-<!-- MATCHMEDIA POLYFILL-->
-<script src="assets/angle/vendor/matchMedia/matchMedia.js"></script>
-<!-- JQUERY-->
-<script src="assets/angle/vendor/jquery/dist/jquery.js"></script>
-
-<!-- BOOTSTRAP-->
-<script src="assets/angle/vendor/bootstrap/dist/js/bootstrap.js"></script>
-<!-- STORAGE API-->
-<script src="assets/angle/vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
-<!-- JQUERY EASING-->
-<script src="assets/angle/vendor/jquery.easing/js/jquery.easing.js"></script>
-<!-- ANIMO-->
-<script src="assets/angle/vendor/animo.js/animo.js"></script>
-<!-- SLIMSCROLL-->
-<script src="assets/angle/vendor/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- SCREENFULL-->
-<script src="assets/angle/vendor/screenfull/dist/screenfull.js"></script>
-<!-- LOCALIZE-->
-<script src="assets/angle/vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
-<!-- RTL demo-->
-<script src="assets/angle/js/demo/demo-rtl.js"></script>
-<!-- =============== PAGE VENDOR SCRIPTS ===============-->
-
-<!-- =============== APP SCRIPTS ===============-->
-<script src="assets/angle/js/app.js"></script>
-
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/metisMenu.min.js"></script>
+<script src="assets/js/sb-admin-2.js"></script>
 <script src="assets/js/jquery.dataTables.min.js"></script>
 <script src="assets/js/dataTables.bootstrap.min.js"></script>
-
-<link href="assets/color_picker/css/jquery.minicolors.css" rel="stylesheet" type="text/css" media="all" >
+<script src="assets/js/jquery-ui.js"></script>
+<script src="assets/js/tinymce/tinymce.min.js"></script>
+<script src="assets/js/jquery_datepicker_es.js"></script>
+<script src="assets/js/custom.js"></script>
 
 <script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
-
-<script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js" ></script>
-
-<script src="assets/js/jquery_datepicker_es.js"></script>
-
+<script src="assets/js/bootstrap-checkbox.min.js" ></script>
 
 
 @yield('js')
-<script>
-
-    $('.datepicker').datepicker({
-        languaje :'es'
-    });
-
-
-    $('#dataTable').DataTable({
-        columnDefs: [
-            { targets: 'no-sort', orderable: false }
-        ],
-        "order": [[ 1, "asc" ]],
-        "language": {
-            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-        }
-    });
-
-    //color picker
-    $(function(){
-        var colpick = $('.demo').each( function() {
-            $(this).minicolors({
-                control: $(this).attr('data-control') || 'hue',
-                inline: $(this).attr('data-inline') === 'true',
-                letterCase: 'lowercase',
-                opacity: false,
-                change: function(hex, opacity) {
-                    if(!hex) return;
-                    if(opacity) hex += ', ' + opacity;
-                    try {
-                        console.log(hex);
-                    } catch(e) {}
-                    $(this).select();
-                },
-                theme: 'bootstrap'
-            });
-        });
-
-        var $inlinehex = $('#inlinecolorhex h3 small');
-        $('#inlinecolors').minicolors({
-            inline: true,
-            theme: 'bootstrap',
-            change: function(hex) {
-                if(!hex) return;
-                $inlinehex.html(hex);
-            }
-        });
-    });
-</script>
 </body>
 
 </html>

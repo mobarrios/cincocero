@@ -53,19 +53,25 @@ $('#dataTable').DataTable({
 
 });
 
-//tinymce.init({
-//    plugins: "textcolor",
-//    statusbar: false,
-//
-//
-//    selector: ".mytextarea",
-//    toolbar: [
-//        "undo redo | styleselect | bold italic | forecolor backcolor alignleft aligncenter alignright",
-//    ],
-//    menubar: false
-//
-//
-//});
+//datepicker en forms
+$('.datepicker').datepicker({
+    dateFormat: "dd-mm-yy"
+});
+
+
+tinymce.init({
+    plugins: "textcolor",
+    statusbar: false,
+
+
+    selector: ".mytextarea",
+    toolbar: [
+        "undo redo | styleselect | bold italic | forecolor backcolor alignleft aligncenter alignright",
+    ],
+    menubar: false
+
+
+});
 
 var $lightbox = $('#lightbox');
 
@@ -90,9 +96,3 @@ $lightbox.on('shown.bs.modal', function (e) {
     $lightbox.find('.modal-dialog').css({'width': $img.width()});
     $lightbox.find('.close').removeClass('hidden');
 });
-
-
-    //datepicker en forms
-//$('.datepicker').datepicker({
-//    dateFormat: "dd-mm-yy"
-//});

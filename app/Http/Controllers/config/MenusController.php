@@ -58,5 +58,12 @@ class MenusController extends Controller {
 
     }
 
+    public function requestCustom($request = null)
+    {
+        $newRequest         = $request;
+
+        return $newRequest;
+    }
+
 
 }

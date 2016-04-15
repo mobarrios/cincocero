@@ -18,7 +18,7 @@ class ItemsRepo extends BaseRepo {
         return [
            // 'code'   => 'required|unique:items,code',
             'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
 
         ];
     }
@@ -27,9 +27,19 @@ class ItemsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024',
         ];
     }
+
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        $data['name'] = $data['name'].'PPP';
+
+        return;
+    }
+
 
 
     public function tableHeader()
@@ -40,7 +50,7 @@ class ItemsRepo extends BaseRepo {
                 'Imagen' =>    ['data' => 'images','relation'=> null],
                 //'Codigo' =>    ['data' => 'code','relation' => null],
                 'Articulo' =>  ['data' => 'name','relation' => null],
-                //'Modelo' =>     ['data' => 'Models','relation' => 'name'],
+                'Marca' =>     ['data' => 'Brands','relation' => 'name'],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

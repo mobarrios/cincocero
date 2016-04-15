@@ -3,6 +3,7 @@
 return array(
 
     'global_db' => '',
+
 );
 
 ?>

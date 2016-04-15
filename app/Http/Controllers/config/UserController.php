@@ -67,6 +67,7 @@ class UserController extends Controller {
     }
 
 
+
     public function postEdit($id = null, Request $request, ImagesHelper $image)
     {
         //if in controller custom

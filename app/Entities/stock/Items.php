@@ -7,11 +7,11 @@ class Items extends Entity{
 
     protected $table = 'items';
 
-    protected $fillable = ['name','models_id'];
+    protected $fillable = ['name','brands_id'];
 
-    public function Models()
+    public function Brands()
     {
-        return $this->belongsTo(Models::getClass());
+        return $this->belongsTo(Brands::getClass());
     }
 
 

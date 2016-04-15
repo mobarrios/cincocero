@@ -34,8 +34,7 @@ class InitController extends Controller {
 
     public function getUpdate()
     {
-        $this->schemaCreate(Config('master.dataBase'));
-
+        $this->schemaCreate(Config('tfc.db'));
     }
 
 

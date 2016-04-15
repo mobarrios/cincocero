@@ -14,6 +14,12 @@ class PermissionsRepo extends BaseRepo {
         return new Permissions();
     }
 
+    public function createCustom($datos = null)
+    {
+        $data = $datos->all();
+
+        return;
+    }
 
 
 
