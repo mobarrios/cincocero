@@ -99,6 +99,7 @@
                                     </p>
                                     <label class="text-center" style="display:block;font-size:1.2em;">Acepto términos y condiciones <input type="checkbox" name="terms" value="terms" class="input-md" required></label>
                                 </div>
+
                                 <div class="pt-10">
                                     <button class="submit_btn btn btn-mod btn-medium btn-round btn-full" id="reg-btn">Enviar Solicitud</button>
                                 </div>

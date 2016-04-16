@@ -106,6 +106,89 @@ class FormBuilder extends \Collective\Html\FormBuilder {
     }
 
 
+    public function fileCustom($name,$label)
+    {
+        $images = parent::getValueAttribute('images');
+
+        $td['column'] = null;
+
+        if(!is_null($images)) {
+
+            foreach ($images as $image) {
+                $td['column'] .= '<td style="padding-left: 5px;">
+                                    <a  class="delete" href="' . route('deleteImage', $image->id) . '">
+                                         <span class="fa fa-remove"></span>
+                                    </a>
+                                    <img class="thumbnail" src="' . $image->image . '" width="150px">
+                                  </td>';
+            }
+        }
+
+        return "<div class='".$this->contentClass."'>
+
+        <label>".$label."</label>
+        <table>
+            ".$td['column']."
+        </table>
+            <div class='input-group image-preview'>
+                <input type='text' class='form-control image-preview-filename' disabled='disabled'> <!-- don't give a name === doesn't send on POST/GET -->
+                <span class='input-group-btn'>
+                    <!-- image-preview-clear button -->
+                    <button type='button' class='btn btn-default image-preview-clear' style='display:none;'>
+                        <span class='fa fa-remove'></span> Borrar
+                    </button>
+                    <!-- image-preview-input -->
+                    <div class='btn btn-default image-preview-input'>
+                        <span class='fa fa-folder-open'></span>
+                        <span class='image-preview-input-title'>Buscar</span>
+                        <input type='file' accept='image/png, image/jpeg, image/gif' name='".$name."'/> <!-- rename it -->
+                    </div>
+                </span>
+            </div><!-- /input-group image-preview [TO HERE]-->
+        </div>";
+    }
+
+    public function fileCustomNoLabel($name)
+    {
+        $images = parent::getValueAttribute('images');
+
+        $td['column'] = null;
+
+        if(!is_null($images)) {
+
+            foreach ($images as $image) {
+                $td['column'] .= '<td style="padding-left: 5px;">
+                                    <a  class="delete" href="' . route('deleteImage', $image->id) . '">
+                                         <span class="fa fa-remove"></span>
+                                    </a>
+                                    <img class="thumbnail" src="' . $image->image . '" width="150px">
+                                  </td>';
+            }
+        }
+
+        return "<div class='".$this->contentClass."'>
+
+        <table>
+            ".$td['column']."
+        </table>
+            <div class='input-group image-preview'>
+                <input type='text' name='".$name."' id='".$name."' class='form-control image-preview-filename' disabled='disabled'> <!-- don't give a name === doesn't send on POST/GET -->
+                <span class='input-group-btn'>
+                    <!-- image-preview-clear button -->
+                    <button type='button' class='btn btn-default image-preview-clear' style='display:none;'>
+                        <span class='fa fa-remove'></span> Borrar
+                    </button>
+                    <!-- image-preview-input -->
+                    <div class='btn btn-default image-preview-input'>
+                        <span class='fa fa-folder-open'></span>
+                        <span class='image-preview-input-title'>Buscar</span>
+                        <input type='file' accept='image/png, image/jpeg, image/gif' name='".$name."'/> <!-- rename it -->
+                    </div>
+                </span>
+            </div><!-- /input-group image-preview [TO HERE]-->
+        </div>";
+    }
+
     /*
     public function textfield($name, $label, $errors, $labelOptions = array(), $inputOptions = array())
     {

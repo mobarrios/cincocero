@@ -26,24 +26,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Repositories\tfc\PlayersRepo;
 
 class WebController extends Controller {
 
-    public function __construct(){
-
-        if(!Session::has('categoria'))
-        {
-            return redirect()->to('web/');
-        }
-
-    }
-
     public function Index()
     {
-        $data['categories'] = Categories::all();
+        $data['noticias']   = News::orderBy('date','DESC');
+        $data['sedes'] = Sedes::all();
+        $data['galeria'] = Galleries::all();
+        $data['teams'] = Teams::where('status',1)->orderBy('name','asc')->lists('name','id');
 
         return view('tfc/web/index')->with($data);
     }
@@ -55,7 +50,7 @@ class WebController extends Controller {
 
     public function Noticias()
     {
-        $data['noticias']   = News::orderBy('date','DESC')->paginate(10);
+        $data['noticias']   = News::orderBy('date','DESC');
 
          return view('tfc/web/noticias')->with($data);
     }
@@ -418,7 +413,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
 
         if ($validator->fails()) {
-            return "Complete correctamente los campos anteriores";
+            return redirect()->back()->withErrors("Complete correctamente los campos anteriores");
         }else{
 
 
