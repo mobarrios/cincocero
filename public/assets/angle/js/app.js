@@ -2884,7 +2884,7 @@
 
     $('[data-toggle-state]')
       .on('click', function (e) {
-        // e.preventDefault();
+         e.preventDefault();
         e.stopPropagation();
         var element = $(this),
             classname = element.data('toggleState'),

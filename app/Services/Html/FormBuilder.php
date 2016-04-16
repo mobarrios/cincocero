@@ -118,7 +118,7 @@ class FormBuilder extends \Collective\Html\FormBuilder {
                 <span class='input-group-btn'>
                     <!-- image-preview-clear button -->
                     <button type='button' class='btn btn-default image-preview-clear' style='display:none;'>
-                        <span class='glyphicon glyphicon-remove'></span> Borrar
+                        <span class='fa fa-remove'></span> Borrar
                     </button>
                     <!-- image-preview-input -->
                     <div class='btn btn-default image-preview-input'>
