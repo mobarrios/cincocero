@@ -45,9 +45,17 @@
                             @else
                                 <td style="width: 5%;">
                                     @foreach($model->$column['data'] as $image)
-                                            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
-                                                 <img width="100%;" src="{{$image->image}}" >
-                                            </a>
+                                        <div class="panel3 panel-default">
+                                            <div class="panel3-body">
+                                                <a href="{{$image->image}}" title="{!! $model->name !!}" class="zoom" data-title="{!! $model->name !!}" data-type="image" data-toggle="lightbox">
+                                                    <img width="100%;" src="{{$image->image}}">
+                                                    <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                            {{--<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">--}}
+                                                 {{--<img width="100%;" src="{{$image->image}}" >--}}
+                                            {{--</a>--}}
                                     @endforeach
                                 </td>
                             @endif
