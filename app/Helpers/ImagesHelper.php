@@ -20,7 +20,11 @@ class ImagesHelper
         $image->move(public_path($path), $file);
 
         $img = Image::make(public_path($path).$file);
-        $img->fit(640,480);
+
+        $img->resize(640, null, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+        //$img->resize(640,480);
         $img->save();
 
 

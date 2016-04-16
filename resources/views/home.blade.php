@@ -3,6 +3,30 @@
     @section('content')
         <div class="col-lg-6">
             <div class="panel panel-default">
+                <div class="panel panel-body">
+                    <div class="col-xs-6 text-center ">
+                        @if(Auth::user()->images->count() != 0)
+                            <img src="{!! Auth::user()->images->first()->image !!}" alt="Image" class="img-thumbnail img-circle img-responsive thumb96">
+                        @else
+                            <em class="fa fa-user fa-5x"></em>
+                        @endif
+                       <hr>
+                        <a class="btn btn-xs btn-block btn-default" href="{{route('userProfileEdit')}}"><i class="icon-note"></i></a>
+
+                    </div>
+                    <div class="col-xs-6">
+                        <h3 class="mt0">{{Auth::user()->name}} {{Auth::user()->last_name}}</h3>
+                        <p class="text-muted">Grupo : {{Auth::user()->Perfil->profile}}</p>
+                        <p class="text-muted">{{Auth::user()->email}}</p>
+                        <p class="text-muted">Ultima Conexión : <strong>hace 2 dias</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="panel panel-default">
                     <div class="panel panel-body">
                         <table class="table">
                             <tbody>
@@ -41,62 +65,56 @@
             </div>
         </div>
 
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel panel-body">
-                    <h1>{{Auth::user()->name}} {{Auth::user()->last_name}}</h1>
-                    <div class="m-b-sm">
-                            @if(Auth::user()->images->count() > 0)
-                                <div>
-                                    <img class=" img-thumbnail img-circle" width="100" src="{!! Auth::user()->images->first()->image !!}" alt="foto de perfil">
-                                </div>
-                            @else
-                            {{-- SI EL PETE NO TIENE IMAGEN QUE LE PONGA EL ICONITO --}}
-                                <button class="btn btn-warning btn-circle btn-lg btn-outline" type="button">
-                                    <i class="fa fa-user"></i>
-                                </button>
-                            @endif
-                    </div>
-                    <p class="font-bold">Ultima Conexión : <strong>hace 2 dias</strong></p>
-                </div>
-            </div>
-        </div>
+
 
         <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel panel-body">
                     <h2>Tareas Pendientes</h2>
-                    <small>Tareas a por realizar para el usuario.</small>
-                    <ul class="todo-list m-t small-list">
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
 
-                            <span class="m-l-xs todo-completed">Dar de Alta Usuarios</span>
+                            <div class="checkbox c-checkbox pull-left mt0">
+                                <label>
+                                    <input name="remember" type="checkbox">
+                                    <span class="fa fa-check"></span>Dar de Alta Usuarios
+                                </label>
+                            </div>
 
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
-                            <span class="m-l-xs  todo-completed">Cargar Productos</span>
+                    <div class="checkbox c-checkbox pull-left mt0">
+                        <label>
+                            <input name="remember" type="checkbox">
+                            <span class="fa fa-check"></span>Dar de Alta Usuarios
+                        </label>
+                    </div>
+                    <div class="checkbox c-checkbox pull-left mt0">
+                        <label>
+                            <input name="remember" type="checkbox">
+                            <span class="fa fa-check"></span>Dar de Alta Usuarios
+                        </label>
+                    </div>
+                    <div class="checkbox c-checkbox pull-left mt0">
+                        <label>
+                            <input name="remember" type="checkbox">
+                            <span class="fa fa-check"></span>Dar de Alta Usuarios
+                        </label>
+                    </div>
+                    <div class="checkbox c-checkbox pull-left mt0">
+                        <label>
+                            <input name="remember" type="checkbox">
+                            <span class="fa fa-check"></span>Dar de Alta Usuarios
+                        </label>
+                    </div>
+                    <div class="checkbox c-checkbox pull-left mt0">
+                        <label>
+                            <input name="remember" type="checkbox">
+                            <span class="fa fa-check"></span>Dar de Alta Usuarios
+                        </label>
+                    </div>
 
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Cargar Proveedores</span>
-                            <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 mins</small>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Venta Online</span>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Administración</span>
-                        </li>
-                    </ul>
                 </div>
+
             </div>
+
         </div>
-        <div class="clearfix"></div>
 
 
 

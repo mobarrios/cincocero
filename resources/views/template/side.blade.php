@@ -21,19 +21,20 @@
                         <a href="#{{$menu->name}}" data-toggle="collapse">
                             <span >{{$menu->name}}</span>
                         </a>
-
                         <ul id="{{$menu->name}}" class="nav sidebar-subnav collapse">
+
                             @foreach(\App\Entities\Menus::where('main',$menu->id)->get() as $sub)
-                                <li class="">
-                                    <a class="menu" data-id="{{$sub->id}}" href="{{route($sub->routes)}}">
-                                        <span>{{$sub->name}}</span>
-                                    </a>
-                                </li>
+                                    @if(Auth::user()->Perfil->PermissionsByModule($sub->routes) == 1)
+                                    <li class="">
+                                        <a class="menu" data-id="{{$sub->id}}" href="{{route($sub->routes)}}">
+                                            <span>{{$sub->name}}</span>
+                                        </a>
+                                    </li>
+                                    @endif
                             @endforeach
 
                         </ul>
                     </li>
-
                 @else
                     <li class=" ">
                         <a class="menu" data-id="{{$menu->id}}" href="{{route($menu->routes)}}" title="Home">

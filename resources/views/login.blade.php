@@ -36,7 +36,7 @@
 
                 <div class="form-group has-feedback">
                         <label for="signupInputEmail1" class="text-muted">Email</label>
-                        <input name="email" type="email" placeholder="Enter email"  required class="form-control">
+                        <input name="email" type="text" placeholder="Enter email"  required class="form-control">
                         <span class="fa fa-envelope form-control-feedback text-muted"></span>
                     </div>
                     <div class="form-group has-feedback">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="checkbox c-checkbox pull-left mt0">
                         <label>
-                            <input   name="remember" type="checkbox">
+                            <input name="remember" type="checkbox">
                             <span class="fa fa-check"></span>Recordarme
                         </label>
                     </div>
@@ -69,8 +69,8 @@
     </div>
 
 </div>
-
 @include('messages')
+
 
 <!-- =============== VENDOR SCRIPTS ===============-->
 <!-- MODERNIZR-->
@@ -87,7 +87,6 @@
 <script src="assets/angle/js/app.js"></script>
 
 <script>
-
 
     if ($('#msg').length){
 

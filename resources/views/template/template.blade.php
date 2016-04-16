@@ -70,15 +70,17 @@
     </footer>
 </div>
 
+@include('messages')
+
 <!-- =============== VENDOR SCRIPTS ===============-->
+<!-- JQUERY-->
+<script src="assets/angle/vendor/jquery/dist/jquery.js"></script>
 
 <script src="assets/js/custom.js"></script>
 <!-- MODERNIZR-->
 <script src="assets/angle/vendor/modernizr/modernizr.custom.js"></script>
 <!-- MATCHMEDIA POLYFILL-->
 <script src="assets/angle/vendor/matchMedia/matchMedia.js"></script>
-<!-- JQUERY-->
-<script src="assets/angle/vendor/jquery/dist/jquery.js"></script>
 
 <!-- BOOTSTRAP-->
 <script src="assets/angle/vendor/bootstrap/dist/js/bootstrap.js"></script>
@@ -116,6 +118,14 @@
 
 @yield('js')
 <script>
+
+    if ($('#msg').length){
+
+        $.notify($('.error').text(),{
+            status:'success',
+            pos:'bottom-right'
+        });
+    }
 
     $('.datepicker').datepicker({
         languaje :'es'
