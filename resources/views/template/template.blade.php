@@ -33,8 +33,18 @@
     <link href="assets/inspinia/css/plugins/datapicker/datepicker3.css" rel="stylesheet" type="text/css" media="all" >
 
 
+    <!-- =============== FILEPICKER ===============-->
+    <link href="assets/css/inputFile.css" rel="stylesheet" type="text/css" media="all" >
+
+    <!-- =============== IMAGEMODAL ===============-->
+    <link href="assets/css/imageModal.css" rel="stylesheet" type="text/css" media="all" >
+
 
     @yield('css')
+
+    <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <script src="assets/js/inputFile.js"></script>
+    <script src="assets/js/imageModal.js"></script>
 
 </head>
 
@@ -70,15 +80,16 @@
     </footer>
 </div>
 
-<!-- =============== VENDOR SCRIPTS ===============-->
+@include('messages')
 
-<script src="assets/js/custom.js"></script>
+<!-- =============== VENDOR SCRIPTS ===============-->
+<!-- JQUERY-->
+<script src="assets/angle/vendor/jquery/dist/jquery.js"></script>
+
 <!-- MODERNIZR-->
 <script src="assets/angle/vendor/modernizr/modernizr.custom.js"></script>
 <!-- MATCHMEDIA POLYFILL-->
 <script src="assets/angle/vendor/matchMedia/matchMedia.js"></script>
-<!-- JQUERY-->
-<script src="assets/angle/vendor/jquery/dist/jquery.js"></script>
 
 <!-- BOOTSTRAP-->
 <script src="assets/angle/vendor/bootstrap/dist/js/bootstrap.js"></script>
@@ -110,12 +121,26 @@
 
 <script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js" ></script>
 
+
 <script src="assets/js/jquery_datepicker_es.js"></script>
+
+<script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
+
+
+
 
 
 
 @yield('js')
 <script>
+
+    if ($('#msg').length){
+
+        $.notify($('.error').text(),{
+            status:'success',
+            pos:'bottom-right'
+        });
+    }
 
     $('.datepicker').datepicker({
         languaje :'es'
@@ -163,6 +188,7 @@
         });
     });
 </script>
+
 </body>
 
 </html>
