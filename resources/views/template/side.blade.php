@@ -10,42 +10,43 @@
             <li>
                 <a class="menu" data-id="0" href="{{route('home')}}" title="Home">
                     <em class="icon-home"></em>
-                    <span data-localize="sidebar.nav.DOCUMENTATION">Home</span>
+                    <span>Home</span>
                 </a>
             </li>
 
-            @foreach(\App\Entities\Menus::where('main',0)->get() as $menu)
+            @foreach( App\Http\Repositories\config\MenusRepo::build() as $m => $k)
 
-                @if($menu->routes == '' )
+                    @if(is_array($k))
+
                     <li>
-                        <a href="#{{$menu->name}}" data-toggle="collapse">
-                            <span >{{$menu->name}}</span>
+                        <a href="#{{$m}}" data-toggle="collapse">
+                            <span >{{$m}}</span>
                         </a>
-                        <ul id="{{$menu->name}}" class="nav sidebar-subnav collapse">
+                        <ul id="{{$m}}" class="nav sidebar-subnav collapse">
 
-                            @foreach(\App\Entities\Menus::where('main',$menu->id)->get() as $sub)
-                                    @if(Auth::user()->Perfil->PermissionsByModule($sub->routes) == 1)
-                                    <li class="">
-                                        <a class="menu" data-id="{{$sub->id}}" href="{{route($sub->routes)}}">
-                                            <span>{{$sub->name}}</span>
-                                        </a>
-                                    </li>
-                                    @endif
+                            @foreach($k as $sub => $r)
+                                <li class="">
+                                    <a class="menu" data-id="{{$r}}" href="{{route($r)}}">
+                                        <span>{{$sub}}</span>
+                                    </a>
+                                </li>
                             @endforeach
 
                         </ul>
                     </li>
-                @else
-                    <li class=" ">
-                        <a class="menu" data-id="{{$menu->id}}" href="{{route($menu->routes)}}" title="Home">
-                            <em class="icon-home"></em>
-                            <span data-localize="sidebar.nav.DOCUMENTATION">{{$menu->name}}</span>
-                        </a>
-                    </li>
-                @endif
 
-
+                    @else
+                        <li class=" ">
+                            <a class="menu" data-id="{{$m}}" href="{{route($k)}}" title="{{$m}}">
+                                <span>{{$m}}</span>
+                            </a>
+                        </li>
+                    @endif
             @endforeach
+
+
+
+
 
         </ul>
         <!-- END sidebar nav-->
@@ -69,6 +70,11 @@
         {
             localStorage.setItem('menu_id',$(this).attr('data-id'));
         });
+
+        if ($('.no_sub').length){
+
+
+        }
 
 
     </script>
