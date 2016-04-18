@@ -13,7 +13,7 @@
 
             <div class="collapse navbar2-collapse js-navbar2-collapse">
                 <div class="buscador visible-xs visible-sm">
-                    <form action="{!! route('productGrid') !!}" method="get" class="" class="center-block">
+                    <form action="{!! route('productFind') !!}" method="get" class="center-block">
                         <div class="col-xs-12">
                             <div class="input-group">
                                 <span class="input-group-btn">
@@ -38,27 +38,28 @@
                         <ul class="dropdown-menu mega-dropdown-menu row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header">Recomendados</li>
+                                    {{--<li class="dropdown-header">Recomendados</li>--}}
                                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner">
-                                            <div class="item active">
-                                                <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 1"></a>
-                                                <br>
-                                                <button class="btn btn-primary" type="button">Ver</button> <button href="#" class="btn btn-default" type="button">Comprar</button>
-                                                <span class="middle-box">$14999</span>
-                                            </div><!-- End Item -->
-                                            <div class="item">
-                                                <a href="#"><img src="http://placehold.it/254x150/ef5e55/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 2"></a>
-                                                <br>
-                                                <button class="btn btn-primary" type="button">Ver</button> <button href="#" class="btn btn-default" type="button">Comprar</button>
-                                                <span class="middle-box">$14999</span>
-                                            </div><!-- End Item -->
-                                            <div class="item">
-                                                <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 3"></a>
-                                                <br>
-                                                <button class="btn btn-primary" type="button">Ver</button> <button href="#" class="btn btn-default" type="button">Comprar</button>
-                                                <span class="middle-box">$14999</span>
-                                            </div><!-- End Item -->
+                                            @if(\App\Entities\motonet\Brands::count() != 0)
+                                                @foreach(\App\Entities\motonet\Brands::all() as $m)
+                                                    @if($m->images->count() != 0)
+                                                        <div class="item">
+                                                            <a href="{!! route('productFind',['brands' => $m->id]) !!}"><img src="{!! $m->images->first()->image !!}" class="img-responsive" alt="{!! $m->name !!}"></a>
+                                                        </div><!-- End Item -->
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                <div class="item active">
+                                                    <a href="#"><img src="assets/web/img/logo.jpg" class="img-responsive" alt="Motonet"></a>
+                                                </div>
+                                            @endif
+                                            {{--<div class="item">--}}
+                                                {{--<a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 3"></a>--}}
+                                                {{--<br>--}}
+                                                {{--<button class="btn btn-primary" type="button">Ver</button> <button href="#" class="btn btn-default" type="button">Comprar</button>--}}
+                                                {{--<span class="middle-box">$14999</span>--}}
+                                            {{--</div><!-- End Item -->--}}
                                         </div><!-- End Carousel Inner -->
                                     </div><!-- /.carousel -->
                                 </ul>
@@ -67,38 +68,34 @@
                                 <ul>
                                     <li class="dropdown-header">Categorías</li>
                                     <li class="divider"></li>
-                                    <li><a href="#">120cc</a></li>
-                                    <li><a href="#">250cc</a></li>
-                                    <li><a href="#">500cc</a></li>
-                                    <li><a href="#">900cc</a></li>
-                                    <li><a href="#">1000cc</a></li>
-                                    <li><a href="#">1200cc</a></li>
+                                    @if(\App\Entities\motonet\Categories::count() != 0)
+                                        @foreach(\App\Entities\motonet\Categories::all() as $c)
+                                            <li><a href="{!! route('productFind',['categories' => $c->id]) !!}">{!! $c->name !!}</a></li>
+                                        @endforeach
+                                    @endif
                                 </ul>
                             </li>
                             <li class="col-sm-3">
                                 <ul>
                                     <li class="dropdown-header">Marcas</li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Honda</a></li>
-                                    <li><a href="#">Yamaha</a></li>
-                                    <li><a href="#">Kawasaki</a></li>
-                                    <li><a href="#">Suzuki</a></li>
-                                    <li><a href="#">Peugeot</a></li>
-                                    <li><a href="#">Motomel</a></li>
+                                    @if(\App\Entities\motonet\Brands::count() != 0)
+                                        @foreach(\App\Entities\motonet\Brands::all() as $b)
+                                            <li><a href="{!! route('productFind',['brands' => $b->id]) !!}">{!! $b->name !!}</a></li>
+                                        @endforeach
+                                    @endif
+
                                 </ul>
                             </li>
                             <li class="col-sm-3">
                                 <ul>
                                     <li class="dropdown-header">Modelos</li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Honda Wave 110</a></li>
-                                    <li><a href="#">Motomel B110</a></li>
-                                    <li><a href="#">Guerrero G110 Trip</a></li>
-                                    <li><a href="#">Honda CG150 Titan</a></li>
-                                    <li><a href="#">Gilera Smash</a></li>
-                                    <li><a href="#">Corven Energy 110</a></li>
-                                    <li><a href="#">Honda XR 125 L</a></li>
-                                    <li><a href="#">Honda XR 250</a></li>
+                                    @if(\App\Entities\motonet\Models::count() != 0)
+                                        @foreach(\App\Entities\motonet\Models::all() as $mod)
+                                            <li><a href="{!! route('productFind',['models' => $mod->id]) !!}">{!! $mod->name !!}</a></li>
+                                        @endforeach
+                                    @endif
                                     {{--<li class="dropdown-header">Newsletter</li>--}}
                                     {{--<form class="form" role="form">--}}
                                         {{--<div class="form-group">--}}
@@ -116,7 +113,7 @@
 
 
                 <div class="buscador pull-right hidden-xs hidden-sm">
-                    <form action="{!! route('productGrid') !!}" method="get" class="finder" class="center-block">
+                    <form action="{!! route('productFind') !!}" method="get" class="finder" class="center-block">
                         <div class="input-group-addon"><i class="fa fa-search"></i></div>
                         <input type="text" name="find" placeholder="Buscar"/>
                         {{--<select name="categoria" id="categoria">--}}
@@ -164,3 +161,9 @@
     </div>
 
 </div>
+
+@section('js')
+    <script>
+        $('#myCarousel').find('.item').first().addClass('active');
+    </script>
+@endsection
