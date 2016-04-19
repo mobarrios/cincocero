@@ -40,6 +40,24 @@
 
                 @endforeach
             </table>
+        @else
+
+            <table class="table table-striped">
+                <thead>
+                    <th>Equipos</th>
+                    <th></th>
+                </thead>
+
+                    @foreach($model->Teams as $team)
+                    <tr>
+                        <td> {{$team->name}} </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    @endforeach
+
+            </table>
 
         @endif
         <hr>
@@ -47,6 +65,22 @@
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
         {!! Form::close()!!}
 
+        <div id="lightbox" class="modal fade" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     @endsection
+
+@section('js')
+<script>
+
+</script>
+@endsection
 
 @stop

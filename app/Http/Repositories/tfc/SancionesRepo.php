@@ -26,7 +26,7 @@ class SancionesRepo extends BaseRepo {
         return [
             'sancion'   => 'required',
             'players_id'   => 'required',
-            'end_fases_week_id' => 'required',
+            'cantidad_fechas' => 'required',
         ];
     }
 
@@ -35,7 +35,7 @@ class SancionesRepo extends BaseRepo {
         return [
             'sancion'   => 'required',
             'players_id'   => 'required',
-            'end_fases_week_id' => 'required',
+            'cantidad_fechas' => 'required',
         ];
     }
 

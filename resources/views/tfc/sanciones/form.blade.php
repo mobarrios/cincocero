@@ -18,8 +18,9 @@
         {!! Form::selectCustom('sancion','Sanción',$sancionesDetails)!!}
 
 
-        {!! Form::selectCustom('end_fases_week_id','Fecha Limite Sanción',$weeks)!!}
 
+        <label>Cantidad de Fechas</label>
+        <input name="cantidad_fechas" type="number" min="1" max="{{$weeks->count()}}" class="form-control">
 
         <hr>
 
@@ -30,6 +31,9 @@
 
     @section('js')
         <script>
+
+
+
             $("select[name='teams_id']").on('change',function() {
 
                 $('#players').html('');
