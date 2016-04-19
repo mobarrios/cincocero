@@ -123,8 +123,6 @@
 
             $('.nuevo_equipo').on('click',function(){
 
-                if(confirm('Desea Agregar este Equipo'))
-                {
                     var team_from   = $(this).attr('data-old');
                     var team_to     = $(this).attr('data-new');
 
@@ -147,10 +145,7 @@
                     $(this).attr('href','fases_change_team/'+team_from+'/'+team_to);
                     $(this).click();
 
-                }else{
-                    return;
-                }
-
+                
             });
         </script>
     @endsection
