@@ -11,7 +11,7 @@
  Target Server Version : 50709
  File Encoding         : utf-8
 
- Date: 04/14/2016 19:21:41 PM
+ Date: 04/19/2016 17:13:25 PM
 */
 
 SET NAMES utf8;
@@ -210,13 +210,13 @@ CREATE TABLE `menus` (
   `routes` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `main` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Records of `menus`
 -- ----------------------------
 BEGIN;
-INSERT INTO `menus` VALUES ('1', '2016-03-15 14:47:57', '2016-03-15 14:48:59', null, 'Artículos', '', '0'), ('2', '2016-03-15 14:49:24', '2016-03-15 14:49:24', null, 'Lista de Artículos', 'items', '1'), ('3', '2016-03-15 14:49:36', '2016-03-15 14:49:36', null, 'Marcas', 'brands', '1'), ('4', '2016-03-15 14:50:32', '2016-03-15 14:50:32', null, 'Modelos', 'models', '1'), ('5', '2016-03-15 14:50:57', '2016-03-21 16:01:56', null, 'Categorías', 'categories', '1'), ('6', '2016-03-15 14:51:27', '2016-03-15 14:51:27', null, 'Compras', '', '0'), ('9', '2016-03-15 14:58:52', '2016-03-15 14:58:52', null, 'Ventas', '', '0'), ('12', '2016-03-15 15:00:43', '2016-03-15 15:00:43', null, 'Administración', '', '0');
+INSERT INTO `menus` VALUES ('1', '2016-03-15 14:47:57', '2016-03-15 14:48:59', null, 'Artículos', '', '0'), ('2', '2016-03-15 14:49:24', '2016-03-15 14:49:24', null, 'Lista de Artículos', 'items', '1'), ('3', '2016-03-15 14:49:36', '2016-03-15 14:49:36', null, 'Marcas', 'brands', '1'), ('4', '2016-03-15 14:50:32', '2016-03-15 14:50:32', null, 'Modelos', 'models', '1'), ('5', '2016-03-15 14:50:57', '2016-03-21 16:01:56', null, 'Categorías', 'categories', '1'), ('6', '2016-03-15 14:51:27', '2016-03-15 14:51:27', null, 'Compras', '', '0'), ('9', '2016-03-15 14:58:52', '2016-03-15 14:58:52', null, 'Ventas', '', '0'), ('12', '2016-03-15 15:00:43', '2016-03-15 15:00:43', null, 'Administración', '', '0'), ('13', '2016-04-18 20:22:03', '2016-04-18 20:22:03', null, 'E-Commerce', '', '0'), ('14', '2016-04-18 20:22:20', '2016-04-18 20:22:20', null, 'Publicaciones', 'publications', '13');
 COMMIT;
 
 -- ----------------------------
@@ -251,13 +251,13 @@ CREATE TABLE `modules` (
   `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `available` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Records of `modules`
 -- ----------------------------
 BEGIN;
-INSERT INTO `modules` VALUES ('1', '2016-03-15 14:35:17', '2016-03-15 14:35:17', null, 'items', null), ('2', '2016-03-15 14:35:33', '2016-03-15 14:35:33', null, 'brands', null), ('3', '2016-03-15 14:35:51', '2016-03-15 14:35:51', null, 'categories', null), ('4', '2016-03-15 14:37:29', '2016-03-15 14:37:29', null, 'models', null), ('5', '2016-03-15 14:39:10', '2016-03-15 14:39:10', null, 'clients', null), ('6', '2016-03-15 14:39:16', '2016-03-15 14:39:16', null, 'providers', null), ('7', '2016-03-15 15:23:35', '2016-03-15 15:23:35', null, 'sales', null), ('8', '2016-03-15 15:23:41', '2016-03-15 15:23:41', null, 'purchases', null), ('9', '2016-03-15 15:24:35', '2016-03-15 15:24:35', null, 'movements', null);
+INSERT INTO `modules` VALUES ('1', '2016-03-15 14:35:17', '2016-03-15 14:35:17', null, 'items', null), ('2', '2016-03-15 14:35:33', '2016-03-15 14:35:33', null, 'brands', null), ('3', '2016-03-15 14:35:51', '2016-03-15 14:35:51', null, 'categories', null), ('4', '2016-03-15 14:37:29', '2016-03-15 14:37:29', null, 'models', null), ('5', '2016-03-15 14:39:10', '2016-03-15 14:39:10', null, 'clients', null), ('6', '2016-03-15 14:39:16', '2016-03-15 14:39:16', null, 'providers', null), ('7', '2016-03-15 15:23:35', '2016-03-15 15:23:35', null, 'sales', null), ('8', '2016-03-15 15:23:41', '2016-03-15 15:23:41', null, 'purchases', null), ('9', '2016-03-15 15:24:35', '2016-03-15 15:24:35', null, 'movements', null), ('10', '2016-04-18 20:21:24', '2016-04-18 20:21:24', null, 'publications', null);
 COMMIT;
 
 -- ----------------------------
@@ -280,13 +280,13 @@ CREATE TABLE `permissions` (
   KEY `permissions_modules_id_foreign` (`modules_id`),
   CONSTRAINT `permissions_ibfk_1` FOREIGN KEY (`modules_id`) REFERENCES `modules` (`id`),
   CONSTRAINT `permissions_ibfk_2` FOREIGN KEY (`profiles_id`) REFERENCES `profiles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Records of `permissions`
 -- ----------------------------
 BEGIN;
-INSERT INTO `permissions` VALUES ('1', '2016-03-15 14:35:17', '2016-03-15 14:35:17', null, '0', '0', '0', '0', '1', '1'), ('2', '2016-03-15 14:35:33', '2016-03-15 14:35:33', null, '0', '0', '0', '0', '1', '2'), ('3', '2016-03-15 14:35:51', '2016-03-15 14:35:51', null, '0', '0', '0', '0', '1', '3'), ('4', '2016-03-15 14:37:29', '2016-03-15 14:37:29', null, '0', '0', '0', '0', '1', '4'), ('5', '2016-03-15 14:39:10', '2016-03-15 14:39:10', null, '0', '0', '0', '0', '1', '5'), ('6', '2016-03-15 14:39:16', '2016-03-15 14:39:16', null, '0', '0', '0', '0', '1', '6'), ('7', '2016-03-15 14:42:45', '2016-03-15 14:43:15', null, '1', '1', '1', '1', '2', '1'), ('8', '2016-03-15 14:42:45', '2016-03-15 14:43:16', null, '1', '1', '1', '1', '2', '2'), ('9', '2016-03-15 14:42:45', '2016-03-15 14:43:17', null, '1', '1', '1', '1', '2', '3'), ('10', '2016-03-15 14:42:45', '2016-03-15 14:43:17', null, '1', '1', '1', '1', '2', '4'), ('11', '2016-03-15 14:42:45', '2016-03-15 14:43:20', null, '1', '1', '1', '1', '2', '5'), ('12', '2016-03-15 14:42:45', '2016-03-15 14:43:18', null, '1', '1', '1', '1', '2', '6'), ('13', '2016-03-15 14:42:53', '2016-03-15 14:45:35', null, '1', '0', '0', '0', '3', '1'), ('14', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '2'), ('15', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '3'), ('16', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '4'), ('17', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '5'), ('18', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '6'), ('19', '2016-03-15 15:23:35', '2016-03-15 15:23:35', null, '0', '0', '0', '0', '1', '7'), ('20', '2016-03-15 15:23:35', '2016-03-15 15:23:35', null, '0', '0', '0', '0', '2', '7'), ('21', '2016-03-15 15:23:35', '2016-03-15 15:23:35', null, '0', '0', '0', '0', '3', '7'), ('22', '2016-03-15 15:23:41', '2016-03-15 15:23:41', null, '0', '0', '0', '0', '1', '8'), ('23', '2016-03-15 15:23:41', '2016-03-15 15:23:41', null, '0', '0', '0', '0', '2', '8'), ('24', '2016-03-15 15:23:41', '2016-03-15 15:23:41', null, '0', '0', '0', '0', '3', '8'), ('25', '2016-03-15 15:24:35', '2016-03-15 15:24:35', null, '0', '0', '0', '0', '1', '9'), ('26', '2016-03-15 15:24:35', '2016-03-15 15:24:35', null, '0', '0', '0', '0', '2', '9'), ('27', '2016-03-15 15:24:35', '2016-03-15 15:24:35', null, '0', '0', '0', '0', '3', '9');
+INSERT INTO `permissions` VALUES ('1', '2016-03-15 14:35:17', '2016-03-15 14:35:17', null, '0', '0', '0', '0', '1', '1'), ('2', '2016-03-15 14:35:33', '2016-03-15 14:35:33', null, '0', '0', '0', '0', '1', '2'), ('3', '2016-03-15 14:35:51', '2016-03-15 14:35:51', null, '0', '0', '0', '0', '1', '3'), ('4', '2016-03-15 14:37:29', '2016-03-15 14:37:29', null, '0', '0', '0', '0', '1', '4'), ('5', '2016-03-15 14:39:10', '2016-03-15 14:39:10', null, '0', '0', '0', '0', '1', '5'), ('6', '2016-03-15 14:39:16', '2016-03-15 14:39:16', null, '0', '0', '0', '0', '1', '6'), ('7', '2016-03-15 14:42:45', '2016-03-15 14:43:15', null, '1', '1', '1', '1', '2', '1'), ('8', '2016-03-15 14:42:45', '2016-03-15 14:43:16', null, '1', '1', '1', '1', '2', '2'), ('9', '2016-03-15 14:42:45', '2016-03-15 14:43:17', null, '1', '1', '1', '1', '2', '3'), ('10', '2016-03-15 14:42:45', '2016-03-15 14:43:17', null, '1', '1', '1', '1', '2', '4'), ('11', '2016-03-15 14:42:45', '2016-03-15 14:43:20', null, '1', '1', '1', '1', '2', '5'), ('12', '2016-03-15 14:42:45', '2016-03-15 14:43:18', null, '1', '1', '1', '1', '2', '6'), ('13', '2016-03-15 14:42:53', '2016-03-15 14:45:35', null, '1', '0', '0', '0', '3', '1'), ('14', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '2'), ('15', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '3'), ('16', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '4'), ('17', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '5'), ('18', '2016-03-15 14:42:53', '2016-03-15 14:42:53', null, '0', '0', '0', '0', '3', '6'), ('19', '2016-03-15 15:23:35', '2016-03-15 15:23:35', null, '0', '0', '0', '0', '1', '7'), ('20', '2016-03-15 15:23:35', '2016-03-15 15:23:35', null, '0', '0', '0', '0', '2', '7'), ('21', '2016-03-15 15:23:35', '2016-03-15 15:23:35', null, '0', '0', '0', '0', '3', '7'), ('22', '2016-03-15 15:23:41', '2016-03-15 15:23:41', null, '0', '0', '0', '0', '1', '8'), ('23', '2016-03-15 15:23:41', '2016-03-15 15:23:41', null, '0', '0', '0', '0', '2', '8'), ('24', '2016-03-15 15:23:41', '2016-03-15 15:23:41', null, '0', '0', '0', '0', '3', '8'), ('25', '2016-03-15 15:24:35', '2016-03-15 15:24:35', null, '0', '0', '0', '0', '1', '9'), ('26', '2016-03-15 15:24:35', '2016-03-15 15:24:35', null, '0', '0', '0', '0', '2', '9'), ('27', '2016-03-15 15:24:35', '2016-03-15 15:24:35', null, '0', '0', '0', '0', '3', '9'), ('28', '2016-04-18 20:21:24', '2016-04-18 20:21:24', null, '0', '0', '0', '0', '1', '10'), ('29', '2016-04-18 20:21:24', '2016-04-18 20:21:38', null, '1', '1', '1', '1', '2', '10'), ('30', '2016-04-18 20:21:24', '2016-04-19 12:40:19', null, '1', '0', '0', '0', '3', '10');
 COMMIT;
 
 -- ----------------------------
@@ -330,6 +330,23 @@ CREATE TABLE `providers` (
   `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+--  Table structure for `publications`
+-- ----------------------------
+DROP TABLE IF EXISTS `publications`;
+CREATE TABLE `publications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `publication_date` date NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `price` double NOT NULL,
+  `items_id` int(11) NOT NULL,
+  `despcription` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `purchases`
@@ -468,13 +485,13 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `id` (`id`),
   KEY `id_2` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Records of `users`
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES ('1', null, null, '2016-03-21 16:02:04', 'admin_motonet', 'admin_motonet', 'admin_motonet', '$2y$10$tT9hkF3i69YkTnz8PQ6.m.5cw.WeHSn4W.EQ8V4mRW/rMJ8.eEq.i', '84h0Q2tcPoSf3O7hJgsEaBxzyRyTulgipGjQHIZTqJs0sTQFK1HJseW2xH4D', '1', 'motonet', null), ('2', null, '2016-03-15 15:31:08', '2016-04-13 20:19:59', 'supervisor', 'supervisor', 'supervisor@motonet.com', '$2y$10$SgtOdSNa05NIFOE5/3zAreVn5ASPA078rTDdd48.oQncaHNIuoEse', 'J3LMmnJCSFPFezKjvdKPX3fqBlaETiDM1yIQGmPMRoDTSlMDLALgDRTTUttN', '2', 'motonet', null);
+INSERT INTO `users` VALUES ('1', null, null, '2016-04-19 12:40:23', 'admin_motonet', 'admin_motonet', 'admin_motonet', '$2y$10$tT9hkF3i69YkTnz8PQ6.m.5cw.WeHSn4W.EQ8V4mRW/rMJ8.eEq.i', 'L6pFAkCeBSDCd85jLWWnQ1pLFOz2j0l3fedbQnCZ0LuV2V6xR0FlOBF3DkBF', '1', 'motonet', null), ('2', null, '2016-03-15 15:31:08', '2016-04-19 12:39:48', 'supervisor', 'supervisor', 'supervisor@motonet.com', '$2y$10$SgtOdSNa05NIFOE5/3zAreVn5ASPA078rTDdd48.oQncaHNIuoEse', 'FDjuXAqx6ZlSgtKNWJaezfg2H08Yqn33f0FzrEG1TA6AkFXdKH2tlv5JN3Ui', '2', 'motonet', null), ('3', null, '2016-04-18 17:38:44', '2016-04-19 12:39:26', 'ventas', 'ventas', 'ventas@motonet.com', '$2y$10$fBydDpAHQExFZC9Xe3AtXefTvkL3CE6SoqC1zmXU3EqRuTbrX8Uey', 'e6svRdSTud45MdHngq9SFPFOU6TSJPKJCcvw3kZaIQrKCh2kC3T9li6C7pGr', '3', 'motonet', null);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
