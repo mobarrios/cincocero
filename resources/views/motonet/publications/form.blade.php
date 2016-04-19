@@ -14,8 +14,20 @@
 
                 {!! Form::textCustom('name', 'Titulo')!!}
 
-            {!! Form::fileCustom('image','Foto')!!}
+                <label>Categoria Mercadolibre</label>
+                <select class="form-control">
 
+                @foreach($mlCategories as $cat => $a)
+                   <option value="{{$a->id}}">{{$a->name}}</option>
+
+                @endforeach
+                </select>
+
+
+
+                {!! Form::textCustom('price','Importe $')!!}
+
+                {!! Form::fileCustom('image','Imagen')!!}
         </div>
 
         <div class="panel-footer">

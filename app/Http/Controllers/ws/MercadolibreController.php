@@ -50,5 +50,11 @@ class MercadolibreController extends Controller {
         return;
     }
 
+    public function getCategories()
+    {
+        $list = $this->meli->get('/sites/MLA/categories');
+
+        return $list;
+    }
 
 }
