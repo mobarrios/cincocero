@@ -62,9 +62,11 @@
 
             </table>
 
+            @if ($model->Teams->count() % 2 != 0)
+                <a id="new" class="btn btn-md btn-default" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Agregar Equipo</a>
+            @endif
         @endif
 
-        <a id="new" class="btn btn-md btn-default" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Agregar Equipo</a>
 
         <hr>
 
@@ -121,27 +123,33 @@
 
             $('.nuevo_equipo').on('click',function(){
 
-                var team_from   = $(this).attr('data-old');
-                var team_to     = $(this).attr('data-new');
-
-
-                if($('#new_form').val() == 'true'){
-                    $(this).attr('href','fases_add_team/'+team_to);
-                    $(this).click();
-                }
-
-
-
-
-                if(team_from == team_to)
+                if(confirm('Desea Agregar este Equipo'))
                 {
-                    alert('No se puede Cambiar por el mismo Equipo');
+                    var team_from   = $(this).attr('data-old');
+                    var team_to     = $(this).attr('data-new');
+
+
+                    if($('#new_form').val() == 'true'){
+                        $(this).attr('href','fases_add_team/'+team_to);
+                        $(this).click();
+                    }
+
+
+
+
+                    if(team_from == team_to)
+                    {
+                        alert('No se puede Cambiar por el mismo Equipo');
+                        return;
+                    }
+
+
+                    $(this).attr('href','fases_change_team/'+team_from+'/'+team_to);
+                    $(this).click();
+
+                }else{
                     return;
                 }
-
-
-                $(this).attr('href','fases_change_team/'+team_from+'/'+team_to);
-                $(this).click();
 
             });
         </script>
