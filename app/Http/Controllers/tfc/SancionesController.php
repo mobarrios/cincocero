@@ -101,7 +101,7 @@ class SancionesController extends Controller {
         // validation rules form repo
         $this->validate($request, $this->rules);
 
-        $request->end_fases_week_id = Session::get('fases_week_id') + $request->cantidad_fechas ;
+        $request['end_fases_week_id'] = Session::get('fases_week_id') + $request->cantidad_fechas ;
 
         // method crear in repo
         $model = $this->repo->create($request);

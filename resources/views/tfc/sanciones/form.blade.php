@@ -20,7 +20,7 @@
 
 
         <label>Cantidad de Fechas</label>
-        <input name="cantidad_fechas" type="number" min="1" max="{{$weeks->count()}}" class="form-control">
+        <input name="cantidad_fechas" type="number" min="1"  class="form-control">
 
         <hr>
 

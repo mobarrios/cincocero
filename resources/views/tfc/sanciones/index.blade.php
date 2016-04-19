@@ -12,7 +12,7 @@
                 <th>Equipo</th>
                 <th>Jugador</th>
                 <th>Sancion</th>
-
+                <th>Cant. Fechas</th>
                 <th>Hasta Fecha</th>
                 <th></th>
             </thead>
@@ -21,9 +21,9 @@
                 <tr>
                     <td>{{$model->Players->Teams->name}}</td>
                     <td>{{$model->Players->fullName()}}</td>
-                    <td>{!! $model->sancion !!}</td>
-
-                    <td>{{$model->endSancion->name}}</td>
+                    <td>{{ $model->sancion }}</td>
+                    <td>{{$model->cantidad_fechas}}</td>
+                    <td>{{$model->endSancion->name or ''}}</td>
                     <td>
                         <a class="btn btn-xs btn-default" href="{{route('sancionesGetEdit',$model->id)}}">
                             <i class="fa fa-edit"></i>

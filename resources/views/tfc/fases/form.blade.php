@@ -145,7 +145,7 @@
                     $(this).attr('href','fases_change_team/'+team_from+'/'+team_to);
                     $(this).click();
 
-                
+
             });
         </script>
     @endsection
