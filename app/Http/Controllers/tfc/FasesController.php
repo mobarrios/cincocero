@@ -222,4 +222,62 @@ class FasesController extends Controller {
 
         return $tablasRepo->recalcular();
     }
+
+    //change Team
+    public function changeTeam($team_from = null , $team_to = null)
+    {
+        $fases_id =  Session::get('fases_id');
+
+        $fases_teams = FasesTeams::where('fases_id',$fases_id)->where('teams_id',$team_from)->first();
+        $fases_teams->teams_id = $team_to;
+        $fases_teams->save();
+
+
+        $fasesWeeks = FasesWeek::where('fases_id',$fases_id)->get();
+
+        foreach($fasesWeeks as $week)
+        {
+            $matchesLocal = Matches::where('fases_week_id',$week->id)->where('home_teams_id',$team_from)->get();
+
+            foreach ($matchesLocal as $home)
+            {
+                $home->home_teams_id = $team_to;
+                $home->save();
+            }
+
+            $matchesVisita = Matches::where('fases_week_id',$week->id)->where('away_teams_id',$team_from)->get();
+
+            foreach ($matchesVisita as $away)
+            {
+                $away->away_teams_id = $team_to;
+                $away->save();
+            }
+
+        }
+
+        $tablas             = Tablas::where('fases_id',$fases_id)->where('teams_id',$team_from)->first();
+        $tablas->teams_id   = $team_to;
+        $tablas->save();
+
+
+
+        return redirect()->back();
+    }
+
+
+
+    // go to form with model
+    public function getEdit($id)
+    {
+        Session::put('fases_id',$id);
+        $this->data['model'] = $this->repo->getModel()->find($id);
+
+        $ft = Teams::WhereHas('FasesTeams',function($q){
+                                 $q->where('fases_id',Session::get('fases_id'));
+                                })->get();
+
+
+        return view($this->form)->with($this->data);
+    }
+
 }

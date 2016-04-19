@@ -16,7 +16,7 @@ Route::post('postNew'.$module,          ['as'=> $module.'PostNew', 'uses'=> $con
 Route::post('postEdit'.$module.'/{id?}', ['as'=>$module.'PostEdit', 'uses'=> $controller.'@postEdit']);
 
 
-
+Route::get('fases_change_team/{fases_id?}/{team_from?}/{team_to?}',$controller.'@changeTeam');
 
 
 

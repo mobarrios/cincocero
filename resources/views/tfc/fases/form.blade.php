@@ -1,28 +1,7 @@
 @extends('index')
 
     @section('content')
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-            Modal
-        </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         @if(isset($model))
             {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
@@ -69,40 +48,87 @@
                     <th>Equipos</th>
                     <th></th>
                 </thead>
-
+                    <?php $ft = []?>
                     @foreach($model->Teams as $team)
                     <tr>
                         <td> {{$team->name}} </td>
                         <td>
-
+                            <button class="cambiar"  data-id="{{$team->id}}" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
+                                Cambiar
+                            </button>
                         </td>
                     </tr>
+                        <?php array_push($ft,$team->id) ?>
                     @endforeach
 
             </table>
 
         @endif
+
+        <a class="btn btn-xs btn-default" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Agregar Equipo</a>
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
         {!! Form::close()!!}
 
-        <div id="lightbox" class="modal fade" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
 
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Seleccionar Equipo</h4>
                     </div>
+                    <div class="modal-body">
+                        <table class="table table striped">
+                            <thead>
+                                <th>Equipo</th>
+                                <th></th>
+                            </thead>
+
+                            @foreach(\App\Entities\tfc\Teams::all() as $team)
+                                   @if(!in_array($team->id,$ft))
+                                    <tr>
+                                        <td>{{$team->name}}</td>
+                                        <td>
+                                            <a data-old="" data-new="{{$team->id}}" class="nuevo_equipo btn btn-xs btn-default" ><i class="fa fa-check"></i></a>
+                                        </td>
+                                    </tr>
+                                    @endif
+                            @endforeach
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>
-
     @endsection
 
-@section('js')
-<script>
+    @section('js')
+        <script>
+            $('.cambiar').on('click',function(){
 
-</script>
-@endsection
+                $('.nuevo_equipo').attr('data-old', $(this).attr('data-id'));
 
+            });
+
+            $('.nuevo_equipo').on('click',function(){
+
+                var team_from   = $(this).attr('data-old');
+                var team_to     = $(this).attr('data-new');
+
+                if(team_from == team_to)
+                {
+                    alert('No se puede Cambiar por el mismo Equipo');
+                    return;
+                }
+
+
+                $(this).attr('href','fases_change_team/'+team_from+'/'+team_to);
+                $(this).click();
+
+            });
+        </script>
+    @endsection
 @stop
