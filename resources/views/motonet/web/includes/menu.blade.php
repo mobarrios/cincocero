@@ -56,6 +56,7 @@
                                             @endif
                                             {{--<div class="item">--}}
                                                 {{--<a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 3"></a>--}}
+
                                                 {{--<br>--}}
                                                 {{--<button class="btn btn-primary" type="button">Ver</button> <button href="#" class="btn btn-default" type="button">Comprar</button>--}}
                                                 {{--<span class="middle-box">$14999</span>--}}
