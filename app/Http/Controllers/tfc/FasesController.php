@@ -264,6 +264,37 @@ class FasesController extends Controller {
         return redirect()->back();
     }
 
+    //add team
+    public function addTeam($teams_id = null)
+    {
+        $fases_id  = Session::get('fases_id');
+
+        $fases_teams            = new FasesTeams();
+        $fases_teams->fases_id  = $fases_id;
+        $fases_teams->teams_id  = $teams_id;
+        $fases_teams->save();
+
+        $fases_week              = Matches::whereHas('FasesWeek',function($q) use ($fases_id){
+            $q->where('fases_id', $fases_id);
+        })
+            ->where('home_teams_id',null)
+            ->orWhere('away_teams_id',null)
+            ->get();
+
+       foreach($fases_week as $fw){
+
+           if($fw->home_teams_id == null)
+               $fw->home_teams_id = $teams_id;
+
+           if($fw->away_teams_id == null)
+               $fw->away_teams_id = $teams_id;
+
+           $fw->save();
+       }
+
+
+        return redirect()->back();
+    }
 
 
     // go to form with model

@@ -17,6 +17,7 @@ Route::post('postEdit'.$module.'/{id?}', ['as'=>$module.'PostEdit', 'uses'=> $co
 
 
 Route::get('fases_change_team/{fases_id?}/{team_from?}/{team_to?}',$controller.'@changeTeam');
+Route::get('fases_add_team/{team_to?}',$controller.'@addTeam');
 
 
 

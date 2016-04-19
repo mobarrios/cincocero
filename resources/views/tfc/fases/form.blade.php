@@ -11,7 +11,6 @@
         @endif
 
 
-
         {!! Form::textCustom('name', 'Nombre Fase')!!}
 
         @if(!isset($model))
@@ -48,7 +47,7 @@
                     <th>Equipos</th>
                     <th></th>
                 </thead>
-                    <?php $ft = []?>
+                <?php $ft = []?>
                     @foreach($model->Teams as $team)
                     <tr>
                         <td> {{$team->name}} </td>
@@ -58,14 +57,15 @@
                             </button>
                         </td>
                     </tr>
-                        <?php array_push($ft,$team->id) ?>
+                    <?php array_push($ft,$team->id) ?>
                     @endforeach
 
             </table>
 
         @endif
 
-        <a class="btn btn-xs btn-default" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Agregar Equipo</a>
+        <a id="new" class="btn btn-md btn-default" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Agregar Equipo</a>
+
         <hr>
 
         {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
@@ -88,18 +88,20 @@
                             </thead>
 
                             @foreach(\App\Entities\tfc\Teams::all() as $team)
-                                   @if(!in_array($team->id,$ft))
-                                    <tr>
-                                        <td>{{$team->name}}</td>
-                                        <td>
-                                            <a data-old="" data-new="{{$team->id}}" class="nuevo_equipo btn btn-xs btn-default" ><i class="fa fa-check"></i></a>
-                                        </td>
-                                    </tr>
-                                    @endif
+                                  @if(isset($ft))
+                                       @if(!in_array($team->id,$ft))
+                                        <tr>
+                                            <td>{{$team->name}}</td>
+                                            <td>
+                                                <a data-old="" data-new="{{$team->id}}" class="nuevo_equipo btn btn-xs btn-default" ><i class="fa fa-check"></i></a>
+                                            </td>
+                                        </tr>
+                                        @endif
+                                @endif
                             @endforeach
                         </table>
                     </div>
-
+                    <input type="hidden" id="new_form" value="">
                 </div>
             </div>
         </div>
@@ -107,6 +109,10 @@
 
     @section('js')
         <script>
+            $('#new').on('click',function(){
+                $('#new_form').val('true');
+            });
+
             $('.cambiar').on('click',function(){
 
                 $('.nuevo_equipo').attr('data-old', $(this).attr('data-id'));
@@ -117,6 +123,15 @@
 
                 var team_from   = $(this).attr('data-old');
                 var team_to     = $(this).attr('data-new');
+
+
+                if($('#new_form').val() == 'true'){
+                    $(this).attr('href','fases_add_team/'+team_to);
+                    $(this).click();
+                }
+
+
+
 
                 if(team_from == team_to)
                 {
