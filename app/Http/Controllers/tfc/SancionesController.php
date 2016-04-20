@@ -60,6 +60,9 @@ class SancionesController extends Controller {
 
 
         $this->data['sancionesDetails']    = SancionesDetails::lists('name','name');
+        $fases_week                        = FasesWeek::where('fases_id',Session::get('fases_id'))->get();
+
+        $this->data['max']                 = $fases_week->count();
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -89,6 +92,7 @@ class SancionesController extends Controller {
     {
         $this->data['weeks']     = FasesWeek::where('fases_id',Session::get('fases_id'))->get();
 
+
         return view($this->form)->with($this->data);
     }
 
@@ -96,12 +100,11 @@ class SancionesController extends Controller {
     // post new
     public function postNew(Request $request, ImagesHelper $image)
     {
-        $request['fases_week_id'] = Session::get('fases_week_id');
+        $request['fases_week_id']       = Session::get('fases_week_id');
+        $request['end_fases_week_id']   = Session::get('fases_week_id') + $request->cantidad_fechas ;
 
         // validation rules form repo
         $this->validate($request, $this->rules);
-
-        $request['end_fases_week_id'] = Session::get('fases_week_id') + $request->cantidad_fechas ;
 
         // method crear in repo
         $model = $this->repo->create($request);

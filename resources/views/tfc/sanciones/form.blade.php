@@ -18,9 +18,8 @@
         {!! Form::selectCustom('sancion','Sanción',$sancionesDetails)!!}
 
 
-
         <label>Cantidad de Fechas</label>
-        <input name="cantidad_fechas" type="number" min="1"  class="form-control">
+        <input name="cantidad_fechas" type="number" min="1"  max="{{$max}}" class="form-control">
 
         <hr>
 
