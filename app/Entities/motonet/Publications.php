@@ -7,9 +7,25 @@ class Publications extends Entity{
 
     protected $table = 'publications';
 
-    protected $fillable = ['publication_date','title','price','items_id','description'];
+    protected $fillable = ['publication_date','title','price','items_id','description','destacado'];
 
 
+    public function getPublicationDateAttribute($value)
+    {
 
+        if($value != null)
+            return date('d-m-Y',strtotime($value));
+
+    }
+
+    public function setPublicationDateAttribute($value)
+    {
+        $this->attributes['publication_date'] = date('Y-m-d',strtotime($value));
+    }
+
+    public function Items()
+    {
+        return $this->belongsTo(Items::getClass());
+    }
 
 }

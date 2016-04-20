@@ -12,22 +12,36 @@
 
                 {!! Form::dateCustom('publication_date', 'Fecha de Publicacíon')!!}
 
-                {!! Form::textCustom('name', 'Titulo')!!}
-
-                <label>Categoria Mercadolibre</label>
-                <select class="form-control">
-
-                @foreach($mlCategories as $cat => $a)
-                   <option value="{{$a->id}}">{{$a->name}}</option>
-
-                @endforeach
-                </select>
-
-
+                {!! Form::textCustom('title', 'Titulo')!!}
 
                 {!! Form::textCustom('price','Importe $')!!}
 
+                {!! Form::textCustom('description','Descripcion')!!}
+
                 {!! Form::fileCustom('image','Imagen')!!}
+
+
+                <table class="table table-striped">
+                    @foreach($items as $item)
+                        <tr>
+                            <td><input type="radio" name="items_id" value="{{$item->id}}"></td>
+                            <td>{{$item->code}}</td>
+                            <td>{{$item->name}}</td>
+                            <td>$ {{$item->cost_price}}</td>
+                        </tr>
+                    @endforeach
+                </table>
+
+            <hr>
+                <div>
+                    {!! Form::checkbox('destacado')!!}
+                    <label>Destacado</label>
+                </div>
+            <hr>
+                <h3>Mercado Libre</h3>
+                <label>Categoria Mercadolibre</label>
+                <select class="form-control">
+                </select>
         </div>
 
         <div class="panel-footer">

@@ -17,8 +17,9 @@ class PublicationsRepo extends BaseRepo {
     {
         return [
            // 'code'   => 'required|unique:items,code',
-            'name'   => 'required',
+            'title'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'items_id'=>'required'
 
         ];
     }
@@ -26,7 +27,7 @@ class PublicationsRepo extends BaseRepo {
     public function RulesEdit($id = null)
     {
         return [
-            'name'   => 'required',
+            'title'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
         ];
     }
@@ -38,9 +39,9 @@ class PublicationsRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'Imagen' =>    ['data' => 'images','relation'=> null],
-                //'Codigo' =>    ['data' => 'code','relation' => null],
-                //'Modelo' =>  ['data' => 'name','relation' => null],
-                //'Marca' =>     ['data' => 'Brands','relation' => 'name'],
+                'Titulo' =>    ['data' => 'title','relation' => null],
+                '$' =>  ['data' => 'price','relation' => null],
+                'Articulo' =>     ['data' => 'items_id','relation' => null],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

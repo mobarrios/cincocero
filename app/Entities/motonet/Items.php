@@ -29,5 +29,10 @@ class Items extends Entity{
         return  "$".$data;
     }
 
+    public function Publications()
+    {
+        return $this->hasMany(Publications::getClass());
+    }
+
 
 }

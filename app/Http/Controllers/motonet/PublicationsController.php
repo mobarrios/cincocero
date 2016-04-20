@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\Items;
 use App\Entities\motonet\Publications;
 use App\Helpers\Meli;
 use App\Http\Controllers\ws\MercadolibreController;
 use App\Http\Repositories\motonet\PublicationsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Symfony\Component\Console\Helper\Helper;
+use Illuminate\Http\Request;
+use App\Helpers\ImagesHelper;
+
 
 use App\Http\Controllers\ws\MercadolibreController as Ml;
 
@@ -49,7 +53,9 @@ class PublicationsController extends Controller {
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
         //$this->data['currency']        = Currency::lists('name','id');
-        $this->data['mlCategories']      = $ml->getCategories()['body'];
+        //$this->data['mlCategories']      = $ml->getCategories();
+        $this->data['items']             = Items::all();
+
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -62,9 +68,6 @@ class PublicationsController extends Controller {
         $this->data['routeNew']     = $module.'GetNew';
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
-
-
-
 
 
     }

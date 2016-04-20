@@ -52,9 +52,31 @@ class MercadolibreController extends Controller {
 
     public function getCategories()
     {
-        $list = $this->meli->get('/sites/MLA/categories');
+        $categories = $this->meli->get('/sites/MLA/categories');
 
-        return $list;
+        foreach($categories['body'] as $k => $v)
+        {
+            echo $v->id .' = '.$v->name .'<br>';
+
+            $sub = $this->getSubCategories($v->id);
+
+           foreach($sub as $l => $s)
+           {
+               echo $l;
+           }
+
+
+        }
+
+            return;
+        return $categories;
+    }
+
+    public function getSubCategories($categories_id = null)
+    {
+        $categories = $this->meli->get('/categories/'.$categories_id);
+
+        return $categories;
     }
 
 }

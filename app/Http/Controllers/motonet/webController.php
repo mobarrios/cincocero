@@ -6,6 +6,7 @@ use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
 use App\Entities\motonet\Items;
 use App\Entities\motonet\Models;
+use App\Entities\motonet\Publications;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -19,6 +20,7 @@ class webController extends Controller {
     private $models;
     private $items;
     private $brands;
+    private $data;
 
     public function __construct(Categories $categories, Models $models, Items $items,Brands $brands){
         $this->categories = $categories;
@@ -29,7 +31,10 @@ class webController extends Controller {
 
 
     public function index(){
-        return view('motonet/web/index');
+
+        $this->data['publications'] = Publications::where('destacado',1)->get();
+
+        return view('motonet/web/index')->with($this->data);
     }
 
     public function detail($id){
