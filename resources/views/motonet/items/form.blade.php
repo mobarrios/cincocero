@@ -16,7 +16,7 @@
 
             {!! Form::selectCustom('brands_id','Marca',$brands) !!}
 
-            {!! Form::checkboxsCustom('categories_id','Categorías',$brands) !!}
+            {!! Form::selectCustom('categories_id','Categorías',$brands) !!}
 
     {{--        {!! Form::selectCustom('provider_id','Proveedor',$providers) !!}--}}
 
