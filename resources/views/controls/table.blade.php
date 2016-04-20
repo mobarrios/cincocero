@@ -35,7 +35,19 @@
                 @foreach($tableHeader['columns'] as $column)
 
                     @if(!is_null($column['relation']))
-                        <td>{{$model->$column['data']->$column['relation']}}</td>
+                        @if($column['data'] == 'Categories')
+                            @if($model->$column['data']->count() > 1)
+                                <td>|
+                                @foreach($model->$column['data'] as $d)
+                                    {!! $d->$column['relation'] !!} |
+                                @endforeach
+                                </td>
+                            @else
+                                <td>{{$model->$column['data']->first()->$column['relation']}}</td>
+                            @endif
+                        @else
+                            <td>{{$model->$column['data']->$column['relation']}}</td>
+                        @endif
                     @else
 
                          @if($column['data'] == 'images')

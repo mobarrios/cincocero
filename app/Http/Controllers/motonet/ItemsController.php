@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\motonet;
 
 use App\Entities\motonet\Brands;
+use App\Entities\motonet\Categories;
 use App\Entities\motonet\Models;
 use App\Http\Repositories\motonet\ItemsRepo as Repo;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Request;
 
 
 class ItemsController extends Controller {
@@ -41,6 +43,8 @@ class ItemsController extends Controller {
 
         //selects
         $this->data['brands']           = Brands::lists('name','id');
+        $this->data['categories']       = Categories::all();
+//        $this->data['providers']           = Providers::lists('name','id');
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -55,6 +59,5 @@ class ItemsController extends Controller {
         $this->data['routePostEdit']= 'itemsPostEdit';
 
     }
-
 
 }

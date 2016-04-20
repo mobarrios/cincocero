@@ -9,5 +9,10 @@ class Categories extends Entity{
 
     protected $fillable = ['name'];
 
+    public function Items()
+    {
+        return $this->belongsToMany(Items::getClass());
+    }
+
 
 }

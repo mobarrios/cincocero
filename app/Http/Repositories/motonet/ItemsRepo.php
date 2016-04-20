@@ -37,10 +37,11 @@ class ItemsRepo extends BaseRepo {
         // arma la cabecera de la table 'nombre',  data  = database column , relation = relatioships in entities
         $header  =  ['columns' =>
             [
-                'Imagen' =>    ['data' => 'images','relation'=> null],
+//                'Imagen' =>    ['data' => 'images','relation'=> null],
                 'Codigo' =>    ['data' => 'code','relation' => null],
                 'Articulo' =>  ['data' => 'name','relation' => null],
-                //'Modelo' =>     ['data' => 'Models','relation' => 'name'],
+                'Catogorías' =>     ['data' => 'Categories','relation' => 'name'],
+                'Modelo' =>     ['data' => 'Models','relation' => 'name'],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],
