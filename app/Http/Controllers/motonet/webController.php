@@ -32,33 +32,34 @@ class webController extends Controller {
         return view('motonet/web/index');
     }
 
-    public function detail(){
-        return view('motonet/web/detail');
+    public function detail($id){
+        $data['item'] = $this->items->find($id);
+        return view('motonet/web/detail')->with($data);
     }
 
     public function find(Request $request)
     {
         if ($request->get('categories')) {
             $cat = $this->categories->find($request->get('categories'));
-            return null;
+            $data['items'] = $cat->Items;
+
         } elseif ($request->get('models')){
             $m = $this->models->find($request->get('models'));
-            return null;
+            $data['items'] = $this->items->where('models_id',$m->id)->get();
         }elseif($request->get('brands')){
             $b = $request->get('brands');
-            $data['result'] = $this->items->where('brands_id',$b)->get();
+            $data['items'] = $this->items->where('brands_id',$b)->get();
         }else{
             $find = $request->get('find');
-            $data['result'] = $this->items->where('name','%LIKE%',$find)->get();
+            $data['items'] = $this->items->where('name','%like%',$find)->get();
         }
-
-        dd($data['result']);
 
         return view('motonet/web/grid')->with($data);
     }
 
-    public function resumen(){
-        return view('motonet/web/resumen');
+    public function resumen($id){
+        $data['item'] = $this->items->find($id);
+        return view('motonet/web/resumen')->with($data);
     }
 
 }

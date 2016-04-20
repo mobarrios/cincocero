@@ -35,23 +35,23 @@
 
 
                                     <div class="product-images">
-
-                                        <div>
-                                            <div class="image-imitation">
-                                                [IMAGEN 1]
+                                        @if($item->Models->Images->count() != 0)
+                                            @foreach($item->Models->Images as $img)
+                                                <div>
+                                                    <div class="image-imitation">
+                                                        <a href="{!! $img->image !!}">
+                                                            <img src="{!! $img->image !!}" alt="{!! $item->name !!}">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @else
+                                            <div>
+                                                <div class="image-imitation">
+                                                    [SIN IMÁGEN]
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div>
-                                            <div class="image-imitation">
-                                                [IMAGEN 2]
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="image-imitation">
-                                                [IMAGEN 3]
-                                            </div>
-                                        </div>
-
+                                        @endif
 
                                     </div>
 
@@ -59,35 +59,55 @@
                                 <div class="col-md-7">
 
                                     <h2 class="font-bold m-b-xs">
-                                        Cuatriciclo BKS 500 4×4
+                                        {!! $item->name !!}
                                     </h2>
-                                    <small>Blackstone trae a la Argentina los Cuatriciclos LINHAI –  Reconocidos a nivel Mundial.
+                                    <small>{!! $item->code !!}
                                         <br></small>
                                     <div class="m-t-md">
-                                        <h2 class="product-main-price">$14106</h2>
+                                        <h2 class="product-main-price">{!! $item->sell_price !!}</h2>
                                     </div>
                                     <hr>
 
-                                    <h4>Descripción</h4>
+                                    @if($item->description != "")
+                                        <h4>Descripción</h4>
+
+                                        <div class="small text-muted">
+                                            {!! $item->description !!}
+                                        </div>
+                                    @endif
+                                    <h4>{!! $item->Brands->name !!}</h4>
 
                                     <div class="small text-muted">
-                                        Linhai se ha posicionado en el mercado como una de las mejores marcas de Cuatriciclos de alta gama. Con presencia en casi todo el mundo, es Nro 1 en ventas en países muy exigentes y competitivos como Francia y Alemania.
+                                        {!! $item->Models->name!!}
                                     </div>
                                     <dl class="small m-t-md">
-                                        <dt>Motor</dt>
-                                        <dd>Monocilíndrico de 4 tiempos</dd>
-                                        <dt>Cilindrada</dt>
-                                        <dd>493.0 cc</dd>
-                                        <dt>Potencia</dt>
-                                        <dd>38 HP</dd>
-                                        <dd>Velocidad</dd>
-                                        <dt>95 km/h</dt>
+                                        @if($item->total_weight != "")
+                                            <dt>Peso total: {!! $item->total_weight !!}</dt>
+                                        @endif
+                                        @if($item->maximum_weight != "")
+                                            <dt>Peso máximo: {!! $item->maximum_weight!!}</dt>
+                                        @endif
+                                        @if($item->size != "")
+                                            <dt>Tamaño: {!! $item->size!!}</dt>
+                                        @endif
+                                        @if($item->dimensions!= "")
+                                            <dt>Tamaño: {!! $item->dimensions!!}</dt>
+                                        @endif
+                                        @if($item->presentation!= "")
+                                            <dt>Tamaño: {!! $item->presentation!!}</dt>
+                                        @endif
+                                        @if($item->bodega!= "")
+                                            <dt>Tamaño: {!! $item->bodega!!}</dt>
+                                        @endif
+                                        @if($item->observaciones!= "")
+                                            <dt>Tamaño: {!! $item->observaciones!!}</dt>
+                                        @endif
                                     </dl>
                                     <hr>
 
                                     <div>
                                         <div class="btn-group">
-                                            <a class="btn btn-primary btn-sm" href="{!! route('resumen') !!}"> Comprar</a>
+                                            <a class="btn btn-primary btn-sm" href="{!! route('resumen',$item->id) !!}"> Comprar</a>
                                         </div>
                                     </div>
 

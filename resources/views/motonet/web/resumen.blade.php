@@ -39,18 +39,21 @@
                                     <tr>
                                         <td width="90">
                                             <div class="cart-product-imitation">
-                                                <img src="assets/web/img/cuatri.png" alt="cuatri" class="img-responsive">
+                                                <img src="{!! $item->Models->Images->first()->image !!}" alt="{!! $item->name !!}" class="img-responsive">
                                             </div>
                                         </td>
                                         <td class="desc col-xs-11">
                                             <h3>
-                                                <a href="{!! route('productDetail') !!}" class="text-navy">
-                                                    Cuatriciclo BKS 500 4×4
+                                                <a href="{!! route('productDetail',$item->id) !!}" class="text-navy">
+                                                    {!! $item->name !!}
                                                 </a>
                                             </h3>
                                             <dl class="small m-b-none">
                                                 <dt>Descripción</dt>
-                                                <dd>Linhai se ha posicionado en el mercado como una de las mejores marcas de Cuatriciclos de alta gama. Con presencia en casi todo el mundo, es Nro 1 en ventas en países muy exigentes y competitivos como Francia y Alemania.</dd>
+                                                <h4><strong>{!! $item->Brands->name !!}</strong> - {!! $item->Models->name !!}</h4>
+                                                @if($item->description != "")
+                                                    <dd>$item->description</dd>
+                                                @endif
                                             </dl>
                                         </td>
 
@@ -59,7 +62,7 @@
                                                 Precio
                                             </h4>
                                             <h4>
-                                                $14106
+                                                {!! $item->sell_price !!}
                                             </h4>
                                         </td>
                                     </tr>
@@ -82,7 +85,7 @@
                                 Total
                             </span>
                             <h2 class="font-bold">
-                                $14106
+                                {!! $item->sell_price !!}
                             </h2>
 
                             <hr/>
@@ -210,11 +213,14 @@
                                                     <div class="row">
                                                         <div class="col-md-10">
                                                             <h2>Resumen</h2>
-                                                            <strong>Producto:</strong>: Nombre del producto <br>
-                                                            <strong>Precio:</strong>: <span class="text-navy">$14106 </span>
+                                                            <strong>Producto:</strong>: {!! $item->name !!} <br>
+                                                            <strong>Precio:</strong>: <span class="text-navy">{!! $item->sell_price !!} </span>
 
                                                             <p class="m-t">
-                                                                Linhai se ha posicionado en el mercado como una de las mejores marcas de Cuatriciclos de alta gama. Con presencia en casi todo el mundo, es Nro 1 en ventas en países muy exigentes y competitivos como Francia y Alemania.
+                                                                <strong>{!! $item->Brands->name !!}</strong> - {!! $item->Models->name !!}
+                                                                @if($item->description != "")
+                                                                    <br>{!! $item->description !!}
+                                                                @endif
 
                                                             </p>
 
@@ -249,11 +255,14 @@
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <h2>Resumen</h2>
-                                                            <strong>Producto:</strong>: Nombre del producto <br>
-                                                            <strong>Precio:</strong>: <span class="text-navy">$14106 </span>
+                                                            <strong>Producto:</strong>: {!! $item->name !!} <br>
+                                                            <strong>Precio:</strong>: <span class="text-navy">{!! $item->sell_price !!}</span>
 
                                                             <p class="m-t">
-                                                                Linhai se ha posicionado en el mercado como una de las mejores marcas de Cuatriciclos de alta gama. Con presencia en casi todo el mundo, es Nro 1 en ventas en países muy exigentes y competitivos como Francia y Alemania.
+                                                                <strong>{!! $item->Brands->name !!}</strong> - {!! $item->Models->name !!}
+                                                                @if($item->description != "")
+                                                                    <br>{!! $item->description !!}
+                                                                @endif
 
                                                             </p>
                                                         </div>

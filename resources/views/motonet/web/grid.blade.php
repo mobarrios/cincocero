@@ -5,246 +5,42 @@
     <div class="gray-bg">
         @include('motonet/web/includes/breadcrumbs')
         <div class="pt-30">
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
+            @if(!empty($items))
+                @foreach($items as $i)
+                    <div class="col-md-3">
+                        <div class="ibox">
+                            <div class="ibox-content product-box">
 
-                        <div class="product-imitation">
-                            <img src="assets/web/img/cuatri.png" alt="foto">
-                        </div>
-                        <div class="product-desc">
+                                <div class="product-imitation">
+                                    <img src="{!! $i->Models->Images->first()->image !!}" alt="{!! $i->name !!}">
+                                </div>
+                                <div class="product-desc">
                                     <span class="product-price">
-                                        $10200
+                                        {!! $i->sell_price !!}
                                     </span>
-                            <small class="text-muted">Categoría</small>
-                            <h2 class="product-name"> Producto</h2>
+                                    <small class="text-muted">
+                                        Categorías:
+                                        @foreach($i->Categories as $c)
+                                            {!! $c->name !!}-
+                                        @endforeach
+                                    </small>
+                                    <h2 class="product-name"> Marca: {!! $i->Brands->name !!}</h2>
+                                    <h2 class="product-name"> Modelo: {!! $i->Models->name !!}</h2>
 
-                            <div class="small m-t-xs">
-                                Many desktop publishing packages and web page editors now.
-                            </div>
-                            <div class="m-t text-righ">
-                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
-
-                        <div class="product-imitation">
-                            <img src="assets/web/img/cuatri.png" alt="foto">
-                        </div>
-                        <div class="product-desc">
-                                    <span class="product-price">
-                                        $10200
-                                    </span>
-                            <small class="text-muted">Categoría</small>
-                            <h2 class="product-name"> Producto</h2>
-
-                            <div class="small m-t-xs">
-                                Many desktop publishing packages and web page editors now.
-                            </div>
-                            <div class="m-t text-righ">
-                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
+                                    <div class="small m-t-xs">
+                                        {!! $i->description !!}
+                                    </div>
+                                    <div class="m-t text-righ">
+                                        <a href="{!! route('productDetail',$i->id) !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
-
-                        <div class="product-imitation">
-                            <img src="assets/web/img/cuatri.png" alt="foto">
-                        </div>
-                        <div class="product-desc">
-                                    <span class="product-price">
-                                        $10200
-                                    </span>
-                            <small class="text-muted">Categoría</small>
-                            <h2 class="product-name"> Producto</h2>
-
-                            <div class="small m-t-xs">
-                                Many desktop publishing packages and web page editors now.
-                            </div>
-                            <div class="m-t text-righ">
-                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
-
-                        <div class="product-imitation">
-                            <img src="assets/web/img/cuatri.png" alt="foto">
-                        </div>
-                        <div class="product-desc">
-                                    <span class="product-price">
-                                        $10200
-                                    </span>
-                            <small class="text-muted">Categoría</small>
-                            <h2 class="product-name"> Producto</h2>
-
-                            <div class="small m-t-xs">
-                                Many desktop publishing packages and web page editors now.
-                            </div>
-                            <div class="m-t text-righ">
-                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
-
-                        <div class="product-imitation">
-                            <img src="assets/web/img/cuatri.png" alt="foto">
-                        </div>
-                        <div class="product-desc">
-                                    <span class="product-price">
-                                        $10200
-                                    </span>
-                            <small class="text-muted">Categoría</small>
-                            <h2 class="product-name"> Producto</h2>
-
-                            <div class="small m-t-xs">
-                                Many desktop publishing packages and web page editors now.
-                            </div>
-                            <div class="m-t text-righ">
-                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
-
-                        <div class="product-imitation">
-                            <img src="assets/web/img/cuatri.png" alt="foto">
-                        </div>
-                        <div class="product-desc">
-                                    <span class="product-price">
-                                        $10200
-                                    </span>
-                            <small class="text-muted">Categoría</small>
-                            <h2 class="product-name"> Producto</h2>
-
-                            <div class="small m-t-xs">
-                                Many desktop publishing packages and web page editors now.
-                            </div>
-                            <div class="m-t text-righ">
-                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
-
-                        <div class="product-imitation">
-                            <img src="assets/web/img/cuatri.png" alt="foto">
-                        </div>
-                        <div class="product-desc">
-                                    <span class="product-price">
-                                        $10200
-                                    </span>
-                            <small class="text-muted">Categoría</small>
-                            <h2 class="product-name"> Producto</h2>
-
-                            <div class="small m-t-xs">
-                                Many desktop publishing packages and web page editors now.
-                            </div>
-                            <div class="m-t text-righ">
-                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
-
-                        <div class="product-imitation">
-                            <img src="assets/web/img/cuatri.png" alt="foto">
-                        </div>
-                        <div class="product-desc">
-                                    <span class="product-price">
-                                        $10200
-                                    </span>
-                            <small class="text-muted">Categoría</small>
-                            <h2 class="product-name"> Producto</h2>
-
-                            <div class="small m-t-xs">
-                                Many desktop publishing packages and web page editors now.
-                            </div>
-                            <div class="m-t text-righ">
-                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
-
-                        <div class="product-imitation">
-                            <img src="assets/web/img/cuatri.png" alt="foto">
-                        </div>
-                        <div class="product-desc">
-                                    <span class="product-price">
-                                        $10200
-                                    </span>
-                            <small class="text-muted">Categoría</small>
-                            <h2 class="product-name"> Producto</h2>
-
-                            <div class="small m-t-xs">
-                                Many desktop publishing packages and web page editors now.
-                            </div>
-                            <div class="m-t text-righ">
-                                <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-            <div class="ibox">
-                <div class="ibox-content product-box">
-
-                    <div class="product-imitation">
-                        <img src="assets/web/img/cuatri.png" alt="foto">
-                    </div>
-                    <div class="product-desc">
-                                <span class="product-price">
-                                    $10200
-                                </span>
-                        <small class="text-muted">Categoría</small>
-                        <h2 class="product-name"> Producto</h2>
-
-                        <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
-                        </div>
-                        <div class="m-t text-righ">
-                            <a href="{!! route('productDetail') !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                @endforeach
+            @else
+                <h2> Sin resultados </h2>
+            @endif
         </div>
     </div>
 

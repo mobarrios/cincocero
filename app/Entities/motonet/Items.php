@@ -20,7 +20,14 @@ class Items extends Entity{
         return $this->belongsToMany(Categories::getClass(),'items_categories');
     }
 
+    public function Brands()
+    {
+        return $this->belongsTo(Brands::getClass()  );
+    }
 
+    public function getSellPriceAttribute($data){
+        return  "$".$data;
+    }
 
 
 }

@@ -11,7 +11,7 @@ class Categories extends Entity{
 
     public function Items()
     {
-        return $this->belongsToMany(Items::getClass());
+        return $this->belongsToMany(Items::getClass(),'items_categories');
     }
 
 

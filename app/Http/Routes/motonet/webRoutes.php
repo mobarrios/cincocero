@@ -5,7 +5,7 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@index'
     ]);
 
-    Route::get('detail',[
+    Route::get('{id}/detail',[
         'as' => 'productDetail',
         'uses' => 'webController@detail'
     ]);
@@ -15,7 +15,7 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@find'
     ]);
 
-    Route::get('resumen',[
+    Route::get('{id}/resumen',[
        'as' => 'resumen',
         'uses' => 'webController@resumen'
     ]);
