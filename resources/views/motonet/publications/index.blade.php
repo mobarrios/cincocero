@@ -38,7 +38,25 @@
                     @foreach($models as $model)
                         <tr>
                             <td>{{$model->id}}</td>
-                            <td>{{$model->Images->first()->image or ''}}</td>
+                            @if(is_null($model->Images->first()->image))
+                                <td></td>
+                            @else
+                                <td style="width: 5%;">
+                                    @foreach($model->Images as $image)
+                                        <div class="panel3 panel-default">
+                                            <div class="panel3-body">
+                                                <a href="{{$image->image}}" title="{!! $model->title !!}" class="zoom" data-title="{!! $model->title !!}" data-type="image" data-toggle="lightbox">
+                                                    <img width="100%;" src="{{$image->image}}">
+                                                    <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        {{--<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">--}}
+                                        {{--<img width="100%;" src="{{$image->image}}" >--}}
+                                        {{--</a>--}}
+                                    @endforeach
+                                </td>
+                            @endif
                             <td>{{$model->publication_date}}</td>
                             <td>{{$model->title}}</td>
                             <td>{{$model->Items->name}}</td>
