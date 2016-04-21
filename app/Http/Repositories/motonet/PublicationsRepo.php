@@ -41,7 +41,7 @@ class PublicationsRepo extends BaseRepo {
                 'Imagen' =>    ['data' => 'images','relation'=> null],
                 'Titulo' =>    ['data' => 'title','relation' => null],
                 '$' =>  ['data' => 'price','relation' => null],
-                'Articulo' =>     ['data' => 'items_id','relation' => null],
+                'Articulo' =>     ['data' => 'Items','relation' => 'name'],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

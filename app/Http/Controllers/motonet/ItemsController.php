@@ -5,9 +5,11 @@ namespace App\Http\Controllers\motonet;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
 use App\Entities\motonet\Models;
+use App\Helpers\ImagesHelper;
 use App\Http\Repositories\motonet\ItemsRepo as Repo;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
+
 
 
 class ItemsController extends Controller {
@@ -43,7 +45,7 @@ class ItemsController extends Controller {
 
         //selects
         $this->data['brands']           = Brands::lists('name','id');
-        $this->data['categories']       = Categories::all();
+        $this->data['categories']       = Categories::lists('name','id');
 //        $this->data['providers']           = Providers::lists('name','id');
 
         //data for validation
@@ -57,6 +59,30 @@ class ItemsController extends Controller {
         $this->data['routeNew']     = 'itemsGetNew';
         $this->data['routePostNew'] = 'itemsPostNew';
         $this->data['routePostEdit']= 'itemsPostEdit';
+
+    }
+
+    // post new item
+    public function postNew(Request $request, ImagesHelper $image)
+    {
+        //if in controller custom
+        // $request = $this->requestCustom($request);
+
+        // validation rules form repo
+        $this->validate($request, $this->rules);
+
+        // method crear in repo
+        $model = $this->repo->create($request);
+        $model->Categories()->attach($request->categories_id);
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);
+        }
+
+        // redirect with errors messages language
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
 
     }
 

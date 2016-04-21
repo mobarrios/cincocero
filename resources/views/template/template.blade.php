@@ -107,6 +107,9 @@
 <script src="assets/angle/vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
 <!-- RTL demo-->
 <script src="assets/angle/js/demo/demo-rtl.js"></script>
+
+<script src="assets/js/tinymce/tinymce.min.js"></script>
+
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
 
 <!-- =============== APP SCRIPTS ===============-->
@@ -133,6 +136,15 @@
 
 @yield('js')
 <script>
+    tinymce.init({
+        plugins: "textcolor",
+        statusbar: false,
+        selector: ".mytextarea",
+        toolbar: [
+            "undo redo | styleselect | bold italic | forecolor backcolor alignleft aligncenter alignright",
+        ],
+        menubar: false
+    });
 
     if ($('#msg').length){
 

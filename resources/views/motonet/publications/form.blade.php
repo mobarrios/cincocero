@@ -16,7 +16,7 @@
 
                 {!! Form::textCustom('price','Importe $')!!}
 
-                {!! Form::textCustom('description','Descripcion')!!}
+                {!! Form::textAreaCustom('description','Descripcion')!!}
 
                 {!! Form::fileCustom('image','Imagen')!!}
 
@@ -24,7 +24,9 @@
                 <table class="table table-striped">
                     @foreach($items as $item)
                         <tr>
-                            <td><input type="radio" name="items_id" value="{{$item->id}}"></td>
+                            <td>
+                                {!! Form::radio('items_id',$item->id)!!}
+                            </td>
                             <td>{{$item->code}}</td>
                             <td>{{$item->name}}</td>
                             <td>$ {{$item->cost_price}}</td>
@@ -33,15 +35,14 @@
                 </table>
 
             <hr>
-                <div>
-                    {!! Form::checkbox('destacado')!!}
-                    <label>Destacado</label>
+
+                <div class="checkbox c-checkbox pull-left mt0">
+                    <label>
+                        {!! Form::checkbox('destacado')!!}
+                        <span class="fa fa-check"></span>Aviso Destacado.
+                    </label>
                 </div>
-            <hr>
-                <h3>Mercado Libre</h3>
-                <label>Categoria Mercadolibre</label>
-                <select class="form-control">
-                </select>
+
         </div>
 
         <div class="panel-footer">

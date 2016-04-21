@@ -21,12 +21,14 @@ class webController extends Controller {
     private $items;
     private $brands;
     private $data;
+    private $publications;
 
-    public function __construct(Categories $categories, Models $models, Items $items,Brands $brands){
+    public function __construct(Categories $categories, Models $models, Items $items,Brands $brands,Publications $publications){
         $this->categories = $categories;
         $this->models= $models;
         $this->items= $items;
         $this->brands= $brands;
+        $this->publications = $publications;
     }
 
 
@@ -38,7 +40,9 @@ class webController extends Controller {
     }
 
     public function detail($id){
-        $data['item'] = $this->items->find($id);
+
+        $data['item'] = $this->publications->find($id);
+
         return view('motonet/web/detail')->with($data);
     }
 

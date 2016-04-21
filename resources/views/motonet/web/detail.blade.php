@@ -32,11 +32,10 @@
 
                             <div class="row">
                                 <div class="col-md-5">
-
-
                                     <div class="product-images">
-                                        @if($item->Models->Images->count() != 0)
-                                            @foreach($item->Models->Images as $img)
+
+                                        @if($item->Items->Images->count() != 0)
+                                            @foreach($item->Items->Images as $img)
                                                 <div>
                                                     <div class="image-imitation">
                                                         <a href="{!! $img->image !!}">
@@ -59,12 +58,12 @@
                                 <div class="col-md-7">
 
                                     <h2 class="font-bold m-b-xs">
-                                        {!! $item->name !!}
+                                        {!! $item->Items->name !!}
                                     </h2>
-                                    <small>{!! $item->code !!}
+                                    <small>{!! $item->Items->code !!}
                                         <br></small>
                                     <div class="m-t-md">
-                                        <h2 class="product-main-price">{!! $item->sell_price !!}</h2>
+                                        <h2 class="product-main-price">{!! $item->Items->sell_price !!}</h2>
                                     </div>
                                     <hr>
 
@@ -75,32 +74,32 @@
                                             {!! $item->description !!}
                                         </div>
                                     @endif
-                                    <h4>{!! $item->Brands->name !!}</h4>
+                                    <h4>{!! $item->Items->Brands->name !!}</h4>
 
                                     <div class="small text-muted">
-                                        {!! $item->Models->name!!}
+                                        {!! $item->Items->Models!!}
                                     </div>
                                     <dl class="small m-t-md">
                                         @if($item->total_weight != "")
-                                            <dt>Peso total: {!! $item->total_weight !!}</dt>
+                                            <dt>Peso total: {!! $item->Items->total_weight !!}</dt>
                                         @endif
                                         @if($item->maximum_weight != "")
-                                            <dt>Peso máximo: {!! $item->maximum_weight!!}</dt>
+                                            <dt>Peso máximo: {!! $item->Items->maximum_weight!!}</dt>
                                         @endif
                                         @if($item->size != "")
-                                            <dt>Tamaño: {!! $item->size!!}</dt>
+                                            <dt>Tamaño: {!! $item->Items->size!!}</dt>
                                         @endif
                                         @if($item->dimensions!= "")
                                             <dt>Tamaño: {!! $item->dimensions!!}</dt>
                                         @endif
                                         @if($item->presentation!= "")
-                                            <dt>Tamaño: {!! $item->presentation!!}</dt>
+                                            <dt>Tamaño: {!! $item->Items->presentation!!}</dt>
                                         @endif
                                         @if($item->bodega!= "")
-                                            <dt>Tamaño: {!! $item->bodega!!}</dt>
+                                            <dt>Tamaño: {!! $item->Items->bodega!!}</dt>
                                         @endif
                                         @if($item->observaciones!= "")
-                                            <dt>Tamaño: {!! $item->observaciones!!}</dt>
+                                            <dt>Tamaño: {!! $item->Items->observaciones!!}</dt>
                                         @endif
                                     </dl>
                                     <hr>
@@ -125,7 +124,7 @@
 
                 </div>
             </div>
-           
+
 
 
 
