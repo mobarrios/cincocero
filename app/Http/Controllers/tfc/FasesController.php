@@ -226,7 +226,7 @@ class FasesController extends Controller {
     //change Team
     public function changeTeam($team_from = null , $team_to = null)
     {
-        $fases_id =  Session::get('fases_id');
+        $fases_id    =  Session::get('fases_id');
 
         $fases_teams = FasesTeams::where('fases_id',$fases_id)->where('teams_id',$team_from)->first();
         $fases_teams->teams_id = $team_to;
@@ -276,10 +276,8 @@ class FasesController extends Controller {
 
         $fases_week              = Matches::whereHas('FasesWeek',function($q) use ($fases_id){
             $q->where('fases_id', $fases_id);
-        })
-            ->where('home_teams_id',null)
-            ->orWhere('away_teams_id',null)
-            ->get();
+        })->get();
+
 
        foreach($fases_week as $fw){
 
