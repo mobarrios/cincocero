@@ -38,7 +38,18 @@
                     @foreach($models as $model)
                         <tr>
                             <td>{{$model->id}}</td>
-                            <td>{{$model->Images->first()->image or ''}}</td>
+                            <td class="col-xs-1">
+                                @foreach($model->Images as $image)
+                                    <div class="panel3 panel-default">
+                                        <div class="panel3-body">
+                                            <a href="{{$image->image}}" title="{!! $model->name !!}" class="zoom" data-title="{!! $model->name !!}" data-type="image" data-toggle="lightbox">
+                                                <img width="100%;" src="{{$image->image}}">
+                                                <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </td>
                             <td>{{$model->publication_date}}</td>
                             <td>{{$model->title}}</td>
                             <td>{{$model->Items->name}}</td>
