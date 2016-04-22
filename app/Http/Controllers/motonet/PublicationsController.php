@@ -29,7 +29,7 @@ class PublicationsController extends Controller {
 
 
 
-    public function __construct(Repo $repo , Ml $ml)
+    public function __construct(Repo $repo )
     {
 
         $module = 'publications';
@@ -53,7 +53,6 @@ class PublicationsController extends Controller {
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
         //$this->data['currency']        = Currency::lists('name','id');
-        //$this->data['mlCategories']      = $ml->getCategories();
         $this->data['items']             = Items::all();
 
 
@@ -70,6 +69,33 @@ class PublicationsController extends Controller {
         $this->data['routePostEdit']= $module.'PostEdit';
 
 
+    }
+
+    public function MercadoLibre($publications_id = null, MercadolibreController $ml)
+    {
+        $this->data['sectionName'] = 'Publicaciones - Mercadolibre';
+
+        foreach($ml->getCategories()['body'] as $cat => $k)
+        {
+            echo '<ul>'.$k->name ;
+
+           foreach($ml->getSubCategories($k->id)['body']->children_categories as $s => $ks)
+           {
+               echo  '<li>'.$ks->name;
+
+               foreach($ml->getSubCategories($ks->id)['body']->children_categories as $ss => $kss)
+               {
+                   echo  '<li>'.$kss->name.'</li>';
+               }
+
+               echo '</li>';
+
+           }
+            echo '</ul>';
+
+        }
+
+        return view('motonet.publications.mercadolibre')->with($this->data);
     }
 
 

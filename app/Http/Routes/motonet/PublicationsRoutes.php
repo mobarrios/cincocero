@@ -13,7 +13,7 @@ Route::post('postNew'.$module,          ['as'=> $module.'PostNew', 'uses'=> $con
 Route::post('postEdit'.$module.'/{id}', ['as'=>$module.'PostEdit', 'uses'=> $controller.'@postEdit']);
 
 
-
+Route::get('ml/{id?}',['as'=>'mercadoLibre', 'uses'=> $controller.'@mercadoLibre']);
 
 
 

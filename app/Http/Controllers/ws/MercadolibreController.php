@@ -54,21 +54,6 @@ class MercadolibreController extends Controller {
     {
         $categories = $this->meli->get('/sites/MLA/categories');
 
-        foreach($categories['body'] as $k => $v)
-        {
-            echo $v->id .' = '.$v->name .'<br>';
-
-            $sub = $this->getSubCategories($v->id);
-
-           foreach($sub as $l => $s)
-           {
-               echo $l;
-           }
-
-
-        }
-
-            return;
         return $categories;
     }
 
