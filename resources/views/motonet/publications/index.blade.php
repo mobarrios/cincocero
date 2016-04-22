@@ -38,6 +38,7 @@
                     @foreach($models as $model)
                         <tr>
                             <td>{{$model->id}}</td>
+<<<<<<< HEAD
                             <td class="col-xs-1">
                                 @foreach($model->Images as $image)
                                     <div class="panel3 panel-default">
@@ -50,6 +51,27 @@
                                     </div>
                                 @endforeach
                             </td>
+=======
+                            @if(is_null($model->Images->first()->image))
+                                <td></td>
+                            @else
+                                <td style="width: 5%;">
+                                    @foreach($model->Images as $image)
+                                        <div class="panel3 panel-default">
+                                            <div class="panel3-body">
+                                                <a href="{{$image->image}}" title="{!! $model->title !!}" class="zoom" data-title="{!! $model->title !!}" data-type="image" data-toggle="lightbox">
+                                                    <img width="100%;" src="{{$image->image}}">
+                                                    <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        {{--<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">--}}
+                                        {{--<img width="100%;" src="{{$image->image}}" >--}}
+                                        {{--</a>--}}
+                                    @endforeach
+                                </td>
+                            @endif
+>>>>>>> a94c2e0565a204a4cc5a05cf42c1a40b6efbc02a
                             <td>{{$model->publication_date}}</td>
                             <td>{{$model->title}}</td>
                             <td>{{$model->Items->name}}</td>

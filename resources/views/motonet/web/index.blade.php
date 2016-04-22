@@ -29,9 +29,6 @@
                                 <small class="text-muted">{{$publication->Items->Categories->first()->name}}</small>
                                 <h2 class="product-name"> {{$publication->title}}</h2>
 
-                                <div class="small m-t-xs">
-                                    {!! $publication->description !!}
-                                </div>
                                 <div class="m-t text-righ">
                                     <a href="{!! route('productDetail',$publication->id )!!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
                                 </div>
