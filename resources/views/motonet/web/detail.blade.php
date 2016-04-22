@@ -3,6 +3,7 @@
 @section('css')
     <link href="assets/inspinia/css/plugins/slick/slick.css" rel="stylesheet">
     <link href="assets/inspinia/css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/imageModal.css" rel="stylesheet">
     <style>
         .btn-group .btn-primary{
             background-color: #0187CE;
@@ -11,6 +12,10 @@
             font-size: 12px;
             padding: 5px 10px;
             font-weight: inherit;
+        }
+
+        .panel3 .panel3-body a.zoom:hover span.overlay i{
+            top: 44%;
         }
 
     </style>
@@ -36,18 +41,19 @@
 
                                         @if($item->Items->Images->count() != 0)
                                             @foreach($item->Items->Images as $img)
-                                                <div>
-                                                    <div class="image-imitation">
-                                                        <a href="{!! $img->image !!}">
-                                                            <img src="{!! $img->image !!}" alt="{!! $item->name !!}">
+                                                <div class="panel3 panel-default">
+                                                    <div class="panel3-body image-imitation">
+                                                        <a href="{!! $img->image !!}" title="{!! $item->title !!}" class="zoom" data-title="{!! $item->title !!}" data-type="image" data-toggle="lightbox">
+                                                            <img src="{!! $img->image !!}" alt="{!! $item->title !!}">
+                                                            <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
                                                         </a>
                                                     </div>
                                                 </div>
                                             @endforeach
                                         @else
                                             <div>
-                                                <div class="image-imitation">
-                                                    [SIN IMÁGEN]
+                                                <div class="image-imitation" style="height:300px">
+                                                    <p style="text-align: center;padding: 30% 0">[SIN IMÁGEN]</p>
                                                 </div>
                                             </div>
                                         @endif
@@ -77,7 +83,7 @@
                                     <h4>{!! $item->Items->Brands->name !!}</h4>
 
                                     <div class="small text-muted">
-                                        {!! $item->Items->Models!!}
+                                        {!! $item->Items->Models->name!!}
                                     </div>
                                     <dl class="small m-t-md">
                                         @if($item->total_weight != "")
@@ -139,6 +145,8 @@
 @section('js')
 <!-- slick carousel-->
 <script src="assets/inspinia/js/plugins/slick/slick.min.js"></script>
+<script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
+<script src="assets/js/imageModal.js"></script>
 
 <script>
     $(document).ready(function(){
