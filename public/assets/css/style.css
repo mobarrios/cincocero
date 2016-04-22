@@ -6799,8 +6799,11 @@ body.landing-page {
     /*border-radius: 10px;*/
 /*}*/
 .landing-page .header-back {
-    height: 470px;
-    width: 100%;
+    height: 364px;
+    /*height: 470px;*/
+    /*width:100%;*/
+    margin:auto;
+
 }
 .landing-page .header-back.one {
     background: url('../img/landing/header_one.jpg') 50% 0 no-repeat;
@@ -6861,12 +6864,13 @@ body.landing-page {
 }
 .landing-page .carousel-fade .carousel-control {
     z-index: 2;
-    top:215px;
+    top:125px;
     font-size:55px;
 }
 .landing-page .carousel-control.left,
 .landing-page .carousel-control.right {
     background: none;
+    z-index:9999999999;
 }
 .landing-page .carousel-control {
     width: 6%;
@@ -8478,4 +8482,8 @@ footer{
     text-align:center;
     color:#fff;
     background-color: #0187CE;
+}
+
+#inSlider img{
+    width:100%;
 }
