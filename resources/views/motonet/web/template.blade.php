@@ -159,10 +159,12 @@
         function scrollPage() {
             var sy = scrollY();
             if ( sy >= changeHeaderOn ) {
-                $(header).addClass('navbar-scroll')
+                $(header).addClass('navbar-scroll');
+                $('.navbar2').addClass('fixed-top');
             }
             else {
-                $(header).removeClass('navbar-scroll')
+                $(header).removeClass('navbar-scroll');
+                $('.navbar2').removeClass('fixed-top');
             }
             didScroll = false;
         }
