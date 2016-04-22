@@ -52,8 +52,10 @@
             </div>
             <div class="redes">
                 <ul>
-                    <li><a href="#" target="_blank" class="fa fa-facebook-square"></a></li>
-                    <li><a href="#" target="_blank" class="fa fa-twitter-square"></a></li>
+                    <li><a href="https://www.facebook.com/motonetonline?ref=hl" target="_blank" class="fa fa-facebook-square"></a></li>
+                    <li><a href="https://www.facebook.com/motonetonline?ref=hl" target="_blank" class="fa fa-twitter-square"></a></li>
+                    <li><a href="https://www.facebook.com/motonetonline?ref=hl" target="_blank" class="fa fa-instagram"></a></li>
+                    <li><a href="https://www.facebook.com/motonetonline?ref=hl" target="_blank" class="fa fa-youtube-square"></a></li>
                 </ul>
             </div>
             {{--<div id="navbar" class="navbar-collapse collapse pull-right">--}}
@@ -120,6 +122,10 @@
 
 @yield('content')
 
+
+<footer>
+    <p>&copy;Motonet -  Av. Ricardo balbin 486 - San Miguel - Buenos Aires - 0810-333-6686 </p>
+</footer>
 
 @yield('js')
 
