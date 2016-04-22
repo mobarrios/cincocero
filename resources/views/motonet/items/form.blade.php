@@ -14,9 +14,11 @@
             {!! Form::textCustom('name', 'Articulo')!!}
             {{-- Form::textCustom('detail', 'Detalle') --}}
 
+            {!! Form::selectCustom('categories_id','Categorías',$categories) !!}
+
             {!! Form::selectCustom('brands_id','Marca',$brands) !!}
 
-            {!! Form::selectCustom('categories_id','Categorías',$categories) !!}
+            {!! Form::selectCustom('models_id','Modelo',$modelos) !!}
 
     {{--        {!! Form::selectCustom('provider_id','Proveedor',$providers) !!}--}}
 

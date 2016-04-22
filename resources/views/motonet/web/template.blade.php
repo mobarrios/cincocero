@@ -184,6 +184,8 @@
     // Activate WOW.js plugin for animation on scrol
     new WOW().init();
 
+    $('#myCarousel').find('.item').first().addClass('active');
+
 </script>
 
 
