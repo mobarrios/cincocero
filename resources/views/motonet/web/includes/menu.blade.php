@@ -162,9 +162,3 @@
     </div>
 
 </div>
-
-@section('js')
-    <script>
-        $('#myCarousel').find('.item').first().addClass('active');
-    </script>
-@endsection

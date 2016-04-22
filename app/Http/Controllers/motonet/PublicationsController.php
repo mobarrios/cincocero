@@ -46,7 +46,7 @@ class PublicationsController extends Controller {
 
 
         //images
-        $this->data['imgQuantityMax']   = 1;
+        $this->data['imgQuantityMax']   = 5;
         $this->data['imagePath']        = 'uploads/motonet/'.$module.'/images/';
         $this->data['entityImg']        = $module;
 

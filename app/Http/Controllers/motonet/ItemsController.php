@@ -46,6 +46,7 @@ class ItemsController extends Controller {
         //selects
         $this->data['brands']           = Brands::lists('name','id');
         $this->data['categories']       = Categories::lists('name','id');
+        $this->data['modelos']           = Models::lists('name','id');
 //        $this->data['providers']           = Providers::lists('name','id');
 
         //data for validation
@@ -83,6 +84,32 @@ class ItemsController extends Controller {
 
         // redirect with errors messages language
         return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+
+    }
+
+    // post edit item
+    public function postEdit($id,Request $request, ImagesHelper $image)
+    {
+    // validation rules form repo
+        $this->validate($request, $this->rulesEdit);
+
+        // method crear in repo
+        $model = $this->repo->getModel()->find($id);
+
+        $this->repo->edit($id,$request);
+
+        if($request->categories_id != 0){
+            $model->Categories()->attach($request->categories_id);
+        }
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);}
+        // redirect with errors messages language
+
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.editItem'));
+
 
     }
 

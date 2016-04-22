@@ -42,11 +42,11 @@
                             <td>{{$model->id}}</td>
 
                                 <td style="width: 5%;">
-                                    @foreach($model->Images as $image)
+                                    {{--@foreach($model->Images as $image)--}}
                                         <div class="panel3 panel-default">
                                             <div class="panel3-body">
-                                                <a href="{{$image->image}}" title="{!! $model->title !!}" class="zoom" data-title="{!! $model->title !!}" data-type="image" data-toggle="lightbox">
-                                                    <img width="100%;" src="{{$image->image}}">
+                                                <a href="{{$model->Images->first()->image}}" title="{!! $model->title !!}" class="zoom" data-title="{!! $model->title !!}" data-type="image" data-toggle="lightbox">
+                                                    <img width="100%;" src="{{$model->Images->first()->image}}">
                                                     <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
                                                 </a>
                                             </div>
@@ -54,7 +54,7 @@
                                         {{--<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">--}}
                                         {{--<img width="100%;" src="{{$image->image}}" >--}}
                                         {{--</a>--}}
-                                    @endforeach
+                                    {{--@endforeach--}}
                                 </td>
 
                             <td>{{$model->publication_date}}</td>

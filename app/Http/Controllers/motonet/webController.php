@@ -41,7 +41,7 @@ class webController extends Controller {
 
     public function detail($id){
 
-        $data['item'] = $this->publications->find($id);
+        $data['publication'] = $this->publications->find($id);
 
         return view('motonet/web/detail')->with($data);
     }
