@@ -27,9 +27,6 @@
                                     <h2 class="product-name"> Marca: {!! $i->Brands->name !!}</h2>
                                     <h2 class="product-name"> Modelo: {!! $i->Models->name !!}</h2>
 
-                                    <div class="small m-t-xs">
-                                        {!! $i->description !!}
-                                    </div>
                                     <div class="m-t text-righ">
                                         <a href="{!! route('productDetail',$i->id) !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
                                     </div>

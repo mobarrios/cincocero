@@ -3111,7 +3111,11 @@ a.forum-item-title:hover {
     margin-bottom: 5px;
 }
 .payments-method .panel-heading i {
-    font-size: 26px;
+    font-size: 46px;
+    margin-right: 67px;
+
+    line-height: 0;
+
 }
 /* Select2 custom styles */
 .select2-container--default .select2-selection--single,

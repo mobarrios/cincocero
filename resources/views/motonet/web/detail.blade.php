@@ -18,12 +18,16 @@
             top: 44%;
         }
 
+        .ibox
+        {
+            max-height:none;
+        }
     </style>
 @endsection
 
 @section('content')
 
-<div >
+<div>
     <div class="gray-bg">
         @include('motonet/web/includes/breadcrumbs')
 
@@ -73,13 +77,6 @@
                                     </div>
                                     <hr>
 
-                                    @if($publication->description != "")
-                                        <h4>Descripción</h4>
-
-                                        <div class="small text-muted">
-                                            {!! $publication->description !!}
-                                        </div>
-                                    @endif
                                     <h4>{!! $publication->Items->Brands->name !!}</h4>
 
                                     <div class="small text-muted">
@@ -118,7 +115,13 @@
 
                                 </div>
                             </div>
+                            @if($publication->description != "")
+                                <h1 class="text-center">Descripción</h1>
 
+                                <div class="small text-muted">
+                                    {!! $publication->description !!}
+                                </div>
+                            @endif
                         </div>
                         {{--<div class="ibox-footer">--}}
                             {{--<span class="pull-right">--}}
@@ -126,8 +129,9 @@
                             {{--</span>--}}
                             {{--The generated Lorem Ipsum is therefore always free--}}
                         {{--</div>--}}
-                    </div>
 
+
+                    </div>
                 </div>
             </div>
 
@@ -136,8 +140,9 @@
 
 
         </div>
-
     </div>
+
+
 </div>
 
 @endsection

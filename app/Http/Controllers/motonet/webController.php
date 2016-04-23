@@ -60,7 +60,7 @@ class webController extends Controller {
             $data['items'] = $this->items->where('brands_id',$b)->get();
         }else{
             $find = $request->get('find');
-            $data['items'] = $this->items->where('name','%like%',$find)->get();
+            $data['items'] = $this->items->where('name','like','%'.$find.'%')->get();
         }
 
         return view('motonet/web/grid')->with($data);
