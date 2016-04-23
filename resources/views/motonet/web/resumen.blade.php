@@ -12,6 +12,10 @@
         }
 
     </style>
+
+    <link rel="stylesheet" href="assets/css/fontello.css">
+    <link rel="stylesheet" href="assets/css/fontello-ie7.css">
+    <link rel="stylesheet" href="assets/css/fontello-ie7-codes.css">
 @endsection
 
 @section('content')
@@ -103,7 +107,7 @@
 
 
 
-                            <h3><i class="fa fa-phone"></i> +54 100 783 001</h3>
+                            <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
                             <span class="small">
                                 Si algo no salió bien, podes contactarnos.
                             </span>
@@ -148,7 +152,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="payment-card">
-                                    <i class="fa fa-cc-mastercard payment-icon-big text-warning"></i>
+                                    <i class="fa fa-cc-mastercard payment-icon-big text-warning" style="color:#d82929"></i>
                                     <h2>
                                         **** **** **** 7002
                                     </h2>
@@ -168,7 +172,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="payment-card">
-                                    <i class="fa fa-cc-discover payment-icon-big text-danger"></i>
+                                    <i class="icon icon-naranja payment-icon-big text-danger" style="color:#ff7e00"></i>
                                     <h2>
                                         **** **** **** 3466
                                     </h2>
@@ -200,14 +204,14 @@
                                     <div class="panel-group payments-method" id="accordion">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                <div class="pull-right">
-                                                    <i class="fa fa-cc-paypal text-success"></i>
+                                                <div class="pull-right" style="margin-top:-9px;">
+                                                    <i class="icon icon-mp text-success"></i>
                                                 </div>
                                                 <h5 class="panel-title">
-                                                    <a aria-expanded="false" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Mercadopago</a>
+                                                    <a class="" aria-expanded="true" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Mercadopago</a>
                                                 </h5>
                                             </div>
-                                            <div style="height: 0px;" aria-expanded="false" id="collapseOne" class="panel-collapse collapse">
+                                            <div style="" aria-expanded="true" id="collapseTwo" class="panel-collapse collapse in">
                                                 <div class="panel-body">
 
                                                     <div class="row">
@@ -225,9 +229,7 @@
                                                             </p>
 
                                                             <a class="btn btn-success">
-                                                                <i class="fa fa-cc-paypal">
-                                                                    Pagar
-                                                                </i>
+                                                                Pagar
                                                             </a>
 
                                                         </div>
@@ -238,85 +240,85 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <div class="pull-right">
-                                                    <i class="fa fa-cc-amex text-success"></i>
-                                                    <i class="fa fa-cc-mastercard text-warning"></i>
-                                                    <i class="fa fa-cc-discover text-danger"></i>
-                                                </div>
-                                                <h5 class="panel-title">
-                                                    <a class="" aria-expanded="true" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Tarjeta de crédito</a>
-                                                </h5>
-                                            </div>
-                                            <div style="" aria-expanded="true" id="collapseTwo" class="panel-collapse collapse in">
-                                                <div class="panel-body">
+                                        {{--<div class="panel panel-default">--}}
+                                            {{--<div class="panel-heading">--}}
+                                                {{--<div class="pull-right">--}}
+                                                    {{--<i class="fa fa-cc-amex text-success"></i>--}}
+                                                    {{--<i class="fa fa-cc-mastercard text-warning"></i>--}}
+                                                    {{--<i class="fa fa-cc-discover text-danger"></i>--}}
+                                                {{--</div>--}}
+                                                {{--<h5 class="panel-title">--}}
+                                                    {{--<a class="" aria-expanded="true" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Tarjeta de crédito</a>--}}
+                                                {{--</h5>--}}
+                                            {{--</div>--}}
+                                            {{--<div style="" aria-expanded="true" id="collapseTwo" class="panel-collapse collapse in">--}}
+                                                {{--<div class="panel-body">--}}
 
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <h2>Resumen</h2>
-                                                            <strong>Producto:</strong>: {!! $item->name !!} <br>
-                                                            <strong>Precio:</strong>: <span class="text-navy">{!! $item->sell_price !!}</span>
+                                                    {{--<div class="row">--}}
+                                                        {{--<div class="col-md-4">--}}
+                                                            {{--<h2>Resumen</h2>--}}
+                                                            {{--<strong>Producto:</strong>: {!! $item->name !!} <br>--}}
+                                                            {{--<strong>Precio:</strong>: <span class="text-navy">{!! $item->sell_price !!}</span>--}}
 
-                                                            <p class="m-t">
-                                                                <strong>{!! $item->Brands->name !!}</strong> - {!! $item->Models->name !!}
-                                                                @if($item->description != "")
-                                                                    <br>{!! $item->description !!}
-                                                                @endif
+                                                            {{--<p class="m-t">--}}
+                                                                {{--<strong>{!! $item->Brands->name !!}</strong> - {!! $item->Models->name !!}--}}
+                                                                {{--@if($item->description != "")--}}
+                                                                    {{--<br>{!! $item->description !!}--}}
+                                                                {{--@endif--}}
 
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-md-8">
+                                                            {{--</p>--}}
+                                                        {{--</div>--}}
+                                                        {{--<div class="col-md-8">--}}
 
-                                                            <form role="form" id="payment-form">
-                                                                <div class="row">
-                                                                    <div class="col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label>NÚMERO DE TARJETA</label>
-                                                                            <div class="input-group">
-                                                                                <input class="form-control" name="Number" placeholder="Valid Card Number" required="" type="text">
-                                                                                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-xs-7 col-md-7">
-                                                                        <div class="form-group">
-                                                                            <label>FECHA VENCIMIENTO</label>
-                                                                            <input class="form-control" name="Expiry" placeholder="MM / YY" required="" type="text">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-xs-5 col-md-5 pull-right">
-                                                                        <div class="form-group">
-                                                                            <label>CS</label>
-                                                                            <input class="form-control" name="CS" placeholder="***" required="" type="text">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label>NOMBRE Y APELLIDO</label>
-                                                                            <input class="form-control" name="nameCard" placeholder="NOMBRE Y APELLIDO" type="text">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-xs-12">
-                                                                        <button class="btn btn-primary" type="submit">Realizar pago!</button>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
+                                                            {{--<form role="form" id="payment-form">--}}
+                                                                {{--<div class="row">--}}
+                                                                    {{--<div class="col-xs-12">--}}
+                                                                        {{--<div class="form-group">--}}
+                                                                            {{--<label>NÚMERO DE TARJETA</label>--}}
+                                                                            {{--<div class="input-group">--}}
+                                                                                {{--<input class="form-control" name="Number" placeholder="Valid Card Number" required="" type="text">--}}
+                                                                                {{--<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>--}}
+                                                                            {{--</div>--}}
+                                                                        {{--</div>--}}
+                                                                    {{--</div>--}}
+                                                                {{--</div>--}}
+                                                                {{--<div class="row">--}}
+                                                                    {{--<div class="col-xs-7 col-md-7">--}}
+                                                                        {{--<div class="form-group">--}}
+                                                                            {{--<label>FECHA VENCIMIENTO</label>--}}
+                                                                            {{--<input class="form-control" name="Expiry" placeholder="MM / YY" required="" type="text">--}}
+                                                                        {{--</div>--}}
+                                                                    {{--</div>--}}
+                                                                    {{--<div class="col-xs-5 col-md-5 pull-right">--}}
+                                                                        {{--<div class="form-group">--}}
+                                                                            {{--<label>CS</label>--}}
+                                                                            {{--<input class="form-control" name="CS" placeholder="***" required="" type="text">--}}
+                                                                        {{--</div>--}}
+                                                                    {{--</div>--}}
+                                                                {{--</div>--}}
+                                                                {{--<div class="row">--}}
+                                                                    {{--<div class="col-xs-12">--}}
+                                                                        {{--<div class="form-group">--}}
+                                                                            {{--<label>NOMBRE Y APELLIDO</label>--}}
+                                                                            {{--<input class="form-control" name="nameCard" placeholder="NOMBRE Y APELLIDO" type="text">--}}
+                                                                        {{--</div>--}}
+                                                                    {{--</div>--}}
+                                                                {{--</div>--}}
+                                                                {{--<div class="row">--}}
+                                                                    {{--<div class="col-xs-12">--}}
+                                                                        {{--<button class="btn btn-primary" type="submit">Realizar pago!</button>--}}
+                                                                    {{--</div>--}}
+                                                                {{--</div>--}}
+                                                            {{--</form>--}}
 
-                                                        </div>
+                                                        {{--</div>--}}
 
-                                                    </div>
+                                                    {{--</div>--}}
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
                                 </div>
 
