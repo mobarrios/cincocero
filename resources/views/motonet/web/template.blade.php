@@ -32,7 +32,7 @@
 	
 	<!-- Mainly scripts -->
 	<script src="assets/inspinia/js/jquery-2.1.1.js"></script>
-	<script src="assets/inspinia/js/bootstrap.min.js"></script>
+	<script src="assets/angle/js/bootstrap.js"></script>
 	<script src="assets/inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 	<script src="assets/inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
