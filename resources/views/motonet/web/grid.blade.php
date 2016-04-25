@@ -12,20 +12,20 @@
                             <div class="ibox-content product-box">
 
                                 <div class="product-imitation">
-                                    <img src="{!! $i->Models->Images->first()->image !!}" alt="{!! $i->name !!}">
+                                    <img src="{!! $i->Items->Models->Images->first()->image or ''!!}" alt="{!! $i->title !!}">
                                 </div>
                                 <div class="product-desc">
                                     <span class="product-price">
-                                        {!! $i->sell_price !!}
+                                        {!! $i->price !!}
                                     </span>
                                     <small class="text-muted">
                                         Categorías:
-                                        @foreach($i->Categories as $c)
+                                        @foreach($i->Items->Categories as $c)
                                             {!! $c->name !!}-
                                         @endforeach
                                     </small>
-                                    <h2 class="product-name"> Marca: {!! $i->Brands->name !!}</h2>
-                                    <h2 class="product-name"> Modelo: {!! $i->Models->name !!}</h2>
+                                    <h2 class="product-name"> Marca: {!! $i->Items->Brands->name !!}</h2>
+                                    <h2 class="product-name"> Modelo: {!! $i->Items->Models->name !!}</h2>
 
                                     <div class="m-t text-righ">
                                         <a href="{!! route('productDetail',$i->id) !!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>

@@ -50,7 +50,7 @@ class webController extends Controller {
     {
         if ($request->get('categories')) {
             $cat = $this->categories->find($request->get('categories'));
-            $data['items'] = $cat->Items;
+            $data['items'] = $cat->items->where('categories_id',$cat->id);
 
         } elseif ($request->get('models')){
             $m = $this->models->find($request->get('models'));
@@ -60,14 +60,31 @@ class webController extends Controller {
             $data['items'] = $this->items->where('brands_id',$b)->get();
         }else{
             $find = $request->get('find');
-            $data['items'] = $this->items->where('name','like','%'.$find.'%')->get();
+            $data['items'] = $this->publications
+                                ->where('title','like','%'.$find.'%')
+                                ->orWhereHas('items',function($q) use($find){
+                                    $q->whereHas('categories',function($q) use($find) {
+                                        $q->where('name', 'like', '%' . $find . '%');
+                                    });
+                                })
+                                ->orWhereHas('items',function($q) use($find){
+                                    $q->whereHas('brands',function($q) use($find) {
+                                        $q->where('name','like','%'.$find.'%');
+                                    });
+                                })
+                                ->orWhereHas('items',function($q) use($find){
+                                    $q->whereHas('models',function($q) use($find) {
+                                        $q->where('name','like','%'.$find.'%');
+                                    });
+                                })
+                                ->get();
         }
 
         return view('motonet/web/grid')->with($data);
     }
 
     public function resumen($id){
-        $data['item'] = $this->items->find($id);
+        $data['publication'] = $this->publications->find($id);
         return view('motonet/web/resumen')->with($data);
     }
 

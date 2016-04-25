@@ -43,21 +43,18 @@
                                     <tr>
                                         <td width="90">
                                             <div class="cart-product-imitation">
-                                                <img src="{!! $item->Models->Images->first()->image !!}" alt="{!! $item->name !!}" class="img-responsive">
+                                                <img src="{!! $publication->Items->Models->Images->first()->image or ''!!}" alt="{!! $publication->title !!}" class="img-responsive">
                                             </div>
                                         </td>
                                         <td class="desc col-xs-11">
                                             <h3>
-                                                <a href="{!! route('productDetail',$item->id) !!}" class="text-navy">
-                                                    {!! $item->name !!}
+                                                <a href="{!! route('productDetail',$publication->id) !!}" class="text-navy">
+                                                    {!! $publication->title !!}
                                                 </a>
                                             </h3>
                                             <dl class="small m-b-none">
                                                 <dt>Descripción</dt>
-                                                <h4><strong>{!! $item->Brands->name !!}</strong> - {!! $item->Models->name !!}</h4>
-                                                @if($item->description != "")
-                                                    <dd>$item->description</dd>
-                                                @endif
+                                                <h4><strong>{!! $publication->Items->Brands->name !!}</strong> - {!! $publication->Items->Models->name !!}</h4>
                                             </dl>
                                         </td>
 
@@ -66,7 +63,7 @@
                                                 Precio
                                             </h4>
                                             <h4>
-                                                {!! $item->sell_price !!}
+                                                ${!! $publication->price !!}
                                             </h4>
                                         </td>
                                     </tr>
@@ -89,7 +86,7 @@
                                 Total
                             </span>
                             <h2 class="font-bold">
-                                {!! $item->sell_price !!}
+                                ${!! $publication->price !!}
                             </h2>
 
                             <hr/>
@@ -217,14 +214,11 @@
                                                     <div class="row">
                                                         <div class="col-md-10">
                                                             <h2>Resumen</h2>
-                                                            <strong>Producto:</strong>: {!! $item->name !!} <br>
-                                                            <strong>Precio:</strong>: <span class="text-navy">{!! $item->sell_price !!} </span>
+                                                            <strong>Producto:</strong>: {!! $publication->title !!} <br>
+                                                            <strong>Precio:</strong>: <span class="text-navy">${!! $publication->price !!} </span>
 
                                                             <p class="m-t">
-                                                                <strong>{!! $item->Brands->name !!}</strong> - {!! $item->Models->name !!}
-                                                                @if($item->description != "")
-                                                                    <br>{!! $item->description !!}
-                                                                @endif
+                                                                <strong>{!! $publication->Items->Brands->name !!}</strong> - {!! $publication->Items->Models->name !!}
 
                                                             </p>
 
@@ -257,13 +251,13 @@
                                                     {{--<div class="row">--}}
                                                         {{--<div class="col-md-4">--}}
                                                             {{--<h2>Resumen</h2>--}}
-                                                            {{--<strong>Producto:</strong>: {!! $item->name !!} <br>--}}
-                                                            {{--<strong>Precio:</strong>: <span class="text-navy">{!! $item->sell_price !!}</span>--}}
+                                                            {{--<strong>Producto:</strong>: {!! $publication->name !!} <br>--}}
+                                                            {{--<strong>Precio:</strong>: <span class="text-navy">{!! $publication->sell_price !!}</span>--}}
 
                                                             {{--<p class="m-t">--}}
-                                                                {{--<strong>{!! $item->Brands->name !!}</strong> - {!! $item->Models->name !!}--}}
-                                                                {{--@if($item->description != "")--}}
-                                                                    {{--<br>{!! $item->description !!}--}}
+                                                                {{--<strong>{!! $publication->Brands->name !!}</strong> - {!! $publication->Models->name !!}--}}
+                                                                {{--@if($publication->description != "")--}}
+                                                                    {{--<br>{!! $publication->description !!}--}}
                                                                 {{--@endif--}}
 
                                                             {{--</p>--}}
