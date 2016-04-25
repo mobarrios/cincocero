@@ -45,8 +45,8 @@
                                     {{--@foreach($model->Images as $image)--}}
                                         <div class="panel3 panel-default">
                                             <div class="panel3-body">
-                                                <a href="{{$model->Images->first()->image}}" title="{!! $model->title !!}" class="zoom" data-title="{!! $model->title !!}" data-type="image" data-toggle="lightbox">
-                                                    <img width="100%;" src="{{$model->Images->first()->image}}">
+                                                <a href="{{$model->Images->first()->image or ''}}" title="{!! $model->title !!}" class="zoom" data-title="{!! $model->title !!}" data-type="image" data-toggle="lightbox">
+                                                    <img width="100%;" src="{{$model->Images->first()->image or ''}}">
                                                     <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
                                                 </a>
                                             </div>

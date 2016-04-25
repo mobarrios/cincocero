@@ -61,7 +61,7 @@ class MercadolibreController extends Controller {
     {
         $categories = $this->meli->get('/categories/'.$categories_id);
 
-        return $categories;
+        return response()->json($categories['body']);
     }
 
 }

@@ -74,7 +74,11 @@ class PublicationsController extends Controller {
     public function MercadoLibre($publications_id = null, MercadolibreController $ml)
     {
         $this->data['sectionName'] = 'Publicaciones - Mercadolibre';
+        $this->data['publicacion'] = Publications::find($publications_id);
+        $this->data['categorias']  = $ml->getCategories()['body'];
 
+
+       /*
         foreach($ml->getCategories()['body'] as $cat => $k)
         {
             echo '<ul>'.$k->name ;
@@ -94,7 +98,7 @@ class PublicationsController extends Controller {
             echo '</ul>';
 
         }
-
+       */
         return view('motonet.publications.mercadolibre')->with($this->data);
     }
 

@@ -26,6 +26,9 @@ use App\Helpers\ImagesHelper;
 
 
 Route::get('ml/{id?}', ['as'=>'ml','uses'=>'\App\Http\Controllers\ws\MercadolibreController@getItem']);
+Route::get('ml_sub_categories/{id?}','\App\Http\Controllers\ws\MercadolibreController@getSubCategories');
+
+
 
 //Route::group(['middleware'=>'changeLanguaje'],function(){
 Route::get('template',function(){
