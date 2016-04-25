@@ -11,7 +11,7 @@
  Target Server Version : 50709
  File Encoding         : utf-8
 
- Date: 04/19/2016 17:13:25 PM
+ Date: 04/25/2016 17:36:27 PM
 */
 
 SET NAMES utf8;
@@ -107,13 +107,13 @@ CREATE TABLE `images` (
   `image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `entity_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Records of `images`
 -- ----------------------------
 BEGIN;
-INSERT INTO `images` VALUES ('1', '2016-03-16 16:18:51', '2016-03-16 16:18:51', null, 'items', 'uploads/items/images/1458145130.jpg', '1'), ('2', '2016-03-21 15:52:46', '2016-03-21 15:52:46', null, 'brands', 'uploads/brands/images/1458575565.jpg', '2'), ('3', '2016-03-21 15:53:18', '2016-03-21 15:53:18', null, 'brands', 'uploads/brands/images/1458575598.png', '1'), ('4', '2016-04-06 13:09:14', '2016-04-06 13:09:14', null, 'items', 'uploads/items/images/1459948154.jpg', '2');
+INSERT INTO `images` VALUES ('4', '2016-04-06 13:09:14', '2016-04-06 13:09:14', null, 'items', 'uploads/items/images/1459948154.jpg', '2'), ('6', '2016-04-20 22:46:46', '2016-04-20 22:46:46', null, 'brands', 'uploads/brands/images/1461192406.jpg', '2'), ('7', '2016-04-20 22:47:32', '2016-04-20 22:47:32', null, 'brands', 'uploads/brands/images/1461192452.jpg', '1'), ('9', '2016-04-21 00:04:20', '2016-04-21 00:04:20', null, 'items', 'uploads/items/images/1461197059.jpg', '10'), ('10', '2016-04-21 21:42:31', '2016-04-21 21:42:31', null, 'publications', 'uploads/motonet/publications/images/1461274951.jpg', '2'), ('11', '2016-04-25 15:00:53', '2016-04-25 15:00:53', null, 'items', 'uploads/items/images/1461596453.jpg', '11');
 COMMIT;
 
 -- ----------------------------
@@ -123,8 +123,8 @@ DROP TABLE IF EXISTS `items`;
 CREATE TABLE `items` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `code` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE `items` (
   `discount_price` double(10,2) NOT NULL,
   `rent_price_15_days` double(10,2) NOT NULL,
   `rent_price_45_days` double(10,2) NOT NULL,
-  `expiration_date` date NOT NULL,
+  `expiration_date` int(11) DEFAULT NULL,
   `stock` int(11) NOT NULL,
   `stock_rental` int(11) NOT NULL,
   `um` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -150,17 +150,18 @@ CREATE TABLE `items` (
   `providers_id` int(10) unsigned DEFAULT NULL,
   `brands_id` int(10) unsigned DEFAULT NULL,
   `provider_code` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `models_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `items_code_unique` (`code`),
   KEY `items_providers_id_foreign` (`providers_id`),
   KEY `items_brands_id_foreign` (`brands_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 --  Records of `items`
 -- ----------------------------
 BEGIN;
-INSERT INTO `items` VALUES ('1', null, '2016-03-16 16:18:50', '2016-04-06 13:08:50', '123456', 'Honda Cg 150 Titan New 0km Cuotas Sin Interes !!! ', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0000-00-00', '0', '0', '', null, '0.00', '0.00', '', '', '', '', '', '', '', null, null, ''), ('2', null, '2016-04-06 13:09:14', '2016-04-06 13:09:14', '534534543', 'Yamaha 1234', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0000-00-00', '0', '0', '', null, '0.00', '0.00', '', '', '', '', '', '', '', null, null, '');
+INSERT INTO `items` VALUES ('2', null, '2016-04-06 13:09:14', '2016-04-25 15:54:46', '534534543', 'Yamaha 1234', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0', '0', '0', '', null, '0.00', '0.00', '', '', '', '', '', '', '', null, '1', '', '1'), ('10', null, '2016-04-21 00:04:19', '2016-04-25 15:54:57', 'CAS1234', 'Casco Just One', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0', '0', '0', '', null, '0.00', '0.00', '', '', '', '', '', '', '', null, '1', '', '1'), ('11', null, '2016-04-25 15:00:53', '2016-04-25 15:55:05', '1d12', 'TEST', '<p>DASDASDAS&middot;!&middot;!\"&middot;!\"dasdasdpoaskdop1k34po1k3k123123</p>\r\n<p>123</p>\r\n<p>1231231</p>', '200.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0', '', null, '0.00', '0.00', '', '', '', '', '', '', 'dadadadasd-d.a.d.asd.', null, '1', '', '1'), ('16', null, '2016-04-25 15:55:34', '2016-04-25 15:55:34', 'AA', 'AA', '<p>dasds</p>', '300.00', '2000.00', '0.00', '0.00', '0.00', null, '0', '0', '', null, '0.00', '0.00', '', '', '', '', '', '', 'asdas', null, '2', '', '2');
 COMMIT;
 
 -- ----------------------------
@@ -177,7 +178,14 @@ CREATE TABLE `items_categories` (
   PRIMARY KEY (`id`),
   KEY `items_categories_items_id_foreign` (`items_id`),
   KEY `items_categories_categories_id_foreign` (`categories_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=FIXED;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=FIXED;
+
+-- ----------------------------
+--  Records of `items_categories`
+-- ----------------------------
+BEGIN;
+INSERT INTO `items_categories` VALUES ('38', null, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2', '2'), ('39', null, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2', '4'), ('40', null, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '10', '4'), ('41', null, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '11', '1'), ('42', null, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '11', '2'), ('43', null, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '16', '2'), ('44', null, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '16', '4');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `items_providers`
@@ -230,13 +238,13 @@ CREATE TABLE `models` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `name` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `models`
 -- ----------------------------
 BEGIN;
-INSERT INTO `models` VALUES ('1', '2016-03-21 15:48:50', '2016-03-21 15:48:50', null, 'CG 150 Titan');
+INSERT INTO `models` VALUES ('1', '2016-03-21 15:48:50', '2016-03-21 15:48:50', null, 'CG 150 Titan'), ('2', '2016-04-20 23:42:43', '2016-04-20 23:42:43', null, 'Just 1');
 COMMIT;
 
 -- ----------------------------
@@ -344,9 +352,17 @@ CREATE TABLE `publications` (
   `title` varchar(255) NOT NULL,
   `price` double NOT NULL,
   `items_id` int(11) NOT NULL,
-  `despcription` text NOT NULL,
+  `description` text NOT NULL,
+  `destacado` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `publications`
+-- ----------------------------
+BEGIN;
+INSERT INTO `publications` VALUES ('7', '2016-04-22 22:55:25', '2016-04-22 22:55:25', null, '2016-04-01', 'Oferta !!', '2000', '2', '', '1');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `purchases`

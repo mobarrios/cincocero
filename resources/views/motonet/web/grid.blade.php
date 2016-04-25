@@ -12,7 +12,11 @@
                             <div class="ibox-content product-box">
 
                                 <div class="product-imitation">
+<<<<<<< HEAD
+                                    <img src="{!! $i->Models->Images->first()->image or '' !!}" alt="{!! $i->name !!}">
+=======
                                     <img src="{!! $i->Items->Models->Images->first()->image or ''!!}" alt="{!! $i->title !!}">
+>>>>>>> 17a90410c5c2861ecc0725516b1788c641c33c5c
                                 </div>
                                 <div class="product-desc">
                                     <span class="product-price">

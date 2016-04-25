@@ -90,7 +90,8 @@ class ItemsController extends Controller {
     // post edit item
     public function postEdit($id,Request $request, ImagesHelper $image)
     {
-    // validation rules form repo
+
+        // validation rules form repo
         $this->validate($request, $this->rulesEdit);
 
         // method crear in repo
