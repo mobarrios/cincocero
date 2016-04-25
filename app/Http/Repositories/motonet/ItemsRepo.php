@@ -40,9 +40,9 @@ class ItemsRepo extends BaseRepo {
                 'Imagen' =>    ['data' => 'images','relation'=> null],
                 'Codigo' =>    ['data' => 'code','relation' => null],
                 'Articulo' =>  ['data' => 'name','relation' => null],
-                //'Catogorias' =>     ['data' => 'Categories','relation' => 'name'],
-                //'Modelo' =>     ['data' => 'Models','relation' => 'name'],
-
+                'Catogorias' =>['data' => 'Categories','relation' => 'name'],
+                'Modelo' =>    ['data' => 'Models','relation' => 'name'],
+                'Marca' => ['data' => 'Brands','relation' => 'name']
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],
         ];

@@ -14,13 +14,31 @@
             {!! Form::textCustom('name', 'Articulo')!!}
             {{-- Form::textCustom('detail', 'Detalle') --}}
 
-            {!! Form::selectCustom('categories_id','Categorías',$categories) !!}
+
+            <div >
+
+           @foreach($categories as $id => $name)
+               <?php $checked = false; ?>
+
+               @if(isset($model))
+                    @foreach($model->Categories as $it_cat)
+                        @if($it_cat->id == $id)
+                            <?php $checked = true ?>
+                        @endif
+                    @endforeach
+               @endif
+               <label>
+                   {{$name}}
+               </label>
+               {!! Form::checkbox('categories_id[]',$id,$checked) !!}
+
+           @endforeach
+            </div>
 
             {!! Form::selectCustom('brands_id','Marca',$brands) !!}
 
             {!! Form::selectCustom('models_id','Modelo',$modelos) !!}
 
-    {{--        {!! Form::selectCustom('provider_id','Proveedor',$providers) !!}--}}
 
             {!! Form::textAreaCustom('description','Descripción') !!}
 

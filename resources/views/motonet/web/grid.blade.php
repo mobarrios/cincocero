@@ -12,7 +12,7 @@
                             <div class="ibox-content product-box">
 
                                 <div class="product-imitation">
-                                    <img src="{!! $i->Models->Images->first()->image !!}" alt="{!! $i->name !!}">
+                                    <img src="{!! $i->Models->Images->first()->image or '' !!}" alt="{!! $i->name !!}">
                                 </div>
                                 <div class="product-desc">
                                     <span class="product-price">
