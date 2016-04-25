@@ -49,15 +49,29 @@ class webController extends Controller {
     public function find(Request $request)
     {
         if ($request->get('categories')) {
-            $cat = $this->categories->find($request->get('categories'));
-            $data['items'] = $cat->items->where('categories_id',$cat->id);
-
+            $cat = $this->categories->find($request->get('categories'))->id;
+            $data['items'] = $this->publications
+                                ->whereHas('items', function ($q) use($cat){
+                                    $q->whereHas('categories', function ($q) use ($cat){
+                                        $q->where('categories.id',$cat);
+                                    });
+                                })->get();
         } elseif ($request->get('models')){
-            $m = $this->models->find($request->get('models'));
-            $data['items'] = $this->items->where('models_id',$m->id)->get();
+            $m = $this->models->find($request->get('models'))->id;
+            $data['items'] = $this->publications
+                                ->whereHas('items',function($q) use($m) {
+                                $q->whereHas('models', function ($q) use ($m) {
+                                    $q->where('id', $m);
+                                });
+                            })->get();
         }elseif($request->get('brands')){
-            $b = $request->get('brands');
-            $data['items'] = $this->items->where('brands_id',$b)->get();
+            $b = $this->brands->find($request->get('brands'))->id;
+            $data['items'] = $this->publications
+                                ->whereHas('items',function($q) use($b) {
+                                    $q->whereHas('brands', function ($q) use ($b) {
+                                        $q->where('id', $b);
+                                    });
+                                })->get();
         }else{
             $find = $request->get('find');
             $data['items'] = $this->publications

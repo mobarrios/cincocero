@@ -5,7 +5,7 @@
     <div class="gray-bg">
         @include('motonet/web/includes/breadcrumbs')
         <div class="pt-30">
-            @if(!empty($items))
+            @if($items->count() > 0)
                 @foreach($items as $i)
                     <div class="col-md-3">
                         <div class="ibox">
@@ -36,7 +36,7 @@
                     </div>
                 @endforeach
             @else
-                <h2> Sin resultados </h2>
+                <h2 class="text-center"> Sin resultados </h2>
             @endif
         </div>
     </div>
