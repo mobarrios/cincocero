@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\MercadoLibreCategories;
 use App\Entities\motonet\Items;
 use App\Entities\motonet\Publications;
 use App\Helpers\Meli;
@@ -75,7 +76,7 @@ class PublicationsController extends Controller {
     {
         $this->data['sectionName'] = 'Publicaciones - Mercadolibre';
         $this->data['publicacion'] = Publications::find($publications_id);
-        $this->data['categorias']  = $ml->getCategories()['body'];
+        $this->data['categorias']  = MercadoLibreCategories::where('ml_main','')->get();
 
 
        /*

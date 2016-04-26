@@ -5,6 +5,7 @@ namespace App\Http\Controllers\ws;
 
 use App\Helpers\Meli;
 use App\Http\Controllers\Controller;
+use App\Entities\MercadoLibreCategories;
 
 
 class MercadolibreController extends Controller {
@@ -62,6 +63,45 @@ class MercadolibreController extends Controller {
         $categories = $this->meli->get('/categories/'.$categories_id);
 
         return response()->json($categories['body']);
+    }
+
+    public function updateCategories()
+    {
+        $categories = $this->getCategories();
+
+        foreach ($categories['body'] as $category => $k) {
+
+            $ml             = new MercadoLibreCategories();
+            $ml->ml_id      = $k->id;
+            $ml->name       = $k->name;
+            $ml->save();
+        }
+        return 'ok';
+    }
+
+    public function updateSubCategories(){
+
+        $ml_cat = MercadoLibreCategories::all();
+
+        foreach($ml_cat  as $sc){
+
+            $sub = $this->getSubCategories($sc->ml_id);
+
+            if(isset($sub->children_categories)){
+                foreach($sub->children_categories as $s)
+                {
+                    $ml             = new MercadoLibreCategories();
+                    $ml->ml_id      = $s->id;
+                    $ml->name       = $s->name;
+                    $ml->ml_main    = $sc->ml_id;
+                    $ml->save();
+                }
+            }
+
+
+        }
+
+        return 'ok';
     }
 
 }

@@ -28,6 +28,8 @@ use App\Helpers\ImagesHelper;
 Route::get('ml/{id?}', ['as'=>'ml','uses'=>'\App\Http\Controllers\ws\MercadolibreController@getItem']);
 Route::get('ml_sub_categories/{id?}','\App\Http\Controllers\ws\MercadolibreController@getSubCategories');
 
+Route::get('update_categories','\App\Http\Controllers\ws\MercadolibreController@updateCategories');
+Route::get('update_sub_categories','\App\Http\Controllers\ws\MercadolibreController@updateSubCategories');
 
 
 //Route::group(['middleware'=>'changeLanguaje'],function(){

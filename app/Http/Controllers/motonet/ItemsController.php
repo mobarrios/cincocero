@@ -127,9 +127,9 @@ class ItemsController extends Controller {
         $this->repo->edit($id,$request);
 
         $categories = $model->categories;
-        dd($categories);
+
         if($request->categories_id != 0){
-            $model->Categories()->attach($request->categories_id);
+            $model->Categories()->sync($request->categories_id);
         }
 
         // if has image uploaded

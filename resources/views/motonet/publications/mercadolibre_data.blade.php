@@ -3,17 +3,42 @@
 <div id="categories" class="row">
 
     <div class="col-xs-3" data-id="1">
-        <select size="10" class="categories form-control">
-            @foreach($categorias as  $cat => $k)
-                <option value="{{$k->id}}">{{$k->name}}</option>
-            @endforeach
-        </select>
+
+        <ul>
+        @foreach($categorias as $cat)
+            <li class="cat" data-id="{{$cat->ml_id}}">{{$cat->name}}</li>
+        @endforeach
+        </ul>
+
+
     </div>
 
 </div>
 
 @section('js')
    <script>
+
+
+       $('.cat').on('click',function(){
+
+           var id   = $(this).attr('data-id');
+           var self = $(this);
+           var li = '<li class="cat">-</li>';
+
+           $.get('ml_sub_categories/'+ id , function(data)  {
+
+               $(self).append("<ul></ul>");
+
+               $.each(data['children_categories'], function(k,v){
+
+                   $(self).find("ul").append('<li class="cat" data-id="'+v['id']+'">'+v['name']+'</li>');
+
+               });
+           });
+       });
+
+
+       /*
        var id;
        var option;
 
@@ -39,6 +64,7 @@
                });
 
            });
-       });
+       });*/
+
    </script>
 @endsection
