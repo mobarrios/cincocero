@@ -5,6 +5,7 @@ namespace App\Http\Controllers\motonet;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
 use App\Entities\motonet\Models;
+use App\Helpers\BreadCrumbHelper;
 use App\Helpers\ImagesHelper;
 use App\Http\Repositories\motonet\ItemsRepo as Repo;
 use App\Http\Controllers\Controller;
@@ -87,6 +88,32 @@ class ItemsController extends Controller {
 
     }
 
+    // get edit item
+    public function getEdit($id)
+    {
+        $bc = new BreadCrumbHelper();
+        $bc->create('Editar ' . $this->data['sectionName'], $this->data['routeEdit']);
+
+        $this->data['model'] = $this->repo->getModel()->find($id);
+
+        $cat = $this->data['model']->categories;
+        if ($cat->count() > 0){
+            $ca = 0;
+
+            foreach ($cat as $c) {
+                if($ca != 0)
+                    $ca .= ",".$c->id;
+                else
+                    $ca = $c->id;
+            }
+
+            $this->data['cat'] = $ca;
+            $this->data['cat'] = explode(',', $ca);;
+        }
+//        dd($this->data['cat']);
+        return view($this->form)->with($this->data);
+    }
+
     // post edit item
     public function postEdit($id,Request $request, ImagesHelper $image)
     {
@@ -99,6 +126,8 @@ class ItemsController extends Controller {
 
         $this->repo->edit($id,$request);
 
+        $categories = $model->categories;
+        dd($categories);
         if($request->categories_id != 0){
             $model->Categories()->attach($request->categories_id);
         }

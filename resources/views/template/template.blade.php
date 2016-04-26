@@ -39,12 +39,14 @@
     <!-- =============== IMAGEMODAL ===============-->
     <link href="assets/css/imageModal.css" rel="stylesheet" type="text/css" media="all" >
 
+    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
 
     @yield('css')
 
     <script src="assets/js/jquery-1.11.3.min.js"></script>
     <script src="assets/js/inputFile.js"></script>
     <script src="assets/js/imageModal.js"></script>
+
 
 </head>
 
@@ -129,7 +131,7 @@
 
 <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
 
-
+<script src="assets/js/bootstrap-multiselect.js"></script>
 
 
 
@@ -199,6 +201,25 @@
             }
         });
     });
+
+//    MULTISELECT
+        $('.multipleSelect').multiselect({
+            includeSelectAllOption: true,
+            buttonWidth: '100%',
+            buttonText: function(options) {
+                if (options.length == 0) {
+                    return 'Seleccionar ';
+                }
+                else {
+                    var selected = '';
+                    options.each(function() {
+                        selected += $(this).text() + ', ';
+                    });
+                    return selected.substr(0, selected.length -2);
+                }
+            }
+        });
+
 </script>
 
 </body>

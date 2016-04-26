@@ -1,5 +1,4 @@
 @extends('index')
-
     @section('content')
     <div class="panel">
         <div class="panel-body">
@@ -14,26 +13,11 @@
             {!! Form::textCustom('name', 'Articulo')!!}
             {{-- Form::textCustom('detail', 'Detalle') --}}
 
-
-            <div >
-
-           @foreach($categories as $id => $name)
-               <?php $checked = false; ?>
-
-               @if(isset($model))
-                    @foreach($model->Categories as $it_cat)
-                        @if($it_cat->id == $id)
-                            <?php $checked = true ?>
-                        @endif
-                    @endforeach
-               @endif
-               <label>
-                   {{$name}}
-               </label>
-               {!! Form::checkbox('categories_id[]',$id,$checked) !!}
-
-           @endforeach
-            </div>
+        @if(isset($cat))
+            {!! Form::selectMultipleCustom('categories_id[]','Categorías',$categories,$cat) !!}
+        @else
+            {!! Form::selectMultipleCustom('categories_id[]','Categorías',$categories) !!}
+        @endif
 
             {!! Form::selectCustom('brands_id','Marca',$brands) !!}
 
@@ -62,6 +46,7 @@
         {!! Form::close()!!}
 
          </div>
+    </div>
     @endsection
 
     @section('js')

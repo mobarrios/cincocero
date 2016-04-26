@@ -4,11 +4,12 @@ namespace App\Services\Html;
 
 class FormBuilder extends \Collective\Html\FormBuilder {
 
-    public $inputClass      = ['class'=>'form-control'];
-    public $contentClass    = 'form-group';
-    public $dateClass       = ['class'=>'form-control datepicker'];
-    public $textAreaClass   = ['class'=>'form-control mytextarea'];
-    public $colorPicker     = ['class'=>'form-control demo'];
+    public $inputClass              = ['class'=>'form-control'];
+    public $selectMultipleClass     = ['class'=>'form-control multipleSelect','multiple'];
+    public $contentClass            = 'form-group';
+    public $dateClass               = ['class'=>'form-control datepicker'];
+    public $textAreaClass           = ['class'=>'form-control mytextarea'];
+    public $colorPicker             = ['class'=>'form-control demo'];
 
 
 
@@ -44,6 +45,14 @@ class FormBuilder extends \Collective\Html\FormBuilder {
     public function selectCustom($name = null , $label = null, $entity = null)
     {
         $input = parent::select($name,['0'=>'Seleccionar'] + $entity ,null,$this->inputClass);
+
+        return $this->buildDiv( $label, $input);
+    }
+
+
+    public function selectMultipleCustom($name = null , $label = null, $entity = null, $selected = null)
+    {
+        $input = parent::select($name, $entity ,$selected,$this->selectMultipleClass);
 
         return $this->buildDiv( $label, $input);
     }
