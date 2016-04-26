@@ -151,6 +151,8 @@
 
         #local,#visitante{
             width: 49%;
+            position:absolute;
+            top:230px;
         }
 
         #visitante{
