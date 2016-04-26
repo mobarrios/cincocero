@@ -87,12 +87,26 @@ body {
         width:100%;
 
     }
+    .navbar2-default .navbar2-nav > li > a{
+        width:100%;
+    }
+
+    #myCarousel{
+        display:none;
+    }
 }
 
-@media (max-width: 991px) {
+@media (min-width: 767px) and (max-width: 991px){
+    .navbar2-nav {
+        margin-top:85px;
+
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 767px){
     .navbar2-nav {
         margin:auto;
-        margin-top:45px;
         width: 100%;
     }
 

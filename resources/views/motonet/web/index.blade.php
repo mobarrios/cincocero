@@ -10,12 +10,13 @@
 
 
                 @foreach($publications as $publication)
-                <div class="col-xs-3">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+
                     <div class="ibox">
                         <div class="ibox-content product-box">
                             <div class="ibox-title">
 
-                                <img class="thumbnail img-rounded" src="{{$publication->Items->Brands->Images->first()->image}}" width="60" height="60">
+                                <img class="thumbnail img-rounded img-responsive" src="{{$publication->Items->Brands->Images->first()->image}}" width="60" height="60">
 
                             </div>
                             <div class="product-imitation">
