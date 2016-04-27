@@ -76,7 +76,7 @@ class PublicationsController extends Controller {
     {
         $this->data['sectionName'] = 'Publicaciones - Mercadolibre';
         $this->data['publicacion'] = Publications::find($publications_id);
-//        $this->data['categorias']  = MercadoLibreCategories::where('ml_main','')->get();
+       $this->data['categorias']  = MercadoLibreCategories::where('ml_main','')->get();
 
 
        /*
