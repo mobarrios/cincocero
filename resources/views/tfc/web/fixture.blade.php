@@ -21,7 +21,7 @@
                     @foreach($fases as $fase)
 
 
-                        <div class="col-xs-6">
+                        <div class="col-xs-12">
                             <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                                 <tr>
                                     <td colspan="2" align="center" class="success">Fecha </td>

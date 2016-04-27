@@ -3838,5 +3838,15 @@ blockquote {
 }
 
 
+@media (max-width: 768px){
+    .table{
+        font-size:.7em;
+    }
+}
 
+@media (min-width: 768px) and (max-width: 992px){
+    .table{
+        font-size:.7em;
+    }
+}
 
