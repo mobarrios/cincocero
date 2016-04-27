@@ -4,10 +4,20 @@
 
     <div class="col-xs-3" data-id="1">
 
-        <ul>
-        @foreach($categorias as $cat)
-            <li class="cat" data-id="{{$cat->ml_id}}">{{$cat->name}}</li>
-        @endforeach
+        <ul class="cat">
+        {{--@foreach($categorias as $cat)--}}
+            {{--<li  data-id="{{$cat->ml_id}}">{{$cat->name}}</li>--}}
+        {{--@endforeach--}}
+            <li data-id="1">categoria 1</li>
+            <li data-id="2">categoria 2</li>
+            <li data-id="3">categoria 3</li>
+            <li data-id="4">categoria 4</li>
+            <li data-id="5">categoria 5</li>
+            <li data-id="6">categoria 6</li>
+            <li data-id="7">categoria 7</li>
+            <li data-id="8">categoria 8</li>
+            <li data-id="9">categoria 9</li>
+            <li data-id="10">categoria 10</li>
         </ul>
 
 
@@ -17,24 +27,32 @@
 
 @section('js')
    <script>
+//        var c = 0;
+        var id;
 
+       $('.cat').on('click','li',function(ev){
+           ev.stopPropagation();
+           ev.preventDefault();
+//           c++;
 
-       $('li').on('click',function(){
+//           if($(this).attr('data-id') != id){
+               id = $(this).attr('data-id');
+               var self = $(this); //self es el <li>
 
-           alert($(this).next('ul').attr('data-id'));
-           var id   = $(this).attr('data-id');
-           var self = $(this);
+               $.get('ml_sub_categories/'+ id , function(data)  {
 
-           $.get('ml_sub_categories/'+ id , function(data)  {
+                    $(self).append("<ul class='subcat'></ul>");
 
-               $(self).append("<ul></ul>");
+                   $.each(data['children_categories'], function(k,v){
 
-               $.each(data['children_categories'], function(k,v){
+    //                   $(self).find(".cat").append('<li data-id="'+v['id']+'">'+v['name']+'</li>');
+                        $(self).find(".subcat[data-id='"+v['id']+"']").html("<li data-id='12'>sub-categoria"+v['name']+"</li>");
 
-                   $(self).find("ul").append('<li class="cat" data-id="'+v['id']+'">'+v['name']+'</li>');
+                   });
+
 
                });
-           });
+//           }
        });
 
        /*
