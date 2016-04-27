@@ -19,11 +19,11 @@
    <script>
 
 
-       $('.cat').on('click',function(){
+       $('li').on('click',function(){
 
+           alert($(this).next('ul').attr('data-id'));
            var id   = $(this).attr('data-id');
            var self = $(this);
-           var li = '<li class="cat">-</li>';
 
            $.get('ml_sub_categories/'+ id , function(data)  {
 
@@ -36,7 +36,6 @@
                });
            });
        });
-
 
        /*
        var id;
