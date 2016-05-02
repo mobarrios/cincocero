@@ -69,6 +69,7 @@
         {{--<script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>--}}
         <script type="text/javascript" src="assets/web/js/imageModal.js"></script>
         <script type="text/javascript" src="assets/web/js/chosen.jquery.js"></script>
+        <script type="text/javascript" src="assets/web/js/scrollIt.js"></script>
 
 
     </head>
@@ -107,11 +108,11 @@
                                     <li><a href="#">Fùtbol 11</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Noticias <span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">Sedes</a></li>
-                            <li><a href="#">Galería</a></li>
-                            <li><a href="#">Inscripción</a></li>
-                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#" data-scroll-nav="0">Noticias <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#" data-scroll-nav="1">Sedes</a></li>
+                            <li><a href="#" data-scroll-nav="2">Galería</a></li>
+                            <li><a href="#" data-scroll-nav="3">Inscripción</a></li>
+                            <li><a href="#" data-scroll-nav="4">Contacto</a></li>
                         </ul>
 
                         <hr class="visible-xs hidden-sm hidden-md hidden-lg"/>
@@ -126,7 +127,7 @@
             </nav>
 
             <div class="container">
-                <div id="noticias" class="col-xs-12">
+                <div id="noticias" data-scroll-index="0" class="col-xs-12">
                     <h1 class="landing-header">Noticias</h1>
 
                     <div class="noticias owl-carousel owl-theme">
@@ -151,7 +152,7 @@
 
                 <hr>
 
-                <div class="col-xs-12 col-sm-6" id="sedes">
+                <div class="col-xs-12 col-sm-6" data-scroll-index="1" id="sedes">
                         <h1 class="landing-header">Sedes</h1>
 
                         <div class="sedesYgaleria owl-carousel owl-theme">
@@ -171,7 +172,7 @@
                         </div>
                     </div>
 
-                <div class="col-xs-12 col-sm-6" id="galeria">
+                <div class="col-xs-12 col-sm-6" data-scroll-index="2" id="galeria">
                         <h1 class="landing-header">Galería</h1>
 
                         <div class="sedesYgaleria owl-carousel owl-theme">
@@ -196,7 +197,7 @@
             <hr>
 
             <div class="container-fluid">
-                <div id="inscripcion" class="bg-landing">
+                <div id="inscripcion" data-scroll-index="3" class="bg-landing">
                     <h1 class="text-center text-uppercase pt-25 text-white">Participá</h1>
 
                     <div class="container">
@@ -272,7 +273,7 @@
             <hr>
 
             <div class="container">
-                <div id="contactanos" class="col-xs-12">
+                <div id="contactanos"  data-scroll-index="4" class="col-xs-12">
                     <h1 class="landing-header">Contactanos</h1>
 
                     {!! Form::open(['route'=>'postContact','class'=>'clearfix','method' => 'post','id' => 'contact-form']) !!}
@@ -376,6 +377,9 @@
             };
             $.datepicker.setDefaults($.datepicker.regional['es']);
 
+            $(function(){
+                $.scrollIt();
+            });
         </script>
     </body>
 </html>
