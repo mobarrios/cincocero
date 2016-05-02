@@ -48,10 +48,6 @@
 
 
 
-
-
-
-
     </div>
     {{--<a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">--}}
         {{--<span class="arrows fa fa-chevron-left" aria-hidden="true"></span>--}}
