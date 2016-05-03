@@ -143,6 +143,18 @@
 
         .observ{
             margin-top: -100px;
+            padding-bottom:25px;
+        }
+
+        .observ h2{
+            display:inline-block;
+            vertical-align: middle;
+            margin-top: -5px;
+        }
+
+        .observ h2:last-child{
+            margin-left: -200px;
+            padding-top:-5px;
         }
 
         .dni{
@@ -224,12 +236,9 @@
     <div class="observ">
         <h2>Observaciones</h2>
 
-        <table width="38%" cellpadding="0" cellspacing="0">
-            <tr bgcolor="#ddd !important">
-                {{--<td width="82%">Campo de Ob</td>--}}
-            </tr>
-        </table>
 
+
+        <h2>Informe del arbitro</h2>
     </div>
 
 
@@ -318,7 +327,10 @@
                         </tr>
                     @endfor
 
-
+                    <tr>
+                        <td colspan="2">Firma capitán</td>
+                        <td colspan="5" style="height: 20px;"></td>
+                    </tr>
                 </table>
 
         <table cellspacing="0" cellpadding="0" id="visitante">
@@ -380,8 +392,13 @@
                         </tr>
                     @endfor
 
+                    <tr>
+                        <td colspan="2">Firma capitán</td>
+                        <td colspan="5" style="height: 20px;"></td>
+                    </tr>
 
                 </table>
+
 
 
 
