@@ -4,8 +4,8 @@
     @include('motonet/web/includes/slider')
 
     <section id="destacados" class="gray-section contact">
-        <div class="container" >
-            <img src="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_banner_promocional_728x90.jpg" alt="" />
+        <div class="col-xs-12" >
+            <img class="img-responsive" src="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_banner_promocional_728x90.jpg" alt="" />
         </div>
 
         <div class="container">
@@ -51,7 +51,7 @@
 
             <div class="col-xs-12">
                 <a href="http://www.todopago.com.ar/promociones-vigentes">
-                    <img src="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_banner_promocional_908x515_3.jpg" alt="" />
+                    <img class="img-responsive" src="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_banner_promocional_908x515_3.jpg" alt="" />
                 </a>
             </div>
 

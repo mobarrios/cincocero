@@ -8,12 +8,14 @@ use Illuminate\Http\Request;
 
 use \App\Helpers\TodoPago\lib\Sdk as todoPago;
 use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
+use Illuminate\Support\Facades\URL;
 
 
 class TodoPagoController extends Controller {
 
     protected $mode;
     protected $autorization_code;
+    protected $security;
     protected $merchant;
     protected $operation_id;
     protected $http_header;
@@ -25,65 +27,71 @@ class TodoPagoController extends Controller {
     {
         $this->mode                 = 'test';
         $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
+        $this->security             = 'a8e7772800df4919a0c3753738659150';
         $this->merchant             =  3328;
         $this->operation_id         =  15;
-        $this->http_header          =  array('Authorization'=> $this->autorization_code);//authorization key del ambiente requerido
+        $this->http_header          =  ['Authorization'=> $this->autorization_code, 'user_agent' => 'PHPSoapClient'];//authorization key del ambiente requerido
 
     }
 
-    public function getTp()
+    public function getTp(Request $request)
     {
+
+
+
         $this->connector  =  new todoPago($this->http_header, $this->mode);
 
+        $optionsSAR_operacion = $_POST;
 
         $optionsSAR_operacion = array (
+
             'MERCHANT'=> $this->merchant,
             'OPERATIONID'=> $this->operation_id,
             'CURRENCYCODE'=> 032,
-            'AMOUNT'=>"54",
+            'AMOUNT'=> $request->price,
 
             //Datos ejemplos CS
-            'CSBTCITY'=> "Villa General Belgrano",
-            'CSSTCITY'=> "Villa General Belgrano",
+            'CSBTCITY'=> $request->city,
+            'CSSTCITY'=> $request->city,
 
             'CSBTCOUNTRY'=> "AR",
             'CSSTCOUNTRY'=> "AR",
 
-            'CSBTEMAIL'=> "todopago@hotmail.com",
-            'CSSTEMAIL'=> "todopago@hotmail.com",
+            'CSBTEMAIL'=> $request->mail,
+            'CSSTEMAIL'=> $request->mail,
 
-            'CSBTFIRSTNAME'=> "Juan",
-            'CSSTFIRSTNAME'=> "Juan",
+            'CSBTFIRSTNAME'=> $request->name,
+            'CSSTFIRSTNAME'=> $request->name,
 
-            'CSBTLASTNAME'=> "Perez",
-            'CSSTLASTNAME'=> "Perez",
+            'CSBTLASTNAME'=> $request->last_name,
+            'CSSTLASTNAME'=> $request->last_name,
 
-            'CSBTPHONENUMBER'=> "541160913988",
-            'CSSTPHONENUMBER'=> "541160913988",
+            'CSBTPHONENUMBER'=> $request->phone,
+            'CSSTPHONENUMBER'=> $request->phone,
 
-            'CSBTPOSTALCODE'=> " 1010",
-            'CSSTPOSTALCODE'=> " 1010",
+            'CSBTPOSTALCODE'=> $request->postal_code,
+            'CSSTPOSTALCODE'=> $request->postal_code,
 
-            'CSBTSTATE'=> "B",
-            'CSSTSTATE'=> "B",
+            'CSBTSTATE'=> $request->state,
+            'CSSTSTATE'=> $request->state,
 
-            'CSBTSTREET1'=> "Cerrito 740",
-            'CSSTSTREET1'=> "Cerrito 740",
+            'CSBTSTREET1'=> $request->street,
+            'CSSTSTREET1'=> $request->street,
 
             'CSBTCUSTOMERID'=> "453458",
             'CSBTIPADDRESS'=> "192.0.0.4",
             'CSPTCURRENCY'=> "ARS",
-            'CSPTGRANDTOTALAMOUNT'=> "125.38",
-            'CSMDD7'=> "",
-            'CSMDD8'=> "Y",
-            'CSMDD9'=> "",
-            'CSMDD10'=> "",
-            'CSMDD11'=> "",
-            'CSMDD12'=> "",
-            'CSMDD13'=> "",
-            'CSMDD14'=> "",
-            'CSMDD15'=> "",
-            'CSMDD16'=> "",
+            'CSPTGRANDTOTALAMOUNT'=> number_format($request->price, 2, '.', ''),
+            //'CSMDD7'=> "",
+            //'CSMDD8'=> "Y",
+            //'CSMDD9'=> "",
+            //'CSMDD10'=> "",
+            //'CSMDD11'=> "",
+            //'CSMDD12'=> "",
+            //'CSMDD13'=> "",
+            //'CSMDD14'=> "",
+            //'CSMDD15'=> "",
+            //'CSMDD16'=> "",
             'CSITPRODUCTCODE'=> "electronic_good#chocho",
             'CSITPRODUCTDESCRIPTION'=> "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
             'CSITPRODUCTNAME'=> "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
@@ -106,14 +114,13 @@ class TodoPagoController extends Controller {
             setcookie('RequestKey',$rta["RequestKey"],  time() + (86400 * 30), "/");
 
             return redirect()->to($rta["URL_Request"]);
-
         }
     }
 
     public function getSARComercio()
     {
         $optionsSAR_comercio = array (
-            'Security'      => $this->autorization_code,
+            'Security'      => $this->security,
             'EncodingMethod'=> 'XML',
             'Merchant'      => $this->merchant,
             'URL_OK'        => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/exito/operationid=$this->operation_id",
@@ -131,33 +138,34 @@ class TodoPagoController extends Controller {
 
 
         $optionsGAA = array (
-            'Security'   => $this->autorization_code,
+            'Security'   => $this->security,
             'Merchant'   => $this->merchant,
             'RequestKey' => $rk,
-            'AnswerKey'  => $request->Awnser,
+            'AnswerKey'  => $request->Answer,
         );
 
         $rta = $this->connector->getAuthorizeAnswer($optionsGAA);
 
-        dd($rta);
+        return '<h5>'.$rta['StatusMessage'].'</h5>';
+
     }
 
     public function getError(Request $request){
 
-        $this->connector    =  new todoPago($this->http_header, $this->mode);
-        $rk                 = $_COOKIE['RequestKey'];
+        $rk               = $_COOKIE['RequestKey'];
 
-        $optionsGAA = array (
-            'Security'   => $this->autorization_code,
-            'Merchant'   => $this->merchant,
+        $connector  =  new todoPago($this->http_header, $this->mode);
+
+        $optionsGAA = array(
+            'Security' => $this->security,
+            'Merchant' => $this->merchant,
             'RequestKey' => $rk,
-            'AnswerKey'  => $request->Awnser,
+            'AnswerKey' => $request->Answer
         );
 
-        $rta = $this->connector->getAuthorizeAnswer($optionsGAA);
+        $ak = $connector->getAuthorizeAnswer($optionsGAA);
 
-        dd($rta);
-
+        return '<h5>'.$ak['StatusMessage'].'</h5>';
     }
 
 
