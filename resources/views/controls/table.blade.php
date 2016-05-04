@@ -84,8 +84,8 @@
                 <a class="btn btn-sm btn-default" href="{{route($routeEdit,$model->id)}}">
                     <i class="fa fa-pencil"></i>
                 </a>
-                <a class="btn btn-sm btn-default" href="{{route($routeDel ,$model->id)}}">
-                    <i class="delete fa fa-trash"></i>
+                <a class="del btn btn-sm btn-default" href="{{route($routeDel ,$model->id)}}">
+                    <i class="fa fa-trash"></i>
                 </a>
 
             </td>
