@@ -425,7 +425,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type: text/html; UTF-8" . "\r\n";
-            $headers .= "From: tfc@thefutbolcompany.com" . "\r\n" .
+            $headers .= "From: juga@thefutbolcompany.com" . "\r\n" .
                 "Reply-To: $request->email" . "\r\n" .
 
 
@@ -434,7 +434,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
             $msg .= $request->message .'<br>';
 
 
-            if(mail('tfc@thefutbolcompany.com','Contacto desde la web',$msg,$headers))
+            if(mail('juga@thefutbolcompany.com','Contacto desde la web',$msg,$headers))
                 return "Se Envio correctamente su mail.";
             else
                 "No se pudo enviar el mail.";
