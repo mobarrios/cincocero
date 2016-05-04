@@ -6910,7 +6910,7 @@ body.landing-page {
 }
 .landing-page .carousel-caption {
     position: absolute;
-    top: 130px;
+    top: 154px;
     left: 0;
     bottom: auto;
     right: auto;
@@ -8393,7 +8393,7 @@ body.md-skin {
 
 .marca{
     position:absolute;
-    top:0;
+    top:-34px;
     left:100px;
     z-index:5;
 }

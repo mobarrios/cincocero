@@ -46,7 +46,7 @@
 <body class="landing-page">
 <div class="navbar-wrapper">
     <div class="marca">
-        <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo.jpg" alt="motonet" width="200px" class="img-responsive"></a>
+        <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo-blanco.png" alt="motonet" width="300px" class="img-responsive"></a>
     </div>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
