@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\Clients;
 use App\Entities\motonet\Models;
+use App\Entities\motonet\Operations;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -29,92 +31,110 @@ class TodoPagoController extends Controller {
         $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
         $this->security             = 'a8e7772800df4919a0c3753738659150';
         $this->merchant             =  3328;
-        $this->operation_id         =  15;
         $this->http_header          =  ['Authorization'=> $this->autorization_code, 'user_agent' => 'PHPSoapClient'];//authorization key del ambiente requerido
 
     }
 
     public function getTp(Request $request)
     {
+        $client             = Clients::where('email',$request->mail)->get();
+        $operations         = Operations::all()->last();
+
+        if($operations->count() != 0)
+            $this->operation_id = $operations->id + 1;
+        else
+            $this->operation_id = 1;
 
 
+        if($client->count() == 0) {
 
-        $this->connector  =  new todoPago($this->http_header, $this->mode);
-
-        $optionsSAR_operacion = $_POST;
-
-        $optionsSAR_operacion = array (
-
-            'MERCHANT'=> $this->merchant,
-            'OPERATIONID'=> $this->operation_id,
-            'CURRENCYCODE'=> 032,
-            'AMOUNT'=> $request->price,
-
-            //Datos ejemplos CS
-            'CSBTCITY'=> $request->city,
-            'CSSTCITY'=> $request->city,
-
-            'CSBTCOUNTRY'=> "AR",
-            'CSSTCOUNTRY'=> "AR",
-
-            'CSBTEMAIL'=> $request->mail,
-            'CSSTEMAIL'=> $request->mail,
-
-            'CSBTFIRSTNAME'=> $request->name,
-            'CSSTFIRSTNAME'=> $request->name,
-
-            'CSBTLASTNAME'=> $request->last_name,
-            'CSSTLASTNAME'=> $request->last_name,
-
-            'CSBTPHONENUMBER'=> $request->phone,
-            'CSSTPHONENUMBER'=> $request->phone,
-
-            'CSBTPOSTALCODE'=> $request->postal_code,
-            'CSSTPOSTALCODE'=> $request->postal_code,
-
-            'CSBTSTATE'=> $request->state,
-            'CSSTSTATE'=> $request->state,
-
-            'CSBTSTREET1'=> $request->street,
-            'CSSTSTREET1'=> $request->street,
-
-            'CSBTCUSTOMERID'=> "453458",
-            'CSBTIPADDRESS'=> "192.0.0.4",
-            'CSPTCURRENCY'=> "ARS",
-            'CSPTGRANDTOTALAMOUNT'=> number_format($request->price, 2, '.', ''),
-            //'CSMDD7'=> "",
-            //'CSMDD8'=> "Y",
-            //'CSMDD9'=> "",
-            //'CSMDD10'=> "",
-            //'CSMDD11'=> "",
-            //'CSMDD12'=> "",
-            //'CSMDD13'=> "",
-            //'CSMDD14'=> "",
-            //'CSMDD15'=> "",
-            //'CSMDD16'=> "",
-            'CSITPRODUCTCODE'=> "electronic_good#chocho",
-            'CSITPRODUCTDESCRIPTION'=> "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
-            'CSITPRODUCTNAME'=> "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
-            'CSITPRODUCTSKU'=> "LEVJNSL36GN#chocho",
-            'CSITTOTALAMOUNT'=> "1254.40#10.00",
-            'CSITQUANTITY'=> "1#1",
-            'CSITUNITPRICE'=> "1254.40#15.00"
-        );
-
-
-        $rta = $this->connector->sendAuthorizeRequest($this->getSARComercio() , $optionsSAR_operacion);
-
-
-        if($rta['StatusCode'] != -1) {
-
-            var_dump($rta);
-
-        } else {
-
-            setcookie('RequestKey',$rta["RequestKey"],  time() + (86400 * 30), "/");
-
-            return redirect()->to($rta["URL_Request"]);
+            $client              = new Clients();
+            $client->name        = $request->name;
+            $client->last_name   = $request->last_name;
+            $client->email        = $request->email;
+            $client->phone       = $request->phone;
+         
+            $client->save();
         }
+
+
+            $this->connector = new todoPago($this->http_header, $this->mode);
+
+            $optionsSAR_operacion = $_POST;
+
+            $optionsSAR_operacion = array(
+
+                'MERCHANT' => $this->merchant,
+                'OPERATIONID' => $this->operation_id,
+                'CURRENCYCODE' => 032,
+                'AMOUNT' => $request->price,
+
+                //Datos ejemplos CS
+                'CSBTCITY' => $request->city,
+                'CSSTCITY' => $request->city,
+
+                'CSBTCOUNTRY' => "AR",
+                'CSSTCOUNTRY' => "AR",
+
+                'CSBTEMAIL' => $client->email,
+                'CSSTEMAIL' => $client->email,
+
+                'CSBTFIRSTNAME' => $client->name,
+                'CSSTFIRSTNAME' => $client->name,
+
+                'CSBTLASTNAME' => $client->last_name,
+                'CSSTLASTNAME' => $client->last_name,
+
+                'CSBTPHONENUMBER' => $client->phone,
+                'CSSTPHONENUMBER' => $client->phone,
+
+                'CSBTPOSTALCODE' => $request->postal_code,
+                'CSSTPOSTALCODE' => $request->postal_code,
+
+                'CSBTSTATE' => $request->state,
+                'CSSTSTATE' => $request->state,
+
+                'CSBTSTREET1' => $request->street,
+                'CSSTSTREET1' => $request->street,
+
+                'CSBTCUSTOMERID' => $client->id,
+                'CSBTIPADDRESS' => '127.0.0.1',
+                'CSPTCURRENCY' => "ARS",
+                'CSPTGRANDTOTALAMOUNT' => number_format($request->price, 2, '.', ''),
+                //'CSMDD7'=> "",
+                //'CSMDD8'=> "Y",
+                //'CSMDD9'=> "",
+                //'CSMDD10'=> "",
+                //'CSMDD11'=> "",
+                //'CSMDD12'=> "",
+                //'CSMDD13'=> "",
+                //'CSMDD14'=> "",
+                //'CSMDD15'=> "",
+                //'CSMDD16'=> "",
+                'CSITPRODUCTCODE' => "electronic_good#chocho",
+                'CSITPRODUCTDESCRIPTION' => "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
+                'CSITPRODUCTNAME' => "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
+                'CSITPRODUCTSKU' => "LEVJNSL36GN#chocho",
+                'CSITTOTALAMOUNT' => "1254.40#10.00",
+                'CSITQUANTITY' => "1#1",
+                'CSITUNITPRICE' => "1254.40#15.00"
+            );
+
+
+            $rta = $this->connector->sendAuthorizeRequest($this->getSARComercio(), $optionsSAR_operacion);
+
+            if ($rta['StatusCode'] != -1) {
+
+                var_dump($rta);
+
+            } else {
+
+                setcookie('client_id',$client->id);
+                setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), "/");
+
+                return redirect()->to($rta["URL_Request"]);
+            }
+
     }
 
     public function getSARComercio()
@@ -133,6 +153,7 @@ class TodoPagoController extends Controller {
     public function getExito(Request $request){
 
         $rk               = $_COOKIE['RequestKey'];
+        $client_id        = $_COOKIE['client_id'];
 
         $this->connector  =  new todoPago($this->http_header, $this->mode);
 
@@ -146,7 +167,22 @@ class TodoPagoController extends Controller {
 
         $rta = $this->connector->getAuthorizeAnswer($optionsGAA);
 
-        return '<h5>'.$rta['StatusMessage'].'</h5>';
+
+
+        $operation                    = new Operations();
+        $operation->id                = $rta['Payload']['Answer']['OPERATIONID'];
+        $operation->clients_id        = $client_id;
+        $operation->medio_de_pago     = 1;
+        //$operation->pay_date        = $rta['Payload']['Answer']['DATETIME'];
+        $operation->amount            = $rta['Payload']['Request']['AMOUNT'];
+        $operation->authorization_key = $rta['AuthorizationKey'];
+        $operation->authorization_code= $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
+        $operation->save();
+
+
+
+
+        return redirect()->to('success_pay')->withErrors($rta['StatusMessage']);
 
     }
 

@@ -77,7 +77,7 @@
         <div class="col-xs-6">
             <div class="form-group">
                 <label>E-MAIL</label>
-                <input class="form-control" name="mail" placeholder="E-MAIL" type="text" required="required">
+                <input class="form-control" name="email" placeholder="E-MAIL" type="text" required="required">
             </div>
         </div>
         <div class="col-xs-6">
