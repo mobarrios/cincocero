@@ -142,8 +142,11 @@
         }
 
         .observ{
-            margin-top: -100px;
+            margin-top: 0;
             padding-bottom:25px;
+            display:block;
+            position:absolute;
+            bottom: 0;
         }
 
         .observ h2{
@@ -164,19 +167,21 @@
         #local,#visitante{
             width: 49%;
             position:absolute;
-            top:230px;
+            top:160px;
         }
 
         #visitante{
             position: absolute;
             right: 0;
-            top: 230px;
         }
 
         #local .nombre,#visitante .nombre{
             text-transform: lowercase !important;
         }
 
+        .partido{
+            margin-top:-100px;
+        }
     </style>
 
 </head>
@@ -233,14 +238,7 @@
         </div>
 
     </div>
-    <div class="observ">
-        <h2>Observaciones</h2>
-
-
-
-        <h2>Informe del arbitro</h2>
-    </div>
-
+    <div class="partido">
 
     <h1>Grilla TFC - Partido del Día</h1>
 
@@ -264,6 +262,7 @@
             </tr>
 
         </table>
+    </div>
 
 
 
@@ -399,6 +398,13 @@
 
                 </table>
 
+    <div class="observ">
+        <h2>Observaciones</h2>
+
+
+
+        <h2>Informe del arbitro</h2>
+    </div>
 
 
 
