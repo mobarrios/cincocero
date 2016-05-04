@@ -5266,11 +5266,25 @@ del {
     width: 100%;
     left: 0;
 }
+
+.navbar2.fixed-top img{
+    display:inline-block;
+    padding-right: 15px;
+    width:auto;
+    height:48px;
+    vertical-align: middle;
+    float:left;
+}
+
 .navbar2{
     position:inherit;
     z-index:0;
     top:auto;
     left:auto;
+}
+
+.navbar2 img{
+    display:none;
 }
 
 .cart-product-imitation {
@@ -6896,7 +6910,7 @@ body.landing-page {
 }
 .landing-page .carousel-caption {
     position: absolute;
-    top: 130px;
+    top: 154px;
     left: 0;
     bottom: auto;
     right: auto;
@@ -8377,6 +8391,14 @@ body.md-skin {
     padding-bottom: 15px;
 }
 
+.marca{
+    position:absolute;
+    top:-34px;
+    left:100px;
+    z-index:5;
+}
+
+
 #inSlider{
     /*margin-top:5px;*/
     /*padding-bottom:15px;*/
@@ -8414,6 +8436,11 @@ body.md-skin {
 .landing-page .navbar-scroll .redes ul li .fa:active{
     color: #0187CE;
 }
+
+.landing-page .navbar-scroll{
+    height: 150px;
+}
+
 
 .landing-page .navbar-scroll .redes ul li .fa{
     margin-top:155px;

@@ -45,11 +45,11 @@
 </head>
 <body class="landing-page">
 <div class="navbar-wrapper">
+    <div class="marca">
+        <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo-blanco.png" alt="motonet" width="300px" class="img-responsive"></a>
+    </div>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-header page-scroll col-xs-pull-left">
-                <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo.jpg" alt="motonet" width="100px" class="img-responsive"></a>
-            </div>
             <div class="redes">
                 <ul>
                     <li><a href="https://www.facebook.com/motonetonline?ref=hl" target="_blank" class="fa fa-facebook-square"></a></li>
@@ -153,7 +153,7 @@
         var docElem = document.documentElement,
                 header = document.querySelector( '.navbar-default' ),
                 didScroll = false,
-                changeHeaderOn = 350;
+                changeHeaderOn = 250;
         function init() {
             window.addEventListener( 'scroll', function( event ) {
                 if( !didScroll ) {
