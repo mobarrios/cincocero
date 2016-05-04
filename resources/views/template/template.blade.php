@@ -19,7 +19,7 @@
     <!-- WHIRL (spinners)-->
     <link rel="stylesheet" href="assets/angle/vendor/whirl/dist/whirl.css">
     <!-- =============== PAGE VENDOR STYLES ===============-->
-
+    <link rel="stylesheet" href="assets/angle/vendor/sweetalert/dist/sweetalert.css">
 
     <!-- =============== BOOTSTRAP STYLES ===============-->
     <link rel="stylesheet" href="assets/angle/css/bootstrap.css" id="bscss">
@@ -67,7 +67,7 @@
     <section>
         <!-- Page content-->
         <div class="content-wrapper">
-
+            <a id="swal-demo1" href="" class="btn btn-primary">Try me!</a>
             <h3>{{$sectionName}} </h3>
             <div class="row">
                 @yield('content')
@@ -109,6 +109,7 @@
 <script src="assets/angle/js/demo/demo-rtl.js"></script>
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
 
+<script src="assets/angle/vendor/sweetalert/dist/sweetalert.min.js"></script>
 <!-- =============== APP SCRIPTS ===============-->
 <script src="assets/angle/js/app.js"></script>
 
@@ -133,6 +134,26 @@
 
 @yield('js')
 <script>
+
+    $('.del').on('click',function(ev){
+        ev.preventDefault();
+
+        var del = $(this);
+        swal({
+            title: "Eliminar Elemento!",
+            text: "Esta seguro que desea eliminar este Registro ?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Si, Borrar!",
+            closeOnConfirm: false
+        },
+                function(isConfirm) {
+            if (isConfirm) {
+                $(location).attr("href",$(del).attr("href"));
+            }
+        });
+    });
 
     if ($('#msg').length){
 
