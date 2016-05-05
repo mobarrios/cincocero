@@ -19,6 +19,7 @@ class ItemsRepo extends BaseRepo {
             'code'   => 'required|unique:items,code',
             'name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'models_id'=> 'required',
 
         ];
     }
@@ -28,6 +29,7 @@ class ItemsRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'models_id' => 'required',
         ];
     }
 

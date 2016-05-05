@@ -12,6 +12,17 @@
 
                 {!! Form::dateCustom('publication_date', 'Fecha de Publicacíon')!!}
 
+                <label>Modelo</label>
+                <select name='models_id' class="form-control">
+                    @foreach($brands as $br)
+                        <optgroup label="{{$br->name}}">
+                            @foreach($br->Models as $m)
+                                <option value="{{$m->id}}">{{$m->name}}</option>
+                            @endforeach
+                        </optgroup>
+                    @endforeach
+                </select>
+
                 {!! Form::textCustom('title', 'Titulo')!!}
 
                 {!! Form::textCustom('price','Importe $')!!}
@@ -21,8 +32,9 @@
                 {!! Form::fileCustom('image','Imagen')!!}
 
 
+                <!--
                 <table class="table table-striped">
-                    @foreach($items as $item)
+                   {{-- @foreach($items as $item)
                         <tr>
                             <td>
                                 {!! Form::radio('items_id',$item->id)!!}
@@ -32,8 +44,9 @@
                             <td>$ {{$item->cost_price}}</td>
                         </tr>
                     @endforeach
+                    --}}
                 </table>
-
+                -->
             <hr>
 
                 <div class="checkbox c-checkbox pull-left mt0">

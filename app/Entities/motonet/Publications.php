@@ -7,7 +7,7 @@ class Publications extends Entity{
 
     protected $table = 'publications';
 
-    protected $fillable = ['publication_date','title','price','items_id','description','destacado'];
+    protected $fillable = ['publication_date','title','price','models_id','description','destacado'];
 
 
     public function getPublicationDateAttribute($value)
@@ -26,6 +26,11 @@ class Publications extends Entity{
     public function Items()
     {
         return $this->belongsTo(Items::getClass());
+    }
+
+    public function Models()
+    {
+        return $this->belongsTo(Models::getClass());
     }
 
 }

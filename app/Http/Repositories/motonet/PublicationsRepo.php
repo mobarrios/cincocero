@@ -17,9 +17,9 @@ class PublicationsRepo extends BaseRepo {
     {
         return [
            // 'code'   => 'required|unique:items,code',
-            'title'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
-            'items_id'=>'required'
+            'title'     => 'required',
+            'image'    => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'models_id'=>'required'
 
         ];
     }
@@ -27,8 +27,10 @@ class PublicationsRepo extends BaseRepo {
     public function RulesEdit($id = null)
     {
         return [
-            'title'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'title'    => 'required',
+            'image'    => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'models_id'=>'required'
+
         ];
     }
 
@@ -41,7 +43,7 @@ class PublicationsRepo extends BaseRepo {
                 'Imagen' =>    ['data' => 'images','relation'=> null],
                 'Titulo' =>    ['data' => 'title','relation' => null],
                 '$' =>  ['data' => 'price','relation' => null],
-                'Articulo' =>     ['data' => 'Items','relation' => 'name'],
+                'Articulo' =>     ['data' => 'models_id','relation' => null],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

@@ -14,6 +14,8 @@
 
             {!! Form::fileCustom('image','Foto')!!}
 
+            {!! Form::selectCustom('brands_id','Marca',$brands) !!}
+
         </div>
 
         <div class="panel-footer">

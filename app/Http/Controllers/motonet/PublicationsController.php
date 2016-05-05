@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\motonet;
 
 use App\Entities\MercadoLibreCategories;
+use App\Entities\motonet\Brands;
 use App\Entities\motonet\Items;
 use App\Entities\motonet\Publications;
 use App\Helpers\Meli;
@@ -54,7 +55,9 @@ class PublicationsController extends Controller {
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
         //$this->data['currency']        = Currency::lists('name','id');
-        $this->data['items']             = Items::all();
+        //$this->data['items']             = Items::all();
+        $this->data['brands']            = Brands::with('Models')->get();
+
 
 
         //data for validation

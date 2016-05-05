@@ -20,18 +20,18 @@
                         <div class="ibox-content product-box">
                             <div class="ibox-title">
 
-                                <img class="thumbnail img-rounded img-responsive" src="{{$publication->Items->Brands->Images->first()->image}}" width="60" height="60">
+                                <img class="thumbnail img-rounded img-responsive" src="{{$publication->Models->Brands->Images->first()->image }}" width="60" height="60">
 
                             </div>
                             <div class="product-imitation">
-                                <img src="{{$publication->Items->Images->first()->image}}" alt="foto">
+                                <img src="{{$publication->Models->Images->first()->image}}  " alt="foto">
                             </div>
 
                             <div class="product-desc">
                                     <span class="product-price">
                                         ${{$publication->price}}
                                     </span>
-                                <small class="text-muted">{{$publication->Items->Categories->first()->name}}</small>
+                                <small class="text-muted">{{$publication->Models->name}}</small>
                                 <h2 class="product-name"> {{$publication->title}}</h2>
 
                                 <div class="m-t text-righ">

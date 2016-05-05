@@ -59,7 +59,7 @@
 
                             <td>{{$model->publication_date}}</td>
                             <td>{{$model->title}}</td>
-                            <td>{{$model->Items->name}}</td>
+                            <td>{{$model->Models->Brands->name}} |  {{$model->Models->name}}</td>
                             <td>
                                 @if($model->destacado)
                                     <label class="label label-success">Aviso Destacado</label>

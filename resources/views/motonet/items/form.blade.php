@@ -19,9 +19,16 @@
             {!! Form::selectMultipleCustom('categories_id[]','Categorías',$categories) !!}
         @endif
 
-            {!! Form::selectCustom('brands_id','Marca',$brands) !!}
-
-            {!! Form::selectCustom('models_id','Modelo',$modelos) !!}
+        <label>Modelo</label>
+        <select name='models_id' class="form-control">
+            @foreach($brands as $br)
+                <optgroup label="{{$br->name}}">
+                    @foreach($br->Models as $m)
+                            <option value="{{$m->id}}">{{$m->name}}</option>
+                    @endforeach
+                </optgroup>
+            @endforeach
+        </select>
 
 
             {!! Form::textAreaCustom('description','Descripción') !!}

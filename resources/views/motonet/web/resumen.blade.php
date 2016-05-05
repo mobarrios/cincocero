@@ -43,7 +43,7 @@
                                     <tr>
                                         <td width="90">
                                             <div class="cart-product-imitation">
-                                                <img src="{!! $publication->Items->Models->Images->first()->image or ''!!}" alt="{!! $publication->title !!}" class="img-responsive">
+                                                <img src="{!! $publication->Models->Images->first()->image or ''!!}" alt="{!! $publication->title !!}" class="img-responsive">
                                             </div>
                                         </td>
                                         <td class="desc col-xs-11">
@@ -54,7 +54,7 @@
                                             </h3>
                                             <dl class="small m-b-none">
                                                 <dt>Descripción</dt>
-                                                <h4><strong>{!! $publication->Items->Brands->name !!}</strong> - {!! $publication->Items->Models->name !!}</h4>
+                                                <h4><strong>{!! $publication->Models->Brands->name !!}</strong> - {!! $publication->Models->name !!}</h4>
                                             </dl>
                                         </td>
 
@@ -177,7 +177,6 @@
                                             <div class="row">
 
 
-                                                   @include('motonet.web.payment.form_todo_pago')
 
 
 

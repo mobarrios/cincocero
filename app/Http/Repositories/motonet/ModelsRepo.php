@@ -19,6 +19,7 @@ class ModelsRepo extends BaseRepo {
            // 'code'   => 'required|unique:items,code',
             'name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'brands_id' => 'required',
 
         ];
     }
@@ -28,6 +29,8 @@ class ModelsRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'brands_id' => 'required',
+
         ];
     }
 
@@ -38,8 +41,8 @@ class ModelsRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'Imagen' =>    ['data' => 'images','relation'=> null],
-                //'Codigo' =>    ['data' => 'code','relation' => null],
-                'Modelo' =>  ['data' => 'name','relation' => null],
+                'Marca'  =>    ['data' => 'Brands','relation' => 'name'],
+                'Modelo' =>    ['data' => 'name','relation' => null],
                 //'Marca' =>     ['data' => 'Brands','relation' => 'name'],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],

@@ -45,9 +45,12 @@ class ItemsController extends Controller {
         $this->data['entityImg']        = 'items';
 
         //selects
-        $this->data['brands']           = Brands::lists('name','id');
+        $this->data['brands']           = Brands::with('Models')->get();
+
+
+
         $this->data['categories']       = Categories::lists('name','id');
-        $this->data['modelos']           = Models::lists('name','id');
+        $this->data['modelos']          = Models::lists('name','id');
 //        $this->data['providers']           = Providers::lists('name','id');
 
         //data for validation

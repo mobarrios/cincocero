@@ -14,5 +14,10 @@ class Brands extends Entity{
         return $this->hasMany(Items::getClass());
     }
 
+    public function Models()
+    {
+        return $this->hasMany(Models::getClass());
+    }
+
 
 }

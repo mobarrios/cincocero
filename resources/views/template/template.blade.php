@@ -69,7 +69,6 @@
     <section>
         <!-- Page content-->
         <div class="content-wrapper">
-            <a id="swal-demo1" href="" class="btn btn-primary">Try me!</a>
             <h3>{{$sectionName}} </h3>
             <div class="row">
                 @yield('content')

@@ -43,8 +43,8 @@
                                 <div class="col-md-5">
                                     <div class="product-images">
 
-                                        @if($publication->Images->count() != 0)
-                                            @foreach($publication->Images as $img)
+                                        @if($publication->Models->Images->count() != 0)
+                                            @foreach($publication->Models->Images as $img)
                                                 <div class="panel3 panel-default">
                                                     <div class="panel3-body image-imitation">
                                                         <a href="{!! $img->image !!}" title="{!! $publication->title !!}" class="zoom" data-title="{!! $publication->title !!}" data-type="image" data-toggle="lightbox">
@@ -70,41 +70,20 @@
                                     <h2 class="font-bold m-b-xs">
                                         {!! $publication->title !!}
                                     </h2>
-                                    <small>{!! $publication->Items->code !!}
+                                    <small>123
                                         <br></small>
                                     <div class="m-t-md">
                                         <h2 class="product-main-price">${!! $publication->price !!}</h2>
                                     </div>
                                     <hr>
 
-                                    <h4>{!! $publication->Items->Brands->name !!}</h4>
+                                    <h4>{!! $publication->Models->Brands->name !!}</h4>
 
                                     <div class="small text-muted">
-                                        {!! $publication->Items->Models->name!!}
+                                        {!! $publication->Models->name!!}
                                     </div>
                                     <dl class="small m-t-md">
-                                        @if($publication->Items->total_weight != "")
-                                            <dt>Peso total: {!! $publication->Items->total_weight !!}</dt>
-                                        @endif
-                                        @if($publication->Items->maximum_weight != "")
-                                            <dt>Peso máximo: {!! $publication->Items->maximum_weight!!}</dt>
-                                        @endif
-                                        @if($publication->Items->size != "")
-                                            <dt>Tamaño: {!! $publication->Items->size!!}</dt>
-                                        @endif
-                                        @if($publication->Items->dimensions!= "")
-                                            <dt>Tamaño: {!! $publication->dimensions!!}</dt>
-                                        @endif
-                                        @if($publication->Items->presentation!= "")
-                                            <dt>Tamaño: {!! $publication->Items->presentation!!}</dt>
-                                        @endif
-                                        @if($publication->Items->bodega!= "")
-                                            <dt>Tamaño: {!! $publication->Items->bodega!!}</dt>
-                                        @endif
-                                        @if($publication->Items->observaciones!= "")
-                                            <dt>Tamaño: {!! $publication->Items->observaciones!!}</dt>
-                                        @endif
-                                    </dl>
+
                                     <hr>
 
                                     <div>
@@ -120,6 +99,13 @@
 
                                 <div class="small text-muted">
                                     {!! $publication->description !!}
+                                </div>
+                                <div class="panel3 panel-default">
+                                    <div class="panel3-body image-imitation">
+                                            <img src="{!! $publication->Images->first()->image !!}" alt="{!! $publication->title !!}">
+                                            <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
+
+                                    </div>
                                 </div>
                             @endif
                         </div>
