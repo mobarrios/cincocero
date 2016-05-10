@@ -17,9 +17,10 @@ class ItemsRepo extends BaseRepo {
     {
         return [
             'code'   => 'required|unique:items,code',
-            'name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
             'models_id'=> 'required',
+            'n_motor' => 'required',
+            'n_chasis' => 'required',
 
         ];
     }
@@ -27,7 +28,6 @@ class ItemsRepo extends BaseRepo {
     public function RulesEdit($id = null)
     {
         return [
-            'name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
             'models_id' => 'required',
         ];
@@ -41,11 +41,13 @@ class ItemsRepo extends BaseRepo {
             [
                 'Imagen' =>    ['data' => 'images','relation'=> null],
                 'Codigo' =>    ['data' => 'code','relation' => null],
-                'Articulo' =>  ['data' => 'name','relation' => null],
-                'Catogorias' =>['data' => 'Categories','relation' => 'name'],
+              //  'Articulo' =>  ['data' => 'name','relation' => null],
                 'Modelo' =>    ['data' => 'Models','relation' => 'name'],
-                'Marca' => ['data' => 'Brands','relation' => 'name']
-                //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
+                'Marca' => ['data' => 'Marca','relation' => null],
+                'Sucursal' =>['data' => 'Branches','relation' => 'name'],
+                'Motor' =>['data' => 'n_motor','relation' => null],
+                'Chasis' =>['data' => 'n_chasis','relation' => null],
+
             ],
         ];
 

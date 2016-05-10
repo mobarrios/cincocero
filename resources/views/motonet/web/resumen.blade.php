@@ -28,14 +28,11 @@
 
             <div class="row">
                 <div class="col-md-9">
-
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Tu compra</h5>
                         </div>
                         <div class="ibox-content">
-
-
                             <div class="table-responsive">
                                 <table class="table shoping-cart-table">
 
@@ -73,13 +70,11 @@
 
                         </div>
                     </div>
-
                 </div>
                 <div class="col-md-3">
-
                     <div class="ibox">
                         <div class="ibox-title">
-                            <h5>Pedido</h5>
+                            <h5>Importe</h5>
                         </div>
                         <div class="ibox-content">
                             <div class="col-xs-6">
@@ -94,7 +89,7 @@
                                 <span>
                                     Seña
                                 </span>
-                                <h2 class="font-bold">
+                                <h2>
                                     ${!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)!!}
                                 </h2>
                             </div>
@@ -105,86 +100,30 @@
                             </span>
                         </div>
                     </div>
-
-                    <div class="ibox">
-                        <div class="ibox-title">
-                            <h5>Soporte</h5>
-                        </div>
-                        <div class="ibox-content text-center">
-
-
-
-                            <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
-                            <span class="small">
-                                Si algo no salió bien, podes contactarnos.
-                            </span>
-
-
-                        </div>
-                    </div>
-
+                </div>
             </div>
 
-
-
-
-
-        </div>
-
-
-
-
             <div class="row">
-
-                <div class="col-lg-12">
-
+                <div class="col-lg-9">
                     <div class="ibox">
                         <div class="ibox-title">
-                            Payment method
+                            <h3>Datos Personales</h3>
                         </div>
                         <div class="ibox-content">
 
-                            <div class="panel-group payments-method" id="accordion">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <div class="pull-right">
-                                            <img src="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_boton_72x30_1.jpg" alt="" />
-                                        </div>
-                                        <h5 class="panel-title">
-                                            <a aria-expanded="false" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">TodoPago</a>
-                                        </h5>
-                                    </div>
-                                    <div style="height: 0px;" aria-expanded="false" id="collapseOne" class="panel-collapse collapse">
-                                        <div class="panel-body">
 
-                                            @include('motonet.web.payment.form_todo_pago')
-
-                                        </div>
-                                    </div>
+                            @if($errors->any())
+                                <div class="alert alert-success">
+                                    @foreach($errors->all() as $error)
+                                            <p class="error">{{$error}}</p>
+                                    @endforeach
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <div class="pull-right">
-                                            <i class="icon icon-mp text-success"></i>
-                                        </div>
-                                        <h5 class="panel-title">
-                                            <a class="collapsed" aria-expanded="false" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">MercadoPago</a>
-                                        </h5>
-                                    </div>
-                                    <div style="height: 0px;" aria-expanded="false" id="collapseTwo" class="panel-collapse collapse">
-                                        <div class="panel-body">
+                            @endif
 
-                                            <div class="row">
+                            <div class="row">
 
+                                    @include('motonet.web.payment.form_pago')
 
-
-
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
@@ -192,7 +131,19 @@
                     </div>
 
                 </div>
-
+                <div class="col-xs-3">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>Soporte</h5>
+                        </div>
+                        <div class="ibox-content text-center">
+                            <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
+                                <span class="small">
+                                    Si algo no salió bien, podes contactarnos.
+                                </span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 

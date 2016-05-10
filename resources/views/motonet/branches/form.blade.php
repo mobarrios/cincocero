@@ -14,13 +14,7 @@
 
             {!! Form::fileCustom('image','Foto')!!}
 
-            {!! Form::selectCustom('brands_id','Marca',$brands) !!}
 
-                @if(isset($cat))
-                    {!! Form::selectMultipleCustom('categories_id[]','Categorías',$categories,$cat) !!}
-                @else
-                    {!! Form::selectMultipleCustom('categories_id[]','Categorías',$categories) !!}
-                @endif
 
         </div>
 

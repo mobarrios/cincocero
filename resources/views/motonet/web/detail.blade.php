@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="panel3 panel-default">
                                     <div class="panel3-body image-imitation">
-                                            <img src="{!! $publication->Images->first()->image !!}" alt="{!! $publication->title !!}">
+                                            <img src="{!! $publication->Images->first()->image or '' !!}" alt="{!! $publication->title !!}">
                                             <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
 
                                     </div>

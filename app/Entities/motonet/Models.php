@@ -20,4 +20,9 @@ class Models extends Entity{
         return $this->hasMany(Publications::getClass());
     }
 
+    public function Categories()
+    {
+        return $this->belongsToMany(Categories::getClass(),'models_categories');
+    }
+
 }

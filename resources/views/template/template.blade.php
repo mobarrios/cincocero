@@ -138,6 +138,42 @@
 
 @yield('js')
 <script>
+
+    $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
+
+    var Notification = window.Notification || window.mozNotification || window.webkitNotification;
+
+    Notification.requestPermission(function (permission) {
+        //console.log(permission);
+    });
+
+    function desk_notification(title, message)
+    {
+        window.setTimeout(function () {
+            var instance = new Notification(
+                    title, {
+                        body: message,
+                        icon: 'assets/images/nav_stock_logo.png'
+                    }
+            );
+
+            instance.onclick = function () {
+                // Something to do
+            };
+            instance.onerror = function () {
+                // Something to do
+            };
+            instance.onshow = function () {
+                // Something to do
+            };
+            instance.onclose = function () {
+                // Something to do
+            };
+        }, 1000);
+
+        return false;
+    }
+
     tinymce.init({
         plugins: "textcolor",
         statusbar: false,

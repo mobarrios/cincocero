@@ -10,17 +10,12 @@
         @endif
 
             {!! Form::textCustom('code', 'Codigo')!!}
-            {!! Form::textCustom('name', 'Articulo')!!}
             {{-- Form::textCustom('detail', 'Detalle') --}}
 
-        @if(isset($cat))
-            {!! Form::selectMultipleCustom('categories_id[]','Categorías',$categories,$cat) !!}
-        @else
-            {!! Form::selectMultipleCustom('categories_id[]','Categorías',$categories) !!}
-        @endif
 
         <label>Modelo</label>
         <select name='models_id' class="form-control">
+            <option value="0">Seleccionar</option>
             @foreach($brands as $br)
                 <optgroup label="{{$br->name}}">
                     @foreach($br->Models as $m)
@@ -30,8 +25,12 @@
             @endforeach
         </select>
 
+            {!! Form::selectCustom('branches_id','Sucursal',$branches) !!}
+            {!! Form::textCustom('n_motor', 'Nro. Motor')!!}
 
-            {!! Form::textAreaCustom('description','Descripción') !!}
+            {!! Form::textCustom('n_chasis', 'Nro. Chasis')!!}
+
+
 
             {!! Form::textCustom('cost_price', 'Precio de costo')!!}
 

@@ -72,7 +72,9 @@
                                     <li class="divider"></li>
                                     @if(\App\Entities\motonet\Categories::count() != 0)
                                         @foreach(\App\Entities\motonet\Categories::all() as $c)
-                                            <li><a href="{!! route('productFind',['categories' => $c->id]) !!}">{!! $c->name !!}</a></li>
+                                            <li><a href="{!! route('productFind',['categories' => $c->id]) !!}">{!! $c->name !!} 
+                                                </a>
+                                            </li>
                                         @endforeach
                                     @endif
                                 </ul>

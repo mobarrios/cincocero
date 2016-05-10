@@ -50,24 +50,29 @@ class webController extends Controller {
     {
         if ($request->get('categories')) {
             $cat = $this->categories->find($request->get('categories'))->id;
+
             $data['items'] = $this->publications
-                                ->whereHas('items', function ($q) use($cat){
+                                ->whereHas('models', function ($q) use($cat){
                                     $q->whereHas('categories', function ($q) use ($cat){
                                         $q->where('categories.id',$cat);
                                     });
                                 })->get();
+
         } elseif ($request->get('models')){
             $m = $this->models->find($request->get('models'))->id;
-            $data['items'] = $this->publications
+            /*$data['items'] = $this->publications
                                 ->whereHas('items',function($q) use($m) {
                                 $q->whereHas('models', function ($q) use ($m) {
                                     $q->where('id', $m);
                                 });
                             })->get();
+            */
+            $data['items'] = $this->publications->where('models_id',$m)->get();
+
         }elseif($request->get('brands')){
             $b = $this->brands->find($request->get('brands'))->id;
             $data['items'] = $this->publications
-                                ->whereHas('items',function($q) use($b) {
+                                ->whereHas('models',function($q) use($b) {
                                     $q->whereHas('brands', function ($q) use ($b) {
                                         $q->where('id', $b);
                                     });
@@ -76,20 +81,20 @@ class webController extends Controller {
             $find = $request->get('find');
             $data['items'] = $this->publications
                                 ->where('title','like','%'.$find.'%')
-                                ->orWhereHas('items',function($q) use($find){
+                                ->orWhereHas('models',function($q) use($find){
                                     $q->whereHas('categories',function($q) use($find) {
                                         $q->where('name', 'like', '%' . $find . '%');
                                     });
                                 })
-                                ->orWhereHas('items',function($q) use($find){
+                                ->orWhereHas('models',function($q) use($find){
                                     $q->whereHas('brands',function($q) use($find) {
                                         $q->where('name','like','%'.$find.'%');
                                     });
                                 })
-                                ->orWhereHas('items',function($q) use($find){
-                                    $q->whereHas('models',function($q) use($find) {
+                                ->orWhereHas('models',function($q) use($find){
+
                                         $q->where('name','like','%'.$find.'%');
-                                    });
+
                                 })
                                 ->get();
         }

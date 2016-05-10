@@ -2,14 +2,14 @@
 
 namespace App\Http\Repositories\motonet;
 
-use App\Entities\motonet\Models;
+use App\Entities\motonet\Branches;
 use App\Http\Repositories\BaseRepo;
 
-class ModelsRepo extends BaseRepo {
+class BranchesRepo extends BaseRepo {
 
     public function getModel()
     {
-        return new Models();
+        return new Branches();
     }
 
 
@@ -19,8 +19,8 @@ class ModelsRepo extends BaseRepo {
            // 'code'   => 'required|unique:items,code',
             'name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
-            'brands_id' => 'required',
-            'categories_id' => 'required',
+            //'brands_id' => 'required',
+            //'categories_id' => 'required',
 
         ];
     }
@@ -30,8 +30,8 @@ class ModelsRepo extends BaseRepo {
         return [
             'name'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
-            'brands_id' => 'required',
-            'categories_id' => 'required',
+            //'brands_id' => 'required',
+            //'categories_id' => 'required',
 
         ];
     }
@@ -43,9 +43,9 @@ class ModelsRepo extends BaseRepo {
         $header  =  ['columns' =>
             [
                 'Imagen' =>    ['data' => 'images','relation'=> null],
-                'Marca'  =>    ['data' => 'Brands','relation' => 'name'],
-                'Modelo' =>    ['data' => 'name','relation' => null],
-                'Categorias' =>     ['data' => 'Categories','relation' => 'name'],
+                'Nombre'  =>    ['data' => 'name','relation' => null],
+               // 'Modelo' =>    ['data' => 'name','relation' => null],
+                //'Marca' =>     ['data' => 'Brands','relation' => 'name'],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

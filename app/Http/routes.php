@@ -58,6 +58,7 @@ Route::get('exito/{data?}','\App\Http\Controllers\motonet\TodoPagoController@get
 Route::get('error/{data?}','\App\Http\Controllers\motonet\TodoPagoController@getError');
 
 
+Route::get('pay' ,'\App\Http\Controllers\motonet\PayController@processPay');
 /*
 
 Route::get('exito/{data?}',function($data){
