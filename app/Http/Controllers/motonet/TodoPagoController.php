@@ -40,10 +40,16 @@ class TodoPagoController extends Controller {
         $client             = Clients::where('email',$request->mail)->get();
         $operations         = Operations::all()->last();
 
-        if($operations->count() != 0)
-            $this->operation_id = $operations->id + 1;
-        else
+
+        if(!is_null($operations)){
+
+            if ($operations->count() != 0)
+                $this->operation_id = $operations->id + 1;
+
+        }else{
+
             $this->operation_id = 1;
+        }
 
 
         if($client->count() == 0) {
@@ -51,7 +57,7 @@ class TodoPagoController extends Controller {
             $client              = new Clients();
             $client->name        = $request->name;
             $client->last_name   = $request->last_name;
-            $client->email        = $request->email;
+            $client->email       = $request->email;
             $client->phone       = $request->phone;
          
             $client->save();
@@ -101,16 +107,6 @@ class TodoPagoController extends Controller {
                 'CSBTIPADDRESS' => '127.0.0.1',
                 'CSPTCURRENCY' => "ARS",
                 'CSPTGRANDTOTALAMOUNT' => number_format($request->price, 2, '.', ''),
-                //'CSMDD7'=> "",
-                //'CSMDD8'=> "Y",
-                //'CSMDD9'=> "",
-                //'CSMDD10'=> "",
-                //'CSMDD11'=> "",
-                //'CSMDD12'=> "",
-                //'CSMDD13'=> "",
-                //'CSMDD14'=> "",
-                //'CSMDD15'=> "",
-                //'CSMDD16'=> "",
                 'CSITPRODUCTCODE' => "electronic_good#chocho",
                 'CSITPRODUCTDESCRIPTION' => "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
                 'CSITPRODUCTNAME' => "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
@@ -154,6 +150,8 @@ class TodoPagoController extends Controller {
 
         $rk               = $_COOKIE['RequestKey'];
         $client_id        = $_COOKIE['client_id'];
+        $p_id             = $_COOKIE['publication_id'];
+
 
         $this->connector  =  new todoPago($this->http_header, $this->mode);
 
@@ -182,13 +180,15 @@ class TodoPagoController extends Controller {
 
 
 
-        return redirect()->to('success_pay')->withErrors($rta['StatusMessage']);
+        return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
 
     }
 
     public function getError(Request $request){
 
-        $rk               = $_COOKIE['RequestKey'];
+        $rk        = $_COOKIE['RequestKey'];
+        $p_id      = $_COOKIE['publication_id'];
+
 
         $connector  =  new todoPago($this->http_header, $this->mode);
 
@@ -201,7 +201,9 @@ class TodoPagoController extends Controller {
 
         $ak = $connector->getAuthorizeAnswer($optionsGAA);
 
-        return '<h5>'.$ak['StatusMessage'].'</h5>';
+       // return '<h5>'.$ak['StatusMessage'].'</h5>';
+        return redirect()->route('resumen',$p_id)->withErrors($ak['StatusMessage']);
+
     }
 
 

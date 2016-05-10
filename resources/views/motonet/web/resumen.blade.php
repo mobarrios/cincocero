@@ -20,7 +20,7 @@
 
 @section('content')
 
-<div >
+<div>
     <div class="gray-bg">
         @include('motonet/web/includes/breadcrumbs')
 
