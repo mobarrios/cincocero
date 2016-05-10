@@ -110,7 +110,7 @@
                 <div class="panel-body">
                     <input name="pago" value="mp" type="radio" required="required">
                     <strong>Mercado Pago</strong>
-                    <i class="icon icon-mp text-success"></i>
+                    <i class="icon icon-mp text-success fs15"></i>
                     <hr>
                     <p class="small">
                         Boton de pago de MercadoPago.

@@ -8520,3 +8520,8 @@ footer{
     width:100%;
 }
 
+.fs15{
+    font-size: 33px !important;
+    float: right;
+    margin-right: 43px;
+}
