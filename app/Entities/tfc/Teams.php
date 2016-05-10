@@ -23,7 +23,7 @@ class Teams extends Entity{
 
     public function Players()
     {
-        return $this->hasMany(Players::getClass());
+        return $this->hasMany(Players::getClass())->orderBy('last_name');
     }
 
     public function PlayersList()

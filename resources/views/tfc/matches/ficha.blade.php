@@ -100,7 +100,6 @@
         }
 
 
-
         .arbitraje{
             width: 60%;
             float: right;
@@ -280,7 +279,7 @@
                         <th class="vc">R</th>
                         <th class="vc">G</th>
                     </tr>
-                    <?php  $countH = 0; ?>
+                    <?php $countH = 0; ?>
                     @foreach($match->HomeTeam->Players as $player)
 
 

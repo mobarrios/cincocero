@@ -259,7 +259,6 @@ class MatchesController extends Controller {
     {
         $data['match']  = Matches::find($matches_id);
 
-
         $pdf = PDF::loadView('tfc.matches.ficha',$data);
         $pdf->setPaper('A4');
 
