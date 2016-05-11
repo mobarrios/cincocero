@@ -28,7 +28,7 @@ class PayController extends Controller {
 
         }elseif($request->pago == 'deposito'){
 
-            $this->sendMail($request->email);
+            $this->sendMail($request);
             return redirect()->back()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.');
 
         } else {
@@ -38,19 +38,18 @@ class PayController extends Controller {
 
     }
 
-    public function sendMail($mail = null){
-
-
+    public function sendMail($request = null)
+    {
         $data =  ['da','dada'];
+        $subject = 'Moto_NET ';
 
-        Mail::queue('emails.pay_deposito', $data, function($message) use($mail)
+
+        Mail::queue('emails.pay_deposito', $data, function($message) use($request,$subject)
         {
-            $message->from('elmasca@pito.com');
-            $message->to('Joni.creatividad@gmail.com', 'John Smith')->subject('CHUPAMELAPIJORTA!');
+            $message->from('empresa@empresa.com');
+            $message->to($request->mail, $request->last_name.' '.$request->name)->subject($subject);
         });
-
-
-
     }
+
 
 }
