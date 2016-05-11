@@ -49,10 +49,10 @@
         <div class="container">
             <div class="redes">
                 <ul>
-                    <li><a href="https://www.facebook.com/motonetonline?ref=hl" target="_blank" class="fa fa-facebook-square"></a></li>
-                    <li><a href="https://www.facebook.com/motonetonline?ref=hl" target="_blank" class="fa fa-twitter-square"></a></li>
-                    <li><a href="https://www.facebook.com/motonetonline?ref=hl" target="_blank" class="fa fa-instagram"></a></li>
-                    <li><a href="https://www.facebook.com/motonetonline?ref=hl" target="_blank" class="fa fa-youtube-square"></a></li>
+                    <li><a href="https://www.facebook.com/motonetonline" target="_blank" class="fa fa-facebook-square"></a></li>
+                    <li><a href="https://twitter.com/motonetonline" target="_blank" class="fa fa-twitter-square"></a></li>
+                    <li><a href="https://www.instagram.com/motonet_online" target="_blank" class="fa fa-instagram"></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCspvxzlzG2oo_QAL8OQv0IA" target="_blank" class="fa fa-youtube-square"></a></li>
                 </ul>
             </div>
             {{--<div id="navbar" class="navbar-collapse collapse pull-right">--}}
