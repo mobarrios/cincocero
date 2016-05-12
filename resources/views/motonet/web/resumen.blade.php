@@ -27,7 +27,7 @@
         <div class="wrapper wrapper-content animated fadeInRight">
 
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-xs-9">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Tu compra</h5>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Importe</h5>
@@ -104,7 +104,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-xs-9">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h3>Datos Personales</h3>
