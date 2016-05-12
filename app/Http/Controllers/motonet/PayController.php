@@ -24,7 +24,7 @@ class PayController extends Controller {
 
 
         $publication        = Publications::find($_COOKIE['publication_id']);
-        $client             = Clients::where('email',$request->email)->first();
+        $client             = Clients::where('email',$request->email)->get();
         $operations         = Operations::all()->last();
 
 
@@ -37,16 +37,18 @@ class PayController extends Controller {
 
         if($client->count() == 0) {
 
-            $client              = new Clients();
-            $client->name        = $request->name;
-            $client->last_name   = $request->last_name;
-            $client->email       = $request->email;
-            $client->phone       = $request->phone;
+            $new_client              = new Clients();
+            $new_client->name        = $request->name;
+            $new_client->last_name   = $request->last_name;
+            $new_client->email       = $request->email;
+            $new_client->phone       = $request->phone;
+            $new_client->save();
 
-            $client->save();
+            $client = $new_client;
+        }else{
+
+           $client =  $client->first();
         }
-
-
 
         if($request->pago == 'tp'){
 
