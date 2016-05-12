@@ -8525,3 +8525,29 @@ footer{
     float: right;
     margin-right: 43px;
 }
+
+.h374{
+    height: 374px;
+    position: relative;
+}
+
+.bottom-right{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.btn-mot{
+    border-color: #0187CE !important;
+    color: #0187CE !important;;
+    background-color: #fff !important;;
+    font-size: 14px !important;;
+    padding: 10px 20px !important;;
+    font-weight: 600 !important;;
+}
+
+.btn-mot:hover{
+    background-color: #0187CE !important;;
+    border-color: #0187CE !important;;
+    color: #FFFFFF !important;
+}
