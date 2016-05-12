@@ -168,6 +168,7 @@
         @include('motonet/web/index/seguro')
         @include('motonet/web/index/servicioTecnico')
         @include('motonet/web/index/metodosDePagos')
+        @include('motonet/web/index/sucursales')
 
 
     </section>

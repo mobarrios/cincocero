@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\Branches;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
 use App\Entities\motonet\Items;
@@ -22,13 +23,15 @@ class webController extends Controller {
     private $brands;
     private $data;
     private $publications;
+    private $branches;
 
-    public function __construct(Categories $categories, Models $models, Items $items,Brands $brands,Publications $publications){
+    public function __construct(Categories $categories, Models $models, Items $items,Brands $brands,Publications $publications,Branches $branches){
         $this->categories = $categories;
         $this->models= $models;
         $this->items= $items;
         $this->brands= $brands;
         $this->publications = $publications;
+        $this->branches = $branches;
     }
 
 
@@ -108,6 +111,12 @@ class webController extends Controller {
         setcookie('publication_id', $data['publication']->id, time() + (86400 * 30), "/" );
 
         return view('motonet/web/resumen')->with($data);
+    }
+
+    public function sucursalDetail($id){
+        $data['sucursal'] = $this->branches->find($id);
+
+        dd($data['sucursal']);
     }
 
 }

@@ -21,4 +21,9 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@resumen'
     ]);
 
+    Route::get('{id}/sucursal',[
+       'as' => 'sucursal.detail',
+        'uses' => 'webController@sucursalDetail'
+    ]);
+
 });
