@@ -19,9 +19,10 @@ class TodoPagoController extends Controller {
     protected $autorization_code;
     protected $security;
     protected $merchant;
-    protected $operation_id;
     protected $http_header;
     protected $connector;
+    protected $operation_id;
+
 
 
 
@@ -35,85 +36,61 @@ class TodoPagoController extends Controller {
 
     }
 
-    public function getTp(Request $request)
+    public function getTp($request = null , $client = null, $publication = null, $operation_id = null)
     {
-        $client             = Clients::where('email',$request->mail)->get();
-        $operations         = Operations::all()->last();
 
 
-        if(!is_null($operations)){
+            $this->connector        = new todoPago($this->http_header, $this->mode);
+            $this->operation_id     = $operation_id;
 
-            if ($operations->count() != 0)
-                $this->operation_id = $operations->id + 1;
+            $optionsSAR_operacion   = $_POST;
 
-        }else{
+            $optionsSAR_operacion   = array(
 
-            $this->operation_id = 1;
-        }
-
-
-        if($client->count() == 0) {
-
-            $client              = new Clients();
-            $client->name        = $request->name;
-            $client->last_name   = $request->last_name;
-            $client->email       = $request->email;
-            $client->phone       = $request->phone;
-         
-            $client->save();
-        }
-
-
-            $this->connector = new todoPago($this->http_header, $this->mode);
-
-            $optionsSAR_operacion = $_POST;
-
-            $optionsSAR_operacion = array(
-
-                'MERCHANT' => $this->merchant,
-                'OPERATIONID' => $this->operation_id,
-                'CURRENCYCODE' => 032,
-                'AMOUNT' => $request->price,
+                'MERCHANT'                  => $this->merchant,
+                'OPERATIONID'               => $operation_id,
+                'CURRENCYCODE'              => 032,
+                'AMOUNT'                    => $request->price,
 
                 //Datos ejemplos CS
-                'CSBTCITY' => $request->city,
-                'CSSTCITY' => $request->city,
+                'CSBTCITY'                  => $request->city,
+                'CSSTCITY'                  => $request->city,
 
-                'CSBTCOUNTRY' => "AR",
-                'CSSTCOUNTRY' => "AR",
+                'CSBTCOUNTRY'               => "AR",
+                'CSSTCOUNTRY'               => "AR",
 
-                'CSBTEMAIL' => $client->email,
-                'CSSTEMAIL' => $client->email,
+                'CSBTEMAIL'                 => $client->email,
+                'CSSTEMAIL'                 => $client->email,
 
-                'CSBTFIRSTNAME' => $client->name,
-                'CSSTFIRSTNAME' => $client->name,
+                'CSBTFIRSTNAME'             => $client->name,
+                'CSSTFIRSTNAME'             => $client->name,
 
-                'CSBTLASTNAME' => $client->last_name,
-                'CSSTLASTNAME' => $client->last_name,
+                'CSBTLASTNAME'              => $client->last_name,
+                'CSSTLASTNAME'              => $client->last_name,
 
-                'CSBTPHONENUMBER' => $client->phone,
-                'CSSTPHONENUMBER' => $client->phone,
+                'CSBTPHONENUMBER'           => $client->phone,
+                'CSSTPHONENUMBER'           => $client->phone,
 
-                'CSBTPOSTALCODE' => $request->postal_code,
-                'CSSTPOSTALCODE' => $request->postal_code,
+                'CSBTPOSTALCODE'            => $request->postal_code,
+                'CSSTPOSTALCODE'            => $request->postal_code,
 
-                'CSBTSTATE' => $request->state,
-                'CSSTSTATE' => $request->state,
+                'CSBTSTATE'                 => $request->state,
+                'CSSTSTATE'                 => $request->state,
 
-                'CSBTSTREET1' => $request->street,
-                'CSSTSTREET1' => $request->street,
+                'CSBTSTREET1'               => $request->street,
+                'CSSTSTREET1'               => $request->street,
 
-                'CSBTCUSTOMERID' => $client->id,
-                'CSBTIPADDRESS' => '127.0.0.1',
-                'CSPTCURRENCY' => "ARS",
-                'CSPTGRANDTOTALAMOUNT' => number_format($request->price, 2, '.', ''),
-                'CSITPRODUCTCODE' => "electronic_good#chocho",
-                'CSITPRODUCTDESCRIPTION' => "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
-                'CSITPRODUCTNAME' => "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
-                'CSITPRODUCTSKU' => "LEVJNSL36GN#chocho",
-                'CSITTOTALAMOUNT' => "1254.40#10.00",
-                'CSITQUANTITY' => "1#1",
-                'CSITUNITPRICE' => "1254.40#15.00"
+                'CSBTCUSTOMERID'            => $client->id,
+                'CSBTIPADDRESS'             => '127.0.0.1',
+                'CSPTCURRENCY'              => "ARS",
+                'CSPTGRANDTOTALAMOUNT'      => number_format($request->price, 2, '.', ''),
+                'CSITPRODUCTCODE'           => $publication->Models->Brands->name .'-'.$publication->Models->name ."#chocho",
+                'CSITPRODUCTDESCRIPTION'    => $publication->Models->Brands->name .'-'.$publication->Models->name ."#chocho",
+                'CSITPRODUCTNAME'           => $publication->Models->Brands->name .'-'.$publication->Models->name ."#chocho",
+                'CSITPRODUCTSKU'            => "LEVJNSL36GN#chocho",
+                'CSITTOTALAMOUNT'           => number_format($request->price, 2, '.', '')."#10.00",
+                'CSITQUANTITY'              => "1#1",
+                'CSITUNITPRICE'             => number_format($request->price, 2, '.', '')."#15.00"
             );
 
 
@@ -176,8 +153,6 @@ class TodoPagoController extends Controller {
         $operation->authorization_key = $rta['AuthorizationKey'];
         $operation->authorization_code= $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
         $operation->save();
-
-
 
 
         return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
