@@ -116,7 +116,7 @@ class webController extends Controller {
     public function sucursalDetail($id){
         $data['sucursal'] = $this->branches->find($id);
 
-        dd($data['sucursal']);
+        return view('motonet/web/branchDetail')->with($data);
     }
 
 }

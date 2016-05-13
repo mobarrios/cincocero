@@ -31,7 +31,9 @@
 
                     </form>
                 </div>
-                <img src="assets/web/img/logo.png" alt="motonet" height="48px" class="img-responsive">
+                <a href="{!! asset("/") !!}">
+                    <img src="assets/web/img/logo.png" alt="motonet" height="48px" class="img-responsive">
+                </a>
                 <ul class="nav navbar2-nav">
                     <li class="dropdown mega-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorías <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>

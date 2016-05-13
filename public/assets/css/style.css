@@ -3309,10 +3309,7 @@ body {
     color: #676a6c;
     overflow-x: hidden;
 }
-html,
-body {
-    height: 100%;
-}
+
 body.full-height-layout #wrapper,
 body.full-height-layout #page-wrapper {
     height: 100%;
@@ -8550,4 +8547,22 @@ footer{
     background-color: #0187CE !important;;
     border-color: #0187CE !important;;
     color: #FFFFFF !important;
+}
+
+
+
+#map_canvas{
+    border: 5px solid #0187CE;
+}
+
+.children-inline-block *{
+    display: inline-block;
+}
+
+.pr5{
+    padding-right: 5px;
+}
+
+.img-sucursal img{
+    height:381px;
 }

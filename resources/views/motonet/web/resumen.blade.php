@@ -2,6 +2,18 @@
 
 @section('css')
     <style>
+        html,body{
+            height:100%;
+        }
+
+        body.landing-page{
+            height:100%;
+        }
+
+        footer{
+            position: inherit !important;
+        }
+
         .btn-group .btn-primary{
             background-color: #0187CE;
             border-color: #0187CE;
@@ -20,7 +32,7 @@
 
 @section('content')
 
-<div>
+
     <div class="gray-bg">
         @include('motonet/web/includes/breadcrumbs')
 
@@ -147,9 +159,10 @@
             </div>
 
 
+        </div>
 
     </div>
-</div>
+
 
 @endsection
 

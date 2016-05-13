@@ -41,6 +41,7 @@
 	<script src="assets/inspinia/js/plugins/pace/pace.min.js"></script>
 	<script src="assets/inspinia/js/plugins/wow/wow.min.js"></script>
 	<script src="assets/js/finder.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
 
 </head>
 <body class="landing-page">
@@ -75,12 +76,10 @@
 
 @yield('content')
 
-
-<footer>
+<footer class="footer-absolute-bottom">
     <p>&copy;Motonet -  Av. Ricardo balbin 486 - San Miguel - Buenos Aires - 0810-333-6686 </p>
 </footer>
 
-@yield('js')
 
 <script>
 
@@ -110,6 +109,8 @@
     $('#myCarousel').find('.item').first().addClass('active');
     $('.navbar2').addClass("fixed-top");
 </script>
+
+@yield('js')
 
 
 

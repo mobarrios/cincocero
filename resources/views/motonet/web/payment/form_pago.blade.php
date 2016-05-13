@@ -94,8 +94,10 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <input name="pago"  value="tp" type="radio" required="required">
-                    <strong>Todo Pago</strong>
+                    <label>
+                        <input name="pago"  value="tp" type="radio" required="required">
+                        <strong>Todo Pago</strong>
+                    </label>
                     <img class="pull-right" src="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_boton_72x30_1.jpg" alt="" />
 
                     <hr>
@@ -108,8 +110,10 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <input name="pago" value="mp" type="radio" required="required">
-                    <strong>Mercado Pago</strong>
+                    <label>
+                        <input name="pago" value="mp" type="radio" required="required">
+                        <strong>Mercado Pago</strong>
+                    </label>
                     <i class="icon icon-mp text-success fs15"></i>
                     <hr>
                     <p class="small">
@@ -122,8 +126,10 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <input name="pago" value="deposito" type="radio" required="required">
-                    <strong>Depósito Bancario</strong>
+                    <label>
+                        <input name="pago" value="deposito" type="radio" required="required">
+                        <strong>Depósito Bancario</strong>
+                    </label>
                     <hr>
 
                     <p class="small">
