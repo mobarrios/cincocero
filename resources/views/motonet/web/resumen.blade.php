@@ -143,6 +143,7 @@
                     </div>
 
                 </div>
+
                 <div class="col-xs-3">
                     <div class="ibox">
                         <div class="ibox-title">
@@ -156,12 +157,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
 
         </div>
 
-    </div>
 
 
 @endsection

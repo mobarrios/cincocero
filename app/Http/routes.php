@@ -27,35 +27,15 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 
 // route MERCADO PAGO
 
-Route::get('mp',function()
-{
-    $mp  = new \App\Helpers\MercadoPago\MP("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
 
-    $mp->sandbox_mode(true);
-    $preference_data = array(
-        "items" => array(
-            array(
-                "title" => "TEST",
-                "quantity" => 1,
-                "currency_id" => "ARS", // Available currencies at: https://api.mercadopago.com/currencies
-                "unit_price" => 10.00
-            )
-        )
-    );
+//route MERCADO PAGO
 
-    $preference = $mp->create_preference($preference_data);
-
-
-    echo 		"<a href=". $preference['response']['sandbox_init_point'].">Pay</a>";
-
-    dd($preference);
-});
-
+Route::get('mp/{type?}','\App\Http\Controllers\motonet\PayController@mp');
 
 // route TODO PAGO
 Route::get('tp',   '\App\Http\Controllers\motonet\TodoPagoController@getTp');
-Route::get('exito/{data?}','\App\Http\Controllers\motonet\TodoPagoController@getExito');
-Route::get('error/{data?}','\App\Http\Controllers\motonet\TodoPagoController@getError');
+Route::get('exito/{data?}','\App\Http\Controllers\motonet\PayController@getExito');
+Route::get('error/{data?}','\App\Http\Controllers\motonet\PayController@getError');
 
 
 Route::get('pay' ,'\App\Http\Controllers\motonet\PayController@processPay');

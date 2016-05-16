@@ -39,7 +39,7 @@
                             @if($model->$column['data']->count() > 1)
                                 <td>|
                                 @foreach($model->$column['data'] as $d)
-                                    {!! $d->$column['relation'] !!} |
+                                    {{ $d->$column['relation'] }} |
                                 @endforeach
                                 </td>
                             @else

@@ -14,7 +14,15 @@ class Operations extends Entity{
     {
         if($this->attributes['medio_de_pago'] == 1)
             return 'Todo Pago';
+
+        if($this->attributes['medio_de_pago'] == 2)
+            return 'Mercado Pago';
+
+        if($this->attributes['medio_de_pago'] == 3)
+            return 'Deposito';
     }
+
+
 
     public function Clients()
     {
@@ -30,10 +38,13 @@ class Operations extends Entity{
     public function getStatusAttribute()
     {
         if($this->attributes['status'] == 0)
-            return 'Pagado';
+            return 'Nada';
 
         if($this->attributes['status'] == 1)
-            return 'No Pagado';
+            return 'Acreditado';
+
+        if($this->attributes['status'] == 2)
+            return 'Pendiente de Acreditación';
 
     }
 

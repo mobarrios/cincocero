@@ -123,63 +123,7 @@ class TodoPagoController extends Controller {
         return $optionsSAR_comercio;
     }
 
-    public function getExito(Request $request){
 
-        $rk               = $_COOKIE['RequestKey'];
-        $client_id        = $_COOKIE['client_id'];
-        $p_id             = $_COOKIE['publication_id'];
-
-
-        $this->connector  =  new todoPago($this->http_header, $this->mode);
-
-
-        $optionsGAA = array (
-            'Security'   => $this->security,
-            'Merchant'   => $this->merchant,
-            'RequestKey' => $rk,
-            'AnswerKey'  => $request->Answer,
-        );
-
-        $rta = $this->connector->getAuthorizeAnswer($optionsGAA);
-
-
-
-        $operation                    = new Operations();
-        $operation->id                = $rta['Payload']['Answer']['OPERATIONID'];
-        $operation->clients_id        = $client_id;
-        $operation->medio_de_pago     = 1;
-        //$operation->pay_date        = $rta['Payload']['Answer']['DATETIME'];
-        $operation->amount            = $rta['Payload']['Request']['AMOUNT'];
-        $operation->authorization_key = $rta['AuthorizationKey'];
-        $operation->authorization_code= $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
-        $operation->save();
-
-
-        return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
-
-    }
-
-    public function getError(Request $request){
-
-        $rk        = $_COOKIE['RequestKey'];
-        $p_id      = $_COOKIE['publication_id'];
-
-
-        $connector  =  new todoPago($this->http_header, $this->mode);
-
-        $optionsGAA = array(
-            'Security' => $this->security,
-            'Merchant' => $this->merchant,
-            'RequestKey' => $rk,
-            'AnswerKey' => $request->Answer
-        );
-
-        $ak = $connector->getAuthorizeAnswer($optionsGAA);
-
-       // return '<h5>'.$ak['StatusMessage'].'</h5>';
-        return redirect()->route('resumen',$p_id)->withErrors($ak['StatusMessage']);
-
-    }
 
 
 }

@@ -1,6 +1,13 @@
 MotoNET
+
 <br>
+<strong>
+    Cod. {{$operation_id}}
+</strong>
+<br>
+
 Compraste el siguiente Articulo.
+
 <hr>
 <table>
     <thead>
