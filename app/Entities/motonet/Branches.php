@@ -7,7 +7,7 @@ class Branches extends Entity{
 
     protected $table = 'branches';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name','address'];
 
 
     public function Items()
