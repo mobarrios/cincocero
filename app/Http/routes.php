@@ -34,115 +34,13 @@ Route::get('mp/{type?}','\App\Http\Controllers\motonet\PayController@mp');
 
 // route TODO PAGO
 Route::get('tp',   '\App\Http\Controllers\motonet\TodoPagoController@getTp');
-Route::get('exito/{data?}','\App\Http\Controllers\motonet\PayController@getExito');
-Route::get('error/{data?}','\App\Http\Controllers\motonet\PayController@getError');
+Route::get('exito/{data?}','\App\Http\Controllers\motonet\TodoPagoController@getExito');
+Route::get('error/{data?}','\App\Http\Controllers\motonet\TodoPagoController@getError');
 
 
 Route::get('pay' ,'\App\Http\Controllers\motonet\PayController@processPay');
-/*
-
-Route::get('exito/{data?}',function($data){
 
 
-    dd($data);
-});
-
-Route::get('error/{data?}',function($data){
-
-    dd($data);
-});
-
-
-
-Route::get('tp',function(){
-    $mode           = "test";//identificador de entorno obligatorio, la otra opcion es prod
-    $http_header    = array('Authorization'=>'TODOPAGO a8e7772800df4919a0c3753738659150');//authorization key del ambiente requerido
-
-    $connector      = new todoPago($http_header, $mode);
-
-    $operationid = 1;
-
-    $optionsSAR_comercio = array (
-        'Security'=> 'TODOPAGO a8e7772800df4919a0c3753738659150',
-        'EncodingMethod'=>'XML',
-        'Merchant'=>3328,
-        'URL_OK'=>"http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/exito/operationid=$operationid",
-        'URL_ERROR'=>"http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/error/operationid=$operationid"
-
-    );
-    $optionsSAR_operacion = array (
-        'MERCHANT'=> 3328,
-        'OPERATIONID'=> $operationid,
-        'CURRENCYCODE'=> 032,
-        'AMOUNT'=>"54",
-
-        //Datos ejemplos CS
-        'CSBTCITY'=> "Villa General Belgrano",
-        'CSSTCITY'=> "Villa General Belgrano",
-
-        'CSBTCOUNTRY'=> "AR",
-        'CSSTCOUNTRY'=> "AR",
-
-        'CSBTEMAIL'=> "todopago@hotmail.com",
-        'CSSTEMAIL'=> "todopago@hotmail.com",
-
-        'CSBTFIRSTNAME'=> "Juan",
-        'CSSTFIRSTNAME'=> "Juan",
-
-        'CSBTLASTNAME'=> "Perez",
-        'CSSTLASTNAME'=> "Perez",
-
-        'CSBTPHONENUMBER'=> "541160913988",
-        'CSSTPHONENUMBER'=> "541160913988",
-
-        'CSBTPOSTALCODE'=> " 1010",
-        'CSSTPOSTALCODE'=> " 1010",
-
-        'CSBTSTATE'=> "B",
-        'CSSTSTATE'=> "B",
-
-        'CSBTSTREET1'=> "Cerrito 740",
-        'CSSTSTREET1'=> "Cerrito 740",
-
-        'CSBTCUSTOMERID'=> "453458",
-        'CSBTIPADDRESS'=> "192.0.0.4",
-        'CSPTCURRENCY'=> "ARS",
-        'CSPTGRANDTOTALAMOUNT'=> "125.38",
-        'CSMDD7'=> "",
-        'CSMDD8'=> "Y",
-        'CSMDD9'=> "",
-        'CSMDD10'=> "",
-        'CSMDD11'=> "",
-        'CSMDD12'=> "",
-        'CSMDD13'=> "",
-        'CSMDD14'=> "",
-        'CSMDD15'=> "",
-        'CSMDD16'=> "",
-        'CSITPRODUCTCODE'=> "electronic_good#chocho",
-        'CSITPRODUCTDESCRIPTION'=> "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
-        'CSITPRODUCTNAME'=> "NOTEBOOK L845 SP4304LA DF TOSHIBA#chocho",
-        'CSITPRODUCTSKU'=> "LEVJNSL36GN#chocho",
-        'CSITTOTALAMOUNT'=> "1254.40#10.00",
-        'CSITQUANTITY'=> "1#1",
-        'CSITUNITPRICE'=> "1254.40#15.00"
-    );
-
-
-    $rta = $connector->sendAuthorizeRequest($optionsSAR_comercio, $optionsSAR_operacion);
-
-    //if($values['StatusCode'] == -1)
-      //  return redirect()->to($values['URL_Request']);
-
-    if($rta['StatusCode'] != -1) {
-        var_dump($rta);
-    } else {
-        setcookie('RequestKey',$rta["RequestKey"],  time() + (86400 * 30), "/");
-       // header("Location: ".$rta["URL_Request"]);
-        return redirect()->to($rta["URL_Request"]);
-    }
-
-});
-*/
 
 Route::get('ml/{id?}', ['as'=>'ml','uses'=>'\App\Http\Controllers\ws\MercadolibreController@getItem']);
 Route::get('ml_sub_categories/{id?}','\App\Http\Controllers\ws\MercadolibreController@getSubCategories');
@@ -162,9 +60,6 @@ Route::get('/',function(){
 
     return redirect()->route('index');
 });
-
-
-
 
 
 //login pasa x middle company para chequear la empresa

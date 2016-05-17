@@ -35,7 +35,7 @@ class Operations extends Entity{
         return $this->Clients->full_name;
     }
 
-    public function getStatusAttribute()
+    public function getStatus()
     {
         if($this->attributes['status'] == 0)
             return 'Nada';
