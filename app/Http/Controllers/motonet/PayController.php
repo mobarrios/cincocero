@@ -9,6 +9,9 @@ use App\Entities\motonet\Publications;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use \App\Helpers\TodoPago\lib\Sdk as todoPago;
+
+
 
 
 class PayController extends Controller {
@@ -90,55 +93,6 @@ class PayController extends Controller {
     }
 
 
-
-    public function getExito(Request $request){
-
-        $rk               = $_COOKIE['RequestKey'];
-        $client_id        = $_COOKIE['client_id'];
-        $p_id             = $_COOKIE['publication_id'];
-
-
-        $this->connector  =  new todoPago($this->http_header, $this->mode);
-
-
-        $optionsGAA = array (
-            'Security'   => $this->security,
-            'Merchant'   => $this->merchant,
-            'RequestKey' => $rk,
-            'AnswerKey'  => $request->Answer,
-        );
-
-        $rta = $this->connector->getAuthorizeAnswer($optionsGAA);
-
-        $this->newOperationTodoPago($rta, $client_id);
-
-        return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
-
-    }
-
-    public function getError(Request $request){
-
-        $rk        = $_COOKIE['RequestKey'];
-        $p_id      = $_COOKIE['publication_id'];
-
-
-        $connector  =  new todoPago($this->http_header, $this->mode);
-
-        $optionsGAA = array(
-            'Security' => $this->security,
-            'Merchant' => $this->merchant,
-            'RequestKey' => $rk,
-            'AnswerKey' => $request->Answer
-        );
-
-        $ak = $connector->getAuthorizeAnswer($optionsGAA);
-
-        // return '<h5>'.$ak['StatusMessage'].'</h5>';
-        return redirect()->route('resumen',$p_id)->withErrors($ak['StatusMessage']);
-
-    }
-
-
     /**
      *
      */
@@ -163,7 +117,7 @@ class PayController extends Controller {
         $operation->medio_de_pago     = 3;
         $operation->authorization_key = 'n/a';
         $operation->authorization_code= 'n/a';
-        $operation->amount            = $request->amount;
+        $operation->amount            = $request->price;
         $operation->status            = 2;
         $operation->save();
     }
@@ -176,7 +130,6 @@ class PayController extends Controller {
 
         $mp->sandbox_mode(true);
 
-
         $preference_data = array(
             "items" => array(
                 array(
@@ -187,22 +140,23 @@ class PayController extends Controller {
                 )
                 ),
                     "back_urls" => array(
-                    "success" => "localhost/sistemas/motonet/public/mp/success",
-                    "failure" => "localhost/sistemas/motonet/public/mp/failure",
-                    "pending" => "localhost/sistemas/motonet/public/mp/pending"
+                    "success" => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/mp/success",
+                    "failure" => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/mp/failure",
+                    "pending" => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/mp/pending"
                 ),
                     "auto_return" => "approved",
         );
+
 
         $preference = $mp->create_preference($preference_data);
 
        $operation                    = new Operations();
        $operation->id                = $operation_id;
        $operation->clients_id        = $client->id;
-       $operation->medio_de_pago     = 3;
+       $operation->medio_de_pago     = 2;
        $operation->authorization_key = 'n/a';
        $operation->authorization_code= 'n/a';
-       $operation->amount            = $request->amount;
+       $operation->amount            = $request->price;
        $operation->status            = 2;
        $operation->save();
 
@@ -215,7 +169,7 @@ class PayController extends Controller {
     {
         $msg = $request->collection_status;
 
-        if($msg == 'aproved')
+        if($msg == 'approved')
             return redirect()->route('resumen',$_COOKIE['publication_id'])->withErrors('Pago Aprobado');
         if($msg == 'pending')
             return redirect()->route('resumen',$_COOKIE['publication_id'])->withErrors('Pago Pendiente');

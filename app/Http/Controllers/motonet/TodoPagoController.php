@@ -87,7 +87,7 @@ class TodoPagoController extends Controller {
                 'CSITPRODUCTCODE'           => $publication->Models->Brands->name .'-'.$publication->Models->name ."#chocho",
                 'CSITPRODUCTDESCRIPTION'    => $publication->Models->Brands->name .'-'.$publication->Models->name ."#chocho",
                 'CSITPRODUCTNAME'           => $publication->Models->Brands->name .'-'.$publication->Models->name ."#chocho",
-                'CSITPRODUCTSKU'            => "LEVJNSL36GN#chocho",
+                'CSITPRODUCTSKU'            => "ABC123#chocho",
                 'CSITTOTALAMOUNT'           => number_format($request->price, 2, '.', '')."#10.00",
                 'CSITQUANTITY'              => "1#1",
                 'CSITUNITPRICE'             => number_format($request->price, 2, '.', '')."#15.00"
@@ -123,6 +123,52 @@ class TodoPagoController extends Controller {
         return $optionsSAR_comercio;
     }
 
+    public function getExito(Request $request){
+
+        $rk               = $_COOKIE['RequestKey'];
+        $client_id        = $_COOKIE['client_id'];
+        $p_id             = $_COOKIE['publication_id'];
+
+
+        $this->connector  =  new todoPago($this->http_header, $this->mode);
+
+        $optionsGAA = array (
+            'Security'   => $this->security,
+            'Merchant'   => $this->merchant,
+            'RequestKey' => $rk,
+            'AnswerKey'  => $request->Answer,
+        );
+
+        $rta = $this->connector->getAuthorizeAnswer($optionsGAA);
+
+        $payController = new PayController();
+        $payController->newOperationTodoPago($rta, $client_id);
+
+        return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
+
+    }
+
+    public function getError(Request $request){
+
+        $rk        = $_COOKIE['RequestKey'];
+        $p_id      = $_COOKIE['publication_id'];
+
+
+        $connector  =  new todoPago($this->http_header, $this->mode);
+
+        $optionsGAA = array(
+            'Security' => $this->security,
+            'Merchant' => $this->merchant,
+            'RequestKey' => $rk,
+            'AnswerKey' => $request->Answer
+        );
+
+        $ak = $connector->getAuthorizeAnswer($optionsGAA);
+
+        // return '<h5>'.$ak['StatusMessage'].'</h5>';
+        return redirect()->route('resumen',$p_id)->withErrors($ak['StatusMessage']);
+
+    }
 
 
 
