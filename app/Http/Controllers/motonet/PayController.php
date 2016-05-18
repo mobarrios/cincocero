@@ -6,7 +6,6 @@ use App\Entities\motonet\Clients;
 
 use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
-use App\Helpers\MercadoPago\MP;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -127,7 +126,7 @@ class PayController extends Controller {
     public function newOperationMercadoPago($request = null , $client = null, $publication = null,  $operation_id = null){
 
 
-        $mp  = new MP("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
+        $mp  = new \App\Helpers\MercadoPago\MP("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
 
         $mp->sandbox_mode(true);
 
