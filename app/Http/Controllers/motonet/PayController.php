@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Helpers\TodoPago\lib\Sdk as todoPago;
-use App\Helpers\MercadoPago\MP;
+use \App\Helpers\MercadoPago\MP;
 
 
 
