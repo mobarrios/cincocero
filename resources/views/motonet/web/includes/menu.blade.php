@@ -81,7 +81,7 @@
                                     @endif
                                 </ul>
                                 <span class="text-primary verMas center-block text-center">
-                                    Bajar para ver más
+                                    Ver más
                                     <i class="fa fa-caret-down"></i>
                                 </span>
                             </li>
@@ -96,7 +96,7 @@
                                     @endif
                                 </ul>
                                 <span class="text-primary verMas center-block text-center">
-                                    Bajar para ver más
+                                    Ver más
                                     <i class="fa fa-caret-down"></i>
                                 </span>
                             </li>
@@ -119,7 +119,7 @@
                                     {{--</form>--}}
                                 </ul>
                                 <span class="text-primary verMas center-block text-center">
-                                    Bajar para ver más
+                                    Ver más
                                     <i class="fa fa-caret-down"></i>
                                 </span>
                             </li>
@@ -178,18 +178,3 @@
     </div>
 
 </div>
-
-@section('js')
-    <script>
-        $('#menuCategories').on('shown.bs.dropdown',function(ev){
-            var ul = $('.h300');
-            ul.each(function(pos){
-//                alert(parseInt($(this).css('height')));
-                if(parseInt($(this).css('height')) == 300 ){
-                    $(this).parent().find('.verMas').css('display','block');
-                }
-
-            });
-        });
-    </script>
-@endsection

@@ -108,6 +108,19 @@
 
     $('#myCarousel').find('.item').first().addClass('active');
     $('.navbar2').addClass("fixed-top");
+
+
+    $('#menuCategories').on('shown.bs.dropdown',function(ev){
+        var ul = $('.h300');
+        ul.each(function(pos){
+//                alert(parseInt($(this).css('height')));
+            if(parseInt($(this).css('height')) == 300 ){
+                $(this).parent().find('.verMas').css('display','block');
+            }
+
+        });
+    });
+
 </script>
 
 @yield('js')
