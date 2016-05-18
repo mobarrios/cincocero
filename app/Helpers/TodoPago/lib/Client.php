@@ -3,7 +3,7 @@
 //namespace TodoPago;
 namespace App\Helpers\TodoPago\lib;
 
-class Client extends \SoapClient
+class Client 
 {
 	protected $custom_headers;
 	
