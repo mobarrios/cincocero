@@ -68,7 +68,7 @@
                                     </div><!-- /.carousel -->
                                 </ul>
                             </li>
-                            <li class="col-sm-3">
+                            <li class="col-sm-3 h300">
                                 <ul>
                                     <li class="dropdown-header">Categorías</li>
                                     <li class="divider"></li>
@@ -81,7 +81,7 @@
                                     @endif
                                 </ul>
                             </li>
-                            <li class="col-sm-3">
+                            <li class="col-sm-3 h300">
                                 <ul>
                                     <li class="dropdown-header">Marcas</li>
                                     <li class="divider"></li>
@@ -93,7 +93,7 @@
 
                                 </ul>
                             </li>
-                            <li class="col-sm-3">
+                            <li class="col-sm-3 h300">
                                 <ul>
                                     <li class="dropdown-header">Modelos</li>
                                     <li class="divider"></li>
