@@ -126,8 +126,8 @@ class TodoPagoController extends Controller {
             //'URL_OK'        => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/exito/operationid=$this->operation_id",
             //'URL_ERROR'     => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/error/operationid=$this->operation_id"
 
-            'URL_OK'        => "http://www.motonet.com.ar/testing/exito/operationid=$this->operation_id",
-            'URL_ERROR'     => "http://www.motonet.com.ar/testing/error/operationid=$this->operation_id",
+            'URL_OK'        => "http://motonet.com.ar/testing/exito/operationid=$this->operation_id",
+            'URL_ERROR'     => "http://motonet.com.ar/testing/error/operationid=$this->operation_id",
 
         );
 
