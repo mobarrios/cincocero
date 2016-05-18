@@ -9,8 +9,8 @@ use App\Entities\motonet\Publications;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use \App\Helpers\TodoPago\lib\Sdk as todoPago;
-
+use App\Helpers\TodoPago\lib\Sdk as todoPago;
+use App\Helpers\MercadoPago\MP;
 
 
 
@@ -126,7 +126,7 @@ class PayController extends Controller {
     public function newOperationMercadoPago($request = null , $client = null, $publication = null,  $operation_id = null){
 
 
-        $mp  = new \App\Helpers\MercadoPago\MP("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
+        $mp  = new MP("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
 
         $mp->sandbox_mode(true);
 
