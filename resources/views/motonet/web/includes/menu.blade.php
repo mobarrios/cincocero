@@ -35,7 +35,7 @@
                     <img src="assets/web/img/logo.png" alt="motonet" height="48px" class="img-responsive">
                 </a>
                 <ul class="nav navbar2-nav">
-                    <li class="dropdown mega-dropdown">
+                    <li class="dropdown mega-dropdown" id="menuCategories">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorías <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
 
                         <ul class="dropdown-menu mega-dropdown-menu row">
@@ -68,8 +68,8 @@
                                     </div><!-- /.carousel -->
                                 </ul>
                             </li>
-                            <li class="col-sm-3 h300">
-                                <ul>
+                            <li class="col-sm-3 pb20">
+                                <ul class="h300">
                                     <li class="dropdown-header">Categorías</li>
                                     <li class="divider"></li>
                                     @if(\App\Entities\motonet\Categories::count() != 0)
@@ -80,9 +80,13 @@
                                         @endforeach
                                     @endif
                                 </ul>
+                                <span class="text-primary verMas center-block text-center">
+                                    Bajar para ver más
+                                    <i class="fa fa-caret-down"></i>
+                                </span>
                             </li>
-                            <li class="col-sm-3 h300">
-                                <ul>
+                            <li class="col-sm-3 pb20">
+                                <ul class="h300">
                                     <li class="dropdown-header">Marcas</li>
                                     <li class="divider"></li>
                                     @if(\App\Entities\motonet\Brands::count() != 0)
@@ -90,11 +94,14 @@
                                             <li><a href="{!! route('productFind',['brands' => $b->id]) !!}">{!! $b->name !!}</a></li>
                                         @endforeach
                                     @endif
-
                                 </ul>
+                                <span class="text-primary verMas center-block text-center">
+                                    Bajar para ver más
+                                    <i class="fa fa-caret-down"></i>
+                                </span>
                             </li>
-                            <li class="col-sm-3 h300">
-                                <ul>
+                            <li class="col-sm-3 pb20">
+                                <ul class="h300">
                                     <li class="dropdown-header">Modelos</li>
                                     <li class="divider"></li>
                                     @if(\App\Entities\motonet\Models::count() != 0)
@@ -111,6 +118,10 @@
                                         {{--<button type="submit" class="btn btn-primary btn-block">Sign in</button>--}}
                                     {{--</form>--}}
                                 </ul>
+                                <span class="text-primary verMas center-block text-center">
+                                    Bajar para ver más
+                                    <i class="fa fa-caret-down"></i>
+                                </span>
                             </li>
                         </ul>
 
@@ -167,3 +178,18 @@
     </div>
 
 </div>
+
+@section('js')
+    <script>
+        $('#menuCategories').on('shown.bs.dropdown',function(ev){
+            var ul = $('.h300');
+            ul.each(function(pos){
+//                alert(parseInt($(this).css('height')));
+                if(parseInt($(this).css('height')) == 300 ){
+                    $(this).parent().find('.verMas').css('display','block');
+                }
+
+            });
+        });
+    </script>
+@endsection
