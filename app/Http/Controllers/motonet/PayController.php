@@ -126,7 +126,7 @@ class PayController extends Controller {
     public function newOperationMercadoPago($request = null , $client = null, $publication = null,  $operation_id = null){
 
 
-        $mp  = new \App\Helpers\MercadoPago\MP("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
+        $mp  = new \App\Helpers\MercadoPago\Mp("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
 
         $mp->sandbox_mode(true);
 
