@@ -28,17 +28,18 @@ class TodoPagoController extends Controller {
 
     public function __construct()
     {
-        //modo testing "test" / produccion "prod"
-        $this->mode                 = 'test';
-        $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
-        $this->security             = 'a8e7772800df4919a0c3753738659150';
-        $this->merchant             =  3328;
+        //modo testing "test"
+       // $this->mode                 = 'test';
+       // $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
+       // $this->security             = 'a8e7772800df4919a0c3753738659150';
+       // $this->merchant             =  3328;
 
+        // produccion "prod"
+        $this->mode                 = 'prod';
+        $this->autorization_code    = 'TODOPAGO 42828D3178E67DF1D71FF49B67A67131';
+        $this->security             = '42828D3178E67DF1D71FF49B67A67131';
+        $this->merchant             =  21478;
 
-       // $this->mode                 = 'prod';
-       // $this->autorization_code    = 'TODOPAGO 42828D3178E67DF1D71FF49B67A67131';
-       // $this->security             = '42828D3178E67DF1D71FF49B67A67131';
-       // $this->merchant             =  21478;
         $this->http_header          =  ['Authorization'=> $this->autorization_code, 'user_agent' => 'PHPSoapClient'];//authorization key del ambiente requerido
 
     }
