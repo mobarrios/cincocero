@@ -29,15 +29,16 @@ class TodoPagoController extends Controller {
     public function __construct()
     {
         //modo testing "test" / produccion "prod"
-        //        $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
-        //        $this->security             = 'a8e7772800df4919a0c3753738659150';
-        //          $this->merchant             =  3328;
+                $this->mode                 = 'test';
+                $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
+                $this->security             = 'a8e7772800df4919a0c3753738659150';
+                $this->merchant             =  3328;
 
 
-        $this->mode                 = 'prod';
-        $this->autorization_code    = 'TODOPAGO 42828D3178E67DF1D71FF49B67A67131';
-        $this->security             = '42828D3178E67DF1D71FF49B67A67131';
-        $this->merchant             =  21478;
+       // $this->mode                 = 'prod';
+       // $this->autorization_code    = 'TODOPAGO 42828D3178E67DF1D71FF49B67A67131';
+       // $this->security             = '42828D3178E67DF1D71FF49B67A67131';
+       // $this->merchant             =  21478;
         $this->http_header          =  ['Authorization'=> $this->autorization_code, 'user_agent' => 'PHPSoapClient'];//authorization key del ambiente requerido
 
     }
@@ -156,8 +157,9 @@ class TodoPagoController extends Controller {
 
     public function getError(Request $request){
 
-        $rk        = $_COOKIE['RequestKey'];
-        $p_id      = $_COOKIE['publication_id'];
+        $rk         = $_COOKIE['RequestKey'];
+        $p_id       = $_COOKIE['publication_id'];
+        $client_id  = $_COOKIE['client_id'];
 
 
         $connector  =  new todoPago($this->http_header, $this->mode);
@@ -169,10 +171,14 @@ class TodoPagoController extends Controller {
             'AnswerKey' => $request->Answer
         );
 
-        $ak = $connector->getAuthorizeAnswer($optionsGAA);
+        $rta = $connector->getAuthorizeAnswer($optionsGAA);
+
+
+        $payController = new PayController();
+        $payController->newOperationTodoPago($rta, $client_id);
 
         // return '<h5>'.$ak['StatusMessage'].'</h5>';
-        return redirect()->route('resumen',$p_id)->withErrors($ak['StatusMessage']);
+        return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
 
     }
 
