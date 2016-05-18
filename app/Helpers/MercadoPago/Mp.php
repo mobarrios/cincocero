@@ -14,7 +14,7 @@ use League\Flysystem\Exception;
 
 $GLOBALS["LIB_LOCATION"] = dirname(__FILE__);
 
-class MP {
+class Mp {
     const version = "0.5.2";
     private $client_id;
     private $client_secret;
