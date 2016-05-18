@@ -10,7 +10,7 @@ class FormBuilder extends \Collective\Html\FormBuilder {
     public $dateClass               = ['class'=>'form-control datepicker'];
     public $textAreaClass           = ['class'=>'form-control mytextarea'];
     public $colorPicker             = ['class'=>'form-control demo'];
-
+    public $inputGroup              = 'input-group';
 
 
 
@@ -42,6 +42,13 @@ class FormBuilder extends \Collective\Html\FormBuilder {
         return $this->buildDiv($label, $input);
     }
 
+    public function textGroupCustom($name = null, $label = null)
+    {
+        $input = parent::text($name,null, $this->inputClass)."<span class='input-group-btn'><button class='btn btn-primary' type='button' id='findLocation'><i class='fa fa-map-marker mr-sm'></i>Ubicar!</button></span>";
+
+        return $this->buildDivGroup($label, $input);
+    }
+
     public function selectCustom($name = null , $label = null, $entity = null)
     {
         $input = parent::select($name,['0'=>'Seleccionar'] + $entity ,null,$this->inputClass);
@@ -64,6 +71,17 @@ class FormBuilder extends \Collective\Html\FormBuilder {
         return
         '<div class="'.$this->contentClass.'">
             <label>'.$label.'</label>
+
+            '.$input.'
+
+        </div>';
+    }
+
+    public function buildDivGroup( $label = null, $input = null)
+    {
+        return
+        '<label>'.$label.'</label>
+        <div class="'.$this->inputGroup.'">
 
             '.$input.'
 
