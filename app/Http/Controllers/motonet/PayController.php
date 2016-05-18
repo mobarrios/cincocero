@@ -140,9 +140,9 @@ class PayController extends Controller {
                 )
                 ),
                     "back_urls" => array(
-                    "success" => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/mp/success",
-                    "failure" => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/mp/failure",
-                    "pending" => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/mp/pending"
+                    "success" => env('MERCADO_PAGO_URL_SUCCESS'),
+                    "failure" => env('MERCADO_PAGO_URL_FAILURE'),
+                    "pending" => env('MERCADO_PAGO_URL_PENDING')
                 ),
                     "auto_return" => "approved",
         );

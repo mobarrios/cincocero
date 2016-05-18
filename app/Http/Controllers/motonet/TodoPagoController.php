@@ -29,10 +29,10 @@ class TodoPagoController extends Controller {
     public function __construct()
     {
         //modo testing "test" / produccion "prod"
-                $this->mode                 = 'test';
-                $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
-                $this->security             = 'a8e7772800df4919a0c3753738659150';
-                $this->merchant             =  3328;
+        $this->mode                 = 'test';
+        $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
+        $this->security             = 'a8e7772800df4919a0c3753738659150';
+        $this->merchant             =  3328;
 
 
        // $this->mode                 = 'prod';
