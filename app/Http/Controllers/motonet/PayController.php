@@ -81,11 +81,11 @@ class PayController extends Controller {
         $data['operation_id']   = $operation_id;
         $data['mail']           = $request->email;
         $data['subject']        = 'Tu compra en MotoNET : COD. '.$operation_id ;
-        $data['from']           = 'info@motonet.com';
+        $data['from']           = 'prueba@motonet.com.ar';
         $data['client']         = $request->last_name .'_'.$request->name ;
 
 
-        Mail::queue('emails.pay_deposito', $data, function($message) use($data)
+        Mail::queue('emails.mail', $data, function($message) use($data)
         {
             $message->from($data['from']);
             $message->to($data['mail'], $data['client'])->subject($data['subject']);
