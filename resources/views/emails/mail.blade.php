@@ -137,20 +137,20 @@
 </head>
 <body>
     <div id="header">
-        <img src="http://www.motonet.com.ar/testing/public/mail/logo.png" alt="">
+        <img src="http://www.motonet.com.ar/testing/mail/logo.png" alt="">
     </div>
 
     <div id="container">
         <h1>
             <span>
-                <img src="http://www.motonet.com.ar/testing/public/mail/ok.png" alt="ok">
+                <img src="http://www.motonet.com.ar/testing/mail/ok.png" alt="ok">
             </span>
             ¡Gracias por tu compra!
         </h1>
 
         <div id="producto">
             <div>
-                <img src="http://www.motonet.com.ar/testing/public/mail/producto.jpg" alt="nombreProducto" width="150">
+                <img src="http://www.motonet.com.ar/testing/mail/producto.jpg" alt="nombreProducto" width="150">
             </div>
             <div id="descripProd">
                 <h2>Nombre del producto</h2>
