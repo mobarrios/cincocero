@@ -119,4 +119,7 @@ class webController extends Controller {
         return view('motonet/web/branchDetail')->with($data);
     }
 
+    public function mail(){
+        return view('emails.mail');
+    }
 }

@@ -28,6 +28,7 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 // route MERCADO PAGO
 
 
+
 //route MERCADO PAGO
 
 Route::get('mp/{type?}','\App\Http\Controllers\motonet\PayController@mp');

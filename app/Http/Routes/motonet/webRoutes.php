@@ -26,4 +26,9 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@sucursalDetail'
     ]);
 
+    Route::get('amail',[
+        'as' => 'envioMail',
+        'uses' => 'webController@mail'
+    ]);
+
 });

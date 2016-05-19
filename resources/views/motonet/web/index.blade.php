@@ -44,7 +44,6 @@
 
 </head>
 <body class="landing-page">
-
 <div class="navbar-wrapper">
     <div class="marca">
         <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo-blanco.png" alt="motonet" width="300px" class="img-responsive"></a>
@@ -72,6 +71,7 @@
         </div>
     </nav>
 </div>
+
 <div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
     {{--<ol class="carousel-indicators">--}}
     {{--<li data-target="#inSlider" data-slide-to="0" class=""></li>--}}
@@ -117,7 +117,6 @@
     {{--<span class="sr-only">Next</span>--}}
     {{--</a>--}}
 </div>
-
     @include('motonet/web/includes/menu')
 
     @include('motonet/web/includes/slider')
