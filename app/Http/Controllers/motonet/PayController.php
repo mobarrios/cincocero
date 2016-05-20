@@ -185,7 +185,7 @@ class PayController extends Controller {
 
     public function mp(Request $request, $type = null)
     {
-
+ddd($_COOKIE);
         $msg = $request->collection_status;
 
         if($msg == 'approved') {

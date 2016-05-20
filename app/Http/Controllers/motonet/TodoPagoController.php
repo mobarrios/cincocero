@@ -143,7 +143,7 @@ class TodoPagoController extends Controller {
         $client_id        = $_COOKIE['client_id'];
         $p_id             = $_COOKIE['publication_id'];
 
-
+dd($_COOKIE);
         $this->connector  =  new todoPago($this->http_header, $this->mode);
 
         $optionsGAA = array (
@@ -166,6 +166,7 @@ class TodoPagoController extends Controller {
 
     public function getError(Request $request){
 
+        
         $rk         = $_COOKIE['RequestKey'];
         $p_id       = $_COOKIE['publication_id'];
         $client_id  = $_COOKIE['client_id'];
