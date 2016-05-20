@@ -166,7 +166,8 @@ dd($_COOKIE);
 
     public function getError(Request $request){
 
-        
+        dd($_COOKIE);
+
         $rk         = $_COOKIE['RequestKey'];
         $p_id       = $_COOKIE['publication_id'];
         $client_id  = $_COOKIE['client_id'];
