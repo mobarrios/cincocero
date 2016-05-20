@@ -150,23 +150,22 @@
 
         <div id="producto">
             <div>
-                <img src="http://www.motonet.com.ar/testing/mail/producto.jpg" alt="nombreProducto" width="150">
+                <img src="http://www.motonet.com.ar/testing/".{{$image}} alt="nombreProducto" width="150">
             </div>
             <div id="descripProd">
-                <h2>Nombre del producto</h2>
-                <p>Cantidad: 1</p>
-                <p>N° orden: 5416548</p>
-                <p>Medio de pago: Taca taca</p>
-                <h3>$35000 <span>c/u</span></h3>
+                <h2>{{$publication_name}}</h2>
+                <p>N° orden: {{$operation_id}}</p>
+                <p>Medio de pago: {{$total}}</p>
+                <h3>$ {{$publication_price}}</h3>
             </div>
         </div>
 
         <div id="pago">
             <h1>A pagar</h1>
 
-            <h3>Pagado: <span>$3500</span></h3> <br>
+            <h3>Pagado: $ {{$total}}</h3> <br>
             <span></span>
-            <h3>A pagar:<span style="color:#cc3c46;">$31500</span></h3>
+            <h3>A pagar:<span style="color:#cc3c46;">$ {{$publication_price - $total}}</span></h3>
         </div>
 
         <div id="medioPago">

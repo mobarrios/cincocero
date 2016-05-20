@@ -1,25 +1,28 @@
 {!! Form::open(['url'=>'pay','method'=>'get'])!!}
 
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-2">
             <div class="form-group">
-
-                <input class="input-sm form-control" name="last_name" placeholder="Apellido" type="text" required="required">
+                {!! Form::text('dni',null,['class'=>'input-sm form-control','placeholder'=>'DNI', 'required'=>'required']) !!}
             </div>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
             <div class="form-group">
-
-                <input class="input-sm form-control" name="name" placeholder="Nombre" type="text" required="required">
+                {!! Form::text('last_name',null,['class'=>'input-sm form-control','placeholder'=>'Apellido', 'required'=>'required']) !!}
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="form-group">
+                {!! Form::text('name',null,['class'=>'input-sm form-control','placeholder'=>'Nombre', 'required'=>'required']) !!}
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-3">
             <div class="form-group">
                 <select class=" form-control" name="state" required="required">
-                    <option>Seleccionar Provincia</option>
+                    <option value="">Seleccionar Provincia</option>
                     <option value="C">CABA</option>
                     <option value="B">Buenos Aires</option>
                     <option value="K">Catamarca</option>
@@ -49,43 +52,42 @@
             </div>
         </div>
 
-        <div class="col-xs-6">
+        <div class="col-xs-3">
             <div class="form-group">
-                <input class="input-sm  form-control" name="city" placeholder="Ciudad" type="text" required="required">
+                {!! Form::text('city',null,['class'=>'input-sm form-control','placeholder'=>'Ciudad', 'required'=>'required']) !!}
+            </div>
+        </div>
+
+
+        <div class="col-xs-3">
+            <div class="form-group">
+                {!! Form::text('street',null,['class'=>'input-sm form-control','placeholder'=>'Calle, Nro', 'required'=>'required']) !!}
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                {!! Form::text('postal_code',null,['class'=>'input-sm form-control','placeholder'=>'Codigo Postal', 'required'=>'required']) !!}
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-xs-6">
             <div class="form-group">
-                <input class="input-sm form-control" name="street" placeholder="Calle , Nro" type="text" required="required">
+                {!! Form::text('email',null,['type'=>'email','class'=>'input-sm form-control','placeholder'=>'E-Mail', 'required'=>'required']) !!}
             </div>
         </div>
         <div class="col-xs-6">
             <div class="form-group">
-                <input class="input-sm form-control" name="postal_code" placeholder="Codigo Postal" type="text" required="required">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-6">
-            <div class="form-group">
-                <input class="input-sm form-control" name="email" placeholder="e-mail" type="text" required="required">
-            </div>
-        </div>
-        <div class="col-xs-6">
-            <div class="form-group">
-                <input class="input-sm form-control" name="phone" placeholder="Tel / Cel" type="text" required="required">
+                {!! Form::text('phone',null,['class'=>'input-sm form-control','placeholder'=>'Tel./Cel.', 'required'=>'required']) !!}
             </div>
         </div>
 
     </div>
-
+<hr>
     <div class="row">
         <div class="col-xs-12">
             <select name="price" class="input-sm form-control" required="required">
-                <option value="0" ><i class="small">Seleccionar Importe a Abonar</i></option>
+                <option value="" ><i class="small">Seleccionar Importe a Abonar</i></option>
                 <option value="{!! $publication->price !!}"> Total  :  $ {!! $publication->price !!}</option>
                 <option value="{!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) !!}"> Seña  :  $ {!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) !!}</option>
             </select>
@@ -117,7 +119,7 @@
                     <i class="icon icon-mp text-success fs15"></i>
                     <hr>
                     <p class="small">
-                        Boton de pago de MercadoPago.
+                        Formulario para pagar desde la web de Mercado Pago.
                     </p>
                 </div>
             </div>

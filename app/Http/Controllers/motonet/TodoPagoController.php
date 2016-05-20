@@ -28,17 +28,21 @@ class TodoPagoController extends Controller {
 
     public function __construct()
     {
-        //modo testing "test"
-       // $this->mode                 = 'test';
-       // $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
-       // $this->security             = 'a8e7772800df4919a0c3753738659150';
-       // $this->merchant             =  3328;
 
-        // produccion "prod"
-        $this->mode                 = 'prod';
-        $this->autorization_code    = 'TODOPAGO 42828D3178E67DF1D71FF49B67A67131';
-        $this->security             = '42828D3178E67DF1D71FF49B67A67131';
-        $this->merchant             =  21478;
+        if(env('TODO_PAGO_MODE') == 'test'){
+
+            //modo testing "test"
+            $this->mode                 = 'test';
+            $this->autorization_code    = 'TODOPAGO a8e7772800df4919a0c3753738659150';
+            $this->security             = 'a8e7772800df4919a0c3753738659150';
+            $this->merchant             =  3328;
+        }else{
+            // produccion "prod"
+            $this->mode                 = 'prod';
+            $this->autorization_code    = 'TODOPAGO 42828D3178E67DF1D71FF49B67A67131';
+            $this->security             = '42828D3178E67DF1D71FF49B67A67131';
+            $this->merchant             =  21478;
+        }
 
         $this->http_header          =  ['Authorization'=> $this->autorization_code, 'user_agent' => 'PHPSoapClient'];//authorization key del ambiente requerido
 
@@ -46,8 +50,6 @@ class TodoPagoController extends Controller {
 
     public function getTp($request = null , $client = null, $publication = null, $operation_id = null)
     {
-
-
             $this->connector        = new todoPago($this->http_header, $this->mode);
             $this->operation_id     = $operation_id;
 
@@ -110,7 +112,7 @@ class TodoPagoController extends Controller {
 
             } else {
 
-                setcookie('client_id',$client->id);
+                //setcookie('client_id',$client->id);
                 setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), "/");
 
                 return redirect()->to($rta["URL_Request"]);
@@ -155,6 +157,8 @@ class TodoPagoController extends Controller {
 
         $payController = new PayController();
         $payController->newOperationTodoPago($rta, $client_id);
+
+        $payController->sendMail();
 
         return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
 

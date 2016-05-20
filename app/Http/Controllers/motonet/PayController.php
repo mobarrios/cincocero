@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\motonet;
 
 use App\Entities\motonet\Clients;
-
 use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
 use App\Http\Controllers\Controller;
@@ -19,17 +18,12 @@ class PayController extends Controller {
 
     public function ProcessPay(Request $request, TodoPagoController $tp)
     {
-
-        if($request->price == 0)
-            return redirect()->back()->withErrors('Seleccionar Importe a Abonar.');
-
-
         $publication        = Publications::find($_COOKIE['publication_id']);
         $client             = Clients::where('email',$request->email)->get();
         $operations         = Operations::all()->last();
 
-
         if(!is_null($operations)){
+
             if ($operations->count() != 0)
                 $operation_id = $operations->id + 1;
         }else
@@ -39,6 +33,7 @@ class PayController extends Controller {
         if($client->count() == 0) {
 
             $new_client              = new Clients();
+            $new_client->dni         = $request->dni;
             $new_client->name        = $request->name;
             $new_client->last_name   = $request->last_name;
             $new_client->email       = $request->email;
@@ -46,10 +41,13 @@ class PayController extends Controller {
             $new_client->save();
 
             $client = $new_client;
-        }else{
 
+        }else{
            $client =  $client->first();
         }
+
+        setcookie('operation_id', $operation_id , time() + (86400 * 30), "/");
+        setcookie('client_id', $client->id , time() + (86400 * 30), "/");
 
         if($request->pago == 'tp'){
 
@@ -59,30 +57,40 @@ class PayController extends Controller {
 
             return $this->newOperationMercadoPago($request, $client, $publication, $operation_id);
 
-        } elseif($request->pago == 'deposito'){
+        }else{
 
-            $this->sendMail($request, $operation_id);
             $this->newOperationDeposito($request, $client, $operation_id);
+            $this->sendMail();
 
             return redirect()->back()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.');
-
-        } else {
-
-            return redirect()->back()->withErrors('Seleccionar Metodo de Pago.');
         }
-
 
     }
 
 
 
-    public function sendMail($request = null, $operation_id = null)
+    public function sendMail()
     {
-        $data['operation_id']   = $operation_id;
-        $data['mail']           = $request->email;
-        $data['subject']        = 'Tu compra en MotoNET : COD. '.$operation_id ;
-        $data['from']           = 'prueba@motonet.com.ar';
-        $data['client']         = $request->last_name .'_'.$request->name ;
+
+        $publication    = Publications::find($_COOKIE['publication_id']);
+        $client         = Clients::find($_COOKIE['client_id']);
+        $operation      = Operations::find($_COOKIE['operation_id']);
+
+
+        if($publication->Images->count() != 0 )
+            $img = $publication->Models->Images->first()->image;
+        else
+            $img = null;
+
+        $data['operation_id']       = $_COOKIE['operation_id'];
+        $data['mail']               = $client->email;
+        $data['subject']            = 'Tu compra en MotoNET : N° orden. '. $_COOKIE['operation_id'] ;
+        $data['from']               = 'prueba@motonet.com.ar';
+        $data['client']             = $client->last_name .'_'.$client->name ;
+        $data['publication_name']   = $publication->title;
+        $data['publication_price']  = $publication->price;
+        $data['image']              = $img;
+        $data['total']              = $operation->amount;
 
 
         Mail::queue('emails.mail', $data, function($message) use($data)
@@ -106,6 +114,7 @@ class PayController extends Controller {
         $operation->authorization_key = $rta['AuthorizationKey'];
         $operation->authorization_code= $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
         $operation->status            = 2;
+        $operation->publications_id   = $_COOKIE['publication_id'];
         $operation->save();
     }
 
@@ -119,7 +128,9 @@ class PayController extends Controller {
         $operation->authorization_code= 'n/a';
         $operation->amount            = $request->price;
         $operation->status            = 2;
-        $operation->save();
+        $operation->publications_id   = $_COOKIE['publication_id'];
+
+            $operation->save();
     }
 
 
@@ -128,7 +139,15 @@ class PayController extends Controller {
 
         $mp  = new \App\Helpers\MercadoPago\Mp("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
 
-        $mp->sandbox_mode(true);
+        if(env('MERCADO_PAGO_MODE') == 'sandbox'){
+
+            $mp->sandbox_mode(true);
+            $point = 'sandbox_init_point';
+
+        }else{
+
+            $point = 'init_point';
+        }
 
         $preference_data = array(
             "items" => array(
@@ -140,43 +159,46 @@ class PayController extends Controller {
                 )
                 ),
                     "back_urls" => array(
-                    "success" => env('MERCADO_PAGO_URL_SUCCESS'),
-                    "failure" => env('MERCADO_PAGO_URL_FAILURE'),
-                    "pending" => env('MERCADO_PAGO_URL_PENDING')
+                    "success"   => env('MERCADO_PAGO_URL_SUCCESS'),
+                    "failure"   => env('MERCADO_PAGO_URL_FAILURE'),
+                    "pending"   => env('MERCADO_PAGO_URL_PENDING')
                 ),
                     "auto_return" => "approved",
         );
 
-
         $preference = $mp->create_preference($preference_data);
 
-       $operation                    = new Operations();
-       $operation->id                = $operation_id;
-       $operation->clients_id        = $client->id;
-       $operation->medio_de_pago     = 2;
-       $operation->authorization_key = 'n/a';
-       $operation->authorization_code= 'n/a';
-       $operation->amount            = $request->price;
-       $operation->status            = 2;
-       $operation->save();
+        $operation                    = new Operations();
+        $operation->id                = $operation_id;
+        $operation->clients_id        = $client->id;
+        $operation->medio_de_pago     = 2;
+        $operation->authorization_key = 'n/a';
+        $operation->authorization_code= 'n/a';
+        $operation->amount            = $request->price;
+        $operation->status            = 2;
+        $operation->publications_id   = $_COOKIE['publication_id'];
+        $operation->save();
 
-
-        return redirect()->to($preference['response']['sandbox_init_point']);
+        return redirect()->to($preference['response'][$point]);
 
     }
 
     public function mp(Request $request, $type = null)
     {
 
-        dd($request);
         $msg = $request->collection_status;
 
-        if($msg == 'approved')
-            return redirect()->route('resumen',$_COOKIE['publication_id'])->withErrors('Pago Aprobado');
-        if($msg == 'pending')
+        if($msg == 'approved') {
+            $this->sendMail();
+            return redirect()->route('resumen', $_COOKIE['publication_id'])->withErrors('Pago Aprobado');
+        }
+        if($msg == 'pending'){
+            $this->sendMail();
             return redirect()->route('resumen',$_COOKIE['publication_id'])->withErrors('Pago Pendiente');
-        if($msg == 'rejected')
+        }
+        if($msg == 'rejected'){
             return redirect()->route('resumen',$_COOKIE['publication_id'])->withErrors('Pago Rechazado');
+        }
 
     }
 }
