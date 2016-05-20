@@ -113,7 +113,7 @@ class TodoPagoController extends Controller {
             } else {
 
                 //setcookie('client_id',$client->id);
-                setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), "/");
+                setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), "/",null,true);
 
                 return redirect()->to($rta["URL_Request"]);
             }
@@ -143,7 +143,6 @@ class TodoPagoController extends Controller {
         $client_id        = $_COOKIE['client_id'];
         $p_id             = $_COOKIE['publication_id'];
 
-dd($_COOKIE);
         $this->connector  =  new todoPago($this->http_header, $this->mode);
 
         $optionsGAA = array (
@@ -165,8 +164,6 @@ dd($_COOKIE);
     }
 
     public function getError(Request $request){
-
-        dd($_COOKIE);
 
         $rk         = $_COOKIE['RequestKey'];
         $p_id       = $_COOKIE['publication_id'];

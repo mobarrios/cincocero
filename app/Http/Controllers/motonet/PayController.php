@@ -46,8 +46,8 @@ class PayController extends Controller {
            $client =  $client->first();
         }
 
-        setcookie('operation_id', $operation_id , time() + (86400 * 30), "/");
-        setcookie('client_id', $client->id , time() + (86400 * 30), "/");
+        setcookie('operation_id', $operation_id , time() + (86400 * 30), "/",null,true);
+        setcookie('client_id', $client->id , time() + (86400 * 30), "/",null,true);
 
         if($request->pago == 'tp'){
 
@@ -185,7 +185,6 @@ class PayController extends Controller {
 
     public function mp(Request $request, $type = null)
     {
-ddd($_COOKIE);
         $msg = $request->collection_status;
 
         if($msg == 'approved') {
