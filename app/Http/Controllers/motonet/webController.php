@@ -108,7 +108,7 @@ class webController extends Controller {
     public function resumen($id){
 
         $data['publication']    = $this->publications->find($id);
-        setcookie('publication_id', $data['publication']->id, time() + (86400 * 30), "/" );
+        setcookie('publication_id', $data['publication']->id, time() + (86400 * 30), $_SERVER['SERVER_NAME'] );
 
         return view('motonet/web/resumen')->with($data);
     }
