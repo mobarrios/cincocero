@@ -113,7 +113,7 @@ class TodoPagoController extends Controller {
             } else {
 
                 //setcookie('client_id',$client->id);
-                setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), "/",null,true);
+                setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), $_SERVER['SERVER_NAME']);
 
                 return redirect()->to($rta["URL_Request"]);
             }

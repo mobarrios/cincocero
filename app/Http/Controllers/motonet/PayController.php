@@ -7,6 +7,7 @@ use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
 use App\Helpers\TodoPago\lib\Sdk as todoPago;
 
@@ -46,8 +47,10 @@ class PayController extends Controller {
            $client =  $client->first();
         }
 
-        setcookie('operation_id', $operation_id , time() + (86400 * 30), "/",null,true);
-        setcookie('client_id', $client->id , time() + (86400 * 30), "/",null,true);
+        Cookie::queue('name','vauel');
+
+        setcookie('operation_id', $operation_id , time() + (86400 * 30),$_SERVER['SERVER_NAME']);
+        setcookie('client_id', $client->id , time() + (86400 * 30), $_SERVER['SERVER_NAME']);
 
         if($request->pago == 'tp'){
 
