@@ -10,8 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
 use App\Helpers\TodoPago\lib\Sdk as todoPago;
-
-
+use Illuminate\Support\Facades\Session;
 
 
 class PayController extends Controller {
@@ -19,7 +18,10 @@ class PayController extends Controller {
 
     public function ProcessPay(Request $request, TodoPagoController $tp)
     {
-        $publication        = Publications::find($_COOKIE['publication_id']);
+
+        //$publication        = Publications::find($_COOKIE['publication_id']);
+
+        $publication        = Publications::find(Cookie::get('publication_id'));
         $client             = Clients::where('email',$request->email)->get();
         $operations         = Operations::all()->last();
 
@@ -47,10 +49,13 @@ class PayController extends Controller {
            $client =  $client->first();
         }
 
-        Cookie::queue('name','vauel');
 
-        setcookie('operation_id', $operation_id , time() + (86400 * 30),$_SERVER['SERVER_NAME']);
-        setcookie('client_id', $client->id , time() + (86400 * 30), $_SERVER['SERVER_NAME']);
+        //setcookie('operation_id', $operation_id , time() + (86400 * 30),$_SERVER['SERVER_NAME']);
+        //setcookie('client_id', $client->id , time() + (86400 * 30), $_SERVER['SERVER_NAME']);
+
+        Cookie::queue(Cookie::make('operation_id', $operation_id , 0));
+        Cookie::queue(Cookie::make('client_id', $client->id , 0));
+
 
         if($request->pago == 'tp'){
 
@@ -75,9 +80,13 @@ class PayController extends Controller {
     public function sendMail()
     {
 
-        $publication    = Publications::find($_COOKIE['publication_id']);
-        $client         = Clients::find($_COOKIE['client_id']);
-        $operation      = Operations::find($_COOKIE['operation_id']);
+        //$publication    = Publications::find($_COOKIE['publication_id']);
+        //$client         = Clients::find($_COOKIE['client_id']);
+        //$operation      = Operations::find($_COOKIE['operation_id']);
+
+        $publication    = Publications::find(Cookie::get('publication_id'));
+        $client         = Clients::find(Cookie::get('client_id'));
+        $operation      = Operations::find(Cookie::get('operation_id'));
 
 
         if($publication->Images->count() != 0 )
@@ -85,9 +94,11 @@ class PayController extends Controller {
         else
             $img = null;
 
-        $data['operation_id']       = $_COOKIE['operation_id'];
+        //$data['operation_id']       = $_COOKIE['operation_id'];
+        $data['operation_id']       = Cookie::get('operation_id');
         $data['mail']               = $client->email;
-        $data['subject']            = 'Tu compra en MotoNET : N° orden. '. $_COOKIE['operation_id'] ;
+        //$data['subject']            = 'Tu compra en MotoNET : N° orden. '. $_COOKIE['operation_id'] ;
+        $data['subject']            = 'Tu compra en MotoNET : N° orden. '. Cookie::get('operation_id') ;
         $data['from']               = 'prueba@motonet.com.ar';
         $data['client']             = $client->last_name .'_'.$client->name ;
         $data['publication_name']   = $publication->title;
@@ -179,7 +190,7 @@ class PayController extends Controller {
         $operation->authorization_code= 'n/a';
         $operation->amount            = $request->price;
         $operation->status            = 2;
-        $operation->publications_id   = $_COOKIE['publication_id'];
+        $operation->publications_id   = Cookie::get('publication_id');
         $operation->save();
 
         return redirect()->to($preference['response'][$point]);
@@ -192,14 +203,14 @@ class PayController extends Controller {
 
         if($msg == 'approved') {
             $this->sendMail();
-            return redirect()->route('resumen', $_COOKIE['publication_id'])->withErrors('Pago Aprobado');
+            return redirect()->route('resumen', Cookie::get('publication_id'))->withErrors('Pago Aprobado');
         }
         if($msg == 'pending'){
             $this->sendMail();
-            return redirect()->route('resumen',$_COOKIE['publication_id'])->withErrors('Pago Pendiente');
+            return redirect()->route('resumen',Cookie::get('publication_id'))->withErrors('Pago Pendiente');
         }
         if($msg == 'rejected'){
-            return redirect()->route('resumen',$_COOKIE['publication_id'])->withErrors('Pago Rechazado');
+            return redirect()->route('resumen',Cookie::get('publication_id'))->withErrors('Pago Rechazado');
         }
 
     }
