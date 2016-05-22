@@ -89,6 +89,7 @@ class PayController extends Controller {
         $operation      = Operations::find(Cookie::get('operation_id'));
 
 
+        dd($publication);
         if($publication->Images->count() != 0 )
             $img = $publication->Models->Images->first()->image;
         else
