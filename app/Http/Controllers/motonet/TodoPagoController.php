@@ -114,8 +114,7 @@ class TodoPagoController extends Controller {
             } else {
 
                 //setcookie('client_id',$client->id);
-               // setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), $_SERVER['SERVER_NAME']);
-                Cookie::queue(Cookie::make('RequestKey',$rta['RequestKey'],0));
+                setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), '/');
 
                 return redirect()->to($rta["URL_Request"]);
             }
@@ -141,13 +140,9 @@ class TodoPagoController extends Controller {
 
     public function getExito(Request $request){
 
-        //$rk               = $_COOKIE['RequestKey'];
-        //$client_id        = $_COOKIE['client_id'];
-        //$p_id             = $_COOKIE['publication_id'];
-
-        $rk               = Cookie::get('RequestKey');
-        $client_id        = Cookie::get('client_id');
-        $p_id             = Cookie::get('publication_id');
+        $rk               = $_COOKIE['RequestKey'];
+        $client_id        = $_COOKIE['client_id'];
+        $p_id             = $_COOKIE['publication_id'];
 
         $this->connector  =  new todoPago($this->http_header, $this->mode);
 
@@ -171,13 +166,9 @@ class TodoPagoController extends Controller {
 
     public function getError(Request $request){
 
-        //$rk         = $_COOKIE['RequestKey'];
-        //$p_id       = $_COOKIE['publication_id'];
-        //$client_id  = $_COOKIE['client_id'];
-
-        $rk         = Cookie::get('RequestKey');
-        $p_id       = Cookie::get('publication_id');
-        $client_id  = Cookie::get('client_id');
+        $rk         = $_COOKIE['RequestKey'];
+        $p_id       = $_COOKIE['publication_id'];
+        $client_id  = $_COOKIE['client_id'];
 
 
         $connector  =  new todoPago($this->http_header, $this->mode);

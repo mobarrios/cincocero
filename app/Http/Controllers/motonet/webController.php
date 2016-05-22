@@ -12,7 +12,6 @@ use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 
 
@@ -109,11 +108,7 @@ class webController extends Controller {
     public function resumen($id){
 
         $data['publication']    = $this->publications->find($id);
-        //setcookie('publication_id', $data['publication']->id, time() + (86400 * 30), '/' );
-
-        Cookie::queue(Cookie::make('publication_id', $data['publication']->id , 0));
-
-        //Cookie::make('publication_id',$data['publication']->id);
+        setcookie('publication_id', $data['publication']->id, time() + (86400 * 30), '/' );
 
 
         return view('motonet/web/resumen')->with($data);
