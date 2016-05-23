@@ -46,12 +46,13 @@ class PayController extends Controller {
             $client = $new_client;
 
         }else{
+
            $client =  $client->first();
         }
 
 
-        setcookie('operation_id', $operation_id , time() + (86400 * 30),$_SERVER['SERVER_NAME']);
-        setcookie('client_id', $client->id , time() + (86400 * 30), $_SERVER['SERVER_NAME']);
+        setcookie('operation_id', $operation_id , time() + (86400 * 30),'/');
+        setcookie('client_id', $client->id , time() + (86400 * 30), '/');
 
         if($request->pago == 'tp'){
 
