@@ -44,7 +44,7 @@ class webController extends Controller {
 
     public function detail($id){
 
-        $data['publication'] = $this->publications->find($id);
+        $data['publicationDetail'] = $this->publications->find($id);
 
         return view('motonet/web/detail')->with($data);
     }
@@ -60,6 +60,7 @@ class webController extends Controller {
                                         $q->where('categories.id',$cat);
                                     });
                                 })->get();
+            $data['grid'] = $this->categories->find($request->get('categories'))->name;
 
         } elseif ($request->get('models')){
             $m = $this->models->find($request->get('models'))->id;
@@ -71,6 +72,7 @@ class webController extends Controller {
                             })->get();
             */
             $data['items'] = $this->publications->where('models_id',$m)->get();
+            $data['grid'] = $this->models->find($request->get('models'))->name;
 
         }elseif($request->get('brands')){
             $b = $this->brands->find($request->get('brands'))->id;
@@ -80,6 +82,7 @@ class webController extends Controller {
                                         $q->where('id', $b);
                                     });
                                 })->get();
+            $data['grid'] = $this->brands->find($request->get('brands'))->name;
         }else{
             $find = $request->get('find');
             $data['items'] = $this->publications
@@ -100,6 +103,8 @@ class webController extends Controller {
 
                                 })
                                 ->get();
+            $data['grid'] = "find";
+            $data['find'] = $request->get('find');
         }
 
         return view('motonet/web/grid')->with($data);

@@ -1,6 +1,7 @@
 @extends('motonet/web/template')
 
 @section('content')
+    @include('motonet/web/includes/breadcrumbs')
     <div class="container">
         <h1>{!! $sucursal->name !!}</h1>
 

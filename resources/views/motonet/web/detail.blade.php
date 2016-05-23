@@ -43,12 +43,12 @@
                                 <div class="col-md-5">
                                     <div class="product-images">
 
-                                        @if($publication->Models->Images->count() != 0)
-                                            @foreach($publication->Models->Images as $img)
+                                        @if($publicationDetail->Models->Images->count() != 0)
+                                            @foreach($publicationDetail->Models->Images as $img)
                                                 <div class="panel3 panel-default">
                                                     <div class="panel3-body image-imitation">
-                                                        <a href="{!! $img->image !!}" title="{!! $publication->title !!}" class="zoom" data-title="{!! $publication->title !!}" data-type="image" data-toggle="lightbox">
-                                                            <img src="{!! $img->image !!}" alt="{!! $publication->title !!}">
+                                                        <a href="{!! $img->image !!}" title="{!! $publicationDetail->title !!}" class="zoom" data-title="{!! $publicationDetail->title !!}" data-type="image" data-toggle="lightbox">
+                                                            <img src="{!! $img->image !!}" alt="{!! $publicationDetail->title !!}">
                                                             <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
                                                         </a>
                                                     </div>
@@ -68,19 +68,19 @@
                                 <div class="col-md-7">
 
                                     <h2 class="font-bold m-b-xs">
-                                        {!! $publication->title !!}
+                                        {!! $publicationDetail->title !!}
                                     </h2>
                                     <small>123
                                         <br></small>
                                     <div class="m-t-md">
-                                        <h2 class="product-main-price">${!! $publication->price !!}</h2>
+                                        <h2 class="product-main-price">${!! $publicationDetail->price !!}</h2>
                                     </div>
                                     <hr>
 
-                                    <h4>{!! $publication->Models->Brands->name !!}</h4>
+                                    <h4>{!! $publicationDetail->Models->Brands->name !!}</h4>
 
                                     <div class="small text-muted">
-                                        {!! $publication->Models->name!!}
+                                        {!! $publicationDetail->Models->name!!}
                                     </div>
                                     <dl class="small m-t-md">
 
@@ -88,21 +88,21 @@
 
                                     <div>
                                         <div class="btn-group">
-                                            <a class="btn btn-primary btn-sm" href="{!! route('resumen',$publication->id) !!}"> Comprar</a>
+                                            <a class="btn btn-primary btn-sm" href="{!! route('resumen',$publicationDetail->id) !!}"> Comprar</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-                            @if($publication->description != "")
+                            @if($publicationDetail->description != "")
                                 <h1 class="text-center">Descripción</h1>
 
                                 <div class="small text-muted">
-                                    {!! $publication->description !!}
+                                    {!! $publicationDetail->description !!}
                                 </div>
                                 <div class="panel3 panel-default">
                                     <div class="panel3-body image-imitation">
-                                            <img src="{!! $publication->Images->first()->image or '' !!}" alt="{!! $publication->title !!}">
+                                            <img src="{!! $publicationDetail->Images->first()->image or '' !!}" alt="{!! $publicationDetail->title !!}">
                                             <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
 
                                     </div>
