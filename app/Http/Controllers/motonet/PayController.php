@@ -86,6 +86,8 @@ class PayController extends Controller {
         else
             $img = null;
 
+
+
         $data['operation_id']       = $_COOKIE['operation_id'];
         $data['mail']               = $client->email;
         $data['subject']            = 'Tu compra en MotoNET : N° orden. '. $_COOKIE['operation_id'] ;

@@ -150,7 +150,7 @@
 
         <div id="producto">
             <div>
-                <img src="http://www.motonet.com.ar/testing/".{{$image}} alt="nombreProducto" width="150">
+                <img src="{{$image}}" alt="nombreProducto" width="150">
             </div>
             <div id="descripProd">
                 <h2>{{$publication_name}}</h2>
