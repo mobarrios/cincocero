@@ -4058,7 +4058,7 @@ a.close-canvas-menu:hover {
     z-index: 2040 !important;
 }
 .modal {
-    z-index: 2050 !important;
+    z-index: 4050 !important;
 }
 .spiner-example {
     height: 200px;
@@ -5259,7 +5259,7 @@ del {
 .navbar2.fixed-top{
     position: fixed;
     top: 110px;
-    z-index: 9999999;
+    z-index: 3000;
     width: 100%;
     left: 0;
 }
