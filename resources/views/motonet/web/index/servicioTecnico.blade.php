@@ -1,19 +1,15 @@
-<div class="container">
+
 
     <h1>Pack service</h1>
 
-    <div class="col-xs-12">
         <p>Para nuestros clientes tenemos una promocion unica, la cual consiste en abonar los tres primeros services al precio de dos, a esto le llamamos
 
         "pack service", podes contratarlo en el momento, y validas la garantia de tu moto, no te pierdas esta oportunidad increible.</p>
 
-    </div>
 
     <h1>Servicio técnico</h1>
 
-        <div class="col-xs-12">
             <p>Brindamos un servicio diferente, completo y eficiente, que brinda a nuestros clientes soluciones inmediatas ante cualquier inconveniente que pueda presentarse en su motovehículo. contamos con personal mecánico idóneo en la tarea, capacitado para brindar un servicio que satisfaga las necesidades de nuestros clientes.</p>
-        </div>
 
     <h3>¿Porque realizar el servicio tecnico?</h3>
     <ul>
@@ -42,5 +38,3 @@
         <li>Cambio de aceite y filtro</li>
         <li>Ajuste y limpieza de transmisión</li>
     </ul>
-
-</div>

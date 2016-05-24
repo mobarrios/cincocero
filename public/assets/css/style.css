@@ -8566,3 +8566,16 @@ footer{
 .img-sucursal img{
     height:381px;
 }
+
+
+.btn-servicios{
+    padding: 25px 12px !important;
+}
+
+.btn-servicios *{
+    display:block;
+}
+
+.btn-servicios i:before{
+    font-size:40px;
+}

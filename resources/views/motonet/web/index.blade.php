@@ -15,6 +15,7 @@
     <link href="assets/inspinia/css/bootstrap.css" rel="stylesheet">
 
     <link href="assets/inspinia/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/fontello.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -164,11 +165,9 @@
             </div>
 
         @include('motonet/web/servicios')
-        {{--@include('motonet/web/index/accesorios')--}}
-        {{--@include('motonet/web/index/seguro')--}}
-        {{--@include('motonet/web/index/servicioTecnico')--}}
-{{--        @include('motonet/web/index/metodosDePagos')--}}
 
+
+        @include('motonet/web/index/metodosDePagos')
         @include('motonet/web/index/sucursales')
 
     </section>
@@ -186,68 +185,35 @@
                 <h4 class="modal-title" id="myModalLabel">Accesorios</h4>
             </div>
             <div class="modal-body">
+                @include('motonet/web/index/accesorios')
+            </div>
+        </div>
+    </div>
+</div>
 
-                    <h2>ALARMA DE MOTOS DUOBLOCK FX 330</h2>
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog"  role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Seguro</h4>
+            </div>
+            <div class="modal-body">
+                @include('motonet/web/index/seguro')
+            </div>
+        </div>
+    </div>
+</div>
 
-                    <h4>Funciones Exclusivas DUOBLOCK FX 330: </h4>
-                    <ul>
-                            <li>
-                                Incorpora 2 (dos) nuevos controles remoto DPN-52, para comando manual y por presencia.
-                            </li>
-                            <li>
-                                Nuevo sensor de desplazamiento (acelerómetro)que detecta cualquier movimiento de la motocicleta
-                            </li>
-                            <li>
-                                Nuevo diseño del módulo de alarma, con ficha de conexión.
-                            </li>
-                            <li>
-                                Tamaño reducido para una mejor instalación
-                            </li>
-                            <li>
-                                Compatible con sensor de intrusión.
-                            </li>
-                            <li>
-                                Activa y desactiva automáticamente por presencia, sin emitir aviso alguno. (modo discreto)
-                            </li>
-                            <li>
-                                Activa y desactiva el sistema de alarma de forma manual, a través del control remoto, con avis visual y luminoso. (modo alerta)
-                            </li>
-                            <li>
-                                Modo asalto por presencia, programable.
-                            </li>
-                            <li>
-                                Modo asalto por control remoto manual, programable.
-                            </li>
-                            <li>
-                                Bloqueo progresivo de marcha, para sus modos asalto.
-                            </li>
-                            <li>
-                                No interfiere el sistema eléctrico de la moto.
-                            </li>
-                            <li>
-                                Mayor resistencia a las interferencias.
-                            </li>
-                            <li>
-                                Bloquea la marcha del motor.
-                            </li>
-                            <li>
-                                Controles Remotos, sirena y modulo central, resistente al agua.
-                            </li>
-                            <li>
-                                Entrada auxiliar de disparo para protección de gavetas o porta objetos.
-                            </li>
-                            <li>
-                                Anulación del sistema de alarma, mediante código secreto.
-                            </li>
-                            <li>
-                                Módulo con menor consumo de energía 2.5 mA
-                            </li>
-                            <li>
-                                Inhibición rápida del control remoto extraviado.
-                            </li>
-                        </ul>
-
-
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog"  role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Servicio Técnico</h4>
+            </div>
+            <div class="modal-body">
+                @include('motonet/web/index/servicioTecnico')
             </div>
         </div>
     </div>

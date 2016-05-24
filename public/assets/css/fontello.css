@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'fontello';
-  src: url('../fonts/fontello.eot?12360501');
-  src: url('../fonts/fontello.eot?12360501#iefix') format('embedded-opentype'),
-       url('../fonts/fontello.woff2?12360501') format('woff2'),
-       url('../fonts/fontello.woff?12360501') format('woff'),
-       url('../fonts/fontello.ttf?12360501') format('truetype'),
-       url('../fonts/fontello.svg?12360501#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'fontello';
+    src: url('../fonts/fontello.eot?89350816');
+    src: url('../fonts/fontello.eot?89350816#iefix') format('embedded-opentype'),
+    url('../fonts/fontello.woff2?89350816') format('woff2'),
+    url('../fonts/fontello.woff?89350816') format('woff'),
+    url('../fonts/fontello.ttf?89350816') format('truetype'),
+    url('../fonts/fontello.svg?89350816#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
@@ -54,6 +54,15 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
- 
-.icon-naranja:before { content: '\e800'; } /* '' */
-.icon-mp:before { content: '\e801'; } /* '' */
+
+.icon-lock-open-alt:before { content: '\e800'; } /* '' */
+.icon-user-secret:before { content: '\e801'; } /* '' */
+.icon-wrench:before { content: '\e802'; } /* '' */
+.icon-bell:before { content: '\e803'; } /* '' */
+.icon-mp:before { content: '\e804'; } /* '' */
+.icon-naranja:before { content: '\e805'; } /* '' */
+.icon-logo-mp:before { content: '\e806'; } /* '' */
+.icon-publicidad:before { content: '\e807'; } /* '' */
+.icon-web:before { content: '\e808'; } /* '' */
+.icon-diseniografico:before { content: '\e809'; } /* '' */
+.icon-animaciones:before { content: '\e80a'; } /* '' */

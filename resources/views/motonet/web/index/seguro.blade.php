@@ -1,19 +1,14 @@
-<div class="container">
 
-    <h1>Seguro</h1>
-
-    <div class="col-xs-12">
         <h2>Responsabilidad Civil - (Seguro de RC).</h2>
         <p>Es obligatorio según ley de tránsito Nº24.499 y resoluciones de la SSN Nº 34.225 y Nº 27.033.</p>
 
         <p>Contamos con el Respaldo, la Trayectoria y la Seguridad de las Principales Compañías de Seguros del Mercado. Te aseguramos la unidad al instante para que puedas disfrutarla con total tranquilidad. asesorate con nosotros y asegurala ya !</p>
 
 
-    </div>
+
 
     <h1>Cobertura</h1>
 
-    <div class="col-xs-12">
         <h2>RC (Responsabilidad Civil) </h2>
         <ul>
             <li>
@@ -30,9 +25,7 @@
             </li>
         </ul>
 
-    </div>
 
-    <div class="col-xs-12">
         <h2>RC + Robo (Responsabilidad Civil + Incendio + Robo + Auxilio Mecanico)  </h2>
         <ul>
             <li>
@@ -46,8 +39,5 @@
             </li>
         </ul>
 
-    </div>
 
-</div>
 
-</div>
