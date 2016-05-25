@@ -3722,7 +3722,7 @@ code {
     margin-bottom: 25px;
     margin-top: 0;
     padding: 0;
-    max-height: 470px;
+    /*max-height: 470px;*/
 }
 .ibox.collapsed .ibox-content {
     display: none;
