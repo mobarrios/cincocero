@@ -108,7 +108,7 @@ class ModelsController extends Controller {
             }
 
             $this->data['cat'] = $ca;
-            $this->data['cat'] = explode(',', $ca);;
+            $this->data['cat'] = explode(',', $ca);
         }
 //        dd($this->data['cat']);
         return view($this->form)->with($this->data);

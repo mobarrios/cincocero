@@ -31,6 +31,11 @@
 
                 {!! Form::fileCustom('image','Imagen')!!}
 
+                @if(isset($cat))
+                    {!! Form::selectMultipleCustom('pay_method_id[]','Medios De Pago',$pay_method,$cat) !!}
+                @else
+                    {!! Form::selectMultipleCustom('pay_method_id[]','Medios De Pago',$pay_method) !!}
+                @endif
 
                 <!--
                 <table class="table table-striped">

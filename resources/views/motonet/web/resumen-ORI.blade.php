@@ -112,14 +112,6 @@
                             </span>
                         </div>
                     </div>
-
-
-                    @foreach($publication->PayMethod as $pm)
-                        <li>
-                            {{$pm->name}} = {{ $publication->price + (($publication->price  * $pm->porcent) / 100)}}
-                        </li>
-                    @endforeach
-
                 </div>
             </div>
 
@@ -142,7 +134,7 @@
 
                             <div class="row">
 
-                                @include('motonet.web.payment.form_pago')
+                                    @include('motonet.web.payment.form_pago')
 
                             </div>
 

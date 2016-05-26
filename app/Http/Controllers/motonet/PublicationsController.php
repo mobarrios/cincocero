@@ -5,6 +5,7 @@ namespace App\Http\Controllers\motonet;
 use App\Entities\MercadoLibreCategories;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Items;
+use App\Entities\motonet\PayMethod;
 use App\Entities\motonet\Publications;
 use App\Helpers\Meli;
 use App\Http\Controllers\ws\MercadolibreController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\Controller;
 use Symfony\Component\Console\Helper\Helper;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
+use App\Helpers\BreadCrumbHelper;
 
 
 use App\Http\Controllers\ws\MercadolibreController as Ml;
@@ -55,7 +57,7 @@ class PublicationsController extends Controller {
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
         //$this->data['currency']        = Currency::lists('name','id');
-        //$this->data['items']             = Items::all();
+        $this->data['pay_method']        = PayMethod::all()->lists('Metodo','id');
         $this->data['brands']            = Brands::with('Models')->get();
 
 
@@ -71,7 +73,6 @@ class PublicationsController extends Controller {
         $this->data['routeNew']     = $module.'GetNew';
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
-
 
     }
 
@@ -107,4 +108,78 @@ class PublicationsController extends Controller {
     }
 
 
+    public function postNew(Request $request, ImagesHelper $image)
+    {
+        //if in controller custom
+        // $request = $this->requestCustom($request);
+
+        // validation rules form repo
+        $this->validate($request, $this->rules);
+
+        // method crear in repo
+        $model = $this->repo->create($request);
+        $model->PayMethod()->attach($request->pay_method_id);
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);
+        }
+
+        // redirect with errors messages language
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+
+    }
+
+    public function postEdit($id,Request $request, ImagesHelper $image)
+    {
+
+        // validation rules form repo
+        $this->validate($request, $this->rulesEdit);
+
+        // method crear in repo
+        $model = $this->repo->getModel()->find($id);
+
+        $this->repo->edit($id,$request);
+
+        $categories = $model->PayMethod;
+
+        if($request->pay_method_id != 0){
+            $model->PayMethod()->sync($request->pay_method_id);
+        }
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);}
+        // redirect with errors messages language
+
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.editItem'));
+    }
+
+    public function getEdit($id)
+    {
+        $bc = new BreadCrumbHelper();
+        $bc->create('Editar ' . $this->data['sectionName'], $this->data['routeEdit']);
+
+        $this->data['model'] = $this->repo->getModel()->find($id);
+
+        $cat = $this->data['model']->PayMethod;
+
+        if ($cat->count() > 0){
+            $ca = 0;
+
+            foreach ($cat as $c) {
+                if($ca != 0)
+                    $ca .= ",".$c->id;
+                else
+                    $ca = $c->id;
+            }
+
+            $this->data['cat'] = $ca;
+            $this->data['cat'] = explode(',', $ca);
+        }
+//        dd($this->data['cat']);
+        return view($this->form)->with($this->data);
+    }
 }

@@ -33,4 +33,13 @@ class Publications extends Entity{
         return $this->belongsTo(Models::getClass());
     }
 
+
+    public function PayMethod()
+    {
+        return $this->belongsToMany(PayMethod::getClass(),'publications_pay_method');
+
+    }
+
+
+
 }
