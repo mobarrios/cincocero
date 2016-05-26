@@ -2,17 +2,6 @@
 
 @section('css')
     <style>
-        html,body{
-            height:100%;
-        }
-
-        body.landing-page{
-            height:100%;
-        }
-
-        footer{
-            position: inherit !important;
-        }
 
         .btn-group .btn-primary{
             background-color: #0187CE;
@@ -39,7 +28,7 @@
         <div class="wrapper wrapper-content animated fadeInRight">
 
             <div class="row">
-                <div class="col-xs-9">
+                <div class="col-xs-12 col-md-9">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Tu compra</h5>
@@ -83,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-12 col-md-3">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Importe</h5>
@@ -124,7 +113,7 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-9">
+                <div class="col-xs-12 col-sm-9">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h3>Datos Personales</h3>
@@ -152,7 +141,7 @@
 
                 </div>
 
-                <div class="col-xs-3">
+                <div class="col-xs-12 col-sm-3">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Soporte</h5>
@@ -169,6 +158,7 @@
             </div>
 
         </div>
+    </div>
 
 
 

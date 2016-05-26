@@ -1,17 +1,17 @@
 {!! Form::open(['url'=>'pay','method'=>'get'])!!}
 
     <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-12 col-md-2">
             <div class="form-group">
                 {!! Form::text('dni',null,['class'=>'input-sm form-control','placeholder'=>'DNI', 'required'=>'required']) !!}
             </div>
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-6 col-md-5">
             <div class="form-group">
                 {!! Form::text('last_name',null,['class'=>'input-sm form-control','placeholder'=>'Apellido', 'required'=>'required']) !!}
             </div>
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-6 col-md-5">
             <div class="form-group">
                 {!! Form::text('name',null,['class'=>'input-sm form-control','placeholder'=>'Nombre', 'required'=>'required']) !!}
             </div>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-3">
+        <div class="col-xs-6 col-md-3">
             <div class="form-group">
                 <select class=" form-control" name="state" required="required">
                     <option value="">Seleccionar Provincia</option>
@@ -52,19 +52,19 @@
             </div>
         </div>
 
-        <div class="col-xs-3">
+        <div class="col-xs-6 col-md-3">
             <div class="form-group">
                 {!! Form::text('city',null,['class'=>'input-sm form-control','placeholder'=>'Ciudad', 'required'=>'required']) !!}
             </div>
         </div>
 
 
-        <div class="col-xs-3">
+        <div class="col-xs-12 col-md-3">
             <div class="form-group">
                 {!! Form::text('street',null,['class'=>'input-sm form-control','placeholder'=>'Calle, Nro', 'required'=>'required']) !!}
             </div>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-12 col-md-3">
             <div class="form-group">
                 {!! Form::text('postal_code',null,['class'=>'input-sm form-control','placeholder'=>'Codigo Postal', 'required'=>'required']) !!}
             </div>
@@ -93,7 +93,7 @@
             </select>
         </div>
         <hr>
-        <div class="col-md-4">
+        <div class="col-xs-12 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <label>
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-12 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <label>
@@ -125,7 +125,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-xs-12 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <label>
