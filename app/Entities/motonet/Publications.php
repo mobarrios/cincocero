@@ -36,7 +36,7 @@ class Publications extends Entity{
 
     public function PayMethod()
     {
-        return $this->belongsToMany(PayMethod::getClass(),'publications_pay_method');
+        return $this->belongsToMany(PayMethod::getClass(),'publications_pay_method')->orderBy('method','ASC');
 
     }
 

@@ -2,6 +2,17 @@
 
 @section('css')
     <style>
+        html,body{
+            height:100%;
+        }
+
+        body.landing-page{
+            height:100%;
+        }
+
+        footer{
+            position: inherit !important;
+        }
 
         .btn-group .btn-primary{
             background-color: #0187CE;
@@ -28,7 +39,17 @@
         <div class="wrapper wrapper-content animated fadeInRight">
 
             <div class="row">
-                <div class="col-xs-12 col-md-9">
+                <div class="col-xs-9">
+
+
+                    @if($errors->any())
+                        <div class="alert alert-success">
+                            @foreach($errors->all() as $error)
+                                <p class="error">{{$error}}</p>
+                            @endforeach
+                        </div>
+                    @endif
+
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Tu compra</h5>
@@ -72,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-3">
+                <div class="col-xs-3">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Importe</h5>
@@ -101,47 +122,33 @@
                             </span>
                         </div>
                     </div>
-
-
-                    @foreach($publication->PayMethod as $pm)
-                        <li>
-                            {{$pm->name}} = {{ $publication->price + (($publication->price  * $pm->porcent) / 100)}}
-                        </li>
-                    @endforeach
-
                 </div>
             </div>
-
             <div class="row">
-                <div class="col-xs-12 col-sm-9">
+                <div class="col-xs-9">
                     <div class="ibox">
                         <div class="ibox-title">
-                            <h3>Datos Personales</h3>
+                            <h3>Formas de Pago</h3>
                         </div>
+                        {!! Form::open(['url'=>'pay','method'=>'get'])!!}
+
                         <div class="ibox-content">
+                            <h3>Total</h3>
+                            @foreach($publication->PayMethod as $pm)
+                                    <input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{$publication->price + ($publication->price * $pm->porcent) /100 }}"> {{$pm->method}} {{$pm->modality}} <strong> $ {{$publication->price + ($publication->price * $pm->porcent) /100}}  </strong><br>
+                            @endforeach
 
-
-                            @if($errors->any())
-                                <div class="alert alert-success">
-                                    @foreach($errors->all() as $error)
-                                            <p class="error">{{$error}}</p>
-                                    @endforeach
-                                </div>
-                            @endif
-
-                            <div class="row">
-
-                                @include('motonet.web.payment.form_pago')
-
-                            </div>
-
+                            <hr>
+                            <h3>Seña</h3>
+                            @foreach($publication->PayMethod as $pm)
+                                <input required="required" type="radio" name="pay_method" > {{$pm->method}} {{$pm->modality}} <strong> $ {{round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100}}  </strong><br>
+                            @endforeach
                         </div>
-
                     </div>
 
                 </div>
 
-                <div class="col-xs-12 col-sm-3">
+                <div class="col-xs-3">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Soporte</h5>
@@ -157,8 +164,31 @@
 
             </div>
 
+
+            <div class="row">
+                <div class="col-xs-9">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h3>Datos Personales</h3>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="row">
+
+                                    @include('motonet.web.payment.form_pago')
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+            </div>
+
         </div>
-    </div>
 
 
 

@@ -19,6 +19,12 @@ class PayController extends Controller {
     public function ProcessPay(Request $request, TodoPagoController $tp)
     {
 
+        $pm = explode('_',$request->pay_method);
+
+        $request['pago']    = $pm[0];
+        $request['price']   = $pm[1];
+
+
         $publication        = Publications::find($_COOKIE['publication_id']);
 
        // $publication        = Publications::find(Cookie::get('publication_id'));
@@ -54,11 +60,11 @@ class PayController extends Controller {
         setcookie('operation_id', $operation_id , time() + (86400 * 30),'/');
         setcookie('client_id', $client->id , time() + (86400 * 30), '/');
 
-        if($request->pago == 'tp'){
 
+        if($request->pago == 'Todo Pago'){
             return $tp->getTp($request, $client, $publication, $operation_id);
 
-        } elseif($request->pago == 'mp'){
+        } elseif($request->pago == 'Mercado Pago'){
 
             return $this->newOperationMercadoPago($request, $client, $publication, $operation_id);
 
@@ -67,8 +73,9 @@ class PayController extends Controller {
             $this->newOperationDeposito($request, $client, $operation_id);
             $this->sendMail();
 
-            return redirect()->back()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.');
+            return redirect()->back()->withInput()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.');
         }
+
 
     }
 
@@ -81,9 +88,15 @@ class PayController extends Controller {
         $client         = Clients::find($_COOKIE['client_id']);
         $operation      = Operations::find($_COOKIE['operation_id']);
 
+       // dd($publication . $client.  $operation);
+
 
         if($publication->Images->count() != 0 )
+            $img = $publication->Images->first()->image;
+
+        elseif($publication->Models->Images->count() != 0)
             $img = $publication->Models->Images->first()->image;
+
         else
             $img = null;
 
@@ -136,8 +149,7 @@ class PayController extends Controller {
         $operation->amount            = $request->price;
         $operation->status            = 2;
         $operation->publications_id   = $_COOKIE['publication_id'];
-
-            $operation->save();
+        $operation->save();
     }
 
 
@@ -196,15 +208,17 @@ class PayController extends Controller {
 
         if($msg == 'approved') {
             $this->sendMail();
-            return redirect()->route('resumen', $_COOKIE['publication_id'])->withErrors('Pago Aprobado');
+            return redirect()->route('resumen', $_COOKIE['publication_id'])->withInput()->withErrors('Pago Aprobado');
         }
         if($msg == 'pending'){
             $this->sendMail();
-            return redirect()->route('resumen',$_COOKIE['publication_id'])->withErrors('Pago Pendiente');
+            return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Pendiente');
         }
         if($msg == 'rejected'){
-            return redirect()->route('resumen',$_COOKIE['publication_id'])->withErrors('Pago Rechazado');
+            return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Rechazado');
         }
-
+        if($msg == 'failure'){
+            return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Fallo');
+        }
     }
 }

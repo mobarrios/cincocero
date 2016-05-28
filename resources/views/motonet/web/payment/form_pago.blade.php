@@ -1,4 +1,3 @@
-{!! Form::open(['url'=>'pay','method'=>'get'])!!}
 
     <div class="row">
         <div class="col-xs-12 col-md-2">
@@ -85,61 +84,7 @@
     </div>
 <hr>
     <div class="row">
-        <div class="col-xs-12">
-            <select name="price" class="input-sm form-control" required="required">
-                <option value="" ><i class="small">Seleccionar Importe a Abonar</i></option>
-                <option value="{!! $publication->price !!}"> Total  :  $ {!! $publication->price !!}</option>
-                <option value="{!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) !!}"> Seña  :  $ {!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) !!}</option>
-            </select>
-        </div>
-        <hr>
-        <div class="col-xs-12 col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <label>
-                        <input name="pago"  value="tp" type="radio" required="required">
-                        <strong>Todo Pago</strong>
-                    </label>
-                    <img class="pull-right" src="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_boton_72x30_1.jpg" alt="" />
 
-                    <hr>
-                    <p class="small">
-                        Formulario para pagar desde la web de TodoPago.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <label>
-                        <input name="pago" value="mp" type="radio" required="required">
-                        <strong>Mercado Pago</strong>
-                    </label>
-                    <i class="icon icon-mp text-success fs15"></i>
-                    <hr>
-                    <p class="small">
-                        Formulario para pagar desde la web de Mercado Pago.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <label>
-                        <input name="pago" value="deposito" type="radio" required="required">
-                        <strong>Depósito Bancario</strong>
-                    </label>
-                    <hr>
-
-                    <p class="small">
-                        Se enviara un mail con el numero de cuenta bancaria .
-                    </p>
-                </div>
-            </div>
-        </div>
         <button  type="submit" class="btn btn-block">Comprar</button>
     </div>
 
