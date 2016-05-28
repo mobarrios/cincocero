@@ -166,6 +166,7 @@ class TodoPagoController extends Controller {
 
     public function getError(Request $request){
 
+
         $rk         = $_COOKIE['RequestKey'];
         $p_id       = $_COOKIE['publication_id'];
         $client_id  = $_COOKIE['client_id'];

@@ -21,6 +21,7 @@ class PayController extends Controller {
 
         $pm = explode('_',$request->pay_method);
 
+
         $request['pago']    = $pm[0];
         $request['price']   = $pm[1];
 

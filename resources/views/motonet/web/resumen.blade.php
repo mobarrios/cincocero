@@ -141,7 +141,7 @@
                             <hr>
                             <h3>Seña</h3>
                             @foreach($publication->PayMethod as $pm)
-                                <input required="required" type="radio" name="pay_method" > {{$pm->method}} {{$pm->modality}} <strong> $ {{round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100}}  </strong><br>
+                                <input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100}}" > {{$pm->method}} {{$pm->modality}} <strong> $ {{round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100}}  </strong><br>
                             @endforeach
                         </div>
                     </div>
@@ -184,7 +184,7 @@
 
                 </div>
 
-                
+
 
             </div>
 
