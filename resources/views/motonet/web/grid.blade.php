@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="product-desc">
                                     <span class="product-price">
-                                        {!! $i->price !!}
+                                        ${!! $i->price !!}
                                     </span>
                                     <small class="text-muted">
                                         Categorías:

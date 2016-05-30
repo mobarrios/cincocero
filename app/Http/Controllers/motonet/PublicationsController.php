@@ -133,12 +133,14 @@ class PublicationsController extends Controller {
 
     public function postEdit($id,Request $request, ImagesHelper $image)
     {
-
         // validation rules form repo
         $this->validate($request, $this->rulesEdit);
 
         // method crear in repo
         $model = $this->repo->getModel()->find($id);
+
+        if($request->destacado == "")
+            $request['destacado'] = 0;
 
         $this->repo->edit($id,$request);
 
