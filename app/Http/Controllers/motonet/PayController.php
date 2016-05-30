@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Session;
 
 class PayController extends Controller {
 
+    public function __construct()
+    {
+        Session::put('a','dasd');
+    }
 
     public function ProcessPay(Request $request, TodoPagoController $tp)
     {
@@ -24,7 +28,6 @@ class PayController extends Controller {
 
         $request['pago']    = $pm[0];
         $request['price']   = $pm[1];
-
 
         $publication        = Publications::find($_COOKIE['publication_id']);
 
@@ -71,6 +74,8 @@ class PayController extends Controller {
 
         }else{
 
+
+
             $this->newOperationDeposito($request, $client, $operation_id);
             $this->sendMail();
 
@@ -85,6 +90,8 @@ class PayController extends Controller {
     public function sendMail()
     {
 
+        dd(Session::get('a'));
+        
         $publication    = Publications::find($_COOKIE['publication_id']);
         $client         = Clients::find($_COOKIE['client_id']);
         $operation      = Operations::find($_COOKIE['operation_id']);
