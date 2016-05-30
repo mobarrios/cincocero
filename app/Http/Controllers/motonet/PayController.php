@@ -105,7 +105,7 @@ class PayController extends Controller {
         $client         = Clients::find(Session::get('client_id'));
         $operation      = Operations::find(Session::get('operation_id'));
 
-
+        dd(Session::all());
 
         if($publication->Images->count() != 0 )
             $img = $publication->Images->first()->image;
