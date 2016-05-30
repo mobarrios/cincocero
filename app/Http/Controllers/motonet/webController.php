@@ -114,6 +114,7 @@ class webController extends Controller {
 
         $data['publication']    = $this->publications->find($id);
         setcookie('publication_id', $data['publication']->id, time() + (86400 * 30), '/' );
+        Session::put('publication_id',$data['publication']->id);
 
 
         return view('motonet/web/resumen')->with($data);

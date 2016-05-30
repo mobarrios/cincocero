@@ -17,7 +17,9 @@ class PayController extends Controller {
 
     public function __construct()
     {
-        Session::put('a','dasd');
+        Session::put('client_id');
+        Session::put('operation_id');
+        Session::put('');
     }
 
     public function ProcessPay(Request $request, TodoPagoController $tp)
@@ -64,6 +66,10 @@ class PayController extends Controller {
         setcookie('operation_id', $operation_id , time() + (86400 * 30),'/');
         setcookie('client_id', $client->id , time() + (86400 * 30), '/');
 
+        Session::put('client_id',$client->id);
+        Session::put('operation_id',$operation_id);
+
+
 
         if($request->pago == 'Todo Pago'){
             return $tp->getTp($request, $client, $publication, $operation_id);
@@ -90,13 +96,15 @@ class PayController extends Controller {
     public function sendMail()
     {
 
-        dd(Session::get('a'));
-        
-        $publication    = Publications::find($_COOKIE['publication_id']);
-        $client         = Clients::find($_COOKIE['client_id']);
-        $operation      = Operations::find($_COOKIE['operation_id']);
 
-       // dd($publication . $client.  $operation);
+        //$publication    = Publications::find($_COOKIE['publication_id']);
+        //$client         = Clients::find($_COOKIE['client_id']);
+        //$operation      = Operations::find($_COOKIE['operation_id']);
+
+        $publication    = Publications::find(Session::get('publication_id'));
+        $client         = Clients::find(Session::get('client_id'));
+        $operation      = Operations::find(Session::get('operation_id'));
+
 
 
         if($publication->Images->count() != 0 )
@@ -110,9 +118,11 @@ class PayController extends Controller {
 
 
 
-        $data['operation_id']       = $_COOKIE['operation_id'];
+        //$data['operation_id']       = $_COOKIE['operation_id'];
+        $data['operation_id']       = Session::get('operation_id');
         $data['mail']               = $client->email;
-        $data['subject']            = 'Tu compra en MotoNET : N° orden. '. $_COOKIE['operation_id'] ;
+       // $data['subject']            = 'Tu compra en MotoNET : N° orden. '. $_COOKIE['operation_id'] ;
+        $data['subject']            = 'Tu compra en MotoNET : N° orden. '. Session::get('operation_id') ;
         $data['from']               = 'prueba@motonet.com.ar';
         $data['client']             = $client->last_name .'_'.$client->name ;
         $data['publication_name']   = $publication->title;
