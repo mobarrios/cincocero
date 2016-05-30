@@ -151,6 +151,9 @@ class TodoPagoController extends Controller {
         $client_id        = Session::get('client_id');
         $p_id             = Session::get('publication_id');
 
+
+        dd($rk . $client_id .$p_id);
+
         $this->connector  =  new todoPago($this->http_header, $this->mode);
 
         $optionsGAA = array (
@@ -182,6 +185,7 @@ class TodoPagoController extends Controller {
         $client_id        = Session::get('client_id');
         $p_id             = Session::get('publication_id');
 
+        dd($rk . $client_id .$p_id);
 
         $connector  =  new todoPago($this->http_header, $this->mode);
 
