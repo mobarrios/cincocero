@@ -17,8 +17,8 @@ class PayController extends Controller {
 
     public function __construct()
     {
-        Session::put('client_id');
-        Session::put('operation_id');
+        //Session::put('client_id');
+        //Session::put('operation_id');
         //Session::put('');
     }
 
@@ -116,6 +116,8 @@ class PayController extends Controller {
         else
             $img = null;
 
+
+        dd(Session::all());
 
 
         //$data['operation_id']       = $_COOKIE['operation_id'];

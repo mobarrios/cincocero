@@ -152,7 +152,6 @@ class TodoPagoController extends Controller {
         $p_id             = Session::get('publication_id');
 
 
-        dd($rk . $client_id .$p_id);
 
         $this->connector  =  new todoPago($this->http_header, $this->mode);
 
@@ -184,8 +183,6 @@ class TodoPagoController extends Controller {
         $rk               = Session::get('RequestKey');
         $client_id        = Session::get('client_id');
         $p_id             = Session::get('publication_id');
-
-        dd($rk . $client_id .$p_id);
 
         $connector  =  new todoPago($this->http_header, $this->mode);
 
