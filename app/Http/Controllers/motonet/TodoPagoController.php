@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use \App\Helpers\TodoPago\lib\Sdk as todoPago;
 use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
 
 
@@ -115,6 +116,8 @@ class TodoPagoController extends Controller {
 
                 //setcookie('client_id',$client->id);
                 setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), '/');
+                Session::put('RequestKey',$rta["RequestKey"]);
+
 
                 return redirect()->to($rta["URL_Request"]);
             }

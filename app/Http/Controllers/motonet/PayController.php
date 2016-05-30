@@ -19,7 +19,7 @@ class PayController extends Controller {
     {
         Session::put('client_id');
         Session::put('operation_id');
-        Session::put('');
+        //Session::put('');
     }
 
     public function ProcessPay(Request $request, TodoPagoController $tp)
@@ -152,7 +152,8 @@ class PayController extends Controller {
         $operation->authorization_key = $rta['AuthorizationKey'];
         $operation->authorization_code= $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
         $operation->status            = 2;
-        $operation->publications_id   = $_COOKIE['publication_id'];
+        //$operation->publications_id   = $_COOKIE['publication_id'];
+        $operation->publications_id   = Session::get('publication_id');
         $operation->save();
     }
 
@@ -166,7 +167,8 @@ class PayController extends Controller {
         $operation->authorization_code= 'n/a';
         $operation->amount            = $request->price;
         $operation->status            = 2;
-        $operation->publications_id   = $_COOKIE['publication_id'];
+        //$operation->publications_id   = $_COOKIE['publication_id'];
+        $operation->publications_id   = Session::get('publication_id');
         $operation->save();
     }
 
@@ -213,7 +215,9 @@ class PayController extends Controller {
         $operation->authorization_code= 'n/a';
         $operation->amount            = $request->price;
         $operation->status            = 2;
-        $operation->publications_id   = $_COOKIE['publication_id'];
+        //$operation->publications_id   = $_COOKIE['publication_id'];
+        $operation->publications_id   = Session::get('publication_id');
+
         $operation->save();
 
         return redirect()->to($preference['response'][$point]);
@@ -226,17 +230,25 @@ class PayController extends Controller {
 
         if($msg == 'approved') {
             $this->sendMail();
-            return redirect()->route('resumen', $_COOKIE['publication_id'])->withInput()->withErrors('Pago Aprobado');
+            //return redirect()->route('resumen', $_COOKIE['publication_id'])->withInput()->withErrors('Pago Aprobado');
+            return redirect()->route('resumen', Session::get('publication_id'))->withInput()->withErrors('Pago Aprobado');
+
         }
         if($msg == 'pending'){
             $this->sendMail();
-            return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Pendiente');
+            //return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Pendiente');
+            return redirect()->route('resumen', Session::get('publication_id'))->withInput()->withErrors('Pago Pendiente');
+
         }
         if($msg == 'rejected'){
-            return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Rechazado');
+            //return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Rechazado');
+            return redirect()->route('resumen', Session::get('publication_id'))->withInput()->withErrors('Pago Rechazado');
+
         }
         if($msg == 'failure'){
-            return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Fallo');
+            //return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Fallo');
+            return redirect()->route('resumen', Session::get('publication_id'))->withInput()->withErrors('Pago Fallo');
+
         }
     }
 }
