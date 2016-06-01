@@ -83,6 +83,12 @@
 
     </div>
 <hr>
+    <div class="col-xs-12 center-block text-center">
+        <label>
+            <input type="checkbox" required="required"> Acepto <a href="" data-toggle="modal" data-target="#myModal">términos y condiciones</a>
+        </label>
+    </div>
+<hr>
     <div class="row">
 
         <button  type="submit" class="btn btn-block">Comprar</button>
@@ -92,3 +98,25 @@
 {!! Form::close() !!}
 
 
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog"  role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Términos y condiciones</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Los valores de los modelos publicados se expresan en efectivo y en pesos argentinos.
+                        <br>
+                    Los valores de los modelos publicados no incluyen en el valor el costo del patentamiento, el valor del seguro o algún otro tipo de gasto adicional al producto.
+                        <br>
+                    Para la financiación del producto, el precio que se utilizará será el precio de lista.
+                        <br>
+                    Motonet recomienda especialmente guardar una copia impresa de las Condiciones de Uso Al ingresar en el Sitio, el Usuario declara saber, conocer y aceptar las presentes Condiciones de Uso. Las Condiciones de Uso, así como sus modificaciones, estarán vigentes en forma inmediata a su publicación en el Sitio. La utilización del Sitio implica el conocimiento y la aceptación plena por parte del Usuario de las Condiciones de Uso. En caso de no aceptar en las Condiciones de Uso o cualquier cambio o modificación de las mismas no deberá continuar utilizando el Sitio. El Sitio ha sido programado para que constituya un medio virtual para el acceso de los Usuarios a los productos de Motonet del área de su domicilio. Usuarios que pueden utilizar los Servicios del Sitio. Los Servicios sólo están disponibles para personas que tengan capacidad legal para contratar. No podrán utilizar los Servicios las personas que no tengan esa capacidad, los menores de edad o quien registre como Usuario una persona jurídica, deberá tener capacidad para contratar a nombre de tal entidad y de obligar a la misma en los términos de estas Condiciones de Uso.
+                        <br>
+                    El Usuario declara que la información que brindará al realizar la compra de un producto será precisa, correcta y actual comprometiéndose a informar en forma inmediata y fehaciente respecto de cualquier cambio siendo a su vez enteramente responsable frente a Motonet por los daños y perjuicios que el incumplimiento de dicha obligación pudiere acarrearle incluyendo pero no limitándose a costos de ubicación física del Usuario, costos de intimaciones y citaciones, etc. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
