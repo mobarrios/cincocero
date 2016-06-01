@@ -432,6 +432,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
             $msg  = 'Tema:'.$request->tema.'<br>';
             $msg .= 'Nombre: '.$request->name.'<br>';
             $msg .= $request->message .'<br>';
+            $msg .= 'Mail:'.$request->email.'<br>';
 
 
             if(mail('juga@thefutbolcompany.com','Contacto desde la web',$msg,$headers))
