@@ -44,6 +44,7 @@ class PublicationsRepo extends BaseRepo {
                 'Titulo' =>    ['data' => 'title','relation' => null],
                 '$' =>  ['data' => 'price','relation' => null],
                 'Articulo' =>     ['data' => 'models_id','relation' => null],
+               // 'a la Venta' => ['data'=>'salable','relation'=>null],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],

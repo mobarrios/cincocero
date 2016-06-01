@@ -142,6 +142,9 @@ class PublicationsController extends Controller {
         if($request->destacado == "")
             $request['destacado'] = 0;
 
+        if($request->salable == "")
+            $request['salable'] = 0;
+
         $this->repo->edit($id,$request);
 
         $categories = $model->PayMethod;

@@ -19,6 +19,7 @@
                         <th>Fecha Publicación</th>
                         <th>Titulo</th>
                         <th>Artículo</th>
+                        <th></th>
                         <th>Destacado</th>
                         <th>Mercadolibre</th>
 
@@ -60,6 +61,13 @@
                             <td>{{$model->publication_date}}</td>
                             <td>{{$model->title}}</td>
                             <td>{{$model->Models->Brands->name}} |  {{$model->Models->name}}</td>
+
+                            <td>
+                                @if($model->salable == 1)
+                                    <span class="label label-primary">A la Venta</span>
+                                @endif
+                            </td>
+
                             <td>
                                 @if($model->destacado)
                                     <label class="label label-success">Aviso Destacado</label>

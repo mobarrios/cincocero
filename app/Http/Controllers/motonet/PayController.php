@@ -15,12 +15,6 @@ use Illuminate\Support\Facades\Session;
 
 class PayController extends Controller {
 
-    public function __construct()
-    {
-        //Session::put('client_id');
-        //Session::put('operation_id');
-        //Session::put('');
-    }
 
     public function ProcessPay(Request $request, TodoPagoController $tp)
     {
@@ -114,7 +108,6 @@ class PayController extends Controller {
 
         else
             $img = null;
-
 
 
 

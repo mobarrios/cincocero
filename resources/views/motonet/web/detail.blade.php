@@ -87,9 +87,11 @@
                                     <hr>
 
                                     <div>
+                                        @if($publicationDetail->salable == 1)
                                         <div class="btn-group">
                                             <a class="btn btn-primary btn-sm" href="{!! route('resumen',$publicationDetail->id) !!}"> Comprar</a>
                                         </div>
+                                        @endif
                                     </div>
 
                                 </div>

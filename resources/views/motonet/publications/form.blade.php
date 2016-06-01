@@ -54,13 +54,19 @@
                 -->
             <hr>
 
-                <div class="checkbox c-checkbox pull-left mt0">
+                <div class="col-xs-12 checkbox c-checkbox pull-left mt0">
                     <label>
                         {!! Form::checkbox('destacado')!!}
                         <span class="fa fa-check"></span>Aviso Destacado.
                     </label>
                 </div>
 
+                <div class="col-xs-12 checkbox c-checkbox pull-left mt0">
+                    <label>
+                        {!! Form::checkbox('salable')!!}
+                        <span class="fa fa-check"></span>A la Venta.
+                    </label>
+                </div>
         </div>
 
         <div class="panel-footer">
