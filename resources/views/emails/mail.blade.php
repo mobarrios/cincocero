@@ -169,12 +169,13 @@
         </div>
 
         <div id="medioPago">
-            <h1>Medio de pago</h1>
-            <h3>Deposito bancario</h3>
+            {{--<h1>Medio de pago</h1>--}}
+            {{--<h3>Deposito bancario</h3>--}}
 
-            <p>Banco: <span>541213</span></p>
-            <p>N° de cuenta: <span>541213</span></p>
-            <p>CBU: <span>541213</span></p>
+            {{--<p>Banco: <span>541213</span></p>--}}
+            {{--<p>N° de cuenta: <span>541213</span></p>--}}
+            {{--<p>CBU: <span>541213</span></p>--}}
+            <img src="http://www.motonet.com.ar/testing/mail/deposito.jpg" alt="depositoBancario" style="margin:auto;text-align: center;">
         </div>
     </div>
 
