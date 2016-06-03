@@ -8319,6 +8319,11 @@ body.md-skin {
         text-align: right;
         display: block;
     }
+
+    .ventaTelefonica h2{
+        font-size: 20px;
+    }
+
 }
 @media (max-width: 350px) {
     .timeline-item .date {
@@ -8351,6 +8356,16 @@ body.md-skin {
         text-align: left;
         display: inline-block;
     }
+
+    .ventaTelefonica{
+        width:100%;
+    }
+
+    .ventaTelefonica:nth-child(2){
+        margin-top: 20px;
+    }
+
+
 }
 /* Only demo */
 @media (max-width: 1000px) {
@@ -8579,3 +8594,17 @@ footer{
 .btn-servicios i:before{
     font-size:40px;
 }
+
+.ventaTelefonica{
+    color: #0187CE !important;
+}
+
+.ventaTelefonica i{
+    font-size: 55px;
+}
+
+.ventaTelefonica h2{
+    font-weight: bold;
+}
+
+

@@ -167,6 +167,7 @@
         @include('motonet/web/servicios')
 
 
+        @include('motonet/web/index/ventaTelefonica')
         @include('motonet/web/index/metodosDePagos')
         @include('motonet/web/index/sucursales')
 
