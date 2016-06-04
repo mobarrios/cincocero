@@ -31,7 +31,7 @@
         <ul class="nav navbar-nav navbar-right">
             <!-- Search icon-->
             <li>
-                <a  class="btn" href="{{route('logout')}}">
+                <a  class="btn logout" href="{{route('logout')}}">
                     <em class="icon-logout"></em>
                 </a>
             </li>

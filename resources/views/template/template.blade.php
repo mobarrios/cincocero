@@ -39,12 +39,17 @@
     <!-- =============== IMAGEMODAL ===============-->
     <link href="assets/css/imageModal.css" rel="stylesheet" type="text/css" media="all" >
 
+    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
+
+    <link rel="stylesheet" href="assets/css/map.css">
 
     @yield('css')
 
     <script src="assets/js/jquery-1.11.3.min.js"></script>
     <script src="assets/js/inputFile.js"></script>
     <script src="assets/js/imageModal.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
+
 
 </head>
 
@@ -67,7 +72,6 @@
     <section>
         <!-- Page content-->
         <div class="content-wrapper">
-            <a id="swal-demo1" href="" class="btn btn-primary">Try me!</a>
             <h3>{{$sectionName}} </h3>
             <div class="row">
                 @yield('content')
@@ -107,6 +111,9 @@
 <script src="assets/angle/vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
 <!-- RTL demo-->
 <script src="assets/angle/js/demo/demo-rtl.js"></script>
+
+<script src="assets/js/tinymce/tinymce.min.js"></script>
+
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
 
 <script src="assets/angle/vendor/sweetalert/dist/sweetalert.min.js"></script>
@@ -127,13 +134,62 @@
 
 <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
 
-
+<script src="assets/js/bootstrap-multiselect.js"></script>
 
 
 
 
 @yield('js')
 <script>
+
+   $('.logout').on('click',function(){
+       localStorage.clear();
+   });
+
+    $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
+
+        var Notification = window.Notification || window.mozNotification || window.webkitNotification;
+
+        Notification.requestPermission(function (permission) {
+            //console.log(permission);
+        });
+
+    function desk_notification(title, message)
+    {
+        window.setTimeout(function () {
+            var instance = new Notification(
+                    title, {
+                        body: message,
+                        icon: 'assets/images/nav_stock_logo.png'
+                    }
+            );
+
+            instance.onclick = function () {
+                // Something to do
+            };
+            instance.onerror = function () {
+                // Something to do
+            };
+            instance.onshow = function () {
+                // Something to do
+            };
+            instance.onclose = function () {
+                // Something to do
+            };
+        }, 1000);
+
+        return false;
+    }
+
+    tinymce.init({
+        plugins: "textcolor",
+        statusbar: false,
+        selector: ".mytextarea",
+        toolbar: [
+            "undo redo | styleselect | bold italic | forecolor backcolor alignleft aligncenter alignright",
+        ],
+        menubar: false
+    });
 
     $('.del').on('click',function(ev){
         ev.preventDefault();
@@ -148,7 +204,7 @@
             confirmButtonText: "Si, Borrar!",
             closeOnConfirm: false
         },
-                function(isConfirm) {
+        function(isConfirm) {
             if (isConfirm) {
                 $(location).attr("href",$(del).attr("href"));
             }
@@ -208,6 +264,27 @@
             }
         });
     });
+
+    //    MULTISELECT
+    $('.multipleSelect').multiselect({
+        includeSelectAllOption: true,
+        buttonWidth: '100%',
+        buttonText: function(options) {
+            if (options.length == 0) {
+                return 'Seleccionar ';
+            }
+            else {
+                var selected = '';
+                options.each(function() {
+                    selected += $(this).text() + ', ';
+                });
+                return selected.substr(0, selected.length -2);
+            }
+        }
+    });
+
+
+
 </script>
 
 </body>
