@@ -143,6 +143,9 @@
 
                             </div>
                             <div class="product-imitation">
+                                <div>
+                                    <span>sin stock</span>
+                                </div>
                                 <img src="{{$publication->Models->Images->first()->image}}  " alt="foto">
                             </div>
 

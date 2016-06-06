@@ -8489,6 +8489,30 @@ body.md-skin {
     width:80%;
 }
 
+.ibox .product-imitation div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    line-height: 12px;
+    padding-top: 13px;
+    border:1px dashed red;
+}
+
+.ibox .product-imitation div span{
+    color:red;
+    margin:auto;
+    text-align:center;
+    text-transform: uppercase;
+    line-height: 10px;
+    font-size:90%;
+    font-weight: bold;
+}
 
 .mt-30{
     margin-top: 30px !important;
