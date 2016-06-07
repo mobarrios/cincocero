@@ -31,6 +31,23 @@
     <div class="gray-bg">
         @include('motonet/web/includes/breadcrumbs')
 
+        {{--<div class="tel">--}}
+            <div class="col-xs-3 tel">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Soporte</h5>
+                    </div>
+                    <div class="ibox-content text-center">
+                        <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
+                        <h3><i class="fa fa-whatsapp"></i> 11-6383-4963 </h3>
+                                    {{--<span class="small">--}}
+                                        {{--Si algo no salió bien, podes contactarnos.--}}
+                                    {{--</span>--}}
+                    </div>
+                </div>
+            </div>
+        {{--</div>--}}
+
         <div class="wrapper wrapper-content animated fadeInRight">
 
             <div class="row">
@@ -82,7 +99,7 @@
                                     <div class="small text-muted">
                                         {!! $publicationDetail->Models->name!!}
                                     </div>
-                                    <dl class="small m-t-md">
+                                    <dl class="small m-t-md"></dl>
 
                                     <hr>
 

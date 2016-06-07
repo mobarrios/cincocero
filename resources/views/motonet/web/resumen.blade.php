@@ -152,20 +152,33 @@
 
                 </div>
 
-                <div class="col-xs-3">
+                {{--<div class="col-xs-3">--}}
+                    {{--<div class="ibox">--}}
+                        {{--<div class="ibox-title">--}}
+                            {{--<h5>Soporte</h5>--}}
+                        {{--</div>--}}
+                        {{--<div class="ibox-content text-center">--}}
+                            {{--<h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>--}}
+                                {{--<span class="small">--}}
+                                    {{--Si algo no salió bien, podes contactarnos.--}}
+                                {{--</span>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                <div class="col-xs-3 tel">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Soporte</h5>
                         </div>
                         <div class="ibox-content text-center">
                             <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
-                                <span class="small">
-                                    Si algo no salió bien, podes contactarnos.
-                                </span>
+                            <h3><i class="fa fa-whatsapp"></i> 11-6383-4963 </h3>
+                            {{--<span class="small">--}}
+                            {{--Si algo no salió bien, podes contactarnos.--}}
+                            {{--</span>--}}
                         </div>
                     </div>
                 </div>
-
             </div>
 
 

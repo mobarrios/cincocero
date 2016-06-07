@@ -8631,4 +8631,22 @@ footer{
     font-weight: bold;
 }
 
+.tel{
+    position:fixed;
+    right: 0;
+    z-index: 999;
+}
 
+.tel .ibox{
+    background-color: #0170ae !important;
+    color: white !important;
+    box-shadow: 3px 3px 7px -2px RGBA(0, 0, 0, 0.71);
+}
+
+.tel .ibox *{
+    background: transparent;
+}
+
+.tel .ibox .ibox-title{
+    border:none;
+}
