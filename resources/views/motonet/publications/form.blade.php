@@ -29,6 +29,8 @@
 
                 {!! Form::textAreaCustom('description','Descripcion')!!}
 
+                {!! Form::textCustom('destacado_text','Texto Destacado')!!}
+
                 {!! Form::fileCustom('image','Imagen')!!}
 
                 @if(isset($cat))

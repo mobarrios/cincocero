@@ -143,9 +143,21 @@
 
                             </div>
                             <div class="product-imitation">
-                                <div>
-                                    <span>sin stock</span>
-                                </div>
+
+                                    @if(isset($publication->destacado_text))
+
+                                        @if(strlen($publication->destacado_text) <= 10 )
+                                        <div>
+                                            <span>{{$publication->destacado_text}}</span>
+                                        </div>
+                                        @else
+                                        <div class="line-height:4 px">
+                                            <span style="font-size: 55%">{{$publication->destacado_text}}</span>
+                                        </div>
+                                        @endif
+
+                                    @endif
+
                                 <img src="{{$publication->Models->Images->first()->image}}  " alt="foto">
                             </div>
 

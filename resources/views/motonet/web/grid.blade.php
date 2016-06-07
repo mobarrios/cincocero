@@ -12,6 +12,19 @@
                             <div class="ibox-content product-box">
 
                                 <div class="product-imitation">
+                                    @if(isset($i->destacado_text))
+
+                                        @if(strlen($i->destacado_text) <= 10 )
+                                            <div>
+                                                <span>{{$i->destacado_text}}</span>
+                                            </div>
+                                        @else
+                                            <div class="line-height:4 px">
+                                                <span style="font-size: 55%">{{$i->destacado_text}}</span>
+                                            </div>
+                                        @endif
+
+                                    @endif
                                     <img src="{!! $i->Models->Images->first()->image or ''!!}" alt="{!! $i->title !!}">
                                 </div>
                                 <div class="product-desc">
