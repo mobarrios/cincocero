@@ -74,8 +74,6 @@ class PayController extends Controller {
 
         }else{
 
-
-
             $this->newOperationDeposito($request, $client, $operation_id);
             $this->sendMail();
 

@@ -16,7 +16,6 @@ use App\Helpers\ImagesHelper;
 use \App\Helpers\TodoPago\lib\Sdk as todoPago;
 use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 
-
     // lista de empresas para mejorar acceso
     //Route::get('',function(){
     //   return view('company_list');
