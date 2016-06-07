@@ -150,6 +150,19 @@
         //console.log(permission);
     });
 
+   $('.logout').on('click',function(){
+       localStorage.clear();
+   });
+
+    $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
+
+        var Notification = window.Notification || window.mozNotification || window.webkitNotification;
+
+        Notification.requestPermission(function (permission) {
+            //console.log(permission);
+        });
+
+
     function desk_notification(title, message)
     {
         window.setTimeout(function () {
@@ -200,7 +213,7 @@
             confirmButtonText: "Si, Borrar!",
             closeOnConfirm: false
         },
-                function(isConfirm) {
+        function(isConfirm) {
             if (isConfirm) {
                 $(location).attr("href",$(del).attr("href"));
             }
@@ -261,23 +274,24 @@
         });
     });
 
-//    MULTISELECT
-        $('.multipleSelect').multiselect({
-            includeSelectAllOption: true,
-            buttonWidth: '100%',
-            buttonText: function(options) {
-                if (options.length == 0) {
-                    return 'Seleccionar ';
-                }
-                else {
-                    var selected = '';
-                    options.each(function() {
-                        selected += $(this).text() + ', ';
-                    });
-                    return selected.substr(0, selected.length -2);
-                }
+    //    MULTISELECT
+    $('.multipleSelect').multiselect({
+        includeSelectAllOption: true,
+        buttonWidth: '100%',
+        buttonText: function(options) {
+            if (options.length == 0) {
+                return 'Seleccionar ';
             }
-        });
+            else {
+                var selected = '';
+                options.each(function() {
+                    selected += $(this).text() + ', ';
+                });
+                return selected.substr(0, selected.length -2);
+            }
+        }
+    });
+
 
 </script>
 
