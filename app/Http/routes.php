@@ -27,7 +27,37 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 // route MERCADO PAGO
 
 
+Route::get('test_mail',function(){
 
+    $publication    = App\Entities\motonet\Publications::find(14);
+    $client         = App\Entities\motonet\Clients::find(2);
+    $operation      = App\Entities\motonet\Operations::find(1);
+
+    if($publication->Images->count() != 0 )
+        $img = $publication->Images->first()->image;
+
+    elseif($publication->Models->Images->count() != 0)
+        $img = $publication->Models->Images->first()->image;
+
+    else
+        $img = null;
+
+    $data['operation_id']       = $operation->id;
+    $data['mail']               = $client->email;
+    $data['subject']            = 'Tu compra en MotoNET : N° orden. '. Session::get('operation_id') ;
+    $data['from']               = 'prueba@motonet.com.ar';
+    $data['client']             = $client;
+    $data['client_name']        = $client->full_name;
+    //$data['publication_name']   = $publication->title;
+    //$data['publication_price']  = $publication->price;
+    $data['publication']        = $publication;
+    $data['operation']          = $operation;
+    $data['image']              = $img;
+    //$data['total']              = $operation->amount;
+
+    return view('emails.mail')->with($data);
+
+});
 //route MERCADO PAGO
 
 Route::get('mp/{type?}','\App\Http\Controllers\motonet\PayController@mp');

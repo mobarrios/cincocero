@@ -147,29 +147,56 @@
             </span>
             ¡Gracias por tu compra!
         </h1>
+        <h2>N° orden: {{$operation_id}}</h2>
 
         <div id="producto">
             <div>
                 <img src="http://www.motonet.com.ar/testing/{{$image}}" alt="nombreProducto" width="150">
             </div>
             <div id="descripProd">
-                <h2>{{$publication_name}}</h2>
-                <p>N° orden: {{$operation_id}}</p>
-                <p>Medio de pago: {{$total}}</p>
-                <h3>$ {{$publication_price}}</h3>
+                <h1>{{$publication_brands}} {{$publication_models}}</h1>
+                <h1>{{$publication_title}}</h1>
+                <h3>Total  :  $ {{$publication_price}}</h3>
             </div>
         </div>
 
         <div id="pago">
-            <h1>A pagar</h1>
+            <table>
+                <tr>
+                    <td><h3>Forma de Pago :</h3> </td>
+                    <td>{{$operation_medio_pago}}</td>
+                </tr>
+                <tr>
+                    <td><h3>Cliente:</h3> </td>
+                    <td>{{$client_name}}</td>
+                </tr>
+                <tr>
+                    <td><h3>DNI:</h3> </td>
+                    <td>{{$client_dni}}</td>
+                </tr>
+                <tr>
+                    <td><h3>Email:</h3> </td>
+                    <td>{{$client_email}}</td>
+                </tr>
+                <tr>
+                    <td><h3>Dirección:</h3> </td>
+                    <td>{{$client_address}}</td>
+                </tr>
+                <tr>
+                    <td><h3>Tel. / Cel.:</h3> </td>
+                    <td>{{$client_phone}} {{$client_cell_phone}} </td>
+                </tr>
+                <tr>
+                    <td><h3>Diferencia a pagar:</h3> </td>
+                    <td><span style="color:#cc3c46;">$ {{$publication_price - $operation_amount}}</span></td>
+                </tr>
 
-            <h3>Pagado: $ {{$total}}</h3> <br>
-            <span></span>
-            <h3>A pagar:<span style="color:#cc3c46;">$ {{$publication_price - $total}}</span></h3>
+            </table>
+
         </div>
 
         <div id="medioPago">
-            <img src="http://www.motonet.com.ar/testing/mail/deposito.jpg" alt="depositoBancario" style="margin:auto;text-align: center;">
+            <img src="http://www.motonet.com.ar/testing/mail/deposito.jpg" alt="depositoBancario" style="width:50%; margin:auto;text-align: center;">
         </div>
     </div>
 

@@ -47,6 +47,7 @@ class PayController extends Controller {
             $new_client->last_name   = $request->last_name;
             $new_client->email       = $request->email;
             $new_client->phone       = $request->phone;
+            $new_client->address     = $request->street .','.$request->city;
             $new_client->save();
 
             $client = $new_client;
@@ -108,11 +109,11 @@ class PayController extends Controller {
             $img = null;
 
 
-
-        //$data['operation_id']       = $_COOKIE['operation_id'];
+        /*
+        //$data['operation_id']     = $_COOKIE['operation_id'];
         $data['operation_id']       = Session::get('operation_id');
         $data['mail']               = $client->email;
-       // $data['subject']            = 'Tu compra en MotoNET : N° orden. '. $_COOKIE['operation_id'] ;
+       // $data['subject']          = 'Tu compra en MotoNET : N° orden. '. $_COOKIE['operation_id'] ;
         $data['subject']            = 'Tu compra en MotoNET : N° orden. '. Session::get('operation_id') ;
         $data['from']               = 'prueba@motonet.com.ar';
         $data['client']             = $client->last_name .'_'.$client->name ;
@@ -121,11 +122,33 @@ class PayController extends Controller {
         $data['image']              = $img;
         $data['total']              = $operation->amount;
 
+        */
 
-        Mail::queue('emails.mail', $data, function($message) use($data)
+        $data['operation_id']       = $operation->id;
+        $data['mail']               = $client->email;
+        $data['subject']            = 'Tu compra en MotoNET : N° orden. '. Session::get('operation_id') ;
+        $data['from']               = 'prueba@motonet.com.ar';
+        $data['client_name']        = $client->full_name;
+        $data['client_dni']         = $client->dni;
+        $data['client_email']       = $client->email;
+        $data['client_address']     = $client->address;
+        $data['client_phone']       = $client->phone;
+        $data['client_cell_phone']  = $client->cell_phone;
+
+        $data['publication_title']  = $publication->title;
+        $data['publication_price']  = $publication->price;
+        $data['publication_brands'] = $publication->Models->Brands->name;
+        $data['publication_models'] = $publication->Models->name;
+
+        $data['operation_medio_pago'] = $operation->MedioPago;
+        $data['operation_amount']     = $operation->amount;
+        $data['image']                = $img;
+
+
+        Mail::queue('emails.mail', $data , function($message) use($data)
         {
             $message->from($data['from']);
-            $message->to($data['mail'], $data['client'])->subject($data['subject']);
+            $message->to($data['mail'], $data['client_name'])->subject($data['subject'])->cc('info@motonet.com.ar');
         });
     }
 
