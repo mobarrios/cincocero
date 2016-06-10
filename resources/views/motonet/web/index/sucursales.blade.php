@@ -1,10 +1,10 @@
 <div class="col-xs-12">
-    <h2>Sucursales</h2>
+    <h2>Nuestras Sucursales</h2>
     <hr>
     <div class="slick_demo_2">
     @foreach(\App\Entities\motonet\Branches::all() as $sucursal)
     <div>
-        <div class="ibox-content">
+        <div class="ibox-content" style="background-color:whitesmoke">
             <div class="thumbnail h374">
                 <img src="{!! $sucursal->images->first()->image or "" !!}" alt="{!! $sucursal->name !!}">
                 <div class="caption">

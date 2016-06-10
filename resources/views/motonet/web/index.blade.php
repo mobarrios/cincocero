@@ -122,6 +122,8 @@
     {{--<span class="sr-only">Next</span>--}}
     {{--</a>--}}
 </div>
+
+
     @include('motonet/web/includes/menu')
 
     @include('motonet/web/includes/slider')
