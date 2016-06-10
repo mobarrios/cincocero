@@ -43,6 +43,10 @@
     <script src="assets/inspinia/js/plugins/wow/wow.min.js"></script>
     <script src="assets/js/finder.js"></script>
 
+    <link href="assets/inspinia/css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="assets/inspinia/css/plugins/slick/slick-theme.css" rel="stylesheet">
+
+
 </head>
 <body class="landing-page">
 <div class="navbar-wrapper">
@@ -123,75 +127,79 @@
     @include('motonet/web/includes/slider')
 
     <section id="destacados" class="gray-section contact">
-        <div class="col-xs-12" >
-            <img class="img-responsive center-block" src="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_banner_promocional_728x90.jpg" alt="" />
-        </div>
 
-        <div class="container">
+        <div class="container" style="background-color: white ;">
+                <h2>Productos Destacados</h2>
+                <hr>
+                @foreach($publications as $publication)
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
-            <h1>Destacados</h1>
+                        <div class="ibox">
+                            <div class="ibox-content product-box">
+                                <div class="ibox-title">
 
-            @foreach($publications as $publication)
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <img class="thumbnail img-rounded img-responsive" src="{{$publication->Models->Brands->Images->first()->image }}" width="60" height="60">
 
-                    <div class="ibox">
-                        <div class="ibox-content product-box">
-                            <div class="ibox-title">
+                                </div>
+                                <div class="product-imitation">
 
-                                <img class="thumbnail img-rounded img-responsive" src="{{$publication->Models->Brands->Images->first()->image }}" width="60" height="60">
+                                        @if(isset($publication->destacado_text))
 
-                            </div>
-                            <div class="product-imitation">
+                                            @if(strlen($publication->destacado_text) <= 10 )
+                                            <div>
+                                                <span>{{$publication->destacado_text}}</span>
+                                            </div>
+                                            @else
+                                            <div class="line-height:4 px">
+                                                <span style="font-size: 55%">{{$publication->destacado_text}}</span>
+                                            </div>
+                                            @endif
 
-                                    @if(isset($publication->destacado_text))
-
-                                        @if(strlen($publication->destacado_text) <= 10 )
-                                        <div>
-                                            <span>{{$publication->destacado_text}}</span>
-                                        </div>
-                                        @else
-                                        <div class="line-height:4 px">
-                                            <span style="font-size: 55%">{{$publication->destacado_text}}</span>
-                                        </div>
                                         @endif
 
-                                    @endif
+                                    <img src="{{$publication->Models->Images->first()->image}}  " alt="foto">
+                                </div>
 
-                                <img src="{{$publication->Models->Images->first()->image}}  " alt="foto">
-                            </div>
+                                <div class="product-desc">
+                                        <span class="product-price">
+                                            ${{$publication->price}}
+                                        </span>
+                                    <small class="text-muted">{{$publication->Models->name}}</small>
+                                    <h2 class="product-name"> {{$publication->title}}</h2>
 
-                            <div class="product-desc">
-                                    <span class="product-price">
-                                        ${{$publication->price}}
-                                    </span>
-                                <small class="text-muted">{{$publication->Models->name}}</small>
-                                <h2 class="product-name"> {{$publication->title}}</h2>
-
-                                <div class="m-t text-righ">
-                                    <a href="{!! route('productDetail',$publication->id )!!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
+                                    <div class="m-t text-righ">
+                                        <a href="{!! route('productDetail',$publication->id )!!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
         </div>
-        <div class="container-fluid">
-            <div class="col-xs-12 col-sm-9">
-{{--                @include('motonet/web/servicios')--}}
-                @include('motonet/web/index/ventaTelefonica')
-                @include('motonet/web/index/metodosDePagos')
-                @include('motonet/web/index/sucursales')
-            </div>
-            <div class="col-xs-12 col-sm-3 pull-right">
-                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
-                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
-                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
-                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
-                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
-            </div>
-        </div>
+
     </section>
+
+<section  class="gray-section contact">
+    <div class="container" style="background-color: white ;">
+        @include('motonet/web/index/metodosDePagos')
+    </div>
+</section>
+
+<section  class="gray-section contact">
+    <div class="container" style="background-color: white ;">
+        @include('motonet/web/index/sucursales')
+    </div>
+</section>
+
+
+    {{--   <div class="col-xs-12 col-sm-10">
+           @include('motonet/web/servicios')
+           @include('motonet/web/index/ventaTelefonica')--}}
+
+
+
+
+</div>
 
 
 <footer>
@@ -258,9 +266,43 @@
 
 @yield('js')
 
+<script src="assets/inspinia/js/plugins/slick/slick.min.js"></script>
+
 <script>
 
     $(document).ready(function () {
+
+        $('.slick_demo_2').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            centerMode: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
 
         $('body').scrollspy({
             target: '.navbar-fixed-top',
