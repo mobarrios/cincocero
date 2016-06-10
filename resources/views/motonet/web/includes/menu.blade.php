@@ -1,5 +1,5 @@
-<div class="m-t-15 container-fluid">
-    <div class="container">
+<div style="background-color: rgb(1, 136, 206); height: 52px;" class="container-fluid">
+    {{--<div class="container">--}}
         <nav class="navbar2 navbar2-default">
 
             <div class="navbar2-header">
@@ -135,6 +135,9 @@
                     <li>
                         <a data-toggle="modal" data-target="#myModal3">Servicio técnico <span class="icon icon-wrench pull-left"></span></a>
                     </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#myModal4">Contacto <span style="padding-right:5px;" class="glyphicon glyphicon-envelope pull-left"></span></a>
+                    </li>
                 </ul>
 
 
@@ -184,6 +187,6 @@
 
 
 
-    </div>
+    {{--</div>--}}
 
 </div>
