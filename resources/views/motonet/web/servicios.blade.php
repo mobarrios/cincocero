@@ -1,4 +1,4 @@
-<div class="container">
+<div class="col-xs-12">
 
     <h1>Servicios</h1>
 

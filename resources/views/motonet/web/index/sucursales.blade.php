@@ -1,7 +1,7 @@
-<div class="container">
+<div class="col-xs-12">
     <h1>Sucursales</h1>
     @foreach(\App\Entities\motonet\Branches::all() as $sucursal)
-    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="thumbnail h374">
             <img src="{!! $sucursal->images->first()->image or "" !!}" alt="{!! $sucursal->name !!}">
             <div class="caption">

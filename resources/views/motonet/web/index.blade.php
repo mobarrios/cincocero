@@ -131,8 +131,7 @@
 
             <h1>Destacados</h1>
 
-
-                @foreach($publications as $publication)
+            @foreach($publications as $publication)
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 
                     <div class="ibox">
@@ -175,17 +174,23 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
-
+            @endforeach
+        </div>
+        <div class="container-fluid">
+            <div class="col-xs-12 col-sm-9">
+                @include('motonet/web/servicios')
+                @include('motonet/web/index/ventaTelefonica')
+                @include('motonet/web/index/metodosDePagos')
+                @include('motonet/web/index/sucursales')
             </div>
-
-        @include('motonet/web/servicios')
-
-
-        @include('motonet/web/index/ventaTelefonica')
-        @include('motonet/web/index/metodosDePagos')
-        @include('motonet/web/index/sucursales')
-
+            <div class="col-xs-12 col-sm-3 pull-right">
+                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
+                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
+                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
+                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
+                asdasjjdlsakdaskjdlsakjdlksajdlksjadlkjsao ijsajd <br>
+            </div>
+        </div>
     </section>
 
 

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="col-xs-12">
 
     <h1>Venta telefónica</h1>
 
@@ -15,4 +15,3 @@
 
 </div>
 
-</div>

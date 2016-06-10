@@ -1,4 +1,4 @@
-<div class="container">
+<div class="col-xs-12">
 
     <h1>Métodos de Pago</h1>
 
@@ -10,4 +10,3 @@
 
 </div>
 
-</div>
