@@ -178,7 +178,7 @@
         </div>
         <div class="container-fluid">
             <div class="col-xs-12 col-sm-9">
-                @include('motonet/web/servicios')
+{{--                @include('motonet/web/servicios')--}}
                 @include('motonet/web/index/ventaTelefonica')
                 @include('motonet/web/index/metodosDePagos')
                 @include('motonet/web/index/sucursales')

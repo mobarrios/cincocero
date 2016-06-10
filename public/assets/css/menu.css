@@ -9,12 +9,18 @@ body {
     border-top-right-radius:4px;
 }
 .navbar2-default .navbar2-nav>li>a {
-    width:200px;
+    margin-right: 10px;
     font-weight:bold;
+    padding: 15px 10px 15px 10px !important;
 }
+
+.navbar2-default .navbar2-nav>li>a span{
+    margin-left:10px;
+}
+
 .mega-dropdown {
     position: static !important;
-    width:100%;
+    /*width:100%;*/
 }
 .mega-dropdown-menu {
     padding: 20px 0px;

@@ -126,6 +126,15 @@
                         </ul>
 
                     </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#myModal">Accesorios <span class="icon icon-lock-open-alt pull-left"></span></a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#myModal2">Seguro <span class="icon icon-user-secret pull-left"></span></a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#myModal3">Servicio técnico <span class="icon icon-wrench pull-left"></span></a>
+                    </li>
                 </ul>
 
 
