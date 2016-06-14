@@ -31,6 +31,18 @@
 
     @yield('css')
 
+    <style>
+        /*#iframeFace html > body > div._li > div#u_0_0 > div > div._2p3a{*/
+            /*width:100% !important;*/
+        /*}*/
+
+        #iframeFace{
+            width:100%;
+            min-height:500px;
+            border:none;
+            overflow:hidden;
+        }
+    </style>
             <!-- Mainly scripts -->
     <script src="assets/inspinia/js/jquery-2.1.1.js"></script>
     <script src="assets/angle/js/bootstrap.js"></script>
@@ -183,11 +195,11 @@
 
 <section  class="gray-section contact">
     <div class="container">
-        <div class="col-xs-12 col-md-9 pb20" style="background-color: white;">
+        <div class="col-xs-12 col-md-7 pb20" style="background-color: white;">
             @include('motonet/web/index/metodosDePagos')
         </div>
-        <div class="col-xs-12 col-sm-3 tel2">
-            <div class="ibox col-xs-3 col-sm-12">
+        <div class="col-xs-12 col-sm-5 tel2">
+            <div class="ibox col-xs-12 col-sm-3 col-md-12">
                 <div class="ibox-title">
                     <h5>Soporte</h5>
                 </div>
@@ -199,8 +211,8 @@
                     {{--</span>--}}
                 </div>
             </div>
-            <div class="col-xs-9 col-sm-12">
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898" style="width:100%;min-height:500px;border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            <div class="col-xs-12 col-sm-9 col-md-12" style="padding-left:0;padding-right:0;">
+                <iframe id="iframeFace" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width=400&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898" scrolling="yes" frameborder="0" allowTransparency="true"></iframe>
             </div>
         </div>
 
@@ -342,6 +354,10 @@
         });
     });
 
+    window.onload(function(){
+        $("._2p3a").css("width","100%");
+    });
+
     var cbpAnimatedHeader = (function() {
         var docElem = document.documentElement,
                 header = document.querySelector( '.navbar-default' ),
@@ -390,6 +406,7 @@
 
         });
     });
+
 </script>
 
 

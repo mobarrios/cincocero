@@ -15,7 +15,7 @@
         <div class="col-xs-12 text-center">
             <h3>Mercado Pago</h3>
 
-            <img src="https://imgmp.mlstatic.com/org-img/banners/ar/medios/785X40.jpg" title="MercadoPago - Medios de pago" alt="MercadoPago - Medios de pago" width="785" height="40"/>
+            <img class="img-responsive" src="https://imgmp.mlstatic.com/org-img/banners/ar/medios/785X40.jpg" title="MercadoPago - Medios de pago" alt="MercadoPago - Medios de pago" width="785" height="40"/>
         </div>
 
     </div>
