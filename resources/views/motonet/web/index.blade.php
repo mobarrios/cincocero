@@ -182,8 +182,28 @@
     </section>
 
 <section  class="gray-section contact">
-    <div class="container" style="background-color: white ;">
-        @include('motonet/web/index/metodosDePagos')
+    <div class="container">
+        <div class="col-xs-12 col-md-9 pb20" style="background-color: white;">
+            @include('motonet/web/index/metodosDePagos')
+        </div>
+        <div class="col-xs-12 col-sm-3 tel2">
+            <div class="ibox col-xs-3 col-sm-12">
+                <div class="ibox-title">
+                    <h5>Soporte</h5>
+                </div>
+                <div class="ibox-content text-center">
+                    <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
+                    <h3><i class="fa fa-whatsapp"></i> 11-6383-4963 </h3>
+                    {{--<span class="small">--}}
+                    {{--Si algo no salió bien, podes contactarnos.--}}
+                    {{--</span>--}}
+                </div>
+            </div>
+            <div class="col-xs-9 col-sm-12">
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898" style="width:100%;min-height:500px;border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+        </div>
+
     </div>
 </section>
 

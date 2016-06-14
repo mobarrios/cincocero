@@ -8637,16 +8637,21 @@ footer{
     z-index: 999;
 }
 
-.tel .ibox{
+.tel2{
+    position: inherit;
+    margin: auto;
+}
+
+.tel .ibox,.tel2 .ibox{
     background-color: #0170ae !important;
     color: white !important;
     box-shadow: 3px 3px 7px -2px RGBA(0, 0, 0, 0.71);
 }
 
-.tel .ibox *{
+.tel .ibox *,.tel2 .ibox *{
     background: transparent;
 }
 
-.tel .ibox .ibox-title{
+.tel .ibox .ibox-title,.tel2 .ibox .ibox-title{
     border:none;
 }
