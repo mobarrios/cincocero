@@ -158,16 +158,20 @@ class PayController extends Controller {
      *
      */
     public function newOperationTodoPago($rta = null,  $client_id = null){
-        
+
         $operation                    = new Operations();
-        if($rta['StatusCode'] == -1)
-            $operation->id                = $rta['Payload']['Answer']['OPERATIONID'];
+        if($rta['StatusCode'] == -1){
+
+            $operation->id                 = $rta['Payload']['Answer']['OPERATIONID'];
+            $operation->authorization_code = $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
+            $operation->authorization_key  = $rta['AuthorizationKey'];
+            $operation->amount            = $rta['Payload']['Request']['AMOUNT'];
+
+        }
+
 
         $operation->clients_id        = $client_id;
         $operation->medio_de_pago     = 1;
-        $operation->amount            = $rta['Payload']['Request']['AMOUNT'];
-        $operation->authorization_key = $rta['AuthorizationKey'];
-        $operation->authorization_code= $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
         $operation->status            = 2;
         //$operation->publications_id   = $_COOKIE['publication_id'];
         $operation->publications_id   = Session::get('publication_id');
