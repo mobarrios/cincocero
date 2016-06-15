@@ -158,9 +158,11 @@ class PayController extends Controller {
      *
      */
     public function newOperationTodoPago($rta = null,  $client_id = null){
-
+        
         $operation                    = new Operations();
-        $operation->id                = $rta['Payload']['Answer']['OPERATIONID'];
+        if($rta['StatusCode'] == -1)
+            $operation->id                = $rta['Payload']['Answer']['OPERATIONID'];
+
         $operation->clients_id        = $client_id;
         $operation->medio_de_pago     = 1;
         $operation->amount            = $rta['Payload']['Request']['AMOUNT'];
