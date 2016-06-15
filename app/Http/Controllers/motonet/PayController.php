@@ -169,15 +169,14 @@ class PayController extends Controller {
 
         }else{
             $operation->amount             = 0;
-
         }
 
 
         $operation->clients_id        = $client_id;
         $operation->medio_de_pago     = 1;
         $operation->status            = 2;
-        //$operation->publications_id   = $_COOKIE['publication_id'];
-        $operation->publications_id   = Session::get('publication_id');
+        $operation->publications_id   = $_COOKIE['publication_id'];
+        //$operation->publications_id   = Session::get('publication_id');
         $operation->save();
     }
 
