@@ -146,6 +146,13 @@
 
     @include('motonet/web/includes/slider')
 
+    <section  class="gray-section contact">
+        <div class="container" style="background-color: white ;">
+            @include('motonet/web/index/brands')
+        </div>
+    </section>
+
+
     <section id="destacados" class="gray-section contact">
 
         <div class="container" style="background-color: white ;">
@@ -345,6 +352,8 @@
             ]
         });
 
+
+
         $('body').scrollspy({
             target: '.navbar-fixed-top',
             offset: 80
@@ -361,36 +370,9 @@
         });
     });
 
-//    function tomar(id){
-//        return document.getElementById(id);
-//    }
-//    var asignar=setInterval(function(){
-//        if(tomar('iframeFace')){
-//            if(window.ActiveXObject){
-//                tomar('iframeFace').onreadystatechange=function(){
-//                    if(tomar('iframeFace').readyState=='complete'){
-//                        alert('cargó');
-//                    }
-//                }
-//                clearInterval(asignar);
-//                return;
-//            }
-//
-//            clearInterval(asignar);
-//        }
-//    },3);
-
-
     $().ready(function(){
         $('#iframeFace').attr("src","https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width="+t+"&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898")
     });
-//    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width=400&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898"
-//    window.onload = function(){
-//        $("#iframeFace").load(function(){
-//            $("#iframeFace").find("._2p3a").width("100%");
-//
-//        });
-//    };
 
     var cbpAnimatedHeader = (function() {
         var docElem = document.documentElement,
