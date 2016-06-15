@@ -7,6 +7,7 @@ use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
 use App\Entities\motonet\Items;
 use App\Entities\motonet\Models;
+use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
@@ -103,6 +104,7 @@ class webController extends Controller {
 
                                 })
                                 ->get();
+
             $data['grid'] = "find";
             $data['find'] = $request->get('find');
         }
@@ -129,4 +131,6 @@ class webController extends Controller {
     public function mail(){
         return view('emails.mail');
     }
+
+    
 }

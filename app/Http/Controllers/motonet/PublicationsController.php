@@ -145,6 +145,10 @@ class PublicationsController extends Controller {
         if($request->salable == "")
             $request['salable'] = 0;
 
+        if($request->private == "")
+            $request['private'] = 0;
+
+
         $this->repo->edit($id,$request);
 
         $categories = $model->PayMethod;

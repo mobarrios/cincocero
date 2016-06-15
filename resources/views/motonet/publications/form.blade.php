@@ -69,6 +69,13 @@
                         <span class="fa fa-check"></span>A la Venta.
                     </label>
                 </div>
+
+                <div class="col-xs-12 checkbox c-checkbox pull-left mt0">
+                    <label>
+                        {!! Form::checkbox('private')!!}
+                        <span class="fa fa-check"></span>Privada.
+                    </label>
+                </div>
         </div>
 
         <div class="panel-footer">
@@ -80,6 +87,15 @@
 
         </div>
 
+    @endsection
+
+    @section('js')
+        <script>
+           $("input[name='private']").on('click',function(){
+                $("input[name='salable']").prop('checked',false);
+                $("input[name='destacado']").prop('checked',false);
+           });
+        </script>
     @endsection
 
 @stop

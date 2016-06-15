@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\Models;
 use App\Entities\motonet\Operations;
+use App\Entities\motonet\PayMethod;
+use App\Entities\motonet\Publications;
 use App\Http\Repositories\motonet\OperationsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
+use App\Http\Repositories\motonet\PayMethodRepo as PayMethodRepo;
 
 class OperationsController extends Controller {
 
@@ -21,7 +25,7 @@ class OperationsController extends Controller {
 
 
 
-    public function __construct(Repo $repo )
+    public function __construct(Repo $repo, PayMethodRepo $pmRepo )
     {
 
         $module = 'operations';
@@ -44,9 +48,8 @@ class OperationsController extends Controller {
 
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
-        //$this->data['currency']        = Currency::lists('name','id');
-       // $this->data['items']             = Items::all();
-
+        $this->data['modelos']            = Models::orderBy('name','DESC')->lists('name','id');
+        $this->data['medios']            = $pmRepo->getMethods();
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -62,6 +65,28 @@ class OperationsController extends Controller {
 
 
     }
+
+    // post new item
+    public function postNew(Request $request, ImagesHelper $image)
+    {
+        // validation rules form repo
+        $this->validate($request, $this->rules);
+
+        // method crear in repo
+        $model = $this->repo->create($request);
+
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);
+        }
+
+        // redirect with errors messages language
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+
+    }
+
 
 
 }

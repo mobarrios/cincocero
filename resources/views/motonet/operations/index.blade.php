@@ -10,9 +10,7 @@
             </div>
 
             <div class=" panel-body">
-
-                    @include('controls.table')
-
+                @include('controls.table')
             </div>
         </div>
 

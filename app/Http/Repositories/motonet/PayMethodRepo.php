@@ -12,6 +12,18 @@ class PayMethodRepo extends BaseRepo {
         return new PayMethod();
     }
 
+    public function getMethods()
+    {
+        $methods = [
+                1 =>'Todo Pago',
+                2 =>'Mercado Pago',
+                3 =>'Transefrencia',
+                4 => 'Efectivo',
+        ];
+
+        return $methods;
+
+    }
 
     public function Rules()
     {

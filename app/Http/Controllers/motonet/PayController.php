@@ -21,65 +21,66 @@ class PayController extends Controller {
 
         $pm = explode('_',$request->pay_method);
 
-
         $request['pago']    = $pm[0];
         $request['price']   = $pm[1];
 
-        $publication        = Publications::find($_COOKIE['publication_id']);
 
-       // $publication        = Publications::find(Cookie::get('publication_id'));
-        $client             = Clients::where('email',$request->email)->get();
-        $operations         = Operations::all()->last();
+        $publication = Publications::find($_COOKIE['publication_id']);
 
-        if(!is_null($operations)){
+        // $publication        = Publications::find(Cookie::get('publication_id'));
+        $client = Clients::where('email', $request->email)->get();
+        $operations = Operations::all()->last();
+
+        if (!is_null($operations)) {
 
             if ($operations->count() != 0)
                 $operation_id = $operations->id + 1;
-        }else
+        } else
             $operation_id = 1;
 
 
-        if($client->count() == 0) {
+        if ($client->count() == 0) {
 
-            $new_client              = new Clients();
-            $new_client->dni         = $request->dni;
-            $new_client->name        = $request->name;
-            $new_client->last_name   = $request->last_name;
-            $new_client->email       = $request->email;
-            $new_client->phone       = $request->phone;
-            $new_client->address     = $request->street .','.$request->city;
+            $new_client = new Clients();
+            $new_client->dni = $request->dni;
+            $new_client->name = $request->name;
+            $new_client->last_name = $request->last_name;
+            $new_client->email = $request->email;
+            $new_client->phone = $request->phone;
+            $new_client->address = $request->street . ',' . $request->city;
             $new_client->save();
 
             $client = $new_client;
 
-        }else{
+        } else {
 
-           $client =  $client->first();
+            $client = $client->first();
         }
 
 
-        setcookie('operation_id', $operation_id , time() + (86400 * 30),'/');
-        setcookie('client_id', $client->id , time() + (86400 * 30), '/');
+        setcookie('operation_id', $operation_id, time() + (86400 * 30), '/');
+        setcookie('client_id', $client->id, time() + (86400 * 30), '/');
 
-        Session::put('client_id',$client->id);
-        Session::put('operation_id',$operation_id);
+        Session::put('client_id', $client->id);
+        Session::put('operation_id', $operation_id);
 
 
 
-        if($request->pago == 'Todo Pago'){
+        if ($request->pago == 'Todo Pago') {
             return $tp->getTp($request, $client, $publication, $operation_id);
 
-        } elseif($request->pago == 'Mercado Pago'){
+        } elseif ($request->pago == 'Mercado Pago') {
 
             return $this->newOperationMercadoPago($request, $client, $publication, $operation_id);
 
-        }else{
+        } else {
 
             $this->newOperationDeposito($request, $client, $operation_id);
             $this->sendMail();
 
             return redirect()->back()->withInput()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.');
         }
+
 
 
     }

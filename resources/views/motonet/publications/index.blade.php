@@ -65,6 +65,8 @@
                             <td>
                                 @if($model->salable == 1)
                                     <span class="label label-primary">A la Venta</span>
+                                @elseif($model->private == 1)
+                                    <span class="label label-danger">Privada</span>
                                 @endif
                             </td>
 

@@ -17,8 +17,14 @@ class OperationsRepo extends BaseRepo {
     {
         return [
            // 'code'   => 'required|unique:items,code',
-            'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'clients_id'    => 'required',
+            'medio_de_pago' => 'required',
+            'models_id'     => 'required',
+            'amount'        => 'required',
+
+
+
+            //'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
 
         ];
     }
@@ -26,8 +32,11 @@ class OperationsRepo extends BaseRepo {
     public function RulesEdit($id = null)
     {
         return [
-            'name'   => 'required',
-            'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
+            'clients_id'    => 'required',
+            'medio_de_pago' => 'required',
+            'models_id'     => 'required',
+            'amount'        => 'required',
+           // 'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
         ];
     }
 
@@ -44,11 +53,11 @@ class OperationsRepo extends BaseRepo {
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
 
-                'Fecha' => ['data'=>'created_at','relation' => null],
-                'Cliente' => ['data' => 'Cliente', 'relation' => null],
-                'Total' => ['data' => 'amount' ,'relation' => null],
-                'Modo de Pago'=> ['data' => 'MedioPago' ,'relation' => null],
-                'Estado' => ['data'=>'status','relation' => null],
+                'Fecha'         => ['data'  => 'created_at','relation'  => null],
+                'Cliente'       => ['data'  => 'Cliente', 'relation'    => null],
+                'Total'         => ['data'  => 'amount' ,'relation'     => null],
+                'Modo de Pago'  => ['data'  => 'MedioPago' ,'relation'  => null],
+                'Estado'        => ['data'  => 'status','relation'      => null],
             ],
         ];
 
