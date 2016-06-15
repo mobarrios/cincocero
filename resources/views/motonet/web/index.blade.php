@@ -147,7 +147,7 @@
     @include('motonet/web/includes/slider')
 
     <section  class="gray-section contact">
-        <div class="container" style="background-color: white ;">
+        <div class="container" >
             @include('motonet/web/index/brands')
         </div>
     </section>
