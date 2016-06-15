@@ -165,7 +165,10 @@ class PayController extends Controller {
             $operation->id                 = $rta['Payload']['Answer']['OPERATIONID'];
             $operation->authorization_code = $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
             $operation->authorization_key  = $rta['AuthorizationKey'];
-            $operation->amount            = $rta['Payload']['Request']['AMOUNT'];
+            $operation->amount             = $rta['Payload']['Request']['AMOUNT'];
+
+        }else{
+            $operation->amount             = 0;
 
         }
 
