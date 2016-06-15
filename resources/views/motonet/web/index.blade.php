@@ -42,6 +42,12 @@
             border:none;
             overflow:hidden;
         }
+
+        #iframeFace *{
+            margin:auto;
+            text-align:center;
+        }
+
     </style>
             <!-- Mainly scripts -->
     <script src="assets/inspinia/js/jquery-2.1.1.js"></script>
@@ -140,6 +146,13 @@
 
     @include('motonet/web/includes/slider')
 
+    <section  class="gray-section contact">
+        <div class="container" style="background-color: white ;">
+            @include('motonet/web/index/brands')
+        </div>
+    </section>
+
+
     <section id="destacados" class="gray-section contact">
 
         <div class="container" style="background-color: white ;">
@@ -199,7 +212,7 @@
             @include('motonet/web/index/metodosDePagos')
         </div>
         <div class="col-xs-12 col-sm-5 tel2">
-            <div class="ibox col-xs-12 col-sm-3 col-md-12">
+            <div class="iboxFace ibox col-xs-12 col-sm-3 col-md-12">
                 <div class="ibox-title">
                     <h5>Soporte</h5>
                 </div>
@@ -212,7 +225,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-12" style="padding-left:0;padding-right:0;">
-                <iframe id="iframeFace" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width=400&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898" scrolling="yes" frameborder="0" allowTransparency="true"></iframe>
+                <iframe id="iframeFace" scrolling="yes" frameborder="0" allowTransparency="true" class="center-block"></iframe>
             </div>
         </div>
 
@@ -303,8 +316,9 @@
 <script src="assets/inspinia/js/plugins/slick/slick.min.js"></script>
 
 <script>
-
+    var t;
     $(document).ready(function () {
+        t = parseInt($(".iboxFace").width());
 
         $('.slick_demo_2').slick({
             infinite: true,
@@ -338,6 +352,8 @@
             ]
         });
 
+
+
         $('body').scrollspy({
             target: '.navbar-fixed-top',
             offset: 80
@@ -354,8 +370,8 @@
         });
     });
 
-    window.onload(function(){
-        $("._2p3a").css("width","100%");
+    $().ready(function(){
+        $('#iframeFace').attr("src","https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width="+t+"&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898")
     });
 
     var cbpAnimatedHeader = (function() {
@@ -406,6 +422,8 @@
 
         });
     });
+
+
 
 </script>
 

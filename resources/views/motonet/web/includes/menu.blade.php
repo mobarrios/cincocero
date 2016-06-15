@@ -1,4 +1,4 @@
-<div style="background-color: rgb(1, 136, 206); height: 52px;" class="container-fluid">
+<div class="container-fluid">
     {{--<div class="container">--}}
         <nav class="navbar2 navbar2-default">
 
