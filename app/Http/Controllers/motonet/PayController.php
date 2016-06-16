@@ -101,7 +101,7 @@ class PayController extends Controller {
             //$this->newOperationDeposito($request, $client, $operation_id);
             $this->newOperationDeposito($request,$client, $operation->id);
 
-            $this->sendMail();
+            $this->sendMail($operation->id);
 
             return redirect()->back()->withInput()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.');
         }
@@ -218,8 +218,10 @@ class PayController extends Controller {
             $operation->amount             = $rta['Payload']['Request']['AMOUNT'];
 
         }else{
+
             $operation->amount             = 0;
         }
+            $operation->message = $rta['StatusMessage'];
             $operation->save();
 
         return redirect()->route('resumen',$operation->publications_id)->withErrors($rta['StatusMessage']);
@@ -229,16 +231,20 @@ class PayController extends Controller {
 
     public function newOperationDeposito($request = null , $client = null,  $operation_id = null){
 
-        $operation                    = new Operations();
-        $operation->id                = $operation_id;
-        $operation->clients_id        = $client->id;
+        //$operation                    = new Operations();
+
+        $operation  = Operations::find($operation_id);
+       // $operation->id                = $operation_id;
+       // $operation->clients_id        = $client->id;
         $operation->medio_de_pago     = 3;
         $operation->authorization_key = 'n/a';
         $operation->authorization_code= 'n/a';
         $operation->amount            = $request->price;
         $operation->status            = 2;
+        $operation->message           = "Pendiente de Desposito";
         //$operation->publications_id   = $_COOKIE['publication_id'];
-        $operation->publications_id   = Session::get('publication_id');
+        //$operation->publications_id   = Session::get('publication_id');
+
         $operation->save();
     }
 
@@ -268,56 +274,74 @@ class PayController extends Controller {
                 )
                 ),
                     "back_urls" => array(
-                    "success"   => env('MERCADO_PAGO_URL_SUCCESS'),
-                    "failure"   => env('MERCADO_PAGO_URL_FAILURE'),
-                    "pending"   => env('MERCADO_PAGO_URL_PENDING')
+                    "success"   => env('MERCADO_PAGO_URL_SUCCESS').'/'.$operation_id,
+                    "failure"   => env('MERCADO_PAGO_URL_FAILURE').'/'.$operation_id,
+                    "pending"   => env('MERCADO_PAGO_URL_PENDING').'/'.$operation_id
                 ),
                     "auto_return" => "approved",
         );
 
         $preference = $mp->create_preference($preference_data);
 
-        $operation                    = new Operations();
-        $operation->id                = $operation_id;
-        $operation->clients_id        = $client->id;
+        //$operation                    = new Operations();
+        $operation                    = Operations::find($operation_id);
+        //$operation->id                = $operation_id;
+        //$operation->clients_id        = $client->id;
         $operation->medio_de_pago     = 2;
         $operation->authorization_key = 'n/a';
         $operation->authorization_code= 'n/a';
         $operation->amount            = $request->price;
         $operation->status            = 2;
         //$operation->publications_id   = $_COOKIE['publication_id'];
-        $operation->publications_id   = Session::get('publication_id');
+        //$operation->publications_id   = ;
 
         $operation->save();
+
 
         return redirect()->to($preference['response'][$point]);
 
     }
 
-    public function mp(Request $request, $type = null)
+    public function mp(Request $request, $type = null, $operation_id = null)
     {
+
         $msg = $request->collection_status;
 
+        $operation  = Operations::find($operation_id);
+
+
         if($msg == 'approved') {
-            $this->sendMail();
+            $this->sendMail($operation_id);
             //return redirect()->route('resumen', $_COOKIE['publication_id'])->withInput()->withErrors('Pago Aprobado');
-            return redirect()->route('resumen', Session::get('publication_id'))->withInput()->withErrors('Pago Aprobado');
+            $operation->message = $msg;
+            $operation->save();
+
+            return redirect()->route('resumen', $operation->publications_id)->withInput()->withErrors('Pago Aprobado');
 
         }
         if($msg == 'pending'){
-            $this->sendMail();
+            $this->sendMail($operation_id);
+            $operation->message = $msg;
+            $operation->save();
+
             //return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Pendiente');
-            return redirect()->route('resumen', Session::get('publication_id'))->withInput()->withErrors('Pago Pendiente');
+            return redirect()->route('resumen', $operation->publications_id)->withInput()->withErrors('Pago Pendiente');
 
         }
         if($msg == 'rejected'){
             //return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Rechazado');
-            return redirect()->route('resumen', Session::get('publication_id'))->withInput()->withErrors('Pago Rechazado');
+            $operation->message = $msg;
+            $operation->save();
+
+            return redirect()->route('resumen', $operation->publications_id)->withInput()->withErrors('Pago Rechazado');
 
         }
         if($msg == 'failure'){
             //return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Fallo');
-            return redirect()->route('resumen', Session::get('publication_id'))->withInput()->withErrors('Pago Fallo');
+            $operation->message = $msg;
+            $operation->save();
+
+            return redirect()->route('resumen', $operation->publications_id)->withInput()->withErrors('Pago Fallo');
 
         }
     }

@@ -60,7 +60,7 @@ Route::get('test_mail',function(){
 });
 //route MERCADO PAGO
 
-Route::get('mp/{type?}','\App\Http\Controllers\motonet\PayController@mp');
+Route::get('mp/{type?}/{operation_id?}','\App\Http\Controllers\motonet\PayController@mp');
 
 // route TODO PAGO
 Route::get('tp',   '\App\Http\Controllers\motonet\TodoPagoController@getTp');

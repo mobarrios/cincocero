@@ -174,9 +174,8 @@ class TodoPagoController extends Controller {
 
         $payController = new PayController();
         $payController->sendMail($operation_id);
+        
         return($payController->newOperationTodoPago($rta, $operation_id));
-
-
 
         //return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
 
