@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Session;
 
 
 class PayController extends Controller {
-
-
+    
     public function ProcessPay(Request $request, TodoPagoController $tp)
     {
 
@@ -25,29 +24,40 @@ class PayController extends Controller {
         $request['price']   = $pm[1];
 
 
-        $publication = Publications::find($_COOKIE['publication_id']);
+        if($request['pago'] == 'Todo Pago')
+            $pago_id = 1;
+        if($request['pago'] == 'Mercado Pago')
+            $pago_id = 2;
+        if($request['pago'] == 'Efectivo')
+            $pago_id = 4;
 
+
+
+        //$publication = Publications::find($_COOKIE['publication_id']);
         // $publication        = Publications::find(Cookie::get('publication_id'));
-        $client = Clients::where('email', $request->email)->get();
-        $operations = Operations::all()->last();
 
+        $publication    = Publications::find($request->publication_id);
+        $client         = Clients::where('email', $request->email)->get();
+        $operations     = Operations::all()->last();
+
+        /*
         if (!is_null($operations)) {
-
             if ($operations->count() != 0)
                 $operation_id = $operations->id + 1;
         } else
             $operation_id = 1;
 
+        */
 
         if ($client->count() == 0) {
 
-            $new_client = new Clients();
-            $new_client->dni = $request->dni;
-            $new_client->name = $request->name;
-            $new_client->last_name = $request->last_name;
-            $new_client->email = $request->email;
-            $new_client->phone = $request->phone;
-            $new_client->address = $request->street . ',' . $request->city;
+            $new_client             = new Clients();
+            $new_client->dni        = $request->dni;
+            $new_client->name       = $request->name;
+            $new_client->last_name  = $request->last_name;
+            $new_client->email      = $request->email;
+            $new_client->phone      = $request->phone;
+            $new_client->address    = $request->street . ',' . $request->city;
             $new_client->save();
 
             $client = $new_client;
@@ -57,25 +67,40 @@ class PayController extends Controller {
             $client = $client->first();
         }
 
+        $operation = new Operations();
+        $operation->clients_id = $client->id;
+        $operation->medio_de_pago = $pago_id;
+        $operation->amount = $request->price ;
+        $operation->publications_id = $request->publication_id;
+        $operation->save();
 
-        setcookie('operation_id', $operation_id, time() + (86400 * 30), '/');
-        setcookie('client_id', $client->id, time() + (86400 * 30), '/');
 
-        Session::put('client_id', $client->id);
-        Session::put('operation_id', $operation_id);
+       //setcookie('operation_id', $operation_id, time() + (86400 * 30), '/');
+       //setcookie('client_id', $client->id, time() + (86400 * 30), '/');
+
+        //Session::put('client_id', $client->id);
+        //Session::put('operation_id', $operation_id);
+
+        //$_SESSION['client_id']      = $client->id;
+        //$_SESSION['operation_id']   = $operation_id;
+
 
 
 
         if ($request->pago == 'Todo Pago') {
-            return $tp->getTp($request, $client, $publication, $operation_id);
+            //return $tp->getTp($request, $client, $publication, $operation_id);
+            return $tp->getTp($request,$client,$publication, $operation->id);
 
         } elseif ($request->pago == 'Mercado Pago') {
 
-            return $this->newOperationMercadoPago($request, $client, $publication, $operation_id);
+           // return $this->newOperationMercadoPago($request, $client, $publication, $operation_id);
+            return $this->newOperationMercadoPago($request,$client, $publication, $operation->id);
 
         } else {
 
-            $this->newOperationDeposito($request, $client, $operation_id);
+            //$this->newOperationDeposito($request, $client, $operation_id);
+            $this->newOperationDeposito($request,$client, $operation->id);
+
             $this->sendMail();
 
             return redirect()->back()->withInput()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.');
@@ -87,7 +112,7 @@ class PayController extends Controller {
 
 
 
-    public function sendMail()
+    public function sendMail($operation_id )
     {
 
 
@@ -95,9 +120,10 @@ class PayController extends Controller {
         //$client         = Clients::find($_COOKIE['client_id']);
         //$operation      = Operations::find($_COOKIE['operation_id']);
 
-        $publication    = Publications::find(Session::get('publication_id'));
-        $client         = Clients::find(Session::get('client_id'));
-        $operation      = Operations::find(Session::get('operation_id'));
+        $operation      = Operations::find($operation_id);
+        $publication    = Publications::find($operation->publications_id);
+        $client         = Clients::find($operation->clients_id);
+
 
 
         if($publication->Images->count() != 0 )
@@ -127,7 +153,7 @@ class PayController extends Controller {
 
         $data['operation_id']       = $operation->id;
         $data['mail']               = $client->email;
-        $data['subject']            = 'Tu compra en MotoNET : N° orden. '. Session::get('operation_id') ;
+        $data['subject']            = 'Tu compra en MotoNET : N° orden. '. $operation->id ;
         $data['from']               = 'prueba@motonet.com.ar';
         $data['client_name']        = $client->full_name;
         $data['client_dni']         = $client->dni;
@@ -157,9 +183,11 @@ class PayController extends Controller {
     /**
      *
      */
-    public function newOperationTodoPago($rta = null,  $client_id = null){
+    public function newOperationTodoPago($rta = null,  $operation_id = null){
 
-        $operation                    = new Operations();
+        /*
+        $operation                         = new Operations();
+
         if($rta['StatusCode'] == -1){
 
             $operation->id                 = $rta['Payload']['Answer']['OPERATIONID'];
@@ -178,6 +206,25 @@ class PayController extends Controller {
         $operation->publications_id   = $_COOKIE['publication_id'];
         //$operation->publications_id   = Session::get('publication_id');
         $operation->save();
+        */
+
+        $operation = Operations::find($operation_id);
+
+        if($rta['StatusCode'] == -1){
+
+            //$operation->id                 = $rta['Payload']['Answer']['OPERATIONID'];
+            $operation->authorization_code = $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
+            $operation->authorization_key  = $rta['AuthorizationKey'];
+            $operation->amount             = $rta['Payload']['Request']['AMOUNT'];
+
+        }else{
+            $operation->amount             = 0;
+        }
+            $operation->save();
+
+        return redirect()->route('resumen',$operation->publications_id)->withErrors($rta['StatusMessage']);
+
+
     }
 
     public function newOperationDeposito($request = null , $client = null,  $operation_id = null){

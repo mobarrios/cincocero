@@ -31,6 +31,10 @@ class TodoPagoController extends Controller {
     public function __construct()
     {
 
+        if(session_status() == PHP_SESSION_ACTIVE) {
+           session_start();
+        }
+
         if(env('TODO_PAGO_MODE') == 'test'){
 
             //modo testing "test"
@@ -106,7 +110,7 @@ class TodoPagoController extends Controller {
             );
 
 
-            $rta = $this->connector->sendAuthorizeRequest($this->getSARComercio(), $optionsSAR_operacion);
+            $rta = $this->connector->sendAuthorizeRequest($this->getSARComercio($operation_id), $optionsSAR_operacion);
 
             if ($rta['StatusCode'] != -1) {
 
@@ -117,6 +121,7 @@ class TodoPagoController extends Controller {
                 //setcookie('client_id',$client->id);
                 setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), '/');
                 Session::put('RequestKey',$rta["RequestKey"]);
+                //$_SESSION['RequestKey'] = $rta['RequestKey'];
 
 
                 return redirect()->to($rta["URL_Request"]);
@@ -124,7 +129,7 @@ class TodoPagoController extends Controller {
 
     }
 
-    public function getSARComercio()
+    public function getSARComercio($operation_id)
     {
         $optionsSAR_comercio = array (
             'Security'      => $this->security,
@@ -133,25 +138,29 @@ class TodoPagoController extends Controller {
             //'URL_OK'        => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/exito/operationid=$this->operation_id",
             //'URL_ERROR'     => "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/error/operationid=$this->operation_id"
 
-            'URL_OK'        => env('TODO_PAGO_URL_OK')."operationid=$this->operation_id",
-            'URL_ERROR'     => env('TODO_PAGO_URL_ERROR')."operationid=$this->operation_id",
+            'URL_OK'        => env('TODO_PAGO_URL_OK')."$operation_id",
+            'URL_ERROR'     => env('TODO_PAGO_URL_ERROR')."$operation_id",
 
         );
 
         return $optionsSAR_comercio;
     }
 
-    public function getExito(Request $request){
+    public function getExito($operation_id = null, Request $request){
 
         $rk               = $_COOKIE['RequestKey'];
-        $client_id        = $_COOKIE['client_id'];
-        $p_id             = $_COOKIE['publication_id'];
+        //$client_id        = $_COOKIE['client_id'];
+        //$p_id             = $_COOKIE['publication_id'];
 
-        //$rk               = Session::get('RequestKey');
+        $rk               = Session::get('RequestKey');
         //$client_id        = Session::get('client_id');
         //$p_id             = Session::get('publication_id');
 
-  
+        //$rk               = session('RequestKey');
+        //$client_id        = session('client_id');
+        //$p_id             = session('publication_id');
+
+
         $this->connector  =  new todoPago($this->http_header, $this->mode);
 
         $optionsGAA = array (
@@ -164,25 +173,31 @@ class TodoPagoController extends Controller {
         $rta = $this->connector->getAuthorizeAnswer($optionsGAA);
 
         $payController = new PayController();
-        $payController->newOperationTodoPago($rta, $client_id);
+        $payController->sendMail($operation_id);
+        return($payController->newOperationTodoPago($rta, $operation_id));
 
-        $payController->sendMail();
 
-        return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
+
+        //return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
 
     }
 
-    public function getError(Request $request){
+    public function getError($operation_id = null, Request $request){
 
 
-        $rk         = $_COOKIE['RequestKey'];
-        $p_id       = $_COOKIE['publication_id'];
-        $client_id  = $_COOKIE['client_id'];
+        $rk           = $_COOKIE['RequestKey'];
+        //$p_id       = $_COOKIE['publication_id'];
+        //$client_id  = $_COOKIE['client_id'];
 
-        //$rk               = Session::get('RequestKey');
+        //dd($operation_id);
+
+        $rk                 = Session::get('RequestKey');
         //$client_id        = Session::get('client_id');
         //$p_id             = Session::get('publication_id');
 
+        //$rk               = session('RequestKey');
+        //$client_id        = session('client_id');
+        //$p_id             = session('publication_id');
 
 
 
@@ -197,12 +212,12 @@ class TodoPagoController extends Controller {
 
         $rta = $connector->getAuthorizeAnswer($optionsGAA);
 
-
         $payController = new PayController();
-        $payController->newOperationTodoPago($rta, $client_id);
+        //$payController->newOperationTodoPago($rta, $client_id);
+
+        return $payController->newOperationTodoPago($rta, $operation_id);
 
         // return '<h5>'.$ak['StatusMessage'].'</h5>';
-        return redirect()->route('resumen',$p_id)->withErrors($rta['StatusMessage']);
 
     }
 

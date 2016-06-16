@@ -94,7 +94,7 @@
         <button  type="submit" class="btn btn-block">Comprar</button>
     </div>
 
-
+{!! Form::hidden('publication_id',$publication->id) !!}
 {!! Form::close() !!}
 
 
