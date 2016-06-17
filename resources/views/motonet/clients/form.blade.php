@@ -13,6 +13,12 @@
                 {!! Form::textCustom('last_name', 'Apellido')!!}
                 {!! Form::textCustom('name', 'Nombre')!!}
                 {!! Form::textCustom('dni', 'DNI')!!}
+
+                {!! Form::textCustom('phone', 'Teléfono')!!}
+                {!! Form::textCustom('cell_phone', 'Celular')!!}
+                {!! Form::textCustom('address', 'Dirección')!!}
+
+
                 {!! Form::textCustom('email', 'E-Mail')!!}
 
 
