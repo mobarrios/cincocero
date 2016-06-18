@@ -7,7 +7,8 @@ class Operations extends Entity{
 
     protected $table = 'operations';
 
-    protected $fillable = ['clients_id','authorization_code','medio_de_pago','pay_date','amount','authorization_key','publications_id','message'];
+    protected $fillable = ['clients_id','authorization_code','medio_de_pago','pay_date','amount',
+        'authorization_key','publications_id','message', 'request_key'];
 
 
     public function getMedioPagoAttribute()

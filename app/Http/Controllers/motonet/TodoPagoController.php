@@ -56,6 +56,9 @@ class TodoPagoController extends Controller {
 
     public function getTp($request = null , $client = null, $publication = null, $operation_id = null)
     {
+
+            $operation              = Operations::find($operation_id);
+
             $this->connector        = new todoPago($this->http_header, $this->mode);
             $this->operation_id     = $operation_id;
 
@@ -119,9 +122,12 @@ class TodoPagoController extends Controller {
             } else {
 
                 //setcookie('client_id',$client->id);
-                setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), '/');
-                Session::put('RequestKey',$rta["RequestKey"]);
+                //setcookie('RequestKey', $rta["RequestKey"], time() + (86400 * 30), '/');
+                //Session::put('RequestKey',$rta["RequestKey"]);
                 //$_SESSION['RequestKey'] = $rta['RequestKey'];
+
+                $operation->request_key = $rta['RequestKey'];
+                $operation->save();
 
 
                 return redirect()->to($rta["URL_Request"]);
@@ -148,11 +154,12 @@ class TodoPagoController extends Controller {
 
     public function getExito($operation_id = null, Request $request){
 
-        $rk               = $_COOKIE['RequestKey'];
+        $operation          = Operations::find($operation_id);
+        $rk                 = $operation->request_key;
         //$client_id        = $_COOKIE['client_id'];
         //$p_id             = $_COOKIE['publication_id'];
 
-        $rk               = Session::get('RequestKey');
+        //$rk               = Session::get('RequestKey');
         //$client_id        = Session::get('client_id');
         //$p_id             = Session::get('publication_id');
 
@@ -183,14 +190,17 @@ class TodoPagoController extends Controller {
 
     public function getError($operation_id = null, Request $request){
 
+        $operation          = Operations::find($operation_id);
+        $rk                 = $operation->request_key;
 
-        $rk           = $_COOKIE['RequestKey'];
+
+        //$rk           = $_COOKIE['RequestKey'];
         //$p_id       = $_COOKIE['publication_id'];
         //$client_id  = $_COOKIE['client_id'];
 
         //dd($operation_id);
 
-        $rk                 = Session::get('RequestKey');
+        //$rk                 = Session::get('RequestKey');
         //$client_id        = Session::get('client_id');
         //$p_id             = Session::get('publication_id');
 
