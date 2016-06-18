@@ -60,7 +60,9 @@ class webController extends Controller {
                                     $q->whereHas('categories', function ($q) use ($cat){
                                         $q->where('categories.id',$cat);
                                     });
-                                })->get();
+                                })
+                ->where('private','!=',1)
+                ->get();
             $data['grid'] = $this->categories->find($request->get('categories'))->name;
 
         } elseif ($request->get('models')){
@@ -72,7 +74,9 @@ class webController extends Controller {
                                 });
                             })->get();
             */
-            $data['items'] = $this->publications->where('models_id',$m)->get();
+            $data['items'] = $this->publications->where('models_id',$m)
+                ->where('private','!=',1)
+                ->get();
             $data['grid'] = $this->models->find($request->get('models'))->name;
 
         }elseif($request->get('brands')){
@@ -82,10 +86,13 @@ class webController extends Controller {
                                     $q->whereHas('brands', function ($q) use ($b) {
                                         $q->where('id', $b);
                                     });
-                                })->get();
+                                })->where('private','!=',1)
+                ->get();
             $data['grid'] = $this->brands->find($request->get('brands'))->name;
         }else{
+
             $find = $request->get('find');
+
             $data['items'] = $this->publications
                                 ->where('title','like','%'.$find.'%')
                                 ->orWhereHas('models',function($q) use($find){
@@ -102,7 +109,7 @@ class webController extends Controller {
 
                                         $q->where('name','like','%'.$find.'%');
 
-                                })
+                                })->where('private','!=',1)
                                 ->get();
 
             $data['grid'] = "find";
