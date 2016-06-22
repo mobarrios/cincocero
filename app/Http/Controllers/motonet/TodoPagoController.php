@@ -179,6 +179,8 @@ class TodoPagoController extends Controller {
 
         $rta = $this->connector->getAuthorizeAnswer($optionsGAA);
 
+        dd($rta);
+        
         $payController = new PayController();
         $payController->sendMail($operation_id);
         
@@ -228,6 +230,12 @@ class TodoPagoController extends Controller {
 
         // return '<h5>'.$ak['StatusMessage'].'</h5>';
 
+    }
+
+    public function getStatus($operation_id = null)
+    {
+        $this->connector        = new todoPago($this->http_header, $this->mode);
+        return $this->connector->getStatus(['MERCHANT'=>$this->merchant , 'OPERATIONID'=> $operation_id]);
     }
 
 

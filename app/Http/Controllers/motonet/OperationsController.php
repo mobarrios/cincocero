@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
 use App\Http\Repositories\motonet\PayMethodRepo as PayMethodRepo;
 
+
 class OperationsController extends Controller {
 
     public   $module;
@@ -22,11 +23,14 @@ class OperationsController extends Controller {
     public   $request;
     public   $rules;
     public   $rulesEdit;
+    public   $tp ;
 
 
 
-    public function __construct(Repo $repo, PayMethodRepo $pmRepo )
+    public function __construct(Repo $repo, PayMethodRepo $pmRepo , TodoPagoController $tp)
     {
+
+        $this->tp = $tp;
 
         $module = 'operations';
 
@@ -47,9 +51,9 @@ class OperationsController extends Controller {
         $this->data['entityImg']        = $module;
 
         //selects
-        //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
-        $this->data['modelos']            = Models::orderBy('name','DESC')->lists('name','id');
-        $this->data['medios']            = $pmRepo->getMethods();
+        //$this->data['roomsTypes']     = RoomsTypes::lists('name','id');
+        $this->data['modelos']          = Models::orderBy('name','DESC')->lists('name','id');
+        $this->data['medios']           = $pmRepo->getMethods();
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -65,6 +69,35 @@ class OperationsController extends Controller {
 
 
     }
+
+    // go to form with model
+    public function getEdit($id)
+    {
+
+
+        //dd($this->data['status_tp']);
+        //$bc = new BreadCrumbHelper();
+        //$bc->create('Editar '.$this->data['sectionName'], $this->data['routeEdit']);
+
+        $mp  = new \App\Helpers\MercadoPago\Mp("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
+
+        $a = $mp->get("/v1/payments/874251877");
+
+        //$search_result = $mp->search_payment('874251877');
+         dd($a);
+
+        $this->data['model'] = $this->repo->getModel()->find($id);
+
+        if($this->data['model']->medio_de_pago == 1)
+            $this->data['status_tp'] = $this->tp->getStatus($id);
+        if($this->data['model']->medio_de_pago == 2)
+            $mp->get("/merchant_orders/".$_GET["id"]);
+
+
+
+        return view($this->form)->with($this->data);
+    }
+
 
     // post new item
     public function postNew(Request $request, ImagesHelper $image)

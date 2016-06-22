@@ -57,11 +57,16 @@ class OperationsRepo extends BaseRepo {
                 'Cliente'       => ['data'  => 'Cliente', 'relation'    => null],
                 'Total'         => ['data'  => 'amount' ,'relation'     => null],
                 'Modo de Pago'  => ['data'  => 'MedioPago' ,'relation'  => null],
-                'Mensaje'        => ['data'  => 'message','relation'      => null],
+                'Mensaje'       => ['data'  => 'message','relation'      => null],
             ],
         ];
 
         return $header;
+    }
+
+    public function getTodoPagoStatus(){
+        
+        
     }
 
 

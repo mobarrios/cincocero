@@ -105,11 +105,7 @@ class webController extends Controller {
                                         $q->where('name','like','%'.$find.'%');
                                     });
                                 })
-                                ->orWhereHas('models',function($q) use($find){
-
-                                        $q->where('name','like','%'.$find.'%');
-
-                                })->where('private','!=',1)
+                                ->where('private','!=',1)
                                 ->get();
 
             $data['grid'] = "find";

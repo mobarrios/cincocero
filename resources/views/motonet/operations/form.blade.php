@@ -15,8 +15,24 @@
                 <br>
                 Medio de Pago: {{$model->MedioPago}}
                 <br>
+                         @if(isset($status_tp))
+                            Mensaje : {{  $status_tp['Operations']['RESULTMESSAGE']}}
+                            <br>
+                            Codigo de Autorización :
+
+                            @if(!empty($status_tp['Operations']['AUTHORIZATIONCODE']))
+                                 {{ $status_tp['Operations']['AUTHORIZATIONCODE'] }}
+                            @endif
+
+                         @endif
+                <br>
+
+
                 Monto Abonado: $ {{$model->amount}}
                 <hr>
+
+
+
             @else
                 {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
             @endif
