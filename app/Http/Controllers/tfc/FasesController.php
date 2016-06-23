@@ -317,7 +317,7 @@ class FasesController extends Controller {
         {
             foreach($week->matches as $match)
             {
-                echo $match;
+                echo $match . "</br>";
             }
         }
 
