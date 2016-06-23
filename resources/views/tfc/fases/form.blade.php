@@ -13,6 +13,8 @@
 
         {!! Form::textCustom('name', 'Nombre Fase')!!}
 
+        <a href="{{route('fases_vuelta',$model->id)}}" class="btn btn-xs btn-success">Crear Vuelta</a>
+
         @if(!isset($model))
 
             {!! Form::label('Equipos Participantes')!!}

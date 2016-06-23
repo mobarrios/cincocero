@@ -308,5 +308,20 @@ class FasesController extends Controller {
 
         return view($this->form)->with($this->data);
     }
+    
+    public function getFasesVuelta($id = null){
+
+       $fase = $this->repo->find($id);
+
+        foreach ($fase->weeks as $week)
+        {
+            foreach($week->matches as $match)
+            {
+                echo $match;
+            }
+        }
+
+        return;
+    }
 
 }
