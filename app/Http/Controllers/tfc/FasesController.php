@@ -311,17 +311,36 @@ class FasesController extends Controller {
     
     public function getFasesVuelta($id = null){
 
-       $fase = $this->repo->find($id);
+        $fase   = $this->repo->find($id);
+        $nFases = $fase->weeks->count();
+
 
         foreach ($fase->weeks as $week)
         {
+            $fasesWeek = new FasesWeek();
+            $fasesWeek->name = $nFases + 1;
+            $fasesWeek->fases_id = $id;
+            $fasesWeek->save();
+
+            $nMatches = 1;
+
             foreach($week->matches as $match)
             {
-                echo $match . "</br>";
+
+                $matches                = new Matches();
+                $matches->name          = $nMatches;
+                $matches->status        = 1;
+                $matches->fases_week_id = $fasesWeek->id;
+                $matches->home_teams_id = $match->away_teams_id;
+                $matches->away_teams_id = $match->home_teams_id;
+                $matches->save();
+                $nMatches++;
             }
+
+            $nFases++;
         }
 
-        return;
+        return redirect()->back()->withErrors('Vuelta Creada Correctamente');
     }
 
 }
