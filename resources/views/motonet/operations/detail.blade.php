@@ -22,7 +22,7 @@
                     <td>Pago</td>
                     <td>
                         <strong>{{$model->MedioPago}}</strong>
-                        @if(isset($status_tp))
+                        @if(!empty($status_tp))
 
                             {{dd($status_tp)}}
                             <br>
