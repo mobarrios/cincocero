@@ -19,6 +19,7 @@ class OperationsController extends Controller {
     public   $repo;
     public   $view ;
     public   $form;
+    public   $detail;
     public   $data;
     public   $request;
     public   $rules;
@@ -42,6 +43,7 @@ class OperationsController extends Controller {
         //data for views
         $this->view                 = 'motonet.'.$module.'.index';
         $this->form                 = 'motonet.'.$module.'.form';
+        $this->detail               = 'motonet.'.$module.'.detail';
         $this->data['sectionName']  = 'Operaciones Realizadas';
 
 
@@ -60,44 +62,16 @@ class OperationsController extends Controller {
         $this->rulesEdit            = $this->repo->RulesEdit();
 
         //data routes
-        $this->data['route']        = $module;
-        $this->data['routeEdit']    = $module.'GetEdit';
-        $this->data['routeDel']     = $module.'GetDel';
-        $this->data['routeNew']     = $module.'GetNew';
-        $this->data['routePostNew'] = $module.'PostNew';
-        $this->data['routePostEdit']= $module.'PostEdit';
+        $this->data['route']         = $module;
+        $this->data['routeEdit']     = $module.'GetEdit';
+        $this->data['routeDel']      = $module.'GetDel';
+        $this->data['routeNew']      = $module.'GetNew';
+        $this->data['routePostNew']  = $module.'PostNew';
+        $this->data['routePostEdit'] = $module.'PostEdit';
+        $this->data['routeGetDetail']= $module.'GetDetail';
 
 
     }
-
-    // go to form with model
-    public function getEdit($id)
-    {
-
-
-        //dd($this->data['status_tp']);
-        //$bc = new BreadCrumbHelper();
-        //$bc->create('Editar '.$this->data['sectionName'], $this->data['routeEdit']);
-
-        $mp  = new \App\Helpers\MercadoPago\Mp("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
-
-        $a = $mp->get("/v1/payments/874251877");
-
-        //$search_result = $mp->search_payment('874251877');
-         dd($a);
-
-        $this->data['model'] = $this->repo->getModel()->find($id);
-
-        if($this->data['model']->medio_de_pago == 1)
-            $this->data['status_tp'] = $this->tp->getStatus($id);
-        if($this->data['model']->medio_de_pago == 2)
-            $mp->get("/merchant_orders/".$_GET["id"]);
-
-
-
-        return view($this->form)->with($this->data);
-    }
-
 
     // post new item
     public function postNew(Request $request, ImagesHelper $image)
@@ -120,6 +94,21 @@ class OperationsController extends Controller {
 
     }
 
+    public function getDetail( $id = null){
+
+        $this->data['model'] = $this->repo->getModel()->find($id);
+
+        if($this->data['model']->medio_de_pago == 1)
+            $this->data['status_tp'] = $this->tp->getStatus($id);
+        //if($this->data['model']->medio_de_pago == 2)
+        //  $mp->get("/merchant_orders/".$_GET["id"]);
+
+
+
+        // redirect with errors messages language
+        return view($this->detail)->with($this->data);
+
+    }
 
 
 }

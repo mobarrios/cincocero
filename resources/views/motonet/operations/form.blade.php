@@ -4,38 +4,8 @@
         <div class="panel">
 
         <div class="panel-body">
-            @if(isset($model))
-                {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
-                <div class="panel-heading">
-                    Operacion Nro.: <strong>{{$model->id}}</strong>
-                </div>
-                Fecha : {{$model->created_at}}
-                <br>
-                Cliente: {{$model->Clients->last_name}} {{$model->Clients->last_name}}
-                <br>
-                Medio de Pago: {{$model->MedioPago}}
-                <br>
-                         @if(isset($status_tp))
-                            Mensaje : {{  $status_tp['Operations']['RESULTMESSAGE']}}
-                            <br>
-                            Codigo de Autorización :
 
-                            @if(!empty($status_tp['Operations']['AUTHORIZATIONCODE']))
-                                 {{ $status_tp['Operations']['AUTHORIZATIONCODE'] }}
-                            @endif
-
-                         @endif
-                <br>
-
-
-                Monto Abonado: $ {{$model->amount}}
-                <hr>
-
-
-
-            @else
                 {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
-            @endif
 
                 <label>Cliente</label>
 
