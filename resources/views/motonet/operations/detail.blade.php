@@ -23,6 +23,8 @@
                     <td>
                         <strong>{{$model->MedioPago}}</strong>
                         @if(isset($status_tp))
+
+                            {{dd($status_tp)}}
                             <br>
                             Mensaje : <label class="label label-success"> {{  $status_tp['Operations']['RESULTMESSAGE']}}</label>
                             <br>
