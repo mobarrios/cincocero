@@ -74,6 +74,7 @@ class FasesController extends Controller {
     public function getNew($id = null)
     {
         $this->data['tournaments_id'] = $id;
+
         return view($this->form)->with($this->data);
     }
 

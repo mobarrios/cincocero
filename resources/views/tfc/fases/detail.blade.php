@@ -42,7 +42,7 @@
             <tbody>
 
                 @foreach($fases->Matches as $match)
-                    @if($fases->fases->second_round == 1)
+                    @if($fases->second_round == 1)
 {{--                        {!! dd($fases->Matches->first()->HomeTeam->id) !!}--}}
                         @if(($fases->Matches->first()->HomeTeam->name == $match->AwayTeam->name) && ($fases->Matches->first()->AwayTeam->name == $match->HomeTeam->name))
                             <h1>Segunda vuelta</h1>

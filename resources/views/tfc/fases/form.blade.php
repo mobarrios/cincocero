@@ -5,6 +5,10 @@
 
         @if(isset($model))
             {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
+
+            @if($model->second_round != 1)
+                <a href="{{route('fases_vuelta',$model->id)}}" class="btn btn-xs btn-success" id="crear_vuelta">Crear Vuelta</a>
+            @endif
         @else
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
             {!! Form::hidden('tournaments_id', $tournaments_id) !!}
@@ -13,11 +17,11 @@
 
         {!! Form::textCustom('name', 'Nombre Fase')!!}
 
-        @if($model->second_round != 1)
-            <a href="{{route('fases_vuelta',$model->id)}}" class="btn btn-xs btn-success" id="crear_vuelta">Crear Vuelta</a>
-        @endif
+
 
         @if(!isset($model))
+
+
 
             {!! Form::label('Equipos Participantes')!!}
 
