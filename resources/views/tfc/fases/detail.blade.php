@@ -2,11 +2,14 @@
 
 @section('content')
 
-
-   @foreach($week as $fases)
-
-       <table class="table">
-
+    @if(isset($iyv))
+        <div id="primeraVuelta" data-total="{!! $week->count() !!}">
+            <h1>Ida</h1>
+            <hr>
+        </div>
+    @endif
+    @foreach($week as $fases)
+       <table class="table" data-count="{!! $fases->name !!}">
            <tr>
                <td colspan="11" class="bg-success text-center">FECHA {{$fases->name}} <span class="pull-right">
                        @if($fases->active)
@@ -39,7 +42,13 @@
             <tbody>
 
                 @foreach($fases->Matches as $match)
-
+                    @if($fases->fases->second_round == 1)
+{{--                        {!! dd($fases->Matches->first()->HomeTeam->id) !!}--}}
+                        @if(($fases->Matches->first()->HomeTeam->name == $match->AwayTeam->name) && ($fases->Matches->first()->AwayTeam->name == $match->HomeTeam->name))
+                            <h1>Segunda vuelta</h1>
+                            {{--<hr>--}}
+                        @endif
+                    @endif
                     <tr>
                         <td>{{$match->name}}</td>
                         <td>{{$match->date}}</td>
@@ -106,6 +115,16 @@
                 else
                     window.location.href = 'fasesWeekChange/0/'+$(this).attr('data');
             });
+
+            if($("#primeraVuelta")){
+                var vuelta = parseInt((($("#primeraVuelta").attr("data-total")) / 2) + 1);
+                $("table").each(function(pos){
+                    var table = $("table")[pos];
+                   if(parseInt($(table).attr("data-count")) == vuelta){
+                       $(table).before("<div><h1>Vuelta</h1><hr></div>");
+                   }
+                });
+            }
 
         </script>
     @endsection

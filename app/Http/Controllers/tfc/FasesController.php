@@ -156,7 +156,8 @@ class FasesController extends Controller {
     public function getDetail($id = null)
     {
         $this->data['week']     = FasesWeek::where('fases_id',$id)->get();
-
+        if($this->data['week']->first()->fases->second_round == 1)
+            $this->data['iyv'] = 1;
         Session::put('fases_id',$id);
 
         return view($this->detail)->with($this->data);
@@ -341,7 +342,7 @@ class FasesController extends Controller {
 
         $fase->second_round = '1';
         $fase->save();
-        
+
         return redirect()->back()->withErrors('Vuelta Creada Correctamente');
     }
 
