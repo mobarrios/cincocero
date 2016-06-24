@@ -13,7 +13,9 @@
 
         {!! Form::textCustom('name', 'Nombre Fase')!!}
 
-        <a href="{{route('fases_vuelta',$model->id)}}" class="btn btn-xs btn-success">Crear Vuelta</a>
+        @if($model->second_round != 1)
+            <a href="{{route('fases_vuelta',$model->id)}}" class="btn btn-xs btn-success" id="crear_vuelta">Crear Vuelta</a>
+        @endif
 
         @if(!isset($model))
 
@@ -147,6 +149,15 @@
                     $(this).attr('href','fases_change_team/'+team_from+'/'+team_to);
                     $(this).click();
 
+
+            });
+
+            $("#crear_vuelta").on('click',function(ev){
+
+                if(confirm('¿Está seguro que desea crear la segunda vuelta?'))
+                    return true;
+                else
+                    return false;
 
             });
         </script>
