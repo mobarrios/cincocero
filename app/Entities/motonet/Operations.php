@@ -49,5 +49,9 @@ class Operations extends Entity{
 
     }
 
+    public function Publications()
+    {
+        return $this->belongsTo(Publications::getClass());
+    }
 
 }

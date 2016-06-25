@@ -40,6 +40,11 @@ class Publications extends Entity{
 
     }
 
+    public function Operations()
+    {
+        return $this->hasMany(Operations::getClass());
+    }
+
 
 
 }

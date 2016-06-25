@@ -304,8 +304,7 @@ class PayController extends Controller {
 
     public function mp(Request $request, $type = null, $operation_id = null)
     {
-
-        dd($request);
+        
         $msg = $request->collection_status;
 
         $operation  = Operations::find($operation_id);

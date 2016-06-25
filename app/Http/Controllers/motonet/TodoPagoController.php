@@ -178,8 +178,7 @@ class TodoPagoController extends Controller {
         );
 
         $rta = $this->connector->getAuthorizeAnswer($optionsGAA);
-
-        dd($rta);
+        
         
         $payController = new PayController();
         $payController->sendMail($operation_id);
