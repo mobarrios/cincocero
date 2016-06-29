@@ -11,6 +11,7 @@ use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
 use Illuminate\Support\Facades\Session;
@@ -116,9 +117,24 @@ class webController extends Controller {
     }
 
     public function resumen($id){
+        $publicacion    = $this->publications->find($id);
+
+        if($publicacion->private == 1)
+        {
+            $creado = new \DateTime($publicacion->publication_date);
+            $hoy = new \DateTime(date("Y-m-d"));
+
+            if(date_diff($hoy,$creado)->days >= 2){
+//                $publicacion->delete();
+                $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
+                return view('motonet/web/index')->withErrors('La publicación ha caducado')->with($this->data);
+            }
+
+        }else{
+            $data['publication'] = $publicacion;
+        }
 
 
-        $data['publication']    = $this->publications->find($id);
         //setcookie('publication_id', $data['publication']->id, time() + (86400 * 30), '/' );
         //Session::put('publication_id',$data['publication']->id);
         //$_SESSION['publication_id'] = $data['publication']->id;
