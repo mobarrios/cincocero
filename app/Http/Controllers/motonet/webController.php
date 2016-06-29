@@ -11,6 +11,7 @@ use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
 use Illuminate\Support\Facades\Session;
@@ -115,17 +116,31 @@ class webController extends Controller {
         return view('motonet/web/grid')->with($data);
     }
 
-    public function resumen($id= null , Request $request){
+    public function resumen($id){
 
-        //dd($request);
-        $data['publication']    = $this->publications->find($id);
-        //setcookie('publication_id', $data['publication']->id, time() + (86400 * 30), '/' );
-        //Session::put('publication_id',$data['publication']->id);
-        //$_SESSION['publication_id'] = $data['publication']->id;
+        $publicacion    = $this->publications->find($id);
 
 
+        if($publicacion->private == 1)
+        {
+            $creado = new \DateTime($publicacion->created_at);
+            $hoy    = new \DateTime(date("Y-m-d"));
 
-        return view('motonet/web/resumen')->with($data);
+            if(date_diff($hoy,$creado)->days >= 2){
+
+                $this->data['publication'] = Publications::where('destacado',1)->where('private','!=',1)->get();
+
+                return redirect()->back()->withErrors('La publicación ha caducado')->with($this->data);
+            }
+
+        }
+
+            $this->data['publication'] = $publicacion;
+
+
+
+
+        return view('motonet/web/resumen')->with($this->data);
     }
 
     public function sucursalDetail($id){

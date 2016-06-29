@@ -6,6 +6,11 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@index'
     ]);
 
+    Route::get('{id}/web',[
+        'as' => 'privateExpired',
+        'uses' => 'webController@index'
+    ]);
+
     Route::get('detail/{id?}',[
         'as' => 'productDetail',
         'uses' => 'webController@detail'
