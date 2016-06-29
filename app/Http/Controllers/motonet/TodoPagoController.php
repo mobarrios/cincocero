@@ -31,10 +31,6 @@ class TodoPagoController extends Controller {
     public function __construct()
     {
 
-        if(session_status() == PHP_SESSION_ACTIVE) {
-           session_start();
-        }
-
         if(env('TODO_PAGO_MODE') == 'test'){
 
             //modo testing "test"

@@ -16,7 +16,7 @@
                 </tr>
                 <tr>
                     <td>Cliente</td>
-                    <td>{{$model->Clients->full_name}}</td>
+                    <td><a href="{{route('clientsGetEdit',$model->Clients->id)}}" >{{$model->Clients->full_name}}</a></td>
                 </tr>
                 <tr>
                     <td>Pago</td>
@@ -38,6 +38,26 @@
                     <td><span style="font-size: 12px; color: red"><strong>$ {{$model->amount}}</strong>  </span></td>
                 </tr>
 
+                <tr>
+                    <td>Estado</td>
+                    <td>
+                            @if($model->status == 'Finalizada')
+                                <label class="label label-success">{{$model->status}}</label>
+                            @else
+                                <label class="label label-default">{{$model->status}}</label>
+                            @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Publicacion Nro.</td>
+                    <td><a href="{{route('publicationsGetEdit',$model->publications_id)}}">{{$model->Publications->title}}</a></td>
+                </tr>
+
+                <tr>
+                    <td>Modelo</td>
+                    <td><strong>{{$model->PublicationModel}}</strong></td>
+                </tr>
             </table>
 
 

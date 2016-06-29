@@ -39,19 +39,24 @@ class Operations extends Entity{
     public function getStatusAttribute()
     {
         if($this->attributes['status'] == 0)
-            return 'Nada';
+            return 'Iniciada';
 
         if($this->attributes['status'] == 1)
-            return 'Acreditado';
+            return 'Finalizada';
 
         if($this->attributes['status'] == 2)
-            return 'Pendiente de Acreditación';
+            return 'Pendiente';
 
     }
 
     public function Publications()
     {
         return $this->belongsTo(Publications::getClass());
+    }
+
+    public function getPublicationModelAttribute()
+    {
+        return  $this->Publications->Models->name;
     }
 
 }

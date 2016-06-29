@@ -98,10 +98,17 @@ class OperationsController extends Controller {
 
         $this->data['model'] = $this->repo->getModel()->find($id);
 
+        //$mp  = new \App\Helpers\MercadoPago\Mp("315396166222597", "B8i2XAin03lDts4n0UQXmfMBVwWDTKd6");
+        //$mp->sandbox_mode(true);
+
         if($this->data['model']->medio_de_pago == 1)
             $this->data['status_tp'] = $this->tp->getStatus($id);
+
         //if($this->data['model']->medio_de_pago == 2)
-        //  $mp->get("/merchant_orders/".$_GET["id"]);
+
+           // $this->data['status_tp'] = $this->data['model']->message;
+
+
 
 
 

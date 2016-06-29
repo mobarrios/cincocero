@@ -115,9 +115,9 @@ class webController extends Controller {
         return view('motonet/web/grid')->with($data);
     }
 
-    public function resumen($id){
+    public function resumen($id= null , Request $request){
 
-
+        //dd($request);
         $data['publication']    = $this->publications->find($id);
         //setcookie('publication_id', $data['publication']->id, time() + (86400 * 30), '/' );
         //Session::put('publication_id',$data['publication']->id);

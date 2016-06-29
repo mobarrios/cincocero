@@ -233,15 +233,15 @@ class PayController extends Controller {
 
         //$operation                    = new Operations();
 
-        $operation  = Operations::find($operation_id);
+        $operation                      = Operations::find($operation_id);
        // $operation->id                = $operation_id;
        // $operation->clients_id        = $client->id;
-        $operation->medio_de_pago     = 3;
-        $operation->authorization_key = 'n/a';
-        $operation->authorization_code= 'n/a';
-        $operation->amount            = $request->price;
-        $operation->status            = 2;
-        $operation->message           = "Pendiente de Desposito";
+        $operation->medio_de_pago       = 3;
+        $operation->authorization_key   = 'n/a';
+        $operation->authorization_code  = 'n/a';
+        $operation->amount              = $request->price;
+        $operation->status              = 2;
+        $operation->message             = "Pendiente de Desposito";
         //$operation->publications_id   = $_COOKIE['publication_id'];
         //$operation->publications_id   = Session::get('publication_id');
 
@@ -284,14 +284,14 @@ class PayController extends Controller {
         $preference = $mp->create_preference($preference_data);
 
         //$operation                    = new Operations();
-        $operation                    = Operations::find($operation_id);
+        $operation                      = Operations::find($operation_id);
         //$operation->id                = $operation_id;
         //$operation->clients_id        = $client->id;
-        $operation->medio_de_pago     = 2;
-        $operation->authorization_key = 'n/a';
-        $operation->authorization_code= 'n/a';
-        $operation->amount            = $request->price;
-        $operation->status            = 2;
+        $operation->medio_de_pago       = 2;
+        $operation->authorization_key   = 'n/a';
+        $operation->authorization_code  = 'n/a';
+        $operation->amount              = $request->price;
+        $operation->status              = 1;
         //$operation->publications_id   = $_COOKIE['publication_id'];
         //$operation->publications_id   = ;
 
@@ -304,9 +304,9 @@ class PayController extends Controller {
 
     public function mp(Request $request, $type = null, $operation_id = null)
     {
-        
-        $msg = $request->collection_status;
 
+        $msg = $request->collection_status;
+        
         $operation  = Operations::find($operation_id);
 
 
@@ -314,6 +314,8 @@ class PayController extends Controller {
             $this->sendMail($operation_id);
             //return redirect()->route('resumen', $_COOKIE['publication_id'])->withInput()->withErrors('Pago Aprobado');
             $operation->message = $msg;
+            $operation->status  = 2;
+            $operation->request_key = $request->collection_id;
             $operation->save();
 
             return redirect()->route('resumen', $operation->publications_id)->withInput()->withErrors('Pago Aprobado');
@@ -322,6 +324,8 @@ class PayController extends Controller {
         if($msg == 'pending'){
             $this->sendMail($operation_id);
             $operation->message = $msg;
+            $operation->status  = 3;
+            $operation->request_key = $request->collection_id;
             $operation->save();
 
             //return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Pendiente');
@@ -331,6 +335,8 @@ class PayController extends Controller {
         if($msg == 'rejected'){
             //return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Rechazado');
             $operation->message = $msg;
+            $operation->request_key = $request->collection_id;
+            $operation->status  = 3;
             $operation->save();
 
             return redirect()->route('resumen', $operation->publications_id)->withInput()->withErrors('Pago Rechazado');
@@ -339,6 +345,8 @@ class PayController extends Controller {
         if($msg == 'failure'){
             //return redirect()->route('resumen',$_COOKIE['publication_id'])->withInput()->withErrors('Pago Fallo');
             $operation->message = $msg;
+            $operation->request_key = $request->collection_id;
+            $operation->status = 1;
             $operation->save();
 
             return redirect()->route('resumen', $operation->publications_id)->withInput()->withErrors('Pago Fallo');
