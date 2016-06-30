@@ -28,8 +28,9 @@ class PayController extends Controller {
             $pago_id = 1;
         if($request['pago'] == 'Mercado Pago')
             $pago_id = 2;
-        if($request['pago'] == 'Efectivo')
-            $pago_id = 4;
+        if($request['pago'] == 'Efectivo / Deposito')
+            $pago_id = 3;
+
 
 
 
