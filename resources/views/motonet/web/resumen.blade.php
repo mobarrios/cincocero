@@ -127,77 +127,80 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-9">
-                    <div class="ibox">
-                        <div class="ibox-title">
-                            <h3>Formas de Pago</h3>
-                        </div>
-                        {!! Form::open(['url'=>'pay','method'=>'get'])!!}
+            @if(!isset($privateFail))
+                <div class="row">
+                    <div class="col-xs-9">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>Formas de Pago</h3>
+                            </div>
+                            {!! Form::open(['url'=>'pay','method'=>'get'])!!}
 
-                        <div class="ibox-content">
-                            <h3>Total</h3>
-                            @foreach($publication->PayMethod as $pm)
-                                    <label>
-                                        <input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{$publication->price + ($publication->price * $pm->porcent) /100 }}"> {{$pm->method}} {{$pm->modality}} <strong> $ {{$publication->price + ($publication->price * $pm->porcent) /100}}  </strong></label><br>
-                            @endforeach
+                            <div class="ibox-content">
+                                <h3>Total</h3>
+                                @foreach($publication->PayMethod as $pm)
+                                        <label>
+                                            <input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{$publication->price + ($publication->price * $pm->porcent) /100 }}"> {{$pm->method}} {{$pm->modality}} <strong> $ {{$publication->price + ($publication->price * $pm->porcent) /100}}  </strong></label><br>
+                                @endforeach
 
-                            <hr>
-                            <h3>Seña</h3>
-                            @foreach($publication->PayMethod as $pm)
-                                <label><input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100}}" > {{$pm->method}} {{$pm->modality}}
-                                        @if($pm->modality != "")
-                                            de <strong>$ {!! round((round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100) / (intval(str_replace(" cuotas","",$pm->modality))),2,PHP_ROUND_HALF_UP) !!}
-                                        @else
-                                                <strong>$ {!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100!!}
-                                        @endif
-                                        </strong></label><br>
-                            @endforeach
+                                <hr>
+                                <h3>Seña</h3>
+                                @foreach($publication->PayMethod as $pm)
+                                    <label><input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100}}" > {{$pm->method}} {{$pm->modality}}
+                                            @if($pm->modality != "")
+                                                de <strong>$ {!! round((round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100) / (intval(str_replace(" cuotas","",$pm->modality))),2,PHP_ROUND_HALF_UP) !!}
+                                            @else
+                                                    <strong>$ {!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100!!}
+                                            @endif
+                                            </strong></label><br>
+                                @endforeach
+                            </div>
                         </div>
+
                     </div>
 
-                </div>
-
-                {{--<div class="col-xs-3">--}}
-                    {{--<div class="ibox">--}}
-                        {{--<div class="ibox-title">--}}
-                            {{--<h5>Soporte</h5>--}}
-                        {{--</div>--}}
-                        {{--<div class="ibox-content text-center">--}}
-                            {{--<h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>--}}
-                                {{--<span class="small">--}}
-                                    {{--Si algo no salió bien, podes contactarnos.--}}
-                                {{--</span>--}}
+                    {{--<div class="col-xs-3">--}}
+                        {{--<div class="ibox">--}}
+                            {{--<div class="ibox-title">--}}
+                                {{--<h5>Soporte</h5>--}}
+                            {{--</div>--}}
+                            {{--<div class="ibox-content text-center">--}}
+                                {{--<h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>--}}
+                                    {{--<span class="small">--}}
+                                        {{--Si algo no salió bien, podes contactarnos.--}}
+                                    {{--</span>--}}
+                            {{--</div>--}}
                         {{--</div>--}}
                     {{--</div>--}}
-                {{--</div>--}}
-                <div class="col-xs-3 tel">
-                    <div class="ibox">
-                        <div class="ibox-title">
-                            <h5>Soporte</h5>
-                        </div>
-                        <div class="ibox-content text-center">
-                            <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
-                            <h3><i class="fa fa-whatsapp"></i> 11-6383-4963 </h3>
-                            {{--<span class="small">--}}
-                            {{--Si algo no salió bien, podes contactarnos.--}}
-                            {{--</span>--}}
+                    <div class="col-xs-3 tel">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>Soporte</h5>
+                            </div>
+                            <div class="ibox-content text-center">
+                                <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
+                                <h3><i class="fa fa-whatsapp"></i> 11-6383-4963 </h3>
+                                {{--<span class="small">--}}
+                                {{--Si algo no salió bien, podes contactarnos.--}}
+                                {{--</span>--}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-            <div class="row">
-                <div class="col-xs-9">
-                    <div class="ibox">
-                        <div class="ibox-title">
-                            <h3>Datos Personales</h3>
-                        </div>
-                        <div class="ibox-content">
-                            <div class="row">
+                <div class="row">
+                    <div class="col-xs-9">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>Datos Personales</h3>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row">
 
-                                    @include('motonet.web.payment.form_pago')
+                                        @include('motonet.web.payment.form_pago')
+
+                                </div>
 
                             </div>
 
@@ -206,9 +209,7 @@
                     </div>
 
                 </div>
-
-            </div>
-
+            @endif
         </div>
 
 
