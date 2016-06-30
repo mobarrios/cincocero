@@ -120,6 +120,7 @@ class webController extends Controller {
 
         $publicacion    = $this->publications->find($id);
 
+        $this->data['publication'] = $publicacion;
 
         if($publicacion->private == 1)
         {
@@ -128,16 +129,14 @@ class webController extends Controller {
 
             if(date_diff($hoy,$creado)->days >= 2){
 
-                $this->data['publication'] = Publications::where('destacado',1)->where('private','!=',1)->get();
+//                $this->data['publication'] = Publications::where('destacado',1)->where('private','!=',1)->get();
 
-                return redirect()->back()->withErrors('La publicación ha caducado')->with($this->data);
+//                return redirect()->back()->withErrors('La publicación ha caducado')->with($this->data);
+                $this->data["privateFail"] = 1;
+                return view('motonet/web/resumen')->withErrors("La publicación ha caducado")->with($this->data);
             }
 
         }
-
-            $this->data['publication'] = $publicacion;
-
-
 
 
         return view('motonet/web/resumen')->with($this->data);
