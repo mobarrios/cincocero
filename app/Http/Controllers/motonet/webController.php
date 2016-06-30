@@ -123,7 +123,7 @@ class webController extends Controller {
 
         if($publicacion->private == 1)
         {
-            $creado = new \DateTime($publicacion->created_at);
+            $creado = new \DateTime($publicacion->publication_date);
             $hoy    = new \DateTime(date("Y-m-d"));
 
             if(date_diff($hoy,$creado)->days >= 2){
