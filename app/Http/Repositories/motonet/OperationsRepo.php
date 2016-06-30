@@ -57,7 +57,6 @@ class OperationsRepo extends BaseRepo {
                 'Cliente'       => ['data'  => 'Cliente', 'relation'    => null],
                 'Total'         => ['data'  => 'amount' ,'relation'     => null],
                 'Modo de Pago'  => ['data'  => 'MedioPago' ,'relation'  => null],
-                'Modelo'        =>['data'   => 'PublicationModel','relation' => null],
                 'Estado'        =>['data' => 'status' ,'relation' => null],
             ],
         ];
