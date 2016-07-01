@@ -217,10 +217,11 @@ class PayController extends Controller {
             $operation->authorization_code = $rta['Payload']['Answer']['AUTHORIZATIONCODE'];
             $operation->authorization_key  = $rta['AuthorizationKey'];
             $operation->amount             = $rta['Payload']['Request']['AMOUNT'];
+            $operation->status = 1;
 
         }else{
 
-            $operation->amount             = 0;
+            $operation->amount = 0;
         }
             $operation->message = $rta['StatusMessage'];
             $operation->save();

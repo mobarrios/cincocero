@@ -24,8 +24,6 @@
                         <strong>{{$model->MedioPago}}</strong>
                         @if(!empty($status_tp))
                             <br>
-                            Mensaje : <label class="label label-success"> {{  $status_tp['Operations']['RESULTMESSAGE']}}</label>
-                            <br>
                             Codigo de Autorización :
                             @if(!empty($status_tp['Operations']['AUTHORIZATIONCODE']))
                                 <strong>  {{ $status_tp['Operations']['AUTHORIZATIONCODE'] }} </strong>
@@ -48,6 +46,14 @@
                             @endif
                     </td>
                 </tr>
+
+                <tr>
+                    <td>Mensaje</td>
+                    <td>
+                        <strong>{{$model->message}}</strong>
+                    </td>
+                </tr>
+
 
                 <tr>
                     <td>Publicacion Nro.</td>
