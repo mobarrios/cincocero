@@ -10,7 +10,7 @@ use App\Helpers\ImagesHelper;
 
 
 
-class ClientsController extends Controller {
+class DerivationsController extends Controller {
 
     public   $module;
     public   $repo;
@@ -24,7 +24,7 @@ class ClientsController extends Controller {
 
     public function __construct(Repo $repo)
     {
-        $module = 'clients';
+        $module = 'derivations';
 
         //data from entities
         $this->repo                 = $repo;
@@ -34,7 +34,7 @@ class ClientsController extends Controller {
         //data for views
         $this->view                 = 'motonet.'.$module.'.index';
         $this->form                 = 'motonet.'.$module.'.form';
-        $this->data['sectionName']  = 'Clientes';
+        $this->data['sectionName']  = 'Derivar cliente';
 
 
         //images
@@ -44,7 +44,7 @@ class ClientsController extends Controller {
 
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
-        //$this->data['currency']        = Currency::lists('name','id');
+        $this->data['status']        = array(['1' => 'Pendiente','2' => 'Tomada','3' => 'Finalizada']);
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -57,9 +57,13 @@ class ClientsController extends Controller {
         $this->data['routeNew']     = $module.'GetNew';
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
-        $this->data['routeNewDerivation']= 'derivationsGetNew';
 
     }
 
+    public function getNew($id = null){
+        $this->data['client'] = Clients::find($id);
 
+        return view($this->form)->with($this->data);
+
+    }
 }

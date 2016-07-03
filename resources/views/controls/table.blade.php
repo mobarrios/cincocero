@@ -81,13 +81,19 @@
 
             <td>
 
+                @if($sectionName == "Clientes")
+                    <a class="btn btn-sm btn-default" href="{{route($routeNewDerivation,$model->id)}}">
+                        <i class="fa fa-phone"></i>
+                    </a>
+                @endif
+
                 <a class="btn btn-sm btn-default" href="{{route($routeEdit,$model->id)}}">
                     <i class="fa fa-pencil"></i>
                 </a>
+
                 <a class="del btn btn-sm btn-default" href="{{route($routeDel ,$model->id)}}">
                     <i class="fa fa-trash"></i>
                 </a>
-
             </td>
         </tr>
     @endforeach

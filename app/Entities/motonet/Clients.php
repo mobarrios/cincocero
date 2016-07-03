@@ -15,6 +15,11 @@ class Clients extends Entity{
         return $this->hasMany(Operations::getClass());
     }
 
+    public function Derivations()
+    {
+        return $this->hasMany(Derivations::getClass());
+    }
+
     public function getFullNameAttribute()
     {
         return $this->attributes['last_name'] .' '.$this->attributes['name'];

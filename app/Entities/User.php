@@ -2,6 +2,7 @@
 
 namespace App\Entities;
 
+use App\Entities\motonet\Derivations;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -54,5 +55,11 @@ class User extends EntityUser implements AuthenticatableContract, CanResetPasswo
         DB::setDefaultConnection('mysql');
 
        return $this->belongsTo(\App\Entities\Profile::getClass(),'profiles_id');
+    }
+
+
+    public function Derivations()
+    {
+        return $this->hasMany(Derivations::getClass());
     }
 }
