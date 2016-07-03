@@ -62,4 +62,9 @@ class User extends EntityUser implements AuthenticatableContract, CanResetPasswo
     {
         return $this->hasMany(Derivations::getClass());
     }
+
+    public function getFullNameAttribute()
+    {
+        return $this->attributes['last_name'] .' '.$this->attributes['name'];
+    }
 }

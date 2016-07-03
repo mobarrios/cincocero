@@ -41,10 +41,11 @@ class DerivationsRepo extends BaseRepo {
             [
                 //'Imagen' =>    ['data' => 'images','relation'=> null],
                 //'Codigo' =>    ['data' => 'code','relation' => null],
-                'DNI' =>  ['data' => 'dni','relation' => null],
+                'Cliente' =>  ['data' => 'Clients','relation' => 'fullName'],
 
-                'Apellido Nombre ' =>  ['data' => 'fullName','relation' => null],
-                'Email' =>  ['data' => 'email','relation' => null],
+                'Estado' =>  ['data' => 'status','relation' => null],
+                'Usuario' =>  ['data' => 'Users','relation' => 'fullName'],
+                'Observaciones' =>  ['data' => 'observaciones','relation' => null],
                 //'Marca' =>     ['data' => 'Brands','relation' => 'name'],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
