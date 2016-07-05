@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\Clients;
 use App\Entities\motonet\Derivations;
 use App\Http\Repositories\motonet\DerivationsRepo as Repo;
 use App\Http\Controllers\Controller;
 use App\Helpers\ImagesHelper;
-
+use Illuminate\Http\Request;
 
 
 class DerivationsController extends Controller {
@@ -43,7 +44,7 @@ class DerivationsController extends Controller {
 
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
-        $this->data['status']        = ['1' => 'Pendiente','2' => 'Finalizada'];
+        $this->data['status']        = ['0' => 'Pendiente','2' => 'Finalizada'];
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -60,10 +61,31 @@ class DerivationsController extends Controller {
     }
 
     public function getNew($id = null){
-        $this->data['client'] = Clients::find($id);
+        if($id == 0){
+            $clients = [];
+            foreach(Clients::all() as $c){
+                $clients[$c->id] = $c->fullName;
+            }
+
+            $this->data['clients'] = $clients;
+
+        }else{
+            $this->data['client'] = Clients::find($id);
+        }
 
         return view($this->form)->with($this->data);
 
     }
+
+    public function getEdit($id = null){
+
+        $this->data['model'] = Derivations::find($id);
+        $this->data['client'] = $this->data['model']->clients;
+
+
+        return view($this->form)->with($this->data);
+
+    }
+
 
 }

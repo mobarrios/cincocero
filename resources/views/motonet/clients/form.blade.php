@@ -21,7 +21,12 @@
 
                 {!! Form::textCustom('email', 'E-Mail')!!}
 
-
+                <div class="col-xs-12 checkbox c-checkbox pull-left mt0">
+                    <label>
+                        {!! Form::checkbox('derivation')!!}
+                        <span class="fa fa-check"></span>Guardar y derivar.
+                    </label>
+                </div>
 
 
         </div>
