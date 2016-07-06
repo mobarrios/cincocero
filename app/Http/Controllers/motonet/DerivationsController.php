@@ -44,7 +44,7 @@ class DerivationsController extends Controller {
 
         //selects
         //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
-        $this->data['status']        = ['0' => 'Pendiente','2' => 'Finalizada'];
+        $this->data['status']        = ['1' => 'Pendiente','3' => 'Finalizada'];
 
         //data for validation
         $this->rules                = $this->repo->Rules();

@@ -23,14 +23,27 @@ class Derivations extends Entity{
 
     public function getStatusAttribute()
     {
-        if($this->attributes['status'] == 0)
+        if($this->attributes['status'] == 1)
             return 'Pendiente';
 
-        if($this->attributes['status'] == 1)
+        if($this->attributes['status'] == 2)
             return 'Tomada';
 
-        if($this->attributes['status'] == 2)
+        if($this->attributes['status'] == 3)
             return 'Finalizada';
+
+    }
+
+    public function realStatusValue()
+    {
+        if($this->attributes['status'] == 1)
+            return '1';
+
+        if($this->attributes['status'] == 2)
+            return '2';
+
+        if($this->attributes['status'] == 3)
+            return '3';
 
     }
 
