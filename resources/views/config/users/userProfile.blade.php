@@ -8,6 +8,9 @@
 
             {!! Form::imageCustom('image','Foto')!!}
 
+            {!! Form::label('DNI') !!}
+            {!! Form::email('dni',null,['disabled','class'=>'form-control']) !!}
+
             {!! Form::label('Nombre') !!}
             {!! Form::text('name',null,['class'=>'form-control']) !!}
 
@@ -15,7 +18,7 @@
             {!! Form::text('last_name',null,['class'=>'form-control']) !!}
 
             {!! Form::label('E-mail') !!}
-            {!! Form::email('email',null,['disabled','class'=>'form-control']) !!}
+            {!! Form::email('email',null,['class'=>'form-control']) !!}
 
 
             {!! Form::label('Password') !!}

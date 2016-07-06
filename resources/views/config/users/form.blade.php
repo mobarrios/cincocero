@@ -7,10 +7,12 @@
             {{\Illuminate\Support\Facades\Hash::make($model->id)}}
             {!! Form::hidden('old_email',$model->email)!!}
 
-
         @else
             {!! Form::open(['route' => $routePostNew ,'files' =>'true']) !!}
         @endif
+
+        {!! Form::label('DNI') !!}
+        {!! Form::text('dni',null,['class'=>'form-control']) !!}
 
         {!! Form::label('Nombre') !!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}

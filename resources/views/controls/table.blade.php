@@ -80,19 +80,6 @@
                 @endforeach
 
             <td>
-
-                @if($route == "derivations")
-                    @if($model->status != "Tomada")
-                        <a class="btn btn-sm btn-info" href="{{route($routeNew,$model->id)}}">
-                            <i class="fa fa-phone"></i>
-                        </a>
-                    @else
-                        <a class="btn btn-sm btn-danger disabled" href="#">
-                            <i class="fa fa-phone"></i>
-                        </a>
-                    @endif
-                @endif
-
                 <a class="btn btn-sm btn-default" href="{{route($routeEdit,$model->id)}}">
                     <i class="fa fa-pencil"></i>
                 </a>

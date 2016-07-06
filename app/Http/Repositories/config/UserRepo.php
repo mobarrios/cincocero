@@ -49,6 +49,7 @@ class UserRepo extends BaseRepo {
     {
 
         return [
+            'dni'          => 'required|unique:users,dni',
             'name'          => 'required',
             'last_name'     => 'required',
            // 'email'         => 'required|unique:users,email',
@@ -63,6 +64,7 @@ class UserRepo extends BaseRepo {
     public function RulesEdit($id = null)
     {
         return [
+            'dni'          => 'required',
             'name'          => 'required',
             'last_name'     => 'required',
 

@@ -61,6 +61,7 @@ class DerivationsController extends Controller {
     }
 
     public function getNew($id = null){
+
         if($id == 0){
             $clients = [];
             foreach(Clients::all() as $c){
