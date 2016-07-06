@@ -57,9 +57,51 @@ class ClientsController extends Controller {
         $this->data['routeNew']     = $module.'GetNew';
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
-        $this->data['routeNewDerivation']= 'derivationsGetNew';
+        $this->data['routeNewDerivation']     = 'derivationsGetNew';
+
 
     }
 
+
+
+    // post new item
+    public function postNew(Request $request, ImagesHelper $image)
+    {
+        //if in controller custom
+        // $request = $this->requestCustom($request);
+
+        // validation rules form repo
+        $this->validate($request, $this->rules);
+
+        // method crear in repo
+        $model = $this->repo->create($request);
+
+        if($request->get('derivation')){
+            
+            return redirect()->route('derivationsGetNew',$model->id)->withErrors('Se creó y derivó correctamente al cliente');
+        }
+        else
+            return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+
+    }
+
+
+    public function postEdit($id = null, Request $request, ImagesHelper $image)
+    {
+        //if in controller custom
+        // $request = $this->requestCustom($request);
+
+        // validation rules form repo
+        $this->validate($request, $this->rulesEdit);
+
+        $this->repo->edit($id, $request);
+
+        // redirect with errors messages language
+        if($request->get('derivation'))
+            return redirect()->route('derivationsGetNew',$id)->withErrors('Se creó y derivó correctamente al cliente');
+        else
+            return redirect()->route($this->data['route'])->withErrors(trans('messages.editItem'));
+
+    }
 
 }
