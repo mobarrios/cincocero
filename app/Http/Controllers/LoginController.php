@@ -154,7 +154,9 @@ class LoginController extends Controller {
             else
                 $remember = false;
 
-            if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
+            if (Auth::attempt(['dni' => $request->email, 'password' => $request->password], $remember)) {
+
+                //if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
 
                 Log::info('modulo:loggedIN-user:' . Auth::user()->id);
 

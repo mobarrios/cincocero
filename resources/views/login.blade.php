@@ -35,8 +35,8 @@
                 {!!Form::open(['route'=>'postLogin'])!!}
 
                 <div class="form-group has-feedback">
-                        <label for="signupInputEmail1" class="text-muted">Email</label>
-                        <input name="email" type="text" placeholder="Enter email"  required class="form-control">
+                        <label for="signupInputEmail1" class="text-muted">DNI</label>
+                        <input name="email" type="text" placeholder="DNI"  required class="form-control">
                         <span class="fa fa-envelope form-control-feedback text-muted"></span>
                     </div>
                     <div class="form-group has-feedback">

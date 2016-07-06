@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\Clients;
 use App\Entities\motonet\Derivations;
 use App\Http\Repositories\motonet\DerivationsRepo as Repo;
 use App\Http\Controllers\Controller;
@@ -60,6 +61,7 @@ class DerivationsController extends Controller {
     }
 
     public function getNew($id = null){
+        
         $this->data['client'] = Clients::find($id);
 
         return view($this->form)->with($this->data);
