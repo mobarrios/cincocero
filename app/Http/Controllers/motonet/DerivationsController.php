@@ -61,10 +61,7 @@ class DerivationsController extends Controller {
     }
 
     public function getNew($id = null){
-<<<<<<< HEAD
-        
-        $this->data['client'] = Clients::find($id);
-=======
+
         if($id == 0){
             $clients = [];
             foreach(Clients::all() as $c){
@@ -76,7 +73,6 @@ class DerivationsController extends Controller {
         }else{
             $this->data['client'] = Clients::find($id);
         }
->>>>>>> 88a347517e5763e4a8dac7aecbf8380c450ad55c
 
         return view($this->form)->with($this->data);
 
