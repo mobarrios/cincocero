@@ -96,15 +96,17 @@
                                     <a class="btn btn-sm btn-info" href="{{route($routeNew ,[0,$model->id])}}">
                                         <i class="fa fa-phone"></i>
                                     </a>
+                                    <a class="btn btn-sm btn-default" href="{{route($routeEdit,$model->id)}}">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
                                 @else
                                     <a class="btn btn-sm btn-danger disabled" href="#">
                                         <i class="fa fa-phone"></i>
                                     </a>
+                                    <a class="btn btn-sm btn-default disabled" href="#">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
                                 @endif
-                                <a class="btn btn-sm btn-default" href="{{route($routeEdit,$model->id)}}">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-
                                 <a class="del btn btn-sm btn-default" href="{{route($routeDel ,$model->id)}}">
                                     <i class="fa fa-trash"></i>
                                 </a>
