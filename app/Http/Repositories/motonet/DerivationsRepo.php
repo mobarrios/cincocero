@@ -43,7 +43,7 @@ class DerivationsRepo extends BaseRepo {
                 //'Codigo' =>    ['data' => 'code','relation' => null],
                 'Cliente' =>  ['data' => 'Clients','relation' => 'fullName'],
 
-                'Estado' =>  ['data' => 'status','relation' => null],
+                'Estado' =>  ['data' => 'estado','relation' => null],
                 'Usuario' =>  ['data' => 'Users','relation' => 'fullName'],
                 'Observaciones' =>  ['data' => 'observaciones','relation' => null],
                 //'Marca' =>     ['data' => 'Brands','relation' => 'name'],
@@ -55,6 +55,18 @@ class DerivationsRepo extends BaseRepo {
         return $header;
     }
 
+
+    public function getStatus()
+    {
+        $methods = [
+            1 =>'Pendiente',
+            2 =>'Tomada',
+            3 =>'Finalizada',
+        ];
+
+        return $methods;
+
+    }
 
 
 

@@ -21,8 +21,10 @@ class Derivations extends Entity{
         return $this->belongsTo(Clients::getClass());
     }
 
-    public function getStatusAttribute()
-    {
+
+
+    public function getEstadoAttribute(){
+
         if($this->attributes['status'] == 1)
             return 'Pendiente';
 
@@ -32,18 +34,6 @@ class Derivations extends Entity{
         if($this->attributes['status'] == 3)
             return 'Finalizada';
 
-    }
-
-    public function realStatusValue()
-    {
-        if($this->attributes['status'] == 1)
-            return '1';
-
-        if($this->attributes['status'] == 2)
-            return '2';
-
-        if($this->attributes['status'] == 3)
-            return '3';
 
     }
 

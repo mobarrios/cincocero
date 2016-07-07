@@ -93,7 +93,7 @@
 
                             <td class="col-xs-3">
                                 @if($model->status != "Tomada")
-                                    <a class="btn btn-sm btn-info" href="{{route($routeNew,$model->id)}}">
+                                    <a class="btn btn-sm btn-info" href="{{route($routeNew ,[0,$model->id])}}">
                                         <i class="fa fa-phone"></i>
                                     </a>
                                 @else

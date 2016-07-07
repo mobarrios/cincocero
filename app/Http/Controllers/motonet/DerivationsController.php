@@ -43,8 +43,9 @@ class DerivationsController extends Controller {
         $this->data['entityImg']        = $module;
 
         //selects
-        //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
-        $this->data['status']        = ['1' => 'Pendiente','3' => 'Finalizada'];
+        //$this->data['roomsTypes']  = RoomsTypes::lists('name','id');
+        //$this->data['status']      = ['1' => 'Pendiente','3' => 'Finalizada'];
+        $this->data['status']        =  $this->repo->getStatus();
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -60,19 +61,21 @@ class DerivationsController extends Controller {
 
     }
 
-    public function getNew($id = null){
+    public function getNew($clientId = null, $derivationId = null){
 
-        if($id == 0){
-            $clients = [];
-            foreach(Clients::all() as $c){
-                $clients[$c->id] = $c->fullName;
-            }
 
-            $this->data['clients'] = $clients;
-
+        if(!is_null($derivationId)){
+            $d                      = Derivations::find($derivationId);
+            $this->data['model']   = $d;
+            $this->data['client']   = $d->Clients;
         }else{
-            $this->data['client'] = Clients::find($id);
+
+            $this->data['client'] = Clients::find($clientId);
         }
+        //if(!is_null($clientId))
+           // $this->data['client'] = Clients::find($clientId);
+
+
 
         return view($this->form)->with($this->data);
 
