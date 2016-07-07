@@ -26,13 +26,7 @@
                 {!! Form::hidden('users_id', Auth::user()->id)!!}
 
             @if(isset($client))
-                    <div class="form-group">
-                        <label>Estado</label>
-                        {!! Form::select('status',['0' => "Seleccionar"] + $status,'Estado', ['class' => "form-control"],'1') !!}
-                        {{--<select class="form-control" name="status"><option value="0">Seleccionar</option><option value="1">Pendiente</option><option value="3">Finalizada</option></select>--}}
-
-                    </div>
-                {{--{!! Form::selectCustom('status', 'Estado',$status,$model->status)!!}--}}
+                {!! Form::selectCustom('status', 'Estado',$status)!!}
             @else
                 {!! Form::selectCustom('status', 'Estado',$status)!!}
             @endif
