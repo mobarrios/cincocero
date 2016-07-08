@@ -98,7 +98,6 @@ class DerivationsController extends Controller {
 
     public function postNew(Request $request, ImagesHelper $image, DerivationMessages $derivationMessages = null)
     {
-        dd($derivationMessages);
         //if in controller custom
         // $request = $this->requestCustom($request);
 
