@@ -5,15 +5,14 @@ namespace App\Http\Controllers\motonet;
 use App\Entities\motonet\Clients;
 use App\Entities\motonet\DerivationMessages;
 use App\Entities\motonet\Derivations;
-use App\Http\Repositories\motonet\DerivationsRepo as Repo;
-use App\Http\Repositories\motonet\DerivationMessagesRepo;
+use App\Helpers\BreadCrumbHelper;
+use App\Http\Repositories\motonet\DerivationMessagesRepo as Repo;
 use App\Http\Controllers\Controller;
 use App\Helpers\ImagesHelper;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 
-class DerivationsController extends Controller {
+class DerivationMessagesController extends Controller {
 
     public   $module;
     public   $repo;
@@ -27,7 +26,7 @@ class DerivationsController extends Controller {
 
     public function __construct(Repo $repo)
     {
-        $module = 'derivations';
+        $module = 'derivationMessages';
 
         //data from entities
         $this->repo                 = $repo;
@@ -37,7 +36,7 @@ class DerivationsController extends Controller {
         //data for views
         $this->view                 = 'motonet.'.$module.'.index';
         $this->form                 = 'motonet.'.$module.'.form';
-        $this->data['sectionName']  = 'Derivar cliente';
+        $this->data['sectionName']  = 'Derivaciones por clientes';
 
 
         //images
@@ -59,29 +58,19 @@ class DerivationsController extends Controller {
         $this->data['routeEdit']    = $module.'GetEdit';
         $this->data['routeDel']     = $module.'GetDel';
         $this->data['routeNew']     = $module.'GetNew';
-        $this->data['routeDerivationMessages']     = 'derivationMessages';
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
 
     }
 
-    public function getNew($clientId = null, $derivationId = null){
+    public function getIndex($id = null){
+        $this->data['history'] = DerivationMessages::where('derivations_id',$id)->get();
+
+        $bc = new BreadCrumbHelper();
+        $bc->index($this->data['sectionName'], $this->data['route']);
 
 
-        if(!is_null($derivationId)){
-            $d                      = Derivations::find($derivationId);
-            $this->data['model']   = $d;
-            $this->data['client']   = $d->Clients;
-        }else{
-
-            $this->data['client'] = Clients::find($clientId);
-        }
-        //if(!is_null($clientId))
-           // $this->data['client'] = Clients::find($clientId);
-
-
-
-        return view($this->form)->with($this->data);
+        return view($this->view)->with($this->data);
 
     }
 
@@ -92,26 +81,6 @@ class DerivationsController extends Controller {
 
 
         return view($this->form)->with($this->data);
-
-    }
-
-
-    public function postNew(Request $request, ImagesHelper $image, DerivationMessages $derivationMessages = null)
-    {
-        dd($derivationMessages);
-        //if in controller custom
-        // $request = $this->requestCustom($request);
-
-        // validation rules form repo
-        $this->validate($request, $this->rules);
-
-        // method crear in repo
-        $model = $this->repo->create($request);
-
-        $derivationMessages->create(['derivations_id' => $model->id,'users_id' => Auth::user()->id, 'message' => 'Derivación iniciada.']);
-
-        // redirect with errors messages language
-        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
 
     }
 

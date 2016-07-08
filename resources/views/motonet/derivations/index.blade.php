@@ -92,7 +92,8 @@
                             @endforeach
 
                             <td class="col-xs-3">
-                                @if($model->status != "Tomada")
+
+                                @if($model->status != 2)
                                     <a class="btn btn-sm btn-info" href="{{route($routeNew ,[0,$model->id])}}">
                                         <i class="fa fa-phone"></i>
                                     </a>
@@ -109,6 +110,9 @@
                                 @endif
                                 <a class="del btn btn-sm btn-default" href="{{route($routeDel ,$model->id)}}">
                                     <i class="fa fa-trash"></i>
+                                </a>
+                                <a class="btn btn-sm btn-default" href="{{route($routeDerivationMessages,$model->id)}}">
+                                    <i class="fa fa-sitemap"></i>
                                 </a>
                             </td>
                         </tr>
