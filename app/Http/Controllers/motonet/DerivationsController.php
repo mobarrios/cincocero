@@ -59,7 +59,9 @@ class DerivationsController extends Controller {
         $this->data['routeEdit']    = $module.'GetEdit';
         $this->data['routeDel']     = $module.'GetDel';
         $this->data['routeNew']     = $module.'GetNew';
+        $this->data['route']     = $module.'GetNew';
         $this->data['routeDerivationMessages']     = 'derivationMessages';
+        $this->data['routeTomar']     = 'derivationMessagesTomar';
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
 
@@ -107,7 +109,7 @@ class DerivationsController extends Controller {
         // method crear in repo
         $model = $this->repo->create($request);
 
-        $derivationMessages->create(['derivations_id' => $model->id,'users_id' => Auth::user()->id, 'message' => 'Derivación iniciada.']);
+        $derivationMessages->save(['derivations_id' => $model->id,'users_id' => Auth::user()->id, 'message' => 'Derivación iniciada.']);
 
         // redirect with errors messages language
         return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));

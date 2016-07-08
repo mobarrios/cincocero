@@ -3,23 +3,23 @@
         <link rel="stylesheet" href="assets/inspinia/css/style2.css">
     @endsection
     @section('content')
-        {!! dd($history) !!}
+
         <div class="" id="ibox-content">
 
             <div id="vertical-timeline" class="vertical-container light-timeline">
+                @foreach($history as $h)
+                    <div class="vertical-timeline-block">
+                        <div class="vertical-timeline-icon yellow-bg">
+                            <i class="fa fa-phone"></i>
+                        </div>
 
-                <div class="vertical-timeline-block">
-                    <div class="vertical-timeline-icon yellow-bg">
-                        <i class="fa fa-phone"></i>
+                        <div class="vertical-timeline-content">
+                            <h2>{!! $h->derivations->clients->fullName !!}</h2>
+                            {!! $h->message !!}
+                            <span class="vertical-date">{!! $h->dateForHuman() !!}<br><small>{!! $h->created_at !!}</small></span>
+                        </div>
                     </div>
-
-                    <div class="vertical-timeline-content">
-                        <h2>Phone with Jeronimo</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-                        <span class="vertical-date">Yesterday <br><small>Dec 23</small></span>
-                    </div>
-                </div>
-
+                @endforeach
                 {{--<div class="vertical-timeline-block">--}}
                     {{--<div class="vertical-timeline-icon lazur-bg">--}}
                         {{--<i class="fa fa-user-md"></i>--}}

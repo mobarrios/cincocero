@@ -3,6 +3,7 @@ namespace App\Entities\motonet;
 
 use \App\Entities\Entity;
 use App\Entities\User;
+use Carbon\Carbon;
 
 class DerivationMessages extends Entity{
 
@@ -21,5 +22,10 @@ class DerivationMessages extends Entity{
         return $this->belongsTo(Derivations::getClass());
     }
 
+    public function dateForHuman(){
+
+        return Carbon::createFromTimestamp(strtotime($this->created_at))->diffForHumans();
+
+    }
 
 }

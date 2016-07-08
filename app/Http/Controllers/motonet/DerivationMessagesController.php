@@ -84,5 +84,33 @@ class DerivationMessagesController extends Controller {
 
     }
 
+    public function postNew(Request $request, ImagesHelper $image)
+    {
+        //if in controller custom
+        // $request = $this->requestCustom($request);
+
+        // validation rules form repo
+        $this->validate($request, $this->rules);
+
+        // method crear in repo
+        $model = $this->repo->create($request);
+
+
+        // redirect with errors messages language
+        return redirect()->route($this->data['route'],$model->derivations_id)->withErrors(trans('messages.newItem'));
+
+    }
+
+
+    public function tomar($id){
+
+        $this->data['derivation'] = Derivations::find($id);
+
+        $this->data['derivation']->update(['status' => '2']);
+
+        return view($this->form)->with($this->data);
+
+    }
+
 
 }
