@@ -282,8 +282,18 @@
                     <?php $countH = 0; ?>
                     @foreach($match->HomeTeam->Players as $player)
 
+                        @if($player->status == "2")
+                            <tr class="trTable" bgcolor="#ddd !important">
+                                <td>{{$player->fullName()}}</td>
+                                <td>{{$player->dni}}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
 
-                        @if($player->FasesWeekSanciones($match->FasesWeek->id))
+                            </tr>
+                        @elseif($player->FasesWeekSanciones($match->FasesWeek->id))
                             <tr class="trTable" bgcolor="#ddd !important">
                                 <td>{{$player->fullName()}}</td>
                                 <td>{{$player->dni}}</td>
@@ -306,6 +316,7 @@
 
                             </tr>
                         @endif
+
 
                         <?php $countH++  ?>
                     @endforeach
@@ -347,8 +358,18 @@
                     </tr>
                     <?php  $countA = 0; ?>
                     @foreach($match->AwayTeam->Players as $player)
+                        @if($player->status == "2")
+                            <tr class="trTable" bgcolor="#ddd !important">
+                                <td>{{$player->fullName()}}</td>
+                                <td>{{$player->dni}}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
 
-                        @if($player->FasesWeekSanciones($match->FasesWeek->id))
+                            </tr>
+                        @elseif($player->FasesWeekSanciones($match->FasesWeek->id))
                             <tr class="trTable" bgcolor="#ddd !important">
                                 <td>{{$player->fullName()}}</td>
                                 <td>{{$player->dni}}</td>
