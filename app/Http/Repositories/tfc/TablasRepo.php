@@ -79,6 +79,7 @@ class TablasRepo extends BaseRepo {
     } else {
 
         if ($match->home_goals > $match->away_goals) {
+
             // gana local y no encuetra el dato en la tabla
             if (is_null($tablaHome)) {
                 $newTabla = new Tablas();
@@ -94,7 +95,7 @@ class TablasRepo extends BaseRepo {
                 $newTabla->dg = $match->home_goals - $match->away_goals;
                 $newTabla->save();
 
-                // gana local y  encuetra el dato en la tabla
+            // gana local y  encuetra el dato en la tabla
             } else {
 
                 $tablaHome->pts = $tablaHome->pts + 3;
@@ -106,7 +107,9 @@ class TablasRepo extends BaseRepo {
                 $tablaHome->gc = $tablaHome->gc + $match->away_goals;
                 $tablaHome->dg = $tablaHome->dg + ($match->home_goals - $match->away_goals);
                 $tablaHome->save();
+
             }
+
 
             if (is_null($tablaAway)) {
                 $newTabla = new Tablas();
@@ -133,6 +136,8 @@ class TablasRepo extends BaseRepo {
                 $tablaAway->gc = $tablaAway->gc + $match->home_goals;
                 $tablaAway->dg = $tablaAway->dg + ($match->away_goals - $match->home_goals);
                 $tablaAway->save();
+
+
             }
 
         } else if ($match->home_goals < $match->away_goals) {
@@ -259,7 +264,6 @@ class TablasRepo extends BaseRepo {
 
 }
 
-
     // recalcula la tabla de posiciones
 
     public function reCalculaTabla( $match_id = null )
@@ -269,7 +273,6 @@ class TablasRepo extends BaseRepo {
 
         $tablaHome = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->home_teams_id)->first();
         $tablaAway = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->away_teams_id)->first();
-
 
         if($match->home_goals > $match->away_goals)
         {
@@ -293,9 +296,8 @@ class TablasRepo extends BaseRepo {
             $tablaAway->dg           = $tablaAway->dg - ($match->away_goals - $match->home_goals);
             $tablaAway->save();
 
-        }
-        else if($match->home_goals < $match->away_goals)
-        {
+        } else if($match->home_goals < $match->away_goals) {
+
             $tablaAway->pts         = $tablaAway->pts - 3;
             $tablaAway->pj          = $tablaAway->pj - 1;
             $tablaAway->pg          = $tablaAway->pg - 1;
@@ -316,9 +318,8 @@ class TablasRepo extends BaseRepo {
             $tablaHome->dg          = $tablaHome->dg -($match->home_goals - $match->away_goals);
             $tablaHome->save();
 
-        }
-        else
-        {
+        } else {
+
             $tablaHome->pts         = $tablaHome->pts - 1;
             $tablaHome->pj          = $tablaHome->pj - 1;
             $tablaHome->pg          = $tablaHome->pg - 0;
@@ -328,8 +329,6 @@ class TablasRepo extends BaseRepo {
             $tablaHome->gc          = $tablaHome->gc - $match->away_goals;
             $tablaHome->dg          = $tablaHome->dg -($match->home_goals - $match->away_goals);
             $tablaHome->save();
-
-
 
             $tablaAway->pts         = $tablaAway->pts - 1;
             $tablaAway->pj          = $tablaAway->pj - 1;
