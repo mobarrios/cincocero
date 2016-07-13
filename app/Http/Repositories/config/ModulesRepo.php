@@ -74,5 +74,18 @@ class ModulesRepo extends BaseRepo {
         }
     }
 
+    //busca roles en modulos para el front
+    public static function frontAccess($module= null, $section = null )
+    {
+        $module      =  Modules::where('name',$module)->first();
+        $permission  =  Permissions::where('modules_id',$module->id)->where('profiles_id',Auth()->user()->profiles_id)->first();
+
+            if($permission->$section == 0)
+                return false;
+            if($permission->$section == 1)
+                return true;
+
+    }
+
 
 }

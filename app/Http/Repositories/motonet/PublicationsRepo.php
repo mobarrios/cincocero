@@ -4,6 +4,7 @@ namespace App\Http\Repositories\motonet;
 
 use App\Entities\motonet\Publications;
 use App\Http\Repositories\BaseRepo;
+use Illuminate\Support\Facades\Auth;
 
 class PublicationsRepo extends BaseRepo {
 
@@ -53,6 +54,10 @@ class PublicationsRepo extends BaseRepo {
         return $header;
     }
 
+    public function listByUser()
+    {
+        return $this->model->where('users_id',Auth::user()->id)->get();
+    }
 
 
 

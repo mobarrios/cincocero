@@ -37,7 +37,9 @@ class UserRepo extends BaseRepo {
     public function tableHeader()
     {
 
-       $header  =  ['columns' => [  'Nombre' =>['data' => 'name', 'relation' => null],
+       $header  =  ['columns' => [
+           'DNI' =>['data' => 'dni', 'relation' => null],
+           'Nombre' =>['data' => 'name', 'relation' => null],
                                     'Email'  =>['data' => 'email','relation' => null],
                                     'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
                                     ],

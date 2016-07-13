@@ -22,6 +22,7 @@
                         <th></th>
                         <th>Destacado</th>
                         <th>Mercadolibre</th>
+                        <th></th>
 
                         <th class="no-sort" style="width: 12%;" ></th>
 
@@ -80,6 +81,8 @@
                                     <i class="fa fa-shopping-cart"></i>
                                 </a>
                             </td>
+                            <td><a href="http://www.motonet.com.ar/{{$model->id}}/resumen" class="btn btn-link">Link</a></td>
+
 
                             <td>
                                 <a class="btn btn-sm btn-default" href="{{route($routeEdit,$model->id)}}">

@@ -9,8 +9,11 @@ use App\Entities\motonet\PayMethod;
 use App\Entities\motonet\Publications;
 use App\Helpers\Meli;
 use App\Http\Controllers\ws\MercadolibreController;
+use App\Http\Repositories\config\ModulesRepo;
 use App\Http\Repositories\motonet\PublicationsRepo as Repo;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\Console\Helper\Helper;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
@@ -33,14 +36,20 @@ class PublicationsController extends Controller {
 
 
 
-    public function __construct(Repo $repo )
+    public function __construct(Repo $repo, ModulesRepo $modules )
     {
 
         $module = 'publications';
 
         //data from entities
         $this->repo                 = $repo;
-        $this->data['models']       = $repo->ListAll();
+
+        // si tinene permisos solo para ver sus publicaciones
+        if($modules->frontAccess('only_my_publications','list'))
+            $this->data['models']       = $repo->listByUser();
+        else
+            $this->data['models']       = $repo->ListAll();
+
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
@@ -113,6 +122,8 @@ class PublicationsController extends Controller {
         //if in controller custom
         // $request = $this->requestCustom($request);
 
+        $request['users_id'] = Auth::user()->id;
+;
         // validation rules form repo
         $this->validate($request, $this->rules);
 
@@ -134,6 +145,8 @@ class PublicationsController extends Controller {
     public function postEdit($id,Request $request, ImagesHelper $image)
     {
         // validation rules form repo
+        $request['users_id'] = Auth::user()->id;
+
         $this->validate($request, $this->rulesEdit);
 
         // method crear in repo
