@@ -10,6 +10,7 @@ use App\Http\Repositories\motonet\DerivationMessagesRepo as Repo;
 use App\Http\Controllers\Controller;
 use App\Helpers\ImagesHelper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class DerivationMessagesController extends Controller {
@@ -76,8 +77,9 @@ class DerivationMessagesController extends Controller {
 
     public function getEdit($id = null){
 
-        $this->data['model'] = Derivations::find($id);
-        $this->data['client'] = $this->data['model']->clients;
+        $this->data['history']  = DerivationMessages::where('derivations_id',$id)->get();
+        $this->data['model']    = Derivations::find($id);
+        $this->data['client']   = $this->data['model']->clients;
 
 
         return view($this->form)->with($this->data);
@@ -97,16 +99,24 @@ class DerivationMessagesController extends Controller {
 
 
         // redirect with errors messages language
-        return redirect()->route($this->data['route'],$model->derivations_id)->withErrors(trans('messages.newItem'));
+        return redirect()->route('derivations')->withErrors(trans('messages.newItem'));
+        //return redirect()->back()->withErrors(trans('messages.newItem'));
 
     }
 
 
     public function tomar($id){
+        
+        $derivationMessage                  = new DerivationMessages();
+        $derivationMessage->derivations_id  = $id;
+        $derivationMessage->users_id        = Auth::user()->id ;
+        $derivationMessage->message         = 'Derivacion Tomada';
+        $derivationMessage->save();
 
-        $this->data['derivation'] = Derivations::find($id);
-
+        $this->data['history']      = DerivationMessages::where('derivations_id',$id)->get();
+        $this->data['derivation']   = Derivations::find($id);
         $this->data['derivation']->update(['status' => '2']);
+
 
         return view($this->form)->with($this->data);
 

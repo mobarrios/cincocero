@@ -16,7 +16,10 @@
 
             {!! Form::hidden('clients_id',$client->id)!!}
             {!! Form::textCustom('observaciones','Observacion')!!}
-            {!! Form::selectCustom('status', 'Estado', $status)!!}
+            {!! Form::selectCustom('medio','Medio de Contacto', $medios) !!}
+                {{-- {!! Form::selectCustom('status', 'Estado', $status)!!} --}}
+
+
         </div>
 
             <div class="panel-footer">

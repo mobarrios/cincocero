@@ -41,9 +41,11 @@ class DerivationsRepo extends BaseRepo {
             [
                 //'Imagen' =>    ['data' => 'images','relation'=> null],
                 //'Codigo' =>    ['data' => 'code','relation' => null],
+                'Fecha'     => ['data'=>'created_at' , 'relation' => null],
                 'Cliente' =>  ['data' => 'Clients','relation' => 'fullName'],
 
-                'Estado' =>  ['data' => 'estado','relation' => null],
+                //'Estado' =>  ['data' => 'estado','relation' => null],
+
                 'Usuario' =>  ['data' => 'Users','relation' => 'fullName'],
                 'Observaciones' =>  ['data' => 'observaciones','relation' => null],
                 //'Marca' =>     ['data' => 'Brands','relation' => 'name'],
@@ -65,7 +67,21 @@ class DerivationsRepo extends BaseRepo {
         ];
 
         return $methods;
+    }
 
+    public function getMedios()
+    {
+        $methods = [
+            1 =>'WhatsApp',
+            2 =>'MercadoLibre',
+            3 =>'OLX',
+            4 =>'Telefono',
+            5 =>'Mail',
+            6 =>'Autofoco',
+
+        ];
+
+        return $methods;
     }
 
 

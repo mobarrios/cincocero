@@ -92,7 +92,7 @@
 
                             @endforeach
 
-                            <td>
+                            <td class="col-xs-2">
                                 <a class="btn btn-sm btn-default" href="{{route($routeNewDerivation,$model->id)}}">
                                     <i class="fa fa-share "></i>
                                 </a>

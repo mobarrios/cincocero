@@ -8,7 +8,7 @@ class Derivations extends Entity{
 
     protected $table = 'derivations';
 
-    protected $fillable = ['users_id','clients_id','observaciones','status'];
+    protected $fillable = ['users_id','clients_id','observaciones','status','medio'];
 
 
     public function Users()

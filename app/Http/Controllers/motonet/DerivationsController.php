@@ -32,6 +32,13 @@ class DerivationsController extends Controller {
         //data from entities
         $this->repo                 = $repo;
         $this->data['models']       = $repo->ListAll();
+
+        $this->data['pendientes']   = Derivations::where('status',1)->orderBy('created_at','ASC')->get();
+        $this->data['tomados']      = Derivations::where('status',2)->get();
+        $this->data['finalizados']  = Derivations::where('status',3)->get();
+
+
+
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
@@ -49,6 +56,7 @@ class DerivationsController extends Controller {
         //$this->data['roomsTypes']  = RoomsTypes::lists('name','id');
         //$this->data['status']      = ['1' => 'Pendiente','3' => 'Finalizada'];
         $this->data['status']        =  $this->repo->getStatus();
+        $this->data['medios']        =   $this->repo->getMedios();
 
         //data for validation
         $this->rules                = $this->repo->Rules();
@@ -59,7 +67,7 @@ class DerivationsController extends Controller {
         $this->data['routeEdit']    = $module.'GetEdit';
         $this->data['routeDel']     = $module.'GetDel';
         $this->data['routeNew']     = $module.'GetNew';
-        $this->data['route']     = $module.'GetNew';
+        $this->data['route']        = $module.'GetNew';
         $this->data['routeDerivationMessages']     = 'derivationMessages';
         $this->data['routeTomar']     = 'derivationMessagesTomar';
         $this->data['routePostNew'] = $module.'PostNew';
@@ -67,12 +75,14 @@ class DerivationsController extends Controller {
 
     }
 
+
+
     public function getNew($clientId = null, $derivationId = null){
 
 
         if(!is_null($derivationId)){
             $d                      = Derivations::find($derivationId);
-            $this->data['model']   = $d;
+            $this->data['model']    = $d;
             $this->data['client']   = $d->Clients;
         }else{
 
@@ -102,18 +112,41 @@ class DerivationsController extends Controller {
     {
         //if in controller custom
         // $request = $this->requestCustom($request);
+        $request['status']  =  1;
 
         // validation rules form repo
         $this->validate($request, $this->rules);
 
+
         // method crear in repo
         $model = $this->repo->create($request);
 
-        $derivationMessages->save(['derivations_id' => $model->id,'users_id' => Auth::user()->id, 'message' => 'Derivaci�n iniciada.']);
+        $derivationMessages                 = new DerivationMessages();
+        $derivationMessages->derivations_id = $model->id;
+        $derivationMessages->users_id       = Auth::user()->id;
+        $derivationMessages->message        = 'Derivación iniciada.';
+        $derivationMessages->save();
+
+        //$derivationMessages->save(['derivations_id' => $model->id,'users_id' => Auth::user()->id, 'message' => 'Derivaci�n iniciada.']);
 
         // redirect with errors messages language
-        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+        return redirect()->route('derivations')->withErrors(trans('messages.newItem'));
 
+    }
+
+    public function getEnd($derivations_id = null){
+
+        $derivation = Derivations::find($derivations_id);
+        $derivation->status = 3;
+        $derivation->save();
+
+        $derivationM = new DerivationMessages();
+        $derivationM->derivations_id = $derivation->id;
+        $derivationM->users_id = Auth::user()->id;
+        $derivationM->message = 'Derivacion Finalizada';
+        $derivationM->save();
+
+        return redirect()->route('derivations')->withErrors('Derivación Finalizada');
     }
 
 

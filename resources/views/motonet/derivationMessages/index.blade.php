@@ -14,7 +14,7 @@
                         </div>
 
                         <div class="vertical-timeline-content">
-                            <h2>{!! $h->derivations->clients->fullName !!}</h2>
+                            <h2>{!! $h->Users->full_name !!}</h2>
                             {!! $h->message !!}
                             <span class="vertical-date">{!! $h->dateForHuman() !!}<br><small>{!! $h->created_at !!}</small></span>
                         </div>

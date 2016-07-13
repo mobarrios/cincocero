@@ -43,7 +43,7 @@ class ClientsRepo extends BaseRepo {
 
                 'Apellido Nombre ' =>  ['data' => 'fullName','relation' => null],
                 'Email' =>  ['data' => 'email','relation' => null],
-                //'Marca' =>     ['data' => 'Brands','relation' => 'name'],
+                'Cel.' =>     ['data' => 'phone','relation' => null],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],
