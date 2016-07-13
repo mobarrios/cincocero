@@ -66,7 +66,7 @@ class UserRepo extends BaseRepo {
     public function RulesEdit($id = null)
     {
         return [
-            'dni'          => 'required',
+            //'dni'          => 'required',
             'name'          => 'required',
             'last_name'     => 'required',
 

@@ -98,6 +98,8 @@ class UserController extends Controller {
         $model->name        = $request->name;
         $model->last_name   = $request->last_name;
         $model->profiles_id = $request->profiles_id;
+        $model->dni         = $request->dni;
+
         $model->save();
 
 
