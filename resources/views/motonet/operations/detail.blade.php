@@ -28,6 +28,11 @@
                             @if(!empty($status_tp['Operations']['AUTHORIZATIONCODE']))
                                 <strong>  {{ $status_tp['Operations']['AUTHORIZATIONCODE'] }} </strong>
                             @endif
+
+                            <br>
+                            Nro. Operación:
+                            <strong>  {{ $status_tp['Operations']['OPERATIONID'] }} </strong>
+                          
                         @endif
                     </td>
                 </tr>
