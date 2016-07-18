@@ -32,35 +32,14 @@
         @include('motonet/web/includes/breadcrumbs')
 
         {{--<div class="tel">--}}
-            <div class="col-xs-3 tel t180">
-                <div class="ibox">
-                    <div class="ibox-title">
-                        <h5>Soporte</h5>
-                    </div>
-                    <div class="ibox-content text-center">
-                        <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
-                        <h3><i class="fa fa-whatsapp"></i> 11-6383-4963 </h3>
-                                    {{--<span class="small">--}}
-                                        {{--Si algo no salió bien, podes contactarnos.--}}
-                                    {{--</span>--}}
-                    </div>
-                </div>
-                <div class="iboxFace ibox col-xs-12 col-sm-3 col-md-12">
-                    <div class="ibox-title">
-                        <h5>¿Cómo comprar?</h5>
-                    </div>
-                    <div class="ibox-content text-center">
-                        <iframe id="videoInstitucional" src="https://www.youtube.com/embed/phNNZIud0Zo" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
+
 
         {{--</div>--}}
 
         <div class="wrapper wrapper-content animated fadeInRight">
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-xs-9">
 
                     <div class="ibox product-detail">
                         <div class="ibox-content">
@@ -145,6 +124,28 @@
                         {{--</div>--}}
 
 
+                    </div>
+                </div>
+                <div class="col-xs-3 tel">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>Soporte</h5>
+                        </div>
+                        <div class="ibox-content text-center">
+                            <h3><i class="fa fa-phone"></i> 0810-333-6686 </h3>
+                            <h3><i class="fa fa-whatsapp"></i> 11-6383-4963 </h3>
+                            {{--<span class="small">--}}
+                            {{--Si algo no salió bien, podes contactarnos.--}}
+                            {{--</span>--}}
+                        </div>
+                    </div>
+                    <div class="iboxFace ibox col-xs-12 col-sm-3 col-md-12">
+                        <div class="ibox-title">
+                            <h5>¿Cómo comprar?</h5>
+                        </div>
+                        <div class="ibox-content text-center">
+                            <iframe id="videoInstitucional" src="https://www.youtube.com/embed/phNNZIud0Zo" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
