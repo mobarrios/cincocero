@@ -32,7 +32,7 @@
         @include('motonet/web/includes/breadcrumbs')
 
         {{--<div class="tel">--}}
-            <div class="col-xs-3 tel">
+            <div class="col-xs-3 tel t180">
                 <div class="ibox">
                     <div class="ibox-title">
                         <h5>Soporte</h5>
@@ -45,7 +45,16 @@
                                     {{--</span>--}}
                     </div>
                 </div>
+                <div class="iboxFace ibox col-xs-12 col-sm-3 col-md-12">
+                    <div class="ibox-title">
+                        <h5>¿Cómo comprar?</h5>
+                    </div>
+                    <div class="ibox-content text-center">
+                        <iframe id="videoInstitucional" src="https://www.youtube.com/embed/phNNZIud0Zo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
+
         {{--</div>--}}
 
         <div class="wrapper wrapper-content animated fadeInRight">

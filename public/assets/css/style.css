@@ -8636,7 +8636,9 @@ footer{
     right: 0;
     z-index: 999;
 }
-
+.t180{
+    top: 180px;
+}
 .tel2{
     position: inherit;
     margin: auto;
@@ -8654,4 +8656,10 @@ footer{
 
 .tel .ibox .ibox-title,.tel2 .ibox .ibox-title{
     border:none;
+}
+
+#videoInstitucional{
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
 }

@@ -224,6 +224,14 @@
                     {{--</span>--}}
                 </div>
             </div>
+            <div class="iboxFace ibox col-xs-12 col-sm-3 col-md-12">
+                <div class="ibox-title">
+                    <h5>¿Cómo comprar?</h5>
+                </div>
+                <div class="ibox-content text-center">
+                    <iframe id="videoInstitucional" src="https://www.youtube.com/embed/phNNZIud0Zo" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-9 col-md-12" style="padding-left:0;padding-right:0;">
                 <iframe id="iframeFace" scrolling="yes" frameborder="0" allowTransparency="true" class="center-block"></iframe>
             </div>
