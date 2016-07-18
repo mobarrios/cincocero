@@ -62,9 +62,8 @@ abstract class Controller extends BaseController
     //delete item
     public function getDel($id)
     {
-
         $this->repo->delete($id);
-
+        
         $img = Images::where('entity',$this->data['entityImg'])->where('entity_id',$id)->get();
 
         if($img->count() != 0)

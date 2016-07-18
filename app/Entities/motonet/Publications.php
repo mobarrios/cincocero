@@ -2,16 +2,15 @@
 namespace App\Entities\motonet;
 
 use \App\Entities\Entity;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Publications extends Entity{
-    use SoftDeletes;
+
 
     protected $table = 'publications';
 
     protected $fillable = ['publication_date','title','price','models_id','description','destacado','salable','destacado_text','private','users_id'];
 
-    protected $dates = ['deleted_at'];
 
     public function getPublicationDateAttribute($value)
     {

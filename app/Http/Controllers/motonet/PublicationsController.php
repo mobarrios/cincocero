@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\Images;
 use App\Entities\MercadoLibreCategories;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Items;
@@ -89,7 +90,7 @@ class PublicationsController extends Controller {
     {
         $this->data['sectionName'] = 'Publicaciones - Mercadolibre';
         $this->data['publicacion'] = Publications::find($publications_id);
-       $this->data['categorias']  = MercadoLibreCategories::where('ml_main','')->get();
+        $this->data['categorias']  = MercadoLibreCategories::where('ml_main','')->get();
 
 
        /*
@@ -204,4 +205,6 @@ class PublicationsController extends Controller {
 //        dd($this->data['cat']);
         return view($this->form)->with($this->data);
     }
+
+
 }

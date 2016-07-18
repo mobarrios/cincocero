@@ -32,7 +32,7 @@
                             <br>
                             Nro. Operación:
                             <strong>  {{ $status_tp['Operations']['OPERATIONID'] }} </strong>
-                          
+
                         @endif
                     </td>
                 </tr>
