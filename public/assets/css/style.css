@@ -6877,7 +6877,7 @@ body.landing-page {
 .landing-page .carousel-fade .carousel-inner .prev.right {
     opacity: 1;
 }
-.landing-page .carousel-fade .carousel-control {
+.landing-page .carousel-fade .carousel-control,.landing-page .slide .carousel-control {
     z-index: 2;
     top:125px;
     font-size:55px;
