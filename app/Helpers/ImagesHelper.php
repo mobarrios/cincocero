@@ -11,7 +11,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 class ImagesHelper
 {
 
-    public function upload($entity = null ,  $id = null , $image = null , $path = null )
+    public function upload($entity = null ,  $id = null , $image = null , $path = null , $maxSize = null )
     {
         $name = New \DateTime();
 
@@ -21,7 +21,12 @@ class ImagesHelper
 
         $img = Image::make(public_path($path).$file);
 
-        $img->resize(640, null, function ($constraint) {
+        if(is_null($maxSize))
+            $max = 640;
+        else
+            $max = $maxSize;
+
+        $img->resize($max, null, function ($constraint) {
             $constraint->aspectRatio();
         });
         //$img->resize(640,480);
