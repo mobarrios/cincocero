@@ -106,8 +106,9 @@
 
 
     @include('motonet/web/includes/menu')
-
-    @include('motonet/web/includes/slider')
+    @if(\App\Entities\motonet\Sliders::count() > 0)
+        @include('motonet/web/includes/slider')
+    @endif
 
     <section  class="gray-section contact">
         <div class="container" >

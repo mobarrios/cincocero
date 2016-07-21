@@ -76,7 +76,7 @@ class SlidersController extends Controller {
         // if has image uploaded
         if($request->hasFile('image'))
         {
-            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath'], null, '1263' );
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath'], '1263' );
         }
 
         // redirect with errors messages language
@@ -104,7 +104,7 @@ class SlidersController extends Controller {
             }
             else
             {
-                $image->upload($this->data['entityImg'], $id ,$request->file('image') ,$this->data['imagePath'], true, '1263');
+                $image->upload($this->data['entityImg'], $id ,$request->file('image') ,$this->data['imagePath'], '1263');
             }
         }
 

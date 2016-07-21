@@ -8552,7 +8552,7 @@ footer{
     background-color: #0187CE;
 }
 
-#inSlider img{
+#inSlider img,#inSlider2 img{
     width:100%;
 }
 
