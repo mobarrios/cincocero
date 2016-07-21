@@ -61,5 +61,58 @@ class SlidersController extends Controller {
     }
 
 
+    // post new item
+    public function postNew(Request $request, ImagesHelper $image)
+    {
+        //if in controller custom
+        // $request = $this->requestCustom($request);
+
+        // validation rules form repo
+        $this->validate($request, $this->rules);
+
+        // method crear in repo
+        $model = $this->repo->create($request);
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath'], null, '1263' );
+        }
+
+        // redirect with errors messages language
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+
+    }
+
+    public function postEdit($id = null, Request $request, ImagesHelper $image)
+    {
+        //if in controller custom
+        // $request = $this->requestCustom($request);
+
+        // validation rules form repo
+        $this->validate($request, $this->rulesEdit);
+
+
+        // if has image uploaded
+        if($request->hasFile('image'))
+        {
+            $img = Images::where('entity',$this->data['entityImg'])->where('entity_id',$id)->get();
+
+            if( $this->data['imgQuantityMax'] <= $img->count())
+            {
+                return redirect()->back()->withErrors('Limite Maximo de Imagenes.');
+            }
+            else
+            {
+                $image->upload($this->data['entityImg'], $id ,$request->file('image') ,$this->data['imagePath'], true, '1263');
+            }
+        }
+
+        $this->repo->edit($id, $request);
+
+        // redirect with errors messages language
+
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.editItem'));
+    }
 
 }
