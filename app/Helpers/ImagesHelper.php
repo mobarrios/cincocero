@@ -26,6 +26,7 @@ class ImagesHelper
         else
             $max = $maxSize;
 
+        
         $img->resize($max, null, function ($constraint) {
             $constraint->aspectRatio();
         });
