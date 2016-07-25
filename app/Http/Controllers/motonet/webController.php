@@ -9,6 +9,7 @@ use App\Entities\motonet\Items;
 use App\Entities\motonet\Models;
 use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
+use App\Entities\motonet\Visits;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -38,6 +39,26 @@ class webController extends Controller {
 
 
     public function index(){
+
+        $token = Visits::where('token',Session::get('_token'))->get();
+
+        if($token->count() == 0){
+
+            $nuevaVisita =  new Visits();
+            $nuevaVisita->token = Session::get('_token');
+            $nuevaVisita->save();
+
+        }
+
+
+        /*
+        if(!Session::has('visita')){
+            Session::put('visita',1);
+            $data['description']  = Session::get('visita');
+            Visits::create($data);
+        }
+*/
+
 
         $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
 

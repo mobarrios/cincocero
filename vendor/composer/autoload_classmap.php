@@ -21,6 +21,7 @@ return array(
     'Canvas_Factory' => $vendorDir . '/dompdf/dompdf/include/canvas_factory.cls.php',
     'Cellmap' => $vendorDir . '/dompdf/dompdf/include/cellmap.cls.php',
     'CreateSliderTable' => $baseDir . '/database/migrations/2016_07_21_154856_create_slider_table.php',
+    'CreateVisitsTable' => $baseDir . '/database/migrations/2016_07_22_215536_create_visits_table.php',
     'DOMPDF' => $vendorDir . '/dompdf/dompdf/include/dompdf.cls.php',
     'DOMPDF_Exception' => $vendorDir . '/dompdf/dompdf/include/dompdf_exception.cls.php',
     'DOMPDF_Image_Exception' => $vendorDir . '/dompdf/dompdf/include/dompdf_image_exception.cls.php',
@@ -579,4 +580,5 @@ return array(
     'Text_Renderer' => $vendorDir . '/dompdf/dompdf/include/text_renderer.cls.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'UpdateSlidersTable' => $baseDir . '/database/migrations/2016_07_21_160450_update_sliders_table.php',
+    'UpdateVisitsTable' => $baseDir . '/database/migrations/2016_07_23_150039_update_visits_table.php',
 );
