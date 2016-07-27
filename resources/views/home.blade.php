@@ -28,40 +28,13 @@
         <div class="col-lg-6">
             <div class="panel panel-default">
                     <div class="panel panel-body">
-                        <table class="table">
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <button type="button" class="btn btn-danger m-r-sm">12</button>
-                                   Stock Articulos
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary m-r-sm">28</button>
-                                    Ventas
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info m-r-sm">15</button>
-                                    Usuarios
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button type="button" class="btn btn-info m-r-sm">20</button>
-                                    Clientes
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-success m-r-sm">40</button>
-                                    Provee.
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger m-r-sm">30</button>
-                                    Notifi.
-                                </td>
-                            </tr>
+                        Total de Visitas al ECommerce
 
-                            </tbody>
-                        </table>
-                </div>
+
+                        <canvas id="myChart"  data-dia={!!$dia!!} data-cant={!!$cant!!} width="400" height="400"></canvas>
+
+
+                    </div>
             </div>
         </div>
 
@@ -70,45 +43,6 @@
         <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel panel-body">
-                    <h2>Tareas Pendientes</h2>
-
-                            <div class="checkbox c-checkbox pull-left mt0">
-                                <label>
-                                    <input name="remember" type="checkbox">
-                                    <span class="fa fa-check"></span>Dar de Alta Usuarios
-                                </label>
-                            </div>
-
-                    <div class="checkbox c-checkbox pull-left mt0">
-                        <label>
-                            <input name="remember" type="checkbox">
-                            <span class="fa fa-check"></span>Dar de Alta Usuarios
-                        </label>
-                    </div>
-                    <div class="checkbox c-checkbox pull-left mt0">
-                        <label>
-                            <input name="remember" type="checkbox">
-                            <span class="fa fa-check"></span>Dar de Alta Usuarios
-                        </label>
-                    </div>
-                    <div class="checkbox c-checkbox pull-left mt0">
-                        <label>
-                            <input name="remember" type="checkbox">
-                            <span class="fa fa-check"></span>Dar de Alta Usuarios
-                        </label>
-                    </div>
-                    <div class="checkbox c-checkbox pull-left mt0">
-                        <label>
-                            <input name="remember" type="checkbox">
-                            <span class="fa fa-check"></span>Dar de Alta Usuarios
-                        </label>
-                    </div>
-                    <div class="checkbox c-checkbox pull-left mt0">
-                        <label>
-                            <input name="remember" type="checkbox">
-                            <span class="fa fa-check"></span>Dar de Alta Usuarios
-                        </label>
-                    </div>
 
                 </div>
 
@@ -117,7 +51,41 @@
         </div>
 
 
-
-
     @endsection
+
+@section('js')
+<script>
+    var x = JSON.parse($('#myChart').attr('data-dia'));
+    var y = JSON.parse($('#myChart').attr('data-cant'));
+
+
+
+
+    var ctx = $("#myChart");
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: x ,
+            datasets: [{
+                label: 'Visitas Diarias',
+                data: y,
+
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+
+</script>
+@endsection
+
 @stop

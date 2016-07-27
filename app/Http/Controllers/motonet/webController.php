@@ -59,7 +59,6 @@ class webController extends Controller {
         }
 */
 
-
         $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
 
         return view('motonet/web/index')->with($this->data);

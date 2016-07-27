@@ -134,13 +134,16 @@
 
 <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
 
-<script src="assets/js/bootstrap-multiselect.js"></script>
+<script src="assets/inspinia/js/bootstrap-multiselect.js"></script>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
 
 
 @yield('js')
 <script>
+
+
 
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
 
