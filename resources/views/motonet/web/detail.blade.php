@@ -1,6 +1,7 @@
 @extends('motonet/web/template')
 
 @section('css')
+    {{--<link href="assets/css/fontello.css" rel="stylesheet">--}}
     <link href="assets/inspinia/css/plugins/slick/slick.css" rel="stylesheet">
     <link href="assets/inspinia/css/plugins/slick/slick-theme.css" rel="stylesheet">
     <link href="assets/css/imageModal.css" rel="stylesheet">
@@ -90,7 +91,26 @@
                                     <dl class="small m-t-md"></dl>
 
                                     <hr>
+                                    @if($publicationDetail->salable == 1 && $publicationDetail->payMethod->count() > 0)
+                                        <h4><span class="fa fa-credit-card"></span> Medios de pago</h4>
 
+                                        @foreach($publicationDetail->payMethod as $pagos)
+                                            <div class="small text-muted mt-10">
+                                                {{--<label class="label label-info mr-5">--}}
+                                                    <i class="fa fa-check child-info"></i>
+                                                {{--</label>--}}
+                                                {!! $pagos->method !!}  ( ${!! $publicationDetail->price + ($publicationDetail->price * $pagos->porcent) /100 !!}
+                                                @if($pagos->coutas != "")
+                                                    - {!! $pagos->modality !!} de ${!! round((intval($publicationDetail->price + ($publicationDetail->price * $pagos->porcent) /100)  / $pagos->coutas),2,PHP_ROUND_HALF_UP) !!}
+                                                @endif
+                                                )
+                                                {{--{!! $pagos->method !!}--}}
+                                            </div>
+                                            {{--<dl class="small m-t-md"></dl>--}}
+                                        @endforeach
+
+                                        <hr>
+                                    @endif
                                     <div>
                                         @if($publicationDetail->salable == 1)
                                         <div class="btn-group">

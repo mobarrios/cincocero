@@ -16,5 +16,9 @@ class PayMethod extends Entity{
         return $this->attributes['method'] .' '. $this->attributes['modality'].' ( '.$this->attributes['porcent'] .' % )' ;
     }
 
+    public function getCoutasAttribute(){
+        return explode(" ",$this->attributes['modality'])[0];
+    }
+
     
 }

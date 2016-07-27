@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 /*
  *
  *   INSPINIA - Responsive Admin Theme
@@ -8519,6 +8519,14 @@ body.md-skin {
     height:100%;
 }
 
+.mt-10{
+    margin-top: 10px !important;
+}
+
+.mr-5{
+    margin-right: 5px !important;
+}
+
 .gray-bg{
     height: 100%;
 }
@@ -8663,3 +8671,25 @@ footer{
     margin: 0 !important;
     width: 100% !important;
 }
+
+
+.child-primary{
+    color: #337ab7 !important;
+}
+
+.child-success{
+    color: #5cb85c !important;
+}
+
+.child-info{
+    color: #5bc0de !important;
+}
+
+.child-warning{
+    color: #f0ad4e !important;
+}
+
+.child-danger{
+    color: #d9534f !important;
+}
+
