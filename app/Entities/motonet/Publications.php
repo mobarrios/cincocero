@@ -9,7 +9,7 @@ class Publications extends Entity{
 
     protected $table = 'publications';
 
-    protected $fillable = ['publication_date','title','price','models_id','description','destacado','salable','destacado_text','private','users_id'];
+    protected $fillable = ['publication_date','title','price','models_id','description','destacado','salable','destacado_text','private','users_id','promo'];
 
 
     public function getPublicationDateAttribute($value)

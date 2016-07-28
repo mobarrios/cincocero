@@ -162,6 +162,37 @@
                                         <a href="{!! route('productDetail',$publication->id )!!}" class="btn btn-xs btn-outline btn-primary">Ver más</a>
                                     </div>
                                 </div>
+
+                                @if($publication->promo != "")
+                                    <div class="p-md pb-5 pt-0">
+                                @else
+                                     <div class="p-md pt-0">
+                                @endif
+
+                                @if($publication->salable == 1 && $publication->payMethod->count() > 0)
+                                        <hr class="m-t-none">
+                                    <h4><span class="fa fa-credit-card"></span> Medios de pago</h4>
+
+                                    @foreach($publication->payMethod as $pagos)
+                                        <div class="small text-muted">
+                                            {{--<label class="label label-info mr-5">--}}
+                                            <i class="fa fa-check child-info"></i>
+                                            {{--</label>--}}
+                                            {!! $pagos->method !!}  ( ${!! $publication->price + ($publication->price * $pagos->porcent) /100 !!}
+                                            @if($pagos->coutas != "")
+                                                - {!! $pagos->modality !!} de ${!! round((intval($publication->price + ($publication->price * $pagos->porcent) /100)  / $pagos->coutas),2,PHP_ROUND_HALF_UP) !!}
+                                            @endif
+                                            )
+                                        </div>
+                                    @endforeach
+                                @endif
+
+                                @if($publication->promo != "")
+                                    <hr class="m-t-sm m-b-none p-b-none">
+                                    <h2 class="product-name child-success pt-5"> {{$publication->promo}}</h2>
+                                @endif
+
+                                </div>
                             </div>
                         </div>
                     </div>

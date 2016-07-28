@@ -31,6 +31,8 @@
 
                 {!! Form::textCustom('destacado_text','Texto Destacado')!!}
 
+                {!! Form::textCustom('promo','Promo')!!}
+
                 {!! Form::fileCustom('image','Imagen')!!}
 
                 @if(isset($cat))
