@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="product-imitation">
 
-                                        @if(isset($publication->destacado_text))
+                                        @if($publication->destacado_text != "")
 
                                             @if(strlen($publication->destacado_text) <= 10 )
                                             <div>
