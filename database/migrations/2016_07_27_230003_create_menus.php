@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModelsTable extends Migration {
+class CreateMenus extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,16 @@ class CreateModelsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('models', function(Blueprint $table)
-		{
+		Schema::create('menus', function(Blueprint $table){
+
 			$table->increments('id');
 			$table->timestamps();
-            $table->strinh('dasds',200);
+			$table->softDeletes();
+
+			$table->string('name');
+			$table->string('routes');
+			$table->integer('main');
+
 		});
 	}
 
@@ -27,7 +32,7 @@ class CreateModelsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('models');
+		//
 	}
 
 }
