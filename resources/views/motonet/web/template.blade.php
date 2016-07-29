@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Motonet</title>
+    <title>MotoNET</title>
     <meta name="title" content="MOTO NET - Motos, Cuatriciclos - Hurlingham, Don Torcuato, San Miguel, Buenos Aires, Argentina" />
     <meta name="keywords" content="moto, planet, motoplanet, motos, motomel, yamaha, mondial, zanella, honda, hurlingham, hurlingam, torcuato, san miguel, buenos, aires, argentina, top, model, show, motos, atv, servicio, técnico, tecnico, accesorios, repuestos, lo, jack, jak, alarmas, seguros, posventa, calle, off, road, sdh, cg, storm, wave, biz, scooter, cub, business, custom, xl, xr, nxr, sport, cbx, cbr, xl, nt, enduro, crf, trx, cuatris, cuatriciclos" />
     <meta name="description" content="Concesionario multimarca de prodcutos Honda - Zanella - Mondial - Motomel - Yamaha. Asesoramiento personalizado, servicio técnico y repuestos originales, San Miguel, Buenos Aires, Argentina" />
