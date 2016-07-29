@@ -6885,7 +6885,7 @@ body.landing-page {
 .landing-page .carousel-control.left,
 .landing-page .carousel-control.right {
     background: none;
-    z-index:9999999999;
+    z-index:999;
 }
 .landing-page .carousel-control {
     width: 6%;
