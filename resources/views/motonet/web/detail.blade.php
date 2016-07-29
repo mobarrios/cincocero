@@ -147,7 +147,7 @@
                     </div>
                 </div>
                 <div class="col-xs-3 tel">
-                    <div class="ibox">
+                    <div class="ibox h-auto">
                         <div class="ibox-title">
                             <h5>Soporte</h5>
                         </div>
@@ -159,7 +159,7 @@
                             {{--</span>--}}
                         </div>
                     </div>
-                    <div class="iboxFace ibox col-xs-12 col-sm-3 col-md-12">
+                    <div class="iboxFace iboxh-auto col-xs-12 col-sm-3 col-md-12">
                         <div class="ibox-title">
                             <h5>¿Cómo comprar?</h5>
                         </div>

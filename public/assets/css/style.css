@@ -8710,3 +8710,7 @@ footer{
 .pt-5{
     padding-top:5px !important;
 }
+
+.h-auto{
+    height: auto !important;
+}

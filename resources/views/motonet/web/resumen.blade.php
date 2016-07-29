@@ -53,7 +53,7 @@
                         </div>
                     @endif
 
-                    <div class="ibox">
+                    <div class="ibox h-auto">
                         <div class="ibox-title">
                             <h5>Tu compra</h5>
                         </div>
@@ -97,7 +97,7 @@
                     </div>
                 </div>
                 <div class="col-xs-3">
-                    <div class="ibox">
+                    <div class="ibox h-auto">
                         <div class="ibox-title">
                             <h5>Importe</h5>
                         </div>
@@ -130,7 +130,7 @@
             @if(!isset($privateFail))
                 <div class="row">
                     <div class="col-xs-9">
-                        <div class="ibox">
+                        <div class="ibox h-auto">
                             <div class="ibox-title">
                                 <h3>Formas de Pago</h3>
                             </div>
@@ -185,7 +185,7 @@
                         {{--</div>--}}
                     {{--</div>--}}
                     <div class="col-xs-3 tel">
-                        <div class="ibox">
+                        <div class="ibox h-auto">
                             <div class="ibox-title">
                                 <h5>Soporte</h5>
                             </div>
@@ -197,7 +197,7 @@
                                 {{--</span>--}}
                             </div>
                         </div>
-                        <div class="iboxFace ibox col-xs-12 col-sm-3 col-md-12">
+                        <div class="iboxFace ibox h-auto col-xs-12 col-sm-3 col-md-12">
                             <div class="ibox-title">
                                 <h5>¿Cómo comprar?</h5>
                             </div>
@@ -211,7 +211,7 @@
 
                 <div class="row">
                     <div class="col-xs-9">
-                        <div class="ibox">
+                        <div class="ibox h-auto">
                             <div class="ibox-title">
                                 <h3>Datos Personales</h3>
                             </div>
