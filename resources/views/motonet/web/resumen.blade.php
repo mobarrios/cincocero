@@ -141,7 +141,7 @@
                                 @foreach($publication->PayMethod as $pm)
                                     <label><input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{$publication->price + ($publication->price * $pm->porcent) /100 }}" > {{$pm->method}} {{$pm->modality}}
                                         @if($pm->modality != "")
-                                            de <strong>$ {!! round((intval($publication->price + ($pm->price * $pm->porcent) /100)  / $pm->coutas),2,PHP_ROUND_HALF_UP) !!}
+                                            de <strong>$ {!! round((intval($publication->price + ($publication->price * $pm->porcent) /100)  / $pm->coutas),2,PHP_ROUND_HALF_UP) !!}
                                             </strong>
                                         @else
                                             <strong>$ {!! $publication->price + ($publication->price * $pm->porcent) /100 !!}
