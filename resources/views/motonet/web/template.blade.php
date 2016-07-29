@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Motonet</title>
+    <meta name="title" content="MOTO NET - Motos, Cuatriciclos - Hurlingham, Don Torcuato, San Miguel, Buenos Aires, Argentina" />
+    <meta name="keywords" content="moto, planet, motoplanet, motos, motomel, yamaha, mondial, zanella, honda, hurlingham, hurlingam, torcuato, san miguel, buenos, aires, argentina, top, model, show, motos, atv, servicio, técnico, tecnico, accesorios, repuestos, lo, jack, jak, alarmas, seguros, posventa, calle, off, road, sdh, cg, storm, wave, biz, scooter, cub, business, custom, xl, xr, nxr, sport, cbx, cbr, xl, nt, enduro, crf, trx, cuatris, cuatriciclos" />
+    <meta name="description" content="Concesionario multimarca de prodcutos Honda - Zanella - Mondial - Motomel - Yamaha. Asesoramiento personalizado, servicio técnico y repuestos originales, San Miguel, Buenos Aires, Argentina" />
+    <meta name="language" content="es" />
+    <meta http-equiv="content-language" content="es" />
+    <meta http-equiv="language" content="spanish" />
+    <meta name="DC.Language" scheme="RFC1766" content="spanish" />
+    <meta name="distribution" content="global" />
+    <meta name="resource-type" content="document" />
+    <meta name="revisit" content="4 days" />
+    <meta name="robots" content="all" />
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="MotoNET">
+    <meta name="author" content="MotoNET">
 
-    <title>Motonet
-    </title>
+
 
     <base href="{!! asset('') !!}">
     <!-- Bootstrap core CSS -->
