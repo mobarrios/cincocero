@@ -272,7 +272,7 @@ class MatchesController extends Controller {
     {
         $id                 = $request->matches_id;
         $match              = Matches::find($id);
-        $resultado_anterior =  $match;
+        $resultado_anterior = $match;
 
         $tablasRepo->reCalculaTabla($request->matches_id);
 

@@ -19,8 +19,8 @@
 
             @foreach($models as $model)
                 <tr>
-                    <td>{{$model->Players->Teams->name}}</td>
-                    <td>{{$model->Players->fullName()}}</td>
+                    <td>{{$model->Players->Teams->name or ''}}</td>
+                    <td>{{$model->Players->full_name or ''}}</td>
                     <td>{{ $model->sancion }}</td>
                     <td>{{$model->cantidad_fechas}}</td>
                     <td>{{$model->endSancion->name or ''}}</td>

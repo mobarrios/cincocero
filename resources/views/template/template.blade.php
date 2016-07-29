@@ -96,6 +96,8 @@
 <script src="assets/js/jquery_datepicker_es.js"></script>
 <script src="assets/js/custom.js"></script>
 
+<script src="assets/select2/js/select2.full.js"></script>
+
 <script src="assets/color_picker/js/jquery.minicolors.min.js" ></script>
 <script src="assets/js/bootstrap-checkbox.min.js" ></script>
 

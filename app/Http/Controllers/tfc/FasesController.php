@@ -41,6 +41,7 @@ class FasesController extends Controller {
         //data for views
         $this->view                 = 'tfc.'.$module.'.index';
         $this->form                 = 'tfc.'.$module.'.form';
+        $this->formPlayOff          = 'tfc.'.$module.'.form_playoff';
         $this->detail               = 'tfc.'.$module.'.detail';
         $this->data['sectionName']  = 'Fechas';
 
@@ -76,6 +77,14 @@ class FasesController extends Controller {
         $this->data['tournaments_id'] = $id;
 
         return view($this->form)->with($this->data);
+    }
+
+    //go to form new
+    public function getPlayOffNew($id = null)
+    {
+        $this->data['tournaments_id'] = $id;
+
+        return view($this->formPlayOff)->with($this->data);
     }
 
 

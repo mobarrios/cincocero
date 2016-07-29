@@ -2,7 +2,6 @@
 
     @section('content')
 
-
         @if(isset($model))
             {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
 

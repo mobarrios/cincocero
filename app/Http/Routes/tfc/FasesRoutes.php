@@ -7,6 +7,9 @@ Route::get('list'.$module,           ['middleware'=>'roles','data'=> $module.'-l
 Route::get('edit'.$module.'/{id?}',   ['middleware'=>'roles','data'=> $module.'-edit' ,'as'=> $module.'GetEdit','uses'=> $controller.'@getEdit']);
 Route::get('delete'.$module.'/{id?}', ['middleware'=>'roles','data'=> $module.'-delete' ,'as'=> $module.'GetDel','uses'=> $controller.'@getDel']);
 Route::get('new'.$module.'/{id?}',    ['middleware'=>'roles','data'=> $module.'-store' ,'as'=> $module.'GetNew', 'uses'=> $controller.'@getNew']);
+Route::get('newPlayOff'.$module.'/{id?}',    ['middleware'=>'roles','data'=> $module.'-store' ,'as'=> $module.'PlayOffGetNew', 'uses'=> $controller.'@getPlayOffNew']);
+
+
 Route::get('fixture'.$module.'/{id?}', ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module.'Fixture', 'uses'=> $controller.'@getDetail']);
 
 Route::get('tabla'.$module.'/{id?}', ['middleware' => 'roles','data'=>$module.'-list' , 'as' => $module.'Tabla', 'uses'=>$controller.'@getTabla']);

@@ -61,7 +61,9 @@
 
                                             <tfoot>
                                             <td colspan="3">
-                                                <a href="{{route('fasesGetNew',$torneo->id)}}" class="btn btn-xs btn-block">Nueva Fase</a>
+                                                <a href="{{route('fasesGetNew',$torneo->id)}}" class="btn btn-xs btn-default">Nueva Liga</a>
+                                                <a href="{{route('fasesPlayOffGetNew',$torneo->id)}}" class="btn btn-xs btn-default">Nuevo PlayOff</a>
+
                                             </td>
                                             </tfoot>
 

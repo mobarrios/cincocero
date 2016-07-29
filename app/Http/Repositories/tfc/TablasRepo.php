@@ -28,7 +28,8 @@ class TablasRepo extends BaseRepo {
         foreach($equipos as $equipo)
         {
             $tabla =  Tablas::where('fases_id',$fases_id)
-                        ->where('teams_id',$equipo->teams_id)->get();
+                        ->where('teams_id',$equipo->teams_id)
+                        ->get();
 
             if($tabla->count() == 0){
                 $newTabla = new Tablas();
@@ -36,10 +37,7 @@ class TablasRepo extends BaseRepo {
                 $newTabla->fases_id = $fases_id;
                 $newTabla->save();
             }
-
         }
-
-
     }
 
 
