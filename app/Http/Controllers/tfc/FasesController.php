@@ -37,13 +37,15 @@ class FasesController extends Controller {
         $this->repo                 = $repo;
         $this->data['models']       = $repo->ListAll();
         $this->data['tableHeader']  = $repo->tableHeader();
+        $this->data['start']        = $repo->start();
 
-        //data for views
+            //data for views
         $this->view                 = 'tfc.'.$module.'.index';
         $this->form                 = 'tfc.'.$module.'.form';
         $this->formPlayOff          = 'tfc.'.$module.'.form_playoff';
         $this->detail               = 'tfc.'.$module.'.detail';
         $this->data['sectionName']  = 'Fechas';
+
 
 
         //images
@@ -79,98 +81,138 @@ class FasesController extends Controller {
         return view($this->form)->with($this->data);
     }
 
-    //go to form new
-    public function getPlayOffNew($id = null)
-    {
-        $this->data['tournaments_id'] = $id;
-
-        return view($this->formPlayOff)->with($this->data);
-    }
-
 
     public function postNew(Request $request, ImagesHelper $image)
     {
-
         // validation rules form repo
         $this->validate($request, $this->rules);
 
+
         $teams = $request->all()['team'];
 
-        $fixture = new  FixtureHelper($teams);
-        $fixture->setAleatorio(false);
-        $fixture->setFechaLibre('Libre');
-        $fixture->tablaDeCruces();
+        if(!is_null($request->play_off)) $request['play_off'] = 1;
 
         // method crear in repo
         $model = $this->repo->create($request);
-                $model->Teams()->attach($teams);
+        $model->Teams()->attach($teams);
 
-        for ($f = 1; $f <= count($fixture->getCruces()); $f++) {
+        if(is_null($request->play_off)){
 
-            // agrga week
-            $week           = new FasesWeek();
-            $week->name     = $f;
-            $week->fases_id = $model->id;
-            $week->save();
+            $fixture = new  FixtureHelper($teams);
+            $fixture->setAleatorio(false);
+            $fixture->setFechaLibre('Libre');
+            $fixture->tablaDeCruces();
 
-            for ($c = 1; $c <= $fixture->partidosXFechas() ; $c++) {
+            for ($f = 1; $f <= count($fixture->getCruces()); $f++) {
 
+                // agrga week
+                $week           = new FasesWeek();
+                $week->name     = $f;
+                $week->fases_id = $model->id;
+                $week->save();
 
-                if($fixture->getCruces()[$f][$c]['A'] != 'Libre')
-                    $home = $fixture->getCruces()[$f][$c]['A'] ;
-                else
-                    $home = null;
-
-                if($fixture->getCruces()[$f][$c]['B'] != 'Libre')
-                    $away  = $fixture->getCruces()[$f][$c]['B'] ;
-                else
-                    $away = null;
+                for ($c = 1; $c <= $fixture->partidosXFechas() ; $c++) {
 
 
-                //agrega matches
-                $match = new Matches();
-                $match->name = $c;
-                $match->fases_week_id = $week->id;
-                $match->home_teams_id = $home ;
-                $match->away_teams_id = $away;
-                $match->status = 1;
+                    if($fixture->getCruces()[$f][$c]['A'] != 'Libre')
+                        $home = $fixture->getCruces()[$f][$c]['A'] ;
+                    else
+                        $home = null;
 
-                $match->save();
+                    if($fixture->getCruces()[$f][$c]['B'] != 'Libre')
+                        $away  = $fixture->getCruces()[$f][$c]['B'] ;
+                    else
+                        $away = null;
+
+
+                    //agrega matches
+                    $match = new Matches();
+                    $match->name = $c;
+                    $match->fases_week_id = $week->id;
+                    $match->home_teams_id = $home ;
+                    $match->away_teams_id = $away;
+                    $match->status = 1;
+
+                    $match->save();
+
+                }
 
             }
 
+            //agrega los datos a la tabla de posiciones
+            foreach($teams as $t)
+            {
+                $newTabla = new Tablas();
+                $newTabla->teams_id = $t;
+                $newTabla->fases_id = $model->id;
+                $newTabla->save();
+            }
+
+
+
+            // if has image uploaded
+            if($request->hasFile('image'))
+            {
+                $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);
+            }
+
         }
-
-        //agrega los datos a la tabla de posiciones
-        foreach($teams as $t)
-        {
-            $newTabla = new Tablas();
-            $newTabla->teams_id = $t;
-            $newTabla->fases_id = $model->id;
-            $newTabla->save();
-        }
-
-
-
-        // if has image uploaded
-        if($request->hasFile('image'))
-        {
-            $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);
-        }
-
-        // redirect with errors messages language
-        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+            // redirect with errors messages language
+            return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
 
     }
 
     public function getDetail($id = null)
     {
-        $this->data['week']     = FasesWeek::where('fases_id',$id)->get();
-        if($this->data['week']->first()->fases->second_round == 1)
-            $this->data['iyv'] = 1;
-        Session::put('fases_id',$id);
+        $fases  = $this->repo->find($id);
 
-        return view($this->detail)->with($this->data);
+
+        $this->data['fases_start'] = $fases->start;
+
+        $fases_start = [];
+
+        switch ($fases->start)
+        {
+            case  '1';
+                $fases_start = ['1' => 'Final'];
+            break;
+
+            case '2';
+                $fases_start = ['2'=>'SemiFinal', '1' => 'Final'];
+            break;
+
+            case '4';
+                $fases_start = ['4'=>'4tos de Final','2'=>'SemiFinal','1' => 'Final'];
+            break;
+
+            case '8';
+                $fases_start = ['8'=>'8vos de Final','4'=>'4tos de Final','2'=>'SemiFinal','1' => 'Final'];
+            break;
+
+            case '16';
+                $fases_start = ['16' =>'16vos de Final','8'=>'8vos de Final','4'=>'4tos de Final','2'=>'SemiFinal','1' => 'Final'];
+            break;
+            case '32';
+                $fases_start = ['32' =>'32vos de Final','16' =>'16vos de Final','8'=>'8vos de Final','4'=>'4tos de Final','2'=>'SemiFinal','1' => 'Final'];
+            break;
+
+        }
+
+        $this->data['fases_start'] = $fases_start;
+
+        if($fases->play_off == 0){
+
+            $this->data['week']     = FasesWeek::where('fases_id',$id)->get();
+            if($this->data['week']->first()->fases->second_round == 1)
+                $this->data['iyv'] = 1;
+
+            Session::put('fases_id',$id);
+            return view($this->detail)->with($this->data);
+
+        }
+
+        else
+            return view('tfc.fases.detail_play_off')->with($this->data);
     }
 
     public function getTabla($fases_id ,TablasRepo $tabla)

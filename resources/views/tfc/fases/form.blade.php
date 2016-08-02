@@ -16,8 +16,26 @@
 
         {!! Form::textCustom('name', 'Nombre Fase')!!}
 
+        <input name="play_off" id="play_off"  type="checkbox">
+        <label>Play Off</label>
 
 
+        <div id="play_off_div" class="panel panel-default">
+            <div class="panel panel-body">
+
+            {!! Form::selectCustom('start','Inicial en',$start)!!}
+
+            {!! Form::checkbox('i_v') !!}
+            <label>Ida y Vuelta</label>
+            <br>
+            {!! Form::checkbox('tercer_puesto') !!}
+            <label>3er. - 4to. puesto</label>
+
+            </div>
+
+        </div>
+
+        <br>
         @if(!isset($model))
 
 

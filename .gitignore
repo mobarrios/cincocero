@@ -3,7 +3,7 @@ recaptcha?keys.txt
 /vendor
 /node_modules
 Homestead.yaml
-.env
+/.env
 .DS_Store
 /public/uploads
 .idea/workspace.xml

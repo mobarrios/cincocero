@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     @if(isset($iyv))
         <div id="primeraVuelta" data-total="{!! $week->count() !!}">
             <h1>Ida</h1>

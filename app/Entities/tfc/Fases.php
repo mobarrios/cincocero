@@ -7,7 +7,7 @@ class Fases extends Entity{
 
     protected $table = 'fases';
 
-    protected $fillable = ['name','tournaments_id'];
+    protected $fillable = ['name','tournaments_id','secound_round','play_off','start','i_v','tercer_puesto'];
 
     public function Tournaments()
     {
@@ -24,6 +24,7 @@ class Fases extends Entity{
         return $this->hasMany(FasesWeek::getClass());
     }
 
-//    fases->weeks->matches->matchesdetail
+
+
 
 }
