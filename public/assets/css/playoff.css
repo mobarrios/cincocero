@@ -1,0 +1,29 @@
+.cruces{
+    border: 1px solid #DDDDDD;
+    position:relative;
+}
+
+.cruces .escudo{
+    position:relative;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+.cruces .escudo img{
+    /*width: 30px;*/
+    margin-top: 5px;
+    /*margin-left: -15px;*/
+}
+
+.cruces hr{
+    margin: 5px;
+}
+
+.cruces h4{
+    text-align: center;
+    margin: 2 ;
+    /*padding: 0 !important;*/
+    /*display:inline-block;*/
+    /*margin-left:-5px;*/
+}

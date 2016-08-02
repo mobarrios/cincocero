@@ -10,7 +10,8 @@
 
      {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
      {!! Form::hidden('tournaments_id', $tournaments_id) !!}
-     {!! Form::textCustom('name', 'Nombre Fase')!!}
+
+     {!! Form::selectCustom('fase_playoff', 'Nombre Fase')!!}
 
 
     <div class="row">
