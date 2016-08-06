@@ -12,13 +12,13 @@ body {
   font-family: 'Open Sans', helvetica, arial, sans-serif;
 }
 span.navy {
-  color: #1ab394;
+  color: rgb(86, 180, 255);
 }
 p.text-color {
   color: #676a6c;
 }
 a.navy-link {
-  color: #1ab394;
+  color: rgb(86, 180, 255);
   text-decoration: none;
 }
 a.navy-link:hover {
@@ -40,10 +40,10 @@ h1 {
   width: 60px;
   height: 1px;
   margin: 60px auto 0;
-  border-bottom: 2px solid #1ab394;
+  border-bottom: 2px solid rgb(86, 180, 255);
 }
 .navy-bg {
-  background-color: #1ab394;
+  background-color: rgb(86, 180, 255);
   color: #ffffff;
 }
 /* CUSTOMIZE THE NAVBAR
@@ -89,10 +89,10 @@ h1 {
 .navbar-default .navbar-nav > .active > a:hover {
   background: transparent;
   color: #fff;
-  border-top: 6px solid #1ab394;
+  border-top: 6px solid rgb(86, 180, 255);
 }
 .navbar-default .navbar-nav > li > a:hover {
-  color: #1ab394;
+  color: rgb(86, 180, 255);
 }
 .navbar-default .navbar-nav > .active > a:focus {
   background: transparent;
@@ -112,7 +112,7 @@ h1 {
   height: auto;
   display: block;
   font-size: 14px;
-  background: #1ab394;
+  background: rgb(86, 180, 255);
   padding: 15px 20px 15px 20px;
   border-radius: 0 0px 5px 5px;
   font-weight: 700;
@@ -122,7 +122,7 @@ h1 {
   color: #676a6c;
 }
 .navbar-scroll.navbar-default .nav li a:hover {
-  color: #1ab394;
+  color: rgb(86, 180, 255);
 }
 .navbar-wrapper .navbar.navbar-scroll {
   padding-top: 0;
@@ -137,7 +137,7 @@ h1 {
   padding: 20px 10px;
 }
 .navbar.navbar-scroll .navbar-brand {
-  margin-top: 15px;
+  margin-top: 5px;
   border-radius: 5px;
   font-size: 12px;
   padding: 10px;
@@ -278,7 +278,7 @@ h1 {
   margin-top: 40px;
 }
 .features small {
-  color: #1ab394;
+  color: rgb(86, 180, 255);
 }
 .features h2 {
   font-size: 18px;
@@ -291,12 +291,12 @@ h1 {
   font-weight: 200;
 }
 .features-icon {
-  color: #1ab394;
+  color: rgb(86, 180, 255);
   font-size: 40px;
 }
 .navy-section {
   margin-top: 60px;
-  background: #1ab394;
+  background: rgb(86, 180, 255);
   color: #fff;
   padding: 20px 0;
 }
@@ -311,7 +311,7 @@ h1 {
   margin: auto;
 }
 .social-icon a {
-  background: #1ab394;
+  background: rgb(86, 180, 255);
   color: #fff;
   padding: 4px 8px;
   height: 28px;
@@ -342,7 +342,7 @@ h1 {
 }
 .pricing-plan .pricing-price span {
   font-weight: 700;
-  color: #1ab394;
+  color: rgb(86, 180, 255);
 }
 li.pricing-desc {
   font-size: 13px;
@@ -350,7 +350,7 @@ li.pricing-desc {
   padding: 20px 16px ;
 }
 li.pricing-title {
-  background: #1ab394;
+  background: rgb(86, 180, 255);
   color: #fff;
   padding: 10px;
   border-radius: 4px 4px 0 0;
@@ -360,21 +360,31 @@ li.pricing-title {
 .testimonials {
   padding-top: 80px;
   padding-bottom: 90px;
-  background-color: #1ab394;
+  background-color: rgb(86, 180, 255);
   background-image: url('../img/avatar_all.png');
 }
 .big-icon {
   font-size: 56px;
 }
 .features .big-icon {
-  color: #1ab394;
+  color: rgb(86, 180, 255);
 }
 .contact {
-  background-image: url('../img/word_map.png');
+  background-image: url('../img/footer2.png');
+  background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   margin-top: 60px;
 }
+
+.contact *{
+  color: black;
+}
+
+.contact .social-icon *{
+  color: white;
+}
+
 /* Buttons - only primary custom button
 ------------------------- */
 .btn-primary.btn-outline:hover,
@@ -384,9 +394,11 @@ li.pricing-title {
 .btn-danger.btn-outline:hover {
   color: #fff;
 }
+
+
 .btn-primary {
-  background-color: #1ab394;
-  border-color: #1ab394;
+  background-color: rgb(86, 180, 255);
+  border-color: rgb(153, 219, 255);
   color: #FFFFFF;
   font-size: 14px;
   padding: 10px 20px;
@@ -397,8 +409,8 @@ li.pricing-title {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  background-color: #18a689;
-  border-color: #18a689;
+  background-color: rgb(102, 193, 255);
+  border-color: rgb(102, 193, 255);
   color: #FFFFFF;
 }
 .btn-primary:active,
@@ -421,8 +433,8 @@ fieldset[disabled] .btn-primary:hover,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #1dc5a3;
-  border-color: #1dc5a3;
+  background-color: rgb(102, 193, 255);;
+  border-color: rgb(102, 193, 255);;
 }
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -483,7 +495,7 @@ fieldset[disabled] .btn-primary.active {
     color: #676a6c;
   }
   .navbar-default .nav li a:hover {
-    color: #1ab394;
+    color: rgb(86, 180, 255);
   }
   .navbar-wrapper .navbar {
     padding-top: 0;
@@ -970,7 +982,7 @@ section.comments {
   font-weight: 500;
 }
 .vertical-date small {
-  color: #1ab394;
+  color: rgb(86, 180, 255);
   font-weight: 400;
 }
 .vertical-timeline-content::before {
@@ -1034,4 +1046,53 @@ section.comments {
   .center-orientation .cssanimations .vertical-timeline-content.is-hidden {
     visibility: hidden;
   }
+}
+
+
+.bg-white{
+  background-color: #ffffff !important;
+}
+
+.navbar-scroll .bg-white{
+  background-color: transparent !important;
+}
+
+
+.mt-0{
+  margin-top: 0 !important;
+}
+
+.mb-0{
+  margin-bottom: 0 !important;
+}
+
+
+.dropdown-active{
+  display:block;
+}
+
+.dropdown-submenu {
+  position: relative;
+  padding-left:10px;
+  margin-left:-10px;
+}
+
+.dropdown-submenu a{
+  color:black !important;
+
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  min-width:220px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.text-black{
+  color: black !important;
 }
