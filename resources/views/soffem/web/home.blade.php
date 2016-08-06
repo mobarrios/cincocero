@@ -1,0 +1,2 @@
+@extends('soffem/web/template')
+

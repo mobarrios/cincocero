@@ -24,6 +24,7 @@ use App\Helpers\ImagesHelper;
 
 //Session::put('languaje','es_ES');
 
+require(__DIR__ .'/Routes/soffem/web/WebRoutes.php');
 
 Route::get('ml/{id?}', ['as'=>'ml','uses'=>'\App\Http\Controllers\ws\MercadolibreController@getItem']);
 
@@ -72,7 +73,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
                 require(__DIR__. '/Routes/config/UserProfilesRoutes.php');
 
 
-                $route_files = File::allFiles(__DIR__ . '/Routes/stock');
+                $route_files = File::allFiles(__DIR__ . '/Routes/soffem');
 
                 foreach ($route_files as $partial)
                 {
