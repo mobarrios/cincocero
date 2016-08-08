@@ -1096,3 +1096,9 @@ section.comments {
 .text-black{
   color: black !important;
 }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  color: #DDDDDD;
+  background: transparent;
+  border-top: 6px solid rgb(86, 180, 255);
+}

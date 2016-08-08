@@ -22,6 +22,8 @@
 
     <link rel="stylesheet" href="css/grid.css">
 
+    <link rel="stylesheet" href="css/menu.css">
+
 </head>
 <body id="page-top" class="landing-page">
 
@@ -569,6 +571,51 @@
 
     $(document).ready(function () {
 
+        $.each($(".menu-dropdown #menu li.parent-menu"),function(i,data){
+            $(data).attr('data-id',i);
+
+            $.each($(".menu-dropdown .submenu"),function(e,d){
+                $(d).attr('data-parent',e);
+            });
+        });
+
+        $(".menu-dropdown").on('click',function(ev){
+            ev.preventDefault();
+            ev.stopPropagation();
+
+            var self = $(this);
+
+            $.each($(self).find(".submenu"),function(i,data){
+                if($(data).hasClass("menu-active")){
+                    $(data).removeClass("menu-active");
+                    $(data).toggle();
+                }
+            });
+
+
+            $(this).find("#menu").toggle();
+
+            $(this).find("#menu .parent-menu").on('click',function(ev){
+                ev.preventDefault();
+                ev.stopPropagation();
+
+                var ind = $(this).attr("data-id");
+
+                $.each($(self).find(".submenu"),function(i,data){
+                    if($(data).hasClass("menu-active")){
+                        $(data).removeClass("menu-active");
+                        $(data).toggle();
+                    }
+                });
+
+                $(self).find(".submenu[data-parent="+ind+"]").addClass('menu-active');
+                $(self).find(".submenu[data-parent="+ind+"]").toggle();
+
+            });
+
+        });
+
+
         $('body').scrollspy({
             target: '.navbar-fixed-top',
             offset: 80
@@ -617,6 +664,9 @@
 
     // Activate WOW.js plugin for animation on scrol
     new WOW().init();
+
+
+
 
 
 
