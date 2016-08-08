@@ -19,7 +19,9 @@
           @foreach(\App\Entities\tfc\Fases::where('tournaments_id',$torneo->id)->orderBy('name','asc')->get() as $fas)
             <li class="menu-item menu-item-type-custom menu-item-object-custom @if(isset($faseActual) && $faseActual->id == $fas->id)folder-open @else folder-close" @endif <a href="javascript:void(0)">{{$fas->name}}</a>
               <ul class="sub-menu">
-                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('resultado',[$categoriaActual->id,$fas->id])}}">Posiciones</a></li>
+                @if(!$fas->play_off)
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route('resultado',[$categoriaActual->id,$fas->id])}}">Posiciones</a></li>
+                @endif
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route("fechaActual",[$categoriaActual->id,$fas->id])}}">Proxima Fecha</a></li>
                 {{--<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{route("proximaFecha",[$categoriaActual->id,$fas->id])}}">Proxima Fecha</a></li>--}}
                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{route("fixture",[$categoriaActual->id,$fas->id])}}">Fixture y resultados</a></li>
