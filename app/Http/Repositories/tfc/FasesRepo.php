@@ -77,7 +77,7 @@ class FasesRepo extends BaseRepo {
 
     public function start(){
 
-        $start = ['64'=>'64','32'=>'32','16'=>'16','8'=>'8','4'=>'4','2'=>'Semifinal','1'=>'Final'];
+        $start = ['64'=>'64','32'=>'32','16'=>'16','8'=>'8','4'=>'4','2'=>'Semifinal','3'=>'Tercer P.','1'=>'Final'];
 
         return $start;
     }

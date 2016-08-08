@@ -54,6 +54,20 @@ class TeamsRepo extends BaseRepo {
         return $header;
     }
 
+    public function getTeamsByFases($id_fases = null){
+
+       $teams =  Teams::WhereHas('FasesTeams',function($q) use ($id_fases){
+            $q->where('fases_id',$id_fases);
+        })
+            ->where('status',1)
+            ->orderBy('name','ASC')
+            ->get()
+            ->lists('name','id');
+
+        return $teams;
+
+    }
+
 
 
 

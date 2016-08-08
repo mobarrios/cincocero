@@ -19,23 +19,19 @@
         <input name="play_off" id="play_off"  type="checkbox">
         <label>Play Off</label>
 
-
-        <div id="play_off_div" class="panel panel-default">
+        <div id="play_off_div" class="panel panel-default hidden" >
             <div class="panel panel-body">
 
-            {!! Form::selectCustom('start','Inicial en',$start)!!}
+            {!! Form::selectCustom('start','Fase',$start)!!}
 
             {!! Form::checkbox('i_v') !!}
             <label>Ida y Vuelta</label>
-            <br>
-            {!! Form::checkbox('tercer_puesto') !!}
-            <label>3er. - 4to. puesto</label>
 
             </div>
 
         </div>
 
-        <br>
+        <hr>
         @if(!isset($model))
 
 
@@ -136,6 +132,14 @@
 
     @section('js')
         <script>
+
+            $('#play_off').on('click',function(){
+                if($('#play_off_div').hasClass('hidden'))
+                    $('#play_off_div').removeClass('hidden');
+                else
+                    $('#play_off_div').addClass('hidden');
+            });
+
             $('#new').on('click',function(){
                 $('#new_form').val('true');
             });

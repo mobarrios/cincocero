@@ -24,6 +24,9 @@ Route::get('fases_add_team/{team_to?}',$controller.'@addTeam');
 
 Route::get('fases_vuelta/{id?}',['as'=>'fases_vuelta','uses'=>$controller.'@getFasesVuelta']);
 
+Route::get('nueva_fecha/{id_fases?}',['as' => 'new_fases_week','uses'=>$controller.'@getNewFasesWeek']);
+Route::any('post_nueva_fecha/{id_fases?}',['as' => 'post_new_fases_week','uses'=>$controller.'@postNewFasesWeek']);
+
 
 
 

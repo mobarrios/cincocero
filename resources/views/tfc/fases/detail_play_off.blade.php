@@ -41,7 +41,7 @@
             </div>
 
             <div class=" panel-footer">
-                <a class="btn btn-xs btn-default">Nueva Fecha</a>
+                <a href="{{route('new_fases_week',$fases->id)}}" class="btn btn-xs btn-default">Nueva Fecha</a>
             </div>
 
         </div>

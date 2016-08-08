@@ -47,7 +47,9 @@
 
                                                     <td class="col-xs-2">
                                                         <a href="{{route('fasesFixture',$fases->id)}}" class="btn btn-xs btn-success">Fixture</a>
-                                                        <a href="{{route('fasesTabla',$fases->id)}}"class="btn btn-xs btn-success">Tabla</a>
+                                                        @if(!$fases->play_off)
+                                                            <a href="{{route('fasesTabla',$fases->id)}}"class="btn btn-xs btn-success">Tabla</a>
+                                                        @endif
                                                     </td>
 
                                                     <td class="col-xs-2">

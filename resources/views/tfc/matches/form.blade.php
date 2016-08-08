@@ -15,19 +15,24 @@
 
 
         @if(isset($model))
-            @if(is_null($model->homeTeam))
-                {!! Form::textCustomEdit('home_teams_id', "Libre", 'Equipo 1')!!}
+            @if($fases->play_off == true)
+                {!! Form::selectCustomEdit('home_teams_id','Equipo 1',$teams,null)!!}
+                {!! Form::selectCustomEdit('away_teams_id','Equipo 2',$teams,null)!!}
             @else
-                {!! Form::textCustomEdit('home_teams_id', $model->homeTeam->name, 'Equipo 1')!!}
-            @endif
-            @if(is_null($model->awayTeam))
-                {!! Form::textCustomEdit('away_teams_id', "Libre", 'Equipo 2')!!}
-            @else
-                {!! Form::textCustomEdit('away_teams_id', $model->awayTeam->name, 'Equipo 2')!!}
+                @if(is_null($model->homeTeam))
+                    {!! Form::textCustomEdit('home_teams_id', "Libre", 'Equipo 1')!!}
+                @else
+                    {!! Form::textCustomEdit('home_teams_id', $model->homeTeam->name, 'Equipo 1')!!}
+                @endif
+                @if(is_null($model->awayTeam))
+                    {!! Form::textCustomEdit('away_teams_id', "Libre", 'Equipo 2')!!}
+                @else
+                    {!! Form::textCustomEdit('away_teams_id', $model->awayTeam->name, 'Equipo 2')!!}
+                @endif
             @endif
         @else
-            {!! Form::textCustom('home_teams_id', 'Equipo 1')!!}
-            {!! Form::textCustom('away_teams_id', 'Equipo 2')!!}
+                {!! Form::textCustom('home_teams_id', 'Equipo 1')!!}
+                {!! Form::textCustom('away_teams_id', 'Equipo 2')!!}
         @endif
 
         {!! Form::selectCustom('status', 'Estado', $status)!!}

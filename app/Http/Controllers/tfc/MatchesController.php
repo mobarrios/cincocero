@@ -3,14 +3,17 @@
 namespace App\Http\Controllers\tfc;
 
 use App\Entities\tfc\Canchas;
+use App\Entities\tfc\Fases;
 use App\Entities\tfc\Horarios;
 use App\Entities\tfc\Matches;
 use App\Entities\tfc\MatchesDetails;
 use App\Entities\tfc\Sedes;
+use App\Entities\tfc\Teams;
 use App\Http\Repositories\tfc\MatchesRepo as Repo;
 use App\Http\Controllers\Controller;
 
 use App\Http\Repositories\tfc\TablasRepo;
+use App\Http\Repositories\tfc\TeamsRepo;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
 use PDF;
@@ -27,11 +30,13 @@ class MatchesController extends Controller {
     public   $request;
     public   $rules;
     public   $rulesEdit;
+    public   $teamsRepo;
 
 
-    public function __construct(Repo $repo)
+    public function __construct(Repo $repo, TeamsRepo $teamsRepo)
     {
         $module = 'matches';
+        $this->teamsRepo = $teamsRepo;
 
         //data from entities
         $this->repo                 = $repo;
@@ -89,6 +94,8 @@ class MatchesController extends Controller {
     {
         $this->data['model']    = $this->repo->getModel()->find($id);
         $this->data['fases_id'] = $fases_id;
+        $this->data['fases']    = Fases::find($fases_id);
+        $this->data['teams']    = $this->teamsRepo->getTeamsByFases($fases_id);
 
         return view($this->form)->with($this->data);
     }
@@ -128,6 +135,7 @@ class MatchesController extends Controller {
                 $image->upload($this->data['entityImg'], $id ,$request->file('image') ,$this->data['imagePath'], true);
             }
         }
+
 
         $this->repo->edit($id, $request);
 

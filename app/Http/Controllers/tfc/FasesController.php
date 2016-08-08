@@ -69,8 +69,9 @@ class FasesController extends Controller {
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
 
-    }
 
+
+    }
 
 
     //go to form new
@@ -87,10 +88,10 @@ class FasesController extends Controller {
         // validation rules form repo
         $this->validate($request, $this->rules);
 
-
         $teams = $request->all()['team'];
 
         if(!is_null($request->play_off)) $request['play_off'] = 1;
+
 
         // method crear in repo
         $model = $this->repo->create($request);
@@ -151,21 +152,75 @@ class FasesController extends Controller {
 
 
             // if has image uploaded
-            if($request->hasFile('image'))
-            {
+            if($request->hasFile('image')) {
+
                 $image->upload($this->data['entityImg'], $model->id  ,$request->file('image') ,$this->data['imagePath']);
             }
 
+
+        }else{
+
+            if(!is_null($request->i_v))
+                $c_partidos = 2;
+            else
+                $c_partidos = 1;
+
+
+            $week           = new FasesWeek();
+
+            $week->fases_id = $model->id;
+            $week->save();
+
+
+
+            if($request->start == 1)
+                $c_partidos = 1 * $c_partidos ;
+
+            if($request->start == 2)
+                $c_partidos = 2 * $c_partidos ;
+
+            if($request->start == 3)
+                $c_partidos = 1 * $c_partidos ;
+
+            if($request->start == 4)
+                $c_partidos = 4 * $c_partidos ;
+
+            if($request->start == 8)
+                $c_partidos = 8 * $c_partidos ;
+
+            if($request->start == 16)
+                $c_partidos = 16 * $c_partidos ;
+
+            if($request->start == 32)
+                $c_partidos = 32 * $c_partidos ;
+
+            if($request->start == 64)
+                $c_partidos = 64 * $c_partidos ;
+
+
+            for( $i = 0 ; $i < $c_partidos; $i++ ){
+                $match = new Matches();
+                //$match->name = $c;
+                $match->fases_week_id = $week->id;
+                //$match->home_teams_id = $home ;
+                //$match->away_teams_id = $away;
+                $match->status = 1;
+
+                $match->save();
+            }
+
         }
-            // redirect with errors messages language
-            return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
+
+
+        // redirect with errors messages language
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
 
     }
 
     public function getDetail($id = null)
     {
         $fases  = $this->repo->find($id);
-
+        $this->data['fases'] = $fases;
 
         $this->data['fases_start'] = $fases->start;
 
@@ -200,7 +255,7 @@ class FasesController extends Controller {
 
         $this->data['fases_start'] = $fases_start;
 
-        if($fases->play_off == 0){
+        //if($fases->play_off == 0){
 
             $this->data['week']     = FasesWeek::where('fases_id',$id)->get();
             if($this->data['week']->first()->fases->second_round == 1)
@@ -209,10 +264,10 @@ class FasesController extends Controller {
             Session::put('fases_id',$id);
             return view($this->detail)->with($this->data);
 
-        }
+    //    }
 
-        else
-            return view('tfc.fases.detail_play_off')->with($this->data);
+      //  else
+         //   return view('tfc.fases.detail_play_off')->with($this->data);
     }
 
     public function getTabla($fases_id ,TablasRepo $tabla)
@@ -398,4 +453,22 @@ class FasesController extends Controller {
         return redirect()->back()->withErrors('Vuelta Creada Correctamente');
     }
 
+    // vista nueva fecha = fasesweeek
+    public function getNewFasesWeek($id_fases = null){
+
+        $this->data['fases'] = $this->repo->find($id_fases);
+
+        return view('tfc.fases.fases_week.form')->with($this->data);
+    }
+
+    // post nueva fecha
+    public function postNewFasesWeek(Request $request,$id_fases = null){
+
+        $new_fases_week             = new FasesWeek();
+        $new_fases_week->fases_id   = $request->fases_id;
+        $new_fases_week->name       = $request->name;
+        $new_fases_week->save();
+
+        return redirect()->back()->withErrors('Fecha Creada Correctamente');
+    }
 }
