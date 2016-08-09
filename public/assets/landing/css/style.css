@@ -143,6 +143,11 @@ h1 {
   padding: 10px;
   height: auto;
 }
+
+.navbar.navbar-scroll .navbar-brand img {
+  width:50%;
+  transition: all 1s;
+}
 /* BACKGROUNDS SLIDER
 -------------------------------------------------- */
 .header-back {
