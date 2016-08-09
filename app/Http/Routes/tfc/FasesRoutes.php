@@ -27,6 +27,7 @@ Route::get('fases_vuelta/{id?}',['as'=>'fases_vuelta','uses'=>$controller.'@getF
 Route::get('nueva_fecha/{id_fases?}',['as' => 'new_fases_week','uses'=>$controller.'@getNewFasesWeek']);
 Route::any('post_nueva_fecha/{id_fases?}',['as' => 'post_new_fases_week','uses'=>$controller.'@postNewFasesWeek']);
 
+Route::get('edit_table/{id_table?}/{column?}/{data?}', $controller.'@getEditTable');
 
 
 

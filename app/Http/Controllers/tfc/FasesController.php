@@ -471,4 +471,20 @@ class FasesController extends Controller {
 
         return redirect()->back()->withErrors('Fecha Creada Correctamente');
     }
+
+    public function getEditTable(Request $request, $id_table = null,  $col = null , $data = null){
+
+        $tabla          = Tablas::find($id_table);
+        $tabla->$col    = $data;
+        $tabla->save();
+
+        if($tabla)
+            return json_encode(true);
+        else
+            return json_encode(false);
+
+
+
+
+    }
 }

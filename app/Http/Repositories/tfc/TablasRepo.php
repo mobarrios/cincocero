@@ -48,6 +48,9 @@ class TablasRepo extends BaseRepo {
         $tablaHome = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->home_teams_id)->first();
         $tablaAway = Tablas::where('fases_id',Session::get('fases_id'))->where('teams_id',$match->away_teams_id)->first();
 
+
+    
+
     if ($walk_over_no_ptos != null) {
 
         if (!is_null($tablaHome)) {

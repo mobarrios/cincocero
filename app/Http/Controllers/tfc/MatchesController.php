@@ -109,7 +109,7 @@ class MatchesController extends Controller {
         // validation rules form repo
         $this->validate($request, $this->rulesEdit);
 
-        $date =date('Y-m-d',strtotime($request->date));
+        $date = date('Y-m-d',strtotime($request->date));
 
         $match = Matches::where('date',$date)
             ->where('canchas_id',$request->canchas_id)
@@ -164,11 +164,10 @@ class MatchesController extends Controller {
 
         //si edita el partido vuelve los datos atras
 
-    if ($request->edit == 1) {
 
+    if ($request->edit == 1) {
         //  if($request->walk_over_no_ptos == null)
         $tabla->reCalculaTabla($request->matches_id);
-
     }
 
     // si el walk over esta on
@@ -178,7 +177,9 @@ class MatchesController extends Controller {
         if ($request->walk_over_no_ptos == 'on') {
             $match->walk_over_no_ptos = 1;
         }
+
     } else {
+
         $match->walk_over = 0;
         $match->walk_over_motivo = '';
 
