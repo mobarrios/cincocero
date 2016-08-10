@@ -17,32 +17,24 @@
 
 
                     <li class="dropdown menu-dropdown">
-                        <a href=""> Categorias<span class="caret"></span></a>
+                        <a href="">Clausura 2016<span class="caret"></span></a>
                         <div>
                             <ul id="menu">
-                                <li class="title-menu parent-menu"><a href="">Torneo 1 <span class="caret"></span></a></li>
+                                <li class="title-menu parent-menu"><a href="">Primera Div. <span class="caret"></span></a></li>
                                 <hr>
-                                <li class="title-menu parent-menu"><a href="">Torneo 2 <span class="caret"></span></a></li>
+                                <li class="title-menu parent-menu"><a href="">Tercera Div.<span class="caret"></span></a></li>
+                                <hr>
+                                <li class="title-menu parent-menu"><a href="">Cuarta Div.<span class="caret"></span></a></li>
+
                             </ul>
                             <ul class="submenu">
-                                <li class="title-menu"><a href="">Fase A</a></li>
-                                <hr>
-                                <li class="title-menu"><a href="">Fase B</a></li>
-                                <hr>
-                                <li class="title-menu"><a href="">Fase C</a></li>
+                                <li class="title-menu"><a href="">Liga</a></li>
                             </ul>
                             <ul class="submenu">
-                                <li class="title-menu"><a href="">Grupo A</a></li>
-                                <hr>
-                                <li class="title-menu"><a href="">Grupo B</a></li>
-                                <hr>
-                                <li class="title-menu"><a href="">Octavos</a></li>
-                                <hr>
-                                <li class="title-menu"><a href="">Cuartos</a></li>
-                                <hr>
-                                <li class="title-menu"><a href="">Semifinal</a></li>
-                                <hr>
-                                <li class="title-menu"><a href="">Final</a></li>
+                                <li class="title-menu"><a href="">Liga</a></li>
+                            </ul>
+                            <ul class="submenu">
+                                <li class="title-menu"><a href="">Liga</a></li>
                             </ul>
                         </div>
                     </li>
