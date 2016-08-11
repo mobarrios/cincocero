@@ -28,13 +28,16 @@
 
                             </ul>
                             <ul class="submenu">
-                                <li class="title-menu"><a href="">Liga</a></li>
+                                <li class="title-menu"><a href="{!! route('fasesDetalle') !!}">Liga</a></li>
                             </ul>
                             <ul class="submenu">
-                                <li class="title-menu"><a href="">Liga</a></li>
+                                <li class="title-menu"><a href="{!! route('fasesDetalle') !!}">Liga</a></li>
+                                <li class="title-menu"><a href="{!! route('fasesDetalle') !!}">Liga</a></li>
                             </ul>
                             <ul class="submenu">
-                                <li class="title-menu"><a href="">Liga</a></li>
+                                <li class="title-menu"><a href="{!! route('fasesDetalle') !!}">Liga</a></li>
+                                <li class="title-menu"><a href="{!! route('fasesDetalle') !!}">Liga</a></li>
+                                <li class="title-menu"><a href="{!! route('fasesDetalle') !!}">Liga</a></li>
                             </ul>
                         </div>
                     </li>

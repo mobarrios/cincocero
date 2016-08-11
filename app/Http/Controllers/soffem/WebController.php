@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\tfc;
+namespace App\Http\Controllers\soffem;
 
 use App\Entities\Images;
 use App\Entities\tfc\Categories;
@@ -444,5 +444,9 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
     }
 
 
+
+    public function fasesDetalle(){
+        return view('soffem.web.fases');
+    }
 
 }

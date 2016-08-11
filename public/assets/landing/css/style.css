@@ -1107,3 +1107,11 @@ section.comments {
   background: transparent;
   border-top: 6px solid rgb(86, 180, 255);
 }
+
+.fs15{
+  font-size:15px !important;
+}
+
+.p0{
+  padding: 0 !important;
+}
