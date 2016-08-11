@@ -36,6 +36,9 @@
     <img src="img/LogoHurlingham.png">
 </div>
 <br>
+
+@yield('content')
+
 <div class="container">
     <div class="row">
         <div class="col-xs-2">
@@ -57,12 +60,7 @@
             <img class="img-thumbnail" src="img/corsini.jpg">
         </div>
     </div>
-
-
 </div>
-
-@yield('content')
-
 
 
 <section id="contact" class="gray-section contact">
