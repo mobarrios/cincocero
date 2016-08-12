@@ -20,6 +20,7 @@ return array(
     'Canvas' => $vendorDir . '/dompdf/dompdf/include/canvas.cls.php',
     'Canvas_Factory' => $vendorDir . '/dompdf/dompdf/include/canvas_factory.cls.php',
     'Cellmap' => $vendorDir . '/dompdf/dompdf/include/cellmap.cls.php',
+<<<<<<< HEAD
     'CreateCanchas' => $baseDir . '/database/migrations/2016_08_12_130325_create_canchas.php',
     'CreateCategories' => $baseDir . '/database/migrations/2016_08_12_130712_create_categories.php',
     'CreateDestacados' => $baseDir . '/database/migrations/2016_08_12_130834_create_destacados.php',
@@ -29,6 +30,8 @@ return array(
     'CreateFasesWeek' => $baseDir . '/database/migrations/2016_08_12_131100_create_fases_week.php',
     'CreateGalleries' => $baseDir . '/database/migrations/2016_08_12_133851_create_galleries.php',
     'CreateHorarios' => $baseDir . '/database/migrations/2016_08_12_133947_create_horarios.php',
+=======
+>>>>>>> 3bfe0a8a93b82c4457832d11fe4bcf3560b6403f
     'CreateImages' => $baseDir . '/database/migrations/2016_07_27_225534_create_images.php',
     'CreateMatches' => $baseDir . '/database/migrations/2016_08_12_134207_create_matches.php',
     'CreateMatchesDetails' => $baseDir . '/database/migrations/2016_08_12_135117_create_matches_details.php',
