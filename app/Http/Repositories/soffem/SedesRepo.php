@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Sedes;
+use App\Entities\soffem\Sedes;
 use App\Http\Repositories\BaseRepo;
 
 class SedesRepo extends BaseRepo {

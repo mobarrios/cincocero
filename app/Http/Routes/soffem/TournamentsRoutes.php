@@ -1,7 +1,7 @@
 <?php
 
 $module = 'tournaments';
-$controller = '\App\Http\Controllers\tfc\TournamentsController';
+$controller = '\App\Http\Controllers\soffem\TournamentsController';
 
 Route::get('list'.$module,           ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module,'uses'=> $controller.'@getIndex']);
 Route::get('edit'.$module.'/{id?}',   ['middleware'=>'roles','data'=> $module.'-edit' ,'as'=> $module.'GetEdit','uses'=> $controller.'@getEdit']);

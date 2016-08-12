@@ -1,7 +1,7 @@
 <?php
 
 $module = 'fases';
-$controller = '\App\Http\Controllers\tfc\FasesController';
+$controller = '\App\Http\Controllers\soffem\FasesController';
 
 Route::get('list'.$module,           ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module,'uses'=> $controller.'@getIndex']);
 Route::get('edit'.$module.'/{id?}',   ['middleware'=>'roles','data'=> $module.'-edit' ,'as'=> $module.'GetEdit','uses'=> $controller.'@getEdit']);

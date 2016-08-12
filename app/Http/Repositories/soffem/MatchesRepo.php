@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Matches;
+use App\Entities\soffem\Matches;
 use App\Http\Repositories\BaseRepo;
 
 class MatchesRepo extends BaseRepo {

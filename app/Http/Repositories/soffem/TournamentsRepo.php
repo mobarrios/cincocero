@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
 
-use App\Entities\tfc\Tournaments;
+use App\Entities\soffem\Tournaments;
 use App\Http\Repositories\BaseRepo;
 
 class TournamentsRepo extends BaseRepo {

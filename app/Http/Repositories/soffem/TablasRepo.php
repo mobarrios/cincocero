@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
 //use App\Entities\tfc\Teams;
-use App\Entities\tfc\Fases;
-use App\Entities\tfc\FasesTeams;
-use App\Entities\tfc\FasesWeek;
-use App\Entities\tfc\Matches;
-use App\Entities\tfc\Tablas;
-use App\Entities\tfc\Teams;
+use App\Entities\soffem\Fases;
+use App\Entities\soffem\FasesTeams;
+use App\Entities\soffem\FasesWeek;
+use App\Entities\soffem\Matches;
+use App\Entities\soffem\Tablas;
+use App\Entities\soffem\Teams;
 use App\Http\Repositories\BaseRepo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;

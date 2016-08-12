@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Sanciones;
+use App\Entities\soffem\Sanciones;
 use App\Http\Repositories\BaseRepo;
 
 class SancionesRepo extends BaseRepo {

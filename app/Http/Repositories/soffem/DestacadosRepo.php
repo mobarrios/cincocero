@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Destacados;
+use App\Entities\soffem\Destacados;
 use App\Http\Repositories\BaseRepo;
 
 class DestacadosRepo extends BaseRepo {

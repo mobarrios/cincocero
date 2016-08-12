@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Horarios;
+use App\Entities\soffem\Horarios;
 use App\Http\Repositories\BaseRepo;
 
 class HorariosRepo extends BaseRepo {

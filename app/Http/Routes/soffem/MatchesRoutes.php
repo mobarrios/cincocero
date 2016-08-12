@@ -1,7 +1,7 @@
 <?php
 
 $module = 'matches';
-$controller = '\App\Http\Controllers\tfc\MatchesController';
+$controller = '\App\Http\Controllers\soffem\MatchesController';
 
 Route::get('list'.$module,           ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module,'uses'=> $controller.'@getIndex']);
 Route::get('edit'.$module.'/{id?}/{fases?}',   ['middleware'=>'roles','data'=> $module.'-edit' ,'as'=> $module.'GetEdit','uses'=> $controller.'@getEdit']);
