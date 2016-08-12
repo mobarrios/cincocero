@@ -1353,3 +1353,24 @@ body.rtls .ibox-title h5 {
 .w50{
   width: 50px !important;
 }
+
+
+.red-card:before{
+  color: red !important;
+  border-radius: 50%;
+  width: 25px !important;
+  height: 25px;
+  border: 1px solid #8e8e8a;
+  /*display: block;*/
+  padding-top: 5px;
+}
+
+.yellow-card:before{
+  color: yellow !important;
+  border-radius: 50%;
+  width: 25px !important;
+  height: 25px;
+  background-color: #8e8e8a;
+  /*display: block;*/
+  padding-top: 5px;
+}

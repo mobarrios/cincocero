@@ -3,6 +3,7 @@
 @section('css')
     <link href="css/slick.css" rel="stylesheet">
     <link href="css/slick-theme.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -105,24 +106,174 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>Fecha</th>
-                        <th></th>
-                        <th></th>
-                        <th>{!! $i !!}</th>
+                        <th>Fecha {!! $i !!}</th>
+                        <th colspan="2" class="text-center">12-08-2016</th>
+                        <th>16hs</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>12</td>
+                            <td>Equipo 1</td>
                             <td>5</td>
                             <td>5</td>
-                            <td>5</td>
+                            <td>Equipo 2</td>
                         </tr>
                     </tbody>
+                    <tfooter>
+                        <tr>
+                            <td colspan="4" class="pt-sm">
+                                <p class="text-center">Cancha 8 - <a href="">Sede San Juan</a></p>
+                            </td>
+                        </tr>
+                    </tfooter>
                 </table>
             </div>
         </div>
         @endfor
+
+
+        {{--Jugadores destacados--}}
+        <div class="row m-b-lg">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1 class="mb-0"><span class="navy">Destacados de la fecha</span></h1>
+                {{--<p>Primera división</p>--}}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <h1>Jugadores destacados</h1>
+            <div class="col-xs-4">
+                <img src="img/avatar1.jpg" alt="" class="img-responsive">
+            </div>
+            <div class="col-xs-8">
+                <h3><b>Nombre jugador</b></h3>
+                <p class="mt0">Equipo</p>
+
+                <h4>Observaciones</h4>
+                <p>Observaciones del jugador</p>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <h1>Equipo destacado</h1>
+            <div class="col-xs-4">
+                <img src="img/avatar1.jpg" alt="" class="img-responsive">
+            </div>
+            <div class="col-xs-8">
+                <h3><b>Nombre equipo</b></h3>
+
+                <h4>Nota</h4>
+                <p>Observaciones del equipo</p>
+            </div>
+        </div>
+
+        {{--Goleadores--}}
+        <div class="row m-b-lg">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1 class="mb-0"><span class="navy">Goleadores</span></h1>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Jugador</th>
+                        <th>Equipo</th>
+                        <th>Goles</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for($i = 9;$i > 0; $i--)
+                        <tr>
+                            <td>Nombre Jugador</td>
+                            <td>Equipo</td>
+                            <td>{!! $i !!} goles</td>
+                        </tr>
+                    @endfor
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        {{--Fair Play--}}
+        <div class="row m-b-lg">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1 class="mb-0"><span class="navy">Fair Play</span></h1>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Equipo</th>
+                        <th><i class="icon icon-cards yellow-card"></i></th>
+                        <th><i class="icon icon-cards red-card"></i></th>
+                        <th>pts</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for($i = 1;$i < 10; $i++)
+                        <tr>
+                            <td>{!! $i !!}</td>
+                            <td>Nombre equipo</td>
+                            <td>{!! $i !!}</td>
+                            <td>0</td>
+                            <td>33</td>
+                        </tr>
+                    @endfor
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        {{--Sanciones--}}
+        <div class="row m-b-lg">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1 class="mb-0"><span class="navy">Sanciones</span></h1>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Desde fecha</th>
+                        <th>Hasta fecha</th>
+                        <th>Equipo</th>
+                        <th>Jugador</th>
+                        <th>Motivo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for($i = 1;$i < 10; $i++)
+                        <tr>
+                            <td>{!! $i !!}</td>
+                            <td>9</td>
+                            <td>Nombre equipo</td>
+                            <td>Nombre jugador</td>
+                            <td>Motivo de la sanción</td>
+                        </tr>
+                    @endfor
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
 
 
 
