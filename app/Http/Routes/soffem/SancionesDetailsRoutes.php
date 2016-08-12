@@ -1,7 +1,7 @@
 <?php
 
 $module = 'sancionesDetails';
-$controller = '\App\Http\Controllers\tfc\SancionesDetailsController';
+$controller = '\App\Http\Controllers\soffem\SancionesDetailsController';
 
 Route::get('list'.$module,           ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module,'uses'=> $controller.'@getIndex']);
 Route::get('edit'.$module.'/{id}',   ['middleware'=>'roles','data'=> $module.'-edit' ,'as'=> $module.'GetEdit','uses'=> $controller.'@getEdit']);

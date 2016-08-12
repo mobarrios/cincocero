@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\News;
+use App\Entities\soffem\News;
 use App\Http\Repositories\BaseRepo;
 
 class NewsRepo extends BaseRepo {

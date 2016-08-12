@@ -1,7 +1,7 @@
 <?php
 
 $module = 'categories';
-$controller = '\App\Http\Controllers\tfc\CategoriesController';
+$controller = '\App\Http\Controllers\soffem\CategoriesController';
 
 Route::get('list'.$module,           ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module,'uses'=> $controller.'@getIndex']);
 Route::get('edit'.$module.'/{id}',   ['middleware'=>'roles','data'=> $module.'-edit' ,'as'=> $module.'GetEdit','uses'=> $controller.'@getEdit']);

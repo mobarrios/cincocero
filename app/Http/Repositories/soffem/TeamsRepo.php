@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Teams;
+use App\Entities\soffem\Teams;
 use App\Http\Repositories\BaseRepo;
 
 class TeamsRepo extends BaseRepo {

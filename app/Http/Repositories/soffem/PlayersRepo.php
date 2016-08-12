@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Players;
-use App\Entities\tfc\Teams;
+use App\Entities\soffem\Players;
+use App\Entities\soffem\Teams;
 use App\Http\Repositories\BaseRepo;
 
 class PlayersRepo extends BaseRepo {

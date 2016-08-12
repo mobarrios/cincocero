@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Seasons;
+use App\Entities\soffem\Seasons;
 use App\Http\Repositories\BaseRepo;
 
 class SeasonsRepo extends BaseRepo {

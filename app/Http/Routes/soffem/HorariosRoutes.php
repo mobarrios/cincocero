@@ -1,7 +1,7 @@
 <?php
 
 $module = 'horarios';
-$controller = '\App\Http\Controllers\tfc\HorariosController';
+$controller = '\App\Http\Controllers\soffem\HorariosController';
 
 Route::get('list'.$module,           ['middleware'=>'roles','data'=> $module.'-list' ,'as'=> $module,'uses'=> $controller.'@getIndex']);
 Route::get('edit'.$module.'/{id}',   ['middleware'=>'roles','data'=> $module.'-edit' ,'as'=> $module.'GetEdit','uses'=> $controller.'@getEdit']);

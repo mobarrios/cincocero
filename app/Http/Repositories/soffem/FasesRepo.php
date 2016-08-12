@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Fases;
+use App\Entities\soffem\Fases;
 use App\Http\Repositories\BaseRepo;
 
 use App\Helpers\FixtureHelper;

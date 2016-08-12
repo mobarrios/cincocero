@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Repositories\tfc;
+namespace App\Http\Repositories\soffem;
 
-use App\Entities\tfc\Galleries;
-use App\Entities\tfc\News;
+use App\Entities\soffem\Galleries;
+use App\Entities\soffem\News;
 use App\Http\Repositories\BaseRepo;
 
 class GalleriesRepo extends BaseRepo {
