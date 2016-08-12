@@ -449,4 +449,12 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
         return view('soffem.web.fases');
     }
 
+    public function equiposDetail(){
+        return view('soffem.web.equipos');
+    }
+
+    public function jugadoresDetail(){
+        return view('soffem.web.jugadores');
+    }
+
 }

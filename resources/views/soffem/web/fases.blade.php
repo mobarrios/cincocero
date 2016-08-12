@@ -22,16 +22,18 @@
         <div class="col-xs-12">
             <div class="slick_demo_2">
                 @for($i = 1;$i < 10; $i++)
-                    <div>
-                        <div class="ibox-content" style="background-color:whitesmoke">
-                            <div class="thumbnail h374">
-                                <img src="img/avatar{!! $i !!}.jpg" alt="" class="img-responsive">
-                                <div class="caption p0">
-                                    <h4 class="text-center mt-0 fs15 text-primary">Equipo</h4>
+                    <a href="{!! route('equiposDetail') !!}">
+                        <div>
+                            <div class="ibox-content" style="background-color:whitesmoke">
+                                <div class="thumbnail h374">
+                                    <img src="img/avatar{!! $i !!}.jpg" alt="" class="img-responsive">
+                                    <div class="caption p0">
+                                        <h4 class="text-center mt-0 fs15 text-primary">Equipo</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endfor
                 <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button>
             </div>

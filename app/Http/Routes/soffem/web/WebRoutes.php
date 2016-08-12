@@ -12,6 +12,19 @@ Route::get('fasesDetalle',[
 ]);
 
 
+Route::get('equiposDetail',[
+    'as' => 'equiposDetail',
+    'uses' => 'soffem\WebController@equiposDetail'
+]);
+
+
+
+Route::get('jugadoresDetail',[
+    'as' => 'jugadoresDetail',
+    'uses' => 'soffem\WebController@jugadoresDetail'
+]);
+
+
 
 
 
