@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html ng-app lang="es">
 <base href="{{asset('')}}">
 
 <head>
@@ -9,6 +9,8 @@
     <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
     <title>{nc} nav_coder</title>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <!-- =============== VENDOR STYLES ===============-->
     <!-- FONT AWESOME-->
     <link rel="stylesheet" href="assets/angle/vendor/fontawesome/css/font-awesome.min.css">
@@ -140,9 +142,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
 
 
+
 @yield('js')
 <script>
-
 
 
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));

@@ -104,6 +104,10 @@
                                 <a class="del btn btn-sm btn-default" href="{{route($routeDel ,$model->id)}}">
                                     <i class="fa fa-trash"></i>
                                 </a>
+
+                                <a class="btn btn-sm btn-default" href="{{route('budgetsGetNew' ,$model->id)}}">
+                                    <i class="fa fa-edit"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

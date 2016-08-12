@@ -35,11 +35,8 @@ class webController extends Controller {
         $this->brands= $brands;
         $this->publications = $publications;
         $this->branches = $branches;
-    }
 
-
-    public function index(){
-
+        //genera visitas
         $token = Visits::where('token',Session::get('_token'))->get();
 
         if($token->count() == 0){
@@ -50,15 +47,11 @@ class webController extends Controller {
 
         }
 
+    }
 
-        /*
-        if(!Session::has('visita')){
-            Session::put('visita',1);
-            $data['description']  = Session::get('visita');
-            Visits::create($data);
-        }
-*/
 
+    public function index(){
+        
         $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
 
         return view('motonet/web/index')->with($this->data);
