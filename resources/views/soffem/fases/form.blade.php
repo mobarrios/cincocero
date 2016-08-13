@@ -95,39 +95,7 @@
         {!! Form::close()!!}
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Seleccionar Equipo</h4>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table table striped">
-                            <thead>
-                                <th>Equipo</th>
-                                <th></th>
-                            </thead>
 
-                            @foreach(\App\Entities\tfc\Teams::all() as $team)
-                                  @if(isset($ft))
-                                       @if(!in_array($team->id,$ft))
-                                        <tr>
-                                            <td>{{$team->name}}</td>
-                                            <td>
-                                                <a data-old="" data-new="{{$team->id}}" class="nuevo_equipo btn btn-xs btn-default" ><i class="fa fa-check"></i></a>
-                                            </td>
-                                        </tr>
-                                        @endif
-                                @endif
-                            @endforeach
-                        </table>
-                    </div>
-                    <input type="hidden" id="new_form" value="">
-                </div>
-            </div>
-        </div>
     @endsection
 
     @section('js')

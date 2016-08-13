@@ -13,4 +13,9 @@ class Categories extends Entity{
     {
         return $this->hasMany(Tournaments::getClass());
     }
+
+    public function Teams()
+    {
+        return $this->hasMany(Teams::getClass());
+    }
 }

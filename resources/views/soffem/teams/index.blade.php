@@ -15,6 +15,7 @@
                 <th class="no-sort" style="width: 1%;">#</th>
 
                 <th>Imagen</th>
+                <th>Categoria</th>
                 <th>Equipo</th>
                 <th>Password</th>
                 <th>Estado</th>
@@ -37,6 +38,7 @@
             @foreach($models as $model)
                 <tr>
                     <td>{{$model->id}}</td>
+
                     <td style="width: 15%;">
                         @if($model->Images->count() > 0)
                             <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
@@ -46,6 +48,8 @@
                             <i class='fa fa-camera' style="font-size:50px;text-align:center;width: 100%;color: rgb(174, 174, 174);"></i>
                         @endif
                     </td>
+
+                    <td>{{$model->categories->name}}</td>
 
                     <td>
                         {{$model->name}}

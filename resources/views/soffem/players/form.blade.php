@@ -10,7 +10,7 @@
 
 
         @if(\Illuminate\Support\Facades\Session::has('teams_id'))
-            <label><h3>{{\App\Entities\tfc\Teams::find(Session::get('teams_id'))->name}}</h3></label>
+            <label><h3>{{\App\Entities\soffem\Teams::find(Session::get('teams_id'))->name}}</h3></label>
             {!!Form::hidden('teams_id',Session::get('teams_id'))!!}
 
             <h5>Administrador  {!! Form::checkbox('admin')!!} </h5>

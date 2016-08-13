@@ -20,7 +20,7 @@ class CreateCategories extends Migration {
 
 			$table->string('name');
 			$table->string('color_top');
-			$table->string('colo_bottom');
+			$table->string('color_bottom');
 		
 
 

@@ -7,7 +7,7 @@ class Teams extends Entity{
 
     protected $table = 'teams';
 
-    protected $fillable = ['name','password','status'];
+    protected $fillable = ['name','password','status','categories_id'];
 
 
     public function Fases()
@@ -48,6 +48,10 @@ class Teams extends Entity{
     public function FasesTeams()
     {
         return $this->hasMany(FasesTeams::getClass());
+    }
+
+    public function Categories(){
+        return $this->belongsTo(Categories::getClass());
     }
 
 

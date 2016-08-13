@@ -43,7 +43,7 @@ class FormBuilder extends \Collective\Html\FormBuilder {
 
     public function selectCustom($name = null , $label = null, $entity = null)
     {
-        $input = parent::select($name,['0'=>'Seleccionar'] + $entity ,null,$this->inputClass);
+        $input = parent::select($name,[''=>'Seleccionar'] + $entity ,null,$this->inputClass);
 
         return $this->buildDiv( $label, $input);
     }
