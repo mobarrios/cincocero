@@ -24,13 +24,4 @@ Route::get('equiposDetail',[
 
 
 
-Route::get('jugadoresDetail',[
-    'as' => 'jugadoresDetail',
-    'uses' => 'soffem\WebController@jugadoresDetail'
-]);
-
-
-
-
-
 
