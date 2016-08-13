@@ -23,32 +23,22 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-md-8 col-md-offset-2">
-            <div class="ibox float-e-margins">
 
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Jugador</th>
-                                <th>Amarillas</th>
-                                <th>Rojas</th>
-                                <th>Goles</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @for($i = 1;$i < 10; $i++)
-                            <tr>
-                                <td><a href="{!! route('jugadoresDetail') !!}" class="link-default">Jugador</a></td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>{!! $i !!}</td>
-                            </tr>
-                        @endfor
-                        </tbody>
-                    </table>
+        @for($i = 1;$i < 10; $i++)
+            <div class="col-xs-12 col-md-4">
+                <div class="span3 well">
+                    <center>
+                        <div class="escudo3">
+                            <img src="img/avatar{!! $i !!}.jpg" alt="" width="140" height="140" class="img-circle">
+                        </div>
+                        <h3 class="m-b-none">Joe Sixpack</h3>
+                        <em>Manuel Dream Team</em>
+                        <p class="m-t-sm">DNI: 27.153.155<br></p>
+                    </center>
 
+                </div>
             </div>
-        </div>
+        @endfor
 
     </section>
 @endsection
