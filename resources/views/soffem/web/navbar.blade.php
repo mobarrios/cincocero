@@ -8,12 +8,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand bg-white" href="index.html"> <img src="img/SOFFEM.png"> </a>
+                <a class="navbar-brand bg-white" href="index"> <img src="img/SOFFEM.png"> </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="page-scroll" href="#page-top">Home</a></li>
-                    <li><a class="page-scroll" href="#novedades">Novedades</a></li>
+                    <li><a class="page-scroll" href="{!! route('webIndex') !!}#page-top">Home</a></li>
+                    <li><a class="page-scroll" href="{!! route('webIndex') !!}#novedades">Novedades</a></li>
 
 
                     <li class="dropdown menu-dropdown">
@@ -43,10 +43,10 @@
                     </li>
 
 
-                    <li><a class="page-scroll" href="#sedes">Sedes</a></li>
+                    <li><a class="page-scroll" href="{!! route('webIndex') !!}#sedes">Sedes</a></li>
                     <li><a class="page-scroll" href="#historia">Historia</a></li>
-                    <li><a class="page-scroll" href="#reglamento">Reglamento</a></li>
-                    <li><a class="page-scroll" href="#contacto">Contacto</a></li>
+                    <li><a class="page-scroll" href="{!! route('webIndex') !!}#reglamento">Reglamento</a></li>
+                    <li><a class="page-scroll" href="{!! route('webIndex') !!}#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>

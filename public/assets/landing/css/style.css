@@ -1059,7 +1059,7 @@ section.comments {
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
-  background-color: #F5F5F6;
+  background-color: #56b4ff;
   border-bottom-width: 1px;
 }
 .table-bordered > thead > tr > th,
@@ -1068,11 +1068,12 @@ section.comments {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #e7e7e7;
+  border: 1px solid #EBEBEB;
 }
 .table > thead > tr > th {
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #5098dd;
   vertical-align: bottom;
+  color: white;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -1080,7 +1081,7 @@ section.comments {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  border-top: 1px solid #e7eaec;
+  border-top: 1px solid #5098dd;
   line-height: 1.42857;
   padding: 8px;
   vertical-align: top;
@@ -1373,4 +1374,38 @@ body.rtls .ibox-title h5 {
   background-color: #8e8e8a;
   /*display: block;*/
   padding-top: 5px;
+}
+
+.hover .thumbnail:hover{
+  box-shadow: rgba(32, 76, 111, 0.62) 1px 2px 10px 0px;
+  -moz-box-shadow: rgba(32, 76, 111, 0.62) 1px 2px 10px 0px;
+  -webkit-box-shadow: rgba(32, 76, 111, 0.62) 1px 2px 10px 0px;
+}
+
+.hover:hover{
+  text-decoration: none;
+
+}
+
+.escudo{
+  display: inline-block;
+  border-radius: 50%;
+  border:1px solid #3d4d5d;
+  box-shadow: rgb(0, 0, 0) 1px 2px 10px 0px;
+  -moz-box-shadow: rgb(0, 0, 0) 1px 2px 10px 0px;
+  -webkit-box-shadow: rgb(0, 0, 0) 1px 2px 10px 0px;
+}
+
+.escudo img{
+  border-radius: 50%;
+}
+
+.link-default{
+  color: rgb(150, 150, 150);
+}
+
+.link-default:hover{
+  color: rgb(203, 203, 203);
+  text-decoration: none;
+
 }

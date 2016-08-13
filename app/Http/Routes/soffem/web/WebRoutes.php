@@ -6,6 +6,11 @@ Route::get('index',function(){
 });
 
 
+Route::get('index',[
+    'as' => 'webIndex',
+    'uses' => 'soffem\WebController@index'
+]);
+
 Route::get('fasesDetalle',[
     'as' => 'fasesDetalle',
     'uses' => 'soffem\WebController@fasesDetalle'

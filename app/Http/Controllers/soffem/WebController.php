@@ -41,12 +41,12 @@ class WebController extends Controller {
 
     }
 
-    public function Index()
-    {
-        $data['categories'] = Categories::all();
-
-        return view('tfc/web/index')->with($data);
-    }
+//    public function Index()
+//    {
+//        $data['categories'] = Categories::all();
+//
+//        return view('tfc/web/index')->with($data);
+//    }
 
     public function Reglamento()
     {
@@ -445,8 +445,13 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
 
 
-    public function fasesDetalle(){
+    public function index(){
         
+        return view('soffem.web.home');
+    }
+
+    public function fasesDetalle(){
+
         return view('soffem.web.fases');
     }
 

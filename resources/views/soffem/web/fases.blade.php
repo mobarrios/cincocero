@@ -22,7 +22,7 @@
         <div class="col-xs-12">
             <div class="slick_demo_2">
                 @for($i = 1;$i < 10; $i++)
-                    <a href="{!! route('equiposDetail') !!}">
+                    <a href="{!! route('equiposDetail') !!}" class="hover">
                         <div>
                             <div class="ibox-content" style="background-color:whitesmoke">
                                 <div class="thumbnail h374">
