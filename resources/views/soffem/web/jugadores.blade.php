@@ -17,28 +17,41 @@
                 <div class="center-block escudo">
                     <img src="img/avatar1.jpg" alt="" class="img-responsive">
                 </div>
+                <div class="center-block escudo2">
+                    <img src="img/avatar2.jpg" alt="" class="img-responsive">
+                </div>
                 <div class="navy-line m-t-md"></div>
-                <h1 class="mb-0"><span class="navy">MANUEL DREAM TEAM</span></h1>
-                {{--<p>Primera división</p>--}}
+                <h1 class="mb-0"><span class="navy">BARRIOS MANUEL</span></h1>
+                <p class="mt-0">MANUEL DREAM TEAM</P>
             </div>
         </div>
 
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="ibox float-e-margins">
 
-        @for($i = 1;$i < 10; $i++)
-            <div class="col-xs-12 col-md-4">
-                <div class="span3 well">
-                    <center>
-                        <div class="escudo3">
-                            <img src="img/avatar{!! $i !!}.jpg" alt="" width="140" height="140" class="img-circle">
-                        </div>
-                        <h3 class="m-b-none">Joe Sixpack</h3>
-                        <em>Manuel Dream Team</em>
-                        <p class="m-t-sm">DNI: 27.153.155<br></p>
-                    </center>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Jugador</th>
+                                <th>Amarillas</th>
+                                <th>Rojas</th>
+                                <th>Goles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @for($i = 1;$i < 10; $i++)
+                            <tr>
+                                <td><a href="{!! route('jugadoresDetail') !!}" class="link-default">Jugador</a></td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>{!! $i !!}</td>
+                            </tr>
+                        @endfor
+                        </tbody>
+                    </table>
 
-                </div>
             </div>
-        @endfor
+        </div>
 
     </section>
 @endsection
