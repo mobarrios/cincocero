@@ -18,6 +18,16 @@
     <div class="row">
         <section id="pinBoot">
 
+            @foreach($novedades as $novedad)
+                <article class="white-panel"><img src="{{$novedad->images->first()->image}}" alt="">
+                    <h4><a href="#">{{$novedad->title}}</a></h4>
+                    <p>
+                    {!! $novedad->detail !!}
+                    <hr>
+                    <a href="#" class="btn btn-block btn-primary">Ver</a>
+                </article>
+            @endforeach
+
             <article class="white-panel"><img src="img/novedades1.jpg" alt="">
                 <h4><a href="#">Ultimo partido</a></h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
