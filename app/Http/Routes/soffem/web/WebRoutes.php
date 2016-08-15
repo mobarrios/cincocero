@@ -22,11 +22,13 @@ Route::get('equiposDetail',[
     'uses' => 'soffem\WebController@equiposDetail'
 ]);
 
-
-Route::get('reglamento',[
-    'as' => 'reglamento',
-    'uses' => 'soffem\WebController@Reglamento'
+Route::get('reglamentoWeb',[
+    'as' => 'reglamentoWeb',
+    'uses' => 'soffem\WebController@reglamentoWeb'
 ]);
+
+
+
 
 
 

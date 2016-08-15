@@ -6,8 +6,8 @@
     <link href="assets/landing/css/fontello.css" rel="stylesheet">
 @endsection
 
-@section('content')
 
+@section('content')
 
     <section  class="container features">
 
@@ -21,6 +21,7 @@
 <strong>A) PRIMERA CATEGORÍA</strong>
 <br>
 1. Participantes
+
 
 Se deja establecido que en el Torneos de Futsal Femenino 2016 (4ta.-, 3ra. y 1ra. División), participarán los equipos de los siguientes clubes:
         <br>
@@ -170,6 +171,7 @@ Los clubes o equipos deberán inscribir un mínimo de cinco (8) jugadoras en Cua
 12. Planillas de partidos
         <br>
 12.1 Cada Club o equipo debe presentarse con la planilla de jugadoras impresa desde la pagina www.soffem.com donde estarán las jugadoras habilitadas, las cuales firmaran con DNI en mano frente la mesa de control, previo al partido.
+<<<<<<< HEAD
         <br>
 12.2 De no estar en la lista, no podrá participar del encuentro.
         <br>
@@ -308,4 +310,9 @@ Los clubes o equipos deberán inscribir un mínimo de cinco (8) jugadoras en Cua
         //        })();
 
     </script>
+=======
+
+12.2 De no estar en la lista, no podrá participar del encuentro.
+
+>>>>>>> 93e0bf5565a3cb38b8ffcd0c0eb561f62c4fe873
 @endsection
