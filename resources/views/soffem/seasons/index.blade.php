@@ -26,13 +26,13 @@
             <div style="" aria-expanded="true" id="{{$season->id}}" class="panel-collapse collapse in">
                 <div class="panel-body">
 
-                @foreach(\App\Entities\tfc\Categories::all() as $cat)
+                @foreach(\App\Entities\soffem\Categories::all() as $cat)
 
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <h4 class="text-center">Categoria : {{$cat->name}}</h4>
 
-                                    @foreach(\App\Entities\tfc\Tournaments::where('seasons_id',$season->id)->where('categories_id',$cat->id)->get() as $torneo )
+                                    @foreach(\App\Entities\soffem\Tournaments::where('seasons_id',$season->id)->where('categories_id',$cat->id)->get() as $torneo )
 
                                         <table class="table table-condensed table-bordered">
                                             <th colspan="3"> {{$torneo->name}}

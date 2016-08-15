@@ -1,9 +1,9 @@
 @extends('soffem/web/template')
 
 @section('css')
-    <link href="css/slick.css" rel="stylesheet">
-    <link href="css/slick-theme.css" rel="stylesheet">
-    <link href="css/fontello.css" rel="stylesheet">
+    <link href="assets/landing/css/slick.css" rel="stylesheet">
+    <link href="assets/landing/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/landing/css/fontello.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -43,7 +43,7 @@
     </section>
 @endsection
 @section('js')
-    <script src="js/slick.min.js"></script>
+    <script src="assets/landing/js/slick.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.slick_demo_2').slick({

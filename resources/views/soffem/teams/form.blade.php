@@ -10,6 +10,8 @@
 
         {!! Form::textCustom('name', 'Nombre Equipo')!!}
         {!! Form::selectCustom('status','Estado',$status) !!}
+        {!! Form::selectCustom('categories_id','Categoria',$categories) !!}
+
 
         {!! Form::imageCustom('image','Escudo')!!}
         <hr>

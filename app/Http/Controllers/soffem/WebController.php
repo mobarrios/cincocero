@@ -3,32 +3,32 @@
 namespace App\Http\Controllers\soffem;
 
 use App\Entities\Images;
-use App\Entities\tfc\Categories;
-use App\Entities\tfc\Destacados;
-use App\Entities\tfc\DestacadosCategories;
-use App\Entities\tfc\Fases;
-use App\Entities\tfc\FasesWeek;
-use App\Entities\tfc\Matches;
-use App\Entities\tfc\MatchesDetails;
-use App\Entities\tfc\News;
-use App\Entities\tfc\Galleries;
-use App\Entities\tfc\Players;
-use App\Entities\tfc\Sanciones;
-use App\Entities\tfc\Sedes;
-use App\Entities\tfc\Tablas;
-use App\Entities\tfc\Teams;
-use App\Entities\tfc\Tournaments;
+use App\Entities\soffem\Categories;
+use App\Entities\soffem\Destacados;
+use App\Entities\soffem\DestacadosCategories;
+use App\Entities\soffem\Fases;
+use App\Entities\soffem\FasesWeek;
+use App\Entities\soffem\Matches;
+use App\Entities\soffem\MatchesDetails;
+use App\Entities\soffem\News;
+use App\Entities\soffem\Galleries;
+use App\Entities\soffem\Players;
+use App\Entities\soffem\Sanciones;
+use App\Entities\soffem\Sedes;
+use App\Entities\soffem\Tablas;
+use App\Entities\soffem\Teams;
+use App\Entities\soffem\Tournaments;
 use App\Helpers\ImagesHelper;
 use App\Http\Controllers\Controller;
-use App\Http\Repositories\tfc\CategoriesRepo;
-use App\Http\Repositories\tfc\TournamentsRepo;
+use App\Http\Repositories\soffem\CategoriesRepo;
+use App\Http\Repositories\soffem\TournamentsRepo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Repositories\tfc\PlayersRepo;
+use App\Http\Repositories\soffem\PlayersRepo;
 
 class WebController extends Controller {
 
@@ -446,8 +446,9 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
 
     public function index(){
-        
-        return view('soffem.web.home');
+
+        $data['novedades'] = News::all();
+        return view('soffem.web.home')->with($data);
     }
 
     public function fasesDetalle(){

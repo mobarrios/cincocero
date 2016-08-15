@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\soffem;
 
+use App\Entities\soffem\Categories;
 use App\Entities\soffem\Teams;
 use App\Helpers\RandomHelper;
 use App\Http\Repositories\soffem\TeamsRepo as Repo;
@@ -46,7 +47,7 @@ class TeamsController extends Controller {
         //selects
         $this->data['status']       = ['1'=>'activo','2'=>'inactivo'];
 
-        //$this->data['roomsTypes']      = RoomsTypes::lists('name','id');
+        $this->data['categories']      = Categories::lists('name','id');
         //$this->data['currency']        = Currency::lists('name','id');
 
         //data for validation
@@ -67,6 +68,7 @@ class TeamsController extends Controller {
     // post new item
     public function postNew(Request $request, ImagesHelper $image)
     {
+
         $random = new RandomHelper();
         $text   =  $random->RandomText(7, time().$request['name']);
 

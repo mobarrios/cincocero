@@ -8,6 +8,7 @@ use App\Entities\soffem\FasesWeek;
 use App\Entities\soffem\Matches;
 use App\Entities\soffem\Tablas;
 use App\Entities\soffem\Teams;
+use App\Entities\soffem\Tournaments;
 use App\Helpers\FixtureHelper;
 use App\Http\Repositories\soffem\FasesRepo as Repo;
 use App\Http\Controllers\Controller;
@@ -78,6 +79,12 @@ class FasesController extends Controller {
     public function getNew($id = null)
     {
         $this->data['tournaments_id'] = $id;
+        $tournament   = Tournaments::find($id);
+
+        $this->data['teams']          = Teams::where('status',1)
+                                            ->where('categories_id',$tournament->categories_id)
+                                            ->orderBy('name','ASC')->get();
+
 
         return view($this->form)->with($this->data);
     }

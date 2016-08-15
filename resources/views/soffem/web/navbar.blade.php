@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand bg-white" href="index"> <img src="img/SOFFEM.png"> </a>
+                <a class="navbar-brand bg-white" href="index"> <img src="assets/landing/img/SOFFEM.png"> </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">

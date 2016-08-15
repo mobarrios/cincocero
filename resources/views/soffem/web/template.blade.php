@@ -9,20 +9,21 @@
 
     <title></title>
 
-    <base href="{{'assets/landing/'}}">
+
+    <base href="{{asset('')}}">
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="assets/landing/css/bootstrap.css" rel="stylesheet">
 
     <!-- Animation CSS -->
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/landing/css/animate.min.css" rel="stylesheet">
+    <link href="assets/landing/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="assets/landing/css/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="assets/landing/css/grid.css">
 
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="assets/landing/css/menu.css">
 
     @yield('css')
 </head>
@@ -33,7 +34,7 @@
 @yield('slider')
 
 <div style="margin-top: 0px;" class="gray-section text-center">
-    <img src="img/LogoHurlingham.png">
+    <img src="assets/landing/img/LogoHurlingham.png">
 </div>
 <br>
 
@@ -49,22 +50,22 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-2">
-            <img class="img-thumbnail" src="img/jack.jpg">
+            <img class="img-thumbnail" src="assets/landing/img/jack.jpg">
         </div>
         <div class="col-xs-2">
-            <img class="img-thumbnail" src="img/corsini.jpg">
+            <img class="img-thumbnail" src="assets/landing/img/corsini.jpg">
         </div>
         <div class="col-xs-2">
-            <img class="img-thumbnail" src="img/jack.jpg">
+            <img class="img-thumbnail" src="assets/landing/img/jack.jpg">
         </div>
         <div class="col-xs-2">
-            <img class="img-thumbnail" src="img/corsini.jpg">
+            <img class="img-thumbnail" src="assets/landing/img/corsini.jpg">
         </div>
         <div class="col-xs-2">
-            <img class="img-thumbnail" src="img/jack.jpg">
+            <img class="img-thumbnail" src="assets/landing/img/jack.jpg">
         </div>
         <div class="col-xs-2">
-            <img class="img-thumbnail" src="img/corsini.jpg">
+            <img class="img-thumbnail" src="assets/landing/img/corsini.jpg">
         </div>
     </div>
 </div>
@@ -105,15 +106,15 @@
 </section>
 
 <!-- Mainly scripts -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/landing/js/jquery-2.1.1.js"></script>
+<script src="assets/landing/js/bootstrap.min.js"></script>
+<script src="assets/landing/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="assets/landing/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="js/inspinia.js"></script>
-<script src="js/plugins/pace/pace.min.js"></script>
-<script src="js/plugins/wow/wow.min.js"></script>
+<script src="assets/landing/js/inspinia.js"></script>
+<script src="assets/landing/js/plugins/pace/pace.min.js"></script>
+<script src="assets/landing/js/plugins/wow/wow.min.js"></script>
 
 <script>
 
@@ -131,7 +132,7 @@
 
 @yield('js')
 
-<script src="js/grid.js"></script>
+<script src="assets/landing/js/grid.js"></script>
 
 
 </body>

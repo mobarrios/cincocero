@@ -24,6 +24,7 @@ class TeamsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
+            'categories_id'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:6144',
         ];
     }
@@ -32,6 +33,7 @@ class TeamsRepo extends BaseRepo {
     {
         return [
             'name'   => 'required',
+            'categories_id'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:6144'
         ];
     }

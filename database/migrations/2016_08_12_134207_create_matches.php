@@ -39,7 +39,7 @@ class CreateMatches extends Migration {
 			$table->integer('away_teams_id')->unsigned();
 			$table->foreign('away_teams_id')->references('id')->on('teams');
 
-			$table->integer('canchas_id')->unsigned();
+			$table->integer('canchas_id')->unsigned()->nulleable();
 			$table->foreign('canchas_id')->references('id')->on('canchas');
 		});
 	}
