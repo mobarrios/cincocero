@@ -55,18 +55,7 @@
         <div class="col-xs-2">
             <img class="img-thumbnail" src="assets/landing/img/corsini.jpg">
         </div>
-        <div class="col-xs-2">
-            <img class="img-thumbnail" src="assets/landing/img/jack.jpg">
-        </div>
-        <div class="col-xs-2">
-            <img class="img-thumbnail" src="assets/landing/img/corsini.jpg">
-        </div>
-        <div class="col-xs-2">
-            <img class="img-thumbnail" src="assets/landing/img/jack.jpg">
-        </div>
-        <div class="col-xs-2">
-            <img class="img-thumbnail" src="assets/landing/img/corsini.jpg">
-        </div>
+
     </div>
 </div>
 

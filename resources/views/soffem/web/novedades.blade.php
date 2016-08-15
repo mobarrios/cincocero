@@ -27,7 +27,7 @@
                     <a href="#" class="btn btn-block btn-primary">Ver</a>
                 </article>
             @endforeach
-            
+
 
         </section>
 

@@ -50,7 +50,7 @@ class WebController extends Controller {
 
     public function Reglamento()
     {
-        return view('tfc/web/reglamento');
+        return view('soffem/web/reglamento');
     }
 
     public function Noticias()
@@ -459,5 +459,6 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
     public function equiposDetail(){
         return view('soffem.web.equipos');
     }
+
 
 }
