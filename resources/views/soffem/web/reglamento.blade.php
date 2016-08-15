@@ -1,12 +1,39 @@
-S.O.F.Fem
+@extends('soffem/web/template')
 
-Superliga Oeste Futsal Femenino
+@section('content')
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="navy-line"></div>
+            <h1 class="mb-0"><span class="navy">REGLAMENTO</span></h1>
+        </div>
+    </div>
 
-CAMPEONATOS DE FUTSAL FEMENINO 2016 – REGLAMENTACIÓN
+    <div class="col-xs-12">
+        <div class="ibox">
+            <div class="ibox-title">
+                <h5>S.O.F FEM - Superliga Oeste Futsal Femenino</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><div class="scroll_content" style="overflow: hidden; width: auto; height: 200px;">
+                        <h2><b>CAMPEONATOS DE FUTSAL FEMENINO 2016 – REGLAMENTACIÓN</b></h2>
+                        <ul>
+                            <li>PRIMERA CATEGORÍA</li>
+                            <ol>
+                                <li>Participantes</li>
+                                <li>Se deja establecido que en el Torneos de Futsal Femenino 2016 (4ta.-, 3ra. y 1ra. División), participarán los equipos de los siguientes clubes:
+                                </li>
+                            </ol>
+                        </ul>
+
+                    </div><div class="slimScrollBar" style="width: 7px; position: absolute; top: 71px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 129.032px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+            </div>
+        </div>
+    </div>
+
 
 A) PRIMERA CATEGORÍA
 
-1. Participantes
+
 
 Se deja establecido que en el Torneos de Futsal Femenino 2016 (4ta.-, 3ra. y 1ra. División), participarán los equipos de los siguientes clubes:
 
@@ -157,3 +184,5 @@ Los clubes o equipos deberán inscribir un mínimo de cinco (8) jugadoras en Cua
 12.1 Cada Club o equipo debe presentarse con la planilla de jugadoras impresa desde la pagina www.soffem.com donde estarán las jugadoras habilitadas, las cuales firmaran con DNI en mano frente la mesa de control, previo al partido.
 
 12.2 De no estar en la lista, no podrá participar del encuentro.
+
+@endsection
