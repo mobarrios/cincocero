@@ -44,7 +44,7 @@
 
 
                     <li><a class="page-scroll" href="{!! route('webIndex') !!}#sedes">Sedes</a></li>
-                    <li><a class="page-scroll" href="#historia">Historia</a></li>
+                    <li><a class="page-scroll" href="{!! route('historiaWeb') !!}">Historia</a></li>
                     <li><a class="page-scroll" href="{!! route('reglamentoWeb') !!}">Reglamento</a></li>
                     <li><a class="page-scroll" href="{!! route('webIndex') !!}#contacto">Contacto</a></li>
                 </ul>

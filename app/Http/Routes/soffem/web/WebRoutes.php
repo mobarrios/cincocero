@@ -28,6 +28,12 @@ Route::get('reglamentoWeb',[
 ]);
 
 
+Route::get('historiaWeb',[
+    'as' => 'historiaWeb',
+    'uses' => 'soffem\WebController@historiaWeb'
+]);
+
+
 
 
 
