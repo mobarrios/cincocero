@@ -1,7 +1,12 @@
 <?php
 Route::group(['namespace' => 'motonet'], function() {
 
-    
+
+    Route::get('webNueva',[
+        'as' => 'indexNueva',
+        'uses' => 'webController@indexNuevo'
+    ]);
+
     Route::get('web',[
         'as' => 'index',
         'uses' => 'webController@index'

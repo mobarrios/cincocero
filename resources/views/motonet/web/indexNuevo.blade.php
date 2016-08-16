@@ -12,9 +12,9 @@
 
     <base href="{!! asset('') !!}">
     <!-- Bootstrap core CSS -->
-    <link href="assets/inspinia/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/unicase/css/bootstrap.css" rel="stylesheet">
 
-    <link href="assets/inspinia/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/unicase/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/fontello.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -22,7 +22,7 @@
     <link href="assets/css/style2.css" rel="stylesheet">
 
     <!-- Animation CSS -->
-    <link href="assets/inspinia/css/animate.css" rel="stylesheet">
+    <link href="assets/unicase/css/animate.css" rel="stylesheet">
     <!-- Finder -->
     <link href="assets/css/finder.css" rel="stylesheet">
 
@@ -50,26 +50,26 @@
 
     </style>
             <!-- Mainly scripts -->
-    <script src="assets/inspinia/js/jquery-2.1.1.js"></script>
+    <script src="assets/unicase/js/jquery-2.1.1.js"></script>
     <script src="assets/angle/js/bootstrap.js"></script>
-    <script src="assets/inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="assets/inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/unicase/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="assets/unicase/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="assets/inspinia/js/inspinia.js"></script>
-    <script src="assets/inspinia/js/plugins/pace/pace.min.js"></script>
-    <script src="assets/inspinia/js/plugins/wow/wow.min.js"></script>
+    <script src="assets/unicase/js/unicase.js"></script>
+    <script src="assets/unicase/js/plugins/pace/pace.min.js"></script>
+    <script src="assets/unicase/js/plugins/wow/wow.min.js"></script>
     <script src="assets/js/finder.js"></script>
 
-    <link href="assets/inspinia/css/plugins/slick/slick.css" rel="stylesheet">
-    <link href="assets/inspinia/css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="assets/unicase/css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="assets/unicase/css/plugins/slick/slick-theme.css" rel="stylesheet">
 
 
 </head>
 <body class="landing-page">
 <div class="navbar-wrapper">
     <div class="marca">
-        <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo-blan.png" alt="motonet" width="300px" class="img-responsive"></a>
+        <a class="navbar-brand" href="{{route('index')}}"><img src="assets/web/img/logo-blanco.png" alt="motonet" width="300px" class="img-responsive"></a>
     </div>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -316,7 +316,7 @@
 
 @yield('js')
 
-<script src="assets/inspinia/js/plugins/slick/slick.min.js"></script>
+<script src="assets/unicase/js/plugins/slick/slick.min.js"></script>
 
 <script>
         $("#inSlider2").find(".item").first().addClass('active');
