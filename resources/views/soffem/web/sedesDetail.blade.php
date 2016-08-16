@@ -13,6 +13,7 @@
             <div class="caption">
                 <h4>{!! $sede->address !!}</h4>
                 <p>Teléfono: {!! $sede->phone!!}</p>
+                <p>Dirección: {!! $sede->address!!}</p>
             </div>
         </div>
     </div>
@@ -28,7 +29,7 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=true&amp;language=es&amp;components=country:AR&amp;key=AIzaSyAOViyqbMBHjmXwuc_CZUV2dCw2i-H6780"></script>
     <script>
         $(document).ready(function () {
             $.each($(".menu-dropdown #menu li.parent-menu"),function(i,data){
