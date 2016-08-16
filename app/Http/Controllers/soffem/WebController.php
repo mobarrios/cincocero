@@ -63,12 +63,12 @@ class WebController extends Controller {
         return view('tfc/web/sedes')->with($data);
     }
 
-    public function SedeDetalle($id = null)
-    {
-        $data['sedes'] = Sedes::find($id);
-
-        return view('tfc/web/sede_detalle')->with($data);
-    }
+//    public function SedeDetalle($id = null)
+//    {
+//        $data['sedes'] = Sedes::find($id);
+//
+//        return view('tfc/web/sede_detalle')->with($data);
+//    }
 
     public function Galeria(Galleries $galeria)
     {
@@ -444,6 +444,7 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
     public function index(){
 
         $data['novedades'] = News::all();
+        $data['sedes'] = Sedes::all();
         return view('soffem.web.home')->with($data);
     }
 
@@ -464,5 +465,10 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
     public function historiaWeb(){
         return view('soffem.web.historia');
+    }
+
+    public function sedesDetail($id){
+        $data['sede'] = Sedes::find($id);
+        return view('soffem.web.sedesDetail')->with($data);
     }
 }

@@ -1,7 +1,7 @@
 <section id="novedades" class="container services">
             <div class="col-lg-12 text-center">
                 <div class="navy-line"></div>
-                <h1>Novedades</h1>
+                <h1><span class="navy">NOVEDADES</span></h1>
                 <p>Utilmas noticias destacadas de la Liga. </p>
             </div>
     {{--<div class="row">--}}

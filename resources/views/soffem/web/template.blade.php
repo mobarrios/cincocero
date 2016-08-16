@@ -43,7 +43,7 @@
 <div class="row m-b-lg">
     <div class="col-lg-12 text-center">
         <div class="navy-line"></div>
-        <h1 class="mb-0"><span class="navy">Sponsors</span></h1>
+        <h1 class="mb-0"><span class="navy">SPONSORS</span></h1>
         {{--<p>Primera división</p>--}}
     </div>
 </div>

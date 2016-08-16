@@ -33,6 +33,11 @@ Route::get('historiaWeb',[
     'uses' => 'soffem\WebController@historiaWeb'
 ]);
 
+Route::get('{id}/sedesDetail',[
+    'as' => 'sedesDetail',
+    'uses' => 'soffem\WebController@sedesDetail'
+]);
+
 
 
 

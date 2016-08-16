@@ -45,7 +45,7 @@
 @section('js')
     <script src="assets/landing/js/slick.min.js"></script>
     <script>
-        $(document).ready(function () {
+$(document).ready(function () {
             $('.slick_demo_2').slick({
                 infinite: true,
                 slidesToShow: 7,
