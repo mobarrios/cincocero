@@ -77,7 +77,7 @@
     <div class="main-header">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+                <div class="col-xs-12 col-sm-12 col-md-3 logo-holder mt-n45">
                     <!-- ============================================================= LOGO ============================================================= -->
                     <div class="logo">
                         <a href="home.html">
