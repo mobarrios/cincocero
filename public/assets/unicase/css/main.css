@@ -1039,7 +1039,7 @@ a {
   background: rgba(0, 0, 0, 0);
 }
 .main-header {
-  padding: 50px 0px 60px 0px;
+  padding: 20px 0px 0px 0px;
 }
 .main-header .logo-holder {
   margin-top: 10px;
@@ -5195,4 +5195,8 @@ a {
 }
 .body-content .sign-in-page .register-form .form-group {
   margin-bottom: 25px;
+}
+
+.mt-n45{
+  margin-top: -45px !important;
 }
