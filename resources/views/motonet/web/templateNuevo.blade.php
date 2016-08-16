@@ -29,14 +29,7 @@
 
     <!-- Demo Purpose Only. Should be removed in production -->
     <link rel="stylesheet" href="assets/unicase/css/config.css">
-
-    <link href="assets/unicase/css/green.css" rel="alternate stylesheet" title="Green color">
     <link href="assets/unicase/css/blue.css" rel="alternate stylesheet" title="Blue color">
-    <link href="assets/unicase/css/red.css" rel="alternate stylesheet" title="Red color">
-    <link href="assets/unicase/css/orange.css" rel="alternate stylesheet" title="Orange color">
-    <link href="assets/unicase/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
-    <!-- Demo Purpose Only. Should be removed in production : END -->
-
 
     <!-- Icons/Glyphs -->
     <link rel="stylesheet" href="assets/unicase/css/font-awesome.min.css">
@@ -1634,10 +1627,10 @@
                                             <i class="icon fa fa-dollar"></i>
                                         </div>
                                         <div class="col-xs-10">
-                                            <h4 class="info-box-heading green">money back</h4>
+                                            <h4 class="info-box-heading green">Precios.</h4>
                                         </div>
                                     </div>
-                                    <h6 class="text">30 Day Money Back Guarantee.</h6>
+                                    <h6 class="text">Tenemos precios inigualables.</h6>
                                 </div>
                             </div><!-- .col -->
 
@@ -1648,10 +1641,10 @@
                                             <i class="icon fa fa-truck"></i>
                                         </div>
                                         <div class="col-xs-10">
-                                            <h4 class="info-box-heading orange">free shipping</h4>
+                                            <h4 class="info-box-heading orange">Envios</h4>
                                         </div>
                                     </div>
-                                    <h6 class="text">free ship-on oder over $600.00</h6>
+                                    <h6 class="text">Envios a todo el Pais.</h6>
                                 </div>
                             </div><!-- .col -->
 
@@ -1662,10 +1655,10 @@
                                             <i class="icon fa fa-gift"></i>
                                         </div>
                                         <div class="col-xs-10">
-                                            <h4 class="info-box-heading red">Special Sale</h4>
+                                            <h4 class="info-box-heading red">Comunidad</h4>
                                         </div>
                                     </div>
-                                    <h6 class="text">All items-sale up to 20% off </h6>
+                                    <h6 class="text">Obtene beneficios Especiales</h6>
                                 </div>
                             </div><!-- .col -->
                         </div><!-- /.row -->
