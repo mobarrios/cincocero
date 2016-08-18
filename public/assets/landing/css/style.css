@@ -1445,3 +1445,7 @@ body.rtls .ibox-title h5 {
 .well p{
   color: rgb(116, 116, 116);
 }
+
+#map_canvas{
+  width:100% !important;
+}
