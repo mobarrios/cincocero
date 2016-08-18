@@ -53,7 +53,7 @@ class webController extends Controller {
 
         $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
 
-        return view('motonet/web/templateNuevo')->with($this->data);
+        return view('motonet/web/new/templateNuevo')->with($this->data);
     }
 
     public function index(){
