@@ -33,10 +33,14 @@
 
 @yield('slider')
 
-<div style="margin-top: 0px;" class="gray-section text-center">
-    <img src="assets/landing/img/LogoHurlingham.png">
-</div>
-<br>
+
+
+    <div style="margin-top: 0px;" class="gray-section text-center">
+        <img src="assets/landing/img/LogoHurlingham.png">
+    </div>
+
+
+
 
 @yield('content')
 
@@ -50,10 +54,19 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-2">
-            <img class="img-thumbnail" src="assets/landing/img/jack.jpg">
+            <img class="img-thumbnail" src="assets/landing/img/sponsor1.jpg">
         </div>
         <div class="col-xs-2">
-            <img class="img-thumbnail" src="assets/landing/img/corsini.jpg">
+            <img class="img-thumbnail" src="assets/landing/img/sponsor2.jpg">
+        </div>
+        <div class="col-xs-2">
+            <img class="img-thumbnail" src="assets/landing/img/sponsor3.jpg">
+        </div>
+        <div class="col-xs-2">
+            <img class="img-thumbnail" src="assets/landing/img/sponsor4.jpg">
+        </div>
+        <div class="col-xs-2">
+            <img class="img-thumbnail" src="assets/landing/img/sponsor5.jpg">
         </div>
 
     </div>
@@ -72,7 +85,7 @@
 
         <div class="row">
             <div class="col-lg-12 text-center">
-                <a href="mailto:test@email.com" class="btn btn-primary">Mandanos un mail</a>
+                <a href="mailto:info@soffem.com.ar" class="btn btn-primary">Mandanos un mail</a>
                 <p class="m-t-sm">
                     O seguinos en las redes
                 </p>

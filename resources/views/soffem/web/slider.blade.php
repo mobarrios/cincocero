@@ -7,8 +7,7 @@
         <div class="item active">
             <div class="container">
                 <div class="carousel-caption blank">
-                    <h1>SOFFEM.</h1>
-                    <p>SuperLiga Oeste de FutSal Femenino.</p>
+                    <h3>SuperLiga Oeste de FutSal Femenino.</h3>
                 </div>
             </div>
             <!-- Set background for slide in css -->
@@ -18,8 +17,7 @@
         <div class="item">
             <div class="container">
                 <div class="carousel-caption blank">
-                    <h1>SOFFEM.</h1>
-                    <p>SuperLiga Oeste de FutSal Femenino.</p>
+                    <h3>SuperLiga Oeste de FutSal Femenino.</h3>
                 </div>
             </div>
             <!-- Set background for slide in css -->

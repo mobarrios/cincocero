@@ -146,6 +146,7 @@
        localStorage.clear();
    });
 
+   /*
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
 
         var Notification = window.Notification || window.mozNotification || window.webkitNotification;
@@ -180,7 +181,7 @@
 
         return false;
     }
-
+*/
     tinymce.init({
         plugins: "textcolor",
         statusbar: false,

@@ -6,13 +6,13 @@
     </div>
 </div>
 
-    <section  class="container features">
+    <section id="sedes" class="container features">
         <div class="col-xs-12">
             <div class="slick_demo_2">
                 @foreach($sedes as $sede)
                     <a href="{!! route('sedesDetail',$sede->id) !!}" class="hover">
                         <div>
-                            <div class="ibox-content" style="background-color:whitesmoke">
+                            <div class="ibox-content" style="background-color:white">
                                 <div class="thumbnail h374">
                                     <img src="{!! $sede->Images->first()->image or "" !!}" alt="{!! $sede->name !!}" class="img-responsive">
                                     <div class="caption p0">
@@ -26,8 +26,6 @@
                 <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button>
             </div>
         </div>
-
-
 
     </section>
 
