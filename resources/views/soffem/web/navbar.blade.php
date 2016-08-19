@@ -47,6 +47,7 @@
                     <li><a class="page-scroll" href="{!! route('historiaWeb') !!}">Historia</a></li>
                     <li><a class="page-scroll" href="{!! route('reglamentoWeb') !!}">Reglamento</a></li>
                     <li><a class="page-scroll" href="{!! route('webIndex') !!}#contact">Contacto</a></li>
+                    <li><a class="page-scroll" href="{!! route('login') !!}#contact">Intranet</a></li>
                 </ul>
             </div>
         </div>
