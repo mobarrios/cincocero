@@ -21,7 +21,9 @@
                                         </div><!-- /.image -->
 
                                         <div class="tag new">
+
                                             12 cuotas sin interes
+                                            {{--<img src="{{$publication->Models->brands->Images->first()->image}}"></img>--}}
                                         </div>
                                     </div><!-- /.product-image -->
 
