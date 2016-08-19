@@ -24,7 +24,7 @@
                             </li>
                             <li class="dropdown">
                                 <a href="contact.html"> Accesorios
-                                    <span class="menu-label hot-menu hidden-xs">hot</span>
+                                    <span class="menu-label hot-menu hidden-xs">Nuevo</span>
                                 </a>
                             </li>
                             <li class="dropdown">

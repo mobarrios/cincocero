@@ -4,7 +4,7 @@
     <nav class="yamm megamenu-horizontal" role="navigation">
         <ul class="nav">
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-motobike fa-fw"></i>Motos</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Motos</a>
                 <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
                         <div class="row">
@@ -45,7 +45,7 @@
                 </ul><!-- /.dropdown-menu -->            </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-mobile fa-fw"></i>Scooters</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scooters</a>
                 <!-- ================================== MEGAMENU VERTICAL ================================== -->
                 <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
@@ -84,7 +84,7 @@
                 <!-- ================================== MEGAMENU VERTICAL ================================== -->            </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-apple fa-fw"></i>Custom</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Custom</a>
                 <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
                         <div class="row">
@@ -125,7 +125,7 @@
                 </ul><!-- /.dropdown-menu -->            </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-camera fa-fw"></i>Ciclomotores</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ciclomotores</a>
                 <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
                         <div class="row">
@@ -166,7 +166,7 @@
                 </ul><!-- /.dropdown-menu -->            </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-headphones fa-fw"></i>Cuatriciclos</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuatriciclos</a>
                 <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
                         <div class="row">
@@ -207,7 +207,7 @@
                 </ul><!-- /.dropdown-menu -->            </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-gamepad fa-fw"></i>Generadores</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Generadores</a>
                 <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
                         <div class="row">
@@ -248,7 +248,7 @@
                 </ul><!-- /.dropdown-menu -->            </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-location-arrow fa-fw"></i>Motobombas</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Motobombas</a>
                 <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
                         <div class="row">
@@ -289,7 +289,7 @@
                 </ul><!-- /.dropdown-menu -->            </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-history fa-fw"></i>Bosque y Jardin</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bosque y Jardin</a>
                 <!-- ================================== MEGAMENU VERTICAL ================================== -->
                 <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
@@ -328,7 +328,7 @@
                 <!-- ================================== MEGAMENU VERTICAL ================================== -->            </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-microphone fa-fw"></i>Accessories</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accessories</a>
                 <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
                         <div class="row">
