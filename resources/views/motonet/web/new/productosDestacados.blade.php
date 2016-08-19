@@ -17,11 +17,11 @@
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="image">
-                                            <a href=""><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image }}" alt=""></a>
+                                            <a href=""><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image }}" class="byn img-responsive" alt=""></a>
                                         </div><!-- /.image -->
 
                                         <div class="tag new">
-                                            
+                                            12 cuotas sin interes
                                         </div>
                                     </div><!-- /.product-image -->
 

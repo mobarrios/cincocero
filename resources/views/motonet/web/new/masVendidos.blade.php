@@ -12,7 +12,7 @@
                                     <div class="product-image">
                                         <div class="image">
                                             <a href="assets/unicase/images/products/s1.jpg" data-lightbox="image-1" data-title="Nunc ullamcors">
-                                                <img data-echo="assets/unicase/images/products/s1.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                                <img data-echo="assets/unicase/images/products/s1.jpg" src="assets/unicase/images/blank.gif"  class="byn img-responsive" alt="">
                                                 <div class="zoom-overlay"></div>
                                             </a>
                                         </div><!-- /.image -->
@@ -46,7 +46,7 @@
                                     <div class="product-image">
                                         <div class="image">
                                             <a href="assets/unicase/images/products/s1.jpg" data-lightbox="image-1" data-title="Nunc ullamcors">
-                                                <img data-echo="assets/unicase/images/products/s1.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                                <img data-echo="assets/unicase/images/products/s1.jpg" src="assets/unicase/images/blank.gif" class="byn img-responsive" alt="">
                                                 <div class="zoom-overlay"></div>
                                             </a>
                                         </div><!-- /.image -->
@@ -81,7 +81,7 @@
                                     <div class="product-image">
                                         <div class="image">
                                             <a href="assets/unicase/images/products/s2.jpg" data-lightbox="image-1" data-title="Nunc ullamcors">
-                                                <img data-echo="assets/unicase/images/products/s2.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                                <img class="byn img-responsive" data-echo="assets/unicase/images/products/s2.jpg" src="assets/unicase/images/blank.gif" alt="">
                                                 <div class="zoom-overlay"></div>
                                             </a>
                                         </div><!-- /.image -->
@@ -112,7 +112,7 @@
                                     <div class="product-image">
                                         <div class="image">
                                             <a href="assets/unicase/images/products/s2.jpg" data-lightbox="image-1" data-title="Nunc ullamcors">
-                                                <img data-echo="assets/unicase/images/products/s2.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                                <img data-echo="assets/unicase/images/products/s2.jpg" src="assets/unicase/images/blank.gif" alt="" class="byn img-responsive">
                                                 <div class="zoom-overlay"></div>
                                             </a>
                                         </div><!-- /.image -->
@@ -150,7 +150,7 @@
                                     <div class="product-image">
                                         <div class="image">
                                             <a href="assets/unicase/images/products/s3.jpg" data-lightbox="image-1" data-title="Nunc ullamcors">
-                                                <img data-echo="assets/unicase/images/products/s3.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                                <img data-echo="assets/unicase/images/products/s3.jpg" src="assets/unicase/images/blank.gif" alt="" class="byn img-responsive">
                                                 <div class="zoom-overlay"></div>
                                             </a>
                                         </div><!-- /.image -->
@@ -184,7 +184,7 @@
                                     <div class="product-image">
                                         <div class="image">
                                             <a href="assets/unicase/images/products/s3.jpg" data-lightbox="image-1" data-title="Nunc ullamcors">
-                                                <img data-echo="assets/unicase/images/products/s3.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                                <img data-echo="assets/unicase/images/products/s3.jpg" src="assets/unicase/images/blank.gif" alt="" class="byn img-responsive">
                                                 <div class="zoom-overlay"></div>
                                             </a>
                                         </div><!-- /.image -->
@@ -219,7 +219,7 @@
                                     <div class="product-image">
                                         <div class="image">
                                             <a href="assets/unicase/images/products/s2.jpg" data-lightbox="image-1" data-title="Nunc ullamcors">
-                                                <img data-echo="assets/unicase/images/products/s2.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                                <img data-echo="assets/unicase/images/products/s2.jpg" src="assets/unicase/images/blank.gif" alt="" class="byn img-responsive">
                                                 <div class="zoom-overlay"></div>
                                             </a>
                                         </div><!-- /.image -->
@@ -253,7 +253,7 @@
                                     <div class="product-image">
                                         <div class="image">
                                             <a href="assets/unicase/images/products/s2.jpg" data-lightbox="image-1" data-title="Nunc ullamcors">
-                                                <img data-echo="assets/unicase/images/products/s2.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                                <img data-echo="assets/unicase/images/products/s2.jpg" src="assets/unicase/images/blank.gif" alt="" class="byn img-responsive">
                                                 <div class="zoom-overlay"></div>
                                             </a>
                                         </div><!-- /.image -->

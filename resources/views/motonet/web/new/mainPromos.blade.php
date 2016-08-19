@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="wide-banner cnt-strip">
                 <div class="image">
-                    <img class="img-responsive" data-echo="assets/web/img/slider.png" src="assets/unicase/images/blank.gif" alt="">
+                    <img class="byn img-responsive" data-echo="assets/web/img/slider.png" src="assets/unicase/images/blank.gif" alt="">
 
                 </div>
                 <div class="strip strip-text">
