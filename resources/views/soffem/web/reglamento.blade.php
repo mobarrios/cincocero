@@ -171,7 +171,6 @@ Los clubes o equipos deberán inscribir un mínimo de cinco (8) jugadoras en Cua
 12. Planillas de partidos
         <br>
 12.1 Cada Club o equipo debe presentarse con la planilla de jugadoras impresa desde la pagina www.soffem.com donde estarán las jugadoras habilitadas, las cuales firmaran con DNI en mano frente la mesa de control, previo al partido.
-<<<<<<< HEAD
         <br>
 12.2 De no estar en la lista, no podrá participar del encuentro.
         <br>

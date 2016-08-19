@@ -17,14 +17,10 @@
 <div class="container">
     <div class="row">
         <section id="pinBoot">
-
             @foreach($novedades as $novedad)
-                <article class="white-panel"><img src="{{$novedad->images->first()->image}}" alt="">
-                    <h4><a href="#">{{$novedad->title}}</a></h4>
-                    <p>
-                    {!! $novedad->detail !!}
-                    <hr>
-                    <a href="#" class="btn btn-block btn-primary">Ver</a>
+                <article class="white-panel text-center">
+                    <img src="{{$novedad->images->first()->image}}" >
+                    <h4><a href="">{{$novedad->title}}</a></h4>
                 </article>
             @endforeach
 

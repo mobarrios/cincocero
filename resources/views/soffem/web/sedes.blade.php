@@ -12,13 +12,9 @@
                 @foreach($sedes as $sede)
                     <a href="{!! route('sedesDetail',$sede->id) !!}" class="hover">
                         <div>
-                            <div class="ibox-content" style="background-color:white">
-                                <div class="thumbnail h374">
-                                    <img src="{!! $sede->Images->first()->image or "" !!}" alt="{!! $sede->name !!}" class="img-responsive">
-                                    <div class="caption p0">
-                                        <h4 class="text-center mt-0 fs15 text-primary">{!! $sede->name !!}</h4>
-                                    </div>
-                                </div>
+                            <img src="{!! $sede->Images->first()->image or "" !!}" alt="{!! $sede->name !!}" class="img-responsive">
+                            <div class="caption p0">
+                                 <h4 class="text-center mt-0 fs15 text-primary">{!! $sede->name !!}</h4>
                             </div>
                         </div>
                     </a>
