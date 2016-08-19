@@ -5205,6 +5205,18 @@ a {
   margin-top:10px !important;
 }
 
+.mt-15{
+  margin-top:15px !important;
+}
+
+.mt-20{
+  margin-top:20px !important;
+}
+
 #videoInstitucional{
-  width:100%;
+  width:80%;
+}
+
+#iframeFace{
+  min-height:280px;
 }

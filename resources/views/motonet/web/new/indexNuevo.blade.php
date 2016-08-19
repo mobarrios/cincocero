@@ -203,10 +203,10 @@
 
 <section  class="gray-section contact">
     <div class="container">
-        <div class="col-xs-12 col-md-7 pb20" style="background-color: white;">
+        <div class="col-xs-12 col-md-6 pb20" style="background-color: white;">
             @include('motonet/web/index/metodosDePagos')
         </div>
-        <div class="col-xs-12 col-sm-5 tel2">
+        <div class="col-xs-12 col-md-6 tel2">
             <div class="iboxFace ibox h-auto col-xs-12 col-sm-3 col-md-12">
                 <div class="ibox-title">
                     <h5>Soporte</h5>
@@ -219,7 +219,7 @@
                     {{--</span>--}}
                 </div>
             </div>
-            <div class="iboxFace ibox h-auto col-xs-12 col-sm-3 col-md-12">
+            <div class="iboxFace ibox h-auto col-xs-12 col-md-6">
                 <div class="ibox-title">
                     <h5>¿Cómo comprar?</h5>
                 </div>
@@ -227,7 +227,7 @@
                     <iframe id="videoInstitucional" src="https://www.youtube.com/embed/phNNZIud0Zo" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-9 col-md-12" style="padding-left:0;padding-right:0;">
+            <div class="col-xs-12 col-sm-6" style="padding-left:0;padding-right:0;">
                 <iframe id="iframeFace" scrolling="yes" frameborder="0" allowTransparency="true" class="center-block"></iframe>
             </div>
         </div>
