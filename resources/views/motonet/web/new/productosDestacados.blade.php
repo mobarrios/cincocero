@@ -21,7 +21,7 @@
                                         </div><!-- /.image -->
 
                                         <div class="tag new">
-                                            
+                                            <img src="{{$publication->Models->brands->Images->first()->image}}"></img>
                                         </div>
                                     </div><!-- /.product-image -->
 
