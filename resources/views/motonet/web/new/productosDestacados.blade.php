@@ -17,7 +17,7 @@
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="image">
-                                            <a href=""><img  src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image }}" alt=""></a>
+                                            <a href=""><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image }}" alt=""></a>
                                         </div><!-- /.image -->
 
                                         <div class="tag new"><span>new</span></div>
@@ -28,11 +28,10 @@
                                         <h3 class="name"><a href="detail.html">{{$publication->title}}</a></h3>
                                         <div class="rating rateit-small"></div>
                                         <div class="description"></div>
-
                                         <div class="product-price">
                     <span class="price">
-                        $650.99				</span>
-                                            <span class="price-before-discount">$ 800</span>
+                        $ {{$publication->price}}			</span>
+                                            <span class="price-before-discount">$ {{$publication->price}}</span>
 
                                         </div><!-- /.product-price -->
 

@@ -1,7 +1,7 @@
 <div id="hero">
     <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
 
-        <div class="item" width="100%" style="background-image: url(assets/web/img/cuatri.png); ">
+        <div class="item"  style="width:870px; height:368px; background-image: url(assets/web/img/cuatri.png); ">
             <div class="container-fluid">
                 <div class="caption bg-color vertical-center text-left">
                     <div class="big-text fadeInDown-1">
