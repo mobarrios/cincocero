@@ -91,30 +91,48 @@
             <div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder">
                 <div class="wide-banners wow fadeInUp outer-bottom-vs">
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-md-8">
+                            <div class="wide-banner cnt-strip">
+                                <div class="image">
+                                    <img class="img-responsive" data-echo="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_banner_promocional_908x515_3.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                    <img class="img-responsive" data-echo="https://imgmp.mlstatic.com/org-img/banners/ar/medios/785X40.jpg" src="assets/unicase/images/blank.gif" alt="">
+                                </div>
+                                {{--<div class="strip">--}}
+                                    {{--<div class="strip-inner">--}}
+                                        {{--<h3 class="hidden-xs">samsung</h3>--}}
+                                        {{--<h2>galaxy</h2>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            </div><!-- /.wide-banner -->
+                        </div><!-- /.col -->
+
+                        <div class="col-md-4">
                             <div class="wide-banner cnt-strip">
                                 <div class="image">
                                     <img class="img-responsive" data-echo="assets/unicase/images/banners/1.jpg" src="assets/unicase/images/blank.gif" alt="">
                                 </div>
                                 <div class="strip">
                                     <div class="strip-inner">
-                                        <h3 class="hidden-xs">samsung</h3>
-                                        <h2>galaxy</h2>
+                                        <h3 class="hidden-xs">0810-333-6686</h3>
+                                        <h2>11-6383-4963</h2>
                                     </div>
                                 </div>
                             </div><!-- /.wide-banner -->
                         </div><!-- /.col -->
 
-                        <div class="col-md-5">
+                        <div class="col-md-4 mt-10">
+                            <div class="wide-banner cnt-strip">
+                                <h3>¿Cómo comprar?</h3>
+                                <div class="image">
+                                    <iframe id="videoInstitucional" src="https://www.youtube.com/embed/phNNZIud0Zo" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div><!-- /.wide-banner -->
+                        </div><!-- /.col -->
+
+                        <div class="col-md-4 mt-10">
                             <div class="wide-banner cnt-strip">
                                 <div class="image">
-                                    <img class="img-responsive" data-echo="assets/unicase/images/banners/2.jpg" src="assets/unicase/images/blank.gif" alt="">
-                                </div>
-                                <div class="strip">
-                                    <div class="strip-inner">
-                                        <h3 class="hidden-xs">new trend</h3>
-                                        <h2>watch phone</h2>
-                                    </div>
+                                    <iframe id="iframeFace" scrolling="yes" frameborder="0" allowTransparency="true" class="center-block"></iframe>
                                 </div>
                             </div><!-- /.wide-banner -->
                         </div><!-- /.col -->
@@ -175,6 +193,13 @@
 
     $(window).bind("load", function() {
         $('.show-theme-options').delay(2000).trigger('click');
+    });
+
+    var t;
+    $(document).ready(function(){
+        t = parseInt($("#videoInstitucional").width());
+
+        $('#iframeFace').attr("src","https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width="+t+"&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898")
     });
 </script>
 <!-- For demo purposes – can be removed on production : End -->

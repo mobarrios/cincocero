@@ -1042,7 +1042,7 @@ a {
   padding: 20px 0px 0px 0px;
 }
 .main-header .logo-holder {
-  margin-top: 10px;
+  margin-top: -40px;
 }
 .main-header .top-search-holder .contact-row {
   line-height: 20px;
@@ -5199,4 +5199,12 @@ a {
 
 .mt-n32{
   margin-top: -32px !important;
+}
+
+.mt-10{
+  margin-top:10px !important;
+}
+
+#videoInstitucional{
+  width:100%;
 }
