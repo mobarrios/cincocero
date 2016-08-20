@@ -214,26 +214,26 @@
         </div>
     </div>
 
-    <div class="copyright-bar">
-        <div class="container">
-            <div class="col-xs-12 col-sm-6 no-padding">
-                <div class="copyright">
-                    Copyright © 2014
-                    <a href="home.html">Unicase Shop.</a>
-                    - All rights Reserved
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 no-padding">
-                <div class="clearfix payment-methods">
-                    <ul>
-                        <li><img src="assets/unicase/images/payments/1.png" alt=""></li>
-                        <li><img src="assets/unicase/images/payments/2.png" alt=""></li>
-                        <li><img src="assets/unicase/images/payments/3.png" alt=""></li>
-                        <li><img src="assets/unicase/images/payments/4.png" alt=""></li>
-                        <li><img src="assets/unicase/images/payments/5.png" alt=""></li>
-                    </ul>
-                </div><!-- /.payment-methods -->
-            </div>
-        </div>
-    </div>
+    {{--<div class="copyright-bar">--}}
+        {{--<div class="container">--}}
+            {{--<div class="col-xs-12 col-sm-6 no-padding">--}}
+                {{--<div class="copyright">--}}
+                    {{--Copyright © 2014--}}
+                    {{--<a href="home.html">Unicase Shop.</a>--}}
+                    {{--- All rights Reserved--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-xs-12 col-sm-6 no-padding">--}}
+                {{--<div class="clearfix payment-methods">--}}
+                    {{--<ul>--}}
+                        {{--<li><img src="assets/unicase/images/payments/1.png" alt=""></li>--}}
+                        {{--<li><img src="assets/unicase/images/payments/2.png" alt=""></li>--}}
+                        {{--<li><img src="assets/unicase/images/payments/3.png" alt=""></li>--}}
+                        {{--<li><img src="assets/unicase/images/payments/4.png" alt=""></li>--}}
+                        {{--<li><img src="assets/unicase/images/payments/5.png" alt=""></li>--}}
+                    {{--</ul>--}}
+                {{--</div><!-- /.payment-methods -->--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 </footer>
