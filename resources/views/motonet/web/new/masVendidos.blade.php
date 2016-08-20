@@ -2,7 +2,7 @@
     <h3 class="section-title">Más Vendidos</h3>
     <div class="sidebar-widget-body outer-top-xs">
         <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
-            @foreach(\App\Entities\motonet\Publications::where('destacado','!=',1) as $p)
+            @foreach(\App\Entities\motonet\Publications::where('destacado','=',1) as $p)
                 <div class="item">
                     <div class="products best-product">
 
