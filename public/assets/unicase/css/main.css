@@ -2525,45 +2525,49 @@ a {
   border-right: 1px solid #dadada;
 }
 .tag {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
-  line-height: 11px;
+  line-height: 38px;
+  width: 40px;
+  height: 40px;
   text-transform: uppercase;
-  top: 25.5%;
+  top: 2.5%;
   z-index: 100;
+  -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
+  border-radius: 50px;
   color: #fff;
   right: 25px;
+  /*11px;*/
   text-align: center;
-  padding: 10px;
 }
-/*.tag {*/
-  /*font-size: 13px;*/
-  /*font-weight: 700;*/
-  /*line-height: 38px;*/
-  /*width: 40px;*/
-  /*height: 40px;*/
-  /*text-transform: uppercase;*/
-  /*top: 2.5%;*/
-  /*z-index: 100;*/
-  /*-webkit-border-radius: 50px;*/
-  /*-moz-border-radius: 50px;*/
-  /*border-radius: 50px;*/
-  /*color: #fff;*/
-  /*right: 25px;*/
-  /*/!*11px;*!/*/
-  /*text-align: center;*/
-/*}*/
 
-.tag span {
+
+.tagPromo {
+  font-size: 11px;
+  line-height: 11px;
+  top: -15.5%;
+  z-index: 10000;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  width: auto;
+  height: auto;
+}
+
+.tag span,.tagPromo  {
   position: relative;
   z-index: 100;
 }
-.tag.new {
+.tag.new,.tagPromo.new   {
   background: #46aad7;
+  color: white;
 }
-.tag.hot {
+.tag.hot,.tagPromo.hot   {
   background: #ff7878;
+  color: white;
 }
 .product:hover .cart {
   opacity: 1;
@@ -5256,4 +5260,12 @@ img.byn:hover{
   -moz-transition: all 0.5s linear 0s;
   -o-transition: all 0.5s linear 0s;
   transition: all 0.5s linear 0s; 
+}
+
+.destacados .owl-wrapper-outer{
+  overflow: visible !important;
+}
+
+.m-r-15{
+  margin-right:15px;
 }

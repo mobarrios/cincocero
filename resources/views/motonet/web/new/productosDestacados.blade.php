@@ -1,4 +1,4 @@
-<div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
+<div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp destacados">
     <div class="more-info-tab clearfix ">
         <h3 class="new-product-title pull-left">Productos Destacados</h3>
       </div>
@@ -6,7 +6,7 @@
     <div class="tab-content outer-top-xs">
         <div class="tab-pane in active" id="all">
             <div class="product-slider">
-                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="5">
+                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme overflow-visible" data-item="5">
 
                     @foreach($publications as $publication)
 
@@ -15,12 +15,12 @@
                             <div class="products">
 
                                 <div class="product">
-                                    <div class="product-image">
+                                    <div class="product-image m-r-15">
                                         <div class="image">
                                             <a href=""><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image }}" class="byn img-responsive" alt=""></a>
                                         </div><!-- /.image -->
 
-                                        <div class="tag new">
+                                        <div class="tagPromo new">
 
                                             12 cuotas sin interes
                                             {{--<img src="{{$publication->Models->brands->Images->first()->image}}"></img>--}}
