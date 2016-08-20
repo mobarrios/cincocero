@@ -9,7 +9,7 @@
                             <div class="logo">
                                 <a href="home.html">
 
-                                    <img src="assets/unicase/images/logo.png" alt="">
+                                    <img src="assets/web/img/logo.png" alt="" width="250">
 
                                 </a>
                             </div><!-- /.logo -->
@@ -17,19 +17,17 @@
                         </div><!-- /.footer-logo -->
 
                         <div class="module-body m-t-20">
-                            <p class="about-us"> Nam libero tempore, cum soluta nobis est ses  eligendi optio cumque cum soluta nobis est ses  eligendi optio cumque.</p>
-
 
                         </div><!-- /.module-body -->
 
                     </div><!-- /.contact-info -->
                     <!-- ============================================================= CONTACT INFO : END ============================================================= -->            	</div><!-- /.col -->
 
-                <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-6 col-md-4">
                     <!-- ============================================================= CONTACT TIMING============================================================= -->
                     <div class="contact-timing">
                         <div class="module-heading">
-                            <h4 class="module-title">opening time</h4>
+                            <h4 class="module-title">Horario de atención</h4>
                         </div><!-- /.module-heading -->
 
                         <div class="module-body outer-top-xs">
@@ -47,56 +45,55 @@
                     </div><!-- /.contact-timing -->
                     <!-- ============================================================= CONTACT TIMING : END ============================================================= -->            	</div><!-- /.col -->
 
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <!-- ============================================================= LATEST TWEET============================================================= -->
-                    <div class="latest-tweet">
-                        <div class="module-heading">
-                            <h4 class="module-title">latest tweet</h4>
-                        </div><!-- /.module-heading -->
+                {{--<div class="col-xs-12 col-sm-6 col-md-3">--}}
+                    {{--<div class="latest-tweet">--}}
+                        {{--<div class="module-heading">--}}
+                            {{--<h4 class="module-title">latest tweet</h4>--}}
+                        {{--</div><!-- /.module-heading -->--}}
 
-                        <div class="module-body outer-top-xs">
-                            <div class="re-twitter">
-                                <div class="comment media">
-                                    <div class='pull-left'>
-                    <span class="icon fa-stack fa-lg">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#">@laurakalbag</a> As a result of your previous recommendation :)
-                    <span class="time">
-                        12 hours ago
-                    </span>
-                                    </div>
-                                </div>
+                        {{--<div class="module-body outer-top-xs">--}}
+                            {{--<div class="re-twitter">--}}
+                                {{--<div class="comment media">--}}
+                                    {{--<div class='pull-left'>--}}
+                    {{--<span class="icon fa-stack fa-lg">--}}
+                      {{--<i class="fa fa-circle fa-stack-2x"></i>--}}
+                      {{--<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>--}}
+                    {{--</span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="media-body">--}}
+                                        {{--<a href="#">@laurakalbag</a> As a result of your previous recommendation :)--}}
+                    {{--<span class="time">--}}
+                        {{--12 hours ago--}}
+                    {{--</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
-                            </div>
-                            <div class="re-twitter">
-                                <div class="comment media">
-                                    <div class='pull-left'>
-                    <span class="icon fa-stack fa-lg">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#">@laurakalbag</a> As a result of your previous recommendation :)
-                    <span class="time">
-                        12 hours ago
-                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- /.module-body -->
-                    </div><!-- /.contact-timing -->
-                    <!-- ============================================================= LATEST TWEET : END ============================================================= -->            	</div><!-- /.col -->
+                            {{--</div>--}}
+                            {{--<div class="re-twitter">--}}
+                                {{--<div class="comment media">--}}
+                                    {{--<div class='pull-left'>--}}
+                    {{--<span class="icon fa-stack fa-lg">--}}
+                      {{--<i class="fa fa-circle fa-stack-2x"></i>--}}
+                      {{--<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>--}}
+                    {{--</span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="media-body">--}}
+                                        {{--<a href="#">@laurakalbag</a> As a result of your previous recommendation :)--}}
+                    {{--<span class="time">--}}
+                        {{--12 hours ago--}}
+                    {{--</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div><!-- /.module-body -->--}}
+                    {{--</div><!-- /.contact-timing -->--}}
+                {{--</div><!-- /.col -->--}}
 
-                <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-6 col-md-4">
                     <!-- ============================================================= INFORMATION============================================================= -->
                     <div class="contact-information">
                         <div class="module-heading">
-                            <h4 class="module-title">information</h4>
+                            <h4 class="module-title">Información</h4>
                         </div><!-- /.module-heading -->
 
                         <div class="module-body outer-top-xs">
@@ -109,7 +106,7 @@
                     </span>
                                     </div>
                                     <div class="media-body">
-                                        <p>868 Any Stress,Burala Casi,Picasa USA.</p>
+                                        <p>Av. Ricardo balbin 486, San Miguel, Buenos Aires.</p>
                                     </div>
                                 </li>
 
@@ -121,22 +118,22 @@
                     </span>
                                     </div>
                                     <div class="media-body">
-                                        <p>(400) 0888 888 888<br>(400) 888 888 888</p>
+                                        <p>0810-333-6686</p>
                                     </div>
                                 </li>
 
-                                <li class="media">
-                                    <div class="pull-left">
-                     <span class="icon fa-stack fa-lg">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                    </span>
-                                    </div>
-                                    <div class="media-body">
-                                        <span><a href="#">Contact @Unicase.com</a></span><br>
-                                        <span><a href="#">Sale @Unicase.com</a></span>
-                                    </div>
-                                </li>
+                                {{--<li class="media">--}}
+                                    {{--<div class="pull-left">--}}
+                     {{--<span class="icon fa-stack fa-lg">--}}
+                      {{--<i class="fa fa-circle fa-stack-2x"></i>--}}
+                      {{--<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>--}}
+                    {{--</span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="media-body">--}}
+                                        {{--<span><a href="#">Contact @Unicase.com</a></span><br>--}}
+                                        {{--<span><a href="#">Sale @Unicase.com</a></span>--}}
+                                    {{--</div>--}}
+                                {{--</li>--}}
 
                             </ul>
                         </div><!-- /.module-body -->
@@ -151,64 +148,65 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="module-heading outer-bottom-xs">
-                        <h4 class="module-title">category</h4>
+                        <h4 class="module-title">categorías</h4>
                     </div><!-- /.module-heading -->
 
                     <div class="module-body">
                         <ul class='list-unstyled'>
-                            <li><a href="#">Order History</a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">Libero Sed rhoncus</a></li>
-                            <li><a href="#">Venenatis augue tellus</a></li>
-                            <li><a href="#">My Vouchers</a></li>
+                            <li><a href="#">Motos</a></li>
+                            <li><a href="#">Scooters</a></li>
+                            <li><a href="#">Custom</a></li>
+                            <li><a href="#">Ciclomotores</a></li>
+                            <li><a href="#">Cuatriciclos</a></li>
+                            <li><a href="#">Generadores</a></li>
+                            <li><a href="#">Motobombas</a></li>
+                            <li><a href="#">Bosque y Jardin</a></li>
+                            <li><a href="#">Accessories</a></li>
                         </ul>
                     </div><!-- /.module-body -->
                 </div><!-- /.col -->
 
-                <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-6">
                     <div class="module-heading outer-bottom-xs">
-                        <h4 class="module-title">my account</h4>
+                        <h4 class="module-title">Nuestras sucursales</h4>
                     </div><!-- /.module-heading -->
 
                     <div class="module-body">
                         <ul class='list-unstyled'>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Customer Service</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Site Map</a></li>
-                            <li><a href="#">Search Terms</a></li>
+                            @for($i = 0;$i < \App\Entities\motonet\Branches::all()->count(); $i++)
+                                <li class="col-xs-6">
+                                    <a href="#">{!! \App\Entities\motonet\Branches::all()[$i]->name !!}</a>                                                             </li>
+                            @endfor
                         </ul>
                     </div><!-- /.module-body -->
                 </div><!-- /.col -->
 
+                {{--<div class="col-xs-12 col-sm-6 col-md-3">--}}
+                    {{--<div class="module-heading outer-bottom-xs">--}}
+                        {{--<h4 class="module-title">our services</h4>--}}
+                    {{--</div><!-- /.module-heading -->--}}
+
+                    {{--<div class="module-body">--}}
+                        {{--<ul class='list-unstyled'>--}}
+                            {{--<li><a href="#">Order History</a></li>--}}
+                            {{--<li><a href="#">Returns</a></li>--}}
+                            {{--<li><a href="#">Libero Sed rhoncus</a></li>--}}
+                            {{--<li><a href="#">Venenatis augue tellus</a></li>--}}
+                            {{--<li><a href="#">My Vouchers</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</div><!-- /.module-body -->--}}
+                {{--</div><!-- /.col -->--}}
+
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="module-heading outer-bottom-xs">
-                        <h4 class="module-title">our services</h4>
+                        <h4 class="module-title">servicios</h4>
                     </div><!-- /.module-heading -->
 
                     <div class="module-body">
                         <ul class='list-unstyled'>
-                            <li><a href="#">Order History</a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">Libero Sed rhoncus</a></li>
-                            <li><a href="#">Venenatis augue tellus</a></li>
-                            <li><a href="#">My Vouchers</a></li>
-                        </ul>
-                    </div><!-- /.module-body -->
-                </div><!-- /.col -->
-
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="module-heading outer-bottom-xs">
-                        <h4 class="module-title">help & support</h4>
-                    </div><!-- /.module-heading -->
-
-                    <div class="module-body">
-                        <ul class='list-unstyled'>
-                            <li><a href="#">Knowledgebase</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Contact Support</a></li>
-                            <li><a href="#">Marketplace Blog</a></li>
-                            <li><a href="#">About Unicase</a></li>
+                            <li><a href="#">Seguros</a></li>
+                            <li><a href="#">Accesorios</a></li>
+                            <li><a href="#">Servicio técnico</a></li>
                         </ul>
                     </div><!-- /.module-body -->
                 </div>
