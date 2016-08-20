@@ -8,7 +8,7 @@
             @foreach($brands as $brand)
                 <div class="item m-t-15">
                     <a  class="image">
-                        <img style="width: 100px;" class="byn img-responsive" data-echo="{{$brand->images->first()->image}}" src="assets/unicase/images/blank.gif" alt="">
+                        <img style="width: 100px;" class="img-responsive" data-echo="{{$brand->images->first()->image}}" src="assets/unicase/images/blank.gif" alt="">
                     </a>
                 </div><!--/.item-->
             @endforeach
