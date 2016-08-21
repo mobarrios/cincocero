@@ -162,7 +162,7 @@
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
-    var socket = io.connect('http://62.210.13.249:3000');
+    var socket = io.connect('http://62.210.13.249:222');
 
     $('form').submit(function(){
         var msg = {from : $('#from').val() , text : $('#m').val()}
