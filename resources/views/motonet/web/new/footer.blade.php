@@ -34,13 +34,13 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
-                                    <tr><td>Monday-Friday:</td><td class="pull-right">08.00 To 18.00</td></tr>
-                                    <tr><td>Saturday:</td><td class="pull-right">09.00 To 20.00</td></tr>
-                                    <tr><td>Sunday:</td><td class="pull-right">10.00 To 20.00</td></tr>
+                                    <tr><td>Lunes a Viernes:</td><td class="pull-right">09.00 a 20.00</td></tr>
+                                    <tr><td>Sabados:</td><td class="pull-right">09.00 a 20.00</td></tr>
+                                    <tr><td>Domingos:</td><td class="pull-right">Cerrado.</td></tr>
                                     </tbody>
                                 </table>
                             </div><!-- /.table-responsive -->
-                            <p class='contact-number'>Hot Line:(400)888 868 848</p>
+                            <p class='contact-number'>Atención telefónica: 0810-333-6686</p>
                         </div><!-- /.module-body -->
                     </div><!-- /.contact-timing -->
                     <!-- ============================================================= CONTACT TIMING : END ============================================================= -->            	</div><!-- /.col -->

@@ -2,7 +2,7 @@
 <div class="main-header" style="padding: 50px 0px 0px 0px ;">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-3 logo-holder mt-n45">
+            <div class="col-xs-12 col-sm-12 col-md-3 logo-holder mt-n81">
                 <!-- ============================================================= LOGO ============================================================= -->
                 <div class="logo">
                     <a href="home.html">
