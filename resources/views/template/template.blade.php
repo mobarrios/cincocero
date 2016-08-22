@@ -62,8 +62,6 @@
 <ul id="messages"></ul>
 <form action="">
     <input id="m" autocomplete="off" /><button>Send</button>
-    <input id='from' type="text" >
-
 </form>
 
 
@@ -162,10 +160,10 @@
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
-    var socket = io.connect('http://62.210.13.249:2222');
+    var socket = io.connect('http://62.210.13.249:3000');
 
     $('form').submit(function(){
-        var msg = {from : $('#from').val() , text : $('#m').val()}
+        var msg = {from : 'administrador' , text : $('#m').val()}
         socket.emit('chat message',  msg );
         $('#m').val('');
         return false;
@@ -178,7 +176,7 @@
 
 <script>
 
-
+    /*
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
 
     var Notification = window.Notification || window.mozNotification || window.webkitNotification;
@@ -186,11 +184,13 @@
     Notification.requestPermission(function (permission) {
         //console.log(permission);
     });
+    */
 
    $('.logout').on('click',function(){
        localStorage.clear();
    });
 
+    /*
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
 
         var Notification = window.Notification || window.mozNotification || window.webkitNotification;
@@ -226,7 +226,7 @@
 
         return false;
     }
-
+ */
     tinymce.init({
         plugins: "textcolor",
         statusbar: false,
