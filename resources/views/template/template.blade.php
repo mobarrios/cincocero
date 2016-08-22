@@ -60,7 +60,7 @@
 
 
 <ul id="messages"></ul>
-<form action="">
+<form id="formChat" action="">
     <input id="m" autocomplete="off" /><button>Send</button>
 </form>
 
@@ -162,7 +162,7 @@
 <script>
     var socket = io.connect('http://62.210.13.249:3000');
 
-    $('form').submit(function(){
+    $('#formChat').submit(function(){
         var msg = {from : 'administrador' , text : $('#m').val()}
         socket.emit('chat message',  msg );
         $('#m').val('');
@@ -176,7 +176,7 @@
 
 <script>
 
-    /*
+/*
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
 
     var Notification = window.Notification || window.mozNotification || window.webkitNotification;
@@ -184,13 +184,13 @@
     Notification.requestPermission(function (permission) {
         //console.log(permission);
     });
-    */
 
+*/
    $('.logout').on('click',function(){
        localStorage.clear();
    });
 
-    /*
+/*
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
 
         var Notification = window.Notification || window.mozNotification || window.webkitNotification;
@@ -199,7 +199,8 @@
             //console.log(permission);
         });
 
-
+*/
+/*
     function desk_notification(title, message)
     {
         window.setTimeout(function () {
@@ -226,7 +227,7 @@
 
         return false;
     }
- */
+*/
     tinymce.init({
         plugins: "textcolor",
         statusbar: false,
