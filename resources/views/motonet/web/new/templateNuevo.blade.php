@@ -135,7 +135,7 @@
 
 
 
-                        <div class="col-md-4">
+                        <div class="col-xs-12 col-md-4">
                             <iframe id="iframeFace" scrolling="yes" frameborder="0" allowTransparency="true" class="center-block"></iframe>
                             <iframe class="mt-20 center-block" id="videoInstitucional" src="https://www.youtube.com/embed/phNNZIud0Zo" frameborder="0" allowfullscreen></iframe>
                         </div><!-- /.col -->

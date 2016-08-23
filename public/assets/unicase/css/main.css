@@ -5266,9 +5266,9 @@ img.byn:hover{
   transition: all 0.5s linear 0s; 
 }
 
-.destacados .owl-wrapper-outer{
-  overflow: visible !important;
-}
+/*.destacados .owl-wrapper-outer{*/
+  /*overflow: visible !important;*/
+/*}*/
 
 .m-r-15{
   margin-right:15px;
@@ -5276,4 +5276,77 @@ img.byn:hover{
 
 .h-auto{
   height: auto !important;
+}
+
+@media (max-width: 992px) {
+  .outer-bottom-vs{
+    margin-bottom: 5px;
+  }
+  .cnt-strip .strip h2{
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 761px) {
+  .cnt-strip .strip h2{
+    font-size: 25px;
+  }
+}
+@media (max-width: 46px) {
+  .cnt-strip .strip h2{
+    font-size: 18px;
+  }
+  .cnt-strip .strip.strip-text{
+    width: 100%;
+  }
+
+  .cnt-strip .strip{
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 414px) {
+  .cnt-strip .strip {
+    bottom: 0;
+    font-size: 21px;
+  }
+
+  .cnt-strip .strip h2, .cnt-strip .strip h2 .shopping-needs {
+    font-size: 21px;
+    text-shadow: -1px 0 #00000080, 0 1px #00000080, 1px 0 #00000080, 0 -1px #00000080 !important;
+    color: white;
+  }
+
+  #owl-main .item .caption.bg-color .big-text {
+    text-shadow: -1px 0 #00000080, 0 1px #00000080, 1px 0 #00000080, 0 -1px #00000080 !important;
+    color: white;
+    font-size: 30px;
+  }
+
+  #owl-main .item .caption{
+    right: 10px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  #videoInstitucional,#iframeFace{
+    float: left;
+    width:48%;
+    margin:1%;
+    height: 346px;
+  }
+
+
+}
+
+@media (max-width: 500px) {
+  #videoInstitucional,#iframeFace{
+    float: none;
+    width:100%;
+    margin-top:1%;
+    height: auto;
+  }
+
 }
