@@ -1,8 +1,10 @@
 <div id="hero">
-    <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+    <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm h-auto">
 
-        <div class="item"  style="width:870px; height:368px; background-image: url(assets/web/img/promo1.png); ">
+        <div class="item h-auto">
+        {{--<div class="item"  style="width:870px; height:368px; background: url(assets/web/img/promo1.png) no-repeat; background-size: cover;">--}}
             <div class="container-fluid">
+                <img src="assets/web/img/promo1.png" alt="" class="img-responsive">
                 <div class="caption bg-color vertical-center text-left">
                     <div class="big-text fadeInDown-1">
                         <div class="big-text fadeInDown-1">
@@ -17,8 +19,9 @@
             </div><!-- /.container-fluid -->
         </div><!-- /.item -->
 
-        <div class="item" style="background-image: url(assets/web/img/promo2.png);">
+        <div class="item h-auto">
             <div class="container-fluid">
+                <img src="assets/web/img/promo2.png" alt="" class="img-responsive">
                 <div class="caption bg-color vertical-center text-left">
                     <div class="big-text fadeInDown-1">
                          <span class="highlight"> HONDA XR</span> 150

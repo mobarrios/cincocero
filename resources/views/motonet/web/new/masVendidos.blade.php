@@ -13,7 +13,7 @@
                                         <div class="product-image">
                                             <div class="image">
                                                 <a href="{{$p->Models->Images->first()->image }}" data-lightbox="image-1" data-title="{{$p->name }}">
-                                                    <img data-echo="{{$p->Models->Images->first()->image }}" src="{{$p->Models->Images->first()->image }}" class="img-responsive" alt="">
+                                                    <img data-echo="{{$p->Models->Images->first()->image }}" src="{{$p->Models->Images->first()->image }}" class="img-responsive byn" alt="">
                                                     <div class="zoom-overlay"></div>
                                                 </a>
                                             </div><!-- /.image -->

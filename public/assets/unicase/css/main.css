@@ -5274,3 +5274,6 @@ img.byn:hover{
   margin-right:15px;
 }
 
+.h-auto{
+  height: auto !important;
+}
