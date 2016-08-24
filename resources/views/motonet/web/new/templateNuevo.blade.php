@@ -166,12 +166,13 @@
     </div><!-- /.container -->
 </div><!-- /#top-banner-and-menu -->
 
+{{--
 <ul id="messages"></ul>
 <form>
     <input id="m" autocomplete="off" /><button>Send</button>
     <input id='from' value="{{\Illuminate\Support\Facades\Session::get('_token')}}" type="hidden" >
 </form>
-
+--}}
 
 <!-- ============================================================= CHAT ============================================================= -->
 <div id="chat">
@@ -272,6 +273,7 @@
             </div>
         </div>
 
+        {{--
         <div class="btn-group dropup">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-cog"></span>
@@ -285,6 +287,7 @@
                 <li><a href="#"><span class="glyphicon glyphicon-eye-close"></span> Invisivel</a></li>
             </ul>
         </div>
+        --}}
     </div>
 </div>
 
