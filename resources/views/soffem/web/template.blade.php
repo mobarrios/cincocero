@@ -57,20 +57,23 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-2">
-            <img style="height: 150px;" class="img-thumbnail" src="assets/landing/img/sponsor1.jpg">
+        <div class="col-xs-2 thumbnail">
+            <img style="" class="img-thumbnail" src="assets/landing/img/sponsor1.jpg">
+        </div>
+        <div class="col-xs-2 thumbnail">
+            <img style="" class="img-thumbnail" src="assets/landing/img/sponsor2.jpg">
         </div>
         <div class="col-xs-2">
-            <img style="height: 150px;" class="img-thumbnail" src="assets/landing/img/sponsor2.jpg">
+            <img style=" " class="img-thumbnail" src="assets/landing/img/sponsor3.jpg">
         </div>
         <div class="col-xs-2">
-            <img style="height: 150px;" class="img-thumbnail" src="assets/landing/img/sponsor3.jpg">
+            <img  style="" class="img-thumbnail" src="assets/landing/img/sponsor4.jpg">
         </div>
         <div class="col-xs-2">
-            <img  style="height: 150px;" class="img-thumbnail" src="assets/landing/img/sponsor4.jpg">
+            <img style="" class="img-thumbnail" src="assets/landing/img/sponsor5.jpg">
         </div>
-        <div class="col-xs-2">
-            <img style="height: 150px;" class="img-thumbnail" src="assets/landing/img/sponsor5.jpg">
+        <div class="col-xs-2 ">
+            <img style="" class="img-thumbnail" src="assets/landing/img/sponsor6.jpg">
         </div>
 
     </div>
