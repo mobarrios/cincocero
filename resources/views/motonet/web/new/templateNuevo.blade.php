@@ -96,7 +96,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder">
                 <div class="wide-banners wow fadeInUp outer-bottom-vs">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <div class="wide-banner cnt-strip">
                                 <div class="image">
                                     <div class="col-xs-12">
@@ -136,9 +136,10 @@
 
 
 
-                        <div class="col-xs-12 col-md-4">
-                            <iframe id="iframeFace" scrolling="yes" frameborder="0" allowTransparency="true" class="center-block"></iframe>
-                            <iframe class="mt-20 center-block" id="videoInstitucional" src="https://www.youtube.com/embed/phNNZIud0Zo" frameborder="0" allowfullscreen></iframe>
+                        <div class="col-xs-12 col-md-6">
+                            {{--<iframe id="iframeFace" scrolling="yes" frameborder="0" allowTransparency="true" class="center-block"></iframe>--}}
+                            <object class="col-xs-12" style="height:300px;" type="text/html" data="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fmotonetonline&width=1000&height=400&colorscheme=light&show_faces=true&border_color&stream=true&header=true"></object>
+                            {{--<iframe class="mt-20 center-block" id="videoInstitucional" src="https://www.youtube.com/embed/phNNZIud0Zo" frameborder="0" allowfullscreen></iframe>--}}
                         </div><!-- /.col -->
                     </div><!-- /.row -->
 
@@ -158,6 +159,8 @@
 
 
             </div><!-- /.homebanner-holder -->
+
+
             <!-- ============================================== CONTENT : END ============================================== -->
         </div><!-- /.row -->
         <!-- ============================================== BRANDS CAROUSEL ============================================== -->
