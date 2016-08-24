@@ -2728,7 +2728,7 @@ a {
   font-family: 'BebasNeueRegular';
 }
 .cnt-strip .strip.strip-text {
-  width: 60%;
+  width: 100%;
 }
 .cnt-strip .strip .red {
   color: #ff7878;
@@ -5289,12 +5289,17 @@ img.byn:hover{
 
 @media (max-width: 761px) {
   .cnt-strip .strip h2{
-    font-size: 25px;
+    font-size: 32px;
+  }
+
+  .cnt-strip .strip {
+    bottom: 0;
   }
 }
-@media (max-width: 46px) {
+
+@media (max-width: 460px) {
   .cnt-strip .strip h2{
-    font-size: 18px;
+    font-size: 25px;
   }
   .cnt-strip .strip.strip-text{
     width: 100%;
