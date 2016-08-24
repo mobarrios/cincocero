@@ -358,7 +358,7 @@
 <script>
 
     $(window).bind("load", function() {
-        $('.show-theme-options').delay(2000).trigger('click');
+        $('.show-theme-options').delay(1000).trigger('click');
     });
 
     var t;
