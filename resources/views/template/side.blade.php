@@ -63,7 +63,6 @@
 
             $('a[data-id='+menu_id+']').parent().parent().addClass('in').parent().addClass('active');
 
-
         });
 
         $('.menu').on('click',function()
@@ -71,10 +70,7 @@
             localStorage.setItem('menu_id',$(this).attr('data-id'));
         });
 
-        if ($('.no_sub').length){
 
-
-        }
 
 
     </script>

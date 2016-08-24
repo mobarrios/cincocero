@@ -2,17 +2,24 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
-});
 
 io.on('connection', function(socket){
-    socket.on('chat message', function(msg){
-        m = msg.from +':' + msg.text;
 
-        io.emit('chat message', m );
+    socket.on('chat message', function(msg){
+        //m = msg.from +':' + msg.text;
+
+        m = {   to : msg.to,
+                from: msg.from ,
+                msg : msg.text
+            };
+
+        console.log(m);
+        io.emit('chat message', m);
     });
+
+
 });
+
 
 http.listen(3000,function(){
     console.log('listening on *:3000');

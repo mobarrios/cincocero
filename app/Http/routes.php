@@ -23,10 +23,12 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 
 //Session::put('languaje','es_ES');
 
+Route::get('chat',function(){
+
+    return view('motonet.web.new.chat');
+});
 
 // route MERCADO PAGO
-
-
 Route::get('test_mail',function(){
 
     $publication    = App\Entities\motonet\Publications::find(14);
