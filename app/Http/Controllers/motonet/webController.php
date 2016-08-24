@@ -49,20 +49,24 @@ class webController extends Controller {
 
     }
 
-    public function indexNuevo(){
+//    public function indexNuevo(){
+//
+//        $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
+//        $this->data['brands']       = Brands::all();
+//        $this->data['branches']      = Branches::all();
+//
+//        return view('motonet/web/new/templateNuevo')->with($this->data);
+//    }
 
+    public function index(){
         $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
         $this->data['brands']       = Brands::all();
         $this->data['branches']      = Branches::all();
 
         return view('motonet/web/new/templateNuevo')->with($this->data);
-    }
-
-    public function index(){
-        
-        $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
-
-        return view('motonet/web/index')->with($this->data);
+//        $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
+//
+//        return view('motonet/web/index')->with($this->data);
     }
 
     public function detail($id){
