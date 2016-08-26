@@ -55,7 +55,8 @@ class webController extends Controller {
         $this->data['brands']       = Brands::all();
         $this->data['branches']      = Branches::all();
 
-        return view('motonet/web/new/templateNuevo')->with($this->data);
+
+        return view('motonet/web/new/index')->with($this->data);
     }
 
     public function index(){

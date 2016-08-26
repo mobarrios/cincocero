@@ -17,7 +17,7 @@
                                 <div class="product">
                                     <div class="product-image m-r-15">
                                         <div class="image">
-                                            <a href=""><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image }}" class="byn img-responsive" alt=""></a>
+                                            <a href="{!! route('productDetail',$publication->id) !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image }}" class="byn img-responsive" alt=""></a>
                                         </div><!-- /.image -->
 
                                         <div class="tagPromo new">
@@ -30,7 +30,7 @@
 
                                     <div class="product-info text-left">
                                         <h3 >{{$publication->models->brands->name}}</h3>
-                                        <h3 class="name"><a href="detail.html">{{$publication->title}}</a></h3>
+                                        <h3 class="name"><a href="{!! route('productDetail',$publication->id) !!}">{{$publication->title}}</a></h3>
                                         <div class="rating rateit-small"></div>
                                         <div class="product-price">
                     <span class="price">
@@ -47,7 +47,7 @@
                                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
                                                         <i class="fa fa-shopping-cart"></i>
                                                     </button>
-                                                    <button class="btn btn-primary" type="button">ver</button>
+                                                    <button class="btn btn-primary" type="button" href="{!! route('productDetail',$publication->id) !!}">ver</button>
                                                 </li>
                                             </ul>
                                         </div><!-- /.action -->

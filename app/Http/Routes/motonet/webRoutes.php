@@ -19,7 +19,7 @@ Route::group(['namespace' => 'motonet'], function() {
 
     Route::get('detail/{id?}',[
         'as' => 'productDetail',
-        'uses' => 'webController@detail'
+        'uses' => 'webController@detailNuevo'
     ]);
 
     Route::get('find',[

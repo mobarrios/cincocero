@@ -38,6 +38,7 @@
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 
+    @yield('css')
     <!-- Favicon
     <link rel="shortcut icon" href="assets/unicase/images/favicon.ico">
     -->
@@ -83,95 +84,19 @@
 
           </div>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                @include('motonet.web.new.index.productosDestacados')
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-
-            <div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder">
-                <!-- /.wide-banners -->
-
-                <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
-
-                <!-- ============================================== BEST SELLER ============================================== -->
-
-                @include('motonet.web.new.index.masVendidos')
-                <!-- ============================================== BEST SELLER : END ============================================== -->
-
-                <!-- ============================================== BLOG SLIDER ============================================== -->
-               @include('motonet.web.new.index.nuestrosLocales')
-                <!-- ============================================== BLOG SLIDER : END ============================================== -->
-
-
-            </div><!-- /.homebanner-holder -->
-
-
-            <!-- ============================================== CONTENT : END ============================================== -->
-        </div><!-- /.row -->
-        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-        @include('motonet.web.new.index.nuestrasMarcas')
-        <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
+        @yield('content')
     </div><!-- /.container -->
 </div><!-- /#top-banner-and-menu -->
 
-
-
+{{--
+<ul id="messages"></ul>
+<form>
+    <input id="m" autocomplete="off" /><button>Send</button>
+    <input id='from' value="{{\Illuminate\Support\Facades\Session::get('_token')}}" type="hidden" >
+</form>
+--}}
 
 <!-- ============================================================= CHAT ============================================================= -->
-<div id="chat">
-    <div class="container">
-        <div class="row chat-window col-xs-7 col-sm-5 col-md-4 col-lg-3" id="chat_window_1" style="margin-left:10px;">
-            <div class="col-xs-12 col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading top-bar">
-                        <div class="col-md-8 col-xs-8">
-                            <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Soporte</h3>
-                        </div>
-                        <div class="col-md-4 col-xs-4" style="text-align: right;">
-                            <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
-                        </div>
-                    </div>
-                    <div id="chat_content" class="panel-body msg_container_base">
-
-                    </div>
-                    <div class="panel-footer">
-                        <form>
-                            <div class="input-group">
-                                <input autocomplete="off" id="m" type="text" class="form-control input-sm chat_input" placeholder="Escriba su mensaje" />
-                                <span class="input-group-btn">
-                                <button class="btn btn-primary btn-sm" id="btn-chat">Enviar</button>
-                                </span>
-                            </div>
-                            <input id='from' value="{{\Illuminate\Support\Facades\Session::get('_token')}}" type="hidden" >
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {{--
-        <div class="btn-group dropup">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-cog"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#" id="new_chat"><span class="glyphicon glyphicon-plus"></span> Novo</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-list"></span> Ver outras</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-remove"></span> Fechar Tudo</a></li>
-                <li class="divider"></li>
-                <li><a href="#"><span class="glyphicon glyphicon-eye-close"></span> Invisivel</a></li>
-            </ul>
-        </div>
-        --}}
-    </div>
-{{--</div>--}}
 
 
 
@@ -209,8 +134,7 @@
 <script>
     // var socket = io.connect('http://62.210.13.249:3000');
 
-    //var socket = io.connect('localhost:3000');
-    var socket = io.connect( '{!!  env('SOCKET_URL') !!}' +':'+'{!!  env('SOCKET_PORT') !!}');
+    var socket = io.connect('localhost:3000');
 
     $('form').submit(function(){
 
@@ -228,28 +152,10 @@
 
     socket.on('chat message', function(msg){
 
-        if(msg.from == $('#from').val() || msg.to == $('#from').val()){
-            
-            if(msg.from == $('#from').val()){
-                $('#chat_content').append(chat_user(msg.msg));
-            }
-            if(msg.from == 'administrador'){
-                $('#chat_content').append(chat_admin(msg.msg));
-            }
+        if(msg.from == $('#from').val()){
+            $('#messages').append($('<li>').text(msg.msg));
         }
-
     });
-
-
-    function chat_user(msg )
-    {
-      return   '<div class="row msg_container base_sent"><div class="col-md-10 col-xs-10"> <div class="messages msg_sent"> <p>'+msg+'.</p> <time datetime="2009-11-13T20:00">Usuario • Hace 1 minuto</time> </div> </div> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-user.jpg" class=" img-responsive "> </div> </div>';
-    }
-
-    function chat_admin(msg )
-    {
-      return '<div class="row msg_container base_receive"> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-soporte.jpg" class=" img-responsive "> </div> <div class="col-md-10 col-xs-10"> <div class="messages msg_receive"> <p> '+msg+'</p> <time datetime="2009-11-13T20:00">Soporte • Ahora</time> </div> </div> </div>';
-    }
 </script>
 
 
@@ -274,6 +180,6 @@
 <!-- For demo purposes – can be removed on production : End -->
 <script src="assets/js/chat.js"></script>
 
-
+@yield('js')
 </body>
 </html>
