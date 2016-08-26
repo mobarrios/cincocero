@@ -53,7 +53,7 @@ class webController extends Controller {
 
         $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
         $this->data['brands']       = Brands::all();
-        $this->data['branches']      = Branches::all();
+        $this->data['branches']     = Branches::all();
 
         return view('motonet/web/new/templateNuevo')->with($this->data);
     }

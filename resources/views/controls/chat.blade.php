@@ -11,7 +11,6 @@
 <script>
     // var socket = io.connect('http://62.210.13.249:3000');
 
-
     var socket = io.connect( '{!!  env('SOCKET_URL') !!}' +':'+'{!!  env('SOCKET_PORT') !!}');
 
     $(document).on("click", "a.send" , function() {

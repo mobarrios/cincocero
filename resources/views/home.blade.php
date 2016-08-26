@@ -56,12 +56,8 @@
 
 @section('js')
 <script>
-    var x = JSON.parse($('#myChart').attr('data-dia'));
-    var y = JSON.parse($('#myChart').attr('data-cant'));
-
-
-
-
+    var x   = JSON.parse($('#myChart').attr('data-dia'));
+    var y   = JSON.parse($('#myChart').attr('data-cant'));
     var ctx = $("#myChart");
 
     var myChart = new Chart(ctx, {
