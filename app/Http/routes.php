@@ -25,7 +25,7 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 
 Route::get('chat',function(){
 
-    return view('motonet.web.new.chat');
+    return view('controls.chat');
 });
 
 // route MERCADO PAGO

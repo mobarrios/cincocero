@@ -44,6 +44,7 @@
             <div class="panel panel-default">
                 <div class="panel panel-body">
 
+                    @include('controls.chat')
                 </div>
 
             </div>

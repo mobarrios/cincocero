@@ -169,13 +169,8 @@
     </div><!-- /.container -->
 </div><!-- /#top-banner-and-menu -->
 
-{{--
-<ul id="messages"></ul>
-<form>
-    <input id="m" autocomplete="off" /><button>Send</button>
-    <input id='from' value="{{\Illuminate\Support\Facades\Session::get('_token')}}" type="hidden" >
-</form>
---}}
+
+
 
 <!-- ============================================================= CHAT ============================================================= -->
 <div id="chat">
@@ -192,85 +187,19 @@
                             <a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
                         </div>
                     </div>
-                    <div class="panel-body msg_container_base">
-                        <div class="row msg_container base_sent">
-                            <div class="col-md-10 col-xs-10">
-                                <div class="messages msg_sent">
-                                    <p>Buenos días.</p>
-                                    <time datetime="2009-11-13T20:00">Usuario • Hace 1 minuto</time>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-xs-2 avatar">
-                                <img src="assets/web/img/chat-user.jpg" class=" img-responsive ">
-                            </div>
-                        </div>
-                        <div class="row msg_container base_receive">
-                            <div class="col-md-2 col-xs-2 avatar">
-                                <img src="assets/web/img/chat-soporte.jpg" class=" img-responsive ">
-                            </div>
-                            <div class="col-md-10 col-xs-10">
-                                <div class="messages msg_receive">
-                                    <p>Motonet, buenos días, ¿en qué podemos ayudarte?</p>
-                                    <time datetime="2009-11-13T20:00">Soporte • Ahora</time>
-                                </div>
-                            </div>
-                        </div>
-                        {{--<div class="row msg_container base_receive">--}}
-                            {{--<div class="col-md-2 col-xs-2 avatar">--}}
-                                {{--<img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">--}}
-                            {{--</div>--}}
-                            {{--<div class="col-xs-10 col-md-10">--}}
-                                {{--<div class="messages msg_receive">--}}
-                                    {{--<p>that mongodb thing looks good, huh?--}}
-                                        {{--tiny master db, and huge document store</p>--}}
-                                    {{--<time datetime="2009-11-13T20:00">Timothy • 51 min</time>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="row msg_container base_sent">--}}
-                            {{--<div class="col-xs-10 col-md-10">--}}
-                                {{--<div class="messages msg_sent">--}}
-                                    {{--<p>that mongodb thing looks good, huh?--}}
-                                        {{--tiny master db, and huge document store</p>--}}
-                                    {{--<time datetime="2009-11-13T20:00">Timothy • 51 min</time>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-md-2 col-xs-2 avatar">--}}
-                                {{--<img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="row msg_container base_receive">--}}
-                            {{--<div class="col-md-2 col-xs-2 avatar">--}}
-                                {{--<img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">--}}
-                            {{--</div>--}}
-                            {{--<div class="col-xs-10 col-md-10">--}}
-                                {{--<div class="messages msg_receive">--}}
-                                    {{--<p>that mongodb thing looks good, huh?--}}
-                                        {{--tiny master db, and huge document store</p>--}}
-                                    {{--<time datetime="2009-11-13T20:00">Timothy • 51 min</time>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="row msg_container base_sent">--}}
-                            {{--<div class="col-md-10 col-xs-10 ">--}}
-                                {{--<div class="messages msg_sent">--}}
-                                    {{--<p>that mongodb thing looks good, huh?--}}
-                                        {{--tiny master db, and huge document store</p>--}}
-                                    {{--<time datetime="2009-11-13T20:00">Timothy • 51 min</time>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-md-2 col-xs-2 avatar">--}}
-                                {{--<img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                    <div id="chat_content" class="panel-body msg_container_base">
+
                     </div>
                     <div class="panel-footer">
-                        <div class="input-group">
-                            <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Escriba su mensaje" />
-                            <span class="input-group-btn">
-                            <button class="btn btn-primary btn-sm" id="btn-chat">Enviar</button>
-                            </span>
-                        </div>
+                        <form>
+                            <div class="input-group">
+                                <input autocomplete="off" id="m" type="text" class="form-control input-sm chat_input" placeholder="Escriba su mensaje" />
+                                <span class="input-group-btn">
+                                <button class="btn btn-primary btn-sm" id="btn-chat">Enviar</button>
+                                </span>
+                            </div>
+                            <input id='from' value="{{\Illuminate\Support\Facades\Session::get('_token')}}" type="hidden" >
+                        </form>
                     </div>
                 </div>
             </div>
@@ -332,6 +261,7 @@
 
     var socket = io.connect('localhost:3000');
 
+
     $('form').submit(function(){
 
         var msg = {
@@ -348,10 +278,28 @@
 
     socket.on('chat message', function(msg){
 
-        if(msg.from == $('#from').val()){
-            $('#messages').append($('<li>').text(msg.msg));
+        if(msg.from == $('#from').val() || msg.to == $('#from').val()){
+            
+            if(msg.from == $('#from').val()){
+                $('#chat_content').append(chat_user(msg.msg));
+            }
+            if(msg.from == 'administrador'){
+                $('#chat_content').append(chat_admin(msg.msg));
+            }
         }
+
     });
+
+
+    function chat_user(msg )
+    {
+      return   '<div class="row msg_container base_sent"><div class="col-md-10 col-xs-10"> <div class="messages msg_sent"> <p>'+msg+'.</p> <time datetime="2009-11-13T20:00">Usuario • Hace 1 minuto</time> </div> </div> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-user.jpg" class=" img-responsive "> </div> </div>';
+    }
+
+    function chat_admin(msg )
+    {
+      return '<div class="row msg_container base_receive"> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-soporte.jpg" class=" img-responsive "> </div> <div class="col-md-10 col-xs-10"> <div class="messages msg_receive"> <p> '+msg+'</p> <time datetime="2009-11-13T20:00">Soporte • Ahora</time> </div> </div> </div>';
+    }
 </script>
 
 
