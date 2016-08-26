@@ -1,0 +1,45 @@
+<div class="sidebar-widget wow fadeInUp outer-bottom-vs">
+    <h3 class="section-title">Más Vendidos</h3>
+    <div class="sidebar-widget-body outer-top-xs">
+        <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
+            @foreach(\App\Entities\motonet\Publications::all() as $p)
+                <div class="item">
+                    <div class="products best-product">
+
+                        <div class="product">
+                            <div class="product-micro">
+                                <div class="row product-micro-row">
+                                    <div class="col col-xs-5">
+                                        <div class="product-image">
+                                            <div class="image">
+                                                <a href="{!! route('productDetail',$p->id) !!}" data-lightbox="image-1" data-title="{{$p->name }}">
+                                                    <img data-echo="{{$p->Models->Images->first()->image }}" src="{{$p->Models->Images->first()->image }}" class="img-responsive byn" alt="">
+                                                    <div class="zoom-overlay"></div>
+                                                </a>
+                                            </div><!-- /.image -->
+
+                                        </div><!-- /.product-image -->
+                                    </div><!-- /.col -->
+                                    <div class="col col-xs-7">
+                                        <div class="product-info">
+                                            <h3>{{$p->models->brands->name}}</h3>
+                                            <h3 class="name"><a href="{!! route('productDetail',$p->id) !!}">{{$p->title}}</a></h3>
+                                            <div class="product-price">
+                                                <span class="price">$ {{$p->price}}</span>
+
+                                            </div><!-- /.product-price -->
+                                            <div class="action"><a href="{!! route('productDetail',$p->id) !!}" class="lnk btn btn-primary">detalle</a></div>
+                                        </div>
+                                    </div><!-- /.col -->
+                                </div><!-- /.product-micro-row -->
+                            </div><!-- /.product-micro -->
+
+                        </div>
+
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+    </div><!-- /.sidebar-widget-body -->
+</div><!-- /.sidebar-widget -->
