@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
 use Illuminate\Support\Facades\Session;
 
-
+//khbjhbjhvjvh
 class webController extends Controller {
 
     private $categories;
