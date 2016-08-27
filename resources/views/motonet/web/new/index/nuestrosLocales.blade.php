@@ -8,7 +8,7 @@
                     <div class="blog-post">
                         <div class="blog-post-image">
                             <div class="image">
-                                <a href="blog.html"><img data-echo="{{$branch->images->first()->image}}" width="270" height="135" src="{{$branch->images->first()->image}}" alt=""></a>
+                                <a href="blog.html"><img data-echo="{{$branch->images->first()->image or ''}}" width="270" height="135" src="{{$branch->images->first()->image or ''}}" alt=""></a>
                             </div>
                         </div><!-- /.blog-post-image -->
 

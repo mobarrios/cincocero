@@ -70,7 +70,7 @@ class webController extends Controller {
 
         $data['publicationDetail'] = $this->publications->find($id);
 
-        return view('motonet/web/detail')->with($data);
+        return view('motonet/web/new/detail')->with($data);
     }
 
     public function find(Request $request)

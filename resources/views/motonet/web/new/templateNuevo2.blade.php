@@ -68,7 +68,7 @@
 
     <div class="container">
 
-          @include('motonet.web.new.index.mainPromos')
+          @yield('promos')
 
           <div class="row">
 
@@ -79,7 +79,7 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
-                @include('motonet.web.new.index.slider')
+                @yield('sideContent')
             </div>
 
           </div>

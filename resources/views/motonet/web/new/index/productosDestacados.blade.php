@@ -17,7 +17,7 @@
                                 <div class="product">
                                     <div class="product-image m-r-15">
                                         <div class="image">
-                                            <a href="{!! route('productDetail',$publication->id) !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image }}" class="byn img-responsive" alt=""></a>
+                                            <a href="{!! route('productDetail',$publication->id) !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image or ''}}" class="byn img-responsive" alt=""></a>
                                         </div><!-- /.image -->
 
                                         <div class="tagPromo new">
