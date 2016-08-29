@@ -66,7 +66,6 @@ class webController extends Controller {
     }
 
     public function detail($id){
-
         $data['publicationDetail'] = $this->publications->find($id);
 
         return view('motonet/web/new/detail')->with($data);
@@ -173,5 +172,14 @@ class webController extends Controller {
         return view('emails.mail');
     }
 
+
+    public function agregarProductos($id){
+        if(Session::has('carrito')){
+            array_push(Session::get('carrito')[Session::get('_token')], $id);
+        }else{
+            Session::put('carrito',array($id));
+        }
+        
+    }
     
 }
