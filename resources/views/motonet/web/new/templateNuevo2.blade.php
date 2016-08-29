@@ -52,7 +52,6 @@
 
 </head>
 <body class="cnt-home">
-
 <header class="header-style-1">
 
     @include('motonet/web/new/topMenu')
@@ -62,6 +61,7 @@
     @include('motonet/web/new/navBar')
 
 </header>
+@include('motonet.web.new.messages')
 
 
 <div class="body-content outer-top-xs" id="top-banner-and-menu">

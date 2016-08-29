@@ -177,18 +177,17 @@ class webController extends Controller {
         if(Session::get('carrito')){
             $array = Session::get('carrito');
 
-            $array[] = $id;
-
             if(in_array($id,$array)){
-                return redirect()->back()->withErrors('Ya estaba agregado');
+                return redirect()->back()->withErrors('El producto seleccionado ya estaba agregado');
             }else{
+                $array[] = $id;
                 Session::put('carrito',$array);
-                return redirect()->back()->withErrors('Agregado correctamente');
+                return redirect()->back()->withErrors('Se agregó correctamente el producto');
             }
 
         }else{
             Session::put('carrito',array($id));
-            return redirect()->back()->withErrors('Agregado correctamente');
+            return redirect()->back()->withErrors('Se agregó correctamente el producto');
         }
     }
     
