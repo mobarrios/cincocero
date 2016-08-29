@@ -24,12 +24,15 @@
 						<div class="product-item-holder size-big single-product-gallery small-gallery">
 
 							<div id="owl-single-product">
-								<div class="single-product-gallery-item" id="slide1">
-									<a data-lightbox="image-1" data-title="Gallery" href="">
-										<img class="img-responsive" alt="" src="{!! $publicationDetail->Images->first()->image or ''!!}" data-echo="{!! $publicationDetail->Images->first()->image or ''!!}" />
-									</a>
-								</div><!-- /.single-product-gallery-item -->
-
+								@if($publicationDetail->Images->count() > 0)
+									@foreach($publicationDetail->Images as $ind => $img)
+										<div class="single-product-gallery-item" id="slide{!! $ind !!}">
+											<a data-lightbox="image-1" data-title="Gallery" href="{!! $img->image !!}">
+												<img class="img-responsive" alt="" src="{!! $img->image!!}" data-echo="{!! $img->image!!}" />
+											</a>
+										</div><!-- /.single-product-gallery-item -->
+									@endforeach
+								@endif
 							</div><!-- /.single-product-slider -->
 
 
@@ -39,8 +42,8 @@
 									@if($publicationDetail->Images->count() > 0)
 										@foreach($publicationDetail->Images as $ind => $img)
 											<div class="item">
-												<a class="horizontal-thumb active" data-target="#owl-single-product" data-slide="1" href="#slide1">
-													<img class="img-responsive" width="85" alt="" src="{!! $img !!}" data-echo="{!! $img !!}" />
+												<a class="horizontal-thumb" data-target="#owl-single-product" data-slide="{!! $ind !!}" href="#slide1">
+													<img class="img-responsive" width="85" alt="" src="{!! $img->image !!}" data-echo="{!! $img->image !!}" />
 												</a>
 											</div>
 										@endforeach
@@ -58,20 +61,18 @@
 						<div class="product-info">
 							<h1 class="name">{!! $publicationDetail->title!!}</h1>
 							
-							<div class="rating-reviews m-t-20">
-								<div class="row">
-									<div class="col-sm-3">
-										<div class="rating rateit-small"></div>
-									</div>
-									@if($publicationDetail->destacado_text != "")
+							@if($publicationDetail->destacado_text != "")
+								<div class="rating-reviews">
+									<div class="row">
+
 										<div class="col-sm-8">
 											<div class="reviews">
-												<span class="label">{!! $publicationDetail->destacado_text !!}</span>
+												<span class="label promoDetail">{!! $publicationDetail->destacado_text !!}</span>
 											</div>
 										</div>
-									@endif
-								</div><!-- /.row -->		
-							</div><!-- /.rating-reviews -->
+									</div><!-- /.row -->
+								</div><!-- /.rating-reviews -->
+							@endif
 
 							@if($publicationDetail->promo != "")
 								<div class="stock-container info-container m-t-10">
@@ -90,9 +91,9 @@
 								</div><!-- /.stock-container -->
 							@endif
 
-							<div class="description-container m-t-20">
-								Suspendisse posuere arcu diam, id accumsan eros pharetra ac. Nulla enim risus, facilisis bibendum gravida eget, lacinia id purus. Suspendisse posuere arcu diam, id accumsan eros pharetra ac. Nulla enim risus, facilisis bibendum gravida eget, lacinia id purus. Susp endisse posuere arcu diam, id accumsan eros pharetra ac. 
-							</div><!-- /.description-container -->
+							{{--<div class="description-container m-t-20">--}}
+								{{--Suspendisse posuere arcu diam, id accumsan eros pharetra ac. Nulla enim risus, facilisis bibendum gravida eget, lacinia id purus. Suspendisse posuere arcu diam, id accumsan eros pharetra ac. Nulla enim risus, facilisis bibendum gravida eget, lacinia id purus. Susp endisse posuere arcu diam, id accumsan eros pharetra ac. --}}
+							{{--</div><!-- /.description-container -->--}}
 
 							<div class="price-container info-container m-t-20">
 								<div class="row">
@@ -142,7 +143,7 @@
 									</div>
 
 									<div class="col-sm-7">
-										<a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> AGREGAR AL CARRO</a>
+										<a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> AGREGAR A LA COMPRA</a>
 									</div>
 
 									
@@ -203,135 +204,6 @@
 							{!! $publicationDetail->description !!}
 						</div>
 					</div><!-- /.tab-pane -->
-
-					{{--<div id="review" class="tab-pane">--}}
-					{{--<div class="product-tab">--}}
-					{{----}}
-					{{--<div class="product-reviews">--}}
-					{{--<h4 class="title">Customer Reviews</h4>--}}
-
-					{{--<div class="reviews">--}}
-					{{--<div class="review">--}}
-					{{--<div class="review-title"><span class="summary">Best Product For me :)</span><span class="date"><i class="fa fa-calendar"></i><span>20 minutes ago</span></span></div>--}}
-					{{--<div class="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam suscipit nisl in adipiscin"</div>--}}
-					{{--<div class="author m-t-15"><i class="fa fa-pencil-square-o"></i> <span class="name">Michael Lee</span></div>													</div>--}}
-					{{----}}
-					{{--</div><!-- /.reviews -->--}}
-					{{--</div><!-- /.product-reviews -->--}}
-					{{----}}
-
-					{{----}}
-					{{--<div class="product-add-review">--}}
-					{{--<h4 class="title">Write your own review</h4>--}}
-					{{--<div class="review-table">--}}
-					{{--<div class="table-responsive">--}}
-					{{--<table class="table table-bordered">	--}}
-					{{--<thead>--}}
-					{{--<tr>--}}
-					{{--<th class="cell-label">&nbsp;</th>--}}
-					{{--<th>1 star</th>--}}
-					{{--<th>2 stars</th>--}}
-					{{--<th>3 stars</th>--}}
-					{{--<th>4 stars</th>--}}
-					{{--<th>5 stars</th>--}}
-					{{--</tr>--}}
-					{{--</thead>	--}}
-					{{--<tbody>--}}
-					{{--<tr>--}}
-					{{--<td class="cell-label">Quality</td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="1"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="2"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="3"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="4"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="5"></td>--}}
-					{{--</tr>--}}
-					{{--<tr>--}}
-					{{--<td class="cell-label">Price</td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="1"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="2"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="3"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="4"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="5"></td>--}}
-					{{--</tr>--}}
-					{{--<tr>--}}
-					{{--<td class="cell-label">Value</td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="1"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="2"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="3"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="4"></td>--}}
-					{{--<td><input type="radio" name="quality" class="radio" value="5"></td>--}}
-					{{--</tr>--}}
-					{{--</tbody>--}}
-					{{--</table><!-- /.table .table-bordered -->--}}
-					{{--</div><!-- /.table-responsive -->--}}
-					{{--</div><!-- /.review-table -->--}}
-					{{----}}
-					{{--<div class="review-form">--}}
-					{{--<div class="form-container">--}}
-					{{--<form role="form" class="cnt-form">--}}
-					{{----}}
-					{{--<div class="row">--}}
-					{{--<div class="col-sm-6">--}}
-					{{--<div class="form-group">--}}
-					{{--<label for="exampleInputName">Your Name <span class="astk">*</span></label>--}}
-					{{--<input type="text" class="form-control txt" id="exampleInputName" placeholder="">--}}
-					{{--</div><!-- /.form-group -->--}}
-					{{--<div class="form-group">--}}
-					{{--<label for="exampleInputSummary">Summary <span class="astk">*</span></label>--}}
-					{{--<input type="text" class="form-control txt" id="exampleInputSummary" placeholder="">--}}
-					{{--</div><!-- /.form-group -->--}}
-					{{--</div>--}}
-
-					{{--<div class="col-md-6">--}}
-					{{--<div class="form-group">--}}
-					{{--<label for="exampleInputReview">Review <span class="astk">*</span></label>--}}
-					{{--<textarea class="form-control txt txt-review" id="exampleInputReview" rows="4" placeholder=""></textarea>--}}
-					{{--</div><!-- /.form-group -->--}}
-					{{--</div>--}}
-					{{--</div><!-- /.row -->--}}
-					{{----}}
-					{{--<div class="action text-right">--}}
-					{{--<button class="btn btn-primary btn-upper">SUBMIT REVIEW</button>--}}
-					{{--</div><!-- /.action -->--}}
-
-					{{--</form><!-- /.cnt-form -->--}}
-					{{--</div><!-- /.form-container -->--}}
-					{{--</div><!-- /.review-form -->--}}
-
-					{{--</div><!-- /.product-add-review -->										--}}
-					{{----}}
-					{{--</div><!-- /.product-tab -->--}}
-					{{--</div>--}}
-					<!-- /.tab-pane -->
-
-					{{--<div id="tags" class="tab-pane">--}}
-					{{--<div class="product-tag">--}}
-					{{----}}
-					{{--<h4 class="title">Product Tags</h4>--}}
-					{{--<form role="form" class="form-inline form-cnt">--}}
-					{{--<div class="form-container">--}}
-					{{----}}
-					{{--<div class="form-group">--}}
-					{{--<label for="exampleInputTag">Add Your Tags: </label>--}}
-					{{--<input type="email" id="exampleInputTag" class="form-control txt">--}}
-					{{----}}
-
-					{{--</div>--}}
-
-					{{--<button class="btn btn-upper btn-primary" type="submit">ADD TAGS</button>--}}
-					{{--</div><!-- /.form-container -->--}}
-					{{--</form><!-- /.form-cnt -->--}}
-
-					{{--<form role="form" class="form-inline form-cnt">--}}
-					{{--<div class="form-group">--}}
-					{{--<label>&nbsp;</label>--}}
-					{{--<span class="text col-md-offset-3">Use spaces to separate tags. Use single quotes (') for phrases.</span>--}}
-					{{--</div>--}}
-					{{--</form><!-- /.form-cnt -->--}}
-
-					{{--</div><!-- /.product-tab -->--}}
-					{{--</div>--}}
-					<!-- /.tab-pane -->
 
 				</div><!-- /.tab-content -->
 			</div><!-- /.col -->
@@ -684,4 +556,9 @@
 		</div>
 	</div>
 
+@endsection
+
+@section('js')
+	<script src="assets/unicase/js/owl.carousel.min.js"></script>
+	<script src="assets/unicase/js/wow.min.js"></script>
 @endsection
