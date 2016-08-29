@@ -36,7 +36,14 @@
 
                                         <table class="table table-condensed table-bordered">
                                             <th colspan="3"> {{$torneo->name}}
+
                                                 <span class="pull-right"> <a href="{{route('tournamentsGetEdit',$torneo->id)}}" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span></a></span>
+
+                                                @if(strtotime($torneo->to) <= strtotime(date('Y-m-d')))
+                                                    <label class="label label-danger">FINALIZADO</label>
+                                                @else
+                                                    <label class="label label-default">{{$torneo->from}}</label> a <label class="label label-default">{{$torneo->to}}</label>
+                                                @endif
                                             </th>
 
                                                 @foreach($torneo->Fases as $fases)

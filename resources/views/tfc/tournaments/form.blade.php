@@ -12,12 +12,19 @@
 
         @endif
 
-        {{--
-        {!! Form::dateCustom('from', 'Fecha Inicio ')!!}
-        {!! Form::dateCustom('to', 'Fecha Final')!!}
-        --}}
+
 
         {!! Form::textCustom('name', 'Nombre Torneo')!!}
+
+        <div class="row">
+            <div class="col-xs-6">
+                {!! Form::dateCustom('from', 'Fecha Inicio ')!!}
+            </div>
+            <div class="col-xs-6">
+                {!! Form::dateCustom('to', 'Fecha Final')!!}
+            </div>
+        </div>
+
 
 
 
