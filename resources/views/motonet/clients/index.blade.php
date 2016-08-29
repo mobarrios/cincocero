@@ -24,25 +24,18 @@
 
                     </tr>
                     </thead>
-                    {{--<tfoot>
-                    <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
-                    </tr>
-                    </tfoot>--}}
+
                     <tbody>
                     @foreach($models as $model)
                         <tr>
                             <td>
+                              {{--
                                 @if(isset($routeDetail))
                                     <a href="{{route($routeDetail, $model->id)}}">{{$model->id}}</a>
                             @else
+                            --}}
                                 {{$model->id}}
-                            @endif
+                            {{--@endif--}}
 
 
                             @foreach($tableHeader['columns'] as $column)
@@ -93,35 +86,37 @@
                             @endforeach
 
                             <td class="col-xs-2">
+                                {{--
                                 <a class="btn btn-sm btn-default" href="{{route($routeNewDerivation,$model->id)}}">
                                     <i class="fa fa-share "></i>
                                 </a>
-
-                                <a class="btn btn-sm btn-default" href="{{route($routeEdit,$model->id)}}">
+                                --}}
+                                <a class="btn btn-sm btn-default" href="{{route($routeDetail,$model->id)}}">
                                     <i class="fa fa-pencil"></i>
                                 </a>
 
                                 <a class="del btn btn-sm btn-default" href="{{route($routeDel ,$model->id)}}">
                                     <i class="fa fa-trash"></i>
                                 </a>
+                                    {{--
+                                    <a class="btn btn-sm btn-default" href="{{route('budgetsGetNew' ,$model->id)}}">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    --}}
+                                </td>
+                            </tr>
+@endforeach
 
-                                <a class="btn btn-sm btn-default" href="{{route('budgetsGetNew' ,$model->id)}}">
-                                    <i class="fa fa-edit"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    @endforeach
-
-                    </tbody>
-                </table>
-
-
-            </div>
-        </div>
+</tbody>
+</table>
 
 
+</div>
+</div>
 
-    @endsection
+
+
+@endsection
 
 @stop
 

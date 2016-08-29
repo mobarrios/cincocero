@@ -1,81 +1,70 @@
-@extends('index')
 
-    @section('content')
+<div class="panel">
 
-        <div class="panel">
-            <div class="panel-body">
-                <h3>{{strtoupper($client->full_name)}}</h3>
-                <h5><strong>DNI </strong> {{strtoupper($client->dni)}}</h5>
-                <h5><strong>Direccion </strong>  {{$client->address}}</h5>
-                <h5><strong>Email </strong> {{$client->email}}</h5>
-                <h5><strong>Tel. / Cel. </strong>  {{$client->phone}} {{$client->cell_phone}}</h5>
-                <hr>
+    <div class="panel-body">
 
-                <label>Producto</label>
-                <div class="input-group">
-                    <input id="txt_search" type="text" class="form-control" name="Number" placeholder="Buscar Producto" required="">
-                    <span class="btn_search input-group-addon"><i class="fa fa-search"></i></span>
-                </div>
-                <div class="data">
-
-                </div>
+        {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
 
 
-                <div ng-controller="MyController">
-                    Your name:
-                    <input type="text" ng-model="username">
-                    <button ng-click='sayHello()'>greet</button>
-                    <hr>
-                    @{{greeting}}
-                </div>
+        <label>Modelo</label>
+        <div class="form-group">
+            <select name='models_id' style="width: 100%;" class="form-control">
+                @foreach($brands as $br)
+                    <optgroup label="{{$br->name}}">
+                        @foreach($br->Models as $m)
+                            <option value="{{$m->id}}" @if(isset($model) && ($model->models_id == $m->id)) selected="selected" @endif>{{$m->name}} -  ${{$m->purchasePrice->price or 'Consultar'}}</option>
+                        @endforeach
+                    </optgroup>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                {!! Form::textCustom('list_price','Precio de Lista') !!}
+            </div>
+            <div class="col-xs-6">
+                {!! Form::textCustom('count_price','Precio de Contado') !!}
+            </div>
+        </div>
 
 
-                </div>
-
-
+        <div class="row">
+            <div class="col-xs-4">
+                {!! Form::checkbox('alarm') !!}
+                <label>Alarma</label>
+                {!! Form::text('alarm_price',null,['class'=>'form-control']) !!}
+            </div>
+            <div class="col-xs-4">
+                {!! Form::checkbox('alarm') !!}
+                <label>Patentamiento</label>
+                {!! Form::text('alarm_price',null,['class'=>'form-control']) !!}
 
             </div>
-
-            <div class="panel-footer">
-
-
-            {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
-            {!! Form::close()!!}
+            <div class="col-xs-4">
+                {!! Form::checkbox('alarm') !!}
+                <label>Seguro</label>
+                {!! Form::text('alarm_price',null,['class'=>'form-control']) !!}
 
             </div>
 
         </div>
 
-    @endsection
-
-    @section('js')
-
-
-        <script>
-
-            angular.module('scopeExample', [])
-                    .controller('MyController', ['$scope', function($scope) {
-                        $scope.username = 'World';
-
-                        $scope.sayHello = function() {
-                            $scope.greeting = 'Hello ' + $scope.username + '!';
-                        };
-                    }]);
+        <hr>
+        {!! Form::textCustom('observations','Observaciones') !!}
 
 
-            $('.btn_search').on('click',function(){
-               var text = $('#txt_search').val();
 
-                $.get('budgets_search/'+text, function(res){
 
-                    $.each(res,function(k,v){
-                        console.log(v['name']);
-                        $('.data').append('<li>'+v['brands']['name']+'-'+v['name']+'</li>');
-                    });
-                });
+    </div>
 
-            });
-        </script>
-    @endsection
+    <div class="panel-footer">
 
-@stop
+        {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
+        {!! Form::close()!!}
+        <div class="pull-right">
+             Atendido por : <strong>{{\Illuminate\Support\Facades\Auth::user()->fullName}}</strong>
+        </div>
+    </div>
+
+</div>

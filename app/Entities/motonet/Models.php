@@ -25,4 +25,13 @@ class Models extends Entity{
         return $this->belongsToMany(Categories::getClass(),'models_categories');
     }
 
+    public function PurchasePrice(){
+
+        return $this->hasOne(ModelsPurchasePrice::getClass());
+    }
+
+    public function SalePrice(){
+
+    }
+
 }

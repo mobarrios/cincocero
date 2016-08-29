@@ -9,7 +9,6 @@
     <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
     <title>{nc} nav_coder</title>
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <!-- =============== VENDOR STYLES ===============-->
     <!-- FONT AWESOME-->
@@ -41,8 +40,9 @@
     <!-- =============== IMAGEMODAL ===============-->
     <link href="assets/css/imageModal.css" rel="stylesheet" type="text/css" media="all" >
 
-    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
 
+    <!-- =============== select 2===============-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/map.css">
 
     @yield('css')
@@ -139,6 +139,7 @@
 <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
 
 <script src="assets/inspinia/js/bootstrap-multiselect.js"></script>
+<script src="assets/angle/vendor/select2/dist/js/select2.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
@@ -147,6 +148,7 @@
 
 <script>
 
+    $('select').select2();
 /*
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
 
