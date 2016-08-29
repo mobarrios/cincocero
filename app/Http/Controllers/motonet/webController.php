@@ -173,13 +173,23 @@ class webController extends Controller {
     }
 
 
-    public function agregarProductos($id){
-        if(Session::has('carrito')){
-            array_push(Session::get('carrito')[Session::get('_token')], $id);
+    public function addToCart($id){
+        if(Session::get('carrito')){
+            $array = Session::get('carrito');
+
+            $array[] = $id;
+
+            if(in_array($id,$array)){
+                return redirect()->back()->withErrors('Ya estaba agregado');
+            }else{
+                Session::put('carrito',$array);
+                return redirect()->back()->withErrors('Agregado correctamente');
+            }
+
         }else{
             Session::put('carrito',array($id));
+            return redirect()->back()->withErrors('Agregado correctamente');
         }
-        
     }
     
 }

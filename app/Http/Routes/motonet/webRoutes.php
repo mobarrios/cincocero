@@ -42,4 +42,9 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@mail'
     ]);
 
+    Route::get('{id}/addToCart',[
+        'as' => 'addToCart',
+        'uses' => 'webController@addToCart'
+    ]);
+
 });

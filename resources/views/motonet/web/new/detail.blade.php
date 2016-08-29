@@ -143,7 +143,7 @@
 									</div>
 
 									<div class="col-sm-7">
-										<a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> AGREGAR A LA COMPRA</a>
+										<a href="{!! route('addToCart',$publicationDetail->id) !!}" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> AGREGAR A LA COMPRA</a>
 									</div>
 
 									
