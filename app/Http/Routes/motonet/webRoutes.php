@@ -2,6 +2,10 @@
 Route::group(['namespace' => 'motonet'], function() {
 
 
+    Route::get('searchNueva',[
+        'as' => 'searchNueva',
+        'uses' => 'webController@searchNueva'
+    ]);
     Route::get('webNueva',[
         'as' => 'indexNueva',
         'uses' => 'webController@indexNuevo'

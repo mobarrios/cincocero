@@ -61,6 +61,13 @@ class webController extends Controller {
 
     }
 
+    public function searchNueva(){
+
+        $this->data['productos'] = Publications::all();
+        
+        return view('motonet/web/new/search')->with($this->data);
+    }
+
     public function indexNuevo(){
 
         $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
