@@ -118,6 +118,7 @@ class webController extends Controller {
 
             $data['items'] = $this->publications
                                 ->where('title','like','%'.$find.'%')
+                                ->where('private','!=',1)
                                 ->orWhereHas('models',function($q) use($find){
                                     $q->whereHas('categories',function($q) use($find) {
                                         $q->where('name', 'like', '%' . $find . '%');
@@ -128,7 +129,6 @@ class webController extends Controller {
                                         $q->where('name','like','%'.$find.'%');
                                     });
                                 })
-                                ->where('private','!=',1)
                                 ->get();
 
             $data['grid'] = "find";
