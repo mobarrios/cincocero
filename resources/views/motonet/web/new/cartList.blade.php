@@ -13,17 +13,7 @@
 
 
                     </thead><!-- /thead -->
-                    <tfoot>
-                    <tr>
-                        <td colspan="5">
-                            <div class="shopping-cart-btn">
-                                <span class="">
-                                        <a href="#" class="btn btn-upper btn-primary outer-left-xs">Continuar Comprando</a>
-                                </span>
-                            </div><!-- /.shopping-cart-btn -->
-                        </td>
-                    </tr>
-                    </tfoot>
+
                     <tbody>
 
                     @foreach($cartList as $cart)
@@ -58,28 +48,27 @@
                 </table><!-- /table -->
             </div>
 
-        <div class="pull-right col-md-6 col-sm-12 cart-shopping-total">
-            <table class="table table-bordered">
+            <hr>
+
+        <div class="col-md-12 col-sm-12 cart-shopping-total">
+            <table class="table table-stripped">
                 <thead>
                 <tr>
-                    <th class=" cart-shopping-total">
+                    <th>
                         <div class="cart-grand-total">
                             Total<span class="inner-left-md">$ {{$carrito['precio']}}</span>
+                            <a href="{!! route('resumen',$publi->id) !!}"class="btn btn-danger pull-right">Realizar Pago</a>
                         </div>
+                    </th>
+                    <th>
+                        <a href="{{route('index')}}"class="btn btn-block">Seguir Comprando</a>
                     </th>
                 </tr>
                 </thead><!-- /thead -->
-                <tbody>
-                <tr>
-                    <td>
-                        <div class="cart-checkout-btn pull-right">
-                            <button type="submit" class="btn btn-primary">Realizar Pago</button>
-                        </div>
-                    </td>
-                </tr>
-                </tbody><!-- /tbody -->
+
             </table><!-- /table -->
-        </div><!-- /.cart-shopping-total -->	</div><!-- /.shopping-cart -->
+        </div><!-- /.cart-shopping-total -->
+    </div><!-- /.shopping-cart -->
 </div>
 
 @endsection

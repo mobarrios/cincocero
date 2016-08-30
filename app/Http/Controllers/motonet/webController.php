@@ -61,6 +61,13 @@ class webController extends Controller {
 
     }
 
+
+    public function checkout(){
+
+
+        return view('motonet/web/new/checkout')->with($this->data);
+    }
+
     public function cartList(){
 
         if(Session::has('carrito')){

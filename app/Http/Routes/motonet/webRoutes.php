@@ -2,6 +2,11 @@
 Route::group(['namespace' => 'motonet'], function() {
 
 
+    Route::get('checkout',[
+        'as' => 'checkout',
+        'uses' => 'webController@checkout'
+    ]);
+
     Route::get('cartList',[
         'as' => 'cartList',
         'uses' => 'webController@cartList'
