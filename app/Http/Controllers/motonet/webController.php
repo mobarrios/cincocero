@@ -61,10 +61,21 @@ class webController extends Controller {
 
     }
 
+    public function cartList(){
+
+        if(Session::has('carrito')){
+            $this->data['cartList'] = Session::get('carrito');
+            return view('motonet/web/new/cartList')->with($this->data);
+        }else{
+            return redirect()->back()->withErrors('No tiene productos para comprar.');;
+        }
+
+    }
+
     public function searchNueva(){
 
         $this->data['productos'] = Publications::all();
-        
+
         return view('motonet/web/new/search')->with($this->data);
     }
 
