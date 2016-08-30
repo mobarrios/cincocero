@@ -203,5 +203,19 @@ class webController extends Controller {
             return redirect()->back()->withErrors('Se agregó correctamente el producto');
         }
     }
-    
+
+    public function deleteFromCart($id){
+        if(!empty(array_keys(Session::get('carrito'),$id))){
+            $pos = array_keys(Session::get('carrito'),$id);
+
+            $array = Session::get('carrito');
+
+            unset($array[$pos[0]]);
+
+            Session::put('carrito',$array);
+            return redirect()->back()->withErrors('Se eliminó correctamente el producto');
+        }else{
+            return redirect()->back()->withErrors('El producto no estaba en el carrito');
+        }
+    }
 }

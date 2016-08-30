@@ -66,7 +66,7 @@
                                     @if(\Illuminate\Support\Facades\Session::get('carrito'))
                                         {!! $carrito['totalProductos'] !!}
                                     @else
-                                        00.00
+                                        0
                                     @endif
                                 </span>
                             </div>
@@ -96,7 +96,7 @@
                                                 <div class="price">{!! \App\Entities\motonet\Publications::find($id)->price !!}</div>
                                             </div>
                                             <div class="col-xs-1 action">
-                                                <a href="#"><i class="fa fa-trash"></i></a>
+                                                <a href="{!! route('deleteFromCart',$id) !!}"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </div>
                                     </div><!-- /.cart-item -->

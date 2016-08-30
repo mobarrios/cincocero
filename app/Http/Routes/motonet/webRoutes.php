@@ -47,4 +47,9 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@addToCart'
     ]);
 
+    Route::get('{id}/deleteFromCart',[
+        'as' => 'deleteFromCart',
+        'uses' => 'webController@deleteFromCart'
+    ]);
+
 });
