@@ -17,24 +17,24 @@
 
 
                             <li class="dropdown active">
-                                <a href="contact.html"> Inicio</a>
+                                <a href="{!! route('indexNueva') !!}"> Inicio</a>
                             </li>
                             <li class="dropdown">
-                                <a href="contact.html">Seguros</a>
+                                <a href="{!! route('indexNueva') !!}#seguros">Seguros</a>
                             </li>
                             <li class="dropdown">
-                                <a href="contact.html"> Accesorios
-                                    <span class="menu-label hot-menu hidden-xs">Nuevo</span>
+                                <a href="{!! route('indexNueva') !!}#accesorios"> Accesorios
+                                    {{--<span class="menu-label hot-menu hidden-xs">Nuevo</span>--}}
                                 </a>
                             </li>
                             <li class="dropdown">
-                                <a href="contact.html"> Servicio Técnico</a>
+                                <a href="{!! route('indexNueva') !!}#servicioTecnico"> Servicio Técnico</a>
                             </li>
                             <li class="dropdown">
-                                <a href="contact.html"> Sucursales</a>
+                                <a href="{!! route('indexNueva') !!}#sucursales"> Sucursales</a>
                             </li>
                             <li class="dropdown">
-                                <a href="contact.html"> Contactanos</a>
+                                <a href="{!! route('indexNueva') !!}#footer"> Contactanos</a>
                             </li>
 
 
@@ -42,7 +42,6 @@
                         <div class="clearfix"></div>
                     </div><!-- /.nav-outer -->
                 </div><!-- /.navbar-collapse -->
-
 
             </div><!-- /.nav-bg-class -->
         </div><!-- /.navbar-default -->

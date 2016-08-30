@@ -5,7 +5,7 @@
             <div class="col-xs-12 col-sm-12 col-md-3 logo-holder mt-n81">
                 <!-- ============================================================= LOGO ============================================================= -->
                 <div class="logo">
-                    <a href="home.html">
+                    <a href="{!! route('indexNueva') !!}">
 
                         <img src="assets/web/img/logo.png" alt="" width="250">
 
