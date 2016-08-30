@@ -136,3 +136,10 @@
     </div><!-- /.container -->
 
 </div><!-- /.main-header -->
+
+
+@section('js')
+    <script>
+        alert('das');
+    </script>
+@endsection

@@ -11,6 +11,7 @@
 									<div class="col-sm-6 col-md-4">
 										<div class="products">
 											<div class="product">
+												<span class="label label-block promoDetail">{!!   $producto->destacado_text !!}</span>
 												<div class="product-image">
 													<div class="image">
 														<a href="index.php?page=detail"><img style="width: 200px" src="{{$producto->Models->Images->first()->image}}" alt="" ></a>
@@ -29,9 +30,7 @@
 													<div class="product-price">
 														<span class="price">$ {{$producto->price}}</span>
 														<span class="price-before-discount">$ 800</span>
-														<div class="reviews">
-															<span class="label promoDetail">{!!   $producto->destacado_text !!}</span>
-														</div>
+
 													</div><!-- /.product-price -->
 												</div><!-- /.product-info -->
 												<div class="cart clearfix animate-effect">
