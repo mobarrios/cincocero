@@ -1,4 +1,4 @@
-<section class="section outer-bottom-vs wow fadeInUp">
+<section class="section outer-bottom-vs wow fadeInUp" id="sucursales">
     <h3 class="section-title">Nuestros Locales</h3>
     <div class="blog-slider-container outer-top-xs">
         <div class="owl-carousel blog-slider custom-carousel">
