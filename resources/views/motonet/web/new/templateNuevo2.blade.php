@@ -67,7 +67,6 @@
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
 
     <div class="container">
-
           @yield('promos')
 
           <div class="row">

@@ -46,6 +46,19 @@ class webController extends Controller {
 
         }
 
+        if(Session::get('carrito')){
+            $precio = 0;
+            foreach(Session::get('carrito') as $id){
+                $prod = $this->publications->find($id);
+                $precio = $precio+$prod->price;
+            }
+
+            $this->data['carrito'] = [];
+            $this->data['carrito']['precio'] = $precio;
+            $this->data['carrito']['totalProductos'] = count(Session::get('carrito'));
+
+        }
+
     }
 
     public function indexNuevo(){
@@ -66,9 +79,9 @@ class webController extends Controller {
     }
 
     public function detail($id){
-        $data['publicationDetail'] = $this->publications->find($id);
+        $this->data['publicationDetail'] = $this->publications->find($id);
 
-        return view('motonet/web/new/detail')->with($data);
+        return view('motonet/web/new/detail')->with($this->data);
     }
 
     public function find(Request $request)
@@ -76,7 +89,7 @@ class webController extends Controller {
         if ($request->get('categories')) {
             $cat = $this->categories->find($request->get('categories'))->id;
 
-            $data['items'] = $this->publications
+            $this->data['items'] = $this->publications
                                 ->whereHas('models', function ($q) use($cat){
                                     $q->whereHas('categories', function ($q) use ($cat){
                                         $q->where('categories.id',$cat);
@@ -84,37 +97,37 @@ class webController extends Controller {
                                 })
                 ->where('private','!=',1)
                 ->get();
-            $data['grid'] = $this->categories->find($request->get('categories'))->name;
+            $this->data['grid'] = $this->categories->find($request->get('categories'))->name;
 
         } elseif ($request->get('models')){
             $m = $this->models->find($request->get('models'))->id;
-            /*$data['items'] = $this->publications
+            /*$this->data['items'] = $this->publications
                                 ->whereHas('items',function($q) use($m) {
                                 $q->whereHas('models', function ($q) use ($m) {
                                     $q->where('id', $m);
                                 });
                             })->get();
             */
-            $data['items'] = $this->publications->where('models_id',$m)
+            $this->data['items'] = $this->publications->where('models_id',$m)
                 ->where('private','!=',1)
                 ->get();
-            $data['grid'] = $this->models->find($request->get('models'))->name;
+            $this->data['grid'] = $this->models->find($request->get('models'))->name;
 
         }elseif($request->get('brands')){
             $b = $this->brands->find($request->get('brands'))->id;
-            $data['items'] = $this->publications
+            $this->data['items'] = $this->publications
                                 ->whereHas('models',function($q) use($b) {
                                     $q->whereHas('brands', function ($q) use ($b) {
                                         $q->where('id', $b);
                                     });
                                 })->where('private','!=',1)
                 ->get();
-            $data['grid'] = $this->brands->find($request->get('brands'))->name;
+            $this->data['grid'] = $this->brands->find($request->get('brands'))->name;
         }else{
 
             $find = $request->get('find');
 
-            $data['items'] = $this->publications
+            $this->data['items'] = $this->publications
                                 ->where('title','like','%'.$find.'%')
                                 ->orWhereHas('models',function($q) use($find){
                                     $q->whereHas('categories',function($q) use($find) {
@@ -129,11 +142,11 @@ class webController extends Controller {
                                 ->where('private','!=',1)
                                 ->get();
 
-            $data['grid'] = "find";
-            $data['find'] = $request->get('find');
+            $this->data['grid'] = "find";
+            $this->data['find'] = $request->get('find');
         }
 
-        return view('motonet/web/grid')->with($data);
+        return view('motonet/web/grid')->with($this->data);
     }
 
     public function resumen($id){
@@ -163,9 +176,9 @@ class webController extends Controller {
     }
 
     public function sucursalDetail($id){
-        $data['sucursal'] = $this->branches->find($id);
+        $this->data['sucursal'] = $this->branches->find($id);
 
-        return view('motonet/web/branchDetail')->with($data);
+        return view('motonet/web/branchDetail')->with($this->data);
     }
 
     public function mail(){
