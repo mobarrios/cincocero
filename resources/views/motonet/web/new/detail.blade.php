@@ -99,26 +99,26 @@
 								<div class="row">
 									
 
-									<div class="col-sm-6">
+									<div class="col-sm-6 col-md-12">
 										<div class="price-box">
 											<span class="price">{!! $publicationDetail->price !!}</span>
 											<span class="price-strike">$900.00</span>
 										</div>
 									</div>
 
-									<div class="col-sm-6">
-										<div class="favorite-button m-t-10">
-											<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Wishlist" href="#">
-											    <i class="fa fa-heart"></i>
-											</a>
-											<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Add to Compare" href="#">
-											   <i class="fa fa-retweet"></i>
-											</a>
-											<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="E-mail" href="#">
-											    <i class="fa fa-envelope"></i>
-											</a>
-										</div>
-									</div>
+									{{--<div class="col-sm-6">--}}
+										{{--<div class="favorite-button m-t-10">--}}
+											{{--<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Wishlist" href="#">--}}
+											    {{--<i class="fa fa-heart"></i>--}}
+											{{--</a>--}}
+											{{--<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Add to Compare" href="#">--}}
+											   {{--<i class="fa fa-retweet"></i>--}}
+											{{--</a>--}}
+											{{--<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="E-mail" href="#">--}}
+											    {{--<i class="fa fa-envelope"></i>--}}
+											{{--</a>--}}
+										{{--</div>--}}
+									{{--</div>--}}
 
 								</div><!-- /.row -->
 							</div><!-- /.price-container -->
@@ -133,11 +133,11 @@
 									<div class="col-sm-2">
 										<div class="cart-quantity">
 											<div class="quant-input">
-								                <div class="arrows">
-								                  <div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>
-								                  <div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>
-								                </div>
-								                <input type="text" value="1">
+								                {{--<div class="arrows">--}}
+								                  {{--<div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>--}}
+								                  {{--<div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>--}}
+								                {{--</div>--}}
+								                <input type="text" placeholder="1" disabled="disabled">
 							              </div>
 							            </div>
 									</div>
@@ -150,18 +150,18 @@
 								</div><!-- /.row -->
 							</div><!-- /.quantity-container -->
 
-							<div class="product-social-link m-t-20 text-right">
-								<span class="social-label">Compartir :</span>
-								<div class="social-icons">
-						            <ul class="list-inline">
-						                <li><a class="fa fa-facebook" href="http://facebook.com/transvelo"></a></li>
-						                <li><a class="fa fa-twitter" href="#"></a></li>
-						                <li><a class="fa fa-linkedin" href="#"></a></li>
-						                <li><a class="fa fa-rss" href="#"></a></li>
-						                <li><a class="fa fa-pinterest" href="#"></a></li>
-						            </ul><!-- /.social-icons -->
-						        </div>
-							</div>
+							{{--<div class="product-social-link m-t-20 text-right">--}}
+								{{--<span class="social-label">Compartir :</span>--}}
+								{{--<div class="social-icons">--}}
+						            {{--<ul class="list-inline">--}}
+						                {{--<li><a class="fa fa-facebook" href="http://facebook.com/transvelo"></a></li>--}}
+						                {{--<li><a class="fa fa-twitter" href="#"></a></li>--}}
+						                {{--<li><a class="fa fa-linkedin" href="#"></a></li>--}}
+						                {{--<li><a class="fa fa-rss" href="#"></a></li>--}}
+						                {{--<li><a class="fa fa-pinterest" href="#"></a></li>--}}
+						            {{--</ul><!-- /.social-icons -->--}}
+						        {{--</div>--}}
+							{{--</div>--}}
 
 							
 
