@@ -77,32 +77,31 @@
                         <li>
 
                             @if(Session::get('carrito'))
-                                @foreach(Session::get('carrito') as $id)
+
                                     <div class="cart-item product-summary">
                                         <div class="row">
                                             <div class="col-xs-4">
                                                 <div class="image">
-                                                    <a href="{!! route('productDetail',$id) !!}">
-                                                    @if(\App\Entities\motonet\Publications::find($id)->Images->count() > 0)
-                                                            <img class="img-responsive" src="{!! \App\Entities\motonet\Publications::find($id)->Images->first()->image !!}" alt="{!! \App\Entities\motonet\Publications::find($id)->title !!}"></a>
+                                                    <a href="{!! route('productDetail',Session::get('carrito')) !!}">
+                                                    @if(\App\Entities\motonet\Publications::find(Session::get('carrito'))->Images->count() > 0)
+                                                            <img class="img-responsive" src="{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->models->Images->first()->image !!}" alt="{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->title !!}"></a>
                                                     @else
-                                                            <img src="" alt="{!! \App\Entities\motonet\Publications::find($id)->title !!}"></a>
+                                                            <img src="" alt="{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->title !!}"></a>
                                                     @endif
                                                 </div>
                                             </div>
                                             <div class="col-xs-7">
 
-                                                <h3 class="name"><a href="{!! route('productDetail',$id) !!}">{!! \App\Entities\motonet\Publications::find($id)->models->name !!}</a></h3>
-                                                <div class="price">{!! \App\Entities\motonet\Publications::find($id)->price !!}</div>
+                                                <h3 class="name"><a href="{!! route('productDetail',Session::get('carrito')) !!}">{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->models->name !!}</a></h3>
+                                                <div class="price">{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->price !!}</div>
                                             </div>
                                             <div class="col-xs-1 action">
-                                                <a href="{!! route('deleteFromCart',$id) !!}"><i class="fa fa-trash"></i></a>
+                                                <a href="{!! route('deleteFromCart',Session::get('carrito')) !!}"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </div>
                                     </div><!-- /.cart-item -->
                                     <div class="clearfix"></div>
                                     <hr>
-                                @endforeach
                             @endif
 
 
