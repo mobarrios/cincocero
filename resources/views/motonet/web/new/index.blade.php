@@ -34,11 +34,11 @@
         <!-- ============================================== ACCESORIOS ============================================== -->
 
         @include('motonet.web.new.index.accesorios')
-        <hr>
-        @include('motonet.web.new.index.seguro')
+        {{--<hr>--}}
+        {{--@include('motonet.web.new.index.seguro')--}}
 
-        <hr>
-        @include('motonet.web.new.index.servicioTecnico')
+        {{--<hr>--}}
+        {{--@include('motonet.web.new.index.servicioTecnico')--}}
 
         <!-- ============================================== END ACCESORIOS ============================================== -->
 

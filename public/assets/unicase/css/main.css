@@ -5365,3 +5365,15 @@ img.byn:hover{
   background-color: #ff6c6c !important;
   color: #fff !important;
 }
+
+
+#myTabContent ul{
+  list-style-type: disc;
+  padding-left: 30px;
+}
+
+#myTabContent ul li{
+  padding-top: 10px;
+}
+
+
