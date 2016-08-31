@@ -15,23 +15,19 @@
                             <div class="products">
 
                                 <div class="product">
+                                    <div class="text-center" >
+                                        <label class="label label-danger">{{$publication->destacado_text}}</label>
+                                    </div>
                                     <div class="product-image m-r-15">
                                         <div class="image">
                                             <a href="{!! route('productDetail',$publication->id) !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image or ''}}" class="byn img-responsive" alt=""></a>
                                         </div><!-- /.image -->
-
-                                        <div class="tagPromo new">
-
-                                            12 cuotas sin interes
-                                            {{--<img src="{{$publication->Models->brands->Images->first()->image}}"></img>--}}
-                                        </div>
                                     </div><!-- /.product-image -->
 
 
                                     <div class="product-info text-left">
                                         <h3 >{{$publication->models->brands->name}}</h3>
                                         <h3 class="name"><a href="{!! route('productDetail',$publication->id) !!}">{{$publication->title}}</a></h3>
-                                        <div class="rating rateit-small"></div>
                                         <div class="product-price">
                     <span class="price">
                         $ {{$publication->price}}			</span>
@@ -47,7 +43,7 @@
                                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
                                                         <i class="fa fa-shopping-cart"></i>
                                                     </button>
-                                                    <button class="btn btn-primary" type="button" href="{!! route('productDetail',$publication->id) !!}">ver</button>
+                                                    <a class="btn btn-primary" type="button" href="{!! route('productDetail',$publication->id) !!}">ver</a>
                                                 </li>
                                             </ul>
                                         </div><!-- /.action -->

@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="clearfix"></div>
 
-                                <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
+                                <a href="{{route('cartList')}}" class="btn btn-upper btn-primary btn-block m-t-20">ver Carrito</a>
                             </div><!-- /.cart-total-->
 
 

@@ -28,6 +28,7 @@ class webController extends Controller {
     private $branches;
 
     public function __construct(Categories $categories, Models $models, Items $items,Brands $brands,Publications $publications,Branches $branches){
+
         $this->categories = $categories;
         $this->models= $models;
         $this->items= $items;

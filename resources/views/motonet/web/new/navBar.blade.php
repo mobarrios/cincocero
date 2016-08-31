@@ -22,6 +22,15 @@
                             <li class="dropdown">
                                 <a href="{!! route('indexNueva') !!}#accesorios">Accesorios</a>
                             </li>
+                            <li class="dropdown">
+                                <a href="{!! route('indexNueva') !!}#product-tabs-slider">Destacados
+                                    <span class="menu-label hot-menu hidden-xs">Nuevos Productos</span>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="{!! route('indexNueva') !!}#sucursales">Sucursales
+                                </a>
+                            </li>
                             {{--<li class="dropdown">--}}
                                 {{--<a href="{!! route('indexNueva') !!}#accesorios">--}}
                                     {{--<span class="menu-label hot-menu hidden-xs">Nuevo</span>--}}
