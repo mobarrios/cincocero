@@ -48,11 +48,8 @@ class webController extends Controller {
         }
 
         if(Session::get('carrito')){
-            $precio = 0;
-            foreach(Session::get('carrito') as $id){
-                $prod = $this->publications->find($id);
-                $precio = $precio+$prod->price;
-            }
+            $prod = $this->publications->find(Session::get('carrito'));
+            $precio = $prod->price;
 
             $this->data['carrito'] = [];
             $this->data['carrito']['precio'] = $precio;
@@ -218,35 +215,67 @@ class webController extends Controller {
 
 
     public function addToCart($id){
-        if(Session::get('carrito')){
-            $array = Session::get('carrito');
+//        if(Session::get('carrito')){
+//            $array = Session::get('carrito');
+//
+//            if(in_array($id,$array)){
+//                return redirect()->back()->withErrors('El producto seleccionado ya estaba agregado');
+//            }else{
+//                $array[] = $id;
+//                Session::put('carrito',$array);
+//                return redirect()->back()->withErrors('Se agregó correctamente el producto');
+//            }
+//
+//        }else{
+//            Session::put('carrito',array($id));
+//            return redirect()->back()->withErrors('Se agregó correctamente el producto');
+//        }
 
-            if(in_array($id,$array)){
+        if(Session::get('carrito')){
+            if($id == Session::get('carrito')){
                 return redirect()->back()->withErrors('El producto seleccionado ya estaba agregado');
             }else{
-                $array[] = $id;
-                Session::put('carrito',$array);
-                return redirect()->back()->withErrors('Se agregó correctamente el producto');
+                if($this->publications->find($id)){
+                    Session::put('carrito',$id);
+                    return redirect()->back()->withErrors('Se agregó correctamente el producto');
+                }else{
+                    return redirect()->back()->withErrors('Ese producto no existe');
+                }
             }
-
-        }else{
-            Session::put('carrito',array($id));
+        }else if($this->publications->find($id)){
+            Session::put('carrito',$id);
             return redirect()->back()->withErrors('Se agregó correctamente el producto');
+        }else{
+            return redirect()->back()->withErrors('Ese producto no existe');
         }
+
     }
 
     public function deleteFromCart($id){
-        if(!empty(array_keys(Session::get('carrito'),$id))){
-            $pos = array_keys(Session::get('carrito'),$id);
-
-            $array = Session::get('carrito');
-
-            unset($array[$pos[0]]);
-
-            Session::put('carrito',$array);
-            return redirect()->back()->withErrors('Se eliminó correctamente el producto');
+        if(Session::get('carrito')){
+            if($id == Session::get('carrito')){
+                Session::forget('carrito');
+                return redirect()->back()->withErrors('Se quitó correctamente el producto');
+            }else{
+                return redirect()->back()->withErrors('Ese producto no estaba en tu lista');
+            }
         }else{
-            return redirect()->back()->withErrors('El producto no estaba en el carrito');
+            return redirect()->back()->withErrors('No hay productos en tu lista');
         }
+
+//        if(!empty(array_keys(Session::get('carrito'),$id))){
+//            $pos = array_keys(Session::get('carrito'),$id);
+//
+//            $array = Session::get('carrito');
+//
+//            unset($array[$pos[0]]);
+//
+//            Session::put('carrito',$array);
+//            return redirect()->back()->withErrors('Se eliminó correctamente el producto');
+//        }else{
+//            return redirect()->back()->withErrors('El producto no estaba en el carrito');
+//        }
+
+
     }
 }
