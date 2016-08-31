@@ -104,8 +104,8 @@
 
 									<div class="col-sm-6 col-md-12">
 										<div class="price-box">
-											<span class="price">{!! $publicationDetail->price !!}</span>
-											<span class="price-strike">$900.00</span>
+											<span class="price"> $ {!! $publicationDetail->price !!}</span>
+
 										</div>
 									</div>
 
@@ -149,7 +149,7 @@
 										<a href="{!! route('addToCart',$publicationDetail->id) !!}" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> AGREGAR A LA COMPRA</a>
 									</div>
 
-									
+
 								</div><!-- /.row -->
 							</div><!-- /.quantity-container -->
 
@@ -173,7 +173,7 @@
 					</div><!-- /.col-sm-7 -->
 				</div><!-- /.row -->
 
-				
+
 
 <!-- ============================================== UPSELL PRODUCTS : END ============================================== -->
 			
@@ -190,9 +190,10 @@
 		<div class='container'>
 			<div class='row single-product outer-bottom-sm '>
 				<div class="product-tabs inner-bottom-xs  wow fadeInUp">
-		<div class="row">
-			<div class="col-xs-12 slider-detail2">
-				<img src="assets/web/img/slider-honda.jpg" alt="" class="img-responsive">
+		<div class="row ">
+			<div class="col-xs-12 text-center ">
+
+				<img src="{{$publicationDetail->images->first()->image or ''}}" alt="" >
 			</div>
 			<div class="col-sm-3">
 				<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">

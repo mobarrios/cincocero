@@ -83,7 +83,7 @@
                                             <div class="col-xs-4">
                                                 <div class="image">
                                                     <a href="{!! route('productDetail',Session::get('carrito')) !!}">
-                                                    @if(\App\Entities\motonet\Publications::find(Session::get('carrito'))->Images->count() > 0)
+                                                    @if(\App\Entities\motonet\Publications::find(Session::get('carrito'))->Models->Images->count() > 0)
                                                             <img class="img-responsive" src="{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->models->Images->first()->image !!}" alt="{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->title !!}"></a>
                                                     @else
                                                             <img src="" alt="{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->title !!}"></a>

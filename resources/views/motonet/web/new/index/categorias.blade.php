@@ -11,7 +11,9 @@
             <li class="menu-item">
                 <a href="{!! route('productFind',['categories' => 2]) !!}">Scooters</a>
             </li><!-- /.menu-item -->
-
+            <li class="dropdown menu-item">
+                <a href="{!! route('productFind',['categories' => 10]) !!}">Custom</a>
+            </li><!-- /.menu-item -->
             <li class="menu-item">
                 <a href="{!! route('productFind',['categories' => 3]) !!}">Ciclomotores</a>
             </li><!-- /.menu-item -->
@@ -29,10 +31,6 @@
             </li><!-- /.menu-item -->
             <li class="menu-item">
                 <a href="{!! route('productFind',['categories' => 7]) !!}">Bosque y Jardín</a>
-            </li><!-- /.menu-item -->
-
-            <li class="dropdown menu-item">
-                <a href="{!! route('productFind',['categories' => 1]) !!}">Accesorios</a>
             </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">

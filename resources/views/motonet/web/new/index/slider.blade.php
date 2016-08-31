@@ -7,14 +7,9 @@
                 <img src="assets/web/img/promo1.png" alt="" class="img-responsive">
                 <div class="caption bg-color vertical-center text-left">
                     <div class="big-text fadeInDown-1">
-                        <div class="big-text fadeInDown-1">
-                            Yamaha<span class="highlight">FIAT</span> 125
-                        </div>
+
                     </div>
 
-                    <div class="button-holder fadeInDown-3">
-                        <a href="" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Descubrilo</a>
-                    </div>
                 </div><!-- /.caption -->
             </div><!-- /.container-fluid -->
         </div><!-- /.item -->
