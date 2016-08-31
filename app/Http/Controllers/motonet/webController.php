@@ -138,7 +138,7 @@ class webController extends Controller {
         if ($request->get('categories')) {
             $cat = $this->categories->find($request->get('categories'))->id;
 
-            $this->data['items'] = $this->publications
+            $this->data['productos'] = $this->publications
                                 ->whereHas('models', function ($q) use($cat){
                                     $q->whereHas('categories', function ($q) use ($cat){
                                         $q->where('categories.id',$cat);
@@ -157,14 +157,14 @@ class webController extends Controller {
                                 });
                             })->get();
             */
-            $this->data['items'] = $this->publications->where('models_id',$m)
+            $this->data['productos'] = $this->publications->where('models_id',$m)
                 ->where('private','!=',1)
                 ->get();
             $this->data['grid'] = $this->models->find($request->get('models'))->name;
 
         }elseif($request->get('brands')){
             $b = $this->brands->find($request->get('brands'))->id;
-            $this->data['items'] = $this->publications
+            $this->data['productos'] = $this->publications
                                 ->whereHas('models',function($q) use($b) {
                                     $q->whereHas('brands', function ($q) use ($b) {
                                         $q->where('id', $b);
@@ -176,7 +176,7 @@ class webController extends Controller {
 
             $find = $request->get('find');
 
-            $this->data['items'] = $this->publications
+            $this->data['productos'] = $this->publications
                                 ->where('title','like','%'.$find.'%')
                                 ->orWhereHas('models',function($q) use($find){
                                     $q->whereHas('categories',function($q) use($find) {
@@ -195,7 +195,7 @@ class webController extends Controller {
             $this->data['find'] = $request->get('find');
         }
 
-        return view('motonet/web/grid')->with($this->data);
+        return view('motonet/web/new/search')->with($this->data);
     }
 
     public function resumen($id){

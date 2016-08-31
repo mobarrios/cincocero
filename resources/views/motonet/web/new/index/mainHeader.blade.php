@@ -24,18 +24,18 @@
                 </div><!-- /.contact-row -->
                 <!-- ============================================================= SEARCH AREA ============================================================= -->
                 <div class="search-area">
-                    <form>
+                    {!! Form::open(['route'=>'productFind','method'=>'get']) !!}
                         <div class="control-group">
 
                             <ul class="categories-filter animate-dropdown">
                             </ul>
 
-                            <input class="search-field" placeholder="Buscar Producto..." />
+                            <input class="search-field" name="find" placeholder="Buscar Producto..." />
 
-                            <a class="search-button" href="#" ></a>
+                            <button class="search-button" type="submit"></button>
 
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div><!-- /.search-area -->
                 <!-- ============================================================= SEARCH AREA : END ============================================================= -->				</div><!-- /.top-search-holder -->
 

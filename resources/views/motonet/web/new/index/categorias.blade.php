@@ -4,35 +4,35 @@
     <nav class="yamm megamenu-horizontal" role="navigation">
         <ul class="nav">
 
-            <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Motos</a>
+            <li class="menu-item">
+                <a href="{!! route('productFind',['categories' => 1]) !!}">Motos</a>
+            </li><!-- /.menu-item -->
+
+            <li class="menu-item">
+                <a href="{!! route('productFind',['categories' => 2]) !!}">Scooters</a>
+            </li><!-- /.menu-item -->
+
+            <li class="menu-item">
+                <a href="{!! route('productFind',['categories' => 3]) !!}">Ciclomotores</a>
+            </li><!-- /.menu-item -->
+
+            <li class="menu-item">
+                <a href="{!! route('productFind',['categories' => 4]) !!}">Cuatriciclos</a>
+            </li><!-- /.menu-item -->
+
+            <li class="menu-item">
+                <a href="{!! route('productFind',['categories' => 5]) !!}">Generadores</a>
+            </li><!-- /.menu-item -->
+
+            <li class="menu-item">
+                <a href="{!! route('productFind',['categories' => 6]) !!}">Motobombas</a>
+            </li><!-- /.menu-item -->
+            <li class="menu-item">
+                <a href="{!! route('productFind',['categories' => 7]) !!}">Bosque y Jardín</a>
             </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scooters</a>
-            </li><!-- /.menu-item -->
-
-            <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ciclomotores</a>
-            </li><!-- /.menu-item -->
-
-            <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuatriciclos</a>
-            </li><!-- /.menu-item -->
-
-            <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Generadores</a>
-            </li><!-- /.menu-item -->
-
-            <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Motobombas</a>
-            </li><!-- /.menu-item -->
-            <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bosque y Jardín</a>
-            </li><!-- /.menu-item -->
-
-            <li class="dropdown menu-item">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accesorios</a>
+                <a href="{!! route('productFind',['categories' => 1]) !!}">Accesorios</a>
             </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
@@ -45,7 +45,7 @@
                                 <ul class="links list-unstyled">
                                       <li>
                                           <img style="width: 100px;" class="img-thumbnail" src="{{$brand->Images->first()->image}}">
-                                          <a href="category.html">{{$brand->name}}</a>
+                                          <a href="{!! route('productFind',['brands' => $brand->id]) !!}">{{$brand->name}}</a>
                                       </li>
                                 </ul>
 
