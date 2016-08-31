@@ -2,6 +2,12 @@
 Route::group(['namespace' => 'motonet'], function() {
 
 
+    Route::get('resumenNueva/{id?}',[
+        'as' => 'resumenNueva',
+        'uses' => 'webController@resumenNueva'
+    ]);
+
+
     Route::get('checkout',[
         'as' => 'checkout',
         'uses' => 'webController@checkout'

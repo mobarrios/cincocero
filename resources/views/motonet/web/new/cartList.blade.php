@@ -50,24 +50,25 @@
 
             <hr>
 
-        <div class="col-md-12 col-sm-12 cart-shopping-total">
-            <table class="table table-stripped">
-                <thead>
-                <tr>
-                    <th>
-                        <div class="cart-grand-total">
-                            Total<span class="inner-left-md">$ {{$carrito['precio']}}</span>
-                            <a href="{!! route('resumen',$publi->id) !!}"class="btn btn-danger pull-right">Realizar Pago</a>
-                        </div>
-                    </th>
-                    <th>
-                        <a href="{{route('index')}}"class="btn btn-block">Seguir Comprando</a>
-                    </th>
-                </tr>
-                </thead><!-- /thead -->
+            <div class="col-md-12 col-sm-12 cart-shopping-total">
+                <table class="table table-stripped">
+                    <thead>
+                    <tr>
+                        <th>
+                            <div class="cart-grand-total">
+                                Total<span class="inner-left-md">$ {{$carrito['precio']}}</span>
+                                <a href="{!! route('resumenNueva',$publi->id) !!}"class="btn btn-danger pull-right">Realizar Pago</a>
+                            </div>
+                        </th>
+                        <th>
+                            <a href="{{route('index')}}"class="btn btn-block">Seguir Comprando</a>
+                        </th>
+                    </tr>
+                    </thead><!-- /thead -->
 
-            </table><!-- /table -->
-        </div><!-- /.cart-shopping-total -->
+                </table><!-- /table -->
+            </div><!-- /.cart-shopping-total -->
+
     </div><!-- /.shopping-cart -->
 </div>
 

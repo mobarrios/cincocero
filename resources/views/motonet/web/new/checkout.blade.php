@@ -20,6 +20,70 @@
                 <!-- panel-body  -->
                 <div class="panel-body">
 
+                    <table class="table table-striped shoping-cart-table">
+
+                        <tfoot>
+                        <tr>
+                            <td colspan="3">
+                                <div class="ibox-content">
+                                    <div class="col-xs-6 text-center">
+                                        <span>
+                                            Total
+                                        </span>
+                                            <h2 class="font-bold">
+                                                ${!! $publication->price !!}
+                                            </h2>
+                                        </div>
+                                        <div class="col-xs-6 text-center">
+                                    <span>
+                                        Seña
+                                    </span>
+                                        <h2>
+                                            ${!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)!!}
+                                        </h2>
+                                    </div>
+
+                                    <hr/>
+                                </div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="cart-product-imitation">
+                                    <img style="width: 100px;" src="{!! $publication->Models->Images->first()->image or ''!!}" alt="{!! $publication->title !!}" class="img-responsive">
+                                </div>
+                            </td>
+                            <td>
+                                <h3>
+                                    <a href="{!! route('productDetail',$publication->id) !!}" class="text-navy">
+                                        {!! $publication->title !!}
+                                    </a>
+                                </h3>
+                                <dl >
+                                    <dt>Descripción</dt>
+                                    <h4><strong>{!! $publication->Models->Brands->name !!}</strong> - {!! $publication->Models->name !!}</h4>
+                                </dl>
+                            </td>
+
+                            <td>
+                                <h4>
+                                    Precio
+                                </h4>
+                                <h4>
+                                    ${!! $publication->price !!}
+                                </h4>
+                            </td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+
+                                <span class="text-muted small">
+                                    *Verifique el pedido y los montos antes de terminar el pago.
+                                </span>
+
                 </div>
                 <!-- panel-body  -->
             </div><!-- row -->
@@ -36,7 +100,49 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse" style="height: 0px;">
                 <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+                    <div class="ibox h-auto">
+
+                        {!! Form::open(['url'=>'pay','method'=>'get'])!!}
+
+                        <div class="ibox-content">
+                            <h3>Total</h3>
+                            @foreach($publication->PayMethod as $pm)
+                                <label><input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{$publication->price + ($publication->price * $pm->porcent) /100 }}" > {{$pm->method}} {{$pm->modality}}
+                                    @if($pm->modality != "")
+                                        de <strong>$ {!! round((intval($publication->price + ($publication->price * $pm->porcent) /100)  / $pm->coutas),2,PHP_ROUND_HALF_UP) !!}
+                                        </strong>
+                                    @else
+                                        <strong>$ {!! $publication->price + ($publication->price * $pm->porcent) /100 !!}
+                                        </strong>
+                                    @endif
+                                </label><br>
+                            @endforeach
+
+                            {{--@foreach($publication->PayMethod as $pm)--}}
+                            {{--<label>--}}
+                            {{--<input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{$publication->price + ($publication->price * $pm->porcent) /100 }}"> {{$pm->method}} {{$pm->modality}} <strong> $ {{$publication->price + ($publication->price * $pm->porcent) /100}}  </strong></label><br>--}}
+                            {{--@endforeach--}}
+
+                            <hr>
+                            <h3>Seña</h3>
+                            @foreach($publication->PayMethod as $pm)
+                                <label>
+                                    <input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100}}" > {{$pm->method}} {{$pm->modality}}
+                                    @if($pm->modality != "")
+                                        de <strong>
+                                            $ {!! round((round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100) / (intval(str_replace(" cuotas","",$pm->modality))),2,PHP_ROUND_HALF_UP) !!}
+                                    @else
+                                                <strong>$ {!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100!!}
+
+                                    @endif
+                                                </strong>
+                                </label>
+                                <br>
+                            @endforeach
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -52,50 +158,7 @@
             </div>
             <div id="collapseThree" class="panel-collapse collapse" style="height: 0px;">
                 <div class="panel-body">
-                    <div class="row">
-                        <!-- guest-login -->
-                        <div class="col-md-6 col-sm-6 guest-login">
-                            <h4 class="checkout-subtitle">Checkout as a Guest or Register Login</h4>
-                            <p class="text title-tag-line">Register with us for future convenience:</p>
-                            <!-- radio-form  -->
-                            <form class="register-form" role="form">
-                                <div class="radio radio-checkout-unicase">
-                                    <input id="guest" type="radio" name="text" value="guest" checked="">
-                                    <label class="radio-button guest-check" for="guest">Checkout as Guest</label>
-                                    <br>
-                                    <input id="register" type="radio" name="text" value="register">
-                                    <label class="radio-button" for="register">Register</label>
-                                </div>
-                            </form>
-                            <!-- radio-form  -->
-                            <h4 class="checkout-subtitle outer-top-vs">Register and save time</h4>
-                            <p class="text title-tag-line ">Register with us for future convenience:</p>
-                            <ul class="text instruction inner-bottom-30">
-                                <li class="save-time-reg">- Fast and easy check out</li>
-                                <li>- Easy access to your order history and status</li>
-                            </ul>
-                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button checkout-continue ">Continue</button>
-                        </div>
-                        <!-- guest-login -->
-                        <!-- already-registered-login -->
-                        <div class="col-md-6 col-sm-6 already-registered-login">
-                            <h4 class="checkout-subtitle">Already registered?</h4>
-                            <p class="text title-tag-line">Please log in below:</p>
-                            <form class="register-form" role="form">
-                                <div class="form-group">
-                                    <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                                    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="admin@gadgets.com">
-                                </div>
-                                <div class="form-group">
-                                    <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
-                                    <input type="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" placeholder="Password">
-                                    <a href="#" class="forgot-password">Forgot your Password?</a>
-                                </div>
-                                <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
-                            </form>
-                        </div>
-                        <!-- already-registered-login -->
-                    </div>
+                    @include('motonet.web.new.payment.form_pago')
                 </div>
             </div>
         </div>

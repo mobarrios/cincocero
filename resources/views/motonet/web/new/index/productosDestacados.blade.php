@@ -29,8 +29,7 @@
                                         <h3 >{{$publication->models->brands->name}}</h3>
                                         <h3 class="name"><a href="{!! route('productDetail',$publication->id) !!}">{{$publication->title}}</a></h3>
                                         <div class="product-price">
-                    <span class="price">
-                        $ {{$publication->price}}			</span>
+                                            <span class="price">$ {{$publication->price}}</span>
                                             <span class="price-before-discount">$ {{$publication->price}}</span>
 
                                         </div><!-- /.product-price -->

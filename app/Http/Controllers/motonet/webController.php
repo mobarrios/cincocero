@@ -62,6 +62,32 @@ class webController extends Controller {
 
     }
 
+    public function resumenNueva($id){
+
+        $publicacion    = $this->publications->find($id);
+
+        $this->data['publication'] = $publicacion;
+
+        if($publicacion->private == 1)
+        {
+            $creado = new \DateTime($publicacion->publication_date);
+            $hoy    = new \DateTime(date("Y-m-d"));
+
+            if(date_diff($hoy,$creado)->days >= 2){
+
+//                $this->data['publication'] = Publications::where('destacado',1)->where('private','!=',1)->get();
+
+//                return redirect()->back()->withErrors('La publicación ha caducado')->with($this->data);
+                $this->data["privateFail"] = 1;
+                return view('motonet/web/new/checkout')->withErrors("La publicación ha caducado")->with($this->data);
+            }
+
+        }
+
+
+        return view('motonet/web/new/checkout')->with($this->data);
+    }
+
 
     public function checkout(){
 
