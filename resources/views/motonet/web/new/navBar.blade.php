@@ -20,21 +20,21 @@
                                 <a href="{!! route('indexNueva') !!}"> Inicio</a>
                             </li>
                             <li class="dropdown">
-                                <a href="{!! route('indexNueva') !!}#seguros">Seguros</a>
+                                <a href="{!! route('indexNueva') !!}#accesorios">Accesorios</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="{!! route('indexNueva') !!}#accesorios"> Accesorios
+                            {{--<li class="dropdown">--}}
+                                {{--<a href="{!! route('indexNueva') !!}#accesorios">--}}
                                     {{--<span class="menu-label hot-menu hidden-xs">Nuevo</span>--}}
-                                </a>
-                            </li>
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="dropdown">--}}
+                                {{--<a href="{!! route('indexNueva') !!}#accesorios"> Servicio Técnico</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="dropdown">--}}
+                                {{--<a href="{!! route('indexNueva') !!}#sucursales"> Sucursales</a>--}}
+                            {{--</li>--}}
                             <li class="dropdown">
-                                <a href="{!! route('indexNueva') !!}#servicioTecnico"> Servicio Técnico</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="{!! route('indexNueva') !!}#sucursales"> Sucursales</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="{!! route('indexNueva') !!}#footer"> Contactanos</a>
+                                <a href="{!! route('contact') !!}"> Contactanos</a>
                             </li>
 
 

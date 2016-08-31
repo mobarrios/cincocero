@@ -1,4 +1,4 @@
-<div class="body-content outer-top-bd">
+<div class="body-content outer-top-bd" id="accesorios">
     <div class="container">
         <div class="terms-conditions-page inner-bottom-sm">
             <h3 class="section-title">Accesorios</h3>

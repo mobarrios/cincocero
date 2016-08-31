@@ -74,7 +74,7 @@ class webController extends Controller {
             $this->data['cartList'] = Session::get('carrito');
             return view('motonet/web/new/cartList')->with($this->data);
         }else{
-            return redirect()->back()->withErrors('No tiene productos para comprar.');;
+            return redirect()->back()->withErrors('No tiene productos para comprar.');
         }
 
     }
@@ -208,6 +208,11 @@ class webController extends Controller {
 
     public function mail(){
         return view('emails.mail');
+    }
+
+
+    public function contact(){
+        return view('motonet/web/new/contact')->with($this->data);
     }
 
 

@@ -66,4 +66,9 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@deleteFromCart'
     ]);
 
+    Route::get('contact',[
+        'as' => 'contact',
+        'uses' => 'webController@contact'
+    ]);
+
 });
