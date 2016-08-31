@@ -5376,4 +5376,35 @@ img.byn:hover{
   padding-top: 10px;
 }
 
+.slider-detail{
+  height: 155px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+}
 
+.slider-detail img{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+
+.slider-detail2{
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+
+.slider-detail2 img{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
