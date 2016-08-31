@@ -135,7 +135,7 @@
 
     var socket = io.connect('localhost:3000');
 
-    $('form').submit(function(){
+    $('#form').submit(function(){
 
         var msg = {
             to   : 'admin',
