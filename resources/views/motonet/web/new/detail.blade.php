@@ -19,6 +19,9 @@
 
 
 			<div class='col-md-9'>
+				<div class="col-xs-12 slider-detail">
+					<img src="assets/web/img/slider-honda.jpg" alt="slider" class="img-responsive">
+				</div>
 				<div class="row  wow fadeInUp">
 					<div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
 						<div class="product-item-holder size-big single-product-gallery small-gallery">
@@ -188,6 +191,9 @@
 			<div class='row single-product outer-bottom-sm '>
 				<div class="product-tabs inner-bottom-xs  wow fadeInUp">
 		<div class="row">
+			<div class="col-xs-12 slider-detail2">
+				<img src="assets/web/img/slider-honda.jpg" alt="" class="img-responsive">
+			</div>
 			<div class="col-sm-3">
 				<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
 					<li class="active"><a data-toggle="tab" href="#description">DESCRIPCIÓN</a></li>
