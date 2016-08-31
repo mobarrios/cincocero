@@ -24,8 +24,8 @@
 						<div class="product-item-holder size-big single-product-gallery small-gallery">
 
 							<div id="owl-single-product">
-								@if($publicationDetail->Images->count() > 0)
-									@foreach($publicationDetail->Images as $ind => $img)
+								@if($publicationDetail->Models->Images->count() > 0)
+									@foreach($publicationDetail->Models->Images as $ind => $img)
 										<div class="single-product-gallery-item" id="slide{!! $ind !!}">
 											<a data-lightbox="image-1" data-title="Gallery" href="{!! $img->image !!}">
 												<img class="img-responsive" alt="" src="{!! $img->image!!}" data-echo="{!! $img->image!!}" />
@@ -39,8 +39,8 @@
 							<div class="single-product-gallery-thumbs gallery-thumbs">
 
 								<div id="owl-single-product-thumbnails">
-									@if($publicationDetail->Images->count() > 0)
-										@foreach($publicationDetail->Images as $ind => $img)
+									@if($publicationDetail->Models->Images->count() > 0)
+										@foreach($publicationDetail->Models->Images as $ind => $img)
 											<div class="item">
 												<a class="horizontal-thumb" data-target="#owl-single-product" data-slide="{!! $ind !!}" href="#slide1">
 													<img class="img-responsive" width="85" alt="" src="{!! $img->image !!}" data-echo="{!! $img->image !!}" />

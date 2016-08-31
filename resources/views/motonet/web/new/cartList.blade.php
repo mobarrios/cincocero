@@ -16,9 +16,9 @@
 
                     <tbody>
 
-                    @foreach($cartList as $cart)
+
                         <?php
-                                $publi = \App\Entities\motonet\Publications::find($cart);
+                                $publi = \App\Entities\motonet\Publications::find($cartList);
                         ?>
 
                         <tr>
@@ -42,7 +42,7 @@
                         </tr>
 
 
-                    @endforeach
+
 
                     </tbody><!-- /tbody -->
                 </table><!-- /table -->

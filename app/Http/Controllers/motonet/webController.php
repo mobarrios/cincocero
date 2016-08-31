@@ -47,15 +47,16 @@ class webController extends Controller {
 
         }
 
-        if(Session::get('carrito')){
-            $prod = $this->publications->find(Session::get('carrito'));
-            $precio = $prod->price;
+            if(Session::get('carrito')){
+                $prod = $this->publications->find(Session::get('carrito'));
+                $precio = $prod->price;
 
-            $this->data['carrito'] = [];
-            $this->data['carrito']['precio'] = $precio;
-            $this->data['carrito']['totalProductos'] = count(Session::get('carrito'));
+                $this->data['carrito'] = [];
+                $this->data['carrito']['precio'] = $precio;
+                $this->data['carrito']['totalProductos'] = count(Session::get('carrito'));
 
-        }
+            }
+        
 
     }
 
