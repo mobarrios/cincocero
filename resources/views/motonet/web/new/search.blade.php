@@ -29,7 +29,7 @@
 
 													<div class="product-price">
 														<span class="price">$ {{$producto->price}}</span>
-														<span class="price-before-discount">$ 800</span>
+														<span class="price-before-discount"></span>
 
 													</div><!-- /.product-price -->
 												</div><!-- /.product-info -->

@@ -56,7 +56,7 @@ class webController extends Controller {
                 $this->data['carrito']['totalProductos'] = count(Session::get('carrito'));
 
             }
-        
+
 
     }
 
@@ -162,6 +162,7 @@ class webController extends Controller {
             $this->data['productos'] = $this->publications->where('models_id',$m)
                 ->where('private','!=',1)
                 ->get();
+
             $this->data['grid'] = $this->models->find($request->get('models'))->name;
 
         }elseif($request->get('brands')){
@@ -178,21 +179,14 @@ class webController extends Controller {
         }else{
 
             $find = $request->get('find');
-
             $this->data['productos'] = $this->publications
-                                ->where('title','like','%'.$find.'%')
-                                ->where('private','!=',1)
+                                 ->where('private','!=',1)
+                                 ->where('title','like','%'.$find.'%')
                                 ->orWhereHas('models',function($q) use($find){
                                     $q->whereHas('categories',function($q) use($find) {
                                         $q->where('name', 'like', '%' . $find . '%');
                                     });
                                 })
-                                ->orWhereHas('models',function($q) use($find){
-                                    $q->whereHas('brands',function($q) use($find) {
-                                        $q->where('name','like','%'.$find.'%');
-                                    });
-                                })
-
                                 ->get();
 
             $this->data['grid'] = "find";
