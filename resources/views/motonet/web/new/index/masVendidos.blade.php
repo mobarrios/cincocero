@@ -15,8 +15,8 @@
                                     <div class="col col-xs-5">
                                         <div class="product-image">
                                             <div class="image">
-                                                <a href="{!! route('productDetail',$p->id) !!}" data-lightbox="image-1" data-title="{{$p->name }}">
-                                                    <img data-echo="{{$p->Models->Images->first()->image  or ''}}" src="{{$p->Models->Images->first()->image  or ''}}" class="img-responsive byn" alt="">
+                                                <a href="{!! route('productDetail',$p->id) !!}" data-lightbox="image-1" data-title="{{$p->name }}" class="linkbyn">
+                                                    <img data-echo="{{$p->Models->Images->first()->image  or ''}}" src="{{$p->Models->Images->first()->image  or ''}}" class="img-responsive" alt="">
                                                     <div class="zoom-overlay"></div>
                                                 </a>
                                             </div><!-- /.image -->
