@@ -15,6 +15,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class webController extends Controller {
@@ -57,6 +58,35 @@ class webController extends Controller {
 
             }
 
+
+    }
+
+
+    public function sendMail(Request $request){
+
+        if($request->name == "")
+            return redirect()->back()->withErrors("Completar Nombre");
+        if($request->email == "")
+            return redirect()->back()->withErrors("Completar Email");
+        if($request->telefono == "")
+            return redirect()->back()->withErrors("Completar Telefono");
+        if($request->comentario == "")
+            return redirect()->back()->withErrors("Completar Comentario");
+
+        $data['from'] = $request->email;
+        $data['nombre'] = $request->name;
+        $data['telefono'] = $request->telefono;
+        $data['comentario'] = $request->comentario;
+
+
+        Mail::queue('emails.contact', $data , function($message) use($data)
+        {
+            $message->from($data['from']);
+            $message->to('info@motonet.com.ar')->subject('Desde MotoNet.com.ar')
+                ->replyTo($data['from'], $data['nombre']);
+        });
+
+        return redirect()->back()->withErrors("Mensaje enviado correctamente!.");
 
     }
 
