@@ -5278,7 +5278,7 @@ a.linkbyn img{
   transition: all 0.5s linear 0s;
 }
 
-a.linkbyn:hover img{
+a.linkbyn img{
   filter: grayscale(0);
   -webkit-filter: grayscale(0);
   -moz-filter: grayscale(0);
@@ -5430,4 +5430,10 @@ a.linkbyn:hover img{
   left:0;
   right:0;
   margin:auto;
+}
+
+
+#grid-container .product{
+  height: 310px;
+  overflow-y: auto;
 }
