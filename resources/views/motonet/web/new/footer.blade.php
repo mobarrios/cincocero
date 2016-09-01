@@ -34,8 +34,8 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
-                                    <tr><td>Lunes a Viernes:</td><td class="pull-right">09.00 a 20.00</td></tr>
-                                    <tr><td>Sabados:</td><td class="pull-right">09.00 a 20.00</td></tr>
+                                    <tr><td>Lunes a Viernes:</td><td class="pull-right">09.00 a 19.00</td></tr>
+                                    <tr><td>Sabados:</td><td class="pull-right">09.00 a 19.00</td></tr>
                                     <tr><td>Domingos:</td><td class="pull-right">Cerrado.</td></tr>
                                     </tbody>
                                 </table>
