@@ -56,6 +56,8 @@ class WebController extends Controller {
          return view('tfc/web/noticias')->with($data);
     }
 
+
+
     public function Sedes()
     {
         $data['sedes'] = Sedes::all();
@@ -470,5 +472,11 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
     public function sedesDetail($id){
         $data['sede'] = Sedes::find($id);
         return view('soffem.web.sedesDetail')->with($data);
+    }
+
+    public function noticiaDetail($id){
+        $data['noticia'] = News::find($id);
+
+        return view('soffem.web.noticiasDetail')->with($data);
     }
 }

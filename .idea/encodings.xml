@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/resources/views/soffem/web/equipos.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/soffem/web/fases.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/soffem/web/navbar.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/soffem/web/noticiasDetail.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/soffem/web/novedades.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/soffem/web/sedes.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/soffem/web/sedesDetail.blade.php" charset="UTF-8" />

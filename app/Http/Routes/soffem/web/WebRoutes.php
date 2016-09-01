@@ -38,6 +38,11 @@ Route::get('{id}/sedesDetail',[
     'uses' => 'soffem\WebController@sedesDetail'
 ]);
 
+Route::get('{id}/noticia',[
+    'as' => 'noticiaDetail',
+    'uses' => 'soffem\WebController@noticiaDetail'
+]);
+
 
 
 

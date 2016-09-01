@@ -1449,3 +1449,7 @@ body.rtls .ibox-title h5 {
 #map_canvas{
   width:100% !important;
 }
+
+.mt-300{
+  margin-top:120px;
+}

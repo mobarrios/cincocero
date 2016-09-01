@@ -20,7 +20,7 @@
             @foreach($novedades as $novedad)
                 <article class="white-panel text-center">
                     <img src="{{$novedad->images->first()->image}}" >
-                    <h4><a href="">{{$novedad->title}}</a></h4>
+                    <h4><a href="{!! route('noticiaDetail',$novedad->id) !!}">{{$novedad->title}}</a></h4>
                 </article>
             @endforeach
 
