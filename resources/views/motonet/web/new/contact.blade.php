@@ -64,7 +64,7 @@
                         </div>
                         <div class="clearfix address">
                             <span class="contact-i"><i class="fa fa-map-marker"></i></span>
-                            <span class="contact-span">Av. Ricardo balbin 486, San Miguel, Buenos Aires.</span>
+                            <span class="contact-span">PUEYRREDON 740, C.A.B.A , Buenos Aires.</span>
                         </div>
                         <div class="clearfix phone-no">
                             <span class="contact-i"><i class="fa fa-mobile"></i></span>

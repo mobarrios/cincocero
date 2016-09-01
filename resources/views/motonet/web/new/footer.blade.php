@@ -106,7 +106,7 @@
                     </span>
                                     </div>
                                     <div class="media-body">
-                                        <p>Av. Ricardo balbin 486, San Miguel, Buenos Aires.</p>
+                                        <p>PUEYRREDON 740, C.A.B.A , Buenos Aires.</p>
                                     </div>
                                 </li>
 
