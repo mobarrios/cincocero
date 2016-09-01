@@ -89,7 +89,6 @@ class webController extends Controller {
 
     public function checkout(){
 
-
         return view('motonet/web/new/checkout')->with($this->data);
     }
 
@@ -213,13 +212,15 @@ class webController extends Controller {
 
 //                return redirect()->back()->withErrors('La publicación ha caducado')->with($this->data);
                 $this->data["privateFail"] = 1;
-                return view('motonet/web/resumen')->withErrors("La publicación ha caducado")->with($this->data);
+               // return view('motonet/web/resumen')->withErrors("La publicación ha caducado")->with($this->data);
+                return view('motonet/web/new/checkout')->withErrors("La publicación ha caducado")->with($this->data);
+
             }
 
         }
 
 
-        return view('motonet/web/resumen')->with($this->data);
+        return view('motonet/web/new/checkout')->with($this->data);
     }
 
     public function sucursalDetail($id){
