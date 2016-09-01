@@ -13,6 +13,17 @@
                     <span>Home</span>
                 </a>
             </li>
+            <li>
+                <a class="menu" data-id="-1" href="" title="Chat">
+
+                    <div id="chat_label">
+                    </div>
+
+                    <em class="icon-bubbles"></em>
+                    <span>Chat</span>
+
+                </a>
+            </li>
 
             @foreach( App\Http\Repositories\config\MenusRepo::build() as $m => $k)
 
@@ -43,6 +54,7 @@
                         </li>
                     @endif
             @endforeach
+
 
 
 

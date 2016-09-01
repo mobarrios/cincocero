@@ -19,12 +19,8 @@
                 <img src="assets/web/img/promo2.png" alt="" class="img-responsive">
                 <div class="caption bg-color vertical-center text-left">
                     <div class="big-text fadeInDown-1">
-                         <span class="highlight"> HONDA XR</span> 150
                     </div>
-
-
                     <div class="button-holder fadeInDown-3">
-                        <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Descubrilo</a>
                     </div>
                 </div><!-- /.caption -->
             </div><!-- /.container-fluid -->

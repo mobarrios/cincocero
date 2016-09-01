@@ -32,21 +32,25 @@
     });
 
 
+    var cant    = 0;
 
     socket.on('chat message', function(msg){
 
         var from    = msg.from;
         var to      = msg.to;
 
+
         //AGREGAGO NUEVO CHAT SI NO ESTA ACTIVO
         if(from != 'administrador'){
 
-            console.log($('#'+from+'').length );
+
             if($('#'+from+'').length != 1){
                 $('#cha').append(new_chat(from));
             }
 
             $('#'+from+' .msg').attr('data-id',from).append(msg.msg);
+            cant = cant + 1;
+
 
         }else {
 
@@ -54,8 +58,10 @@
 
         }
 
+        $('#chat_label').html('<div class="pull-right label label-success">'+cant+'</div>');
 
-       // $('#'+from+'.msg').attr('data-id',from).append(msg.msg);
+
+        // $('#'+from+'.msg').attr('data-id',from).append(msg.msg);
         //$('#messages').append($('<li>').text(msg.msg));
     });
 

@@ -99,7 +99,7 @@
 
 
 
-
+@include('motonet/web/new/chat');
 
 
 <!-- ============================================================= FOOTER ============================================================= -->
@@ -127,36 +127,6 @@
 <!-- For demo purposes – can be removed on production -->
 
 <script src="switchstylesheet/switchstylesheet.js"></script>
-
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-<script>
-    // var socket = io.connect('http://62.210.13.249:3000');
-
-    var socket = io.connect('localhost:3000');
-
-    $('#form').submit(function(){
-
-        var msg = {
-            to   : 'admin',
-            from : $('#from').val() ,
-            text : $('#m').val()
-        }
-
-        socket.emit('chat message',  msg );
-
-        $('#m').val('');
-        return false;
-    });
-
-    socket.on('chat message', function(msg){
-
-        if(msg.from == $('#from').val()){
-            $('#messages').append($('<li>').text(msg.msg));
-        }
-    });
-</script>
-
 
 <script>
 

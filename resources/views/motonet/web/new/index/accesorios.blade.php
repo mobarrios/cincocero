@@ -13,28 +13,30 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade active in" role="tabpanel" id="alarmas" aria-labelledby="alarmas-tab">
-                        <h3>ALARMA DE MOTOS DUOBLOCK FX 330</h3>
-                        <span>Funciones Exclusivas DUOBLOCK FX 330:</span>
+                      <div class="col-xs-6">
+                        <h3>ALARMA DE MOTOS DEFENDERTECH 3i</h3>
+                        <span>Funciones Exclusivas :</span>
                         <ul>
-                            <li>Incorpora 2 (dos) nuevos controles remoto DPN-52, para comando manual y por presencia.</li>
-                            <li>Nuevo sensor de desplazamiento (acelerómetro)que detecta cualquier movimiento de la motocicleta.</li>
-                            <li>Nuevo diseño del módulo de alarma, con ficha de conexión.</li>
-                            <li>Tamaño reducido para una mejor instalación.</li>
-                            <li>Compatible con sensor de intrusión.</li>
-                            <li>Activa y desactiva automáticamente por presencia, sin emitir aviso alguno. (modo discreto).</li>
-                            <li>Activa y desactiva el sistema de alarma de forma manual, a través del control remoto, con avis visual y luminoso. (modo alerta).</li>
-                            <li>Modo asalto por presencia, programable.</li>
-                            <li>Modo asalto por control remoto manual, programable.</li>
-                            <li>Bloqueo progresivo de marcha, para sus modos asalto.</li>
-                            <li>No interfiere el sistema eléctrico de la moto.</li>
-                            <li>Mayor resistencia a las interferencias.</li>
-                            <li>Bloquea la marcha del motor.</li>
-                            <li>Controles Remotos, sirena y modulo central, resistente al agua.</li>
-                            <li>Entrada auxiliar de disparo para protección de gavetas o porta objetos.</li>
-                            <li>Anulación del sistema de alarma, mediante código secreto.</li>
-                            <li>Módulo con menor consumo de energía 2.5 mA.</li>
-                            <li>Inhibición rápida del control remoto extraviado.</li>
+                           <li>Alarma de moto de Defender Tech 3i</li>
+                            <li>garantiza la máxima seguridad y la innovación para su día a día con varias funciones y compatibilidad</li>
+                            <li>es el producto adecuado para aquellos que buscan una excelente relación calidad -precio y no compromete la fiabilidad.</li>
+                            <li>la alarma que tiene un control simple con sensor de presencia que permite la activación de la alarma silenciosa a distancia.</li>
+
                         </ul>
+                       </div>
+                        <div class="col-md-5">
+                            <div class="wide-banner cnt-strip">
+                                <div class="image">
+                                    <img class="img-responsive" src="assets/web/img/alarma.jpg" alt="" pagespeed_url_hash="3709575097" data-pagespeed-onload="pagespeed.CriticalImages.checkImageForCriticality(this);" pagespeed_lsc_url="http://demo2.transvelo.in/html/unicase/assets/images/blank.gif" onload="var elem=this;if (this==window) elem=document.body;elem.setAttribute('data-pagespeed-loaded', 1)" data-pagespeed-loaded="1">
+                                </div>
+                                <div class="strip">
+                                    <div class="strip-inner">
+
+                                        <h2>DEFENDERTECH 3i</h2>
+                                    </div>
+                                </div>
+                            </div><!-- /.wide-banner -->
+                        </div>
                     </div>
                     <div class="tab-pane fade" role="tabpanel" id="seguro" aria-labelledby="seguro-tab">
                         <h3>Responsabilidad Civil - (Seguro de RC).</h3>
