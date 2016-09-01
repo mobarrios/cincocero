@@ -99,8 +99,7 @@
 
 
 
-@include('motonet/web/new/chat');
-
+{{-- @include('motonet/web/new/chat'); --}}
 
 <!-- ============================================================= FOOTER ============================================================= -->
 @include('motonet/web/new/footer')
