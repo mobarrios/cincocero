@@ -87,19 +87,19 @@
     </div><!-- /.container -->
 </div><!-- /#top-banner-and-menu -->
 
-{{--
-<ul id="messages"></ul>
-<form>
-    <input id="m" autocomplete="off" /><button>Send</button>
-    <input id='from' value="{{\Illuminate\Support\Facades\Session::get('_token')}}" type="hidden" >
-</form>
---}}
+
+{{--<ul id="messages"></ul>--}}
+{{--<form>--}}
+    {{--<input id="m" autocomplete="off" /><button>Send</button>--}}
+    {{--<input id='from' value="{{\Illuminate\Support\Facades\Session::get('_token')}}" type="hidden" >--}}
+{{--</form>--}}
+
 
 <!-- ============================================================= CHAT ============================================================= -->
 
 
 
-{{-- @include('motonet/web/new/chat'); --}}
+ @include('motonet/web/new/chat');
 
 <!-- ============================================================= FOOTER ============================================================= -->
 @include('motonet/web/new/footer')

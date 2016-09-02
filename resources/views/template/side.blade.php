@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li>
-                <a class="menu" data-id="-1" href="" title="Chat">
+                <a class="menu" data-id="-1" href="{!! route('chats') !!}" title="Chat">
 
                     <div id="chat_label">
                     </div>
