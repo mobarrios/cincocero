@@ -23,7 +23,7 @@ class ChatsController extends Controller {
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
-        $this->view                 = 'controls.chat';
+        $this->view                 = 'motonet.chats.index';
         $this->form                 = 'motonet.brands.form';
         $this->data['sectionName']  = 'Chats';
 
