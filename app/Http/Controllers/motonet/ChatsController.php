@@ -45,4 +45,8 @@ class ChatsController extends Controller {
         $this->data['routePostNew'] = 'chatsPostNew';
         $this->data['routePostEdit']= 'chatsPostEdit';
     }
+
+    public function newChat(){
+        
+    }
 }

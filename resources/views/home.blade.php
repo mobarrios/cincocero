@@ -39,19 +39,6 @@
         </div>
 
 
-
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel panel-body">
-
-                    @include('controls.chat')
-                </div>
-
-            </div>
-
-        </div>
-
-
     @endsection
 
 @section('js')
