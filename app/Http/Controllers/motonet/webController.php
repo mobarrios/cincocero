@@ -292,14 +292,14 @@ class webController extends Controller {
             }else{
                 if($this->publications->find($id)){
                     Session::put('carrito',$id);
-                    return redirect()->back()->withErrors('Se agregó correctamente el producto');
+                    return redirect()->route('resumenNueva',$id)->withErrors('Se agregó correctamente el producto');
                 }else{
                     return redirect()->back()->withErrors('Ese producto no existe');
                 }
             }
         }else if($this->publications->find($id)){
             Session::put('carrito',$id);
-            return redirect()->back()->withErrors('Se agregó correctamente el producto');
+            return redirect()->route('resumenNueva',$id)->withErrors('Se agregó correctamente el producto');
         }else{
             return redirect()->back()->withErrors('Ese producto no existe');
         }

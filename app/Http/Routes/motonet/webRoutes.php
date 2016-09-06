@@ -22,13 +22,13 @@ Route::group(['namespace' => 'motonet'], function() {
         'as' => 'searchNueva',
         'uses' => 'webController@searchNueva'
     ]);
-    Route::get('webNueva',[
-        'as' => 'indexNueva',
-        'uses' => 'webController@indexNuevo'
-    ]);
+//    Route::get('webNueva',[
+//        'as' => 'indexNueva',
+//        'uses' => 'webController@indexNuevo'
+//    ]);
 
-    Route::get('web',[
-        'as' => 'index',
+    Route::get('/',[
+        'as' => 'indexNueva',
         'uses' => 'webController@indexNuevo'
     ]);
 

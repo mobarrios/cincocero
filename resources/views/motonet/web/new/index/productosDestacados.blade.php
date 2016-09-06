@@ -30,12 +30,12 @@
                                         <h3 class="name"><a href="{!! route('productDetail',$publication->id) !!}">{{$publication->title}}</a></h3>
                                         <div class="product-price">
                                             <span class="price">$ {{$publication->price}}</span>
-                                            <span class="price-before-discount">$ {{$publication->price}}</span>
+                                            {{--<span class="price-before-discount">$ {{$publication->price}}</span>--}}
 
                                         </div><!-- /.product-price -->
 
                                     </div><!-- /.product-info -->
-                                    <div class="cart clearfix animate-effect">
+                                    <div class="carts clearfix animate-effect">
                                         <div class="action">
                                             <ul class="list-unstyled">
                                                 <li class="add-cart-button btn-group">

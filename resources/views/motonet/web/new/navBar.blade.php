@@ -28,7 +28,7 @@
                                 </a>
                             </li>
                             <li class="dropdown">
-                                <a href="{!! route('indexNueva') !!}#sucursales">Sucursales
+                                <a href="{!! route('indexNueva') !!}#sucursales">Puntos de entrega
                                 </a>
                             </li>
                             {{--<li class="dropdown">--}}
