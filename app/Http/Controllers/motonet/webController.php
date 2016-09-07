@@ -157,30 +157,30 @@ class webController extends Controller {
         return view('motonet/web/index')->with($this->data);
     }
 
-    public function detail($id){
+    public function detail($producto,$marca,$modelo,$id){
         $this->data['publicationDetail'] = $this->publications->find($id);
 
         return view('motonet/web/new/detail')->with($this->data);
     }
 
-    public function find(Request $request)
+    public function find($find,$nombre,$id,Request $request)
     {
-        if ($request->get('categories')) {
-            $cat = $this->categories->find($request->get('categories'))->id;
+        if ($find == 'categories') {
+            $cat = $this->categories->find($id);
 
             $this->data['productos'] = $this->publications
                                 ->where('private','!=',1)
-                                ->whereHas('models', function ($q) use($cat){
-                                    $q->whereHas('categories', function ($q) use ($cat){
-                                        $q->where('categories.id',$cat);
+                                ->whereHas('models', function ($q) use($id){
+                                    $q->whereHas('categories', function ($q) use ($id){
+                                        $q->where('categories.id',$id);
                                     });
                                 })
 
                 ->get();
-            $this->data['grid'] = $this->categories->find($request->get('categories'))->name;
+            $this->data['grid'] = $cat->name;
 
-        } elseif ($request->get('models')){
-            $m = $this->models->find($request->get('models'))->id;
+        } elseif ($find == 'models'){
+            $m = $this->models->find($id);
             /*$this->data['items'] = $this->publications
                                 ->whereHas('items',function($q) use($m) {
                                 $q->whereHas('models', function ($q) use ($m) {
@@ -188,23 +188,23 @@ class webController extends Controller {
                                 });
                             })->get();
             */
-            $this->data['productos'] = $this->publications->where('models_id',$m)
+            $this->data['productos'] = $this->publications->where('models_id',$id)
                 ->where('private','!=',1)
                 ->get();
 
-            $this->data['grid'] = $this->models->find($request->get('models'))->name;
+            $this->data['grid'] = $m->name;
 
-        }elseif($request->get('brands')){
-            $b = $this->brands->find($request->get('brands'))->id;
+        }elseif($find == 'brand'){
+            $b = $this->brands->find($id);
             $this->data['productos'] = $this->publications
                                 ->where('private','!=',1)
-                                ->whereHas('models',function($q) use($b) {
-                                    $q->whereHas('brands', function ($q) use ($b) {
-                                        $q->where('id', $b);
+                                ->whereHas('models',function($q) use($id) {
+                                    $q->whereHas('brands', function ($q) use ($id) {
+                                        $q->where('id', $id);
                                     });
                                 })
                 ->get();
-            $this->data['grid'] = $this->brands->find($request->get('brands'))->name;
+            $this->data['grid'] = $b->name;
         }else{
 
             $find = $request->get('find');

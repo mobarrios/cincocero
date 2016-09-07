@@ -25,4 +25,8 @@ class Models extends Entity{
         return $this->belongsToMany(Categories::getClass(),'models_categories');
     }
 
+    public function getNameCleanAttribute(){
+        return $this->cleanChars($this->attributes['name']);
+    }
+
 }

@@ -24,7 +24,7 @@
                 </div><!-- /.contact-row -->
                 <!-- ============================================================= SEARCH AREA ============================================================= -->
                 <div class="search-area">
-                    {!! Form::open(['route'=>'productFind','method'=>'get']) !!}
+                    {!! Form::open(['url'=> 'find/products/results','method'=>'get']) !!}
                         <div class="control-group">
 
                             <ul class="categories-filter animate-dropdown">

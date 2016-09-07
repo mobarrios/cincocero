@@ -20,4 +20,8 @@ class Brands extends Entity{
     }
 
 
+    public function getNameCleanAttribute(){
+        return $this->cleanChars($this->attributes['name']);
+    }
+
 }
