@@ -7,7 +7,7 @@ class ModelsSalePrice extends Entity{
 
     protected $table = 'models_sale_price';
 
-    protected $fillable = ['price','patentamiento_price','formulario_price','models_id'];
+    protected $fillable = ['price','patentamiento_price','formulario_price','models_id','max_discount'];
 
 
 

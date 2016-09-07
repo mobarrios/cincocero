@@ -32,6 +32,7 @@ class Models extends Entity{
 
     public function SalePrice(){
 
+        return $this->hasOne(ModelsSalePrice::getClass());
     }
 
 }

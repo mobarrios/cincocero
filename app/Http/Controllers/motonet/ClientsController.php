@@ -5,6 +5,7 @@ namespace App\Http\Controllers\motonet;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Clients;
 use App\Entities\motonet\Derivations;
+use App\Entities\motonet\PayMethod;
 use App\Http\Repositories\motonet\ClientsRepo as Repo;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\motonet\DerivationMessagesRepo;
@@ -75,6 +76,7 @@ class ClientsController extends Controller {
         $this->data['history']   = Derivations::where('clients_id',$id)->get();
 
         $this->data['brands']    = Brands::with('Models')->get();
+        $this->data['payMethod'] = PayMethod::lists('method','id');
 
         return view($this->formDetail)->with($this->data);
     }

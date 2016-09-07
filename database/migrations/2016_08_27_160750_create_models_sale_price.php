@@ -22,6 +22,7 @@ class CreateModelsSalePrice extends Migration {
 			$table->double('patentamiento_price',10.2);
 			$table->double('pack_price',10.2);
 			$table->double('formulario_price',10.2);
+			$table->integer('max_discount');
 
 			$table->integer('models_id');
 			$table->foreign('models_id')->references('id')->on('models');

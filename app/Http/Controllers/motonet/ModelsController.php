@@ -7,6 +7,7 @@ use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
 use App\Entities\motonet\Models;
 use App\Entities\motonet\ModelsPurchasePrice;
+use App\Entities\motonet\ModelsSalePrice;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -79,13 +80,24 @@ class ModelsController extends Controller {
         $model->Categories()->attach($request->categories_id);
 
         //purhcases_price
-        $purchases['price']         = $request->purchase_price;
-        $purchases['flete_price']   = $request->flete_price;
-        $purchases['models_id']     = $model->id;
+            $purchases['price']         = $request->purchase_price;
+            $purchases['flete_price']   = $request->flete_price;
+            $purchases['models_id']     = $model->id;
 
-        $price = new ModelsPurchasePrice();
-        $price->fill($purchases);
-        $price->save();
+            $pricePrice = new ModelsPurchasePrice();
+            $pricePrice->fill($purchases);
+            $pricePrice->save();
+
+        //sales_price
+            $sales['price']                 = $request->sale_price;
+            $sales['patentamiento_price']   = $request->patentamiento_price;
+            $sales['pack_price']            = $request->pack_price;
+            $sales['max_discount']          = $request->max_discount;
+
+            $salesPrice = new ModelsSalePrice();
+            $salesPrice->fill($sales);
+            $salesPrice->save();
+
 
         // if has image uploaded
         if($request->hasFile('image'))
@@ -156,6 +168,24 @@ class ModelsController extends Controller {
         $purchasePrice->price       = $request->purchase_price;
         $purchasePrice->flete_price = $request->flete_price;
         $purchasePrice->save();
+
+
+        if(is_null($model->salePrice)){
+            $salePrice              = new ModelsSalePrice();
+            $salePrice->models_id   = $model->id ;
+
+        }
+        else{
+            $salePrice              = ModelsSalePrice::where('models_id',$model->id)->first();
+        }
+
+        //sales_price
+        $salePrice->price                = $request->sale_price;
+        $salePrice->patentamiento_price  = $request->patentamiento_price;
+        $salePrice->pack_price           = $request->pack_price;
+        $salePrice->max_discount         = $request->max_discount;
+
+        $salePrice->save();
 
 
         // if has image uploaded
