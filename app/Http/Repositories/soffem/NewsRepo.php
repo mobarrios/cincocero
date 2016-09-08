@@ -24,7 +24,7 @@ class NewsRepo extends BaseRepo {
     public function Rules()
     {
         return [
-            'date'   => 'required',
+            //'date'   => 'required',
             'title'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
         ];
@@ -33,7 +33,7 @@ class NewsRepo extends BaseRepo {
     public function RulesEdit($id = null)
     {
         return [
-            'date'   => 'required',
+           // 'date'   => 'required',
             'title'   => 'required',
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:1024'
         ];
