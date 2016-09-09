@@ -153,22 +153,21 @@
 
                     <div class="module-body">
                         <ul class='list-unstyled'>
-                            <li><a href="#">Motos</a></li>
-                            <li><a href="#">Scooters</a></li>
-                            <li><a href="#">Custom</a></li>
-                            <li><a href="#">Ciclomotores</a></li>
-                            <li><a href="#">Cuatriciclos</a></li>
-                            <li><a href="#">Generadores</a></li>
-                            <li><a href="#">Motobombas</a></li>
-                            <li><a href="#">Bosque y Jardin</a></li>
-                            <li><a href="#">Accessories</a></li>
+                            <li><a href="{!! route('productFind',['categories' => 1]) !!}">Motos</a></li>
+                            <li><a href="{!! route('productFind',['categories' => 2]) !!}">Scooters</a></li>
+                            <li><a href="{!! route('productFind',['categories' => 10]) !!}">Custom</a></li>
+                            <li><a href="{!! route('productFind',['categories' => 3]) !!}">Ciclomotores</a></li>
+                            <li><a href="{!! route('productFind',['categories' => 4]) !!}">Cuatriciclos</a></li>
+                            <li><a href="{!! route('productFind',['categories' => 5]) !!}">Generadores</a></li>
+                            <li><a href="{!! route('productFind',['categories' => 6]) !!}">Motobombas</a></li>
+                            <li><a href="{!! route('productFind',['categories' => 7]) !!}">Bosque y Jardín</a></li>
                         </ul>
                     </div><!-- /.module-body -->
                 </div><!-- /.col -->
 
                 <div class="col-xs-12 col-sm-6">
                     <div class="module-heading outer-bottom-xs">
-                        <h4 class="module-title">Nuestras sucursales</h4>
+                        <h4 class="module-title">Puntos de entrega</h4>
                     </div><!-- /.module-heading -->
 
                     <div class="module-body">
@@ -204,9 +203,9 @@
 
                     <div class="module-body">
                         <ul class='list-unstyled'>
-                            <li><a href="#">Seguros</a></li>
-                            <li><a href="#">Accesorios</a></li>
-                            <li><a href="#">Servicio técnico</a></li>
+                            <li><a href="{!! route('indexNueva') !!}#accesorios">Accesorios</a></li>
+                            <li><a href="{!! route('indexNueva') !!}#product-tabs-slider">Destacados</a></li>
+                            <li><a href="{!! route('indexNueva') !!}#sucursales">Puntos de entrega</a></li>
                         </ul>
                     </div><!-- /.module-body -->
                 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app lang="es">
+<html  lang="es">
 <base href="{{asset('')}}">
 
 <head>
@@ -9,8 +9,10 @@
     <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
     <title>{nc} nav_coder</title>
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+
+
     <!-- =============== VENDOR STYLES ===============-->
     <!-- FONT AWESOME-->
     <link rel="stylesheet" href="assets/angle/vendor/fontawesome/css/font-awesome.min.css">

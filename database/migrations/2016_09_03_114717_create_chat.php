@@ -18,8 +18,6 @@ class CreateChat extends Migration {
 			$table->softDeletes();
 
 			$table->string('token');
-			$table->text('msg_client');
-			$table->text('msg_user');
 			$table->integer('users_id');
 			$table->integer('status');
 

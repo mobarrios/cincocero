@@ -7,7 +7,11 @@ class Chats extends Entity{
 
     protected $table = 'chats';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['token','users_id','status'];
 
+    public function ChatsMessages(){
+
+       return $this->hasMany(ChatsMessages::getClass());
+    }
 
 }

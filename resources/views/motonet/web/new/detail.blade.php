@@ -1,5 +1,9 @@
 @extends('motonet.web.new.templateNuevo2')
 
+@section('title')
+	<title>{!! $publicationDetail->Models->name !!}</title>
+@endsection
+
 @section('sideContent')
 <!-- ============================================== HEADER : END ============================================== -->
 {{--<div class="breadcrumb">--}}
@@ -146,7 +150,7 @@
 									</div>
 
 									<div class="col-sm-7">
-										<a href="{!! route('addToCart',$publicationDetail->id) !!}" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> AGREGAR A LA COMPRA</a>
+										<a href="{!! route('addToCart',$publicationDetail->id) !!}" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> COMPRAR</a>
 									</div>
 
 

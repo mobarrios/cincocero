@@ -13,7 +13,11 @@ Route::post('postNew'.$module,          ['as'=> $module.'PostNew', 'uses'=> $con
 Route::post('postEdit'.$module.'/{id}', ['as'=>$module.'PostEdit', 'uses'=> $controller.'@postEdit']);
 
 
-Route::get('newChat', $controller.'@newChat');
+Route::any('newChat', $controller.'@newChat');
+Route::any('addMessageClient', $controller.'@addMessageClient');
+Route::any('addMessageUser', $controller.'@addMessageUser');
+
+Route::get('activeChats',$controller.'@activeChats');
 
 
 
