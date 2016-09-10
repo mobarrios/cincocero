@@ -20,7 +20,7 @@
                                     </div>
                                     <div class="product-image m-r-15">
                                         <div class="image">
-                                            <a href="{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image or ''}}" class="byn img-responsive" alt=""></a>
+                                            <a href="{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image or ''}}" class=" img-responsive" alt=""></a>
                                         </div><!-- /.image -->
                                     </div><!-- /.product-image -->
 
