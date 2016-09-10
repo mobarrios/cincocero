@@ -168,9 +168,6 @@
 <script src="assets/unicase/js/wow.min.js"></script>
 <script src="assets/unicase/js/scripts.js"></script>
 
-<!-- For demo purposes – can be removed on production -->
-
-<script src="switchstylesheet/switchstylesheet.js"></script>
 
 <script>
 
