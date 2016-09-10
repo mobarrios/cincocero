@@ -51,7 +51,7 @@
 
     <!-- Demo Purpose Only. Should be removed in production -->
     <link rel="stylesheet" href="assets/unicase/css/config.css">
-    <link href="assets/unicase/css/blue.css" rel="alternate stylesheet" title="Blue color">
+    <!--<link href="assets/unicase/css/blue.css" rel="alternate stylesheet" title="Blue color"> -->
     <link href="assets/css/chat.css" rel="stylesheet"/>
 
     <!-- Icons/Glyphs -->
@@ -93,7 +93,7 @@
 
     </script>
 
-    <script src="assets/js/vue.js"></script>
+    <!--<script src="assets/js/vue.js"></script>-->
 
 </head>
 <body class="cnt-home">
@@ -159,7 +159,7 @@
 <script src="assets/unicase/js/bootstrap-hover-dropdown.min.js"></script>
 <script src="assets/unicase/js/owl.carousel.min.js"></script>
 
-<script src="assets/unicase/js/echo.min.js"></script>
+<!-- <script src="assets/unicase/js/echo.min.js"></script>-->
 <script src="assets/unicase/js/jquery.easing-1.3.min.js"></script>
 <script src="assets/unicase/js/bootstrap-slider.min.js"></script>
 <script src="assets/unicase/js/jquery.rateit.min.js"></script>
@@ -179,7 +179,7 @@
     $(document).ready(function(){
         t = parseInt($("#videoInstitucional").width());
 
-        $('#iframeFace').attr("src","https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width="+t+"&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898")
+      //  $('#iframeFace').attr("src","https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width="+t+"&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898")
     });
 
 //    window.onload(function(){
