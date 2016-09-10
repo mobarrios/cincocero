@@ -8,7 +8,7 @@
                     <div class="blog-post">
                         <div class="blog-post-image">
                             <div class="image">
-                                <a href="" class="branchMap" data-toggle="modal" data-target="#detalle" data-address="{!! $branch->address !!}" data-name="{!! $branch->name !!}"><img data-echo="{!! $branch->images->first()->image or ''!!}" width="270" height="135" src="{!! $branch->images->first()->image or ''!!}" alt=""></a>
+                                <a href="" class="branchMap" data-toggle="modal" data-target="#detalle" data-address="{!! $branch->address !!}" data-name="{!! $branch->name !!}"><img src="{!! $branch->images->first()->image or ''!!}" width="270" height="135"  alt=""></a>
                             </div>
                         </div><!-- /.blog-post-image -->
 
@@ -63,7 +63,7 @@
                 var address = addr;
                 // Creamos el Objeto Geocoder
                 var geocoder = new google.maps.Geocoder();
-                // Hacemos la petición indicando la dirección e invocamos la función
+                // Hacemos la peticiï¿½n indicando la direcciï¿½n e invocamos la funciï¿½n
                 // geocodeResult enviando todo el resultado obtenido
                 if(geocoder.geocode({ 'address': address}, geocodeResult))
                     geocoder.geocode({ 'address': address}, geocodeResult);
@@ -86,9 +86,9 @@
                             mapTypeId: google.maps.MapTypeId.ROADMAP
                         };
                         map = new google.maps.Map($("#detalleMap")[0], mapOptions);
-                        // fitBounds acercará el mapa con el zoom adecuado de acuerdo a lo buscado
+                        // fitBounds acercarï¿½ el mapa con el zoom adecuado de acuerdo a lo buscado
 //                map.fitBounds(results[0].geometry.viewport);
-                        // Dibujamos un marcador con la ubicación del primer resultado obtenido
+                        // Dibujamos un marcador con la ubicaciï¿½n del primer resultado obtenido
                         var markerOptions = { position: results[0].geometry.location }
                         var marker = new google.maps.Marker(markerOptions);
                         marker.setMap(map);
