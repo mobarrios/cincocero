@@ -17,7 +17,7 @@
 
                     </div>
                     <div class="panel-footer">
-                        <form id="form">
+                        <form class="form" id="form">
                             <div class="input-group">
                                 <input autocomplete="off" id="m" type="text" class="form-control input-sm chat_input" placeholder="Escriba su mensaje" />
                                 <span class="input-group-btn">
@@ -33,53 +33,4 @@
     </div>
 </div>
 
-@section('js')
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-        // var socket = io.connect('http://62.210.13.249:3000');
 
-        //var socket = io.connect('localhost:3000');
-        var socket = io.connect( '{!!  env('SOCKET_URL') !!}' +':'+'{!!  env('SOCKET_PORT') !!}');
-
-        $('form').submit(function(){
-
-            var msg = {
-                to   : 'admin',
-                from : $('#from').val() ,
-                text : $('#m').val()
-            }
-
-            socket.emit('chat message',  msg );
-
-            $('#m').val('');
-            return false;
-        });
-
-        socket.on('chat message', function(msg){
-
-            if(msg.from == $('#from').val() || msg.to == $('#from').val()){
-
-                if(msg.from == $('#from').val()){
-                    $('#chat_content').append(chat_user(msg.msg));
-                }
-                if(msg.from == 'administrador'){
-                    $('#chat_content').append(chat_admin(msg.msg));
-                }
-            }
-
-        });
-
-
-        function chat_user(msg )
-        {
-            return   '<div class="row msg_container base_sent"><div class="col-md-10 col-xs-10"> <div class="messages msg_sent"> <p>'+msg+'.</p> <time datetime="2009-11-13T20:00">Usuario • Hace 1 minuto</time> </div> </div> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-user.jpg" class=" img-responsive "> </div> </div>';
-        }
-
-        function chat_admin(msg )
-        {
-            return '<div class="row msg_container base_receive"> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-soporte.jpg" class=" img-responsive "> </div> <div class="col-md-10 col-xs-10"> <div class="messages msg_receive"> <p> '+msg+'</p> <time datetime="2009-11-13T20:00">Soporte • Ahora</time> </div> </div> </div>';
-        }
-    </script>
-
-@endsection

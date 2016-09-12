@@ -1,8 +1,8 @@
 (function() {
 
-    var app = angular.module('gemStore', []);
+    var app = angular.module('chatEc', []);
 
-    app.controller('StoreController', ['$http', function($http){
+    app.controller('ChatController', ['$http', function($http){
 
         var store =  this;
         store.products =  this.products = [];

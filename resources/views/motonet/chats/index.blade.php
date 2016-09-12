@@ -15,9 +15,9 @@
                 {{--<button type="button" class="btn btn-sm btn-default"> <i class="fa fa-print"></i> </button>--}}
             {{--</div>--}}
 
-            <div class=" panel-body"  ng-app="gemStore"  ng-controller="StoreController as store">
+            <div class=" panel-body"  ng-app="chatEc"  ng-controller="ChatController as chat">
 
-                <div class="col-xs-4"  ng-repeat="product in store.products" >
+                <div class="col-xs-4"  ng-repeat="product in chat.products" >
 
                     <div class="panel panel-default">
                         <div class="panel-heading chat-header">

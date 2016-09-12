@@ -153,6 +153,9 @@
 
 <!-- JavaScripts placed at the end of the document so the pages load faster -->
 <script src="assets/unicase/js/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
 
 <script src="assets/unicase/js/bootstrap.min.js"></script>
 
@@ -167,7 +170,7 @@
 <script src="assets/unicase/js/bootstrap-select.min.js"></script>
 <script src="assets/unicase/js/wow.min.js"></script>
 <script src="assets/unicase/js/scripts.js"></script>
-
+<script src="assets/js/chat.js"></script>
 
 <script>
 
@@ -175,12 +178,12 @@
 //        $('.show-theme-options').delay(1000).trigger('click');
 //    });
 
-    var t;
-    $(document).ready(function(){
-        t = parseInt($("#videoInstitucional").width());
+   // var t;
+   // $(document).ready(function(){
+   //     t = parseInt($("#videoInstitucional").width());
 
       //  $('#iframeFace').attr("src","https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmotonetonline&tabs=timeline%2Cmessages&width="+t+"&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=203933888898")
-    });
+   // });
 
 //    window.onload(function(){
 //        var t =
@@ -188,8 +191,56 @@
 //    });
 </script>
 <!-- For demo purposes – can be removed on production : End -->
-<script src="assets/js/chat.js"></script>
 
+<script>
+
+        // var socket = io.connect('http://62.210.13.249:3000');
+
+        //var socket = io.connect('localhost:3000');
+        var socket = io.connect( '{!!  env('SOCKET_URL') !!}' +':'+'{!!  env('SOCKET_PORT') !!}');
+
+        $('#form').on('submit',function(e){
+
+            e.preventDefault();
+
+            var msg = {
+                to   : 'admin',
+                from : $('#from').val() ,
+                text : $('#m').val()
+            }
+
+            socket.emit('chat message',  msg );
+
+            $('#m').val('');
+            return false;
+        });
+
+        socket.on('chat message', function(msg){
+
+            if(msg.from == $('#from').val() || msg.to == $('#from').val()){
+
+                if(msg.from == $('#from').val()){
+                    $('#chat_content').append(chat_user(msg.msg));
+                }
+                if(msg.from == 'administrador'){
+                    $('#chat_content').append(chat_admin(msg.msg));
+                }
+            }
+
+        });
+
+
+        function chat_user(msg )
+        {
+            return   '<div class="row msg_container base_sent"><div class="col-md-10 col-xs-10"> <div class="messages msg_sent"> <p>'+msg+'.</p> <time datetime="2009-11-13T20:00">Usuario • Hace 1 minuto</time> </div> </div> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-user.jpg" class=" img-responsive "> </div> </div>';
+        }
+
+        function chat_admin(msg )
+        {
+            return '<div class="row msg_container base_receive"> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-soporte.jpg" class=" img-responsive "> </div> <div class="col-md-10 col-xs-10"> <div class="messages msg_receive"> <p> '+msg+'</p> <time datetime="2009-11-13T20:00">Soporte • Ahora</time> </div> </div> </div>';
+        }
+
+</script>
 @yield('js')
 </body>
 </html>
