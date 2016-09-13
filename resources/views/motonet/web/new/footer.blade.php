@@ -153,14 +153,14 @@
 
                     <div class="module-body">
                         <ul class='list-unstyled'>
-                            <li><a href="{!! route('productFind',['categories' => 1]) !!}">Motos</a></li>
-                            <li><a href="{!! route('productFind',['categories' => 2]) !!}">Scooters</a></li>
-                            <li><a href="{!! route('productFind',['categories' => 10]) !!}">Custom</a></li>
-                            <li><a href="{!! route('productFind',['categories' => 3]) !!}">Ciclomotores</a></li>
-                            <li><a href="{!! route('productFind',['categories' => 4]) !!}">Cuatriciclos</a></li>
-                            <li><a href="{!! route('productFind',['categories' => 5]) !!}">Generadores</a></li>
-                            <li><a href="{!! route('productFind',['categories' => 6]) !!}">Motobombas</a></li>
-                            <li><a href="{!! route('productFind',['categories' => 7]) !!}">Bosque y Jardín</a></li>
+                            <li><a href="{!! 'categories/motos/1' !!}">Motos</a></li>
+                            <li><a href="{!! 'categories/scooters/2' !!}">Scooters</a></li>
+                            <li><a href="{!! 'categories/custom/10' !!}">Custom</a></li>
+                            <li><a href="{!! 'categories/ciclomotores/3' !!}">Ciclomotores</a></li>
+                            <li><a href="{!! 'categories/cuatriciclos/4' !!}">Cuatriciclos</a></li>
+                            <li><a href="{!! 'categories/generadores/5' !!}">Generadores</a></li>
+                            <li><a href="{!! 'categories/motobombas/6' !!}">Motobombas</a></li>
+                            <li><a href="{!! 'categories/bosqueyjardin/7' !!}">Bosque y Jardín</a></li>
                         </ul>
                     </div><!-- /.module-body -->
                 </div><!-- /.col -->

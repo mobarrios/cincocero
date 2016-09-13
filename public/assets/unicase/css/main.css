@@ -2498,7 +2498,7 @@ a {
 }
 .product .cart {
   margin-top: 5px;
-  opacity: 0;
+  /*opacity: 0;*/
   -webkit-transition: all 0.2s linear 0s;
   -moz-transition: all 0.2s linear 0s;
   -o-transition: all 0.2s linear 0s;
@@ -5436,4 +5436,9 @@ a.linkbyn img{
 #grid-container .product{
   height: 350px;
   overflow-y: auto;
+}
+
+
+.m-t-n-55{
+  margin-top: -55px;
 }
