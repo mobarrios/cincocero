@@ -93,52 +93,17 @@
                     <!-- ============================================================= INFORMATION============================================================= -->
                     <div class="contact-information">
                         <div class="module-heading">
-                            <h4 class="module-title">Información</h4>
+                            <h4 class="module-title">Newsletter</h4>
                         </div><!-- /.module-heading -->
 
+                        @include('motonet/web/new/index/newsLetter')
+
                         <div class="module-body outer-top-xs">
-                            <ul class="toggle-footer" style="">
-                                <li class="media">
-                                    <div class="pull-left">
-                     <span class="icon fa-stack fa-lg">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
-                    </span>
-                                    </div>
-                                    <div class="media-body">
-                                        <p>PUEYRREDON 740, C.A.B.A , Buenos Aires.</p>
-                                    </div>
-                                </li>
 
-                                <li class="media">
-                                    <div class="pull-left">
-                     <span class="icon fa-stack fa-lg">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
-                    </span>
-                                    </div>
-                                    <div class="media-body">
-                                        <p>0810-333-6686</p>
-                                    </div>
-                                </li>
-
-                                {{--<li class="media">--}}
-                                    {{--<div class="pull-left">--}}
-                     {{--<span class="icon fa-stack fa-lg">--}}
-                      {{--<i class="fa fa-circle fa-stack-2x"></i>--}}
-                      {{--<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>--}}
-                    {{--</span>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="media-body">--}}
-                                        {{--<span><a href="#">Contact @Unicase.com</a></span><br>--}}
-                                        {{--<span><a href="#">Sale @Unicase.com</a></span>--}}
-                                    {{--</div>--}}
-                                {{--</li>--}}
-
-                            </ul>
                         </div><!-- /.module-body -->
                     </div><!-- /.contact-timing -->
-                    <!-- ============================================================= INFORMATION : END ============================================================= -->            	</div><!-- /.col -->
+                    <!-- ============================================================= INFORMATION : END ============================================================= -->
+                </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div><!-- /.links-social -->
@@ -146,57 +111,35 @@
     <div class="footer-bottom inner-bottom-sm">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-10">
                     <div class="module-heading outer-bottom-xs">
                         <h4 class="module-title">categorías</h4>
                     </div><!-- /.module-heading -->
 
-                    <div class="module-body">
+                    <div class="module-body col-sm-4">
                         <ul class='list-unstyled'>
                             <li><a href="{!! 'categories/motos/1' !!}">Motos</a></li>
                             <li><a href="{!! 'categories/scooters/2' !!}">Scooters</a></li>
                             <li><a href="{!! 'categories/custom/10' !!}">Custom</a></li>
+                        </ul>
+                    </div><!-- /.module-body -->
+                    <div class="module-body col-sm-4">
+                        <ul class='list-unstyled'>
                             <li><a href="{!! 'categories/ciclomotores/3' !!}">Ciclomotores</a></li>
                             <li><a href="{!! 'categories/cuatriciclos/4' !!}">Cuatriciclos</a></li>
                             <li><a href="{!! 'categories/generadores/5' !!}">Generadores</a></li>
+                            </ul>
+                    </div><!-- /.module-body -->
+                    <div class="module-body col-sm-4">
+                        <ul class='list-unstyled'>
                             <li><a href="{!! 'categories/motobombas/6' !!}">Motobombas</a></li>
                             <li><a href="{!! 'categories/bosqueyjardin/7' !!}">Bosque y Jardín</a></li>
                         </ul>
                     </div><!-- /.module-body -->
                 </div><!-- /.col -->
 
-                <div class="col-xs-12 col-sm-6">
-                    <div class="module-heading outer-bottom-xs">
-                        <h4 class="module-title">Puntos de entrega</h4>
-                    </div><!-- /.module-heading -->
 
-                    <div class="module-body">
-                        <ul class='list-unstyled'>
-                            @for($i = 0;$i < \App\Entities\motonet\Branches::all()->count(); $i++)
-                                <li class="col-xs-6">
-                                    <a href="#">{!! \App\Entities\motonet\Branches::all()[$i]->name !!}</a>                                                             </li>
-                            @endfor
-                        </ul>
-                    </div><!-- /.module-body -->
-                </div><!-- /.col -->
-
-                {{--<div class="col-xs-12 col-sm-6 col-md-3">--}}
-                    {{--<div class="module-heading outer-bottom-xs">--}}
-                        {{--<h4 class="module-title">our services</h4>--}}
-                    {{--</div><!-- /.module-heading -->--}}
-
-                    {{--<div class="module-body">--}}
-                        {{--<ul class='list-unstyled'>--}}
-                            {{--<li><a href="#">Order History</a></li>--}}
-                            {{--<li><a href="#">Returns</a></li>--}}
-                            {{--<li><a href="#">Libero Sed rhoncus</a></li>--}}
-                            {{--<li><a href="#">Venenatis augue tellus</a></li>--}}
-                            {{--<li><a href="#">My Vouchers</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</div><!-- /.module-body -->--}}
-                {{--</div><!-- /.col -->--}}
-
-                <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-2">
                     <div class="module-heading outer-bottom-xs">
                         <h4 class="module-title">servicios</h4>
                     </div><!-- /.module-heading -->
