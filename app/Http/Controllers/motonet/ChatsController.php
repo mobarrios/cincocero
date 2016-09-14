@@ -66,11 +66,7 @@ class ChatsController extends Controller {
 
         $chat   = Chats::where('token',$token)->get();
 
-        if($chat->count() != 0) {
-
-            return response()->json(false);
-
-        }else{
+        if($chat->count() == 0) {
 
             $new            = new Chats();
             $new->token     = $token;
@@ -80,6 +76,7 @@ class ChatsController extends Controller {
 
             return response()->json(true);
         }
+        
     }
 
     public function addMessageClient(Request $request){

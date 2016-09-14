@@ -63,14 +63,12 @@
 
 {{--</div>--}}
 
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
 
 
 <script>
 
-
+    /*
     var socket = io.connect( '{!!  env('SOCKET_URL') !!}' +':'+'{!!  env('SOCKET_PORT') !!}');
 
     $(document).on("click", "a.send" , function() {
@@ -95,7 +93,7 @@
     var cant    = 0;
 
     socket.on('chat message', function(msg){
-2
+
         var from    = msg.from;
         var to      = msg.to;
 
@@ -153,5 +151,6 @@
 
         //return '<div id="new_chat" class="client col-xs-4"  data-id="'+client+'"><h4>Chat Nuevo</h4> <ul id="messages"></ul> <div  class="formChat"> <input id="m" autocomplete="off" /><input id="to" value="'+client+'" /><a href="javascript:void(0);" class="send" data-to="'+client+'">Send</a> </div> </div>';
     }
+    */
 </script>
 @endsection

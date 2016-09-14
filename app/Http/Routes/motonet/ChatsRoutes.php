@@ -14,6 +14,7 @@ Route::post('postEdit'.$module.'/{id}', ['as'=>$module.'PostEdit', 'uses'=> $con
 
 
 Route::any('newChat', $controller.'@newChat');
+Route::any('endChat', $controller.'@endChat');
 Route::any('addMessageClient', $controller.'@addMessageClient');
 Route::any('addMessageUser', $controller.'@addMessageUser');
 

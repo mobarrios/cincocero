@@ -10,13 +10,22 @@
                         </div>
                         <div class="col-md-4 col-xs-4" style="text-align: right;">
                             <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
+
+                            <!--<a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
+                                -->
                         </div>
                     </div>
                     <div id="chat_content" class="panel-body msg_container_base">
 
+                        <div id="divMail" class="input-group">
+                            <input  id="emailChat" type="email" class="form-control input-sm chat_input" placeholder="Escriba su Email" />
+                                <span class="input-group-btn">
+                                <button class="btn btn-danger btn-xs" id="connect">Conectar</button>
+                            </span>
+                        </div>
+
                     </div>
-                    <div class="panel-footer">
+                    <div id="panelFooter" class="panel-footer" hidden>
                         <form class="form" id="form">
                             <div class="input-group">
                                 <input autocomplete="off" id="m" type="text" class="form-control input-sm chat_input" placeholder="Escriba su mensaje" />

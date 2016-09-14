@@ -142,10 +142,23 @@
 
 <!-- ============================================================= CHAT ============================================================= -->
 
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/57d997d83bec6867d946916d/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 
-
+{{--
  @include('motonet/web/new/chat');
-
+--}}
 <!-- ============================================================= FOOTER ============================================================= -->
 @include('motonet/web/new/footer')
 <!-- ============================================================= FOOTER : END============================================================= -->
@@ -194,52 +207,84 @@
 
 <script>
 
+    /*
         // var socket = io.connect('http://62.210.13.249:3000');
 
         //var socket = io.connect('localhost:3000');
-        var socket = io.connect( '{!!  env('SOCKET_URL') !!}' +':'+'{!!  env('SOCKET_PORT') !!}');
 
-        $('#form').on('submit',function(e){
+        $('#connect').on('click',function() {
 
-            e.preventDefault();
+            var clientMail ;
 
-            var msg = {
-                to   : 'admin',
-                from : $('#from').val() ,
-                text : $('#m').val()
+                if($('#emailChat').val() == "" ){
+                     alert('para comenzar el chat completar el email.');
+                    return false;
+                 }else{
+
+                    clientMail = $('#emailChat').val();
+                }
+
+
+            var socket = io.connect( '{!!  env('SOCKET_URL') !!}' +':'+'{!!  env('SOCKET_PORT') !!}');
+
+            $('#panelFooter').removeAttr('hidden');
+            $('#divMail').hide();
+
+
+            $('#form').on('submit',function(e){
+
+                e.preventDefault();
+
+                var msg = {
+                    to   : 'admin',
+                    //from : $('#from').val() ,
+                    from : clientMail,
+                    text : $('#m').val()
+                }
+
+                socket.emit('chat message',  msg );
+
+                $('#m').val('');
+                return false;
+            });
+
+            socket.on('chat message', function(msg){
+
+                /*
+                if(msg.from == $('#from').val() || msg.to == $('#from').val()){
+
+                    if(msg.from == $('#from').val()){
+                        $('#chat_content').append(chat_user(msg.msg));
+                    }
+                    if(msg.from == 'administrador'){
+                        $('#chat_content').append(chat_admin(msg.msg));
+                    }
+                }
+
+                if(msg.from == clientMail || msg.to == clientMail) {
+
+                    if (msg.from == clientMail) {
+                        $('#chat_content').append(chat_user(msg.msg));
+                    }
+                    if (msg.from == 'admin') {
+                        $('#chat_content').append(chat_admin(msg.msg));
+                    }
+
+                }
+
+            });
+
+
+            function chat_user(msg )
+            {
+                return   '<div class="row msg_container base_sent"><div class="col-md-10 col-xs-10"> <div class="messages msg_sent"> <p>'+msg+'.</p> <time datetime="2009-11-13T20:00">'+clientMail+' • Hace 1 minuto</time> </div> </div> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-user.jpg" class=" img-responsive "> </div> </div>';
             }
 
-            socket.emit('chat message',  msg );
-
-            $('#m').val('');
-            return false;
-        });
-
-        socket.on('chat message', function(msg){
-
-            if(msg.from == $('#from').val() || msg.to == $('#from').val()){
-
-                if(msg.from == $('#from').val()){
-                    $('#chat_content').append(chat_user(msg.msg));
-                }
-                if(msg.from == 'administrador'){
-                    $('#chat_content').append(chat_admin(msg.msg));
-                }
+            function chat_admin(msg )
+            {
+                return '<div class="row msg_container base_receive"> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-soporte.jpg" class=" img-responsive "> </div> <div class="col-md-10 col-xs-10"> <div class="messages msg_receive"> <p> '+msg+'</p> <time datetime="2009-11-13T20:00">Soporte • Ahora</time> </div> </div> </div>';
             }
-
-        });
-
-
-        function chat_user(msg )
-        {
-            return   '<div class="row msg_container base_sent"><div class="col-md-10 col-xs-10"> <div class="messages msg_sent"> <p>'+msg+'.</p> <time datetime="2009-11-13T20:00">Usuario • Hace 1 minuto</time> </div> </div> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-user.jpg" class=" img-responsive "> </div> </div>';
-        }
-
-        function chat_admin(msg )
-        {
-            return '<div class="row msg_container base_receive"> <div class="col-md-2 col-xs-2 avatar"> <img src="assets/web/img/chat-soporte.jpg" class=" img-responsive "> </div> <div class="col-md-10 col-xs-10"> <div class="messages msg_receive"> <p> '+msg+'</p> <time datetime="2009-11-13T20:00">Soporte • Ahora</time> </div> </div> </div>';
-        }
-
+        });*/
 </script>
 @yield('js')
 </body>
