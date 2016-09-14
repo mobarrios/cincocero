@@ -35,9 +35,9 @@
                                                 <div class="action">
                                                     <ul class="list-unstyled">
                                                         <li class="add-cart-button btn-group">
-                                                            <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
+                                                            <a class="btn btn-primary icon" href="{!! route('addToCart',$p->id) !!}">
                                                                 <i class="fa fa-shopping-cart"></i>
-                                                            </button>
+                                                            </a>
                                                             <a class="btn btn-primary" type="button" href="{!! $p->titleClean.'/'.$p->models->brands->nameClean.'/'.$p->models->nameClean.'/'.$p->id !!}">ver</a>
                                                         </li>
                                                     </ul>

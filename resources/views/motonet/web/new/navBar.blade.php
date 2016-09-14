@@ -1,5 +1,5 @@
 <!-- ============================================== NAVBAR ============================================== -->
-<div class="header-nav animate-dropdown">
+<div class="header-nav animate-dropdown m-t-n-55">
     <div class="container">
         <div class="yamm navbar navbar-default" role="navigation">
             <div class="navbar-header">

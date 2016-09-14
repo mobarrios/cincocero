@@ -35,13 +35,13 @@
                                         </div><!-- /.product-price -->
 
                                     </div><!-- /.product-info -->
-                                    <div class="carts clearfix animate-effect">
+                                    <div class="cart clearfix animate-effect">
                                         <div class="action">
                                             <ul class="list-unstyled">
                                                 <li class="add-cart-button btn-group">
-                                                    <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
+                                                    <a class="btn btn-primary icon" href="{!! route('addToCart',$publication->id) !!}">
                                                         <i class="fa fa-shopping-cart"></i>
-                                                    </button>
+                                                    </a>
                                                     <a class="btn btn-primary" type="button" href="{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}">ver</a>
                                                 </li>
                                             </ul>

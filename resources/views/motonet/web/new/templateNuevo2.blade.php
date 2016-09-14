@@ -98,9 +98,6 @@
 </head>
 <body class="cnt-home">
 <header class="header-style-1">
-
-    @include('motonet/web/new/topMenu')
-
     @include('motonet.web.new.index.mainHeader')
 
     @include('motonet/web/new/navBar')
