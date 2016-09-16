@@ -92,8 +92,14 @@
         ga('send', 'pageview');
 
     </script>
+    <!-- Facebook Pixel Code -->
 
+
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=165095643906274&ev=PageView&noscript=1"/></noscript>
+                    <!-- End Facebook Pixel Code -->
     <!--<script src="assets/js/vue.js"></script>-->
+
+
 
 </head>
 <body class="cnt-home">
