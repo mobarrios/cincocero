@@ -141,9 +141,9 @@ class PayController extends Controller {
             //$this->newOperationDeposito($request, $client, $operation_id);
             $this->newOperationDeposito($request,$client, $operation->id);
 
-            $this->sendMail($operation->id);
+//            $this->sendMail($operation->id);
 
-            return redirect()->back()->withInput()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.');
+            return redirect()->back()->withInput()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.')->with('fbq', $operation->amount);
         }
 
 
