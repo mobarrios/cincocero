@@ -141,7 +141,7 @@ class PayController extends Controller {
             //$this->newOperationDeposito($request, $client, $operation_id);
             $this->newOperationDeposito($request,$client, $operation->id);
 
-//            $this->sendMail($operation->id);
+            $this->sendMail($operation->id);
 
             return redirect()->back()->withInput()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.')->with('fbq', $operation->amount);
         }
@@ -265,8 +265,8 @@ class PayController extends Controller {
             $operation->message = $rta['StatusMessage'];
             $operation->save();
 
-        return redirect()->route('resumen',$operation->publications_id)->withErrors($rta['StatusMessage']);
-
+        //return redirect()->route('resumen',$operation->publications_id)->withErrors($rta['StatusMessage']);
+        return redirect()->back()->withInput()->withErrors($rta['StatusMessage'])->with('fbq', $operation->amount);
 
     }
 
@@ -339,7 +339,8 @@ class PayController extends Controller {
         $operation->save();
 
 
-        return redirect()->to($preference['response'][$point]);
+//        return redirect()->to($preference['response'][$point]);
+        return redirect()->to($preference['response'][$point])->withInput()->withErrors('Se realizó el pago correctamente. Gracias.')->with('fbq', $operation->amount);
 
     }
 
