@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/web/css/color-options.css" media="all" />
     <link rel="stylesheet" href="assets/web/css_mas/style.css">
     <link rel="stylesheet" href="assets/web/css/fonts.css">
+    <!-- <link rel="stylesheet" href="http://www.navcoder.net/navcoder.net/copyright.css"> -->
 
     <link href="assets/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/web/style.css">
@@ -26,9 +27,11 @@
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
     <script src="assets/web/js/modernizr.custom.js"></script>
+    <!--<script src="assets/web/js/custom.js" charset="utf-8"></script> -->
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 
 
+    {{--<script src="http://www.navcoder.net/terminosycondiciones/modernizr.js"></script>--}}
     <!--[if lt IE 9]>
     <script src="assets/web/js/respond.min.js"></script>
     <link rel="stylesheet" href="assets/web/css/ie.css" type="text/css" media="all" />
@@ -113,6 +116,12 @@
     <!-- punica-header-bottom -->
 
 </div>
+<!-- punica-header -->
+    {{--@if(isset($categoriaActual))--}}
+        {{--<ol class="breadcrumb">--}}
+            {{--<li class="active">{!! $categoriaActual->name !!}</li>--}}
+        {{--</ol>--}}
+    {{--@endif--}}
     @if(isset($faseActual))
         <ol class="breadcrumb">
             <li>{!! $faseActual->tournaments->categories->name !!}</li>
@@ -138,7 +147,18 @@
 
 
 </div>
+<!--
+<div class="container-fluid">
+    <div class="row">
+        <footer style="background-color:#000">
+            <div class="punica-end footer-right clearfix" data-href="http://www.navcoder.net/terminosycondiciones/footerLeftWeb.php">
+            </div>
+        </footer>
 
+    </div>
+
+</div>
+-->
 <script src="assets/web/js/jquery-1.10.2.min.js"></script>
 <script src="assets/js/jquery-ui.js"></script>
 <script src="assets/web/js/retina.js"></script>
