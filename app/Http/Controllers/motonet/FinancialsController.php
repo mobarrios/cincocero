@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\motonet;
 
 use App\Entities\motonet\Financials;
-use App\Http\Repositories\motonet\FianncialsRepo as Repo;
+use App\Http\Repositories\motonet\FinancialsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
@@ -36,7 +36,7 @@ class FinancialsController extends Controller {
         //data for views
         $this->view                 = 'motonet.'.$module.'.index';
         $this->form                 = 'motonet.'.$module.'.form';
-        $this->data['sectionName']  = 'Financieras';
+        $this->data['sectionName']  = 'Financiamientos';
 
 
         //images
