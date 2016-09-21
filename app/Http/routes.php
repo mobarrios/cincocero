@@ -24,6 +24,7 @@ use App\Helpers\ImagesHelper;
 
 //Session::put('languaje','es_ES');
 
+Route::any('chat',['as'=>'chat', 'uses'=>'\App\Http\Controllers\config\ChatController@chat']);
 
 Route::get('ml/{id?}', ['as'=>'ml','uses'=>'\App\Http\Controllers\ws\MercadolibreController@getItem']);
 
