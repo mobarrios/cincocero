@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\Images;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
 use App\Entities\motonet\Models;
+use App\Entities\motonet\ModelsPurchasePrice;
+use App\Entities\motonet\ModelsSalePrice;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
 use App\Helpers\BreadCrumbHelper;
-
-
+use Intervention\Image\Image;
 
 
 class ModelsController extends Controller {
@@ -77,6 +79,26 @@ class ModelsController extends Controller {
         $model = $this->repo->create($request);
         $model->Categories()->attach($request->categories_id);
 
+        //purhcases_price
+            $purchases['price']         = $request->purchase_price;
+            $purchases['flete_price']   = $request->flete_price;
+            $purchases['models_id']     = $model->id;
+
+            $pricePrice = new ModelsPurchasePrice();
+            $pricePrice->fill($purchases);
+            $pricePrice->save();
+
+        //sales_price
+            $sales['price']                 = $request->sale_price;
+            $sales['patentamiento_price']   = $request->patentamiento_price;
+            $sales['pack_price']            = $request->pack_price;
+            $sales['max_discount']          = $request->max_discount;
+
+            $salesPrice = new ModelsSalePrice();
+            $salesPrice->fill($sales);
+            $salesPrice->save();
+
+
         // if has image uploaded
         if($request->hasFile('image'))
         {
@@ -97,6 +119,7 @@ class ModelsController extends Controller {
         $this->data['model'] = $this->repo->getModel()->find($id);
 
         $cat = $this->data['model']->categories;
+
         if ($cat->count() > 0){
             $ca = 0;
 
@@ -110,7 +133,7 @@ class ModelsController extends Controller {
             $this->data['cat'] = $ca;
             $this->data['cat'] = explode(',', $ca);
         }
-//        dd($this->data['cat']);
+
         return view($this->form)->with($this->data);
     }
 
@@ -132,6 +155,39 @@ class ModelsController extends Controller {
             $model->Categories()->sync($request->categories_id);
         }
 
+
+        if(is_null($model->purchasePrice)){
+            $purchasePrice              = new ModelsPurchasePrice();
+            $purchasePrice->models_id   = $model->id ;
+
+        }
+        else{
+            $purchasePrice              = ModelsPurchasePrice::where('models_id',$model->id)->first();
+        }
+
+        $purchasePrice->price       = $request->purchase_price;
+        $purchasePrice->flete_price = $request->flete_price;
+        $purchasePrice->save();
+
+
+        if(is_null($model->salePrice)){
+            $salePrice              = new ModelsSalePrice();
+            $salePrice->models_id   = $model->id ;
+
+        }
+        else{
+            $salePrice              = ModelsSalePrice::where('models_id',$model->id)->first();
+        }
+
+        //sales_price
+        $salePrice->price                = $request->sale_price;
+        $salePrice->patentamiento_price  = $request->patentamiento_price;
+        $salePrice->pack_price           = $request->pack_price;
+        $salePrice->max_discount         = $request->max_discount;
+
+        $salePrice->save();
+
+
         // if has image uploaded
         if($request->hasFile('image'))
         {
@@ -140,7 +196,30 @@ class ModelsController extends Controller {
 
         return redirect()->route($this->data['route'])->withErrors(trans('messages.editItem'));
 
+    }
 
+    //delete item
+    public function getDel($id)
+    {
+        //borra precio de compra
+        ModelsPurchasePrice::where('models_id',$id)->delete();
+
+        $this->repo->delete($id);
+
+        $img = Images::where('entity',$this->data['entityImg'])->where('entity_id',$id)->get();
+
+        if($img->count() != 0)
+        {
+            $imgHelp = new ImagesHelper();
+
+            foreach($img as $imagen)
+            {
+                $imgHelp->deleteFile($imagen->image);
+                $imagen->delete();
+            }
+        }
+
+        return redirect()->route($this->data['route'])->withErrors(trans('messages.delItem'));
     }
 
 

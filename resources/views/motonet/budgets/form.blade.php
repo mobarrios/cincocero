@@ -1,81 +1,92 @@
-@extends('index')
 
-    @section('content')
+<div class="panel">
 
-        <div class="panel">
-            <div class="panel-body">
-                <h3>{{strtoupper($client->full_name)}}</h3>
-                <h5><strong>DNI </strong> {{strtoupper($client->dni)}}</h5>
-                <h5><strong>Direccion </strong>  {{$client->address}}</h5>
-                <h5><strong>Email </strong> {{$client->email}}</h5>
-                <h5><strong>Tel. / Cel. </strong>  {{$client->phone}} {{$client->cell_phone}}</h5>
-                <hr>
+    <div class="panel-body">
 
-                <label>Producto</label>
-                <div class="input-group">
-                    <input id="txt_search" type="text" class="form-control" name="Number" placeholder="Buscar Producto" required="">
-                    <span class="btn_search input-group-addon"><i class="fa fa-search"></i></span>
-                </div>
-                <div class="data">
-
-                </div>
+        {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
 
 
-                <div ng-controller="MyController">
-                    Your name:
-                    <input type="text" ng-model="username">
-                    <button ng-click='sayHello()'>greet</button>
-                    <hr>
-                    @{{greeting}}
-                </div>
-
-
-                </div>
-
-
-
-            </div>
-
-            <div class="panel-footer">
-
-
-            {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
-            {!! Form::close()!!}
-
-            </div>
-
+        <label>Modelo</label>
+        <div class="form-group">
+            <select name='models_id' style="width: 100%;" class="select_model form-control">
+                @foreach($brands as $br)
+                    <optgroup label="{{$br->name}}">
+                        @foreach($br->Models as $m)
+                            <option data-price="{{$m->salePrice->price or ''}}" data-discount="{{$m->salePrice->max_discount or ''}}" data-patentamiento="{{$m->salePrice->patentamiento_price or ''}}" value="{{$m->id}}" @if(isset($model) && ($model->models_id == $m->id)) selected="selected" @endif>{{$m->name}}</option>
+                        @endforeach
+                    </optgroup>
+                @endforeach
+            </select>
         </div>
 
-    @endsection
-
-    @section('js')
-
-
-        <script>
-
-            angular.module('scopeExample', [])
-                    .controller('MyController', ['$scope', function($scope) {
-                        $scope.username = 'World';
-
-                        $scope.sayHello = function() {
-                            $scope.greeting = 'Hello ' + $scope.username + '!';
-                        };
-                    }]);
+        <hr>
+        <div class="row">
+            <div class="col-xs-6">
+                <label>Precio de Lista</label>
+                {!! Form::text('list_price',null, ['id'=>'list_price','class'=>'form-control']) !!}
+            </div>
+            <div class="col-xs-6">
+                <label>Precio de Contado</label>
+                {!! Form::text('count_price',null, ['id'=>'costo_price','class'=>'form-control']) !!}
+            </div>
+        </div>
 
 
-            $('.btn_search').on('click',function(){
-               var text = $('#txt_search').val();
+        <div class="row">
+            <div class="col-xs-4">
+                {!! Form::checkbox('alarma') !!}
+                <label>Alarma</label>
+                {!! Form::text('alarm_price',null,['class'=>'form-control']) !!}
+            </div>
+            <div class="col-xs-4">
+                {!! Form::checkbox('patentamiento') !!}
+                <label>Patentamiento</label>
+                {!! Form::text('patentamiento_price',null,['id'=>'patentamiento_price', 'class'=>'form-control']) !!}
 
-                $.get('budgets_search/'+text, function(res){
+            </div>
+            <div class="col-xs-4">
+                {!! Form::checkbox('seguro') !!}
+                <label>Seguro</label>
+                {!! Form::text('alarm_price',null,['class'=>'form-control']) !!}
 
-                    $.each(res,function(k,v){
-                        console.log(v['name']);
-                        $('.data').append('<li>'+v['brands']['name']+'-'+v['name']+'</li>');
-                    });
-                });
+            </div>
+        </div>
 
+        <hr>
+                <label>Medios de Pago</label>
+
+                {!! Form::textCustom('entrega','Entrega Inicial') !!}
+        
+                <a href="#" class="btn btn-md btn-default">Calcular</a>
+        <hr>
+        {!! Form::textCustom('observations','Observaciones') !!}
+
+
+
+
+    </div>
+
+    <div class="panel-footer">
+
+        {!! Form::submit(trans('messages.btnSave'),['class'=>'btn'])!!}
+        {!! Form::close()!!}
+        <div class="pull-right">
+             Atendido por : <strong>{{\Illuminate\Support\Facades\Auth::user()->fullName}}</strong>
+        </div>
+    </div>
+
+</div>
+
+@section('js')
+    <script>
+            $('.select_model').change(function(){
+                var pat     = $('option:selected',this).attr('data-patentamiento');
+                var price   = $('option:selected',this).attr('data-price');
+                var discount= $('option:selected',this).attr('data-discount');
+
+                $('#costo_price').val(price - ((price*discount)/100) );
+                $('#list_price').val(price);
+                $('#patentamiento_price').val(pat);
             });
-        </script>
-    @endsection
-
-@stop
+    </script>
+@endsection

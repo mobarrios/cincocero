@@ -10,6 +10,7 @@
                 {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
             @endif
 
+
             {!! Form::textCustom('name', 'Modelo')!!}
 
             {!! Form::fileCustom('image','Foto')!!}
@@ -21,6 +22,65 @@
                 @else
                     {!! Form::selectMultipleCustom('categories_id[]','Categorías',$categories) !!}
                 @endif
+
+                <hr>
+
+                <h4 class="col-xs-12">Compra</h4>
+                <div class="col-xs-4">
+                    <label>Precio de Compra</label>
+                    @if(isset($model) && !is_null($model->purchasePrice))
+                        {!! Form::text('purchase_price',  $model->purchasePrice->price  ,['class'=>'form-control'])!!}
+                    @else
+                        {!! Form::text('purchase_price', null, ['class'=>'form-control'])!!}
+                    @endif
+                </div>
+                <div class="col-xs-4">
+                <label>Precio de Flete</label>
+                    @if(isset($model) && !is_null($model->purchasePrice))
+                         {!! Form::text('flete_price',$model->purchasePrice->flete_price  ,['class'=>'form-control'])!!}
+                    @else
+                        {!! Form::text('flete_price',null, ['class'=>'form-control'])!!}
+                    @endif
+                </div>
+
+
+                <h4 class="col-xs-12">Venta</h4>
+
+                <div class="col-xs-4">
+                    <label>Precio de Venta</label>
+                    @if(isset($model) && !is_null($model->salePrice))
+                        {!! Form::text('sale_price', $model->salePrice->price,['class'=>'form-control'])!!}
+                    @else
+                        {!! Form::text('sale_price',null, ['class'=>'form-control'])!!}
+                     @endif
+                </div>
+                <div class="col-xs-4">
+                    <label>Precio de Patentamiento</label>
+                    @if(isset($model) && !is_null($model->salePrice))
+                         {!! Form::text('patentamiento_price',$model->salePrice->patentamiento_price, ['class'=>'form-control'])!!}
+                    @else
+                         {!! Form::text('patentamiento_price',null, ['class'=>'form-control'])!!}
+                    @endif
+                </div>
+                <div class="col-xs-4">
+                    <label>Precio del Pack Service</label>
+                    @if(isset($model) && !is_null($model->salePrice))
+                        {!! Form::text('pack_price', $model->salePrice->pack_price,['class'=>'form-control'])!!}
+                    @else
+                         {!! Form::text('pack_price',null, ['class'=>'form-control'])!!}
+                    @endif
+                </div>
+
+                <div class="col-xs-4">
+                    <label>Dto Maximo %</label>
+                    @if(isset($model) && !is_null($model->salePrice))
+                        {!! Form::text('max_discount', $model->salePrice->max_discount,['class'=>'form-control'])!!}
+                    @else
+                        {!! Form::text('max_discount',null, ['class'=>'form-control'])!!}
+                    @endif
+                </div>
+
+
 
         </div>
 

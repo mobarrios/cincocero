@@ -25,8 +25,21 @@ class Models extends Entity{
         return $this->belongsToMany(Categories::getClass(),'models_categories');
     }
 
-    public function getNameCleanAttribute(){
+
+    public function getNameCleanAttribute()
+    {
         return $this->cleanChars($this->attributes['name']);
+    }
+
+    public function PurchasePrice(){
+
+        return $this->hasOne(ModelsPurchasePrice::getClass());
+    }
+
+    public function SalePrice(){
+
+        return $this->hasOne(ModelsSalePrice::getClass());
+
     }
 
 }

@@ -30,13 +30,13 @@
 												<span class="label label-block promoDetail">{!!   $producto->destacado_text !!}</span>
 												<div class="product-image">
 													<div class="image">
-														<a href="{!! $producto->titleClean.'/'.$producto->models->brands->nameClean.'/'.$producto->models->nameClean.'/'.$producto->id !!}"><img style="width: 200px" src="{{$producto->Models->Images->first()->image}}" alt="" ></a>
+														<a href="detalle/{!! $producto->titleClean.'/'.$producto->models->brands->nameClean.'/'.$producto->models->nameClean.'/'.$producto->id !!}"><img style="width: 200px" src="{{$producto->Models->Images->first()->image}}" alt="" ></a>
 													</div><!-- /.image -->
 													<div class="tag "><img style="width: 50px;" src="{{$producto->Models->Brands->Images->first()->image}}"> </div>
 												</div><!-- /.product-image -->
 												<div class="product-info text-left">
 													<h3 class="name">
-														<a href="{!! $producto->titleClean.'/'.$producto->models->brands->nameClean.'/'.$producto->models->nameClean.'/'.$producto->id !!}">{{$producto->Models->name}}</a>
+														<a href="detalle/{!! $producto->titleClean.'/'.$producto->models->brands->nameClean.'/'.$producto->models->nameClean.'/'.$producto->id !!}">{{$producto->Models->name}}</a>
 													</h3>
 
 													<div class="description">
@@ -51,7 +51,7 @@
 												</div><!-- /.product-info -->
 												<div class="cart clearfix animate-effect">
 													<div class="action">
-														<a href="{!! $producto->titleClean.'/'.$producto->models->brands->nameClean.'/'.$producto->models->nameClean.'/'.$producto->id !!}" class="btn btn-primary btn-xs" type="button">ver Detalles</a>
+														<a href="detalle/{!! $producto->titleClean.'/'.$producto->models->brands->nameClean.'/'.$producto->models->nameClean.'/'.$producto->id !!}" class="btn btn-primary btn-xs" type="button">ver Detalles</a>
 													</div><!-- /.action -->
 												</div><!-- /.cart -->
 											</div><!-- /.product -->

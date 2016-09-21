@@ -88,7 +88,7 @@
                             </td>
                             <td>
                                 <h3>
-                                    <a href="{!! route('productDetail',$publication->id) !!}" class="text-navy">
+                                    <a href="detalle/{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}" class="text-navy">
                                         {!! $publication->title !!}
                                     </a>
                                 </h3>

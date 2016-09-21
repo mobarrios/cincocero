@@ -37,12 +37,12 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@index'
     ]);
 
-    Route::get('{producto}/{marca}/{modelo}/{id}',[
+    Route::get('detalle/{producto}/{marca}/{modelo}/{id}',[
         'as' => 'productDetail',
         'uses' => 'webController@detail'
     ]);
 
-    Route::get('{find}/{nombre}/{id}',[
+    Route::get('buscar/{find}/{nombre}/{id}',[
         'as' => 'productFind',
         'uses' => 'webController@find'
     ]);

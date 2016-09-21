@@ -7,7 +7,7 @@
 
             @foreach($brands as $brand)
                 <div class="item m-t-15">
-                    <a  class="image" href="{!! 'brand/'.$brand->name.'/'.$brand->id !!}">
+                    <a  class="image" href="buscar/{!! 'brand/'.$brand->name.'/'.$brand->id !!}">
                         <img style="width: 100px;" class="img-responsive byn center-block" src="{{$brand->images->first()->image or ''}}" alt="">
                     </a>
                 </div><!--/.item-->
