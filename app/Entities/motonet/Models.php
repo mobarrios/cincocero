@@ -25,6 +25,11 @@ class Models extends Entity{
         return $this->belongsToMany(Categories::getClass(),'models_categories');
     }
 
+    public function Providers()
+    {
+        return $this->belongsToMany(Providers::getClass(),'models_providers');
+    }
+
 
     public function getNameCleanAttribute()
     {

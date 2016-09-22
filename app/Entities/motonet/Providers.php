@@ -9,7 +9,9 @@ class Providers extends Entity{
 
     protected $fillable = ['name','razon_social','cuit','phone','mail','contact_name','address','iva_condition_id'];
 
-
+    public function Models(){
+        return $this->belongsToMany(Models::getClass(),'models_providers');
+    }
    
 
 }

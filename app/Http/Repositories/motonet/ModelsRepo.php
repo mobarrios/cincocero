@@ -21,6 +21,7 @@ class ModelsRepo extends BaseRepo {
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
             'brands_id' => 'required',
             'categories_id' => 'required',
+            'providers_id' => 'required',
 
         ];
     }
@@ -32,6 +33,7 @@ class ModelsRepo extends BaseRepo {
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
             'brands_id' => 'required',
             'categories_id' => 'required',
+            'providers_id' => 'required',
 
         ];
     }
