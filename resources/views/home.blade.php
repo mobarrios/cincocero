@@ -18,7 +18,7 @@
                         <h3 class="mt0">{{Auth::user()->name}} {{Auth::user()->last_name}}</h3>
                         <p class="text-muted">Grupo : {{Auth::user()->Perfil->profile}}</p>
                         <p class="text-muted">{{Auth::user()->email}}</p>
-                        <p class="text-muted">Ultima Conexión : <strong>hace 2 dias</strong></p>
+                        <p class="text-muted">Ultima Conexión : <strong>{{\Carbon\Carbon::now()->diffForHumans(Auth::user()->updated_at)}}</strong></p>
                     </div>
                 </div>
 
@@ -40,16 +40,6 @@
 
 
 
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel panel-body">
-
-                    @include('controls.chat')
-                </div>
-
-            </div>
-
-        </div>
 
 
     @endsection

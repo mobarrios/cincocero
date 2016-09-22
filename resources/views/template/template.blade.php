@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/angle/vendor/simple-line-icons/css/simple-line-icons.css">
     <!-- ANIMATE.CSS-->
     <link rel="stylesheet" href="assets/angle/vendor/animate.css/animate.min.css">
-    <!-- WHIRL (spinners)-->
+    <!-- WHIRL (spinners)
     <link rel="stylesheet" href="assets/angle/vendor/whirl/dist/whirl.css">
     <!-- =============== PAGE VENDOR STYLES ===============-->
     <link rel="stylesheet" href="assets/angle/vendor/sweetalert/dist/sweetalert.css">
@@ -96,26 +96,26 @@
 
 <!-- MODERNIZR-->
 <script src="assets/angle/vendor/modernizr/modernizr.custom.js"></script>
-<!-- MATCHMEDIA POLYFILL-->
+<!-- MATCHMEDIA POLYFILL
 <script src="assets/angle/vendor/matchMedia/matchMedia.js"></script>
 
 <!-- BOOTSTRAP-->
 <script src="assets/angle/vendor/bootstrap/dist/js/bootstrap.js"></script>
-<!-- STORAGE API-->
+<!-- STORAGE API
 <script src="assets/angle/vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
-<!-- JQUERY EASING-->
+<!-- JQUERY EASING-
 <script src="assets/angle/vendor/jquery.easing/js/jquery.easing.js"></script>
-<!-- ANIMO-->
+<!-- ANIMO-
 <script src="assets/angle/vendor/animo.js/animo.js"></script>
 <!-- SLIMSCROLL-->
 <script src="assets/angle/vendor/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- SCREENFULL-->
+<!-- SCREENFULL
 <script src="assets/angle/vendor/screenfull/dist/screenfull.js"></script>
-<!-- LOCALIZE-->
+<!-- LOCALIZE
 <script src="assets/angle/vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
-<!-- RTL demo-->
+<!-- RTL demo
 <script src="assets/angle/js/demo/demo-rtl.js"></script>
-
+-->
 <script src="assets/js/tinymce/tinymce.min.js"></script>
 
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
@@ -133,14 +133,12 @@
 
 <script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js" ></script>
 
-
 <script src="assets/js/jquery_datepicker_es.js"></script>
 
 <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
 
 <script src="assets/inspinia/js/bootstrap-multiselect.js"></script>
 <script src="assets/angle/vendor/select2/dist/js/select2.js"></script>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
 
