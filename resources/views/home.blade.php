@@ -39,9 +39,6 @@
         </div>
 
 
-
-
-
     @endsection
 
 @section('js')

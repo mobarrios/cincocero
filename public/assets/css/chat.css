@@ -12,6 +12,7 @@
     padding-right: 5px;
 }
 #chat .chat-window{
+    z-index:100;
     bottom:0;
     position:fixed;
     right:0;
@@ -155,3 +156,33 @@
 .icon_close{
     color:white;
 }
+
+
+
+/* chat lado administrador*/
+.chat-header{
+    height:40px;
+}
+
+.chat_content{
+    height:250px;
+    max-height: 300px;
+    overflow-y: auto;
+    width:100%;
+    margin:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

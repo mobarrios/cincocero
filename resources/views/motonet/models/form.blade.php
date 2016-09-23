@@ -23,6 +23,12 @@
                     {!! Form::selectMultipleCustom('categories_id[]','Categorías',$categories) !!}
                 @endif
 
+                @if(isset($prov))
+                    {!! Form::selectMultipleCustom('providers_id[]','Proveedores',$providers,$prov) !!}
+                @else
+                    {!! Form::selectMultipleCustom('providers_id[]','Proveedores',$providers) !!}
+                @endif
+
                 <hr>
 
                 <h4 class="col-xs-12">Compra</h4>

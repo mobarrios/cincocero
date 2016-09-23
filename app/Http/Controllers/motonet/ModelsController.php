@@ -8,6 +8,7 @@ use App\Entities\motonet\Categories;
 use App\Entities\motonet\Models;
 use App\Entities\motonet\ModelsPurchasePrice;
 use App\Entities\motonet\ModelsSalePrice;
+use App\Entities\motonet\Providers;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -35,6 +36,11 @@ class ModelsController extends Controller {
         //data from entities
         $this->repo                 = $repo;
         $this->data['models']       = $repo->ListAll();
+
+
+        $this->repo->export();
+
+
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
@@ -52,6 +58,7 @@ class ModelsController extends Controller {
         //$this->data['roomsTypes']     = RoomsTypes::lists('name','id');
         $this->data['brands']           = Brands::lists('name','id');
         $this->data['categories']       = Categories::lists('name','id');
+        $this->data['providers']       = Providers::lists('name','id');
 
 
         //data for validation
@@ -66,6 +73,7 @@ class ModelsController extends Controller {
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
 
+
     }
     public function postNew(Request $request, ImagesHelper $image)
     {
@@ -78,6 +86,9 @@ class ModelsController extends Controller {
         // method crear in repo
         $model = $this->repo->create($request);
         $model->Categories()->attach($request->categories_id);
+        
+        $model->Providers()->attach($request->providers_id);
+        
 
         //purhcases_price
             $purchases['price']         = $request->purchase_price;
@@ -134,6 +145,22 @@ class ModelsController extends Controller {
             $this->data['cat'] = explode(',', $ca);
         }
 
+        $prov = $this->data['model']->providers;
+
+        if ($prov->count() > 0){
+            $pro = 0;
+
+            foreach ($prov as $p) {
+                if($pro != 0)
+                    $pro .= ",".$p->id;
+                else
+                    $pro = $p->id;
+            }
+
+            $this->data['prov'] = $pro;
+            $this->data['prov'] = explode(',', $pro);
+        }
+
         return view($this->form)->with($this->data);
     }
 
@@ -153,6 +180,10 @@ class ModelsController extends Controller {
 
         if($request->categories_id != 0){
             $model->Categories()->sync($request->categories_id);
+        }
+
+        if($request->providers_id != 0){
+            $model->Providers()->sync($request->providers_id);
         }
 
 

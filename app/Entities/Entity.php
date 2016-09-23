@@ -47,5 +47,42 @@ class Entity extends Model {
 
     }
 
+    public function cleanChars($string){
+        $pattern1 = '/[ \']/';
+        $replacement1 = '-';
+
+        $pattern2 = '/[ñ]/';
+        $replacement2 = 'n';
+
+        $pattern3 = '/[á]/';
+        $replacement3 = 'a';
+
+        $pattern4 = '/[é]/';
+        $replacement4 = 'e';
+
+        $pattern5 = '/[í]/';
+        $replacement5 = 'i';
+
+        $pattern6 = '/[ó]/';
+        $replacement6 = 'o';
+
+        $pattern7 = '/[ú]/';
+        $replacement7 = 'u';
+
+        $pattern8 = '/[ü]/';
+        $replacement8 = 'u';
+
+        $newString = preg_replace($pattern1, $replacement1, $string, -1 );
+        $newString = preg_replace($pattern2, $replacement2, $newString, -1 );
+        $newString = preg_replace($pattern3, $replacement3, $newString, -1 );
+        $newString = preg_replace($pattern4, $replacement4, $newString, -1 );
+        $newString = preg_replace($pattern5, $replacement5, $newString, -1 );
+        $newString = preg_replace($pattern6, $replacement6, $newString, -1 );
+        $newString = preg_replace($pattern7, $replacement7, $newString, -1 );
+        $newString = preg_replace($pattern8, $replacement8, $newString, -1 );
+
+        return $newString;
+    }
+
 
 }

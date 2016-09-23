@@ -18,6 +18,45 @@ class PayController extends Controller {
     public function ProcessPay(Request $request, TodoPagoController $tp)
     {
 
+        if(is_null($request->pay_method))
+            return redirect()->back()->withErrors('Seleccionar Metodo de Pago')->withInput();
+
+        if($request->dni == "")
+            return redirect()->back()->withErrors('Completar DNI')->withInput();
+
+        if($request->last_name == "")
+            return redirect()->back()->withErrors('Completar Apellido')->withInput();
+
+        if($request->name == "")
+            return redirect()->back()->withErrors('Completar Nombre')->withInput();
+
+        if($request->state == "")
+            return redirect()->back()->withErrors('Completar Provincia')->withInput();
+
+        if($request->city == "")
+            return redirect()->back()->withErrors('Completar Ciudad')->withInput();
+
+        if($request->street == "")
+            return redirect()->back()->withErrors('Completar Calle')->withInput();
+
+        if($request->postal_code == "")
+            return redirect()->back()->withErrors('Completar CP')->withInput();
+
+        if($request->email == "")
+            return redirect()->back()->withErrors('Completar Email')->withInput();
+
+        if(!filter_var($request->email, FILTER_VALIDATE_EMAIL))
+            return redirect()->back()->withErrors('Completar Email valido ')->withInput();
+
+        if($request->phone == "")
+            return redirect()->back()->withErrors('Completar Tel.')->withInput();
+
+        if(is_null($request->terms))
+            return redirect()->back()->withErrors('debe Aceptar terminos y Condiciones')->withInput();
+
+
+
+
         $pm = explode('_',$request->pay_method);
 
         $request['pago']    = $pm[0];
@@ -104,7 +143,7 @@ class PayController extends Controller {
 
             $this->sendMail($operation->id);
 
-            return redirect()->back()->withInput()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.');
+            return redirect()->back()->withInput()->withErrors('Se Enviara un mail con el numero de Cuenta para realizar el deposito correspondiente. Gracias.')->with('fbq', $operation->amount);
         }
 
 
@@ -226,8 +265,8 @@ class PayController extends Controller {
             $operation->message = $rta['StatusMessage'];
             $operation->save();
 
-        return redirect()->route('resumen',$operation->publications_id)->withErrors($rta['StatusMessage']);
-
+        //return redirect()->route('resumen',$operation->publications_id)->withErrors($rta['StatusMessage']);
+        return redirect()->back()->withInput()->withErrors($rta['StatusMessage'])->with('fbq', $operation->amount);
 
     }
 
@@ -300,7 +339,8 @@ class PayController extends Controller {
         $operation->save();
 
 
-        return redirect()->to($preference['response'][$point]);
+//        return redirect()->to($preference['response'][$point]);
+        return redirect()->to($preference['response'][$point])->withInput()->withErrors('Se realizó el pago correctamente. Gracias.')->with('fbq', $operation->amount);
 
     }
 

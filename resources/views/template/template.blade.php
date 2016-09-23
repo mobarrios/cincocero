@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app lang="es">
+<html  lang="es">
 <base href="{{asset('')}}">
 
 <head>
@@ -10,6 +10,9 @@
     <title>{nc} nav_coder</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+
+
     <!-- =============== VENDOR STYLES ===============-->
     <!-- FONT AWESOME-->
     <link rel="stylesheet" href="assets/angle/vendor/fontawesome/css/font-awesome.min.css">
@@ -89,6 +92,10 @@
 </div>
 
 @include('messages')
+
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
 
 <!-- =============== VENDOR SCRIPTS ===============-->
 <!-- JQUERY-->

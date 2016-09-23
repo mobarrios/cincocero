@@ -4,10 +4,10 @@
             <div class="wide-banner cnt-strip">
                 <div class="image">
                     <div class="col-xs-12">
-                        <img class="img-responsive" data-echo="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_banner_promocional_908x515_3.jpg" src="assets/unicase/images/blank.gif" alt="">
+                        <img class="img-responsive" src="http://www.todopago.com.ar/sites/todopago.com.ar/files/kit_banner_promocional_908x515_3.jpg"  alt="">
                     </div>
                     <div class="col-xs-12">
-                        <img class="img-responsive" data-echo="https://imgmp.mlstatic.com/org-img/banners/ar/medios/575X40.jpg" src="assets/unicase/images/blank.gif" alt="">
+                        <img class="img-responsive" src="https://imgmp.mlstatic.com/org-img/banners/ar/medios/575X40.jpg"  alt="">
                     </div>
                 </div>
             </div><!-- /.wide-banner -->
