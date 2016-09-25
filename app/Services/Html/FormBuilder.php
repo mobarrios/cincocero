@@ -29,7 +29,7 @@ class FormBuilder extends \Collective\Html\FormBuilder {
 
     public function dateCustom($name = null, $label = null)
     {
-        $input = parent::date($name,null, $this->dateClass);
+        $input = parent::text($name,null, $this->dateClass);
 
         return $this->buildDiv($label, $input);
     }

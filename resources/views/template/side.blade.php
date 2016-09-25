@@ -20,6 +20,7 @@
 
                     <li>
                         <a href="#{{$m}}" data-toggle="collapse">
+                            <em class="text-primary"><strong>{{str_limit($m,1,'')}}</strong></em>
                             <span >{{$m}}</span>
                         </a>
                         <ul id="{{$m}}" class="nav sidebar-subnav collapse">
@@ -38,6 +39,8 @@
                     @else
                         <li class=" ">
                             <a class="menu" data-id="{{$m}}" href="{{route($k)}}" title="{{$m}}">
+                                <em class="text-primary"><strong>{{str_limit($m,1,'')}}</strong></em>
+
                                 <span>{{$m}}</span>
                             </a>
                         </li>

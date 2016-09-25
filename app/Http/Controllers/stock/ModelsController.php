@@ -36,6 +36,8 @@ class ModelsController extends Controller {
         $this->form                 = 'stock.'.$module.'.form';
         $this->data['sectionName']  = 'Modelos de Productos';
 
+        $this->repo->export();
+
 
         //images
         $this->data['imgQuantityMax']   = 1;

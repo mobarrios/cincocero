@@ -99,6 +99,10 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
             });
 
 
+        //export
+
+        Route::get('export',['as'=>'export', 'uses'=>'\App\Http\Controllers\UtilitiesController@exportToExcel']);
+
 
         Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){
 

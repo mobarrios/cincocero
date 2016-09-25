@@ -136,18 +136,13 @@
 
 <script src="assets/js/bootstrap-multiselect.js"></script>
 
-
-<ul id="messages"></ul>
-<form action="">
-    <input id="m" autocomplete="off" /><button>Send</button>
-    <input id='from' type="text" >
-
-</form>
-
-
+<!--
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
+
+    //socket io
+    /*
     var socket = io.connect('192.168.0.101:3000');
 
     $('form').submit(function(){
@@ -159,15 +154,19 @@
     socket.on('chat message', function(msg){
         $('#messages').append($('<li>').text(msg));
     });
+    */
 </script>
-
+-->
 <script>
 
    $('.logout').on('click',function(){
        localStorage.clear();
    });
 
+   /*
+   //desktop notificition
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
+
 
         var Notification = window.Notification || window.mozNotification || window.webkitNotification;
 
@@ -201,6 +200,7 @@
 
         return false;
     }
+*/
 
     tinymce.init({
         plugins: "textcolor",
@@ -286,7 +286,7 @@
         });
     });
 
-    //    MULTISELECT
+    //MULTISELECT
     $('.multipleSelect').multiselect({
         includeSelectAllOption: true,
         buttonWidth: '100%',

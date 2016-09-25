@@ -14,16 +14,17 @@
 
                 {!! Form::textCustom('name', 'Articulo')!!}
 
-                {!! Form::selectCustom('models_id', 'Modelo',$modelos)!!}
+                {!! Form::selectCustom('models_id', 'Modelo', $modelos)!!}
 
-                {!! Form::dateCustom('date','Dia') !!}
+                {!! Form::dateCustom('date_from','Desde') !!}
 
-                {!! Form::fileCustom('image','Foto')!!}
+                    {!! Form::dateCustom('date_to','hasta') !!}
 
-                {!! Form::colorPicker('col','color')!!}
-                {!! Form::colorPicker('col1','color1')!!}
 
-                {!! Form::hidden('brands_id',1)!!}
+                    {!! Form::fileCustom('image','Foto')!!}
+
+                {!! Form::colorPicker('color','color')!!}
+
             </div>
 
             <div class="panel-footer">
@@ -33,30 +34,5 @@
             </div>
     @endsection
 
-@section('js')
-    <script>
-        $('.datepicker').datepicker({
-            changeYear: true
-        });
-        $.datepicker.regional['es'] = {
-            closeText: 'Cerrar',
-            prevText: '<Ant',
-            nextText: 'Sig>',
-            currentText: 'Hoy',
-            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-            monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-            dayNames: ['Domingo', 'Lunes', 'Martes', 'Mi�rcoles', 'Jueves', 'Viernes', 'S�bado'],
-            dayNamesShort: ['Dom','Lun','Mar','Mi�','Juv','Vie','S�b'],
-            dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S�'],
-            weekHeader: 'Sm',
-            dateFormat: 'dd/mm/yy',
-            firstDay: 1,
-            isRTL: false,
-            showMonthAfterYear: false,
-            yearSuffix: ''
-        };
-        $.datepicker.setDefaults($.datepicker.regional['es']);
-    </script>
-    @endsection
 
 @stop

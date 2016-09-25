@@ -43,9 +43,8 @@ class Entity extends Model {
         if(!is_null($image)){
             return $image;
         }
-
-
     }
+    
 
 
 }

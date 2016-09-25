@@ -4,6 +4,7 @@ namespace App\Http\Repositories\stock;
 
 use App\Entities\stock\Models;
 use App\Http\Repositories\BaseRepo;
+use Illuminate\Support\Facades\Session;
 
 class ModelsRepo extends BaseRepo {
 
@@ -47,6 +48,23 @@ class ModelsRepo extends BaseRepo {
         ];
 
         return $header;
+    }
+
+
+    public function export() {
+
+        //$modelSearch = $this->getModel()->with('Brands')->orderBy('name','ASC')->get();
+        $modelSearch = $this->getModel()->orderBy('name','ASC')->get();
+        $data = [];
+
+        foreach ($modelSearch as $item) {
+
+            array_push($data, ['Codigo'=>$item->id, 'Modelo'=>$item->name]);
+
+        }
+
+        Session::put('export',$data);
+
     }
 
 

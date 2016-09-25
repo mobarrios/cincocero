@@ -25,6 +25,7 @@
             </div>
         </div>
 
+        {{--
         <div class="col-lg-6">
             <div class="panel panel-default">
                     <div class="panel panel-body">
@@ -64,9 +65,8 @@
                 </div>
             </div>
         </div>
-
-
-
+        --}}
+        {{--
         <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel panel-body">
@@ -115,6 +115,7 @@
             </div>
 
         </div>
+        --}}
 
 
 
