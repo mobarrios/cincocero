@@ -34,7 +34,6 @@
 
 @section('js')
     <script>
-//        var address = "Alta gracia 218, Moreno, Buenos Aires";
         var address = $('#map_canvas').attr('data-direccion');
         // Creamos el Objeto Geocoder
         var geocoder = new google.maps.Geocoder();

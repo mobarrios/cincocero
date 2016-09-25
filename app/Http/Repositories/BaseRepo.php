@@ -58,4 +58,6 @@ abstract class BaseRepo {
         $qry = $this->model->get();
         return $qry;
     }
+    
+
 }

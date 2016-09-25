@@ -15,27 +15,22 @@
                             <div class="products">
 
                                 <div class="product">
+                                    <div class="text-center" >
+                                        <label class="label label-danger">{{$publication->destacado_text}}</label>
+                                    </div>
                                     <div class="product-image m-r-15">
                                         <div class="image">
-                                            <a href="{!! route('productDetail',$publication->id) !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image }}" class="byn img-responsive" alt=""></a>
+                                            <a href="detalle/{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image or ''}}" class=" img-responsive" alt=""></a>
                                         </div><!-- /.image -->
-
-                                        <div class="tagPromo new">
-
-                                            12 cuotas sin interes
-                                            {{--<img src="{{$publication->Models->brands->Images->first()->image}}"></img>--}}
-                                        </div>
                                     </div><!-- /.product-image -->
 
 
                                     <div class="product-info text-left">
                                         <h3 >{{$publication->models->brands->name}}</h3>
-                                        <h3 class="name"><a href="{!! route('productDetail',$publication->id) !!}">{{$publication->title}}</a></h3>
-                                        <div class="rating rateit-small"></div>
+                                        <h3 class="name"><a href="detalle/{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}">{{$publication->title}}</a></h3>
                                         <div class="product-price">
-                    <span class="price">
-                        $ {{$publication->price}}			</span>
-                                            <span class="price-before-discount">$ {{$publication->price}}</span>
+                                            <span class="price">$ {{$publication->price}}</span>
+                                            {{--<span class="price-before-discount">$ {{$publication->price}}</span>--}}
 
                                         </div><!-- /.product-price -->
 
@@ -44,10 +39,10 @@
                                         <div class="action">
                                             <ul class="list-unstyled">
                                                 <li class="add-cart-button btn-group">
-                                                    <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
+                                                    <a class="btn btn-primary icon" href="{!! route('addToCart',$publication->id) !!}">
                                                         <i class="fa fa-shopping-cart"></i>
-                                                    </button>
-                                                    <button class="btn btn-primary" type="button" href="{!! route('productDetail',$publication->id) !!}">ver</button>
+                                                    </a>
+                                                    <a class="btn btn-primary" type="button" href="detalle/{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}">ver</a>
                                                 </li>
                                             </ul>
                                         </div><!-- /.action -->

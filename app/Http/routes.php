@@ -88,10 +88,10 @@ Route::get('template',function(){
 });
 require(__DIR__. '/Routes/motonet/webRoutes.php');
 
-Route::get('/',function(){
-
-    return redirect()->route('index');
-});
+//Route::get('/',function(){
+//
+//    return redirect()->route('indexNueva');
+//});
 
 
 //login pasa x middle company para chequear la empresa
@@ -150,6 +150,10 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
             });
 
+
+        //export
+
+        Route::get('export',['as'=>'export', 'uses'=>'\App\Http\Controllers\UtilitiesController@exportToExcel']);
 
 
         Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){

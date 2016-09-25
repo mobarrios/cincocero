@@ -48,30 +48,25 @@
 
 
 
+
         </ul>
         <!-- END sidebar nav-->
     </nav>
 </div>
 
-@section('js')
-    <script>
-        $(document).ready(function(){
+<script>
+    $(document).ready(function(){
 
-            var menu_id = localStorage.getItem('menu_id');
+        var menu_id = localStorage.getItem('menu_id');
 
-            $('a[data-id='+menu_id+']').parent().addClass('active');
+        $('a[data-id='+menu_id+']').parent().addClass('active');
 
-            $('a[data-id='+menu_id+']').parent().parent().addClass('in').parent().addClass('active');
+        $('a[data-id='+menu_id+']').parent().parent().addClass('in').parent().addClass('active');
 
-        });
+    });
 
-        $('.menu').on('click',function()
-        {
-            localStorage.setItem('menu_id',$(this).attr('data-id'));
-        });
-
-
-
-
-    </script>
-@endsection
+    $('.menu').on('click',function()
+    {
+        localStorage.setItem('menu_id',$(this).attr('data-id'));
+    });
+</script>

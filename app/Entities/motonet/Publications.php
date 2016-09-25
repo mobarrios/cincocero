@@ -25,6 +25,10 @@ class Publications extends Entity{
         $this->attributes['publication_date'] = date('Y-m-d',strtotime($value));
     }
 
+    public function getTitleCleanAttribute(){
+        return $this->cleanChars($this->attributes['title']);
+    }
+
     public function Items()
     {
         return $this->belongsTo(Items::getClass());
