@@ -58,7 +58,7 @@ class ModelsController extends Controller {
         //$this->data['roomsTypes']     = RoomsTypes::lists('name','id');
         $this->data['brands']           = Brands::lists('name','id');
         $this->data['categories']       = Categories::lists('name','id');
-        $this->data['providers']       = Providers::lists('name','id');
+        $this->data['providers']        = Providers::lists('name','id');
 
 
         //data for validation
