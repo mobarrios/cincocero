@@ -7,7 +7,7 @@
                     <div class="contact-info">
                         <div class="footer-logo">
                             <div class="logo">
-                                <a href="home.html">
+                                <a href=""{!! route('indexNueva') !!}">
 
                                     <img src="assets/web/img/logo.png" alt="" width="250">
 
@@ -118,22 +118,22 @@
 
                     <div class="module-body col-sm-4">
                         <ul class='list-unstyled'>
-                            <li><a href="buscar/{!! 'categories/motos/1' !!}">Motos</a></li>
-                            <li><a href="buscar/{!! 'categories/scooters/2' !!}">Scooters</a></li>
-                            <li><a href="buscar/{!! 'categories/custom/10' !!}">Custom</a></li>
+                            <li><a href="buscar/{!! 'categorias/motos/1' !!}">Motos</a></li>
+                            <li><a href="buscar/{!! 'categorias/scooters/2' !!}">Scooters</a></li>
+                            <li><a href="buscar/{!! 'categorias/custom/10' !!}">Custom</a></li>
                         </ul>
                     </div><!-- /.module-body -->
                     <div class="module-body col-sm-4">
                         <ul class='list-unstyled'>
-                            <li><a href="buscar/{!! 'categories/ciclomotores/3' !!}">Ciclomotores</a></li>
-                            <li><a href="buscar/{!! 'categories/cuatriciclos/4' !!}">Cuatriciclos</a></li>
-                            <li><a href="buscar/{!! 'categories/generadores/5' !!}">Generadores</a></li>
+                            <li><a href="buscar/{!! 'categorias/ciclomotores/3' !!}">Ciclomotores</a></li>
+                            <li><a href="buscar/{!! 'categorias/cuatriciclos/4' !!}">Cuatriciclos</a></li>
+                            <li><a href="buscar/{!! 'categorias/generadores/5' !!}">Generadores</a></li>
                             </ul>
                     </div><!-- /.module-body -->
                     <div class="module-body col-sm-4">
                         <ul class='list-unstyled'>
-                            <li><a href="buscar/{!! 'categories/motobombas/6' !!}">Motobombas</a></li>
-                            <li><a href="buscar/{!! 'categories/bosqueyjardin/7' !!}">Bosque y Jardín</a></li>
+                            <li><a href="buscar/{!! 'categorias/motobombas/6' !!}">Motobombas</a></li>
+                            <li><a href="buscar/{!! 'categorias/bosqueyjardin/7' !!}">Bosque y Jardín</a></li>
                         </ul>
                     </div><!-- /.module-body -->
                 </div><!-- /.col -->
