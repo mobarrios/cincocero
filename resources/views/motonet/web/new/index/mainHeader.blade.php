@@ -92,7 +92,7 @@
                                             </div>
                                             <div class="col-xs-7">
 
-                                                <h3 class="name"><a href="{!! route('productDetail',Session::get('carrito')) !!}">{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->models->name !!}</a></h3>
+                                                <h3 class="name"><a href="{!! route('productDetail',[\App\Entities\motonet\Publications::find(Session::get('carrito'))->models->nameClean,Session::get('carrito')]) !!}">{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->models->name !!}</a></h3>
                                                 <div class="price">{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->price !!}</div>
                                             </div>
                                             <div class="col-xs-1 action">
