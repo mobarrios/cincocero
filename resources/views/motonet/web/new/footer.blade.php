@@ -7,7 +7,7 @@
                     <div class="contact-info">
                         <div class="footer-logo">
                             <div class="logo">
-                                <a href="home.html">
+                                <a href=""{!! route('indexNueva') !!}">
 
                                     <img src="assets/web/img/logo.png" alt="" width="250">
 
