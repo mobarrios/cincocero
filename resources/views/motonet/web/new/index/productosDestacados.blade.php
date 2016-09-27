@@ -20,14 +20,14 @@
                                     </div>
                                     <div class="product-image m-r-15">
                                         <div class="image">
-                                            <a href="detalle/{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image or ''}}" class=" img-responsive" alt=""></a>
+                                            <a href="{!! route('productDetail',[$publication->models->nameClean,$publication->id]) !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image or ''}}" class=" img-responsive" alt=""></a>
                                         </div><!-- /.image -->
                                     </div><!-- /.product-image -->
 
 
                                     <div class="product-info text-left">
                                         <h3 >{{$publication->models->brands->name}}</h3>
-                                        <h3 class="name"><a href="detalle/{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}">{{$publication->title}}</a></h3>
+                                        <h3 class="name"><a href="{!! route('productDetail',[$publication->models->nameClean,$publication->id]) !!}">{{$publication->title}}</a></h3>
                                         <div class="product-price">
                                             <span class="price">$ {{$publication->price}}</span>
                                             {{--<span class="price-before-discount">$ {{$publication->price}}</span>--}}
@@ -42,7 +42,7 @@
                                                     <a class="btn btn-primary icon" href="{!! route('addToCart',$publication->id) !!}">
                                                         <i class="fa fa-shopping-cart"></i>
                                                     </a>
-                                                    <a class="btn btn-primary" type="button" href="detalle/{!! $publication->titleClean.'/'.$publication->models->brands->nameClean.'/'.$publication->models->nameClean.'/'.$publication->id !!}">ver</a>
+                                                    <a class="btn btn-primary" type="button" href="{!! route('productDetail',[$publication->models->nameClean,$publication->id]) !!}">ver</a>
                                                 </li>
                                             </ul>
                                         </div><!-- /.action -->

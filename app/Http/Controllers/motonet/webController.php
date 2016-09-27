@@ -156,7 +156,7 @@ class webController extends Controller {
         return view('motonet/web/index')->with($this->data);
     }
 
-    public function detail($producto,$marca,$modelo,$id){
+    public function detail($modelo,$id){
         $this->data['publicationDetail'] = $this->publications->find($id);
 
         return view('motonet/web/new/detail')->with($this->data);
@@ -164,7 +164,7 @@ class webController extends Controller {
 
     public function find($find,$nombre,$id,Request $request)
     {
-        if ($find == 'categories') {
+        if ($find == 'categorias') {
             $cat = $this->categories->find($id);
 
             $this->data['productos'] = $this->publications
@@ -178,7 +178,7 @@ class webController extends Controller {
                 ->get();
             $this->data['grid'] = $cat->name;
 
-        } elseif ($find == 'models'){
+        } elseif ($find == 'modelos'){
             $m = $this->models->find($id);
             /*$this->data['items'] = $this->publications
                                 ->whereHas('items',function($q) use($m) {
@@ -193,7 +193,7 @@ class webController extends Controller {
 
             $this->data['grid'] = $m->name;
 
-        }elseif($find == 'brand'){
+        }elseif($find == 'marcas'){
             $b = $this->brands->find($id);
             $this->data['productos'] = $this->publications
                                 ->where('private','!=',1)
