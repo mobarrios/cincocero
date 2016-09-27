@@ -24,7 +24,7 @@
                 </div><!-- /.contact-row -->
                 <!-- ============================================================= SEARCH AREA ============================================================= -->
                 <div class="search-area">
-                    {!! Form::open(['url'=> 'find/products/results','method'=>'get']) !!}
+                    {!! Form::open(['url'=> 'buscar/productos/results/id','method'=>'get']) !!}
                         <div class="control-group">
 
                             <ul class="categories-filter animate-dropdown">
@@ -121,7 +121,9 @@
                                 </div>
                                 <div class="clearfix"></div>
 
-                                <a href="{{route('cartList')}}" class="btn btn-upper btn-primary btn-block m-t-20">ver Carrito</a>
+                                @if(Session::get('carrito'))
+                                    <a href="{{route('resumenNueva',Session::get('carrito'))}}" class="btn btn-upper btn-primary btn-block m-t-20">ver Carrito</a>
+                                @endif
                             </div><!-- /.cart-total-->
 
 

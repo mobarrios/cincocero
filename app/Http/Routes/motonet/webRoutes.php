@@ -2,7 +2,7 @@
 Route::group(['namespace' => 'motonet'], function() {
 
 
-    Route::get('resumenNueva/{id?}',[
+    Route::get('carrito/{id}',[
         'as' => 'resumenNueva',
         'uses' => 'webController@resumenNueva'
     ]);
@@ -37,7 +37,7 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@index'
     ]);
 
-    Route::get('detalle/{producto}/{marca}/{modelo}/{id}',[
+    Route::get('producto/{modelo}/{id}',[
         'as' => 'productDetail',
         'uses' => 'webController@detail'
     ]);
