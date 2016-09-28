@@ -207,29 +207,15 @@ class webController extends Controller {
         }else{
 
             $find = $request->get('find');
-<<<<<<< HEAD
 
-            $data['items'] = $this->publications
-                                ->where('title','like','%'.$find.'%')
-                                ->where('private','!=',1)
-=======
             $this->data['productos'] = $this->publications
                                  ->where('private','!=',1)
                                  ->where('title','like','%'.$find.'%')
->>>>>>> e4dd65fc103304ebd670b439e5829efb2ceb907c
-                                ->orWhereHas('models',function($q) use($find){
-                                    $q->whereHas('categories',function($q) use($find) {
-                                        $q->where('name', 'like', '%' . $find . '%');
-                                    });
-                                })
-<<<<<<< HEAD
                                 ->orWhereHas('models',function($q) use($find){
                                     $q->whereHas('brands',function($q) use($find) {
                                         $q->where('name','like','%'.$find.'%');
                                     });
                                 })
-=======
->>>>>>> e4dd65fc103304ebd670b439e5829efb2ceb907c
                                 ->get();
 
             $this->data['grid'] = "find";
