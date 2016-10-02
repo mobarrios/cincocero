@@ -9,7 +9,7 @@
                 <div class="owl-carousel home-owl-carousel custom-carousel owl-theme overflow-visible" data-item="5">
 
                     @foreach($publications as $publication)
-
+                    @if(!$publication->private)
                     <div class="item item-carousel">
 
                             <div class="products">
@@ -52,7 +52,7 @@
                             </div><!-- /.products -->
 
                         </div><!-- /.item -->
-
+                    @endif
 
                     @endforeach
 

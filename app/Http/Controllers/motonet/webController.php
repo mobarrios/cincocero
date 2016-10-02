@@ -204,11 +204,10 @@ class webController extends Controller {
             $this->data['grid'] = $b->name;
         }else{
 
-
             $find = $request->get('find');
 
             $this->data['productos'] = $this->publications
-                                ->where('private','!=',1)
+                                 ->where('private','!=',1)
                                  ->where('title','like','%'.$find.'%')
                                  ->orWhereHas('models',function($q) use($find){
                                     $q->whereHas('brands',function($q) use($find) {

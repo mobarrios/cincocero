@@ -34,6 +34,7 @@
 							<div class="row">
 
 								@foreach($productos as $producto)
+									@if(!$producto->private)
 									<div class="col-sm-6 col-md-4">
 										<div class="products">
 											<div class="product">
@@ -67,7 +68,7 @@
 											</div><!-- /.product -->
 										</div><!-- /.products -->
 									</div><!-- /.item -->
-
+									@endif
 								@endforeach
 
 						</div>
