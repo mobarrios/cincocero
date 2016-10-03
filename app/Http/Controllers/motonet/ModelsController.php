@@ -5,10 +5,13 @@ namespace App\Http\Controllers\motonet;
 use App\Entities\Images;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
+use App\Entities\motonet\Displacements;
+use App\Entities\motonet\Engines;
 use App\Entities\motonet\Models;
 use App\Entities\motonet\ModelsPurchasePrice;
 use App\Entities\motonet\ModelsSalePrice;
 use App\Entities\motonet\Providers;
+use App\Entities\motonet\Types;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -59,6 +62,15 @@ class ModelsController extends Controller {
         $this->data['brands']           = Brands::lists('name','id');
         $this->data['categories']       = Categories::lists('name','id');
         $this->data['providers']       = Providers::lists('name','id');
+        $this->data['engines']       = Engines::lists('name','id');
+        $this->data['displacements']       = Displacements::lists('name','id');
+        $this->data['types']       =  Types::lists('name','id');
+        $this->data['transmission']     =  ["manual" => 'manual','automática' => 'automática'];
+        $this->data['start']     =  ['patada' => 'patada','eléctrica' => 'eléctrica'];
+        $this->data['brake']     =  ['disco' => 'disco','tambor' => 'tambor'];
+//        $this->data['transmission']     =  [1 => 'manual',2 => 'automática'];
+//        $this->data['start']     =  [1 => 'patada',2 => 'eléctrica'];
+//        $this->data['brake']     =  [1 => 'disco',2 => 'tambor'];
 
 
         //data for validation
