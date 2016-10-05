@@ -158,7 +158,50 @@ class FormBuilder extends \Collective\Html\FormBuilder {
         </div>";
     }
 
-    
+
+     public function fileCropCustom($id,$label)
+    {
+        $images = parent::getValueAttribute('images');
+
+        $td['column'] = null;
+
+        if(!is_null($images)) {
+
+            foreach ($images as $image) {
+                $td['column'] .= '<td style="padding-left: 5px;">
+                                    <a  class="delete" href="' . route('deleteImage', $image->id) . '">
+                                         <span class="fa fa-remove"></span>
+                                    </a>
+                                    <img class="thumbnail" src="' . $image->image . '" width="150px">
+                                  </td>';
+                }
+        }
+
+        return "<div class='".$this->contentClass."'>
+
+        <label>".$label."</label>
+        <table>
+            ".$td['column']."
+        </table>
+            <div class='input-group image-crop-preview'>
+                <input type='text' class='form-control image-crop-preview-filename' disabled='disabled'> <!-- don't give a name === doesn't send on POST/GET -->
+                <span class='input-group-btn'>
+                    <!-- image-preview-clear button -->
+                    <button type='button' class='btn btn-default image-crop-preview-clear' style='display:none;'>
+                        <span class='fa fa-remove'></span> Borrar
+                    </button>
+                    <!-- image-preview-input -->
+                    <div class='btn btn-default image-crop-preview-input'>
+                        <span class='glyphicon glyphicon-folder-open'></span>
+                        <span class='image-crop-preview-input-title'>Buscar</span>
+                        <input type='file' accept='image/png, image/jpeg, image/gif' id='".$id."'/> <!-- rename it -->
+                    </div>
+                </span>
+            </div><!-- /input-group image-preview [TO HERE]--> 
+        </div>";
+    }
+
+
 
     /*
     public function textfield($name, $label, $errors, $labelOptions = array(), $inputOptions = array())

@@ -1,4 +1,12 @@
 @extends('index')
+@section('css')
+    <style>
+        #canvasJCrop{
+            width:48%;
+            margin:1%;
+        }
+    </style>
+@endsection
     @section('content')
     <div class="panel">
         <div class="panel-body">
@@ -8,6 +16,25 @@
         @else
             {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
         @endif
+
+
+        {{--<div class="form-group">--}}
+            {{--<label>Subir remito:</label>--}}
+            {{--<input type="file" onchange="load_file()" id="picker" class="form-control">--}}
+            {{--<div id="main">--}}
+                {{--<canvas id="canvasJCrop"></canvas>--}}
+                {{--<div id="nose">--}}
+                    {{--<p>No file loaded</p>--}}
+                    {{--<p style="font-size: 25px"> Open a file first </p>--}}
+                    {{--<p style="font-size: 15px">it's okay. I'll wait. </p>--}}
+                    {{--<p style="font-size: 10px">no seriously, I can't move</p>--}}
+                    {{--<p style="font-size: 8px">still waiting...</p>--}}
+                {{--</div>--}}
+                {{--<div id="transcription"></div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+            {!! Form::fileCropCustom('picker','Remito para n° de motor')!!}
 
             {!! Form::textCustom('code', 'Codigo')!!}
             {{-- Form::textCustom('detail', 'Detalle') --}}
