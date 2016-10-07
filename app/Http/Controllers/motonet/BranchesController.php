@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\motonet;
 
 use App\Entities\motonet\Branches;
+use App\Http\Repositories\config\UserRepo;
 use App\Http\Repositories\motonet\BranchesRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -62,6 +63,13 @@ class BranchesController extends Controller {
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
 
+    }
+
+    public function getBranchesUsers($id  = null, UserRepo $userR){
+
+        $this->data['users'] = $userR->selectList();
+
+        return view('motonet.branches.branches_users')->with($this->data);
     }
 
 
