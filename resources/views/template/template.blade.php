@@ -54,10 +54,9 @@
     <script src="assets/js/jquery-1.11.3.min.js"></script>
     <script src="assets/js/inputFile.js"></script>
     <script src="assets/js/inputCropFile.js"></script>
-    <script src="assets/js/jquery.Jcrop.js"></script>
     <script src="assets/js/imageModal.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
 
 </head>
 
@@ -98,10 +97,10 @@
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
-
 <!-- =============== VENDOR SCRIPTS ===============-->
 <!-- JQUERY-->
 <script src="assets/angle/vendor/jquery/dist/jquery.js"></script>
+<script src="assets/js/jquery.Jcrop.js"></script>
 
 <!-- MODERNIZR-->
 <script src="assets/angle/vendor/modernizr/modernizr.custom.js"></script>
