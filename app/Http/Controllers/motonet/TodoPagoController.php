@@ -107,9 +107,7 @@ class TodoPagoController extends Controller {
                 'CSITQUANTITY'              => "1#1",
                 'CSITUNITPRICE'             => number_format($request->price, 2, '.', '')."#15.00"
             );
-
-
-        dd($optionsSAR_operacion);
+        
 
             $rta = $this->connector->sendAuthorizeRequest($this->getSARComercio($operation_id), $optionsSAR_operacion);
 
