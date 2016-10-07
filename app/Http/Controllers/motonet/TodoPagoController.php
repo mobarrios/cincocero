@@ -83,8 +83,8 @@ class TodoPagoController extends Controller {
                 'CSBTLASTNAME'              => $client->last_name,
                 'CSSTLASTNAME'              => $client->last_name,
 
-                'CSBTPHONENUMBER'           => $client->phone,
-                'CSSTPHONENUMBER'           => $client->phone,
+                'CSBTPHONENUMBER'           => '+54'.preg_replace("/^'|[^A-Za-z0-9\'-]|'$/", '', $client->phone),
+                'CSSTPHONENUMBER'           => '+54'.preg_replace("/^'|[^A-Za-z0-9\'-]|'$/", '', $client->phone),
 
                 'CSBTPOSTALCODE'            => $request->postal_code,
                 'CSSTPOSTALCODE'            => $request->postal_code,
@@ -96,18 +96,20 @@ class TodoPagoController extends Controller {
                 'CSSTSTREET1'               => $request->street,
 
                 'CSBTCUSTOMERID'            => $client->id,
-                'CSBTIPADDRESS'             => '127.0.0.1',
+                'CSBTIPADDRESS'             => $_SERVER['REMOTE_ADDR'],
                 'CSPTCURRENCY'              => "ARS",
                 'CSPTGRANDTOTALAMOUNT'      => number_format($request->price, 2, '.', ''),
-                'CSITPRODUCTCODE'           => $publication->Models->Brands->name .'-'.$publication->Models->name ."#chocho",
-                'CSITPRODUCTDESCRIPTION'    => $publication->Models->Brands->name .'-'.$publication->Models->name ."#chocho",
-                'CSITPRODUCTNAME'           => $publication->Models->Brands->name .'-'.$publication->Models->name ."#chocho",
-                'CSITPRODUCTSKU'            => "ABC123#chocho",
+                'CSITPRODUCTCODE'           => $publication->Models->Brands->name .'-'.$publication->Models->name ."#".$publication->Models->name,
+                'CSITPRODUCTDESCRIPTION'    => $publication->Models->Brands->name .'-'.$publication->Models->name ."#".$publication->Models->name,
+                'CSITPRODUCTNAME'           => $publication->Models->Brands->name .'-'.$publication->Models->name ."#".$publication->Models->name,
+                'CSITPRODUCTSKU'            => $publication->Models->id."#".$publication->Models->id,
                 'CSITTOTALAMOUNT'           => number_format($request->price, 2, '.', '')."#10.00",
                 'CSITQUANTITY'              => "1#1",
                 'CSITUNITPRICE'             => number_format($request->price, 2, '.', '')."#15.00"
             );
 
+
+        dd($optionsSAR_operacion);
 
             $rta = $this->connector->sendAuthorizeRequest($this->getSARComercio($operation_id), $optionsSAR_operacion);
 
