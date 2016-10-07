@@ -29,6 +29,26 @@
                     {!! Form::selectMultipleCustom('providers_id[]','Proveedores',$providers) !!}
                 @endif
 
+                {!! Form::selectCustom('types_id','Tipo',$types) !!}
+
+                {!! Form::selectCustom('engines_id','Motor',$engines) !!}
+
+                {!! Form::selectCustom('displacements_id','Cilindrada',$displacements) !!}
+
+                {!! Form::selectCustom('transmission','Transmisión',$transmission) !!}
+
+                {!! Form::textCustom('hp', 'HP')!!}
+
+                {!! Form::selectCustom('start', 'Arranque',$start)!!}
+
+                {!! Form::selectCustom('brake', 'Freno',$brake)!!}
+
+                {!! Form::textCustom('tanque_de_combustible', 'Tanque de combustible')!!}
+
+                {!! Form::textCustom('peso', 'Peso')!!}
+
+                {!! Form::textCustom('adicional', 'Adicional')!!}
+
                 <hr>
 
                 <h4 class="col-xs-12">Compra</h4>

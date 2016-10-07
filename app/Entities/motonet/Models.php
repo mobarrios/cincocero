@@ -7,7 +7,7 @@ class Models extends Entity{
 
     protected $table = 'models';
 
-    protected $fillable = ['name','brands_id'];
+    protected $fillable = ['name','brands_id','types_id','engines_id','displacements_id','transmission','hp','start','brake','tanque_de_combustible','peso','adicional'];
 
 
     public function Brands()
@@ -30,6 +30,18 @@ class Models extends Entity{
         return $this->belongsToMany(Providers::getClass(),'models_providers');
     }
 
+    public function Displacements(){
+        return $this->belongsTo(Displacements::getClass());
+    }
+
+    public function Types(){
+        return $this->belongsTo(Types::getClass());
+    }
+
+    public function Engines(){
+        return $this->belongsTo(Engines::getClass());
+    }
+
 
     public function getNameCleanAttribute()
     {
@@ -45,6 +57,30 @@ class Models extends Entity{
 
         return $this->hasOne(ModelsSalePrice::getClass());
 
+    }
+
+    public function setTransmissionAttribute($value){
+        if($value === 1){
+            $this->attributes['transmission'] = "manual";
+        }else if($value === 2){
+            $this->attributes['transmission'] = "automática";
+        }
+    }
+
+    public function setBrakeAttribute($value){
+        if($value === 1){
+            $this->attributes['brake'] = "disco";
+        }else if($value === 2){
+            $this->attributes['brake'] = "tambor";
+        }
+    }
+
+    public function setStartAttribute($value){
+        if($value === 1){
+            $this->attributes['start'] = "patada";
+        }else if($value === 2){
+            $this->attributes['start'] = "eléctrica";
+        }
     }
 
 }
