@@ -156,6 +156,7 @@ return [
         'Maatwebsite\Excel\ExcelServiceProvider',
         //pdf
         'Barryvdh\DomPDF\ServiceProvider',
+		
 
 
 
