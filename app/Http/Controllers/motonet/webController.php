@@ -268,6 +268,11 @@ class webController extends Controller {
     }
 
 
+    public function blog(){
+        return view('motonet/web/new/blog')->with($this->data);
+    }
+
+
     public function addToCart($id){
 //        if(Session::get('carrito')){
 //            $array = Session::get('carrito');

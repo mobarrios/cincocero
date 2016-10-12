@@ -81,4 +81,14 @@ Route::group(['namespace' => 'motonet'], function() {
         'as' => 'contactMail',
         'uses' => 'webController@sendMail'
     ]);
+
+
+    Route::get('blog',[
+        'as' => 'blog',
+        'uses' => 'webController@blog'
+    ]);
+
+
+
+
 });
