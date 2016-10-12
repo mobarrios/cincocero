@@ -4,6 +4,8 @@ namespace App\Http\Repositories\motonet;
 
 use App\Entities\motonet\Models;
 use App\Http\Repositories\BaseRepo;
+use Illuminate\Support\Facades\Session;
+
 
 class ModelsRepo extends BaseRepo {
 
@@ -21,6 +23,7 @@ class ModelsRepo extends BaseRepo {
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
             'brands_id' => 'required',
             'categories_id' => 'required',
+            'providers_id' => 'required',
 
         ];
     }
@@ -32,6 +35,7 @@ class ModelsRepo extends BaseRepo {
             'image'  => 'image|mimes:jpeg,jpg,png,bmp|max:2048',
             'brands_id' => 'required',
             'categories_id' => 'required',
+            'providers_id' => 'required',
 
         ];
     }
@@ -54,6 +58,21 @@ class ModelsRepo extends BaseRepo {
         return $header;
     }
 
+
+    public function export() {
+
+        $modelSearch = $this->getModel()->with('Brands')->orderBy('name','ASC')->get();
+        $data = [];
+
+        foreach ($modelSearch as $item) {
+
+            array_push($data, ['Codigo'=>$item->id, 'Modelo'=>$item->name,'Marca'=>$item->Brands->name]);
+
+        }
+
+        Session::put('export',$data);
+
+    }
 
 
 

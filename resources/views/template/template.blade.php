@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/angle/vendor/simple-line-icons/css/simple-line-icons.css">
     <!-- ANIMATE.CSS-->
     <link rel="stylesheet" href="assets/angle/vendor/animate.css/animate.min.css">
-    <!-- WHIRL (spinners)-->
+    <!-- WHIRL (spinners)
     <link rel="stylesheet" href="assets/angle/vendor/whirl/dist/whirl.css">
     <!-- =============== PAGE VENDOR STYLES ===============-->
     <link rel="stylesheet" href="assets/angle/vendor/sweetalert/dist/sweetalert.css">
@@ -43,8 +43,9 @@
     <!-- =============== IMAGEMODAL ===============-->
     <link href="assets/css/imageModal.css" rel="stylesheet" type="text/css" media="all" >
 
-    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
 
+    <!-- =============== select 2===============-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/map.css">
 
     @yield('css')
@@ -52,9 +53,12 @@
 
     <script src="assets/js/jquery-1.11.3.min.js"></script>
     <script src="assets/js/inputFile.js"></script>
-    <script src="assets/js/imageModal.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
+    <script src="assets/js/ocrad.js"></script>
 
+    <script src="assets/js/inputCropFile.js"></script>
+    <script src="assets/js/imageModal.js"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=adsense&amp;sensor=true&amp;language=es&amp;components=country:AR"></script>
 
 </head>
 
@@ -95,33 +99,33 @@
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
-
 <!-- =============== VENDOR SCRIPTS ===============-->
 <!-- JQUERY-->
 <script src="assets/angle/vendor/jquery/dist/jquery.js"></script>
+<script src="assets/js/jquery.Jcrop.js"></script>
 
 <!-- MODERNIZR-->
 <script src="assets/angle/vendor/modernizr/modernizr.custom.js"></script>
-<!-- MATCHMEDIA POLYFILL-->
+<!-- MATCHMEDIA POLYFILL
 <script src="assets/angle/vendor/matchMedia/matchMedia.js"></script>
 
 <!-- BOOTSTRAP-->
 <script src="assets/angle/vendor/bootstrap/dist/js/bootstrap.js"></script>
-<!-- STORAGE API-->
+<!-- STORAGE API
 <script src="assets/angle/vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
-<!-- JQUERY EASING-->
+<!-- JQUERY EASING-
 <script src="assets/angle/vendor/jquery.easing/js/jquery.easing.js"></script>
-<!-- ANIMO-->
+<!-- ANIMO-
 <script src="assets/angle/vendor/animo.js/animo.js"></script>
 <!-- SLIMSCROLL-->
 <script src="assets/angle/vendor/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- SCREENFULL-->
+<!-- SCREENFULL
 <script src="assets/angle/vendor/screenfull/dist/screenfull.js"></script>
-<!-- LOCALIZE-->
+<!-- LOCALIZE
 <script src="assets/angle/vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
-<!-- RTL demo-->
+<!-- RTL demo
 <script src="assets/angle/js/demo/demo-rtl.js"></script>
-
+-->
 <script src="assets/js/tinymce/tinymce.min.js"></script>
 
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
@@ -139,13 +143,12 @@
 
 <script src="assets/inspinia/js/plugins/datapicker/bootstrap-datepicker.js" ></script>
 
-
 <script src="assets/js/jquery_datepicker_es.js"></script>
 
 <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
 
 <script src="assets/inspinia/js/bootstrap-multiselect.js"></script>
-
+<script src="assets/angle/vendor/select2/dist/js/select2.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
 
@@ -153,6 +156,7 @@
 
 <script>
 
+    $('select').select2();
 /*
     $(document).ready(desk_notification('Nav{ Booking }','Nueva Reserva Solicitada'));
 

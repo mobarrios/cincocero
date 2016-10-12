@@ -13,17 +13,6 @@
                     <span>Home</span>
                 </a>
             </li>
-            <li>
-                <a class="menu" data-id="-1" href="{!! route('chats') !!}" title="Chat">
-
-                    <div id="chat_label">
-                    </div>
-
-                    <em class="icon-bubbles"></em>
-                    <span>Chat</span>
-
-                </a>
-            </li>
 
             @foreach( App\Http\Repositories\config\MenusRepo::build() as $m => $k)
 
@@ -65,25 +54,19 @@
     </nav>
 </div>
 
-@section('js')
-    <script>
-        $(document).ready(function(){
+<script>
+    $(document).ready(function(){
 
-            var menu_id = localStorage.getItem('menu_id');
+        var menu_id = localStorage.getItem('menu_id');
 
-            $('a[data-id='+menu_id+']').parent().addClass('active');
+        $('a[data-id='+menu_id+']').parent().addClass('active');
 
-            $('a[data-id='+menu_id+']').parent().parent().addClass('in').parent().addClass('active');
+        $('a[data-id='+menu_id+']').parent().parent().addClass('in').parent().addClass('active');
 
-        });
+    });
 
-        $('.menu').on('click',function()
-        {
-            localStorage.setItem('menu_id',$(this).attr('data-id'));
-        });
-
-
-
-
-    </script>
-@endsection
+    $('.menu').on('click',function()
+    {
+        localStorage.setItem('menu_id',$(this).attr('data-id'));
+    });
+</script>

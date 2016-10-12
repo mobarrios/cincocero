@@ -5,32 +5,32 @@
         <ul class="nav">
 
             <li class="menu-item">
-                <a href="{!! 'categories/motos/1'!!}">Motos</a>
+                <a href="{!! 'buscar/categorias/motos/1'!!}">Motos</a>
             </li><!-- /.menu-item -->
 
             <li class="menu-item">
-                <a href="{!! 'categories/scooters/2' !!}">Scooters</a>
+                <a href="{!! 'buscar/categorias/scooters/2' !!}">Scooters</a>
             </li><!-- /.menu-item -->
             <li class="dropdown menu-item">
-                <a href="{!! 'categories/custom/10' !!}">Custom</a>
+                <a href="{!! 'buscar/categorias/custom/10' !!}">Custom</a>
             </li><!-- /.menu-item -->
             <li class="menu-item">
-                <a href="{!! 'categories/ciclomotores/3' !!}">Ciclomotores</a>
-            </li><!-- /.menu-item -->
-
-            <li class="menu-item">
-                <a href="{!! 'categories/cuatriciclos/4' !!}">Cuatriciclos</a>
+                <a href="{!! 'buscar/categorias/ciclomotores/3' !!}">Ciclomotores</a>
             </li><!-- /.menu-item -->
 
             <li class="menu-item">
-                <a href="{!! 'categories/generadores/5' !!}">Generadores</a>
+                <a href="{!! 'buscar/categorias/cuatriciclos/4' !!}">Cuatriciclos</a>
             </li><!-- /.menu-item -->
 
             <li class="menu-item">
-                <a href="{!! 'categories/motobombas/6' !!}">Motobombas</a>
+                <a href="{!! 'buscar/categorias/generadores/5' !!}">Generadores</a>
+            </li><!-- /.menu-item -->
+
+            <li class="menu-item">
+                <a href="{!! 'buscar/categorias/motobombas/6' !!}">Motobombas</a>
             </li><!-- /.menu-item -->
             <li class="menu-item">
-                <a href="{!! 'categories/bosqueyjardin/7' !!}">Bosque y Jardín</a>
+                <a href="{!! 'buscar/categorias/bosqueyjardin/7' !!}">Bosque y Jardín</a>
             </li><!-- /.menu-item -->
 
             <li class="dropdown menu-item">
@@ -43,7 +43,7 @@
                                 <ul class="links list-unstyled">
                                       <li>
                                           <img style="width: 100px;" class="img-thumbnail" src="{{$brand->Images->first()->image}}">
-                                          <a href="{!! 'brand/'.$brand->name.'/'.$brand->id !!}">{{$brand->name}}</a>
+                                          <a href="{!! 'buscar/marcas/'.$brand->name.'/'.$brand->id !!}">{{$brand->name}}</a>
                                       </li>
                                 </ul>
 

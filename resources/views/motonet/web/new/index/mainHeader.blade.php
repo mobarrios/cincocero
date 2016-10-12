@@ -24,7 +24,7 @@
                 </div><!-- /.contact-row -->
                 <!-- ============================================================= SEARCH AREA ============================================================= -->
                 <div class="search-area">
-                    {!! Form::open(['url'=> 'find/products/results','method'=>'get']) !!}
+                    {!! Form::open(['url'=> 'buscar/productos/results/id','method'=>'get']) !!}
                         <div class="control-group">
 
                             <ul class="categories-filter animate-dropdown">
@@ -92,7 +92,7 @@
                                             </div>
                                             <div class="col-xs-7">
 
-                                                <h3 class="name"><a href="{!! route('productDetail',Session::get('carrito')) !!}">{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->models->name !!}</a></h3>
+                                                <h3 class="name"><a href="{!! route('productDetail',[\App\Entities\motonet\Publications::find(Session::get('carrito'))->models->nameClean,Session::get('carrito')]) !!}">{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->models->name !!}</a></h3>
                                                 <div class="price">{!! \App\Entities\motonet\Publications::find(Session::get('carrito'))->price !!}</div>
                                             </div>
                                             <div class="col-xs-1 action">
@@ -121,7 +121,9 @@
                                 </div>
                                 <div class="clearfix"></div>
 
-                                <a href="{{route('cartList')}}" class="btn btn-upper btn-primary btn-block m-t-20">ver Carrito</a>
+                                @if(Session::get('carrito'))
+                                    <a href="{{route('resumenNueva',Session::get('carrito'))}}" class="btn btn-upper btn-primary btn-block m-t-20">ver Carrito</a>
+                                @endif
                             </div><!-- /.cart-total-->
 
 

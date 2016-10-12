@@ -23,6 +23,15 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 
 //Session::put('languaje','es_ES');
 
+Route::get('pdftt', function(){
+
+   $p = new  \App\Helpers\PdfToTextHelper();
+
+    return $p->getIndex();
+});
+
+
+
 Route::get('chat',function(){
 
     return view('controls.chat');
@@ -150,6 +159,10 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
             });
 
+
+        //export
+
+        Route::get('export',['as'=>'export', 'uses'=>'\App\Http\Controllers\UtilitiesController@exportToExcel']);
 
 
         Route::get('borrarImagen/{id}',['as'=>'deleteImage',function($id){

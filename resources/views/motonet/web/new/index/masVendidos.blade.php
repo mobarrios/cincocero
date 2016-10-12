@@ -3,6 +3,7 @@
     <div class="sidebar-widget-body outer-top-xs">
         <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
             @foreach(\App\Entities\motonet\Publications::all() as $p)
+                @if(!$p->private)
                 <div class="item">
                     <div class="products best-product">
 
@@ -15,7 +16,7 @@
                                     <div class="col col-xs-5">
                                         <div class="product-image">
                                             <div class="image">
-                                                <a href="{!! $p->titleClean.'/'.$p->models->brands->nameClean.'/'.$p->models->nameClean.'/'.$p->id !!}" data-lightbox="image-1" data-title="{{$p->name }}" class="linkbyn">
+                                                <a href="{!! route('productDetail',[$p->models->nameClean,$p->id]) !!}" data-lightbox="image-1" data-title="{{$p->name }}" class="linkbyn">
                                                     <img data-echo="{{$p->Models->Images->first()->image  or ''}}" src="{{$p->Models->Images->first()->image  or ''}}" class="img-responsive" alt="">
                                                     <div class="zoom-overlay"></div>
                                                 </a>
@@ -26,7 +27,7 @@
                                     <div class="col col-xs-7">
                                         <div class="product-info">
                                             <h3>{{$p->models->brands->name}}</h3>
-                                            <h3 class="name"><a href="{!! $p->titleClean.'/'.$p->models->brands->nameClean.'/'.$p->models->nameClean.'/'.$p->id !!}">{{$p->title}}</a></h3>
+                                            <h3 class="name"><a href="{!! route('productDetail',[$p->models->nameClean,$p->id]) !!}">{{$p->title}}</a></h3>
                                             <div class="product-price">
                                                 <span class="price">$ {{$p->price}}</span>
 
@@ -38,7 +39,7 @@
                                                             <a class="btn btn-primary icon" href="{!! route('addToCart',$p->id) !!}">
                                                                 <i class="fa fa-shopping-cart"></i>
                                                             </a>
-                                                            <a class="btn btn-primary" type="button" href="{!! $p->titleClean.'/'.$p->models->brands->nameClean.'/'.$p->models->nameClean.'/'.$p->id !!}">ver</a>
+                                                            <a class="btn btn-primary" type="button" href="{!! route('productDetail',[$p->models->nameClean,$p->id]) !!}">ver</a>
                                                         </li>
                                                     </ul>
                                                 </div><!-- /.action -->
@@ -52,6 +53,7 @@
 
                     </div>
                 </div>
+                @endif
             @endforeach
 
         </div>

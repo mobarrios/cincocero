@@ -80,13 +80,14 @@
                 @endforeach
 
             <td>
-                <a class="btn btn-sm btn-default" href="{{route($routeEdit,$model->id)}}">
+                <a class="btn btn-xs btn-default" href="{{route($routeEdit,$model->id)}}">
                     <i class="fa fa-pencil"></i>
                 </a>
 
-                <a class="del btn btn-sm btn-default" href="{{route($routeDel ,$model->id)}}">
+                <a class="del btn btn-xs btn-default" href="{{route($routeDel ,$model->id)}}">
                     <i class="fa fa-trash"></i>
                 </a>
+
             </td>
         </tr>
     @endforeach

@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\Brands;
 use App\Entities\motonet\Clients;
+use App\Entities\motonet\Derivations;
+use App\Entities\motonet\PayMethod;
 use App\Http\Repositories\motonet\ClientsRepo as Repo;
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\motonet\DerivationMessagesRepo;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
 
@@ -16,6 +20,7 @@ class ClientsController extends Controller {
     public   $repo;
     public   $view ;
     public   $form;
+    public   $formDetail;
     public   $data;
     public   $request;
     public   $rules;
@@ -34,6 +39,7 @@ class ClientsController extends Controller {
         //data for views
         $this->view                 = 'motonet.'.$module.'.index';
         $this->form                 = 'motonet.'.$module.'.form';
+        $this->formDetail           = 'motonet.'.$module.'.details';
         $this->data['sectionName']  = 'Clientes';
 
 
@@ -58,11 +64,22 @@ class ClientsController extends Controller {
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
         $this->data['routeNewDerivation']     = 'derivationsGetNew';
+        $this->data['routeDetail']  = $module.'GetDetail';
 
 
     }
 
 
+    public function getDetail($id = null){
+
+        $this->data['model']     = $this->repo->find($id);
+        $this->data['history']   = Derivations::where('clients_id',$id)->get();
+
+        $this->data['brands']    = Brands::with('Models')->get();
+        $this->data['payMethod'] = PayMethod::lists('method','id');
+
+        return view($this->formDetail)->with($this->data);
+    }
 
     // post new item
     public function postNew(Request $request, ImagesHelper $image)
@@ -78,7 +95,7 @@ class ClientsController extends Controller {
 
         if($request->get('derivation')){
             
-            return redirect()->route('derivationsGetNew',$model->id)->withErrors('Se creó y derivó correctamente al cliente');
+            return redirect()->route('derivationsGetNew',$model->id)->withErrors('Se creï¿½ y derivï¿½ correctamente al cliente');
         }
         else
             return redirect()->route($this->data['route'])->withErrors(trans('messages.newItem'));
@@ -96,12 +113,15 @@ class ClientsController extends Controller {
 
         $this->repo->edit($id, $request);
 
+        return redirect()->back()->withErrors(trans('messages.editItem'));
+
+        /*
         // redirect with errors messages language
         if($request->get('derivation'))
-            return redirect()->route('derivationsGetNew',$id)->withErrors('Se creó y derivó correctamente al cliente');
+            return redirect()->route('derivationsGetNew',$id)->withErrors('Se creï¿½ y derivï¿½ correctamente al cliente');
         else
             return redirect()->route($this->data['route'])->withErrors(trans('messages.editItem'));
-
+        */
     }
 
 }
