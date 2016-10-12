@@ -20,6 +20,8 @@ return array(
     'Canvas' => $vendorDir . '/dompdf/dompdf/include/canvas.cls.php',
     'Canvas_Factory' => $vendorDir . '/dompdf/dompdf/include/canvas_factory.cls.php',
     'Cellmap' => $vendorDir . '/dompdf/dompdf/include/cellmap.cls.php',
+    'CreateBlogs' => $baseDir . '/database/migrations/2016_10_11_215438_create_blogs.php',
+    'CreateBlogsComments' => $baseDir . '/database/migrations/2016_10_11_215607_create_blogs_comments.php',
     'CreateChat' => $baseDir . '/database/migrations/2016_09_03_114717_create_chat.php',
     'CreateChatsMessages' => $baseDir . '/database/migrations/2016_09_07_151025_create_chats_messages.php',
     'CreateDisplacements' => $baseDir . '/database/migrations/2016_09_29_002734_create_displacements.php',
