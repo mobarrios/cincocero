@@ -10,6 +10,7 @@ use App\Entities\motonet\Models;
 use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
 use App\Entities\motonet\Visits;
+use App\Entities\motonet\Blogs;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -268,7 +269,15 @@ class webController extends Controller {
     }
 
 
-    public function blog(){
+    public function blog(Blogs $blogs){
+
+
+        return view('motonet/web/new/blog')->with($this->data);
+    }
+
+    public function blogDetail($id){
+
+
         return view('motonet/web/new/blog')->with($this->data);
     }
 

@@ -88,6 +88,11 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@blog'
     ]);
 
+    Route::get('{id}/blog',[
+        'as' => 'blogDetail',
+        'uses' => 'webController@blogDetail'
+    ]);
+
 
 
 
