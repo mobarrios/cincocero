@@ -20,35 +20,26 @@ function paintOnCanvas(coords) {
     var img = document.getElementById("cropeable")
     context.drawImage(img, coords.x, coords.y, coords.w, coords.h, 0, 0, coords.w, coords.h);
 
+    var img2 = new Image();
+    img2.src = canvas.toDataURL();
 
+    var tipos = $(".tipos input");
+    var input = null;
 
-    // if (canvas.height > 82 || canvas.width > 300) {
-    //
-    //     var imgToResize = new Image();
-    //
-    //     imgToResize.onload = function () {
-    //
-    //         var maxWidth = 300, maxHeight = 82;
-    //
-    //         //Image size
-    //         var width = imgToResize.width,
-    //             height = imgToResize.height;
-    //
-    //         //Resizing...
-    //         if (width > maxWidth) {
-    //             height *= maxWidth / width;
-    //             width = maxWidth;
-    //         }
-    //
-    //         if (height > maxHeight) {
-    //             width *= maxHeight / height;
-    //             height = maxHeight;
-    //         }
-    //
-    //     };
-    //
-    //     imgToResize.src = canvas.toDataURL();
-    // }
+    $.each(tipos,function(val,inputs){
+       if($(tipos[val]).prop('checked')){
+            input = $(tipos[val]);
+       }
+    });
+
+    if(input == null){
+        alert("Elija una de las dos opciones");
+        return;
+    }
+
+    OCRAD(img2, function(text){
+        $("input[name="+input.attr("id")+"]").val(text);
+    })
 }
 
 $(function() {
@@ -62,6 +53,8 @@ $(function() {
         reader.onload = function (e) {
             img.attr('src', e.target.result);
             $("#remito").append($(img)[0].outerHTML);
+
+            $(".tipos").removeClass("hidden");
 
             $.Jcrop("#remito>img",{
                 aspectRatio: null,

@@ -53,6 +53,8 @@
 
     <script src="assets/js/jquery-1.11.3.min.js"></script>
     <script src="assets/js/inputFile.js"></script>
+    <script src="assets/js/ocrad.js"></script>
+
     <script src="assets/js/inputCropFile.js"></script>
     <script src="assets/js/imageModal.js"></script>
 
