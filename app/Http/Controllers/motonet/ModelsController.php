@@ -61,9 +61,6 @@ class ModelsController extends Controller {
         //$this->data['roomsTypes']     = RoomsTypes::lists('name','id');
         $this->data['brands']           = Brands::lists('name','id');
         $this->data['categories']       = Categories::lists('name','id');
-<<<<<<< HEAD
-        $this->data['providers']        = Providers::lists('name','id');
-=======
         $this->data['providers']       = Providers::lists('name','id');
         $this->data['engines']       = Engines::lists('name','id');
         $this->data['displacements']       = Displacements::lists('name','id');
@@ -74,7 +71,6 @@ class ModelsController extends Controller {
 //        $this->data['transmission']     =  [1 => 'manual',2 => 'automática'];
 //        $this->data['start']     =  [1 => 'patada',2 => 'eléctrica'];
 //        $this->data['brake']     =  [1 => 'disco',2 => 'tambor'];
->>>>>>> c9940b2f9246c593336919a2d3cb1f8c915cbdb7
 
 
         //data for validation
