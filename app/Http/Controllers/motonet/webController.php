@@ -173,9 +173,8 @@ class webController extends Controller {
                                     $q->whereHas('categories', function ($q) use ($id){
                                         $q->where('categories.id',$id);
                                     });
-                                })
+                                })->get();
 
-                ->get();
             $this->data['grid'] = $cat->name;
 
         } elseif ($find == 'modelos'){
@@ -188,8 +187,7 @@ class webController extends Controller {
                             })->get();
             */
             $this->data['productos'] = $this->publications->where('models_id',$id)
-                ->where('private','!=',1)
-                ->get();
+                ->where('private','!=',1)->get();
 
             $this->data['grid'] = $m->name;
 
@@ -201,21 +199,25 @@ class webController extends Controller {
                                     $q->whereHas('brands', function ($q) use ($id) {
                                         $q->where('id', $id);
                                     });
-                                })
-                ->get();
+                                })->get();
+
             $this->data['grid'] = $b->name;
         }else{
 
             $find = $request->get('find');
+
             $this->data['productos'] = $this->publications
                                  ->where('private','!=',1)
                                  ->where('title','like','%'.$find.'%')
-                                ->orWhereHas('models',function($q) use($find){
-                                    $q->whereHas('categories',function($q) use($find) {
-                                        $q->where('name', 'like', '%' . $find . '%');
+                                 ->orWhereHas('models',function($q) use($find){
+                                    $q->whereHas('brands',function($q) use($find) {
+                                        $q->where('name','like','%'.$find.'%');
                                     });
+
                                 })
+
                                 ->get();
+
 
             $this->data['grid'] = "find";
             $this->data['find'] = $request->get('find');
