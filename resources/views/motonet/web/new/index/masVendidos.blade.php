@@ -3,6 +3,7 @@
     <div class="sidebar-widget-body outer-top-xs">
         <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
             @foreach(\App\Entities\motonet\Publications::all() as $p)
+                @if(!$p->private)
                 <div class="item">
                     <div class="products best-product">
 
@@ -52,6 +53,7 @@
 
                     </div>
                 </div>
+                @endif
             @endforeach
 
         </div>

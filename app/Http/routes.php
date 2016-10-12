@@ -23,6 +23,15 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 
 //Session::put('languaje','es_ES');
 
+Route::get('pdftt', function(){
+
+   $p = new  \App\Helpers\PdfToTextHelper();
+
+    return $p->getIndex();
+});
+
+
+
 Route::get('chat',function(){
 
     return view('controls.chat');

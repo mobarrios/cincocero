@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\motonet;
 
-use App\Entities\motonet\Branches;
-use App\Http\Repositories\config\UserRepo;
-use App\Http\Repositories\motonet\BranchesRepo as Repo;
+use App\Entities\motonet\BlogsComments;
+//use App\Http\Repositories\config\UserRepo;
+//use App\Http\Repositories\motonet\BlogsRepo as Repo;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Helpers\ImagesHelper;
-use App\Helpers\BreadCrumbHelper;
+//use Illuminate\Http\Request;
+//use App\Helpers\ImagesHelper;
+//use App\Helpers\BreadCrumbHelper;
 
 
 
 
-class BranchesController extends Controller {
+class BlogsCommentsController extends Controller {
 
     public   $module;
     public   $repo;
@@ -25,9 +25,10 @@ class BranchesController extends Controller {
     public   $rulesEdit;
 
 
-    public function __construct(Repo $repo)
+    public function __construct()
     {
-        $module = 'branches';
+        /*
+        $module = 'blogs';
 
         //data from entities
         $this->repo                 = $repo;
@@ -37,7 +38,7 @@ class BranchesController extends Controller {
         //data for views
         $this->view                 = 'motonet.'.$module.'.index';
         $this->form                 = 'motonet.'.$module.'.form';
-        $this->data['sectionName']  = 'Sucursales';
+        $this->data['sectionName']  = 'Blog';
 
 
         //images
@@ -62,15 +63,22 @@ class BranchesController extends Controller {
         $this->data['routeNew']     = $module.'GetNew';
         $this->data['routePostNew'] = $module.'PostNew';
         $this->data['routePostEdit']= $module.'PostEdit';
+        */
+    }
+
+    public function getChangeStatus($status , $idComments){
+
+
+
+        $comments = BlogsComments::find($idComments);
+        $comments->visible = $status;
+        $comments->save();
+
+        return redirect()->back();
 
     }
 
-    public function getBranchesUsers($id  = null, UserRepo $userR){
-
-        $this->data['users'] = $userR->selectList();
-
-        return view('motonet.branches.branches_users')->with($this->data);
-    }
+    
 
 
 }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\motonet;
 
-use App\Entities\motonet\Branches;
+use App\Entities\motonet\Blogs;
 use App\Http\Repositories\config\UserRepo;
-use App\Http\Repositories\motonet\BranchesRepo as Repo;
+use App\Http\Repositories\motonet\BlogsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
@@ -13,7 +13,7 @@ use App\Helpers\BreadCrumbHelper;
 
 
 
-class BranchesController extends Controller {
+class BlogsController extends Controller {
 
     public   $module;
     public   $repo;
@@ -27,7 +27,7 @@ class BranchesController extends Controller {
 
     public function __construct(Repo $repo)
     {
-        $module = 'branches';
+        $module = 'blogs';
 
         //data from entities
         $this->repo                 = $repo;
@@ -37,11 +37,11 @@ class BranchesController extends Controller {
         //data for views
         $this->view                 = 'motonet.'.$module.'.index';
         $this->form                 = 'motonet.'.$module.'.form';
-        $this->data['sectionName']  = 'Sucursales';
+        $this->data['sectionName']  = 'Blog';
 
 
         //images
-        $this->data['imgQuantityMax']   = 1;
+        $this->data['imgQuantityMax']   = 10;
         $this->data['imagePath']        = 'uploads/motonet/'.$module.'/images/';
         $this->data['entityImg']        = $module;
 
@@ -65,12 +65,7 @@ class BranchesController extends Controller {
 
     }
 
-    public function getBranchesUsers($id  = null, UserRepo $userR){
 
-        $this->data['users'] = $userR->selectList();
-
-        return view('motonet.branches.branches_users')->with($this->data);
-    }
 
 
 }
