@@ -93,6 +93,11 @@ Route::group(['namespace' => 'motonet'], function() {
         'uses' => 'webController@blogDetail'
     ]);
 
+    Route::post('{id}/blog',[
+        'as' => 'commentPost',
+        'uses' => 'webController@commentPost'
+    ]);
+
 
 
 

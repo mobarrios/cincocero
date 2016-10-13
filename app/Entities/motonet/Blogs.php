@@ -15,7 +15,7 @@ class Blogs extends Entity{
     }
 
     public function getCommentsCountAttribute(){
-        $comm =  $this->Comments()->count();
+        $comm =  $this->Comments()->where('visible',1)->count();
 
         return $comm;
     }

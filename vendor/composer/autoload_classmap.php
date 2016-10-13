@@ -593,6 +593,7 @@ return array(
     'Text_Frame_Reflower' => $vendorDir . '/dompdf/dompdf/include/text_frame_reflower.cls.php',
     'Text_Renderer' => $vendorDir . '/dompdf/dompdf/include/text_renderer.cls.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UpdateBlogsComments' => $baseDir . '/database/migrations/2016_10_13_014944_update_blogs_comments.php',
     'UpdateModels' => $baseDir . '/database/migrations/2016_09_29_003854_update_models.php',
     'UpdatePublicationsTable' => $baseDir . '/database/migrations/2016_07_27_231542_update_publications_table.php',
     'UpdateSlidersTable' => $baseDir . '/database/migrations/2016_07_21_160450_update_sliders_table.php',

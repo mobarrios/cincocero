@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\BlogsComments;
 use App\Entities\motonet\Branches;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
@@ -272,16 +273,28 @@ class webController extends Controller {
 
 
     public function blog(Blogs $blogs){
-
-
-        return view('motonet/web/new/blog')->with($this->data);
-    }
-
-    public function blogDetail($id){
-
+        $this->data["posts"] = $blogs->all();
 
         return view('motonet/web/new/blog')->with($this->data);
     }
+
+    public function blogDetail($id, Blogs $blogs){
+        $this->data["post"] = $blogs->find($id);
+
+        return view('motonet/web/new/blogDetail')->with($this->data);
+    }
+
+
+    public function commentPost($id, BlogsComments $blogsComments, Request $request){
+        $data = $request->only('description','blogs_id','name','email');
+//        $data['visible'] = 1;
+
+        $comentario = $blogsComments->create($data);
+
+        dd($comentario);
+        return redirect()->back();
+    }
+
 
 
     public function addToCart($id){
