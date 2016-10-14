@@ -286,12 +286,21 @@ class webController extends Controller {
 
 
     public function commentPost($id, BlogsComments $blogsComments, Request $request){
+
+
         $data = $request->only('description','blogs_id','name','email');
 //        $data['visible'] = 1;
 
-        $comentario = $blogsComments->create($data);
 
-        dd($comentario);
+     //   $comentario = $blogsComments->create($data);
+        $newComentario = new $blogsComments();
+        $newComentario->description = $request->description;
+        $newComentario->blogs_id = $request->blogs_id;
+        $newComentario->name = $request->name;
+        $newComentario->email = $request->email;
+        $newComentario->save();
+
+
         return redirect()->back();
     }
 

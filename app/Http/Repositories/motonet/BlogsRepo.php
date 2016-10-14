@@ -45,7 +45,7 @@ class BlogsRepo extends BaseRepo {
                 'Imagen' =>    ['data' => 'images','relation'=> null],
                 'Fecha'  =>    ['data' => 'date','relation' => null],
                 'Titulo' =>    ['data' => 'title','relation' => null],
-                'Comentarios' =>     ['data' => 'CommentsCount','relation' => null],
+                'Comentarios' =>     ['data' => 'CommentsCountSystem','relation' => null],
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],
