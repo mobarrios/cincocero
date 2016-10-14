@@ -228,17 +228,65 @@
 			<div class="col-sm-3">
 				<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
 					<li class="active"><a data-toggle="tab" href="#description">DESCRIPCIÓN</a></li>
-					{{--<li><a data-toggle="tab" href="#review">REVIEW</a></li>--}}
+					<li><a data-toggle="tab" href="#caracteristicas">CARACTERÍSTICAS</a></li>
 					{{--<li><a data-toggle="tab" href="#tags">TAGS</a></li>--}}
 				</ul><!-- /.nav-tabs #product-tabs -->
 			</div>
 			<div class="col-sm-9">
-
 				<div class="tab-content">
 
 					<div id="description" class="tab-pane in active">
 						<div class="product-tab">
 							{!! $publicationDetail->description !!}
+						</div>
+					</div><!-- /.tab-pane -->
+
+					<div id="caracteristicas" class="tab-pane in">
+						<div class="product-tab">
+							<table id="dataTable" class="table table-striped table-hover">
+								<tbody>
+									<tr>
+										<th>Tipo</th>
+										<td>{!! $publicationDetail->Models->Types != null ? $publicationDetail->Models->Types->name : "n/s" !!}</td>
+									</tr>
+									<tr>
+										<th>Motor</th>
+										<td>{!! $publicationDetail->Models->Engines != null ? $publicationDetail->Models->Engines->name : "n/s" !!}</td>
+									</tr>
+									<tr>
+										<th>Cilindrada</th>
+										<td>{!! $publicationDetail->Models->Displacements != null ? $publicationDetail->Models->Displacements->name : "n/s" !!}</td>
+									</tr>
+									<tr>
+										<th>Transmisión</th>
+										<td>{!! $publicationDetail->Models->transmission != null ? $publicationDetail->Models->transmission : "n/s" !!}</td>
+									</tr>
+									<tr>
+										<th>HP</th>
+										<td>{!! $publicationDetail->Models->hp != null ? $publicationDetail->Models->hp : "n/s" !!}</td>
+									</tr>
+									<tr>
+										<th>Arranque</th>
+										<td>{!! $publicationDetail->Models->start != null ? $publicationDetail->Models->start : "n/s" !!}</td>
+									</tr>
+									<tr>
+										<th>Freno</th>
+										<td>{!! $publicationDetail->Models->brake != null ? $publicationDetail->Models->brake : "n/s" !!}</td>
+									</tr>
+									<tr>
+										<th>Tanque de combustible</th>
+										<td>{!! $publicationDetail->Models->tanque_de_combustible != null ? $publicationDetail->Models->tanque_de_combustible : "n/s" !!}</td>
+									</tr>
+									<tr>
+										<th>Peso</th>
+										<td>{!! $publicationDetail->Models->peso != null ? $publicationDetail->Models->peso : "n/s" !!}</td>
+									</tr>
+									<tr>
+										<th>Adicional</th>
+										<td>{!! $publicationDetail->Models->adicional != null ? $publicationDetail->Models->adicional : "n/s" !!}</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div><!-- /.tab-pane -->
 

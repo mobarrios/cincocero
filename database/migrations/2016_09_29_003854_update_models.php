@@ -23,10 +23,10 @@ class UpdateModels extends Migration {
             $table->integer('displacements_id')->nullable()->unsigned();
             $table->foreign('displacements_id')->references('id')->on('displacements');
 
-            $table->enum('transmission', ['manual', 'automática']);
+            $table->enum('transmission', ['manual', 'automática'])->nullable;
             $table->string('hp');
-            $table->enum('start',['manual', 'automática']);
-            $table->enum('brake',['disco', 'tambor']);
+            $table->enum('start',['manual', 'automática'])->nullable;
+            $table->enum('brake',['disco', 'tambor'])->nullable;
             $table->string('tanque_de_combustible');
             $table->string('peso');
             $table->text('adicional');

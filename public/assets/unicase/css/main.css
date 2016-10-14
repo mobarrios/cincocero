@@ -5442,3 +5442,19 @@ a.linkbyn img{
 .m-t-n-55{
   margin-top: -55px;
 }
+
+
+.fa-border-radius{
+  border-radius: 50% !important;
+  border:2px solid #0187CE !important;
+  padding:10px;
+}
+
+.border-tb{
+  border-top:2px solid #e3e3e3;
+  border-bottom:2px solid #e3e3e3;
+}
+
+.fa-xg{
+  font-size: 400% !important;
+}
