@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PR9T9D');
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+
     <base href="{!! asset('') !!}">
     <!-- Meta -->
     <meta charset="utf-8">
@@ -70,29 +83,20 @@
     <script src="assets/unicase/js/html5shiv.js"></script>
     <script src="assets/unicase/js/respond.min.js"></script>
     <![endif]-->
-    <!-- Hotjar Tracking Code for http://www.motonet.com.ar -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:280240,hjsv:5};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
 
-    <!-- Facebook Pixel Code -->
-    @yield('fbq')
-
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=165095643906274&ev=PageView&noscript=1"/></noscript>
-                    <!-- End Facebook Pixel Code -->
-    <!--<script src="assets/js/vue.js"></script>-->
 
 
 
 </head>
 <body class="cnt-home">
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PR9T9D"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
 <header class="header-style-1">
     @include('motonet.web.new.index.mainHeader')
 
@@ -103,8 +107,10 @@
 
 
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
+    <!-- Google Tag Manager (noscript) -->
 
     <div class="container">
+
           @yield('promos')
 
           <div class="row">
