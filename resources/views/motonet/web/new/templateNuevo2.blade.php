@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="assets/unicase/css/blue.css">
     <link rel="stylesheet" href="assets/unicase/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/unicase/css/owl.transitions.css">
-    <!--<link rel="stylesheet" href="assets/unicase/css/owl.theme.css">-->
+    <link rel="stylesheet" href="assets/unicase/css/owl.theme.css">
     <link href="assets/unicase/css/lightbox.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/unicase/css/animate.min.css">
     <link rel="stylesheet" href="assets/unicase/css/rateit.css">
@@ -159,6 +159,7 @@
 
 
 
+<!-- JavaScripts placed at the end of the document so the pages load faster -->
 <script src="assets/unicase/js/jquery-1.11.1.min.js"></script>
 
 <script src="assets/unicase/js/bootstrap.min.js"></script>
@@ -171,13 +172,18 @@
 <script src="assets/unicase/js/bootstrap-slider.min.js"></script>
 <script src="assets/unicase/js/jquery.rateit.min.js"></script>
 <script type="text/javascript" src="assets/unicase/js/lightbox.min.js"></script>
-<script src="assets//unicasejs/bootstrap-select.min.js"></script>
-<script src="assets//unicasejs/wow.min.js"></script>
-<script src="assets//unicasejs/scripts.js"></script>
+<script src="assets/unicase/js/bootstrap-select.min.js"></script>
+<script src="assets/unicase/js/wow.min.js"></script>
+<script src="assets/unicase/js/scripts.js"></script>
 
 <!-- For demo purposes – can be removed on production -->
 
 <script src="switchstylesheet/switchstylesheet.js"></script>
+
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<!-- For demo purposes – can be removed on production -->
+
 
 <script>
     $(document).ready(function(){

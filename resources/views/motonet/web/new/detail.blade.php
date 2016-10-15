@@ -60,9 +60,11 @@
 								@if($publicationDetail->Models->Images->count() > 0)
 									@foreach($publicationDetail->Models->Images as $ind => $img)
 										<div class="single-product-gallery-item" id="slide{!! $ind !!}">
-											<a data-lightbox="image-1" data-title="Gallery" href="{!! $img->image !!}">
-												<img class="img-responsive" alt="" src="{!! $img->image!!}" data-echo="{!! $img->image!!}" />
-											</a>
+											<div class="item" data-hash="slide{!! $ind !!}">
+												<a data-lightbox="image-1" data-title="Gallery" href="{!! $img->image !!}">
+													<img class="img-responsive" alt="" src="{!! $img->image!!}" data-echo="{!! $img->image!!}" />
+												</a>
+											</div>
 										</div><!-- /.single-product-gallery-item -->
 									@endforeach
 								@endif
@@ -75,7 +77,7 @@
 									@if($publicationDetail->Models->Images->count() > 0)
 										@foreach($publicationDetail->Models->Images as $ind => $img)
 											<div class="item">
-												<a class="horizontal-thumb" data-target="#owl-single-product" data-slide="{!! $ind !!}" href="#slide1">
+												<a class="horizontal-thumb" data-target="#owl-single-product" data-slide="{!! $ind !!}" href="#slide{!! $ind !!}">
 													<img class="img-responsive" width="85" alt="" src="{!! $img->image !!}" data-echo="{!! $img->image !!}" />
 												</a>
 											</div>
@@ -646,4 +648,17 @@
 @section('js')
 	<script src="assets/unicase/js/owl.carousel.min.js"></script>
 	<script src="assets/unicase/js/wow.min.js"></script>
+	<script>
+
+		$("#owl-single-product").owlCarousel({
+			singleItem : true,
+			slideSpeed : 100,
+			autoPlay : true,
+			nav: true,
+			pagination : true,
+			URLhashListener:true,
+			startPosition: 'slide0'
+		});
+
+	</script>
 @endsection

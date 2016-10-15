@@ -136,6 +136,7 @@
 
 @endsection
 @section('js')
+    <script src="assets/unicase/js/owl.carousel.min.js"></script>
     <script>
         $("#owl-single-product").owlCarousel({
             'singleItem' : true,
