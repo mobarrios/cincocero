@@ -1,43 +1,27 @@
 @extends('index')
-@section('css')
-    <style>
-        #canvasJCrop{
-            width:48%;
-            margin:1%;
-        }
-    </style>
-@endsection
+
     @section('content')
     <div class="panel">
         <div class="panel-body">
-            <div class="col-xs-6">
+            <div class="col-xs-12">
                 {!! Form::fileCropCustom("fileCrop", "Subir remito") !!}
+                <div class="form-group tipos hidden">
+                    <label>
+                        <input type="radio" id="n_motor" name="num"> N° de motor
+                    </label>
+                    <label>
+                        <input type="radio" id="n_chasis" name="num"> N° de chasis
+                    </label>
+                </div>
                 <div id="remito"></div>
                 <canvas id="canvasJCrop"></canvas>
-            </div>
-            <div class="col-xs-6">
-                @if(isset($model))
+
+            @if(isset($model))
                     {!! Form::model($model, ['route'=>[$routePostEdit,$model->id], 'files' =>'true'] )!!}
                 @else
                     {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
                 @endif
 
-
-                {{--<div class="form-group">--}}
-                    {{--<label>Subir remito:</label>--}}
-                    {{--<input type="file" onchange="load_file()" id="picker" class="form-control">--}}
-                    {{--<div id="main">--}}
-                        {{--<canvas id="canvasJCrop"></canvas>--}}
-                        {{--<div id="nose">--}}
-                            {{--<p>No file loaded</p>--}}
-                            {{--<p style="font-size: 25px"> Open a file first </p>--}}
-                            {{--<p style="font-size: 15px">it's okay. I'll wait. </p>--}}
-                            {{--<p style="font-size: 10px">no seriously, I can't move</p>--}}
-                            {{--<p style="font-size: 8px">still waiting...</p>--}}
-                        {{--</div>--}}
-                        {{--<div id="transcription"></div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
                     {!! Form::textCustom('code', 'Codigo')!!}
                     {{-- Form::textCustom('detail', 'Detalle') --}}
 

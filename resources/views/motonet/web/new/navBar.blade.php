@@ -45,6 +45,9 @@
                             <li class="dropdown">
                                 <a href="{!! route('contact') !!}"> Contactanos</a>
                             </li>
+                            <li class="dropdown">
+                                <a href="{!! route('blog') !!}"> Blog</a>
+                            </li>
 
 
                         </ul><!-- /.navbar-nav -->

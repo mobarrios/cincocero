@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="assets/unicase/css/blue.css">
     <link rel="stylesheet" href="assets/unicase/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/unicase/css/owl.transitions.css">
-    <!--<link rel="stylesheet" href="assets/unicase/css/owl.theme.css">-->
+    <link rel="stylesheet" href="assets/unicase/css/owl.theme.css">
     <link href="assets/unicase/css/lightbox.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/unicase/css/animate.min.css">
     <link rel="stylesheet" href="assets/unicase/css/rateit.css">
@@ -157,18 +157,17 @@
 <!-- ============================================================= FOOTER : END============================================================= -->
 
 
+
+
 <!-- JavaScripts placed at the end of the document so the pages load faster -->
 <script src="assets/unicase/js/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-
 
 <script src="assets/unicase/js/bootstrap.min.js"></script>
 
 <script src="assets/unicase/js/bootstrap-hover-dropdown.min.js"></script>
 <script src="assets/unicase/js/owl.carousel.min.js"></script>
 
-<!-- <script src="assets/unicase/js/echo.min.js"></script>-->
+<script src="assets/unicase/js/echo.min.js"></script>
 <script src="assets/unicase/js/jquery.easing-1.3.min.js"></script>
 <script src="assets/unicase/js/bootstrap-slider.min.js"></script>
 <script src="assets/unicase/js/jquery.rateit.min.js"></script>
@@ -176,7 +175,31 @@
 <script src="assets/unicase/js/bootstrap-select.min.js"></script>
 <script src="assets/unicase/js/wow.min.js"></script>
 <script src="assets/unicase/js/scripts.js"></script>
-<script src="assets/js/chat.js"></script>
+
+<!-- For demo purposes – can be removed on production -->
+
+<script src="switchstylesheet/switchstylesheet.js"></script>
+
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<!-- For demo purposes – can be removed on production -->
+
+
+<script>
+    $(document).ready(function(){
+        $(".changecolor").switchstylesheet( { seperator:"color"} );
+        $('.show-theme-options').click(function(){
+            $(this).parent().toggleClass('open');
+            return false;
+        });
+    });
+
+    $(window).bind("load", function() {
+        $('.show-theme-options').delay(2000).trigger('click');
+    });
+</script>
+
+<x></x><script src="assets/js/chat.js"></script>
 
 <script>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\motonet;
 
+use App\Entities\motonet\BlogsComments;
 use App\Entities\motonet\Branches;
 use App\Entities\motonet\Brands;
 use App\Entities\motonet\Categories;
@@ -10,6 +11,7 @@ use App\Entities\motonet\Models;
 use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
 use App\Entities\motonet\Visits;
+use App\Entities\motonet\Blogs;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -268,6 +270,40 @@ class webController extends Controller {
     public function contact(){
         return view('motonet/web/new/contact')->with($this->data);
     }
+
+
+    public function blog(Blogs $blogs){
+        $this->data["posts"] = $blogs->all();
+
+        return view('motonet/web/new/blog')->with($this->data);
+    }
+
+    public function blogDetail($id, Blogs $blogs){
+        $this->data["post"] = $blogs->find($id);
+
+        return view('motonet/web/new/blogDetail')->with($this->data);
+    }
+
+
+    public function commentPost($id, BlogsComments $blogsComments, Request $request){
+
+
+        $data = $request->only('description','blogs_id','name','email');
+//        $data['visible'] = 1;
+
+
+     //   $comentario = $blogsComments->create($data);
+        $newComentario = new $blogsComments();
+        $newComentario->description = $request->description;
+        $newComentario->blogs_id = $request->blogs_id;
+        $newComentario->name = $request->name;
+        $newComentario->email = $request->email;
+        $newComentario->save();
+
+
+        return redirect()->back();
+    }
+
 
 
     public function addToCart($id){
