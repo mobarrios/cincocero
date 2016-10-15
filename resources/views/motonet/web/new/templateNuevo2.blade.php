@@ -183,7 +183,7 @@
 <script src="switchstylesheet/switchstylesheet.js"></script>
 
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
 <!-- For demo purposes – can be removed on production -->
 
 
