@@ -28,7 +28,7 @@
                 @if(isset($routeDetail))
                      <a href="{{route($routeDetail, $model->id)}}">{{$model->id}}</a>
                 @else
-                       {{$model->id}}
+                       {!!  $model->id !!}
                 @endif
 
 
@@ -39,14 +39,14 @@
                             @if($model->$column['data']->count() > 1)
                                 <td>|
                                 @foreach($model->$column['data'] as $d)
-                                    {{ $d->$column['relation'] }} |
+                                    {!!  $d->$column['relation'] !!} |
                                 @endforeach
                                 </td>
                             @else
-                                <td>{{$model->$column['data']->first()->$column['relation']}}</td>
+                                <td>{!!  $model->$column['data']->first()->$column['relation'] !!}</td>
                             @endif
                         @else
-                            <td>{{$model->$column['data']->$column['relation']}}</td>
+                            <td>{!! $model->$column['data']->$column['relation']!!}</td>
                         @endif
                     @else
 
@@ -73,7 +73,7 @@
                             @endif
 
                         @else
-                              <td>{{$model->$column['data']}}</td>
+                              <td>{!!  $model->$column['data'] !!}</td>
                          @endif
                     @endif
 

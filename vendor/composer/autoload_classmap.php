@@ -34,6 +34,8 @@ return array(
     'CreateModelsSalePrice' => $baseDir . '/database/migrations/2016_08_27_160750_create_models_sale_price.php',
     'CreateProviders' => $baseDir . '/database/migrations/2016_09_19_224608_create_providers.php',
     'CreateSliderTable' => $baseDir . '/database/migrations/2016_07_21_154856_create_slider_table.php',
+    'CreateTags' => $baseDir . '/database/migrations/2016_10_13_212850_create_tags.php',
+    'CreateTagsStatus' => $baseDir . '/database/migrations/2016_10_13_213204_create_tags_status.php',
     'CreateTypes' => $baseDir . '/database/migrations/2016_09_29_002530_create_types.php',
     'CreateVisitsTable' => $baseDir . '/database/migrations/2016_07_22_215536_create_visits_table.php',
     'DOMPDF' => $vendorDir . '/dompdf/dompdf/include/dompdf.cls.php',
