@@ -67,6 +67,16 @@
 											</div>
 										</div><!-- /.single-product-gallery-item -->
 									@endforeach
+								@else
+									@foreach($publicationDetail->Models->Images as $ind => $img)
+										<div class="single-product-gallery-item" id="slide{!! $ind !!}">
+											<div class="item" data-hash="slide{!! $ind !!}">
+												<a data-lightbox="image-{!! $ind !!}" data-title="Gallery" href="{!! $img->image !!}">
+													<img class="img-responsive" alt="" src="{!! $img->image!!}" data-echo="{!! $img->image!!}" />
+												</a>
+											</div>
+										</div><!-- /.single-product-gallery-item -->
+									@endforeach
 								@endif
 							</div><!-- /.single-product-slider -->
 
@@ -81,6 +91,16 @@
 													<img class="img-responsive" width="85" alt="" src="{!! $img->image !!}" data-echo="{!! $img->image !!}" />
 												</a>
 											</div>
+										@endforeach
+									@else
+										@foreach($publicationDetail->Models->Images as $ind => $img)
+											<div class="single-product-gallery-item" id="slide{!! $ind !!}">
+												<div class="item" data-hash="slide{!! $ind !!}">
+													<a data-lightbox="image-{!! $ind !!}" data-title="Gallery" href="{!! $img->image !!}">
+														<img class="img-responsive" alt="" src="{!! $img->image!!}" data-echo="{!! $img->image!!}" />
+													</a>
+												</div>
+											</div><!-- /.single-product-gallery-item -->
 										@endforeach
 									@endif
 								</div><!-- /#owl-single-product-thumbnails -->
