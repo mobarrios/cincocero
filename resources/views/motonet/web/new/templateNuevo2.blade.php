@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -11,8 +10,6 @@
         })(window,document,'script','dataLayer','GTM-PR9T9D');
     </script>
     <!-- End Google Tag Manager -->
-
-
 
     <base href="{!! asset('') !!}">
     <!-- Meta -->
@@ -45,8 +42,7 @@
 
     @yield('title')
     <title>MotoNET</title>
-
-
+    
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="assets/unicase/css/bootstrap.min.css">
