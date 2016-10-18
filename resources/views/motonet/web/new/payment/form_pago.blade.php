@@ -91,7 +91,7 @@
 <hr>
     <div class="row">
 
-        <button  type="submit" class="btn btn-block">Comprar</button>
+        <button id="FinalizaCompra" type="submit" class="btn btn-block">Comprar</button>
     </div>
 
 {!! Form::hidden('publication_id',$publication->id) !!}

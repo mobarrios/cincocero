@@ -25,6 +25,21 @@
             fbq('track', 'Purchase', {value: '{!! \Illuminate\Support\Facades\Session::get('fbq') !!}', currency: '$'});
 
         </script>
+        <script type="text/javascript">
+
+            dataLayer = {
+                "page": {
+                    "type": "purchase" // Tipo de página (product, cart, purchase) --> purchase debe ir cuando la compra fue concretada
+                },
+                "product": {
+                    "id": "{!! $publication->id !!}", // ID de producto, obligatorio
+                    "brand": "{!! $publication->Models->Brands->name !!}", // Marca del producto (Zanella, Honda, etc)
+                    "category": "{!! $publication->Models->Categories->first()->name !!}", // Categoría del producto (Motos, Scooters, Customs, etc)
+                    "name": "{!! $publication->Models->name !!}", // Nombre del producto
+                    "price": "{!! $publication->price !!}" // Precio del producto
+                }
+            }
+        </script>
     @else
         <script>
             var contenido = "ViewContent";
@@ -39,6 +54,21 @@
             fbq('track', 'InitiateCheckout');
 
         </script>
+        <script type="text/javascript">
+
+            dataLayer = {
+                "page": {
+                    "type": "cart" // Tipo de página (product, cart, purchase) --> purchase debe ir cuando la compra fue concretada
+                },
+                "product": {
+                    "id": "{!! $publication->id !!}", // ID de producto, obligatorio
+                    "brand": "{!! $publication->Models->Brands->name !!}", // Marca del producto (Zanella, Honda, etc)
+                    "category": "{!! $publication->Models->Categories->first()->name !!}", // Categoría del producto (Motos, Scooters, Customs, etc)
+                    "name": "{!! $publication->Models->name !!}", // Nombre del producto
+                    "price": "{!! $publication->price !!}" // Precio del producto
+                }
+            }
+        </script>
     @endif
 @endsection
 
@@ -51,7 +81,7 @@
             <!-- panel-heading -->
             <div class="panel-heading">
                 <h4 class="unicase-checkout-title">
-                    <a data-toggle="collapse" class="" data-parent="#accordion" href="#collapseOne">
+                    <a data-toggle="collapse" class="" id="TuCompra" data-parent="#accordion" href="#collapseOne">
                         <span>1</span>TU COMPRA
                     </a>
                 </h4>
@@ -134,7 +164,7 @@
         <div class="panel panel-default checkout-step-02">
             <div class="panel-heading">
                 <h4 class="unicase-checkout-title">
-                    <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo">
+                    <a data-toggle="collapse" id="FormasDePago" class="collapsed" data-parent="#accordion" href="#collapseTwo">
                         <span>2</span>Formas de Pago
                     </a>
                 </h4>
@@ -192,7 +222,7 @@
         <div class="panel panel-default checkout-step-03">
             <div class="panel-heading">
                 <h4 class="unicase-checkout-title">
-                    <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree">
+                    <a data-toggle="collapse" id="DatosPersonales" class="collapsed" data-parent="#accordion" href="#collapseThree">
                         <span>3</span>Datos Personales
                     </a>
                 </h4>

@@ -39,7 +39,7 @@
                             <h4>Formulario de contacto</h4>
                         </div>
                         <div class="col-md-8 ">
-                           {!!  Form::open(['route'=>'contactMail'])!!}
+                           {!!  Form::open(['route'=>'contactMail','id' => 'Contactanos'])!!}
 
                                 <div class="form-group">
                                     <label class="info-title" for="exampleInputName">Tu nombre <span>*</span></label>

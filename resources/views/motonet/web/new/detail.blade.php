@@ -24,6 +24,22 @@
 		fbq('track', 'ViewContent');
 
 	</script>
+
+	<script type="text/javascript">
+
+		dataLayer = {
+			"page": {
+				"type": "product" // Tipo de página (product, cart, purchase) --> purchase debe ir cuando la compra fue concretada
+			},
+			"product": {
+				"id": "{!! $publicationDetail->id !!}", // ID de producto, obligatorio
+				"brand": "{!! $publicationDetail->Models->Brands->name !!}", // Marca del producto (Zanella, Honda, etc)
+				"category": "{!! $publicationDetail->Models->Categories->first()->name !!}", // Categoría del producto (Motos, Scooters, Customs, etc)
+				"name": "{!! $publicationDetail->Models->name !!}", // Nombre del producto
+				"price": "{!! $publicationDetail->price !!}" // Precio del producto
+			}
+		}
+	</script>
 @endsection
 
 @section('title')

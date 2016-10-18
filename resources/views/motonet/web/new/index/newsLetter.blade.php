@@ -1,7 +1,7 @@
 <div class="sidebar-widget newsletter wow fadeInUp outer-bottom-small">
     <div class="sidebar-widget-body outer-top-xs">
         <p>Suscribite a nuestro Newsletter!</p>
-        {!! Form::open(['route' => 'contact', 'method' => 'GET', 'class' => 'form']) !!}
+        {!! Form::open(['route' => 'contact', 'method' => 'GET', 'class' => 'form','id' => 'Newsletter']) !!}
             <div class="form-group">
                 <label class="sr-only" for="exampleInputEmail1">Email</label>
                 {!! Form::text('email',null,['placeholder' => "Subscribite a nuestro newsletter", 'class' => 'form-control']) !!}
