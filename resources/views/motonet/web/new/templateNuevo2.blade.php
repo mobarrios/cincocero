@@ -80,7 +80,7 @@
     <script src="assets/unicase/js/respond.min.js"></script>
     <![endif]-->
 
-
+    @yield('DataLayers')
 
 
 </head>
