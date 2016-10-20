@@ -212,9 +212,10 @@
     tinymce.init({
         plugins: "textcolor",
         statusbar: false,
+        language : 'es',
         selector: ".mytextarea",
         toolbar: [
-            "undo redo | styleselect | bold italic | forecolor backcolor alignleft aligncenter alignright",
+            "undo redo | fontselect | styleselect | bold italic | forecolor backcolor alignleft aligncenter alignright",
         ],
         menubar: false
     });
