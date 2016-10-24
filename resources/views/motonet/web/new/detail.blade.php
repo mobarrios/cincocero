@@ -1,28 +1,20 @@
 @extends('motonet.web.new.templateNuevo2')
 
-@section('fbq')
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+@section('DataLayers')
+	<script type="text/javascript">
 
-		ga('create', 'UA-81463000-1', 'auto');
-		ga('send', 'PageView');
-
-	</script>
-	<script>
-		var contenido = "ViewContent";
-		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-				n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-			n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-				document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-		fbq('init', '165095643906274');
-
-		fbq('track', 'ViewContent');
-
+		dataLayer = {
+			"page": {
+				"type": "product" // Tipo de página (product, cart, purchase) --> purchase debe ir cuando la compra fue concretada
+			},
+			"product": {
+				"id": "{!! $publicationDetail->id !!}", // ID de producto, obligatorio
+				"brand": "{!! $publicationDetail->Models->Brands->name !!}", // Marca del producto (Zanella, Honda, etc)
+				"category": "{!! $publicationDetail->Models->Categories->first()->name !!}", // Categoría del producto (Motos, Scooters, Customs, etc)
+				"name": "{!! $publicationDetail->Models->name !!}", // Nombre del producto
+				"price": "{!! $publicationDetail->price !!}" // Precio del producto
+			}
+		}
 	</script>
 @endsection
 
@@ -249,66 +241,66 @@
 			</div>
 			<div class="col-sm-3">
 				<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
-					<li class="active"><a data-toggle="tab" href="#description">DESCRIPCIÓN</a></li>
-					<li><a data-toggle="tab" href="#caracteristicas">CARACTERÍSTICAS</a></li>
+					<li class="active"><a data-toggle="tab" href="#caracteristicas">FICHA TÉCNICA</a></li>
+					<li><a data-toggle="tab" href="#description">DESCRIPCIÓN</a></li>
 					{{--<li><a data-toggle="tab" href="#tags">TAGS</a></li>--}}
 				</ul><!-- /.nav-tabs #product-tabs -->
 			</div>
 			<div class="col-sm-9">
 				<div class="tab-content">
 
-					<div id="description" class="tab-pane in active">
-						<div class="product-tab">
-							{!! $publicationDetail->description !!}
-						</div>
-					</div><!-- /.tab-pane -->
-
-					<div id="caracteristicas" class="tab-pane in">
+					<div id="caracteristicas" class="tab-pane in active">
 						<div class="product-tab">
 							<table id="dataTable" class="table table-striped table-hover">
 								<tbody>
-									<tr>
-										<th>Tipo</th>
-										<td>{!! $publicationDetail->Models->Types != null ? $publicationDetail->Models->Types->name : "n/s" !!}</td>
-									</tr>
-									<tr>
-										<th>Motor</th>
-										<td>{!! $publicationDetail->Models->Engines != null ? $publicationDetail->Models->Engines->name : "n/s" !!}</td>
-									</tr>
-									<tr>
-										<th>Cilindrada</th>
-										<td>{!! $publicationDetail->Models->Displacements != null ? $publicationDetail->Models->Displacements->name : "n/s" !!}</td>
-									</tr>
-									<tr>
-										<th>Transmisión</th>
-										<td>{!! $publicationDetail->Models->transmission != null ? $publicationDetail->Models->transmission : "n/s" !!}</td>
-									</tr>
-									<tr>
-										<th>HP</th>
-										<td>{!! $publicationDetail->Models->hp != null ? $publicationDetail->Models->hp : "n/s" !!}</td>
-									</tr>
-									<tr>
-										<th>Arranque</th>
-										<td>{!! $publicationDetail->Models->start != null ? $publicationDetail->Models->start : "n/s" !!}</td>
-									</tr>
-									<tr>
-										<th>Freno</th>
-										<td>{!! $publicationDetail->Models->brake != null ? $publicationDetail->Models->brake : "n/s" !!}</td>
-									</tr>
-									<tr>
-										<th>Tanque de combustible</th>
-										<td>{!! $publicationDetail->Models->tanque_de_combustible != null ? $publicationDetail->Models->tanque_de_combustible : "n/s" !!}</td>
-									</tr>
-									<tr>
-										<th>Peso</th>
-										<td>{!! $publicationDetail->Models->peso != null ? $publicationDetail->Models->peso : "n/s" !!}</td>
-									</tr>
-									<tr>
-										<th>Adicional</th>
-										<td>{!! $publicationDetail->Models->adicional != null ? $publicationDetail->Models->adicional : "n/s" !!}</td>
-									</tr>
+								<tr>
+									<th>Tipo</th>
+									<td>{!! $publicationDetail->Models->Types != null ? $publicationDetail->Models->Types->name : "n/s" !!}</td>
+								</tr>
+								<tr>
+									<th>Motor</th>
+									<td>{!! $publicationDetail->Models->Engines != null ? $publicationDetail->Models->Engines->name : "n/s" !!}</td>
+								</tr>
+								<tr>
+									<th>Cilindrada</th>
+									<td>{!! $publicationDetail->Models->Displacements != null ? $publicationDetail->Models->Displacements->name : "n/s" !!}</td>
+								</tr>
+								<tr>
+									<th>Transmisión</th>
+									<td>{!! $publicationDetail->Models->transmission != null ? $publicationDetail->Models->transmission : "n/s" !!}</td>
+								</tr>
+								<tr>
+									<th>HP</th>
+									<td>{!! $publicationDetail->Models->hp != null ? $publicationDetail->Models->hp : "n/s" !!}</td>
+								</tr>
+								<tr>
+									<th>Arranque</th>
+									<td>{!! $publicationDetail->Models->start != null ? $publicationDetail->Models->start : "n/s" !!}</td>
+								</tr>
+								<tr>
+									<th>Freno</th>
+									<td>{!! $publicationDetail->Models->brake != null ? $publicationDetail->Models->brake : "n/s" !!}</td>
+								</tr>
+								<tr>
+									<th>Tanque de combustible</th>
+									<td>{!! $publicationDetail->Models->tanque_de_combustible != null ? $publicationDetail->Models->tanque_de_combustible : "n/s" !!}</td>
+								</tr>
+								<tr>
+									<th>Peso</th>
+									<td>{!! $publicationDetail->Models->peso != null ? $publicationDetail->Models->peso : "n/s" !!}</td>
+								</tr>
+								<tr>
+									<th>Adicional</th>
+									<td>{!! $publicationDetail->Models->adicional != null ? $publicationDetail->Models->adicional : "n/s" !!}</td>
+								</tr>
 								</tbody>
 							</table>
+						</div>
+					</div><!-- /.tab-pane -->
+
+					<div id="description" class="tab-pane in">
+						<div class="product-tab">
+							{!! $publicationDetail->description !!}
 						</div>
 					</div><!-- /.tab-pane -->
 
