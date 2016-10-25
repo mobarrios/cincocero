@@ -10,10 +10,11 @@
 
             @else
                 {!! Form::open(['route' => $routePostNew , 'files'=>'true']) !!}
+                {!! Form::hidden('users_id',\Illuminate\Support\Facades\Auth::user()->id ) !!}
+
             @endif
 
                 {!! Form::textAreaCustom('description', 'Descripción')!!}
-                {!! Form::hidden('users_id',\Illuminate\Support\Facades\Auth::user()->id ) !!}
         </div>
 
         <div class="panel-footer">

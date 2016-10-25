@@ -2,6 +2,7 @@
 namespace App\Entities\motonet;
 
 use \App\Entities\Entity;
+use App\Entities\User;
 use Carbon\Carbon;
 
 class Tags extends Entity{
@@ -20,6 +21,11 @@ class Tags extends Entity{
 
         Carbon::setLocale('es');
         return Carbon::createFromTimestamp(strtotime($this->attributes['updated_at']))->diffForHumans();
+    }
+
+    public function Users(){
+
+        return $this->belongsTo(User::getClass());
     }
 
 }
