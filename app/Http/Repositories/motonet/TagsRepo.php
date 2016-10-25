@@ -45,8 +45,10 @@ class TagsRepo extends BaseRepo {
                 'Imagen' =>    ['data' => 'images','relation'=> null],
                 'Fecha'  =>    ['data' => 'created_at','relation' => null],
                 'Descripción' =>    ['data' => 'description','relation' => null],
+                'Usuario'   => ['data'=>'Users','relation' => 'fullname'],
                 'Estado' =>     ['data' => 'status','relation' => null],
                 'Actualizado' => ['data'=>'updated_at','relation'=>null]
+
 
                 //'Perfil' =>['data' => 'Perfil','relation' => 'profile'],
             ],
@@ -57,10 +59,14 @@ class TagsRepo extends BaseRepo {
 
     public function getStatus(){
 
-        return ['solicitado'=>'Solicitado','tomado'=>'Tomado','en proceso'=>'en Proceso','finalizado'=>'Finalizado'];
+        return ['solicitado'=>'Solicitado','en_proceso'=>'en Proceso','finalizado'=>'Finalizado'];
         
     }
 
+    public function listByStatus($status)
+    {
+        return $this->model->where('status','like',$status)->get();
+    }
 
 
 }

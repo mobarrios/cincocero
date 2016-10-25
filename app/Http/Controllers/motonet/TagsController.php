@@ -31,7 +31,12 @@ class TagsController extends Controller {
 
         //data from entities
         $this->repo                 = $repo;
-        $this->data['models']       = $repo->ListAll();
+        //$this->data['models']       = $repo->ListAll();
+
+        $this->data['solicitado']       = $repo->listByStatus('solicitado');
+        $this->data['en_proceso']        = $repo->listByStatus('en_proceso');
+        $this->data['finalizado']       = $repo->listByStatus('finalizado');
+
         $this->data['tableHeader']  = $repo->tableHeader();
 
         //data for views
