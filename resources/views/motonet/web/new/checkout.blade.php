@@ -1,43 +1,37 @@
 @extends('motonet.web.new.templateNuevo2')
 
-@section('fbq')
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-81463000-1', 'auto');
-        ga('send', 'PageView');
-
-    </script>
+@section('DataLayers')
     @if(\Illuminate\Support\Facades\Session::has('fbq'))
-        <script>
-            var contenido = "ViewContent";
-            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-            document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        <script type="text/javascript">
 
-            fbq('init', '165095643906274');
-
-            fbq('track', 'Purchase', {value: '{!! \Illuminate\Support\Facades\Session::get('fbq') !!}', currency: '$'});
-
+            dataLayer = {
+                "page": {
+                    "type": "purchase" // Tipo de página (product, cart, purchase) --> purchase debe ir cuando la compra fue concretada
+                },
+                "product": {
+                    "id": "{!! $publication->id !!}", // ID de producto, obligatorio
+                    "brand": "{!! $publication->Models->Brands->name !!}", // Marca del producto (Zanella, Honda, etc)
+                    "category": "{!! $publication->Models->Categories->first()->name !!}", // Categoría del producto (Motos, Scooters, Customs, etc)
+                    "name": "{!! $publication->Models->name !!}", // Nombre del producto
+                    "price": "{!! $publication->price !!}" // Precio del producto
+                }
+            }
         </script>
     @else
-        <script>
-            var contenido = "ViewContent";
-            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-            document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        <script type="text/javascript">
 
-            fbq('init', '165095643906274');
-
-            fbq('track', 'InitiateCheckout');
-
+            dataLayer = {
+                "page": {
+                    "type": "cart" // Tipo de página (product, cart, purchase) --> purchase debe ir cuando la compra fue concretada
+                },
+                "product": {
+                    "id": "{!! $publication->id !!}", // ID de producto, obligatorio
+                    "brand": "{!! $publication->Models->Brands->name !!}", // Marca del producto (Zanella, Honda, etc)
+                    "category": "{!! $publication->Models->Categories->first()->name !!}", // Categoría del producto (Motos, Scooters, Customs, etc)
+                    "name": "{!! $publication->Models->name !!}", // Nombre del producto
+                    "price": "{!! $publication->price !!}" // Precio del producto
+                }
+            }
         </script>
     @endif
 @endsection
@@ -51,7 +45,7 @@
             <!-- panel-heading -->
             <div class="panel-heading">
                 <h4 class="unicase-checkout-title">
-                    <a data-toggle="collapse" class="" data-parent="#accordion" href="#collapseOne">
+                    <a data-toggle="collapse" class="" id="TuCompra" data-parent="#accordion" href="#collapseOne">
                         <span>1</span>TU COMPRA
                     </a>
                 </h4>
@@ -134,7 +128,7 @@
         <div class="panel panel-default checkout-step-02">
             <div class="panel-heading">
                 <h4 class="unicase-checkout-title">
-                    <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo">
+                    <a data-toggle="collapse" id="FormasDePago" class="collapsed" data-parent="#accordion" href="#collapseTwo">
                         <span>2</span>Formas de Pago
                     </a>
                 </h4>
@@ -192,7 +186,7 @@
         <div class="panel panel-default checkout-step-03">
             <div class="panel-heading">
                 <h4 class="unicase-checkout-title">
-                    <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree">
+                    <a data-toggle="collapse" id="DatosPersonales" class="collapsed" data-parent="#accordion" href="#collapseThree">
                         <span>3</span>Datos Personales
                     </a>
                 </h4>

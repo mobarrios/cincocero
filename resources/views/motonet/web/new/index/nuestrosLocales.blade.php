@@ -8,7 +8,7 @@
                     <div class="blog-post">
                         <div class="blog-post-image">
                             <div class="image">
-                                <a href="" class="branchMap" data-toggle="modal" data-target="#detalle" data-address="{!! $branch->address !!}" data-name="{!! $branch->name !!}"><img src="{!! $branch->images->first()->image or ''!!}" width="270" height="135"  alt=""></a>
+                                <a href="" id="Sucursal-{!! $branch->id !!}" class="branchMap" data-toggle="modal" data-target="#detalle" data-address="{!! $branch->address !!}" data-name="{!! $branch->name !!}"><img src="{!! $branch->images->first()->image or ''!!}" width="270" height="135"  alt=""></a>
                             </div>
                         </div><!-- /.blog-post-image -->
 
