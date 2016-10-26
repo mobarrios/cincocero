@@ -1,19 +1,19 @@
 <!-- ============================================== TOP MENU : END ============================================== -->
-<div id="main-header" class="main-header" style="padding: 25px 0px 0px 0px ;">
+<div class="main-header" style="padding: 25px 0px 0px 0px ;">
     <div class="container">
         <div class="row">
-            <div class="col-xs-2 logo-holder mt-n81">
+            <div class="col-xs-12 col-sm-12 col-md-3 logo-holder mt-n81">
                 <!-- ============================================================= LOGO ============================================================= -->
                 <div class="logo">
                     <a href="{!! route('indexNueva') !!}">
 
-                        <img src="assets/web/img/logo.png" alt="" width="165" class="img-responsive">
+                        <img src="assets/web/img/logo.png" alt="" width="250">
 
                     </a>
                 </div><!-- /.logo -->
                 <!-- ============================================================= LOGO : END ============================================================= -->				</div><!-- /.logo-holder -->
 
-            <div class="col-xs-6 top-search-holder">
+            <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
                 <div class="contact-row">
                     <div class="phone inline">
                         <i class="icon fa fa-phone"></i> 0810-333-6686
@@ -39,7 +39,7 @@
                 </div><!-- /.search-area -->
                 <!-- ============================================================= SEARCH AREA : END ============================================================= -->				</div><!-- /.top-search-holder -->
 
-            <div class="col-xs-4 animate-dropdown top-cart-row">
+            <div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">
                 <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
 
                 <div class="dropdown dropdown-cart">
