@@ -21,21 +21,21 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
     //   return view('company_list');
     // });
 
-//Session::put('languaje','es_ES');
+//fb
 
-Route::get('pdftt', function(){
+Route::get('fb', function(){
 
-   $p = new  \App\Helpers\PdfToTextHelper();
+    $product_catalog = new \FacebookAds\Object\ProductCatalog(null, '1234');
 
-    return $p->getIndex();
+        $product_catalog->setData(array(
+            ProductCatalogFields::NAME => "Catalog",
+        ));
+
+        $product_catalog->create();
+return $product_catalog;
+
 });
 
-
-
-Route::get('chat',function(){
-
-    return view('controls.chat');
-});
 
 // route MERCADO PAGO
 Route::get('test_mail',function(){
@@ -118,7 +118,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
         Route::post('postLogin', ['as'=>'postLogin','uses'=>'LoginController@postLogin']);
 
 
-            Route::group(['middleware' => ['auth'],'prefix'=>'sistema'], function()
+            Route::group(['middleware' => ['auth']], function()
             {
 
                 //logout
