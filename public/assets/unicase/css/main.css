@@ -5462,6 +5462,7 @@ a.linkbyn img{
 
 #main-header{
   position: fixed;
+  top:0;
   width: 100%;
   text-align: center;
   /*font-size: 72px;*/
@@ -5511,11 +5512,11 @@ a.linkbyn img{
 }
 
 .nav-bg-class{
-  margin-top: 140px;
+  margin-top: 0;
 }
-/*.nav-bg-class{*/
-  /*margin-top: 140px !important;*/
-/*}*/
+.header-nav{
+  margin-top: 140px !important;
+}
 
 @media (max-width: 992px){
 
@@ -5573,11 +5574,14 @@ a.linkbyn img{
   }
 
   .navbar-header{
-    margin-top:100px;
+    margin-top:0px;
   }
   .outer-top-xs {
     margin-top: 30px;
   }
+
+
+
 
   .nav-outer{
     overflow: hidden;
@@ -5589,9 +5593,10 @@ a.linkbyn img{
     overflow: visible;
   }
 
-  .nav-bg-class{
-    margin-top:140px;
+  .header-nav{
+    margin-top:125px;
   }
+
 }
 
 
@@ -5600,10 +5605,11 @@ a.linkbyn img{
     margin-top: 45px;
   }
 
-
-  .navbar-header{
-    margin-top:160px;
+  .header-nav{
+    margin-top:175px !important;
   }
+
+
 
   .wide-banners{
     margin-top: -35px;
