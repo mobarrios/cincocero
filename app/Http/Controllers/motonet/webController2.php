@@ -278,8 +278,7 @@ class webController extends Controller {
         return view('motonet/web/new/blog')->with($this->data);
     }
 
-    public function blogDetail($titulo,$id, Blogs $blogs){
-        $id = collect(explode("-",$id))->last();
+    public function blogDetail($id, Blogs $blogs){
         $this->data["post"] = $blogs->find($id);
 
         return view('motonet/web/new/blogDetail')->with($this->data);
