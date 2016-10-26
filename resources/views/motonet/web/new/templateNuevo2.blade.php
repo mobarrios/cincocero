@@ -95,6 +95,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
 <header class="header-style-1">
+    askndlas ndksan dkjsand kjaskdjn askjd nkjasnchupame la pija!
     @include('motonet.web.new.index.mainHeader')
 
     @include('motonet/web/new/navBar')
