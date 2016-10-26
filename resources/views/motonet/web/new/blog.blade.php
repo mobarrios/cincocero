@@ -10,12 +10,12 @@
                                 @foreach($posts as $post)
                                     <div class="col-xs-12 col-md-6 mt-10">
                                         <div class="blog-post  wow fadeInUp">
-                                            <a href="{!! route("blogDetail",$post->id) !!}"><img class="img-responsive" src="{!! $post->Images->first()->image or ""!!}" alt="{!! $post->title !!}"></a>
-                                            <h1><a href="{!! route("blogDetail",$post->id) !!}">{!! $post->title !!}</a></h1>
+                                            <a href="{!! route("blogDetail",[$post->cleanChars($post->title),$post->id]) !!}"><img class="img-responsive" src="{!! $post->Images->first()->image or ""!!}" alt="{!! $post->title !!}"></a>
+                                            <h1><a href="{!! route("blogDetail",[$post->cleanChars($post->title),$post->id]) !!}">{!! $post->title !!}</a></h1>
                                             {{--<span class="author">Michael</span>--}}
                                             <span class="review">{!! $post->commentsCount !!} comentarios</span>
                                             <span class="date-time">{!! $post->date !!}</span>
-                                            <a href="{!! route("blogDetail", $post->id) !!}" class="btn btn-upper btn-primary read-more">Leer más</a>
+                                            <a href="{!! route("blogDetail",[$post->cleanChars($post->title),$post->id]) !!}" class="btn btn-upper btn-primary read-more">Leer más</a>
                                         </div>
                                     </div>
                                 @endforeach
