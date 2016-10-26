@@ -4,5 +4,9 @@
 .idea/workspace.xml
 /vendor
 /storage
+<<<<<<< HEAD
 .idea/copyright/
 vendor/
+=======
+.idea/copyright/
+>>>>>>> d087b17151e5b65541758634cbdb99c0267a9496
