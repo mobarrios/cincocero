@@ -95,6 +95,7 @@ Route::get('template',function(){
 
     return view('test');
 });
+
 require(__DIR__. '/Routes/motonet/webRoutes.php');
 
 //Route::get('/',function(){
@@ -118,7 +119,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
         Route::post('postLogin', ['as'=>'postLogin','uses'=>'LoginController@postLogin']);
 
 
-            Route::group(['middleware' => ['auth']], function()
+            Route::group(['middleware' => ['auth'],'prefix'=>'sistema' ], function()
             {
 
                 //logout
