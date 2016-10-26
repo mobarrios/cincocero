@@ -9,7 +9,7 @@
         "laravelcollective/html": "5.0.*",
 		"intervention/image": "^2.3",
         "maatwebsite/excel": "~2.0.0",
-        "barryvdh/laravel-dompdf": "dev-master",
+		"barryvdh/laravel-dompdf": "0.6.1",
 		"facebook/php-ads-sdk": "2.5.*"
 
 	},
