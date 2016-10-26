@@ -206,15 +206,6 @@
 
 <script>
 
-    $(window).on("scroll",function() {
-        if ($(this).scrollTop() > 1){
-            $('#main-header').addClass("sticky");
-        }
-        else{
-            $('#main-header').removeClass("sticky");
-        }
-        console.log("dasdasdsa");
-    });
 //    $(window).bind("load", function() {
 //        $('.show-theme-options').delay(1000).trigger('click');
 //    });
