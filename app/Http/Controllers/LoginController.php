@@ -164,7 +164,7 @@ class LoginController extends Controller {
 
                     return redirect()->route('config');
 
-                return redirect()->route('home');
+                return redirect('home');
             }
 
                     //return redirect()->back();

@@ -43,10 +43,10 @@
                                 {{--<a href="{!! route('indexNueva') !!}#sucursales"> Sucursales</a>--}}
                             {{--</li>--}}
                             <li class="dropdown">
-                                <a href="{!! route('blog') !!}"> Blog</a>
+                                <a href="{!! route('contact') !!}"> Contactanos</a>
                             </li>
                             <li class="dropdown">
-                                <a href="{!! route('contact') !!}"> Contactanos</a>
+                                <a href="{!! route('blog') !!}"> Blog</a>
                             </li>
 
 
