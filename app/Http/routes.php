@@ -21,21 +21,9 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
     //   return view('company_list');
     // });
 
-//Session::put('languaje','es_ES');
-
-Route::get('pdftt', function(){
-
-   $p = new  \App\Helpers\PdfToTextHelper();
-
-    return $p->getIndex();
-});
 
 
-
-Route::get('chat',function(){
-
-    return view('controls.chat');
-});
+require(__DIR__. '/Routes/motonet/webRoutes.php');
 
 // route MERCADO PAGO
 Route::get('test_mail',function(){
@@ -95,7 +83,8 @@ Route::get('template',function(){
 
     return view('test');
 });
-require(__DIR__. '/Routes/motonet/webRoutes.php');
+
+
 
 //Route::get('/',function(){
 //
