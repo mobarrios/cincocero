@@ -21,21 +21,9 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
     //   return view('company_list');
     // });
 
-//fb
 
-Route::get('fb', function(){
 
-    $product_catalog = new \FacebookAds\Object\ProductCatalog(null, '1234');
-
-        $product_catalog->setData(array(
-            ProductCatalogFields::NAME => "Catalog",
-        ));
-
-        $product_catalog->create();
-return $product_catalog;
-
-});
-
+require(__DIR__. '/Routes/motonet/webRoutes.php');
 
 // route MERCADO PAGO
 Route::get('test_mail',function(){
@@ -95,7 +83,8 @@ Route::get('template',function(){
 
     return view('test');
 });
-require(__DIR__. '/Routes/motonet/webRoutes.php');
+
+
 
 //Route::get('/',function(){
 //
