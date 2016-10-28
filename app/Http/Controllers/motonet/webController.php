@@ -17,6 +17,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Helpers\ImagesHelper;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
@@ -160,6 +161,33 @@ class webController extends Controller {
 
     public function detail($modelo,$id){
         $this->data['publicationDetail'] = $this->publications->find($id);
+
+        $categorias = $this->data['publicationDetail']->models->categories;
+
+//        $recomendados = collect(DB::table('publications')
+//                        ->join('models','models.id','=','publications.models_id')
+//                        ->join('models_categories','models.id','=','models_categories.models_id')
+//                        ->select('publications.*')
+//                        ->where('models_categories.categories_id','=',$categorias->first()->id)
+//                        ->limit(5)
+//                        ->get());
+//        dd($categorias);
+
+        $recomendados = collect();
+
+//        $this->categories
+        foreach ($categorias as $categoria){
+            $recomendados->push($this->publications->whereHas('models',function ($query) use($categoria){
+                $query->whereHas('categories',function ($q) use($categoria){
+                    $q->where('categories.id',$categoria->id);
+                });
+            })->get()->all());
+        }
+
+        if($recomendados->flatten()->count() > 15)
+            $this->data["recomendados"] = $recomendados->flatten()->random(15);
+        else
+            $this->data["recomendados"] = $recomendados->flatten()->random($recomendados->flatten()->count());
 
         return view('motonet/web/new/detail')->with($this->data);
     }

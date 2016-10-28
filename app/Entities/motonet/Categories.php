@@ -16,7 +16,7 @@ class Categories extends Entity{
 
     public function Models()
     {
-        return $this->belongsToMany(Models::getClass(),'models_categories');
+        return $this->belongsToMany(Models::getClass(),'models_categories')->withPivot('categories_id','models_id');
     }
 
 
