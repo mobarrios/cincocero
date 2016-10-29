@@ -23,6 +23,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Repositories\tfc\CategoriesRepo;
 use App\Http\Repositories\tfc\TournamentsRepo;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -31,9 +32,10 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Repositories\tfc\PlayersRepo;
 
 class WebController extends Controller {
+    protected $data;
 
-    public function __construct(){
-
+    public function __construct(Route $route){
+        $this->data['route'] = $route->getParameter('categoriaId');
         if(!Session::has('categoria'))
         {
             return redirect()->to('web/');
@@ -43,28 +45,28 @@ class WebController extends Controller {
 
     public function Index()
     {
-        $data['categories'] = Categories::all();
+        $this->data['categories'] = Categories::all();
 
-        return view('tfc/web/index')->with($data);
+        return view('tfc/web/new/index')->with($this->data);
     }
 
     public function Reglamento()
     {
-        return view('tfc/web/reglamento');
+        return view('tfc/web/new/reglamento')->with($this->data);
     }
 
     public function Noticias()
     {
-        $data['noticias']   = News::orderBy('date','DESC')->paginate(10);
+        $this->data['noticias']   = News::orderBy('date','DESC')->paginate(10);
 
-         return view('tfc/web/noticias')->with($data);
+         return view('tfc/web/new/noticias')->with($this->data);
     }
 
     public function Sedes()
     {
-        $data['sedes'] = Sedes::all();
+        $this->data['sedes'] = Sedes::all();
 
-        return view('tfc/web/sedes')->with($data);
+        return view('tfc/web/new/sedes')->with($this->data);
     }
 
     public function SedeDetalle($id = null)
@@ -76,19 +78,19 @@ class WebController extends Controller {
 
     public function Galeria(Galleries $galeria)
     {
-        $data['galeria'] = $galeria->all();
-        return view('tfc/web/galeria')->with($data);
+        $this->data['galeria'] = $galeria->all();
+        return view('tfc/web/new/galeria')->with($this->data);
     }
 
     public function Inscripcion()
     {
-        $data['teams'] = Teams::where('status',1)->orderBy('name','asc')->lists('name','id');
-        return view('tfc/web/inscripcion')->with($data);
+        $this->data['teams'] = Teams::where('status',1)->orderBy('name','asc')->lists('name','id');
+        return view('tfc/web/new/inscripcion')->with($this->data);
     }
 
     public function Contactanos()
     {
-        return view('tfc/web/contactanos');
+        return view('tfc/web/new/contactanos')->with($this->data);
     }
 
     public function Principal($id,Tournaments $torneos,Categories $categorias,Fases $fases,Destacados $destacados)

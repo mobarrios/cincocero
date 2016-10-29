@@ -9,12 +9,10 @@ Route::group(['namespace' => 'tfc'], function()
     ]);
 
 
-    Route::resource('reglamento','WebController@Reglamento');
-//    Route::resource('noticias','WebController@Noticias');
-    Route::resource('sedes','WebController@Sedes');
+    //    Route::resource('noticias','WebController@Noticias');
 //    Route::resource('galeria','WebController@Galeria');
-    Route::resource('inscripcion','WebController@Inscripcion');
-    Route::resource('contactanos','WebController@Contactanos');
+//    Route::resource('inscripcion','WebController@Inscripcion');
+//    Route::resource('contactanos','WebController@Contactanos');
 //    Route::resource('principal','WebController@Principal');
 
     Route::get('{id}/principal',[
@@ -22,14 +20,34 @@ Route::group(['namespace' => 'tfc'], function()
         'uses' => 'WebController@Principal'
     ]);
 
-    Route::get('galeria',[
+    Route::get('{categoriaId}/sedes',[
+        'as' => 'web.sedes',
+        'uses' => 'WebController@Sedes'
+    ]);
+
+    Route::get('{categoriaId}/galeria',[
         'as' => 'galeria',
         'uses' => 'WebController@Galeria'
     ]);
 
-    Route::get('noticias',[
+    Route::get('{categoriaId}/noticias',[
         'as' => 'noticias',
         'uses' => 'WebController@Noticias'
+    ]);
+
+    Route::get('{categoriaId}/reglamento',[
+        'as' => 'reglamento',
+        'uses' => 'WebController@Reglamento'
+    ]);
+
+    Route::get('{categoriaId}/inscripcion',[
+        'as' => 'inscripcion',
+        'uses' => 'WebController@Inscripcion'
+    ]);
+
+    Route::get('{categoriaId}/contactanos',[
+        'as' => 'contactanos',
+        'uses' => 'WebController@Contactanos'
     ]);
 
     Route::get('{categoriaId}/resultado/{id}',[
