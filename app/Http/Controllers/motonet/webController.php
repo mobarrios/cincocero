@@ -399,4 +399,14 @@ class webController extends Controller {
 
 
     }
+
+
+    public function productUpdate(){
+
+        $products = Publications::all();
+        $content = view('product', compact('products'));
+
+        return response($content, 200)
+            ->header('Content-Type', 'text/xml');
+    }
 }
