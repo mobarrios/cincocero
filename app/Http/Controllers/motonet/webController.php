@@ -403,7 +403,7 @@ class webController extends Controller {
 
     public function productUpdate(){
 
-        $products = Publications::all();
+        $products = Publications::with('models')->where('private',0)->get();
         $content = view('product', compact('products'));
 
         $content = '<?xml version="1.0" encoding="UTF-8" ?>'. $content;
