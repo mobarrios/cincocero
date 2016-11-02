@@ -2,7 +2,7 @@
 Route::group(['namespace' => 'motonet'], function() {
 
 
-    Route::get('productUpdate','webController@productUpdate');
+    Route::get('productUpdate.xml','webController@productUpdate');
 
     Route::get('carrito/{id}',[
         'as' => 'resumenNueva',
