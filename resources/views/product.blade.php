@@ -8,10 +8,10 @@
 
         @foreach($products as $product)
         <item>
-            <g:id>{{$product->id}}</g:id>
-            <g:title>{{$product->title}}</g:title>
-            <g:description>{{$product->models->name }}</g:description>
-            <g:google_product_category>{{$product->models->name}}</g:google_product_category>
+            <g:id>{!!$product->id !!} </g:id>
+            <g:title>{!!$product->title !!} </g:title>
+            <g:description>{!!$product->models->name !!} </g:description>
+            <g:google_product_category>{!!$product->models->name!!} </g:google_product_category>
             @foreach($product->models->categories as $category)
                 <g:product_type>  {!! $category->name !!}  </g:product_type>
             @endforeach
