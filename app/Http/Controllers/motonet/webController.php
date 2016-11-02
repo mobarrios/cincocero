@@ -406,7 +406,7 @@ class webController extends Controller {
         $products = Publications::all();
         $content = view('product', compact('products'));
 
-        $content .= '<?xml version="1.0" encoding="UTF-8" ?>'. $content;
+        $content = '<?xml version="1.0" encoding="UTF-8" ?>'. $content;
 
         return response($content, 200)
             ->header('Content-Type', 'text/xml');
