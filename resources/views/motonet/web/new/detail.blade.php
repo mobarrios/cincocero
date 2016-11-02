@@ -41,9 +41,9 @@
 
 
 			<div class='col-md-9'>
-				<div class="col-xs-12 slider-detail">
-					<img src="assets/web/img/slider.png" alt="slider" class="img-responsive">
-				</div>
+				{{--<div class="col-xs-12 slider-detail">--}}
+					{{--<img src="assets/web/img/slider.png" alt="slider" class="img-responsive">--}}
+				{{--</div>--}}
 				<div class="row  wow fadeInUp">
 					<div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
 						<div class="product-item-holder size-big single-product-gallery small-gallery">
@@ -234,81 +234,143 @@
 		<div class='container'>
 			<div class='row single-product outer-bottom-sm '>
 				<div class="product-tabs inner-bottom-xs  wow fadeInUp">
-		<div class="row ">
-			<div class="col-xs-12 text-center ">
+					<div class="row ">
+						<div class="col-xs-12 text-center ">
 
-				<img src="{{$publicationDetail->images->first()->image or ''}}" alt="" >
-			</div>
-			<div class="col-sm-3">
-				<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
-					<li class="active"><a data-toggle="tab" href="#caracteristicas">FICHA TÉCNICA</a></li>
-					<li><a data-toggle="tab" href="#description">DESCRIPCIÓN</a></li>
-					{{--<li><a data-toggle="tab" href="#tags">TAGS</a></li>--}}
-				</ul><!-- /.nav-tabs #product-tabs -->
-			</div>
-			<div class="col-sm-9">
-				<div class="tab-content">
-
-					<div id="caracteristicas" class="tab-pane in active">
-						<div class="product-tab">
-							<table id="dataTable" class="table table-striped table-hover">
-								<tbody>
-								<tr>
-									<th>Tipo</th>
-									<td>{!! $publicationDetail->Models->Types != null ? $publicationDetail->Models->Types->name : "n/s" !!}</td>
-								</tr>
-								<tr>
-									<th>Motor</th>
-									<td>{!! $publicationDetail->Models->Engines != null ? $publicationDetail->Models->Engines->name : "n/s" !!}</td>
-								</tr>
-								<tr>
-									<th>Cilindrada</th>
-									<td>{!! $publicationDetail->Models->Displacements != null ? $publicationDetail->Models->Displacements->name : "n/s" !!}</td>
-								</tr>
-								<tr>
-									<th>Transmisión</th>
-									<td>{!! $publicationDetail->Models->transmission != null ? $publicationDetail->Models->transmission : "n/s" !!}</td>
-								</tr>
-								<tr>
-									<th>HP</th>
-									<td>{!! $publicationDetail->Models->hp != null ? $publicationDetail->Models->hp : "n/s" !!}</td>
-								</tr>
-								<tr>
-									<th>Arranque</th>
-									<td>{!! $publicationDetail->Models->start != null ? $publicationDetail->Models->start : "n/s" !!}</td>
-								</tr>
-								<tr>
-									<th>Freno</th>
-									<td>{!! $publicationDetail->Models->brake != null ? $publicationDetail->Models->brake : "n/s" !!}</td>
-								</tr>
-								<tr>
-									<th>Tanque de combustible</th>
-									<td>{!! $publicationDetail->Models->tanque_de_combustible != null ? $publicationDetail->Models->tanque_de_combustible : "n/s" !!}</td>
-								</tr>
-								<tr>
-									<th>Peso</th>
-									<td>{!! $publicationDetail->Models->peso != null ? $publicationDetail->Models->peso : "n/s" !!}</td>
-								</tr>
-								<tr>
-									<th>Adicional</th>
-									<td>{!! $publicationDetail->Models->adicional != null ? $publicationDetail->Models->adicional : "n/s" !!}</td>
-								</tr>
-								</tbody>
-							</table>
+							<img src="{{$publicationDetail->images->first()->image or ''}}" alt="" >
 						</div>
-					</div><!-- /.tab-pane -->
-
-					<div id="description" class="tab-pane in">
-						<div class="product-tab">
-							{!! $publicationDetail->description !!}
+						<div class="col-sm-3">
+							<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
+								<li class="active"><a data-toggle="tab" href="#caracteristicas">FICHA TÉCNICA</a></li>
+								<li><a data-toggle="tab" href="#description">DESCRIPCIÓN</a></li>
+								{{--<li><a data-toggle="tab" href="#tags">TAGS</a></li>--}}
+							</ul><!-- /.nav-tabs #product-tabs -->
 						</div>
-					</div><!-- /.tab-pane -->
+						<div class="col-sm-9">
+							<div class="tab-content">
 
-				</div><!-- /.tab-content -->
-			</div><!-- /.col -->
-		</div><!-- /.row -->
-	</div><!-- /.product-tabs -->
+								<div id="caracteristicas" class="tab-pane in active">
+									<div class="product-tab">
+										<table id="dataTable" class="table table-striped table-hover">
+											<tbody>
+											<tr>
+												<th>Tipo</th>
+												<td>{!! $publicationDetail->Models->Types != null ? $publicationDetail->Models->Types->name : "n/s" !!}</td>
+											</tr>
+											<tr>
+												<th>Motor</th>
+												<td>{!! $publicationDetail->Models->Engines != null ? $publicationDetail->Models->Engines->name : "n/s" !!}</td>
+											</tr>
+											<tr>
+												<th>Cilindrada</th>
+												<td>{!! $publicationDetail->Models->Displacements != null ? $publicationDetail->Models->Displacements->name : "n/s" !!}</td>
+											</tr>
+											<tr>
+												<th>Transmisión</th>
+												<td>{!! $publicationDetail->Models->transmission != null ? $publicationDetail->Models->transmission : "n/s" !!}</td>
+											</tr>
+											<tr>
+												<th>HP</th>
+												<td>{!! $publicationDetail->Models->hp != null ? $publicationDetail->Models->hp : "n/s" !!}</td>
+											</tr>
+											<tr>
+												<th>Arranque</th>
+												<td>{!! $publicationDetail->Models->start != null ? $publicationDetail->Models->start : "n/s" !!}</td>
+											</tr>
+											<tr>
+												<th>Freno</th>
+												<td>{!! $publicationDetail->Models->brake != null ? $publicationDetail->Models->brake : "n/s" !!}</td>
+											</tr>
+											<tr>
+												<th>Tanque de combustible</th>
+												<td>{!! $publicationDetail->Models->tanque_de_combustible != null ? $publicationDetail->Models->tanque_de_combustible : "n/s" !!}</td>
+											</tr>
+											<tr>
+												<th>Peso</th>
+												<td>{!! $publicationDetail->Models->peso != null ? $publicationDetail->Models->peso : "n/s" !!}</td>
+											</tr>
+											<tr>
+												<th>Adicional</th>
+												<td>{!! $publicationDetail->Models->adicional != null ? $publicationDetail->Models->adicional : "n/s" !!}</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div><!-- /.tab-pane -->
 
+								<div id="description" class="tab-pane in">
+									<div class="product-tab">
+										{!! $publicationDetail->description !!}
+									</div>
+								</div><!-- /.tab-pane -->
+
+							</div><!-- /.tab-content -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.product-tabs -->
+				@if(!empty($recomendados))
+				<div class="sidebar-widget wow fadeInUp outer-bottom-vs">
+					<h3 class="section-title">También podes ver</h3>
+					<div class="sidebar-widget-body outer-top-xs">
+						<div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
+							@foreach($recomendados as $p)
+								@if(!$p->private)
+									<div class="item">
+										<div class="products best-product">
+
+											<div class="product">
+												<div class="text-center" >
+													<label class="label label-danger">{{$p->destacado_text}}</label>
+												</div>
+												<div class="product-micro">
+													<div class="row product-micro-row">
+														<div class="col col-xs-5">
+															<div class="product-image">
+																<div class="image">
+																	<a href="{!! route('productDetail',[$p->models->nameClean,$p->id]) !!}" data-lightbox="image-1" data-title="{{$p->name }}" class="linkbyn">
+																		<img data-echo="{{$p->Models->Images->first()->image  or ''}}" src="{{$p->Models->Images->first()->image  or ''}}" class="img-responsive" alt="">
+																		<div class="zoom-overlay"></div>
+																	</a>
+																</div><!-- /.image -->
+
+															</div><!-- /.product-image -->
+														</div><!-- /.col -->
+														<div class="col col-xs-7">
+															<div class="product-info">
+																<h3>{{$p->models->brands->name}}</h3>
+																<h3 class="name"><a href="{!! route('productDetail',[$p->models->nameClean,$p->id]) !!}">{{$p->title}}</a></h3>
+																<div class="product-price">
+																	<span class="price">$ {{$p->price}}</span>
+
+																</div><!-- /.product-price -->
+																<div class="cart clearfix animate-effect">
+																	<div class="action">
+																		<ul class="list-unstyled">
+																			<li class="add-cart-button btn-group">
+																				<a class="btn btn-primary icon" href="{!! route('addToCart',$p->id) !!}">
+																					<i class="fa fa-shopping-cart"></i>
+																				</a>
+																				<a class="btn btn-primary" type="button" href="{!! route('productDetail',[$p->models->nameClean,$p->id]) !!}">ver</a>
+																			</li>
+																		</ul>
+																	</div><!-- /.action -->
+																</div><!-- /.cart -->
+															</div>
+														</div><!-- /.col -->
+													</div><!-- /.product-micro-row -->
+												</div><!-- /.product-micro -->
+
+											</div>
+
+										</div>
+									</div>
+								@endif
+							@endforeach
+
+						</div>
+					</div><!-- /.sidebar-widget-body -->
+				</div><!-- /.sidebar-widget -->
+				@endif
 	<!-- ============================================== UPSELL PRODUCTS ============================================== -->
 				{{--<section class="section featured-product wow fadeInUp">--}}
 		{{--<h3 class="section-title">También podés ver</h3>--}}

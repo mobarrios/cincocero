@@ -22,7 +22,7 @@ class Models extends Entity{
 
     public function Categories()
     {
-        return $this->belongsToMany(Categories::getClass(),'models_categories');
+        return $this->belongsToMany(Categories::getClass(),'models_categories')->withPivot('categories_id','models_id');
     }
 
     public function Providers()
