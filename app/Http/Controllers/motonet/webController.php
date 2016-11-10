@@ -12,6 +12,7 @@ use App\Entities\motonet\Operations;
 use App\Entities\motonet\Publications;
 use App\Entities\motonet\Visits;
 use App\Entities\motonet\Blogs;
+use App\Helpers\MailChimpHelper;
 use App\Http\Repositories\motonet\ModelsRepo as Repo;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -64,7 +65,7 @@ class webController extends Controller {
     }
 
 
-    public function sendMail(Request $request){
+    public function sendMail(Request $request,MailChimpHelper $mailChimpHelper){
 
         if($request->name == "")
             return redirect()->back()->withErrors("Completar Nombre");
@@ -80,13 +81,16 @@ class webController extends Controller {
         $data['telefono'] = $request->telefono;
         $data['comentario'] = $request->comentario;
 
+//        Mail::queue('emails.contact', $data , function($message) use($data)
+//        {
+//            $message->from($data['from']);
+//            $message->to('info@motonet.com.ar')->subject('Desde MotoNet.com.ar')
+//                ->replyTo($data['from'], $data['nombre']);
+//        });
 
-        Mail::queue('emails.contact', $data , function($message) use($data)
-        {
-            $message->from($data['from']);
-            $message->to('info@motonet.com.ar')->subject('Desde MotoNet.com.ar')
-                ->replyTo($data['from'], $data['nombre']);
-        });
+        dd($mailChimpHelper->AddNewMember(env("MAILCHIMP_LIST_CONTACT"),$request->email));
+
+
 
         return redirect()->back()->withErrors("Mensaje enviado correctamente!.");
 
