@@ -25,6 +25,13 @@ Route::group(['namespace' => 'tfc'], function()
         'uses' => 'WebController@Sedes'
     ]);
 
+
+    Route::get('{categoriaId}/sedesDetalle/{id}',[
+        'as' => 'sedeDetalle',
+        'uses' => 'WebController@SedeDetalle'
+    ]);
+
+
     Route::get('{categoriaId}/galeria',[
         'as' => 'galeria',
         'uses' => 'WebController@Galeria'
@@ -50,14 +57,23 @@ Route::group(['namespace' => 'tfc'], function()
         'uses' => 'WebController@Contactanos'
     ]);
 
-    Route::get('{categoriaId}/resultado/{id}',[
-        'as' => 'resultado',
-        'uses' => 'WebController@Resultado'
+    Route::get('{categoriaId}/torneos/{torneo}/{fase?}',[
+        'as' => 'torneos',
+        'uses' => 'WebController@Torneos'
     ]);
 
+//    Route::get('{categoriaId}/torneo/{id}',[
+//        'as' => 'torneos',
+//        'uses' => 'WebController@Resultado'
+//    ]);
 
-//    Route::resource('resultado','WebController@Resultado');
+    Route::resource('resultado','WebController@Resultado');
 
+
+    Route::get('{categoriaId}/resultado/{id}',[
+        'as' => 'rs',
+        'uses' => 'WebController@Resultado'
+    ]);
 
     Route::get('{categoriaId}/fixture/{id}',[
         'as' => 'fixture',
@@ -103,11 +119,6 @@ Route::group(['namespace' => 'tfc'], function()
 
 
 
-    Route::get('{categoriaId}/destacado/{id}',[
-        'as' => 'destacado',
-        'uses' => 'WebController@Destacado'
-    ]);
-
 
 
 //    Route::resource('sancion','WebController@Sancion');
@@ -120,7 +131,7 @@ Route::group(['namespace' => 'tfc'], function()
 //    Route::resource('jugador','WebController@Jugador');
 //    Route::resource('proxima_fecha','WebController@Jugador');
 
-    Route::resource('sede_detalle','WebController@SedeDetalle');
+//    Route::resource('sede_detalle','WebController@SedeDetalle');
 
 
     Route::post('registracion',['as'=>'postRegistration','uses'=>'WebController@postRegistration']);

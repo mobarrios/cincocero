@@ -20,7 +20,6 @@
                     <div class="table-responsive">
                     @foreach($fases as $fase)
 
-
                         <div class="col-xs-12">
                             <table border="1" bordercolor="#dddddd" class="table table-hover table-striped table-responsive">
                                 <tr>

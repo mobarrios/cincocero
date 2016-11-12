@@ -58,7 +58,7 @@
                         </a>
                         <ul class="uk-navbar-nav uk-hidden-small">
                             <li><a href="{!! route('web') !!}">Home</a></li>
-                            <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Torneos</a>
+                            <li class="uk-parent {!! $categoria == 'torneos' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Torneos</a>
                                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                                     <div class="uk-grid uk-dropdown-grid">
                                         <div class="uk-width-1-1">
@@ -67,7 +67,7 @@
                                                 @foreach(\App\Entities\tfc\Tournaments::where('categories_id',$route)->get() as $torneos)
 
                                                     <li>
-                                                        <a href="torneos.html">{!! strtoupper($torneos->name) !!}</a>
+                                                        <a href="{!! route("torneos",[$route,$torneos->id]) !!}">{!! strtoupper($torneos->name) !!}</a>
                                                     </li>
 
                                                 @endforeach
@@ -76,13 +76,13 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="uk-parent uk-active"><a href="{!! route("noticias",$route) !!}">Noticias</a></li>
-                            <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route("web.sedes",$route) !!}">Sedes</a></li>
-                            <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route('galeria',$route) !!}">Galerias</a></li>
-                            <li  class="uk-parent"><a href="{!! route('reglamento',$route) !!}">Reglamento</a></li>
-                            <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route('inscripcion',$route) !!}">Inscripcion</a></li>
+                            <li class="uk-parent {!! $categoria == 'noticias' ? " uk-active" : "" !!}"><a href="{!! route("noticias",$route) !!}">Noticias</a></li>
+                            <li class="uk-parent {!! $categoria == 'sedes' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route("web.sedes",$route) !!}">Sedes</a></li>
+                            <li class="uk-parent {!! $categoria == 'galerias' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route('galeria',$route) !!}">Galerias</a></li>
+                            <li  class="uk-parent {!! $categoria == 'reglamento' ? " uk-active" : "" !!}"><a href="{!! route('reglamento',$route) !!}">Reglamento</a></li>
+                            <li class="uk-parent {!! $categoria == 'inscripcion' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route('inscripcion',$route) !!}">Inscripcion</a></li>
                             
-                            <li class="uk-parent"><a href="{!! route('contactanos',$route) !!}">Contactanos</a>
+                            <li class="uk-parent {!! $categoria == 'contactanos' ? " uk-active" : "" !!}"><a href="{!! route('contactanos',$route) !!}">Contactanos</a>
                             </li>
                         </ul>
                         <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
@@ -113,7 +113,8 @@
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
                 <li><a href="{!! route('web') !!}">Home</a></li>
-                <li class="uk-active"><span>Noticias</span></li>
+                {!! $categoria == "torneos" ? "<li><a href='javascript:void(0)'>".ucfirst($categoria)."</a></li>" : "" !!}
+                <li class="uk-active"><span>{!! $categoria == "torneos" ? ucfirst($torneo->name) : $categoria !!}</span></li>
             </ul>
         </div>
 

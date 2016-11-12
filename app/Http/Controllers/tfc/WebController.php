@@ -35,6 +35,15 @@ class WebController extends Controller {
     protected $data;
 
     public function __construct(Route $route){
+        $categorias = ["sedes","sedesDetalle","galeria","noticias","reglamento","inscripcion","contactanos","torneos"];
+
+        $this->data['categoria'];
+
+        foreach ($categorias as $cat){
+            if(strpos($route->uri(),$cat))
+                $this->data['categoria'] = $cat;
+        }
+
         $this->data['route'] = $route->getParameter('categoriaId');
         if(!Session::has('categoria'))
         {
@@ -48,6 +57,64 @@ class WebController extends Controller {
         $this->data['categories'] = Categories::all();
 
         return view('tfc/web/new/index')->with($this->data);
+    }
+
+    public function Torneos($categoria,$torneos,FasesWeek $fasesWeek, Fases $fases,$fase = null)
+    {
+        $this->data["torneo"] = Tournaments::find($torneos);
+        $this->data["fases"] = Fases::where("tournaments_id",$torneos)->get();
+
+        if($fase)
+            $this->data['faseActual'] = $fases->find($fase);
+        else
+            $this->data['faseActual'] = $this->data["fases"]->first();
+
+        $fasesWeeks  = $fasesWeek->where('fases_id',$this->data['faseActual']->id);
+
+//        RESULTADOS
+        $this->data['resultado']  = $fasesWeek->where('fases_id',$this->data['faseActual']->id)->where('active',1)->get();
+
+        $this->data['tablas'] =  Tablas::where('fases_id',$this->data['faseActual']->id)
+            ->orderBy('pts','DESC')
+            ->orderBy('pj','DESC')
+            ->orderBy('dg','DESC')
+            ->get();
+//        FIN RESULTADOS
+
+//        FIXTURE
+        $this->data['fasesWeek'] = $fasesWeeks->get();
+//        FIN FIXTURE
+
+//        FECHA ACTUAL
+        $this->data['faseWeek'] = $fasesWeeks->where('active',1)->first();
+//        FIN FECHA ACTUAL
+
+//        PROXIMA FECHA
+        $this->data['faseWeekProxima']  = $fasesWeek->where('fases_id',$this->data['faseActual']->id+1)
+            ->where('active',1)
+            ->first();
+//        FIN PROXIMA FECHA
+
+//        GOLEADORES
+        $q = "SELECT SUM(matches_details.goals) AS goals, CONCAT(players.last_name,' ',players.name) as players, teams.name as
+teams FROM matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id =
+teams.id JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON matches.fases_week_id =
+fases_week.id WHERE fases_week.fases_id = ? AND goals != 0
+GROUP BY matches_details.players_id ORDER BY goals DESC";
+
+        $this->data['goleadores'] = DB::select($q,array($this->data["faseActual"]->id));
+//        FIN GOLEADORES
+
+//        FAIRPLAY
+        $fairplay = "SELECT SUM(yellow) as yellow,SUM(red) as red,teams.name as name,SUM(yellow) + (SUM(red)*3) as puntos FROM
+matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id = teams.id
+JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases_week.id = matches.fases_week_id JOIN
+ fases ON fases_week.fases_id= fases.id WHERE fases.id = ? GROUP BY players.teams_id ORDER BY puntos DESC";
+
+        $this->data['fairplay'] = DB::select($fairplay,array($this->data["faseActual"]->id));
+//        FIN FAIRPLAY
+
+        return view('tfc/web/new/torneos')->with($this->data);
     }
 
     public function Reglamento()
@@ -69,11 +136,11 @@ class WebController extends Controller {
         return view('tfc/web/new/sedes')->with($this->data);
     }
 
-    public function SedeDetalle($id = null)
+    public function SedeDetalle($categoria,$id = null)
     {
-        $data['sedes'] = Sedes::find($id);
+        $this->data['sedes'] = Sedes::find($id);
 
-        return view('tfc/web/sede_detalle')->with($data);
+        return view('tfc/web/new/sede_detalle')->with($this->data);
     }
 
     public function Galeria(Galleries $galeria)
@@ -128,26 +195,8 @@ class WebController extends Controller {
         return view('tfc/web/principal')->with($data);
     }
 
-    public function Resultado($categoriaId,$id,Tablas $tablas,FasesWeek $fasesWeek,Fases $fases,Categories $categories)
+    public function Resultado($categoriaId,$id, FasesWeek $fasesWeek,Fases $fases,Categories $categories)
     {
-        /*
-        $arr_teams = [];
-        $data['teams']  = Teams::whereHas('FasesTeams', function($q) use ($id){
-                                    $q->where('fases_id',$id);
-                                        })->orderBy('name','ASC')
-                                    ->get();
-
-        foreach($data['teams']  as $t)
-        {
-            $tabla = $tablas->where('fases_id',$id)->where('teams_id',$t->id);
-
-           // echo $tabla->count();
-       }
-      //  return;
-        */
-        //$data['arr_teams'] = $arr_teams;
-        //$data['tablas']    = $tablas->where('fases_id',$id);
-
         $data['resultado']  = $fasesWeek->where('fases_id',$id)->where('active',1)->get();
 
         $data['tablas'] =  Tablas::where('fases_id',$id)
@@ -158,8 +207,6 @@ class WebController extends Controller {
 
         $data['faseActual'] = $fases->find($id);
         $data['categoriaActual'] = $categories->find($categoriaId);
-        // setcookie("fase",$id);
-        // setcookie("categoria",$fases->find($id)->tournaments->categories);
 
         return view('tfc/web/resultado')->with($data);
     }
