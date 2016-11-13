@@ -215,7 +215,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="copyrights">Copyright � 2016 <a href="http://www.thefutbolcompany.com">Thefutbolcompany.com</a>. Derechos Reservados.</div>
+                                    <div class="copyrights">Copyright © 2016 <a href="http://www.thefutbolcompany.com">Thefutbolcompany.com</a>. Derechos Reservados.</div>
                                     <div class="clear"></div>
                                 </div>
                             </div>

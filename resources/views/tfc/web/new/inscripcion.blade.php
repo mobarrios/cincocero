@@ -15,7 +15,7 @@
         }
 
         .mt60{
-            margin-top:120px;
+            margin-top:150px;
         }
 
         .mb180{
@@ -34,6 +34,20 @@
 
         .element-input{
             margin-right:-22px;
+        }
+
+        .image {
+            text-align:left !important;
+        }
+
+        .image span {
+            width: 10% !important;
+            display: block;
+            float: left;
+        }
+
+        .image input{
+            width: 90% !important;;
         }
 
     </style>
@@ -149,12 +163,11 @@
                                                             <div class="element-input">
                                                                 <label class="title"></label>
                                                                 <div class="item-cont">
-                                                                    <label class="large" >
-                                                                        <div class="button">Examinar</div>
-                                                                        {!! Form::file('image',['class'=>'input-md form-control']) !!}
-                                                                        <div class="file_text">No se seleccionó foto</div>
+                                                                    <div class="image">
+                                                                        <span class="pull-left" for="image">Foto:</span>
+                                                                        {!! Form::file('image',['class'=>'large pull-left']) !!}
                                                                         <span class="icon-place"></span>
-                                                                    </label>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="element-input">

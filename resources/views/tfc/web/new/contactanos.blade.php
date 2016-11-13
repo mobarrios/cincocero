@@ -12,7 +12,8 @@
                                         <div class="contact-title">
                                             <h2>ENVIANOS TU MENSAJE</h2>
                                         </div>
-                                        <div class="contact-text">Completa los datos con * para poder enviarnos tu consulta, pronto alguien se contactar� </div>
+                                        <div class="contact-text">Completa los datos con * para poder enviarnos tu consulta, pronto alguien se contactará
+                                        </div>
                                     </div>
                                     <div class="uk-width-1-1">
                                         <div class="contact-socials-wrap">
@@ -36,7 +37,7 @@
                                                   info@thefutbolcompany.com
                                                 </a>
                                             </div>
-                                            <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N� 3680 - 3ero B</div>
+                                            <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N° 3680 - 3ero B</div>
                                         </div>
                                     </div>
                                     <div class="uk-width-medium-1-3 uk-panel">
@@ -49,7 +50,7 @@
                                                     sergio@thefutbolcompany.com
                                                 </a>
                                             </div>
-                                            <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N� 3680 - 3ero B</div>
+                                            <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N° 3680 - 3ero B</div>
                                         </div>
                                     </div>
                                     <div class="uk-width-medium-1-3 uk-panel">
@@ -62,7 +63,7 @@
                                                    mauro@thefutbolcompany.com
                                                 </a>
                                             </div>
-                                            <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N� 3680 - 3ero B</div>
+                                            <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N° 3680 - 3ero B</div>
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +91,7 @@
                                                     <div class="item mail"><span class="icon"><i class="uk-icon-envelope"></i></span><a href="mailto:info@thefutbolcompany.com">info@thefutbolcompany.com</a>
                                                         
                                                     </div>
-                                                    <div class="item location"><span class="icon"><i class="uk-icon-map-marker"></i></span>Jose Cubas N� 3680 - 3ero B</div>
+                                                    <div class="item location"><span class="icon"><i class="uk-icon-map-marker"></i></span>Jose Cubas N° 3680 - 3ero B</div>
                                                 </div>
                                             </div>
                                             <div class="uk-width-medium-5-10 uk-width-small-1-1 contact-right-wrap">

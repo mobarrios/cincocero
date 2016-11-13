@@ -1,5 +1,18 @@
 @extends('tfc.web.new.template')
 
+@section("css")
+    <style>
+        td a{
+            color:#ffc722;
+        }
+
+        td a:hover{
+            color:white;
+        }
+
+    </style>
+@endsection
+
 @section('content')
 
 
@@ -42,7 +55,7 @@
                                                         @forelse($tablas as $tabla)
                                                             <tr>
                                                                 <td><img src="{!! $tabla->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35"></td>
-                                                                <td>{!! $tabla->teams->name or '' !!}</td>
+                                                                <td><a class="white" href="{!! route("equipo",[$route,$tabla->teams->id]) !!}">{!! $tabla->teams->name or '' !!}</a></td>
                                                                 <td>{!! $tab->pts or '0' !!}</td>
                                                                 <td>{!! $tab->pj or '0' !!}</td>
                                                                 <td>{!! $tab->pg or '0' !!}</td>

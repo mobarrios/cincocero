@@ -14294,7 +14294,7 @@ q {
 .map-wrap .contact-form label {
   display: none;
 }
-.map-wrap .contact-form input[type='text'] {
+.map-wrap .contact-form input[type='text'], .map-wrap .contact-form input[type='password'], .map-wrap .contact-form select, .map-wrap .contact-form input[type='file'] {
   margin: 0;
   width: 370px;
   height: 38px;
