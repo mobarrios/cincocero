@@ -55,7 +55,7 @@
                                                         @forelse($tablas as $tabla)
                                                             <tr>
                                                                 <td><img src="{!! $tabla->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35"></td>
-                                                                <td><a class="white" href="{!! route("equipo",[$route,$tabla->teams->id]) !!}">{!! $tabla->teams->name or '' !!}</a></td>
+                                                                <td><a class="white" href="{!! route("new.equipo",[$route,$tabla->teams->id]) !!}">{!! $tabla->teams->name or '' !!}</a></td>
                                                                 <td>{!! $tab->pts or '0' !!}</td>
                                                                 <td>{!! $tab->pj or '0' !!}</td>
                                                                 <td>{!! $tab->pg or '0' !!}</td>
@@ -199,7 +199,7 @@
                                                             </div>
                                                             @if($partido->canchas_id != null)
                                                                 <div class="va-view-wrap">
-                                                                    <a class="view-article" href="{!! route('sedeDetalle',[$route,$partido->canchas->sedes->id]) !!}">{!! $partido->canchas->sedes->name !!}</a>
+                                                                    <a class="view-article" href="{!! route('new.sedeDetalle',[$route,$partido->canchas->sedes->id]) !!}">{!! $partido->canchas->sedes->name !!}</a>
                                                                 </div>
                                                             @endif
                                                         </div>
@@ -415,7 +415,7 @@
                                     @forelse($fases as $fase)
                                         <ul class="">
                                             <li class="item-7">
-                                                <a href="{!! route("torneos",[$route,$torneo->id,$fase->id]) !!}">
+                                                <a href="{!! route("new.torneos",[$route,$torneo->id,$fase->id]) !!}">
                                                 <font color="#ffc722">{!! $fase->name !!}</font>
                                                 </a>
                                             </li>

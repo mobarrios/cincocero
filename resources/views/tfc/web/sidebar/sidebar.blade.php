@@ -5,7 +5,6 @@
     <div class="menu-all-pages-container">
       <ul class="menu" id="menu-all-pages">
         @foreach(\App\Entities\tfc\Tournaments::where('categories_id',$categoriaActual->id)->orderBy('id','des')->get() as $torneo)
-
           @if(strtotime($torneo->to) >= strtotime(date('Y-m-d')))
               <h2 class="widget-title">
                 <div class="categoria-container-xs titulo-categoria-xs" style="border-bottom-color: {{$categoriaActual->color_bottom}};border-top-color: {{$categoriaActual->color_bottom}};border-left-color: {{$categoriaActual->color_bottom}}">

@@ -20,13 +20,13 @@
 
                                                 <div class="name">
                                                     <h4>
-                                                        <a href="{!! route('sedeDetalle',[$route,$sede->id]) !!}">
+                                                        <a href="{!! route('new.sedeDetalle',[$route,$sede->id]) !!}">
                                                             {!! $sede->name !!}
                                                         </a>
                                                     </h4>
                                                 </div>
                                                 <div class="text">
-                                                    <p><a href="{!! route('sedeDetalle',[$route,$sede->id]) !!}">Ver mapa</a></p>
+                                                    <p><a href="{!! route('new.sedeDetalle',[$route,$sede->id]) !!}">Ver mapa</a></p>
                                                 </div>
                                             </div>
                                         </div>

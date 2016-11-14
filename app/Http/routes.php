@@ -25,6 +25,7 @@ use App\Helpers\ImagesHelper;
 //Route::group(['middleware'=>'changeLanguaje'],function(){
 
 require(__DIR__ . '/Routes/tfc/web/WebRoutes.php');
+require(__DIR__ . '/Routes/tfc/web/WebRoutes2.php');
 
 
 //Route::get('web',function(){

@@ -26,7 +26,7 @@
         <p>Seleccione <span class="mes-color">su Torneo</span></p><br>
 
         @foreach($categories as $categoria)
-            <a href="{{ route('noticias',$categoria->id) }}"><img class="img-responsive" src="../../../{{($categoria->images->count() != 0)?$categoria->images->first()->image : ''}}" width="10%">
+            <a href="{{ route('new.noticias',$categoria->id) }}"><img class="img-responsive" src="../../../{{($categoria->images->count() != 0)?$categoria->images->first()->image : ''}}" width="10%">
             </a>
 
         @endforeach

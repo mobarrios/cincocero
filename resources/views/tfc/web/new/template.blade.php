@@ -53,11 +53,11 @@
             <div style="height: 70px;" class="uk-sticky-placeholder">
                 <nav style="margin: 0px;" class="tm-navbar uk-navbar" data-uk-sticky="">
                     <div class="uk-container uk-container-center">
-                        <a class="tm-logo uk-float-left" href="{!! route('web') !!}">
+                        <a class="tm-logo uk-float-left" href="{!! route('new.web') !!}">
                             <img src="assets/web/new/images/club-logo2.png" alt="The Futbol Company" title="logo">
                         </a>
                         <ul class="uk-navbar-nav uk-hidden-small">
-                            <li><a href="{!! route('web') !!}">Home</a></li>
+                            <li><a href="{!! route('new.web') !!}">Home</a></li>
                             <li class="uk-parent {!! $categoria == 'torneos' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Torneos</a>
                                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                                     <div class="uk-grid uk-dropdown-grid">
@@ -67,7 +67,7 @@
                                                 @foreach(\App\Entities\tfc\Tournaments::where('categories_id',$route)->get() as $torneos)
 
                                                     <li>
-                                                        <a href="{!! route("torneos",[$route,$torneos->id]) !!}">{!! strtoupper($torneos->name) !!}</a>
+                                                        <a href="{!! route("new.torneos",[$route,$torneos->id]) !!}">{!! strtoupper($torneos->name) !!}</a>
                                                     </li>
 
                                                 @endforeach
@@ -76,13 +76,13 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="uk-parent {!! $categoria == 'noticias' ? " uk-active" : "" !!}"><a href="{!! route("noticias",$route) !!}">Noticias</a></li>
-                            <li class="uk-parent {!! $categoria == 'sedes' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route("web.sedes",$route) !!}">Sedes</a></li>
-                            <li class="uk-parent {!! $categoria == 'galerias' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route('galeria',$route) !!}">Galerias</a></li>
-                            <li  class="uk-parent {!! $categoria == 'reglamento' ? " uk-active" : "" !!}"><a href="{!! route('reglamento',$route) !!}">Reglamento</a></li>
-                            <li class="uk-parent {!! $categoria == 'inscripcion' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route('inscripcion',$route) !!}">Inscripcion</a></li>
+                            <li class="uk-parent {!! $categoria == 'noticias' ? " uk-active" : "" !!}"><a href="{!! route("new.noticias",$route) !!}">Noticias</a></li>
+                            <li class="uk-parent {!! $categoria == 'sedes' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route("new.sedes",$route) !!}">Sedes</a></li>
+                            <li class="uk-parent {!! $categoria == 'galerias' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route('new.galeria',$route) !!}">Galerias</a></li>
+                            <li  class="uk-parent {!! $categoria == 'reglamento' ? " uk-active" : "" !!}"><a href="{!! route('new.reglamento',$route) !!}">Reglamento</a></li>
+                            <li class="uk-parent {!! $categoria == 'inscripcion' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="{!! route('new.inscripcion',$route) !!}">Inscripcion</a></li>
                             
-                            <li class="uk-parent {!! $categoria == 'contactanos' ? " uk-active" : "" !!}"><a href="{!! route('contactanos',$route) !!}">Contactanos</a>
+                            <li class="uk-parent {!! $categoria == 'contactanos' ? " uk-active" : "" !!}"><a href="{!! route('new.contactanos',$route) !!}">Contactanos</a>
                             </li>
                         </ul>
                         <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
@@ -112,7 +112,7 @@
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="{!! route('web') !!}">Home</a></li>
+                <li><a href="{!! route('new.web') !!}">Home</a></li>
                 {!! $categoria == "torneos" ? "<li><a href='javascript:void(0)'>".ucfirst($categoria)."</a></li>" : "" !!}
                 <li class="uk-active"><span>{!! $categoria == "torneos" ? ucfirst($torneo->name) : $categoria !!}</span></li>
             </ul>
@@ -130,7 +130,7 @@
                         <div class="uk-width-1-1 uk-width-large-1-2">
                             <div class="uk-panel">
                                 <div>
-                                    <a href="{!! route('web') !!}"><img src="assets/web/new/images/logo-white.png" alt="The Futbol Company" title="logo"> </a>
+                                    <a href="{!! route('new.web') !!}"><img src="assets/web/new/images/logo-white.png" alt="The Futbol Company" title="logo"> </a>
                                 </div>
                                 <div class="footer-socials">
                                     <div class="social-top">
@@ -201,17 +201,17 @@
                                 <div class="footer-wrap">
                                     <div class="foot-menu-wrap">
                                         <ul class="nav menu">
-                                            <li class="item-165"><a href="{!! route('web',$route) !!}">Home</a>
+                                            <li class="item-165"><a href="{!! route('new.web',$route) !!}">Home</a>
                                             </li>
-                                            <li class="item-166"><a href="{!! route('reglamento',$route) !!}">Reglamento</a>
+                                            <li class="item-166"><a href="{!! route('new.reglamento',$route) !!}">Reglamento</a>
                                             </li>
-                                            <li class="item-167"><a href="{!! route('noticias',$route) !!}">Noticias</a>
+                                            <li class="item-167"><a href="{!! route('new.noticias',$route) !!}">Noticias</a>
                                             </li>
-                                            <li><a href="{!! route('sedes',$route) !!}">Sedes</a>
+                                            <li><a href="{!! route('new.sedes',$route) !!}">Sedes</a>
                                             </li>
-                                            <li><a href="{!! route('galeria',$route) !!}">Galerias</a>
+                                            <li><a href="{!! route('new.galeria',$route) !!}">Galerias</a>
                                             </li>
-                                             <li><a href="{!! route('contactanos',$route) !!}">Contactanos</a>
+                                             <li><a href="{!! route('new.contactanos',$route) !!}">Contactanos</a>
                                             </li>
                                         </ul>
                                     </div>
