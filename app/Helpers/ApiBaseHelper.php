@@ -13,7 +13,7 @@ class ApiBaseHelper
 
     public function __construct($apiKey,$apiUrlBase)
     {
-        $apiKey = env($apiKey, '');
+        $this->apiKey = env($apiKey, '');
         $this->urlBase = env($apiUrlBase);
         $this->header = [
             'content-type: application/json',
@@ -31,8 +31,12 @@ class ApiBaseHelper
         curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, $method);
 
         # Si tiene parámetros en el body
-        if (count($body) > 0)
+        if (count($body) > 0){
+            $body["apikey"] = $this->apiKey;
+
             curl_setopt($this->curl, CURLOPT_POSTFIELDS, json_encode($body));
+        }
+
 
         # Ejecuto
         $this->httpResultado = $this->_exec();
