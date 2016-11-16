@@ -34,7 +34,6 @@
 
 
                         
-                        {!! dd($faseActual) !!}
                         @foreach($tablas as $tab)
                         {!! dd($tab->teams) !!}
 
