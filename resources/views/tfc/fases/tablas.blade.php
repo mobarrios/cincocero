@@ -26,7 +26,7 @@
             @foreach($tablas as $tabla)
                 <tr>
                     <td>{{$pos}}</td>
-                    <td> </td>
+                    <td>{{$tabla->teams->name}} </td>
 
                     <td><input size="3" class="edit" data-col="pts" data-id="{{$tabla->id}}" type="text" value="{{$tabla->pts}}"></td>
                     <td><input size="3" class="edit" data-col="pj"  data-id="{{$tabla->id}}" type="text" value="{{$tabla->pj}}"></td>
