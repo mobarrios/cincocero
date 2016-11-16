@@ -37,7 +37,7 @@
                         @foreach($tablas as $tab)
 
                           <tr>
-                              <td colspan="2" align="center" class="active"><img src="{!! $tab->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35" alt=""/></td>
+                              <td colspan="2" align="center" class="active"><img src='assets/web/images/teamDefault.png" width="35" height="35" alt=""/></td>
                               <td colspan="2" align="center" class="active"><a href="{{route('equipo',[$categoriaActual->id,$faseActual->id,"1"])}}"></a></td>
                               <td colspan="2" align="center" class="active">{!! $tab->pts or '0' !!}</td>
                               <td colspan="2" align="center" class="active">{!! $tab->pj or '0' !!}</td>
