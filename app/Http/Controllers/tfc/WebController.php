@@ -148,7 +148,7 @@ class WebController extends Controller {
 
         $data['resultado']  = $fasesWeek->where('fases_id',$id)->where('active',1)->get();
 
-        $data['tablas'] =  Tablas::where('fases_id',$id)->where('teams_id','>',0)
+        $data['tablas'] =  Tablas::where('fases_id',$id)
             ->orderBy('pts','DESC')
             ->orderBy('pj','DESC')
             ->orderBy('dg','DESC')

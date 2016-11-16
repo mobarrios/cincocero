@@ -280,7 +280,7 @@ class FasesController extends Controller {
        //     $q->where('fases_id',$fases_id);
        // })->get();
 
-        $this->data['tablas'] =  Tablas::where('fases_id',$fases_id)->whereNotNull('teams_id')
+        $this->data['tablas'] =  Tablas::where('fases_id',$fases_id)
                                 ->orderBy('pts','DESC')
                                 ->orderBy('pj','DESC')
                                 ->orderBy('dg','DESC')
