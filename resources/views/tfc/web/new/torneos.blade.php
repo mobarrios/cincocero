@@ -56,14 +56,14 @@
                                                             <tr>
                                                                 <td><img src="{!! $tabla->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35"></td>
                                                                 <td><a class="white" href="{!! route("new.equipo",[$route,$tabla->teams->id]) !!}">{!! $tabla->teams->name or '' !!}</a></td>
-                                                                <td>{!! $tab->pts or '0' !!}</td>
-                                                                <td>{!! $tab->pj or '0' !!}</td>
-                                                                <td>{!! $tab->pg or '0' !!}</td>
-                                                                <td>{!! $tab->pe or '0' !!}</td>
-                                                                <td>{!! $tab->pp or '0' !!}</td>
-                                                                <td>{!! $tab->gf or '0' !!}</td>
-                                                                <td>{!! $tab->gc or '0' !!}</td>
-                                                                <td>{!! $tab->dg or '0' !!}</td>
+                                                                <td>{!! $tabla->pts or '0' !!}</td>
+                                                                <td>{!! $tabla->pj or '0' !!}</td>
+                                                                <td>{!! $tabla->pg or '0' !!}</td>
+                                                                <td>{!! $tabla->pe or '0' !!}</td>
+                                                                <td>{!! $tabla->pp or '0' !!}</td>
+                                                                <td>{!! $tabla->gf or '0' !!}</td>
+                                                                <td>{!! $tabla->gc or '0' !!}</td>
+                                                                <td>{!! $tabla->dg or '0' !!}</td>
                                                             </tr>
                                                         @empty
                                                             <tr>

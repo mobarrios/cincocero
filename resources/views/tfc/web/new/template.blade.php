@@ -18,7 +18,7 @@
 
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/mootools/1.3.1/mootools-yui-compressed.js'></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&apiKey=AIzaSyBuKekZN1wrg3gv4bo7tPQJm71j-WcXtbM	&sensor=false"></script>
 </head>
 
 <body class="tm-isblog">
@@ -97,8 +97,8 @@
                 <section id="tm-top-a" class="tm-top-a uk-grid uk-grid-collapse" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
                     <div class="uk-width-1-1 uk-row-first">
                         <div class="uk-panel">
-                            <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('images/head-bg02.jpg');">
-                                <img class="uk-invisible" src="assets/web/new/images/head-bg.jpg" alt="" height="290" width="1920">
+                            <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('images/{!! $imgHeader or "head-bg.jpg" !!}');">
+                                <img class="uk-invisible" src="assets/web/new/images/{!! $imgHeader or "head-bg.jpg" !!}" alt="" height="290" width="1920">
                                 <div class="uk-position-cover uk-flex uk-flex-center head-title">
                                     
                                 </div>

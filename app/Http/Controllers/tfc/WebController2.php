@@ -35,14 +35,18 @@ class WebController2 extends Controller {
     protected $data;
 
     public function __construct(Route $route){
-        $categorias = ["sedes","sedesDetalle","galeria","noticias","reglamento","inscripcion","contactanos","torneos","equipo"];
+        $categorias = ["sedes" => "head-bg03.jpg","sedesDetalle" => "head-bg03.jpg","galeria" => "head-bg03.jpg","noticias" => "head-bg02.jpg","reglamento" => "head-bg04.jpg","inscripcion" => "head-bg05.jpg","contactanos" => "head-bg06.jpg","torneos" => "head-bg07.jpg","equipo" => "head-bg03.jpg"];
 
         $this->data['categoria'];
+        $this->data['imgHeader'];
 
-        foreach ($categorias as $cat){
-            if(strpos($route->uri(),$cat))
+        foreach ($categorias as $cat => $imgHeader){
+            if(strpos($route->uri(),$cat)){
                 $this->data['categoria'] = $cat;
+                $this->data['imgHeader'] = $imgHeader;
+            }
         }
+
 
         $this->data['route'] = $route->getParameter('categoriaId');
         if(!Session::has('categoria'))
@@ -63,7 +67,6 @@ class WebController2 extends Controller {
     {
         $this->data["torneo"] = Tournaments::find($torneos);
         $this->data["fases"] = Fases::where("tournaments_id",$torneos)->get();
-
         if($fase)
             $this->data['faseActual'] = $fases->find($fase);
         else
@@ -80,6 +83,7 @@ class WebController2 extends Controller {
             ->orderBy('dg','DESC')
             ->get();
 //        FIN RESULTADOS
+
 
 //        FIXTURE
         $this->data['fasesWeek'] = $fasesWeeks->get();
