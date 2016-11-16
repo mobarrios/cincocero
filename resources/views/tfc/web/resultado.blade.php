@@ -38,7 +38,7 @@
 
                           <tr>
                               <td colspan="2" align="center" class="active"><img src="" width="35" height="35" alt=""/></td>
-                              <td colspan="2" align="center" class="active"><a href="{{route('equipo',[$categoriaActual->id,$faseActual->id,$tab->teams->id])}}">{!! $tab->teams->name or '' !!}</a></td>
+                              <td colspan="2" align="center" class="active"><a href="">{!! $tab->teams->name or '' !!}</a></td>
                               <td colspan="2" align="center" class="active">{!! $tab->pts or '0' !!}</td>
                               <td colspan="2" align="center" class="active">{!! $tab->pj or '0' !!}</td>
                               <td colspan="2" align="center" class="active">{!! $tab->pg or '0' !!}</td>
