@@ -33,8 +33,10 @@
                         </tr>
 
 
-
+                        {!! dd($categoriaActual) !!}
+                        {!! dd($faseActual) !!}
                         @foreach($tablas as $tab)
+                        {!! dd($tab->teams) !!}
 
                           <tr>
                               <td colspan="2" align="center" class="active"><img src="{!! $tab->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35" alt=""/></td>
