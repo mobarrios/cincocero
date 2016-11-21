@@ -68,7 +68,7 @@
                                                     @if(strtotime($torneo->to) >= strtotime(date('Y-m-d')))
 
                                                     <li>
-                                                        <a href="{!! route("new.torneos",[$route,$torneo->id]) !!}">{!! strtoupper($torneos->name) !!}</a>
+                                                        <a href="{!! route("new.torneos",[$route,$torneo->id]) !!}">{!! strtoupper($torneo->name) !!}</a>
                                                     </li>
                                                     @endif
                                                 @endforeach
