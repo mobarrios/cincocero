@@ -58,18 +58,19 @@
                         </a>
                         <ul class="uk-navbar-nav uk-hidden-small">
                             <li><a href="{!! route('new.web') !!}">Home</a></li>
-                            <li class="uk-parent {!! $categoria == 'torneos' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Torneos</a>
+                            <li class="uk-parent {!! $categoria == 'torneos' ? " uk-active" : "" !!}" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="javascript:void(0)">Torneos</a>
                                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                                     <div class="uk-grid uk-dropdown-grid">
                                         <div class="uk-width-1-1">
                                             <ul class="uk-nav uk-nav-navbar">
 
-                                                @foreach(\App\Entities\tfc\Tournaments::where('categories_id',$route)->get() as $torneos)
+                                                @foreach(\App\Entities\tfc\Tournaments::where('categories_id',$route)->orderBy('id','des')->get() as $torneo)
+                                                    @if(strtotime($torneo->to) >= strtotime(date('Y-m-d')))
 
                                                     <li>
                                                         <a href="{!! route("new.torneos",[$route,$torneos->id]) !!}">{!! strtoupper($torneos->name) !!}</a>
                                                     </li>
-
+                                                    @endif
                                                 @endforeach
                                             </ul>
                                         </div>

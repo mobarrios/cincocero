@@ -14,7 +14,7 @@
                                             <div class="wrapper">
                                                 <div class="img-wrap uk-flex-wrap-top">
                                                     <a href="#">
-                                                    <img src="{!! $noticia->Images->first()->image or '' !!}" class="img-polaroid" alt="">
+                                                    <img src="{!! $noticia->Images->first()->image or 'assets/web/images/noticiasDefault.jpg' !!}" class="img-polaroid" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="info uk-flex-wrap-middle">
