@@ -11,8 +11,9 @@ class MailChimpHelper extends ApiBaseHelper
 
     public function AddNewMember($listId,$email){
         $datos = ["status" => "subscribed","language" => "es_ES","email_address" => $email];
-        $this->call($this->urlBase."/lists/".$listId."/members","post",$datos);
+        $this->call($this->urlBase."/lists/".$listId."/members","get",$datos);
 
+        
         return $this->getResultado();
     }
 

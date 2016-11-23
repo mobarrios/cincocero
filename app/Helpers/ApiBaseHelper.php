@@ -13,17 +13,18 @@ class ApiBaseHelper
 
     public function __construct($apiKey,$apiUrlBase)
     {
-        $apiKey = env($apiKey, '');
-        $this->urlBase = env($apiUrlBase);
+        $apiKey = env('API_MAILCHIMP_KEY');
+        $this->urlBase =  env('API_MAILCHIMP_URL');
         $this->header = [
             'content-type: application/json',
-            'apikey: ' .$apiKey
+            'user:'.$apiKey,
         ];
 
     }
 
     public function call($url = '', $method = 'GET', Array $body = [])
     {
+
         # Abro conexión
         $this->_init($url);
 
@@ -71,6 +72,7 @@ class ApiBaseHelper
         curl_setopt($this->curl, CURLOPT_SSL_VERIFYPEER, false);
         //
         curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
+
     }
 
 
