@@ -82,4 +82,5 @@
 @include('motonet.web.new.index.nuestrasMarcas')
         <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
 
+@include('motonet/web/new/index/leyenda')
 @endsection

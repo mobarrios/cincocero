@@ -151,7 +151,12 @@ class webController extends Controller {
         $this->data['publications'] = Publications::where('destacado',1)->where('private','!=',1)->get();
         $this->data['brands']       = Brands::all();
         $this->data['branches']     = Branches::all();
-
+        $this->data['accesorios']   = Publications::where('private','!=',1)
+            ->whereHas('models', function ($q){
+                $q->whereHas('categories', function ($q){
+                    $q->where('categories.id','14');
+                });
+            })->get();
 
         return view('motonet/web/new/index')->with($this->data);
     }

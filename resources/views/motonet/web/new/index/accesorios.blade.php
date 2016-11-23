@@ -2,6 +2,10 @@
     <div class="container">
         <div class="terms-conditions-page inner-bottom-sm">
             <h3 class="section-title">Accesorios</h3>
+
+            @include('motonet.web.new.index.accesoriosList')
+
+
             <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
                 <ul class="nav nav-tabs" id="myTabs" role="tablist">
                     <li role="presentation" class="active">

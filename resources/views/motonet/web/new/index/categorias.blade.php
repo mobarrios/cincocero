@@ -7,6 +7,9 @@
             <li class="menu-item">
                 <a href="{!! 'buscar/categorias/motos/1'!!}">Motos</a>
             </li><!-- /.menu-item -->
+            <li class="menu-item">
+                <a href="{!! 'buscar/categorias/accesorios/14'!!}">Accesorios</a>
+            </li><!-- /.menu-item -->
 
             <li class="menu-item">
                 <a href="{!! 'buscar/categorias/scooters/2' !!}">Scooters</a>
