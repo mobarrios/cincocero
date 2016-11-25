@@ -81,20 +81,26 @@ class webController extends Controller {
         $data['telefono'] = $request->telefono;
         $data['comentario'] = $request->comentario;
 
-//        Mail::queue('emails.contact', $data , function($message) use($data)
-//        {
-//            $message->from($data['from']);
-//            $message->to('info@motonet.com.ar')->subject('Desde MotoNet.com.ar')
-//                ->replyTo($data['from'], $data['nombre']);
-//        });
+        Mail::queue('emails.contact', $data , function($message) use($data)
+        {
+            $message->from($data['from']);
+            $message->to('info@motonet.com.ar')->subject('Desde MotoNet.com.ar')
+                ->replyTo($data['from'], $data['nombre']);
+        });
 
-        dd($mailChimpHelper->AddNewMember(env("MAILCHIMP_LIST_CONTACT"),$request->email));
+        $status = 'subscribed';
 
+        $mailchimpResponse = $mailChimpHelper->members($request->email,$status,env('MAILCHIMP_LIST_CONTACT'),'PUT',['FNAME' => $request->name,'LNAME' => '']);
 
+        if($mailchimpResponse['status'] == $status)
+            return redirect()->back()->withErrors("Mensaje enviado correctamente!.");
+        else
+            return redirect()->back()->withErrors("No se pudo enviar correctamente su mail, intente nuevamente");
 
-        return redirect()->back()->withErrors("Mensaje enviado correctamente!.");
 
     }
+
+
 
     public function resumenNueva($id){
 

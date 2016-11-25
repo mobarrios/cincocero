@@ -13,16 +13,15 @@ class ApiBaseHelper
 
     public function __construct($apiKey,$apiUrlBase)
     {
-<<<<<<< HEAD
+
         $apiKey = env('API_MAILCHIMP_KEY');
         $this->urlBase =  env('API_MAILCHIMP_URL');
-=======
+
         $this->apiKey = env($apiKey, '');
         $this->urlBase = env($apiUrlBase);
->>>>>>> 9f15d44f2aa3ce3c00bddb74e8769d31503a2311
+
         $this->header = [
-            'content-type: application/json',
-            'user:'.$apiKey,
+            'content-type: application/json'
         ];
 
     }

@@ -2,19 +2,38 @@
 namespace App\Helpers;
 
 
-class MailChimpHelper extends ApiBaseHelper
+class MailChimpHelper
 {
-    public function __construct($apiKey = null, $apiUrlBase = null)
+    public function __construct()
     {
-        parent::__construct("API_MAILCHIMP_KEY", "API_MAILCHIMP_URL");
+        $this->apiKey = env('API_MAILCHIMP_KEY');
+        $this->urlBase =  env('API_MAILCHIMP_URL');
+
     }
 
-    public function AddNewMember($listId,$email){
-        $datos = ["status" => "subscribed","language" => "es_ES","email_address" => $email];
-        $this->call($this->urlBase."/lists/".$listId."/members","get",$datos);
+    public function members( $email, $status, $list_id, $method, $merge_fields = array('FNAME' => '','LNAME' => '') ){
 
-        
-        return $this->getResultado();
+        $data = array(
+            'apikey'        => $this->apiKey,
+            'email_address' => $email,
+            'status'        => $status,
+            "language"      => "es_ES",
+            'merge_fields'  => $merge_fields
+        );
+        $mch_api = curl_init(); // initialize cURL connection
+
+        curl_setopt($mch_api, CURLOPT_URL, 'https://' . substr($this->apiKey,strpos($this->apiKey,'-')+1) . '.api.mailchimp.com/3.0/lists/' . $list_id . '/members/' . md5(strtolower($data['email_address'])));
+        curl_setopt($mch_api, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: Basic '.base64_encode( 'user:'.$this->apiKey )));
+        curl_setopt($mch_api, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
+        curl_setopt($mch_api, CURLOPT_RETURNTRANSFER, true); // return the API response
+        curl_setopt($mch_api, CURLOPT_CUSTOMREQUEST, $method); // method PUT
+        curl_setopt($mch_api, CURLOPT_TIMEOUT, 10);
+        curl_setopt($mch_api, CURLOPT_POST, true);
+        curl_setopt($mch_api, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($mch_api, CURLOPT_POSTFIELDS, json_encode($data) ); // send data in json
+
+        $result = curl_exec($mch_api);
+        return json_decode($result, true);
     }
 
 }
