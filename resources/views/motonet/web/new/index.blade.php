@@ -83,4 +83,5 @@
         <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
 
 @include('motonet/web/new/index/leyenda')
+
 @endsection

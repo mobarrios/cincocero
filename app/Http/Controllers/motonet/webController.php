@@ -415,6 +415,18 @@ class webController extends Controller {
 
     }
 
+    public function newsletter(Request $request,MailChimpHelper $mailChimpHelper){
+        $status = 'subscribed';
+
+        $mailchimpResponse = $mailChimpHelper->members($request->email,$status,env('MAILCHIMP_LIST_NEWSLETTER'),'PUT');
+
+        if($mailchimpResponse['status'] == $status)
+             $msj = 'ok';
+        else
+            $msj = 'error';
+
+        return $msj;
+    }
 
     public function productUpdate(){
 

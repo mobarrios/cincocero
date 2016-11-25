@@ -69,7 +69,20 @@
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+    <style>
 
+        .nav-tabs-custom > .nav-tabs > li > a.text-muted {
+            color: #999;
+        }
+
+        #modal .modalOk,#modal .modalError{
+            display: none;
+        }
+
+        #modal .modalOk h3,#modal .modalOk h3 small,#modal .modalError h3,#modal .modalError h3 small{
+            color: white !important;
+        }
+    </style>
     @yield('css')
     <!-- Favicon
     <link rel="shortcut icon" href="assets/unicase/images/favicon.ico">
@@ -128,6 +141,26 @@
     </div><!-- /.container -->
 </div><!-- /#top-banner-and-menu -->
 
+
+
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="background-image: url('assets/web/img/modal.jpg');backgound-size: cover;">
+                    <div class="modalOk">
+                        <img src="{!! asset('assets/web/img/logo.png') !!}" alt="logo" width="250" class="center-block">
+                        <h3 class="text-center">Muchas gracias <br>por suscribirse a nuestro newsletter</h3>
+                        <h3 class="text-center"><small>Estaremos en contacto para comentarle sobre novedades</small></h3>
+                    </div>
+                    <div class="modalError">
+                        <img src="{!! asset('assets/web/img/logo.png') !!}" alt="logo" width="250" class="center-block">
+                        <h3 class="text-center">Hubo un error</h3>
+                        <h3 class="text-center"><small>Por favor volvé a intentarlo.</small></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {{--<ul id="messages"></ul>--}}
 {{--<form>--}}
@@ -212,7 +245,6 @@
         else{
             $('#main-header').removeClass("sticky");
         }
-        console.log("dasdasdsa");
     });
 //    $(window).bind("load", function() {
 //        $('.show-theme-options').delay(1000).trigger('click');
@@ -313,6 +345,50 @@
             }
         });*/
 </script>
+
+    <script>
+
+
+        $('#Newsletter').on('submit',function(ev){
+            ev.preventDefault();
+            var btn = $(this).find('button');
+            btn.prop('disabled',true);
+            var ruta = $(this).attr('action');
+            var mail = $(this).find('input[name="email"]').val();
+
+            if(mail == ""){
+                btn.prop('disabled',false);
+                return false;
+            }
+
+            $.ajax({
+                url : ruta,
+                method : "POST",
+                data : {'email' : mail},
+                success : function(data){
+                    console.log(data)
+
+                    if(data == "error"){
+                        $('.modalError').toggle();
+                    }else{
+                        $('.modalOk').toggle();
+                    }
+
+                    $('#modal').modal().show();
+                    btn.prop('disabled',false);
+                }
+
+            });
+
+
+        });
+
+        $('#modal').on('hidden.bs.modal', function (e) {
+            $('.modalError').css('display','none');
+            $('.modalOk').css('display','none');
+        })
+
+    </script>
 @yield('js')
 </body>
 </html>
