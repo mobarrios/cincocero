@@ -26,9 +26,6 @@
     </script>
 @endsection
 
-@section('promos')
-    @include('motonet.web.new.index.mainPromos')
-@endsection
 
 @section('sideContent')
     @include('motonet.web.new.index.slider')

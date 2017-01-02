@@ -89,6 +89,7 @@ class ModelsController extends Controller {
     }
     public function postNew(Request $request, ImagesHelper $image)
     {
+
         //if in controller custom
         // $request = $this->requestCustom($request);
 
