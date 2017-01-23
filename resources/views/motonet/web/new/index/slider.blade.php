@@ -41,10 +41,10 @@
                             <i class="icon fa fa-dollar"></i>
                         </div>
                         <div class="col-xs-10">
-                            <h4 class="info-box-heading green">Precios.</h4>
+                            <h4 class="info-box-heading green">Financiación</h4>
                         </div>
                     </div>
-                    <h6 class="text">Tenemos precios inigualables.</h6>
+                    <h6 class="text">Con tarjetas de crédito o dni.</h6>
                 </div>
             </div><!-- .col -->
 
@@ -66,13 +66,13 @@
                 <div class="info-box">
                     <div class="row">
                         <div class="col-xs-2">
-                            <i class="icon fa fa-gift"></i>
+                            <img src="assets/web/img/callcenter.png" width="38" alt="" style="opacity: .8;">
                         </div>
                         <div class="col-xs-10">
-                            <h4 class="info-box-heading red">Comunidad</h4>
+                            <h4 class="info-box-heading red">Atención</h4>
                         </div>
                     </div>
-                    <h6 class="text">Obtene beneficios Especiales</h6>
+                    <h6 class="text">El mejor servicio post-venta</h6>
                 </div>
             </div><!-- .col -->
         </div><!-- /.row -->

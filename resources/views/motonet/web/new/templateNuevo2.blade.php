@@ -82,7 +82,24 @@
         #modal .modalOk h3,#modal .modalOk h3 small,#modal .modalError h3,#modal .modalError h3 small{
             color: white !important;
         }
+
+
+        #ayuda{
+            width: 100%;
+            background-color: #1e6aa2;
+            color: white !important;
+            position: fixed;
+            top: 0;
+            z-index:1000;
+        }
+
+        #ayuda>p{
+            padding: 9px 0 0 0;
+        }
+
+
     </style>
+
     @yield('css')
     <!-- Favicon
     <link rel="shortcut icon" href="assets/unicase/images/favicon.ico">
@@ -107,7 +124,14 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+
+
+    <div id="ayuda">
+        <p class="center-block text-center"><b>¿Necesitás ayuda?</b> Llamanos al 0810-333-6686</p>
+    </div>
+
 <header class="header-style-1">
+
     @include('motonet.web.new.index.mainHeader')
 
     @include('motonet/web/new/navBar')
