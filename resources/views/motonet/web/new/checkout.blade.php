@@ -143,9 +143,11 @@
                         <div class="ibox-content">
                             <h3>Total</h3>
                             @foreach($publication->PayMethod as $pm)
-                                <label><input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{$publication->price + ($publication->price * $pm->porcent) /100 }}" > {{$pm->method}} {{$pm->modality}}
+                                <label><input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{$publication->price + ($publication->price * $pm->porcent) /100 }}" > {{$pm->method}}
+                                    {{--{{$pm->modality}}--}}
                                     @if($pm->modality != "")
-                                        de <strong>$ {!! round((intval($publication->price + ($publication->price * $pm->porcent) /100)  / $pm->coutas),2,PHP_ROUND_HALF_UP) !!}
+                                        {{--de--}}
+                                        <strong>$ {!! round((intval($publication->price + ($publication->price * $pm->porcent) /100))) !!}
                                         </strong>
                                     @else
                                         <strong>$ {!! $publication->price + ($publication->price * $pm->porcent) /100 !!}
@@ -163,10 +165,13 @@
                             <h3>Seña</h3>
                             @foreach($publication->PayMethod as $pm)
                                 <label>
-                                    <input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100}}" > {{$pm->method}} {{$pm->modality}}
+                                    <input required="required" type="radio" name="pay_method" value="{{$pm->method}}_{{round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100}}" > {{$pm->method}}
+                                    {{--{{$pm->modality}}--}}
                                     @if($pm->modality != "")
-                                        de <strong>
-                                            $ {!! round((round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100) / (intval(str_replace(" cuotas","",$pm->modality))),2,PHP_ROUND_HALF_UP) !!}
+                                        {{--de --}}
+                                        <strong>
+                                            $ {!! round((round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100)) !!}
+                                            {{--/ (intval(str_replace(" cuotas","",$pm->modality))),2,PHP_ROUND_HALF_UP)--}}
                                     @else
                                                 <strong>$ {!! round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP)+ (round((intval($publication->price)  * 5  / 100),0,PHP_ROUND_HALF_UP) * $pm->porcent) /100!!}
 
