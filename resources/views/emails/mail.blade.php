@@ -186,11 +186,6 @@
                     <td><h3>Tel. / Cel.:</h3> </td>
                     <td>{{$client_phone}} {{$client_cell_phone}} </td>
                 </tr>
-                <tr>
-                    <td><h3>Diferencia a pagar:</h3> </td>
-                    <td><span style="color:#cc3c46;">$ {{$publication_price - $operation_amount}}</span></td>
-                </tr>
-
             </table>
 
         </div>
