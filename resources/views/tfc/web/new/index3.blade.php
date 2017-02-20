@@ -18,40 +18,21 @@
 </head>
 
 <body class="uk-height-1-1 uk-vertical-align uk-text-center tt-offline">
-    <div class="offline-logo">
-        <div class="wrap"></div>
+    <div class="offline-logo" style="margin-top: 150px;">
+        <div class="wrap">
+            <img src="../../../images/logo-white.png" alt="The Futbol Company">
+        </div>
     </div>
     <div class="uk-panel uk-width-1-1 uk-panel-box uk-vertical-align-middle message-offline uk-container-center">
         <div id="system-message-container"></div>
-
-        <img src="../../../images/logo-white.png" alt="The Futbol Company" width="30%">
-        <br><br><br><br><font size="4"><p>Selecciona <span class="mes-color">tu Torneo</span></p></font><br>
-
-
-
-
-        <table align="center" width="50%" border="0" class="table">
-          <tbody>
-            <tr>
-              <td><a href="{!! route('new.torneos',[5,27]) !!}"><img src="../../../images/copa01.png" alt="The Futbol Company"></a></td>
-              <td><a href="{!! route('new.torneos',[5,25]) !!}"><img src="../../../images/copa02.png" alt="The Futbol Company"></a></td>
-              <td><a href="{!! route('new.torneos',[5,24]) !!}"><img src="../../../images/copa03.png" alt="The Futbol Company"></a></td>
-              <td><a href="{!! route('new.torneos',[5,26]) !!}"><img src="../../../images/copa04.png" alt="The Futbol Company"></a></td>
-              <td><a href="{!! route('new.torneos',[5,29]) !!}"><img src="../../../images/copa05.png" alt="The Futbol Company"></a></td>
-              <td><a href="{!! route('new.torneos',[5,28]) !!}"><img src="../../../images/copa06.png" alt="The Futbol Company"></a></td>
-            </tr>
-            <tr>
-              <td style="font-size:14px;">La Liga</td>
-              <td style="font-size:14px;">Liga Calcio</td>
-              <td style="font-size:14px;">Liga Premier</td>
-              <td style="font-size:14px;">Bundesliga</td>
-              <td style="font-size:14px;">Le championnat</td>
-              <td style="font-size:14px;">TFC Champions</td>
-            </tr>
-          </tbody>
-        </table>
-
-
+        <p>Seleccione <span class="mes-color">su Torneo</span></p><br><br><br><br><br>
+        <a href="{!! route('new.torneos',[5,27]) !!}"><img src="../../../images/copa01.png" alt="The Futbol Company" width="7%"></a>
+        <a href="{!! route('new.torneos',[5,25]) !!}"><img src="../../../images/copa02.png" alt="The Futbol Company" width="7%"></a>
+        <a href="{!! route('new.torneos',[5,24]) !!}"><img src="../../../images/copa03.png" alt="The Futbol Company" width="7%"></a>
+        <a href="{!! route('new.torneos',[5,26]) !!}"><img src="../../../images/copa04.png" alt="The Futbol Company" width="7%"></a>
+        <a href="{!! route('new.torneos',[5,29]) !!}"><img src="../../../images/copa05.png" alt="The Futbol Company" width="7%"></a>
+        <a href="{!! route('new.torneos',[5,28]) !!}"><img src="../../../images/copa06.png" alt="The Futbol Company" width="7%"></a>
+        <br><br>
     </div>
     
    
