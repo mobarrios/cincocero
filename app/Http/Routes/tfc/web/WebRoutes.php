@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['namespace' => 'tfc'], function()
+Route::group(['namespace' => 'tfc','prefix' => 'new'], function()
 {
 //    Route::resource('/','WebController@Index');
     Route::get('/',[

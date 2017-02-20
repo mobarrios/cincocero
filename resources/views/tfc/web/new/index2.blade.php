@@ -18,24 +18,38 @@
 </head>
 
 <body class="uk-height-1-1 uk-vertical-align uk-text-center tt-offline">
-    <div class="offline-logo" style="margin-top: 150px;">
-        <div class="wrap">
-            <img src="../../../images/logo-white.png" alt="The Futbol Company">
-        </div>
+    <div class="offline-logo">
+        <div class="wrap"><img src="images/logo-white.png" alt="The Futbol Company" title="logo"></div>
     </div>
     <div class="uk-panel uk-width-1-1 uk-panel-box uk-vertical-align-middle message-offline uk-container-center">
         <div id="system-message-container"></div>
-        <p>Seleccione <span class="mes-color">su Torneo</span></p><br><br><br><br><br>
-        <a href="{!! route('new.torneos',[5,27]) !!}"><img src="../../../images/copa01.png" alt="The Futbol Company" width="7%"></a>
-        <a href="{!! route('new.torneos',[5,25]) !!}"><img src="../../../images/copa02.png" alt="The Futbol Company" width="7%"></a>
-        <a href="{!! route('new.torneos',[5,24]) !!}"><img src="../../../images/copa03.png" alt="The Futbol Company" width="7%"></a>
-        <a href="{!! route('new.torneos',[5,26]) !!}"><img src="../../../images/copa04.png" alt="The Futbol Company" width="7%"></a>
-        <a href="{!! route('new.torneos',[5,29]) !!}"><img src="../../../images/copa05.png" alt="The Futbol Company" width="7%"></a>
-        <a href="{!! route('new.torneos',[5,28]) !!}"><img src="../../../images/copa06.png" alt="The Futbol Company" width="7%"></a>
+        <p>Seleccione <span class="mes-color">su Torneo</span></p><br>
+
+        @foreach($categories as $categoria)
+            <a href="{{ route('new.noticias',$categoria->id) }}"><img class="img-responsive" src="../../../{{($categoria->images->count() != 0)?$categoria->images->first()->image : ''}}" width="10%">
+            </a>
+
+        @endforeach
+
+        {{--<a href="noticia.html"><img class="img-responsive" src="images/1457701933.png" alt="The Futbol Company" title="logo" width="10%"></a>--}}
+        {{--<a href="noticia.html"><img class="img-responsive" src="images/1457701973.png" alt="The Futbol Company" title="logo" width="10%"></a>--}}
+
         <br><br>
     </div>
     
-   
+    <div class="offline-socials">
+        <div class="footer-socials">
+            <div class="social-top">
+                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
+                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-twitter"></span></a>
+                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-google"></span></a>
+                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-pinterest"></span></a>
+                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-youtube"></span></a>
+                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
+                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-flickr"></span></a>
+            </div>
+        </div>
+    </div>
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/uikit.js"></script>

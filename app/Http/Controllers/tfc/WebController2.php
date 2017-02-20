@@ -72,6 +72,11 @@ class WebController2 extends Controller {
         else
             $this->data['faseActual'] = $this->data["fases"]->first();
 
+
+        if($this->data['faseActual'] == null)
+            return view('errors.404')->with($this->data);
+
+
         $fasesWeeks  = $fasesWeek->where('fases_id',$this->data['faseActual']->id);
 
 //        RESULTADOS
@@ -104,7 +109,7 @@ class WebController2 extends Controller {
 teams FROM matches_details JOIN players ON matches_details.players_id = players.id JOIN teams ON players.teams_id =
 teams.id JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON matches.fases_week_id =
 fases_week.id WHERE fases_week.fases_id = ? AND goals != 0
-GROUP BY matches_details.players_id ORDER BY goals DESC";
+GROUP BY matches_details.players_id ORDER BY goals DESC LIMIT 8";
 
         $this->data['goleadores'] = DB::select($q,array($this->data["faseActual"]->id));
 //        FIN GOLEADORES
