@@ -42,11 +42,11 @@
             </tr>
             <tr>
               <td style="font-size:14px;">La Liga</td>
-              <td style="font-size:14px;">Liga Calcio</td>
-              <td style="font-size:14px;">Liga Premier</td>
+              <td style="font-size:14px;">Lega Calcio</td>
+              <td style="font-size:14px;">Premier League</td>
               <td style="font-size:14px;">Bundesliga</td>
-              <td style="font-size:14px;">Le championnat</td>
-              <td style="font-size:14px;">TFC Champions</td>
+              <td style="font-size:14px;">Copa TFC</td>
+              <td style="font-size:14px;">TFC Champions League</td>
             </tr>
           </tbody>
         </table>
