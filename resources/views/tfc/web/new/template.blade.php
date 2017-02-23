@@ -233,8 +233,14 @@
                     <li class="uk-parent"><a href="{!! route('new.web',$route) !!}">Home</a></li>
                     <li class="uk-parent"><a href="#">Torneos</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="#">torneo 1</a>
-                            </li>
+                            @foreach(\App\Entities\tfc\Tournaments::where('categories_id',$route)->orderBy('id','des')->get() as $torneo)
+                                @if(strtotime($torneo->to) >= strtotime(date('Y-m-d')))
+
+                                    <li>
+                                        <a href="{!! route("new.torneos",[$route,$torneo->id]) !!}">{!! strtoupper($torneo->name) !!}</a>
+                                    </li>
+                                @endif
+                            @endforeach
                             
                         </ul>
                     </li>
