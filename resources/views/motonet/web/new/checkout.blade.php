@@ -215,19 +215,23 @@
         $('#form-pay').on('submit',function(ev){
             ev.preventDefault()
 
-            var submit = false;
+            var submit1 = false;
+            var submit2 = false;
+
+            var inputs = [];
 
             $.each($(".input-string"),function(ind,element){
                 if(! element.value.match(/^[a-zñáéíóúüäö]{3,}$/ig)){
                     $(element).parent().addClass('has-error')
 
-                    submit = false;
+                    submit1 = false;
+                    inputs[$(element).attr('placeholder')] = 'texto'
 
                 }else{
                     if($(element).parent().hasClass('has-error'))
                         $(element).parent().removeClass('has-error')
 
-                    submit = true;
+                    submit1 = true;
                 }
             })
 
@@ -235,19 +239,34 @@
                 if(! element.value.match(/^[0-9]{7,}$/ig)){
                     $(element).parent().addClass('has-error')
 
-                    submit = false
+                    submit2 = false
+                    inputs[$(element).attr('placeholder')] = 'numérico'
+
                 }else{
                     $(element).parent().removeClass('has-error')
 
-                    submit = true;
+                    submit2 = true;
                 }
             })
 
 
-            if(submit)
-                this.submit()
-            else
+            if(submit1 == false || submit2 == false){
+                if($("div.alert")){
+                    $("div.alert").remove()
+                }
+
+                $('body').append($('<div style="position:fixed; bottom:0; left: 0;" class="col-xs-12 alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times</span></button><ul></ul></div>'))
+
+                for(var i in inputs)
+                    $('div.alert>ul').append($('<li> El campo '+ i +' debe ser '+ inputs[i] +'</li>'))
+
+
+                inputs.length = 0;
+
                 return false
+            }else{
+                this.submit()
+            }
         })
     </script>
 

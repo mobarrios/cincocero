@@ -72,7 +72,7 @@
     <div class="row">
         <div class="col-xs-6">
             <div class="form-group">
-                {!! Form::text('email',null,['type'=>'email','class'=>'input-sm form-control','placeholder'=>'E-Mail', 'required'=>'required']) !!}
+                {!! Form::email('email',null,['type'=>'email','class'=>'input-sm form-control','placeholder'=>'E-Mail', 'required'=>'required']) !!}
             </div>
         </div>
         <div class="col-xs-6">
