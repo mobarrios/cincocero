@@ -2,17 +2,17 @@
     <div class="row">
         <div class="col-xs-12 col-md-2">
             <div class="form-group">
-                {!! Form::text('dni',null,['class'=>'input-sm form-control','placeholder'=>'DNI', 'required'=>'required']) !!}
+                {!! Form::text('dni',null,['class'=>'input-sm input-num form-control','placeholder'=>'DNI', 'required'=>'required']) !!}
             </div>
         </div>
         <div class="col-xs-6 col-md-5">
             <div class="form-group">
-                {!! Form::text('last_name',null,['class'=>'input-sm form-control','placeholder'=>'Apellido', 'required'=>'required']) !!}
+                {!! Form::text('last_name',null,['class'=>'input-sm input-string form-control','placeholder'=>'Apellido', 'required'=>'required']) !!}
             </div>
         </div>
         <div class="col-xs-6 col-md-5">
             <div class="form-group">
-                {!! Form::text('name',null,['class'=>'input-sm form-control','placeholder'=>'Nombre', 'required'=>'required']) !!}
+                {!! Form::text('name',null,['class'=>'input-sm form-control input-string','placeholder'=>'Nombre', 'required'=>'required']) !!}
             </div>
         </div>
     </div>

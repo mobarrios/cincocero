@@ -138,7 +138,7 @@
 
                     <div class="ibox h-auto">
 
-                        {!! Form::open(['url'=>'pay','method'=>'get'])!!}
+                        {!! Form::open(['url'=>'pay','method'=>'get','id' => 'form-pay'])!!}
 
                         <div class="ibox-content">
                             <h3>Total</h3>
@@ -206,5 +206,49 @@
     </div><!-- /.checkout-steps -->
 </div>
     </div>
+
+@endsection
+
+@section('js')
+
+    <script>
+        $('#form-pay').on('submit',function(ev){
+            ev.preventDefault()
+
+            var submit = false;
+
+            $.each($(".input-string"),function(ind,element){
+                if(! element.value.match(/^[a-zñáéíóúüäö]{3,}$/ig)){
+                    $(element).parent().addClass('has-error')
+
+                    submit = false;
+
+                }else{
+                    if($(element).parent().hasClass('has-error'))
+                        $(element).parent().removeClass('has-error')
+
+                    submit = true;
+                }
+            })
+
+            $.each($(".input-num"),function(ind,element){
+                if(! element.value.match(/^[0-9]{7,}$/ig)){
+                    $(element).parent().addClass('has-error')
+
+                    submit = false
+                }else{
+                    $(element).parent().removeClass('has-error')
+
+                    submit = true;
+                }
+            })
+
+
+            if(submit)
+                this.submit()
+            else
+                return false
+        })
+    </script>
 
 @endsection
