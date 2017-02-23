@@ -37,7 +37,7 @@
               <td><a href="{!! route('new.torneos',[5,25]) !!}"><img src="../../../images/copa02.png" alt="The Futbol Company"></a></td>
               <td><a href="{!! route('new.torneos',[5,24]) !!}"><img src="../../../images/copa03.png" alt="The Futbol Company"></a></td>
               <td><a href="{!! route('new.torneos',[5,26]) !!}"><img src="../../../images/copa04.png" alt="The Futbol Company"></a></td>
-              <td><a href="{!! route('new.torneos',[5,29]) !!}"><img src="../../../images/copa05.png" alt="The Futbol Company"></a></td>
+              <td><a href="{!! route('new.torneos',[6,29]) !!}"><img src="../../../images/copa05.png" alt="The Futbol Company"></a></td>
               <td><a href="{!! route('new.torneos',[5,28]) !!}"><img src="../../../images/copa06.png" alt="The Futbol Company"></a></td>
             </tr>
             <tr>

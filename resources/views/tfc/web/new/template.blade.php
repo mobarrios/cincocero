@@ -227,7 +227,27 @@
 
         </div>
 
-        
+       <div id="offcanvas" class="uk-offcanvas">
+            <div class="uk-offcanvas-bar">
+                <ul class="uk-nav uk-nav-offcanvas">
+                    <li class="uk-parent"><a href="{!! route('new.web',$route) !!}">Home</a></li>
+                    <li class="uk-parent"><a href="#">Torneos</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="#">torneo 1</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="{!! route('new.noticias',$route) !!}">Noticias</a></li>
+                    <li><a href="{!! route('new.sedes',$route) !!}">Sedes</a></li>
+                    <li><a href="{!! route('new.galeria',$route) !!}">Galeria</a></li>
+                    <li><a href="{!! route('new.reglamento',$route) !!}">Reglamento</a></li>
+                    <li><a href="{!! route('new.inscripcion',$route) !!}">Inscripcion</a></li>
+                    <li><a href="{!! route('new.contactanos',$route) !!}">Contactanos</a>
+                    </li>
+                </ul>
+            </div>
+        </div> 
     </div>
 
     
