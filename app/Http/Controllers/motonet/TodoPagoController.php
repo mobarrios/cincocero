@@ -67,6 +67,8 @@ class TodoPagoController extends Controller {
                 'CURRENCYCODE'              => 032,
                 'AMOUNT'                    => $request->price,
 
+
+
                 //Datos ejemplos CS
                 'CSBTCITY'                  => $request->city,
                 'CSSTCITY'                  => $request->city,
