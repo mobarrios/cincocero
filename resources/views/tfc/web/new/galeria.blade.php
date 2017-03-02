@@ -18,6 +18,7 @@
                         <div class="uk-grid uk-grid-collapse grid" data-uk-grid-match="">
                             @foreach($galeria as $imagen)
                                 <div class="uk-width-1-1 uk-width-medium-1-2 uk-width-large-1-4 grid-item tt_c26e2589e25045ad516b5bc37d18523a ">
+                                  <div class="uk-slidenav-position" data-uk-slideshow="{height:800}">
                                     <div class="gallery-album">
                                         <a href="{!! $imagen->Images->first()->image or '' !!}" data-uk-lightbox="{group:'my-group'}" class="img-0"><img src="{!! $imagen->Images->first()->image or '' !!}" alt="{!! $imagen->name !!}"></a>
                                         <div class="titles">
@@ -29,6 +30,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                  </div>  
                                 </div>
                             @endforeach
 
