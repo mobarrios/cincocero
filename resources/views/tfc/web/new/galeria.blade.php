@@ -39,3 +39,10 @@
             </div>
         </div>
 @endsection
+
+@section('js')
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.x-git.min.js"></script>
+    <script>
+        $('body').addClass('tt-gallery-page')
+    </script>
+@endsection
