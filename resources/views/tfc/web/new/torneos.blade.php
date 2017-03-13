@@ -95,20 +95,24 @@
                                                     @endif
                                                 </div>
                                             </div>
-
                                             @if(!$faseWeek  || $faseWeek->count() == 0)
                                                 <div class="va-latest-middle uk-flex uk-flex-middle text-center">
                                                     <p class="text-center">NO HAY PARTIDOS CARGADOS TODAVÍA</p>
                                                 </div>
                                             @else
                                                 @foreach($faseWeek->matches as $partido)
+
                                                     <div class="va-latest-middle uk-flex uk-flex-middle">
 
                                                         <div class="uk-container uk-container-center">
                                                             <div class="uk-grid uk-flex uk-flex-middle">
                                                                 <div class="uk-width-2-12 center">
                                                                     <a href="results.html">
-                                                                        <img src="{!! $partido->homeTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+
+{{--                                                                        <img src="{!! $partido->homeTeam->images->first() ? $partido->homeTeam->images->first()->image  : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">--}}
+                                                                        @if($partido->home_teams_id != null)
+                                                                            <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                        @endif
                                                                     </a>
                                                                 </div>
                                                                 <div class="uk-width-3-12 name uk-vertical-align">
@@ -130,7 +134,13 @@
                                                                 </div>
                                                                 <div class="uk-width-2-12 center">
                                                                     <a href="results.html">
-                                                                       <img src="{!! $partido->awayTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+
+                                                                       {{--<img src="{!! $partido->awayTeam->images->first()->images  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">--}}
+
+                                                                        @if($partido->away_teams_id != null)
+                                                                            <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                        @endif
+
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -166,6 +176,7 @@
                                                 <div class="va-latest-middle uk-flex uk-flex-middle text-center">
                                                     <p> NO HAY CARGADA UNA PRÓXIMA FECHA </p>
                                                 </div>
+
                                             @else
                                                 @foreach($faseWeekProxima->matches as $partido)
                                                     <div class="match-list-wrap">
@@ -176,7 +187,11 @@
                                                             </div>
                                                             <div class="logo">
                                                                 <a href="#">
-                                                                <img src="{!! $partido->homeTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"></a>
+{{--                                                                <img src="{!! $partido->homeTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"></a>--}}
+
+                                                                    @if($partido->home_teams_id != null)
+                                                                        <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                @endif
                                                             </div>
                                                             <div class="team-name">
                                                                 {!! $partido->homeTeam->name  or "Libre" !!}
@@ -190,7 +205,13 @@
                                                             </div>
                                                             <div class="logo">
                                                                 <a href="#">
-                                                                <img src="{!! $partido->awayTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"></a>
+
+{{--                                                                <img src="{!! $partido->awayTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"></a>--}}
+
+                                                                    @if($partido->away_teams_id != null)
+                                                                        <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                    @endif
+                                                                </a>
                                                             </div>
                                                             <div class="location">
                                                                 <address>
@@ -213,7 +234,7 @@
                                                 <div class="big-title">
                                                     <img src="images/fixture.png" width="50" height="50">Fixture y <span>Resultados</span>
                                                 </div>
-                                                    
+
                                             </div>
                                             <div class="uk-container uk-container-center">
                                                 <div class="uk-grid">
@@ -238,7 +259,11 @@
                                                                                 @forelse($fase->Matches as $partido)
                                                                                     <tr>
                                                                                         <td>
-                                                                                            <img src="{!! $partido->homeTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="30" height="30">
+{{--                                                                                            <img src="{!! $partido->homeTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="30" height="30">--}}
+                                                                                            @if($partido->home_teams_id != null)
+                                                                                                <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                                            @endif
+
                                                                                         </td>
                                                                                         <td>{!! $partido->homeTeam->name or "Libre" !!}</td>
                                                                                         <td>{!! $partido->home_goals or "-" !!}</td>
@@ -246,7 +271,11 @@
                                                                                         <td>{!! $partido->home_goals or "-" !!}</td>
                                                                                         <td>{!! $partido->awayTeam->name or "Libre" !!}</td>
                                                                                         <td>
-                                                                                            <img src="{!! $partido->awayTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"width="30" height="30">
+{{--                                                                                            <img src="{!! $partido->awayTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"width="30" height="30">--}}
+
+                                                                                            @if($partido->away_teams_id != null)
+                                                                                                <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                                            @endif
                                                                                         </td>
                                                                                     </tr>
                                                                                 @empty
