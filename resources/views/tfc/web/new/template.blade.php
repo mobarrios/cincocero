@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Futbol Company. Profesionales en Futbol Amateurs.</title>
+    <title>TheFutbolCompany. Profesionales en Futbol Amateurs.</title>
     <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
     <link href="assets/web/new/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
     <link href="assets/web/new/css/akslider.css" rel="stylesheet" type="text/css" />
@@ -36,10 +36,9 @@
                     <div class="uk-float-right">
                         <div class="uk-panel">
                             <div class="social-top">
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-twitter"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-youtube"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
+                                <a href="https://es-la.facebook.com/TheFutbolCompany/" target="_new"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
+                                <a href="https://twitter.com/futbolcompany?lang=es" target="_new"><span class="uk-icon-small uk-icon-hover uk-icon-twitter"></span></a>
+                                <a href="https://www.instagram.com/thefutbolcompany/" target="_new"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
                             </div>
                         </div>
                     </div>
@@ -135,10 +134,9 @@
                                 </div>
                                 <div class="footer-socials">
                                     <div class="social-top">
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-twitter"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-youtube"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
+                                        <a href="https://es-la.facebook.com/TheFutbolCompany/" target="_new"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
+                                        <a href="https://twitter.com/futbolcompany?lang=es" target="_new"><span class="uk-icon-small uk-icon-hover uk-icon-twitter"></span></a>
+                                        <a href="https://www.instagram.com/thefutbolcompany/" target="_new"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
                                     </div>
                                 </div>
                                 <div class="clear"></div>
