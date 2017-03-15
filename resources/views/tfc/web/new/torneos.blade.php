@@ -2,6 +2,37 @@
 
 @section("css")
     <style>
+        .match-list-wrap .match-list-item > div {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .match-list-wrap .match-list-item .team-score {
+            color: #ffc722;
+            font-size: 16px;
+        }
+
+        .match-list-wrap .match-list-item .team-name {
+            padding: 0 14px;
+            font-size: 16px;
+            text-transform: none;
+            color: #fff;
+        }
+
+        .match-list-wrap .match-list-item .location {
+            padding: 0 0 0 17px;
+            background: url(../images/location-icon.png) 0 50% no-repeat;
+            margin-left: 40px;
+            font-size: 14px;
+            color: #fff;
+            font-family: 'Work Sans';
+        }
+
+        .match-list-wrap .match-list-item .va-view-wrap {
+            float: right;
+        }
+    </style>
+    <style>
         td a{
             color:#ffc722;
         }
@@ -188,10 +219,10 @@
                                                             <div class="logo">
                                                                 <a href="#">
 {{--                                                                <img src="{!! $partido->homeTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"></a>--}}
-
                                                                     @if($partido->home_teams_id != null)
-                                                                        <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
+                                                                        <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"/>
                                                                 @endif
+                                                                </a>
                                                             </div>
                                                             <div class="team-name">
                                                                 {!! $partido->homeTeam->name  or "Libre" !!}
