@@ -66,7 +66,7 @@
                                         <div class="contact-title">
                                             <h2>COMPLETA EL FORMULARIO</h2>
                                         </div>
-                                        <div class="contact-text">Completa los datos con * para poder registrarte en el sistema, de esta manera estaras habilitado para poder competir en nuestros torneos. </div>
+                                        <div class="contact-text">Usuario registrado con exito.</div>
                                     </div>
                                     
                                 </div>
