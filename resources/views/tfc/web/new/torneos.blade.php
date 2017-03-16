@@ -138,7 +138,7 @@
                                                         <div class="uk-container uk-container-center">
                                                             <div class="uk-grid uk-flex uk-flex-middle">
                                                                 <div class="uk-width-2-12 center">
-                                                                    <a href="results.html">
+                                                                    <a href="#">
 
 {{--                                                                        <img src="{!! $partido->homeTeam->images->first() ? $partido->homeTeam->images->first()->image  : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">--}}
                                                                         @if($partido->home_teams_id != null)
@@ -152,7 +152,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="uk-width-2-12 score">
-                                                                    <div class="title">{!! $partido->date!!} {!! $partido->hour or 'A confirmar'!!}</div>
+                                                                    
                                                                     <div class="table">
                                                                         <div class="left">{!! $partido->home_goals or "-" !!}</div>
                                                                         <div class="right">{!! $partido->away_goals or "-" !!}</div>
@@ -174,6 +174,8 @@
 
                                                                     </a>
                                                                 </div>
+                                                                <div class="title"><font color="000000" size="2">{!! $partido->date!!} {!! $partido->hour or 'A confirmar'!!}</font></div>
+                                                                <div class="title"><font color="000000" size="2">Cancha:{!! $partido->canchas->name or 'A confirmar' !!} Sede: {!! $partido->canchas->sedes->name !!}</font></div>
                                                             </div>
                                                         </div>
                                                     </div>
