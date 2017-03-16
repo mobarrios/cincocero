@@ -99,9 +99,7 @@ class WebController2 extends Controller {
 //        FIN FECHA ACTUAL
 
 //        PROXIMA FECHA
-        $this->data['faseWeekProxima']  = $fasesWeek->where('fases_id',$this->data['faseActual']->id+1)
-            ->where('active',1)
-            ->first();
+        $this->data['faseWeekProxima']  = $fasesWeek->find($this->data['faseWeek']->id+1);
 //        FIN PROXIMA FECHA
 
 //        GOLEADORES
