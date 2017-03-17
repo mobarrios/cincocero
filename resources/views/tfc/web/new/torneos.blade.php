@@ -175,7 +175,7 @@
                                                                     </a>
                                                                 </div>
                                                                 <div class="title"><font color="000000" size="2">{!! $partido->date!!} {!! $partido->hour or 'A confirmar'!!}</font></div>
-                                                                <div class="title"><font color="000000" size="2">Cancha:{!! $partido->canchas->name or 'A confirmar' !!} Sede: {!! $partido->canchas->sedes->name !!}</font></div>
+                                                                <div class="title"><font color="000000" size="2">Cancha:{!! $partido->canchas ? $partido->canchas->name : 'A confirmar' !!} Sede: {!! $partido->canchas ? $partido->canchas->sedes->name : "A confirmar" !!}</font></div>
                                                             </div>
                                                         </div>
                                                     </div>
