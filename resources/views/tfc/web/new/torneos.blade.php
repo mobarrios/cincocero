@@ -428,8 +428,8 @@
                                                             <tr>
                                                                 <th>Posicion</th>
                                                                 <th>Equipo</th>
-                                                                <th><img src="images/amarilla.png"></th>
                                                                 <th><img src="images/roja.png"></th>
+                                                                <th><img src="images/amarilla.png"></th>
                                                                 <th>Pts</th>
                                                             </tr>
                                                             @forelse($fairplay as $ind => $fp)
