@@ -5,6 +5,7 @@
     <div class="tm-bottom-b-box tm-full-width  ">
         <div class="uk-container uk-container-center">
             <section id="tm-bottom-b" class="tm-bottom-b uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
+            
 
                 <div class="uk-width-1-1 uk-row-first">
                     <div class="uk-panel">
@@ -13,10 +14,13 @@
 
                             <div class="uk-container uk-container-center">
                                 <div class="uk-grid">
+
                                     <!-- This is the container of the content items -->
                                     <div class="uk-width-medium-10-10">
                                         <h3 class="history-title">Nuestro <span>Reglamento.</span></h3>
                                         <div class="uk-accordion" data-uk-accordion="">
+
+
 
                                             <h4 class="uk-accordion-title uk-active">CAPITULO 1. ORGANIZACIÓN DEL TORNEO<span class="arrow"><i class="uk-icon-arrow-right"></i></span></h4>
                                             <div aria-expanded="true" data-wrapper="true" role="list" style="height: auto; position: relative;">
@@ -24,7 +28,6 @@
                                                 <br><br>Articulo 2. Reglamento de  partido: TFC adaptará su reglamentación a los reglamentos vigentes de A.F.A., F.I.F.A y la International Board salvo en las siguientes excepciones: - Cambios de jugadores: se podrán realizar hasta un máximo de 5 cambios por partido. Los jugadores que son reemplazados podrán volver a ingresar solo 2 veces por partido, si el equipo tuviese 3 suplentes en el banco,  pero este acto se tomara como un cambio mas. En el caso que el equipo tenga 5 jugadores suplentes, el jugador reemplazado NO podrá volver a ingresar. - Los tiempos de juego se dividirán en 2 de 40 (cuarenta) minutos cada uno. –Sistema de puntuación:  Partido Ganado: 3 (tres) puntos, Partido empatado: 1 (Un)punto,  Partido Perdido: 0 (cero) punto. Antes de dar comienzo al encuentro los equipos deberán haber: - Firmado la planilla del encuentro - Abonado el arancel correspondiente y presentar el recibo de pago al Árbitro antes del inicio del partido, caso contrario no comenzara el encuentro – <br>El Árbitro, Fiscal de Campo o Coordinador de Sede TFC presente en el lugar, son quienes determinan el horario de comienzo del partido una vez cumplidos con los requerimientos mencionados. 
                                                 <br><br>Articulo 3. Ley Walk Over:  Aquel equipo que obtuviere  A SU FAVOR la aplicación de la Ley del Walk Over en un partido determinado, obtendrá 3 (tres) puntos por el encuentro, dándosele el partido por ganado con un resultado de 2 (dos) goles de diferencia a su favor. La aplicación de la ley Walk Over tendrá incidencia sobre el resultado del partido para los equipos involucrados, pero no modificará la tabla de goleadores. Aplicación de la Ley del Walk Over por el Comité de Disciplina: I) Si el resultado al momento de dar por terminado el partido estuviera empatado, el resultado será favorable en 2 a 0 al equipo beneficiado por la Ley del Walk Over. II) Si el resultado al momento de dar por terminado el partido fuera favorable para el equipo sancionado con la Ley del Walk Over, este resultado quedará anulado y se le dará el partido por perdido en 2 a 0. III) Si el resultado al momento de dar por terminado el partido fuera favorable al equipo beneficiado por la Ley del Walk Over por una diferencia mínima de 3 goles, se respetara el mismo. IV) Si el resultado al momento de dar por terminado el partido fuera favorable al equipo beneficiado por la Ley del Walk Over por hasta 2 (dos) goles de diferencia, el resultado será modificado por 2 a 0. V) Habra 20 minutos de tolerancia para iniciar el partido. El equipo que este en cancha será beneficiado por la Ley Walk Over dándosele el partido por ganado con el resultado 2 a 0 y obtendrá 3 (tres) puntos a su favor. 
                                                 <br><br>Articulo 4. Modificaciones a la estructura de la zona: Abandono del  torneo:  En el caso de que uno o más equipos abandona el Torneo antes de la finalización del mismo y a partir del momento en que se conoce la decisión, se procederá de la siguiente manera, tomando como referencia la cantidad de partidos jugados por el equipo: a) Si el equipo abandonico hubiera jugado menos de la mitad de los partidos del torneo, se modificará el resultado de los partidos que haya jugado aplicándose la Ley del Walk Over para todos los partidos que hubiera jugado y para los partidos subsiguientes. O bien TFC podrá reemplazar al equipo saliente con un nuevo equipo, tomando este, el puntaje del equipo saliente. El equipo entrante deberá abonar la totalidad del torneo, de lo contrario este iniciara con puntaje cero (0) y abonara solo las fechas restantes por jugar. Esta decisión quedará sujeta de acuerdo al criterio que adopte la Organización de TFC en cuanto al mejor desarrollo del torneo.  b) Si el equipo hubiera jugado la mitad o más de los partidos del torneo, se aplicará la Ley del Walk Over para todos los partidos que resten jugar por El Equipo, no modificándose el resultado de los partidos jugados. Cabe destacar que TFC no reembolsará en ningún caso los montos abonados por adelantado del equipo que decide abandonar el torneo. Este concepto también se aplica cuando el Comité de Disciplina de TFC decida expulsar un equipo del torneo por mala conducta o actos de indisciplina.</div>
-                                            </div>
                                             </div>
 
                                             <h4 class="uk-accordion-title">CAPITULO 2. NORMAS ADMINISTRATIVAS<span class="arrow"><i class="uk-icon-arrow-right"></i></span></h4>

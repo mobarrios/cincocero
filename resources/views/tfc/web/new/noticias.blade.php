@@ -13,9 +13,9 @@
                                         <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                             <div class="wrapper">
                                                 <div class="img-wrap uk-flex-wrap-top">
-                                                    <a href="#">
+                                                    
                                                     <img src="{!! $noticia->Images->first()->image or 'assets/web/images/noticiasDefault.jpg' !!}" class="img-polaroid" alt="">
-                                                    </a>
+                                                    
                                                 </div>
                                                 <div class="info uk-flex-wrap-middle">
                                                     <div class="date">
@@ -23,9 +23,9 @@
                                                     </div>
                                                     <div class="name">
                                                         <h4>
-                                                            <a href="#">
+                                                            
                                                                 {!! $noticia->title !!}
-                                                            </a>
+                                                            
                                                         </h4>
                                                     </div>
                                                     <div class="text">

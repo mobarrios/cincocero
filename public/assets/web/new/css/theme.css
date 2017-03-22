@@ -11498,7 +11498,7 @@ q {
 }
 .article-single-text1 table tr:hover td {
   background: #363533;
-  color: #fff;
+  color: #ffc722;
   border-color: #363533;
 }
 .article-single-text1 table tr th:nth-child(even) {
@@ -11751,7 +11751,7 @@ q {
 }
 .match-list-item.foot .read-more:hover {
   text-decoration: none;
-  color: #fff;
+  color: #ffc722;
 }
 .match-list-wrap .footer-slider-btn {
   margin-top: 6px;
@@ -12262,7 +12262,7 @@ q {
 }
 .news-sidebar .uk-panel-title {
   padding: 0 19px 0 0;
-  color: #ffffff;
+  color: #ffc722;
   font-size: 28px;
   text-transform: uppercase;
   display: inline-block;
