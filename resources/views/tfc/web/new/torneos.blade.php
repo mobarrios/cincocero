@@ -301,7 +301,7 @@
                                                                                         <td>{!! $partido->homeTeam->name or "Libre" !!}</td>
                                                                                         <td>{!! $partido->home_goals or "-" !!}</td>
                                                                                         <td>vs</td>
-                                                                                        <td>{!! $partido->home_goals or "-" !!}</td>
+                                                                                        <td>{!! $partido->away_goals or "-" !!}</td>
                                                                                         <td>{!! $partido->awayTeam->name or "Libre" !!}</td>
                                                                                         <td>
 {{--                                                                                            <img src="{!! $partido->awayTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"width="30" height="30">--}}
