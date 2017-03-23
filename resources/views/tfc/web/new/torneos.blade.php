@@ -246,10 +246,10 @@
                                                                     @endif
                                                                 </a>
                                                             </div>
-                                                            <div class="location">
-                                                                <address>
-                                                                    {!! $partido->hour or 'A confirmar' !!}<br><br> - Cancha {!! $partido->canchas->name or 'A confirmar' !!}
-                                                                </address>
+                                                            <div class="title"><font color="ffffff" size="2">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                    {!! $partido->hour or 'A confirmar' !!} - Cancha {!! $partido->canchas->name or 'A confirmar' !!}
+                                                                </font>
                                                             </div>
                                                             @if($partido->canchas_id != null)
                                                                 <div class="va-view-wrap">
