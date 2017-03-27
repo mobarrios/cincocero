@@ -260,7 +260,6 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
     public function postContact(Request $request)
     {
-        dd($request->all());
         $validator = Validator::make(
             $request->all(),
             [
