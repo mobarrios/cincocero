@@ -260,12 +260,12 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
 
     public function postContact(Request $request)
     {
+        dd($request->all());
         $validator = Validator::make(
             $request->all(),
             [
                 'name'      => 'required',
                 'email'     => 'required|email',
-                'tema'      => 'required',
                 'message'   => 'required'
             ]);
 
@@ -275,7 +275,6 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
         if ($validator->fails()) {
             return "Complete correctamente los campos anteriores";
         }else{
-
 
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type: text/html; UTF-8" . "\r\n";

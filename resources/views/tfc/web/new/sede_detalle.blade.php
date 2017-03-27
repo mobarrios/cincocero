@@ -85,7 +85,7 @@
     <script>
 
 
-        var address = $('#map_canvas').attr('data-direccion');
+        var address = $('#map').attr('data-direccion');
         // Creamos el Objeto Geocoder
         var geocoder = new google.maps.Geocoder();
         // Hacemos la petición indicando la dirección e invocamos la función

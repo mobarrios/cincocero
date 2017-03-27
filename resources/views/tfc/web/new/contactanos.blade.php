@@ -114,7 +114,7 @@
                                                                                             <label class="required_field">*</label>
                                                                                         </div>
                                                                                         <div class="aiContactSafe_contact_form_field_right">
-                                                                                            <input name="aics_name" id="aics_name" class="textbox" placeholder="Nombre" value="" type="text">
+                                                                                            <input name="name" id="aics_name" class="textbox" placeholder="Nombre" value="" type="text">
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="aiContactSafe_row" id="aiContactSafe_row_aics_email">
@@ -122,7 +122,7 @@
                                                                                             <label class="required_field">*</label>
                                                                                         </div>
                                                                                         <div class="aiContactSafe_contact_form_field_right">
-                                                                                            <input name="aics_email" id="aics_email" class="email" placeholder="Email" value="" type="text">
+                                                                                            <input name="email" id="aics_email" class="email" placeholder="Email" value="" type="text">
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="aiContactSafe_row" id="aiContactSafe_row_aics_message">
@@ -130,7 +130,7 @@
                                                                                             <label class="required_field">*</label>
                                                                                         </div>
                                                                                         <div class="aiContactSafe_contact_form_field_right">
-                                                                                            <textarea name="aics_message" id="aics_message" cols="40" rows="10" class="editbox" placeholder="Mensaje"></textarea>
+                                                                                            <textarea name="message" id="aics_message" cols="40" rows="10" class="editbox" placeholder="Mensaje"></textarea>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
