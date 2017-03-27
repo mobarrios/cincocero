@@ -305,7 +305,7 @@
       }
   });
 
-
+$(document).ready(function(){
     var address = $('#map').attr('data-direccion');
     // Creamos el Objeto Geocoder
     var geocoder = new google.maps.Geocoder();
@@ -346,7 +346,8 @@
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
-    
+
+    })
 </script>
 
 @yield('js')
