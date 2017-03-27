@@ -288,7 +288,8 @@ JOIN matches ON matches_details.matches_id = matches.id JOIN fases_week ON fases
             $msg .= 'Mail:'.$request->email.'<br>';
 
 
-            if(mail('juga@thefutbolcompany.com','Contacto desde la web',$msg,$headers))
+            if(mail('fernandoalf@gmail.com','Contacto desde la web',$msg,$headers))
+//            if(mail('juga@thefutbolcompany.com','Contacto desde la web',$msg,$headers))
                 return "Se Envio correctamente su mail.";
             else
                 "No se pudo enviar el mail.";

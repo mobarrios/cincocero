@@ -55,32 +55,6 @@
 @endsection
 
 @section('js')
-    <script>
-        window.map = false;
-
-
-
-        function initialize(){
-            var myLatlng = new google.maps.LatLng(-34.595034,-58.51029510000001);
-
-            var mapOptions = {
-                zoom:16,
-                center: myLatlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                scrollwheel: false,
-
-                streetViewControl:false,
-                overviewMapControl:false,
-                mapTypeControl:false
-
-            };
-
-            window.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
 
     <script>
 
