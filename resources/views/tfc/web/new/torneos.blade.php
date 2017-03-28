@@ -66,7 +66,7 @@
 
                                 <div class="uk-grid">
                                     <div class="uk-width-1-1">
-                                        <div class="article-single-text">
+                                        <div class="article-single-text3">
                                             <p>
                                                 <table class="responsive">
                                                     <tbody>
@@ -149,13 +149,13 @@
                                                         <div class="uk-container uk-container-center">
                                                             <div class="uk-grid uk-flex uk-flex-middle">
                                                                 <div class="uk-width-2-12 center">
-                                                                    <a href="#">
+                                                                    
 
-{{--                                                                        <img src="{!! $partido->homeTeam->images->first() ? $partido->homeTeam->images->first()->image  : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">--}}
+{{--                                                                        <img src="{!! $partido->homeTeam->images->first() ? $partido->homeTeam->images->first()->image  : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">--}}
                                                                         @if($partido->home_teams_id != null)
-                                                                            <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                            <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
                                                                         @endif
-                                                                    </a>
+                                                                    
                                                                 </div>
                                                                 <div class="uk-width-3-12 name uk-vertical-align">
                                                                     <div class="wrap uk-vertical-align-middle">
@@ -179,15 +179,15 @@
                                                                         <font size="3">{!! $partido->awayTeam->name  or 'Libre' !!} </font></div>
                                                                 </div>
                                                                 <div class="uk-width-2-12 center">
-                                                                    <a href="results.html">
+                                                                    
 
-                                                                       {{--<img src="{!! $partido->awayTeam->images->first()->images  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">--}}
+                                                                       {{--<img src="{!! $partido->awayTeam->images->first()->images  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">--}}
 
                                                                         @if($partido->away_teams_id != null)
-                                                                            <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                            <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
                                                                         @endif
 
-                                                                    </a>
+                                                                  
                                                                 </div>
                                                                 
                                                             </div>
