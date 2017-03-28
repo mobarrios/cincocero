@@ -11327,6 +11327,11 @@ q {
   left: 0;
   transform: skew(-33deg);
   background: #ffc722;
+
+
+/**************** TABLA POSICIONES 1****************/
+
+
 }
 .article-single-text {
   padding: 27px 0;
@@ -11348,8 +11353,8 @@ q {
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  color: #363533;
-  background: #f2f2f2;
+  color: #ffc722;
+  background: #ffc722;
 }
 .article-single-text blockquote span {
   position: relative;
@@ -11390,26 +11395,26 @@ q {
   font-weight: normal;
 }
 .article-single-text table tr:hover td {
-  background: #ffc722;
-  color: #fff;
-  border-color: #ffc722;
+  background: #363533;
+  color: #363533;
+  border-color: #363533;
 }
 .article-single-text table tr th:nth-child(even) {
-  background: #ffc722;
+  background: #363533;
 }
 .article-single-text tr td {
   padding-left: 30px;
   height: 46px;
   border: solid #e9e9e9;
   border-width: 0 1px 1px 0;
-  background: #f2f2f2;
+  background: #363533;
   transition: 400ms all;
   -webkit-transition: 400ms all ;
 
 
 }
 .article-single-text tr:nth-child(odd) td {
-  background: #f7f7f7;
+  background: #363533;
 }
 .article-single-text tr td:first-child {
   border-width: 0 1px 1px 1px;
@@ -11522,6 +11527,17 @@ q {
 .article-single-text1 tr td:first-child {
   border-width: 0 1px 1px 1px;
 }
+
+
+
+
+
+
+
+
+
+
+
 /**************** Share BTN ****************/
 .share-wrap {
   margin-top: 10px;

@@ -41,12 +41,12 @@
               <td><a href="{!! route('new.torneos',[5,28]) !!}"><img src="../../../images/copa06.png" alt="The Futbol Company"></a></td>
             </tr>
             <tr>
-              <td style="font-size:14px;">La Liga</td>
-              <td style="font-size:14px;">Lega Calcio</td>
-              <td style="font-size:14px;">Premier League</td>
-              <td style="font-size:14px;">Bundesliga</td>
-              <td style="font-size:14px;">Le Championnat</td>
-              <td style="font-size:14px;">TFC Champions League</td>
+              <td class="uk-h4" style="font-size:14px;">La Liga</td>
+              <td class="uk-h4" style="font-size:14px;">Lega Calcio</td>
+              <td class="uk-h4" style="font-size:14px;">Premier League</td>
+              <td class="uk-h4" style="font-size:14px;">Bundesliga</td>
+              <td class="uk-h4" style="font-size:14px;">Le Championnat</td>
+              <td class="uk-h4" style="font-size:14px;">TFC Champions League</td>
             </tr>
           </tbody>
         </table>
