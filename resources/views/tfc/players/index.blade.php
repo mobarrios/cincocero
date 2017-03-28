@@ -51,7 +51,7 @@
                     </td>
                     <td>{{$model->dni}}</td>
                     <td>{{$model->fullName()}}</td>
-                    <td>{{$model->Teams->name}}</td>
+                    <td>{!! $model->Teams->name or '<span class="label label-danger"> Sin equipo </span>'  !!}</td>
                     <td>
                         @if($model->status == 1)
                             <span class="label label-success">Activo</span>
