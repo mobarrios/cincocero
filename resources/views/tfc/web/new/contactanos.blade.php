@@ -12,7 +12,7 @@
                                         <div class="contact-title">
                                             <h2>ENVIANOS TU MENSAJE</h2>
                                         </div>
-                                        <div class="contact-text">Completa los datos con * para poder enviarnos tu consulta, pronto alguien se contactará
+                                        <div class="contact-text">
                                         </div>
                                     </div>
                                     <div class="uk-width-1-1">
@@ -60,7 +60,7 @@
                                             <div class="mail">
                                                 <i class="uk-icon-envelope"></i>
                                                 <a href="malto:mauro@thefutbolcompany.com">
-                                                   mauro@thefutbolcompany.com
+                                                   juga@thefutbolcompany.com
                                                 </a>
                                             </div>
                                             <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N° 3680 - 3ero B</div>

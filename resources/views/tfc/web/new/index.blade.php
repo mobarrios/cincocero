@@ -25,7 +25,7 @@
         <div id="system-message-container"></div>
 
         <img src="../../../images/logo-white_nuevo.png" alt="The Futbol Company" width="50%">
-        <br><br><br><br><font size="4"><p>Selecciona <span class="mes-color">tu Torneo</span></p></font><br>
+        <br><br><br><br><font size="4"><p>Selecciona <span class="mes-color">tu Torneo.</span></p></font><br>
 
 
 
@@ -51,7 +51,7 @@
           </tbody>
         </table>
 
-
+</div>
     </div>
     
    
