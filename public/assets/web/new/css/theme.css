@@ -11030,7 +11030,7 @@ q {
   transition: 400ms all;
   -webkit-transition: 400ms all;
   text-transform: uppercase;
-  border: 1px solid #ffc722;
+  border: 1px solid #daa321;
 }
 .match-list-wrap .match-list-item .va-view-wrap a:hover {
   background: #ffc722;
@@ -11390,26 +11390,26 @@ q {
   font-weight: normal;
 }
 .article-single-text table tr:hover td {
-  background: #ffc722;
+  background: #363533;
   color: #fff;
-  border-color: #ffc722;
+  border-color: #363533;
 }
 .article-single-text table tr th:nth-child(even) {
-  background: #ffc722;
+  background: #363533;
 }
 .article-single-text tr td {
   padding-left: 30px;
   height: 46px;
   border: solid #e9e9e9;
   border-width: 0 1px 1px 0;
-  background: #f2f2f2;
+  background: #363533;
   transition: 400ms all;
   -webkit-transition: 400ms all ;
 
 
 }
 .article-single-text tr:nth-child(odd) td {
-  background: #f7f7f7;
+  background: #363533;
 }
 .article-single-text tr td:first-child {
   border-width: 0 1px 1px 1px;
