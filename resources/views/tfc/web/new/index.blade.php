@@ -17,7 +17,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 </head>
 
-<body class="uk-height-1-1 uk-vertical-align uk-text-center tt-offline">
+<body class="uk-vertical-align uk-text-center tt-offline">
     <div class="offline-logo">
         <div class="wrap"></div>
     </div>
