@@ -66,7 +66,7 @@
 
                                 <div class="uk-grid">
                                     <div class="uk-width-1-1">
-                                        <div class="article-single-text">
+                                        <div class="article-single-text3">
                                         article-single-text
                                             <p>
                                                 <table class="responsive">

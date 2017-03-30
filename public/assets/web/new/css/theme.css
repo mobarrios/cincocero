@@ -11327,24 +11327,19 @@ q {
   left: 0;
   transform: skew(-33deg);
   background: #ffc722;
-
-
-/**************** TABLA POSICIONES 1****************/
-
-
 }
-.article-single-text3 {
-  padding: 28px 0;
+.article-single-text {
+  padding: 27px 0;
   color: #a6a6a6;
   font-size: 15px;
   line-height: 22px;
   font-family: 'Work Sans';
 }
-.article-single-text3 p {
+.article-single-text p {
   padding-left: 29px;
   padding-right: 29px;
 }
-.article-single-text3 blockquote {
+.article-single-text blockquote {
   margin: 13px 0 14px 0;
   padding: 25px 20px 23px 30px;
   position: relative;
@@ -11353,14 +11348,14 @@ q {
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  color: #ffc722;
-  background: #ffc722;
+  color: #363533;
+  background: #f2f2f2;
 }
-.article-single-text3 blockquote span {
+.article-single-text blockquote span {
   position: relative;
   z-index: 1;
 }
-.article-single-text3 blockquote:before {
+.article-single-text blockquote:before {
   content: '';
   width: 80px;
   height: 57px;
@@ -11370,7 +11365,7 @@ q {
   left: 0;
   opacity: 0.1;
 }
-.article-single-text3 blockquote:after {
+.article-single-text blockquote:after {
   content: '';
   width: 80px;
   height: 57px;
@@ -11380,12 +11375,12 @@ q {
   right: 0;
   opacity: 0.1;
 }
-.article-single-text3 table {
+.article-single-text table {
   margin: 17px 0 15px 0;
   width: 100%;
   text-align: left;
 }
-.article-single-text3 table tr th {
+.article-single-text table tr th {
   padding-left: 30px;
   height: 46px;
   font-size: 15px;
@@ -11394,43 +11389,31 @@ q {
   background: #363533;
   font-weight: normal;
 }
-.article-single-text3 table tr:hover td {
-  background: #363533;
-  color: #363533;
-  border-color: #363533;
+.article-single-text table tr:hover td {
+  background: #ffc722;
+  color: #fff;
+  border-color: #ffc722;
 }
-.article-single-text3 table tr th:nth-child(even) {
-  background: #363533;
+.article-single-text table tr th:nth-child(even) {
+  background: #ffc722;
 }
-.article-single-text3 tr td {
+.article-single-text tr td {
   padding-left: 30px;
   height: 46px;
   border: solid #e9e9e9;
   border-width: 0 1px 1px 0;
-  background: #363533;
+  background: #f2f2f2;
   transition: 400ms all;
   -webkit-transition: 400ms all ;
 
 
 }
-.article-single-text3 tr:nth-child(odd) td {
-  background: #363533;
+.article-single-text tr:nth-child(odd) td {
+  background: #f7f7f7;
 }
-.article-single-text3 tr td:first-child {
+.article-single-text tr td:first-child {
   border-width: 0 1px 1px 1px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -11503,7 +11486,7 @@ q {
 }
 .article-single-text1 table tr:hover td {
   background: #363533;
-  color: #ffc722;
+  color: #fff;
   border-color: #363533;
 }
 .article-single-text1 table tr th:nth-child(even) {
@@ -11527,17 +11510,6 @@ q {
 .article-single-text1 tr td:first-child {
   border-width: 0 1px 1px 1px;
 }
-
-
-
-
-
-
-
-
-
-
-
 /**************** Share BTN ****************/
 .share-wrap {
   margin-top: 10px;
@@ -11767,7 +11739,7 @@ q {
 }
 .match-list-item.foot .read-more:hover {
   text-decoration: none;
-  color: #ffc722;
+  color: #fff;
 }
 .match-list-wrap .footer-slider-btn {
   margin-top: 6px;
@@ -12278,7 +12250,7 @@ q {
 }
 .news-sidebar .uk-panel-title {
   padding: 0 19px 0 0;
-  color: #ffc722;
+  color: #ffffff;
   font-size: 28px;
   text-transform: uppercase;
   display: inline-block;
