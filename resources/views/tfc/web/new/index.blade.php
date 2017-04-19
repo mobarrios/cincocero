@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Six Revisions">
   <meta name="description" content="How to use the CSS background-size property to make an image fully span the entire viewport.">
-  <link rel="icon" href="http://sixrevisions.com/favicon.ico" type="image/x-icon" />
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
   <link href="http://fonts.googleapis.com/css?family=Kotta+One|Cantarell:400,700" rel="stylesheet" type="text/css">
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

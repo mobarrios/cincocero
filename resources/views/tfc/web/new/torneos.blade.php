@@ -116,94 +116,89 @@
 
                                     <br><br>
 
-
-                                    <div class="uk-width-1-1">
-                                        <div class="match-gallery">
-                                            <div dir="ltr" class="uk-slidenav-position" data-uk-slider="">
-                                                <div class="uk-slider-container">
-                                                    <div class="big-title"><img src="images/fair.png" width="50" height="50">
-                                                        Resultados <span>de la Fecha</span>
-                                                    </div>
-
-                                                    @if($faseWeek)
-                                                        <div class="wrap uk-vertical-align-middle">
-                                                            <font size="3">Fecha N° {!! $faseWeek->name     !!}</font>
-                                                        </div>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                            @if(!$faseWeek  || $faseWeek->count() == 0)
-                                                <div class="va-latest-middle uk-flex uk-flex-middle text-center">
-                                                    <p class="text-center">NO HAY PARTIDOS CARGADOS TODAVÍA</p>
-                                                </div>
-                                            @else
-                                                @foreach($faseWeek->matches as $partido)
-                                                    <div class="va-latest-top">
-                                                        <div class="tournament">
-                                                            <address><h4>Cancha:{!! $partido->canchas ? $partido->canchas->name : 'A confirmar' !!} Sede: {!! $partido->canchas ? $partido->canchas->sedes->name : "A confirmar" !!}<br><br></address> </div>
-                                                        <div class="date">
-                                                            {!! $partido->date!!} {!! $partido->hour or 'A confirmar'!!}</div>
-                                                    </div>
-                                                    <div class="va-latest-middle uk-flex uk-flex-middle">
-
-                                                        <div class="uk-container uk-container-center">
-                                                            <div class="uk-grid uk-flex uk-flex-middle">
-                                                                <div class="uk-width-2-12 center">
-                                                                    
-
-{{--                                                                        <img src="{!! $partido->homeTeam->images->first() ? $partido->homeTeam->images->first()->image  : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">--}}
-                                                                        @if($partido->home_teams_id != null)
-                                                                            <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
-                                                                        @endif
-                                                                    
-                                                                </div>
-                                                                <div class="uk-width-3-12 name uk-vertical-align">
-                                                                    <div class="wrap uk-vertical-align-middle">
-                                                                        <font size="3">{!! $partido->homeTeam->name  or 'Libre' !!}</font>
-                                                                    </div>
-                                                                </div>
-
-
-                                                                <div class="uk-width-2-12 score">
-                                                                    <div class="table">
-                                                                        <div class="left">{!! $partido->home_goals or "-" !!}</div>
-                                                                        <div class="right">{!! $partido->away_goals or "-" !!}</div>
-                                                                        <div class="uk-clearfix"></div>
-                                                                    </div>
-                                                                </div>
-
-
-
-                                                                <div class="uk-width-3-12 name alt uk-vertical-align">
-                                                                    <div class="wrap uk-vertical-align-middle">
-                                                                        <font size="3">{!! $partido->awayTeam->name  or 'Libre' !!} </font></div>
-                                                                </div>
-                                                                <div class="uk-width-2-12 center">
-                                                                    
-
-                                                                       {{--<img src="{!! $partido->awayTeam->images->first()->images  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">--}}
-
-                                                                        @if($partido->away_teams_id != null)
-                                                                            <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
-                                                                        @endif
-
-                                                                  
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
-                                            @endif
-
-                                        </div>
-                                    </div>
-
-                                    <br>
 <!-- Nuevos Resultados de la Fecha -->
 
+<div class="tm-top-b-box tm-full-width  "><br><br>
+<div class="big-title"><img src="images/fair.png" width="50" height="50">Resultados <span>de la Fecha</span></div>
+            <div class="uk-container uk-container-center">
+                <section id="tm-top-b" class="tm-top-b uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
+
+                    <div class="uk-width-1-1">
+                        <div class="uk-panel">
+
+                            <div class="va-latest-wrap">
+                            @if($faseWeek)
+                                <div class="wrap uk-vertical-align-middle">
+                                    <font size="3">Fecha N° {!! $faseWeek->name     !!}</font>
+                                </div>
+                            @endif
+                            @if(!$faseWeek  || $faseWeek->count() == 0)
+                                <div class="va-latest-middle uk-flex uk-flex-middle text-center">
+                                    <p class="text-center">NO HAY PARTIDOS CARGADOS TODAVÍA</p>
+                                </div>
+                            @else
+                            @foreach($faseWeek->matches as $partido)
+                                <div class="uk-container uk-container-center">
+                                    <div class="va-latest-top">
+                                        
+                                        <div class="tournament">
+                                            <address>Cancha:{!! $partido->canchas ? $partido->canchas->name : 'A confirmar' !!} Sede: {!! $partido->canchas ? $partido->canchas->sedes->name : "A confirmar" !!}<br><br></address> </div>
+                                        <div class="date">
+                                            {!! $partido->date!!} {!! $partido->hour or 'A confirmar'!!} </div>
+                                    </div>
+                                </div>
+                                <div class="va-latest-middle uk-flex uk-flex-middle">
+                                    <div class="uk-container uk-container-center">
+                                        <div class="uk-grid uk-flex uk-flex-middle">
+                                            <div class="uk-width-2-12 center">
+                                                {{--<img src="{!! $partido->homeTeam->images->first() ? $partido->homeTeam->images->first()->image  : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">--}}
+                                                    @if($partido->home_teams_id != null)
+                                                        <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
+                                                    @endif
+                                            </div>
+                                            <div class="uk-width-3-12 name uk-vertical-align">
+                                                <div class="wrap uk-vertical-align-middle">
+                                                    <h4>{!! $partido->homeTeam->name  or 'Libre' !!}</h4> </div>
+                                            </div>
+                                            <div class="uk-width-2-12">
+                                               
+                                                <div class="table">
+                                                    <div class="left">{!! $partido->home_goals or "-" !!}</div>
+                                                    <div class="right">{!! $partido->away_goals or "-" !!}</div>
+                                                    <div class="uk-clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <div class="uk-width-3-12 name alt uk-vertical-align">
+                                                <div class="wrap uk-vertical-align-middle">
+                                                    <h4>{!! $partido->awayTeam->name  or 'Libre' !!}</h4> </div>
+                                            </div>
+                                            <div class="uk-width-2-12 center">
+                                                {{--<img src="{!! $partido->awayTeam->images->first()->images  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">--}}
+
+                                                @if($partido->away_teams_id != null)
+                                                    <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                               @endif
+                                
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+                </section>
+            </div>
+        </div>
         <!-- Fin Nuevos Resultados de la Fecha -->
-                                    <br>
+                                    <br><br>
 
                                     <div class="uk-width-1-1">
                                         <div class="match-gallery">
