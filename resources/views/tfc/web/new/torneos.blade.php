@@ -239,7 +239,7 @@
                                                                 </a>
                                                             </div>
                                                             <div class="team-name">
-                                                                {!! $partido->homeTeam->name  or "Libre" !!}
+                                                                {!! $partido->homeTeam->name  or "Libre" !!}</font>
                                                             </div>
                                                             <div class="team-score">
                                                                 vs
@@ -258,10 +258,9 @@
                                                                     @endif
                                                                 </a>
                                                             </div>
-                                                            <div class="title"><font color="ffffff" size="2">
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                    {!! $partido->hour or 'A confirmar' !!} - Cancha {!! $partido->canchas->name or 'A confirmar' !!}
-                                                                </font>
+                                                            <div class="va-view-wrap">
+                                                                    <a class="view-article" href="{!! route('new.sedeDetalle',[$route,$partido->canchas->sedes->id]) !!}">{!! $partido->hour or 'A confirmar' !!} - Cancha {!! $partido->canchas->name or 'A confirmar' !!}
+                                                                </a>
                                                             </div>
                                                             @if($partido->canchas_id != null)
                                                                 <div class="va-view-wrap">
@@ -275,29 +274,26 @@
                                             <br>
                                             <br>
 
-                                            <div class="uk-slider-container">
+                                            
+
+<div class="uk-slider-container">
                                                 <div class="big-title">
-                                                    <img src="images/fixture.png" width="50" height="50">Fixture y <span>Resultados</span>
-                                                </div>
-
+                                                    <img src="images/fixture.png" width="50" height="50">Fixture y <span>Resultados</span></div>
+                                                    
                                             </div>
-                                            <div class="uk-container uk-container-center">
-                                                <div class="uk-grid">
+
+                                            <div class="uk-width-medium-2-1">
+                                                    
+                                                    <!-- This is the container of the toggling elements -->
+                                                    <ul class="tabs-switch-top" data-uk-switcher="{connect:'#tab-switch'}">
+                                                        @foreach($fasesWeek as $ind => $fase)
+                                                            <li class="{!! $fase->id == $faseActual->id ? "uk-active " : "" !!}" aria-expanded="true"><a href="/">{!! $ind+1 !!}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+
                                                     <!-- This is the container of the content items -->
-                                                    <ul id="our-history" class="uk-switcher uk-container uk-container-center">
-                                                        <li aria-hidden="false" class="uk-grid uk-active">
-                                                            <div class="uk-width-medium-13-20">
-
-                                                                <!-- This is the container of the toggling elements -->
-                                                                <ul class="tabs-switch-top" data-uk-switcher="{connect:'#tab-switch'}">
-                                                                    @foreach($fasesWeek as $ind => $fase)
-                                                                        <li class="{!! $fase->id == $faseActual->id ? "uk-active " : "" !!}" aria-expanded="true"><a href="/">{!! $ind+1 !!}</a>
-                                                                        </li>
-                                                                    @endforeach
-                                                                </ul>
-
-                                                                <!-- This is the container of the content items -->
-                                                                <ul id="tab-switch" class="uk-switcher tabs-switch-bottom">
+                                                    <ul id="tab-switch" class="uk-switcher tabs-switch-bottom">
                                                                     @foreach($fasesWeek as $fase)
                                                                         <li class="{!! $fase->id == $faseActual->id ? "uk-active " : "" !!}" aria-hidden="false">
                                                                             <table width="100%" border="0">
@@ -306,20 +302,20 @@
                                                                                         <td>
 {{--                                                                                            <img src="{!! $partido->homeTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="30" height="30">--}}
                                                                                             @if($partido->home_teams_id != null)
-                                                                                                <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                                                <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="30" height="30">
                                                                                             @endif
 
                                                                                         </td>
-                                                                                        <td>{!! $partido->homeTeam->name or "Libre" !!}</td>
-                                                                                        <td>{!! $partido->home_goals or "-" !!}</td>
-                                                                                        <td>vs</td>
-                                                                                        <td>{!! $partido->away_goals or "-" !!}</td>
-                                                                                        <td>{!! $partido->awayTeam->name or "Libre" !!}</td>
+                                                                                        <td class="team-name"><font size="3" color="ffc722">{!! $partido->homeTeam->name or "Libre" !!}&nbsp;</font></td>
+                                                                                        <td><font size="3" color="ffc722">&nbsp;{!! $partido->home_goals or "-" !!}&nbsp;</font></td>
+                                                                                        <td><font size="3" color="ffc722">&nbsp;vs&nbsp;</font></td>
+                                                                                        <td><font size="3" color="ffc722">&nbsp;{!! $partido->away_goals or "-" !!}&nbsp;</font></td>
+                                                                                        <td class="team-name"><font size="3" color="ffc722">&nbsp;{!! $partido->awayTeam->name or "Libre" !!}</font></td>
                                                                                         <td>
 {{--                                                                                            <img src="{!! $partido->awayTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"width="30" height="30">--}}
 
                                                                                             @if($partido->away_teams_id != null)
-                                                                                                <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="50" height="50">
+                                                                                                <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid" width="30" height="30">
                                                                                             @endif
                                                                                         </td>
                                                                                     </tr>
@@ -335,16 +331,8 @@
                                                                         </li>
                                                                     @endforeach
                                                                 </ul>
-                                                            </div>
-
-                                                        </li>
-
-                                                    </ul>
                                                 </div>
-                                            </div>
-                                   
-                                            <br>
-                                            <br>
+
 
                                             <div class="uk-slider-container">
                                                 <div class="big-title">

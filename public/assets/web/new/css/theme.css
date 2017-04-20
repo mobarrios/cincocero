@@ -10531,9 +10531,9 @@ q {
   left: -3px;
 }
 .va-latest-middle .table .left {
-  width: 27%;
+  width: 17%;
   float: left;
-  font-size: 23px;
+  font-size: 38px; 
   text-align: center;
   line-height: 70px;
   position: relative;
@@ -10555,7 +10555,7 @@ q {
   right: -35px;
 }
 .va-latest-middle .table .right {
-  width: 37%;
+  width: 27%;
   float: right;
   position: relative;
   font-size: 33px;
