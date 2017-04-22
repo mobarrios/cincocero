@@ -259,8 +259,12 @@
                                                                 </a>
                                                             </div>
                                                             <div class="va-view-wrap">
+                                                                @if($partido->canchas)
                                                                     <a class="view-article" href="{!! route('new.sedeDetalle',[$route,$partido->canchas->sedes->id]) !!}">{!! $partido->hour or 'A confirmar' !!} - Cancha {!! $partido->canchas->name or 'A confirmar' !!}
                                                                 </a>
+                                                                @else
+                                                                    A confirmar
+                                                                @endif
                                                             </div>
                                                             @if($partido->canchas_id != null)
                                                                 <div class="va-view-wrap">
