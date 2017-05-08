@@ -171,12 +171,12 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
 //});
 
-/*
-Route::group(['prefix'=>'ws'],function(){
+
+Route::group(['prefix'=>'api'],function(){
     require(__DIR__ . '/Routes/ws/wsContentRoutes.php');
 });
 
-*/
+
 Route::get('xls',function(){
     Excel::create('Laravel Excel', function($excel) {
 

@@ -10,6 +10,7 @@ use App\Entities\AdminUsers;
 use App\Entities\stock\Items;
 use App\Entities\User;
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\motonet\PublicationsRepo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
@@ -19,7 +20,7 @@ class wsContentController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('cors');
+       // $this->middleware('cors');
       //  $this->middleware('changeDbWS');
     }
 
@@ -28,6 +29,21 @@ class wsContentController extends Controller {
        $it = Items::lists('code','description');
 
         return response()->json($it);
+
+    }
+
+    public function publications(PublicationsRepo $publicationsRepo)
+    {
+
+
+        $publications = $publicationsRepo->getModel()
+            ->with('models')
+            ->with('models.brands')
+            ->with('models.categories')
+            ->where('private',0)
+            ->get();
+
+        return response()->json($publications);
 
     }
 
