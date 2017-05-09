@@ -37,6 +37,7 @@ class wsContentController extends Controller
     {
         $data = [];
 
+
         $publications = $publicationsRepo->getModel()
             ->where('private', 0)
             ->get();
@@ -44,8 +45,8 @@ class wsContentController extends Controller
 
         foreach ($publications as $publication) {
 
-            foreach ($publication->Models->Categories as $category) {
-                $cat = [];
+            foreach ($publication->Models->Categories as $category)
+            {
                 $cat[]=['name' => $category->name];
             }
 
@@ -62,7 +63,7 @@ class wsContentController extends Controller
                     'name' => $publication->Models->name,
                     'img' => $publication->Models->Images->first() ? $publication->Models->Images->first()->image : null
                 ],
-                'categories' => $cat,
+                'categories' => $publication->Models->Categories->first() ? $publication->Models->Categories->first()->name : null,
                 'destacado' => $publication->destacado,
                 'destacado_text' => $publication->destacado_text,
                 'promo' => $publication->promo
