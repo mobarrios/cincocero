@@ -44,32 +44,41 @@ class Entity extends Model {
             return $image;
         }
 
+    }
 
+
+    public function img()
+    {
+        $this->attributes['img'] = $this->getImagesAttribute();
+    }
+
+    public function getImgAttribute(){
+        return $this->attributes['img'];
     }
 
     public function cleanChars($string){
         $pattern1 = '/[ \']/';
         $replacement1 = '-';
 
-        $pattern2 = '/[ñ]/';
+        $pattern2 = '/[ï¿½]/';
         $replacement2 = 'n';
 
-        $pattern3 = '/[á]/';
+        $pattern3 = '/[ï¿½]/';
         $replacement3 = 'a';
 
-        $pattern4 = '/[é]/';
+        $pattern4 = '/[ï¿½]/';
         $replacement4 = 'e';
 
-        $pattern5 = '/[í]/';
+        $pattern5 = '/[ï¿½]/';
         $replacement5 = 'i';
 
-        $pattern6 = '/[ó]/';
+        $pattern6 = '/[ï¿½]/';
         $replacement6 = 'o';
 
-        $pattern7 = '/[ú]/';
+        $pattern7 = '/[ï¿½]/';
         $replacement7 = 'u';
 
-        $pattern8 = '/[ü]/';
+        $pattern8 = '/[ï¿½]/';
         $replacement8 = 'u';
 
         $newString = preg_replace($pattern1, $replacement1, $string, -1 );

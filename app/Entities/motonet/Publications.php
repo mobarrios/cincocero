@@ -11,6 +11,8 @@ class Publications extends Entity{
 
     protected $fillable = ['publication_date','title','price','models_id','description','destacado','salable','destacado_text','private','users_id','promo'];
 
+   
+
 
     public function getPublicationDateAttribute($value)
     {

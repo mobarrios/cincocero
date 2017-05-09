@@ -16,17 +16,18 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 
 
-class wsContentController extends Controller {
+class wsContentController extends Controller
+{
 
     public function __construct()
     {
-       // $this->middleware('cors');
-      //  $this->middleware('changeDbWS');
+        // $this->middleware('cors');
+        //  $this->middleware('changeDbWS');
     }
 
     public function getWs(Request $request)
     {
-       $it = Items::lists('code','description');
+        $it = Items::lists('code', 'description');
 
         return response()->json($it);
 
@@ -34,16 +35,44 @@ class wsContentController extends Controller {
 
     public function publications(PublicationsRepo $publicationsRepo)
     {
-
+        $data = collect();
 
         $publications = $publicationsRepo->getModel()
-            ->with('models')
-            ->with('models.brands')
-            ->with('models.categories')
-            ->where('private',0)
+            ->where('private', 0)
             ->get();
 
-        return response()->json($publications);
+
+        foreach ($publications as $publication) {
+
+            foreach ($publication->Models->Categories as $category)
+            {
+                $cat = collect();
+                $cat->push(['name'=> $category->name]);
+            }
+
+            $data->push([
+                'title' => $publication->title,
+                'description'=> $publication->description,
+                'price' => $publication->price,
+                'img' => $publication->Images->first() ? $publication->Images->first()->image : null,
+                'brands'=>[
+                    'name'=>$publication->Models->Brands->name,
+                    'img'=> $publication->Models->Brands->Images->first() ? $publication->Models->Brands->Images->first()->image : null,
+                    ],
+                'models' => [
+                    'name' => $publication->Models->name,
+                    'img' => $publication->Models->Images->first() ? $publication->Models->Images->first()->image : null,
+                ],
+                'categories' => $cat,
+                'destacado' => $publication->destacado,
+                'destacado_text' => $publication->destacado_text,
+
+                'promo' => $publication->promo,
+            ]);
+
+        };
+
+        return response()->json($data);
 
     }
 
