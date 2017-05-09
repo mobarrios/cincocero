@@ -46,7 +46,7 @@ class wsContentController extends Controller
 
             foreach ($publication->Models->Categories as $category) {
                 $cat = [];
-                $ca[]=['name' => $category->name];
+                $cat[]=['name' => $category->name];
             }
 
             $data[] = [
