@@ -45,24 +45,26 @@ class wsContentController extends Controller
 
         foreach ($publications as $publication) {
 
-           // foreach ($publication->Models->Categories as $category)
-           // {
-           //     $cat[]=['name' => $category->name];
-           // }
+            // foreach ($publication->Models->Categories as $category)
+            // {
+            //     $cat[]=['name' => $category->name];
+            // }
 
             $data[] = [
                 'title' => $publication->title,
-                'description' => $publication->description,
+                //'description' => $publication->description,
                 'price' => $publication->price,
                 'img' => $publication->Images->first() ? $publication->Images->first()->image : null,
-                'brands' => [
-                    'name' => $publication->Models->Brands->name,
-                    'img' => $publication->Models->Brands->Images->first() ? $publication->Models->Brands->Images->first()->image : null
-                ],
-                'models' => [
-                    'name' => $publication->Models->name,
-                    'img' => $publication->Models->Images->first() ? $publication->Models->Images->first()->image : null
-                ],
+                'brands' =>
+                    [
+                        'name' => $publication->Models->Brands->name,
+                        'img' => $publication->Models->Brands->Images->first() ? $publication->Models->Brands->Images->first()->image : null
+                    ],
+                'models' =>
+                    [
+                        'name' => $publication->Models->name,
+                        'img' => $publication->Models->Images->first() ? $publication->Models->Images->first()->image : null
+                    ],
                 'categories' => $publication->Models->Categories->first() ? $publication->Models->Categories->first()->name : null,
                 'destacado' => $publication->destacado,
                 'destacado_text' => $publication->destacado_text,
