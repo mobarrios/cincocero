@@ -35,7 +35,7 @@ class wsContentController extends Controller
 
     public function publications(PublicationsRepo $publicationsRepo)
     {
-        $data = collect();
+        $data = [];
 
         $publications = $publicationsRepo->getModel()
             ->where('private', 0)
@@ -50,7 +50,7 @@ class wsContentController extends Controller
                 $cat->push(['name'=> $category->name]);
             }
 
-            $data->push([
+            $data[]=[
                 'title' => $publication->title,
                 'description'=> $publication->description,
                 'price' => $publication->price,
@@ -65,9 +65,9 @@ class wsContentController extends Controller
                 ],
                 'categories' => $cat,
                 'destacado' => $publication->destacado,
-                'destacado_text' => $publication->destacado_text,
+                'destacado_text' => $publication->destacado_text ,
                 'promo' => $publication->promo
-            ]);
+            ];
 
         };
 
