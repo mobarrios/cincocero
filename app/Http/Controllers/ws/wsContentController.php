@@ -66,8 +66,7 @@ class wsContentController extends Controller
                 'categories' => $cat,
                 'destacado' => $publication->destacado,
                 'destacado_text' => $publication->destacado_text,
-
-                'promo' => $publication->promo,
+                'promo' => $publication->promo
             ]);
 
         };
