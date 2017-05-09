@@ -57,11 +57,11 @@ class wsContentController extends Controller
                 'img' => $publication->Images->first() ? $publication->Images->first()->image : null,
                 'brands'=>[
                     'name'=>$publication->Models->Brands->name,
-                    'img'=> $publication->Models->Brands->Images->first() ? $publication->Models->Brands->Images->first()->image : null,
+                    'img'=> $publication->Models->Brands->Images->first() ? $publication->Models->Brands->Images->first()->image : null
                     ],
                 'models' => [
                     'name' => $publication->Models->name,
-                    'img' => $publication->Models->Images->first() ? $publication->Models->Images->first()->image : null,
+                    'img' => $publication->Models->Images->first() ? $publication->Models->Images->first()->image : null
                 ],
                 'categories' => $cat,
                 'destacado' => $publication->destacado,
