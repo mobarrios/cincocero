@@ -44,28 +44,27 @@ class wsContentController extends Controller
 
         foreach ($publications as $publication) {
 
-            foreach ($publication->Models->Categories as $category)
-            {
-                $cat = collect();
-                $cat->push(['name'=> $category->name]);
+            foreach ($publication->Models->Categories as $category) {
+                $cat = [];
+                $ca[]=['name' => $category->name];
             }
 
-            $data[]=[
+            $data[] = [
                 'title' => $publication->title,
-                'description'=> $publication->description,
+                'description' => $publication->description,
                 'price' => $publication->price,
                 'img' => $publication->Images->first() ? $publication->Images->first()->image : null,
-                'brands'=>[
-                    'name'=>$publication->Models->Brands->name,
-                    'img'=> $publication->Models->Brands->Images->first() ? $publication->Models->Brands->Images->first()->image : null
-                    ],
+                'brands' => [
+                    'name' => $publication->Models->Brands->name,
+                    'img' => $publication->Models->Brands->Images->first() ? $publication->Models->Brands->Images->first()->image : null
+                ],
                 'models' => [
                     'name' => $publication->Models->name,
                     'img' => $publication->Models->Images->first() ? $publication->Models->Images->first()->image : null
                 ],
                 'categories' => $cat,
                 'destacado' => $publication->destacado,
-                'destacado_text' => $publication->destacado_text ,
+                'destacado_text' => $publication->destacado_text,
                 'promo' => $publication->promo
             ];
 
