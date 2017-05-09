@@ -45,10 +45,10 @@ class wsContentController extends Controller
 
         foreach ($publications as $publication) {
 
-            foreach ($publication->Models->Categories as $category)
-            {
-                $cat[]=['name' => $category->name];
-            }
+           // foreach ($publication->Models->Categories as $category)
+           // {
+           //     $cat[]=['name' => $category->name];
+           // }
 
             $data[] = [
                 'title' => $publication->title,
