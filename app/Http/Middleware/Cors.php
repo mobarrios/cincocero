@@ -12,35 +12,34 @@ class Cors  {
 
         $headers = [
             'Access-Control-Allow-Origin' => '*',
-            'Access-Control-Allow-Headers' => 'Origin, Content-Type'
-        ];
-          
+            'Access-Control-Allow-Headers' => 'Origin, Content-Type',
+            'Access-Control-Allow-Credentials: true',
 
-        $token = $request->headers->all();
+        ];
+
+
+        //$token = $request->headers->all();
         //$token = '$2y$10$WqqbMZ/W4njUOe3DQDTBy.OHXdzY/QdXbxIT1Pc.jGSa3g.b2qC7G';
 
-
-        //valida token
-
-//            if(isset($token['x-csrf-token']))
-//            {
-//                $user = User::where('token', $token['x-csrf-token'])->get();
+//    if(isset($token['x-csrf-token']))
+//    {
+//        $user = User::where('token', $token['x-csrf-token'])->get();
 //
-//                if ($user->count() != 0) {
-//                    Auth::loginUsingId($user->first()->id);
+//        if ($user->count() != 0) {
+//            Auth::loginUsingId($user->first()->id);
 //
-//                    header('Access-Control-Allow-Origin:  *');
-//                    header('Access-Control-Allow-Credentials: true');
-//                    header('Acces-Control-Allow-Headers: Origin, Content-Type ');
+//            header('Access-Control-Allow-Origin:  *');
+//            header('Access-Control-Allow-Credentials: true');
+//            header('Acces-Control-Allow-Headers: Origin, Content-Type ');
 //
-//                    return $next($request);
-//                }
-//                return response()->json('invalid Token');
-//            }
-//            else
-//            {
-//                return response()->json('Token not found');
-//            }
+//            return $next($request);
+//        }
+//        return response()->json('invalid Token');
+//    }
+//    else
+//    {
+//        return response()->json('Token not found');
+//    }
 
 
 
