@@ -1,21 +1,23 @@
 <?php namespace App\Http\Middleware;
+
 use App\Entities\User;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class Cors  {
+class Cors
+{
 
     public function handle($request, Closure $next)
     {
 
         // ALLOW OPTIONS METHOD
 
-        $headers = [
-            'Access-Control-Allow-Origin' => '*',
-            'Access-Control-Allow-Headers' => 'Origin, Content-Type',
-            'Access-Control-Allow-Credentials: true',
-
-        ];
+//        $headers = [
+//            'Access-Control-Allow-Origin' => '*',
+//            'Access-Control-Allow-Headers' => 'Origin, Content-Type',
+//            'Access-Control-Allow-Credentials: true',
+//
+//        ];
 
 
         //$token = $request->headers->all();
@@ -42,11 +44,12 @@ class Cors  {
 //    }
 
 
-
-
-
         // if($request->server('HTTP_HOST') == 'localhost')
-            return $next($request);
+        return $next($request)
+            ->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Credentials', ' true')
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
 
         /*
 
