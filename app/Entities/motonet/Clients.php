@@ -7,7 +7,7 @@ class Clients extends Entity{
 
     protected $table = 'clients';
 
-    protected $fillable = ['name','last_name','dni','email','address'];
+    protected $fillable = ['name','last_name','dni','email','address','sorteo'];
 
 
     public function Operations()

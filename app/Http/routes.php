@@ -25,8 +25,24 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 
 require(__DIR__. '/Routes/motonet/webRoutes.php');
 
+//confirma mail del sorteo
+Route::get('confirm/{id?}',function($id)
+{
+    $clientsRepo = new \App\Http\Repositories\motonet\ClientsRepo();
+    $client = $clientsRepo->find($id);
+    $client->sorteo = 2;
+    $client->save();
+
+    return ('Su Número de confirmación es <strong> #'.$client->id.'</strong><h3>Gracias por confirmar su mail.</h3>');
+});
+
+
+
+
+
 // route MERCADO PAGO
 Route::get('test_mail',function(){
+    
 
     $publication    = App\Entities\motonet\Publications::find(14);
     $client         = App\Entities\motonet\Clients::find(2);
