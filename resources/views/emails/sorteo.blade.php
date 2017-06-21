@@ -10,6 +10,7 @@
         <div id="pago">
             <table>
                 <tr><td><h1>San Miguel Maneja Seguro</h1></td></tr>
+                <tr><td><h3>El sorteo se realizará el 16 de Julio a las 17.00hs en la intersección de Av. Pte. Perón y Belgrano, San Miguel.</h3></td></tr>
                 <tr><td> DNI : <strong>{{$dni or ''}}</strong> <br>
                          NOMBRE : <strong>{{ $name or ''}}</strong><br>
                          APELLIDO : <strong>{{ $last_name or ''}}</strong></td></tr>
