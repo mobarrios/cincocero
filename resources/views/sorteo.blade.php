@@ -15,6 +15,8 @@
             <th>Apellido Nombre</th>
             <th>Tel.</th>
             <th>Mail</th>
+            <th>Estado</th>
+
             </thead>
             <tbody>
             @foreach($clients_all as $client)
@@ -23,6 +25,13 @@
                 <td>{{$client->last_name}} {{$client->name}}</td>
                 <td>{{$client->phone}} </td>
                 <td>{{$client->email}}</td>
+
+                @if($client->sorteo == 1)
+                    <td><label class="label label-danger">Sin Confirmar</label></td>
+                @else
+                    <td><label class="label label-success">Confirmado</label></td>
+                @endif
+
             </tr>
             @endforeach
             </tbody>
