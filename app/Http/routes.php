@@ -25,6 +25,7 @@ use \App\Helpers\TodoPago\lib\Data\User as todoPagoUser;
 
 require(__DIR__. '/Routes/motonet/webRoutes.php');
 
+
 //confirma mail del sorteo
 Route::get('confirm/{id?}',function($id)
 {
@@ -161,6 +162,21 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
 
                 });
+
+                ///sorteo
+                Route::get('sorteo',function()
+                {
+                    $cl = new \App\Http\Repositories\motonet\ClientsRepo;
+
+                    $data['clients_all']= $cl->getModel()->where('sorteo','!=', 'NULL')->get();
+                    $data['clients_no_confirm']= $cl->getModel()->where('sorteo', 1)->get();
+
+                    $data['sectionName'] = 'Sorteo';
+
+
+                    return view('sorteo')->with($data);
+                });
+
 
             });
 
