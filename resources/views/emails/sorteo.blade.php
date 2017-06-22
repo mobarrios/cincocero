@@ -17,6 +17,10 @@
                 <tr>
                     <td><h3>Gracias por inscribirse a nuestro Sorteo!.</h3> <br> Por favor clickee <a href="http://www.motonet.com.ar/confirm/{{$id}}">AQUI!</a> en la confirmación de tu correo.</td>
                 </tr>
+
+                <tr>
+                    <td><h5>Te recordamos que el sorteo es presencial y que debes asistir con DNI .</h5></td>
+                </tr>
             </table>
         </div>
     </div>
