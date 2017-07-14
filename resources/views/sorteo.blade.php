@@ -5,10 +5,8 @@
     <div class="panel">
         <div class="panel-body">
             <span>Total de Inscripciones </span> :  <strong>{{$clients_all->count()}}</strong><br>
-            <span>Total de Inscripciones  Confirmadas </span> :  <strong>{{$clients_no_confirm->count()}}</strong><br>
+            <span>Total de Inscripciones  sin  Confirmar </span> :  <strong>{{$clients_no_confirm->count()}}</strong><br>
         </div>
-
-
         <table  id="dataTable" class="table ">
             <thead>
             <th>Codigo</th>
@@ -35,8 +33,11 @@
             </tr>
             @endforeach
             </tbody>
-
         </table>
+
+        <div class="panel-footer">
+            <a href="{{route('export')}}" class="btn btn-success"><span class="fa fa-file-excel-o"></span></a>
+        </div>
     </div>
 @endsection
 @stop
