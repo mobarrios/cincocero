@@ -173,7 +173,7 @@ Route::get('login', ['as'=>'login','uses'=>'LoginController@getLogin']);
 
                     $data['sectionName'] = 'Sorteo';
 
-                    $export = $cl->getModel()->where('sorteo', 1)->orderBy('created_at','ASC')->get(['id','dni','last_name','name','email','phone']);
+                    $export = $cl->getModel()->whereIn('sorteo',[1,2])->orderBy('created_at','ASC')->get(['id','dni','last_name','name','email','phone']);
 
                     \Illuminate\Support\Facades\Session::put('export',$export);
                     return view('sorteo')->with($data);
