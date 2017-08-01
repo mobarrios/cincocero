@@ -30,40 +30,40 @@
                                     <div class="uk-width-medium-1-3 uk-panel">
                                         <div style="min-height: 139px;" class="contact-enquiries">
                                             <div class="title">The Futbol Company</div>
-                                            <div class="phone"><i class="uk-icon-phone"></i>(011)-4504.9683</div>
+                                            <div class="phone"><i class="uk-icon-phone"></i>(011)-2105.3478</div>
                                             <div class="mail">
                                                 <i class="uk-icon-envelope"></i>
                                                 <a href="malto:info@thefutbolcompany.com">
                                                   info@thefutbolcompany.com
                                                 </a>
                                             </div>
-                                            <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N° 3680 - 3ero B</div>
+                                            
                                         </div>
                                     </div>
                                     <div class="uk-width-medium-1-3 uk-panel">
                                         <div style="min-height: 139px;" class="contact-enquiries">
                                             <div class="title">Torneos</div>
-                                            <div class="phone"><i class="uk-icon-phone"></i>(011)-4504.9683</div>
+                                            <div class="phone"><i class="uk-icon-phone"></i>(011)-2105.3478</div>
                                             <div class="mail">
                                                 <i class="uk-icon-envelope"></i>
                                                 <a href="malto:sergio@thefutbolcompany.com">
                                                     sergio@thefutbolcompany.com
                                                 </a>
                                             </div>
-                                            <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N° 3680 - 3ero B</div>
+                                            
                                         </div>
                                     </div>
                                     <div class="uk-width-medium-1-3 uk-panel">
                                         <div style="min-height: 139px;" class="contact-enquiries">
                                             <div class="title">Inscripciones</div>
-                                            <div class="phone"><i class="uk-icon-phone"></i>(011)-4504.9683</div>
+                                            <div class="phone"><i class="uk-icon-phone"></i>(011)-2105.3478</div>
                                             <div class="mail">
                                                 <i class="uk-icon-envelope"></i>
                                                 <a href="malto:mauro@thefutbolcompany.com">
                                                    juga@thefutbolcompany.com
                                                 </a>
                                             </div>
-                                            <div class="location"><i class="uk-icon-map-marker"></i>Jose Cubas N° 3680 - 3ero B</div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -87,11 +87,11 @@
                                         <div class="uk-grid  uk-grid-collapse uk-flex-item-1 uk-height-1-1 uk-nbfc">
                                             <div class="uk-width-5-10 contact-left uk-vertical-align contact-left-wrap">
                                                 <div class="contact-info-lines uk-vertical-align-middle">
-                                                    <div class="item phone"><span class="icon"><i class="uk-icon-phone"></i></span>(011)-4504.9683</div>
+                                                    <div class="item phone"><span class="icon"><i class="uk-icon-phone"></i></span>(011)-2105.3478</div>
                                                     <div class="item mail"><span class="icon"><i class="uk-icon-envelope"></i></span><a href="mailto:info@thefutbolcompany.com">info@thefutbolcompany.com</a>
                                                         
                                                     </div>
-                                                    <div class="item location"><span class="icon"><i class="uk-icon-map-marker"></i></span>Jose Cubas N° 3680 - 3ero B</div>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="uk-width-medium-5-10 uk-width-small-1-1 contact-right-wrap">
