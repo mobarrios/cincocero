@@ -143,8 +143,7 @@
 
                                 <p class="footer-about-text">
                                     Contactenos<br>
-                                    Tel.: 4504.9683<br>
-                                    Jose Cubas N° 3680 - 3ero B
+                                    Tel.: 2105.3478<br>
                                 </p>
                             </div>
                         </div>
@@ -214,7 +213,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="copyrights">Copyright © 2016 <a href="http://www.thefutbolcompany.com">Thefutbolcompany.com</a>. Derechos Reservados.</div>
+                                    <div class="copyrights">Copyright © 2017 <a href="http://www.thefutbolcompany.com">Thefutbolcompany.com</a>. Derechos Reservados.</div>
                                     <div class="clear"></div>
                                 </div>
                             </div>
