@@ -26,14 +26,19 @@
     </script>
 @endsection
 
-
 @section('sideContent')
     @include('motonet.web.new.index.slider')
 @endsection
 
+
 @section('content')
 
+
 <div class="row">
+    <div class="col-xs-12">
+        <img src="https://todopago.com.ar/sites/todopago.com.ar/files/banner18cuotas_3.jpg" alt="" width="100%" />
+    </div>
+
     <div class="col-xs-12 col-sm-12 col-md-12">
         @include('motonet.web.new.index.productosDestacados')
     </div>
