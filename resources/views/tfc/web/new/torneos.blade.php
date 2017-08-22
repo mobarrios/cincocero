@@ -84,18 +84,25 @@
                                                         </tr>
 
                                                         @forelse($tablas as $tabla)
-                                                            <tr>
-                                                                <td><img src="{!! $tabla->teams->images->first()->image or 'assets/web/images/teamDefault.png'!!}" width="35" height="35"></td>
-                                                                <td><a class="white" href="{!! route("new.equipo",[$route,$tabla->teams->id]) !!}">{!! $tabla->teams->name or '' !!}</a></td>
-                                                                <td>{!! $tabla->pts or '0' !!}</td>
-                                                                <td>{!! $tabla->pj or '0' !!}</td>
-                                                                <td>{!! $tabla->pg or '0' !!}</td>
-                                                                <td>{!! $tabla->pe or '0' !!}</td>
-                                                                <td>{!! $tabla->pp or '0' !!}</td>
-                                                                <td>{!! $tabla->gf or '0' !!}</td>
-                                                                <td>{!! $tabla->gc or '0' !!}</td>
-                                                                <td>{!! $tabla->dg or '0' !!}</td>
-                                                            </tr>
+                                                            @if($tabla->teams)
+                                                                <tr>
+                                                            
+                                                                    <td>
+                                                                        <img src="{!! $tabla->teams->images->count() > 0 ? $tabla->teams->images->first()->image : 'assets/web/images/teamDefault.png' !!}" width="35" height="35">
+                                                                    </td>
+                                                                    <td>
+                                                                        <a class="white" href="{!! $tabla->teams ? route("new.equipo",[$route,$tabla->teams->id]) : '#' !!}">{!! $tabla->teams->name or '' !!}</a>
+                                                                    </td>
+                                                                    <td>{!! $tabla->pts or '0' !!}</td>
+                                                                    <td>{!! $tabla->pj or '0' !!}</td>
+                                                                    <td>{!! $tabla->pg or '0' !!}</td>
+                                                                    <td>{!! $tabla->pe or '0' !!}</td>
+                                                                    <td>{!! $tabla->pp or '0' !!}</td>
+                                                                    <td>{!! $tabla->gf or '0' !!}</td>
+                                                                    <td>{!! $tabla->gc or '0' !!}</td>
+                                                                    <td>{!! $tabla->dg or '0' !!}</td>
+                                                                </tr>
+                                                            @endif
                                                         @empty
                                                             <tr>
                                                                 <td colspan="10">Sin resultados</td>
@@ -176,7 +183,12 @@
                                                 {{--<img src="{!! $partido->awayTeam->images->first()->images  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">--}}
 
                                                 @if($partido->away_teams_id != null)
-                                                    <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
+                                                    @if($partido->awayTeam)
+                                                        <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
+                                                    @else
+                                                        <img src="assets/web/images/teamDefault.png" class="img-polaroid">
+
+                                                    @endif
                                                 @endif
                                             </div>
                                         </div>
@@ -234,8 +246,13 @@
                                                                 <a href="#">
 {{--                                                                <img src="{!! $partido->homeTeam->images->first()->image  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"></a>--}}
                                                                     @if($partido->home_teams_id != null)
-                                                                        <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid"/>
-                                                                @endif
+                                                                        @if($partido->homeTeam)
+                                                                            <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
+                                                                        @else
+                                                                            <img src="assets/web/images/teamDefault.png" class="img-polaroid">
+                                                                        @endif
+
+                                                                    @endif
                                                                 </a>
                                                             </div>
                                                             <div class="team-name">
