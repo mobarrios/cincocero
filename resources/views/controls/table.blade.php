@@ -34,33 +34,36 @@
 
                 @foreach($tableHeader['columns'] as $column)
 
+                    <?php $col = $column['data']; ?>
+
+
                     @if(!is_null($column['relation']))
-                        @if($column['data'] == 'Categories')
-                            @if($model->$column['data']->count() > 1)
+                        @if($col == 'Categories')
+                            @if($model->$col->count() > 1)
                                 <td>|
-                                @foreach($model->$column['data'] as $d)
+                                @foreach($model->$col as $d)
                                     {!!  $d->$column['relation'] !!} |
                                 @endforeach
                                 </td>
                             @else
-                                <td>{!!  $model->$column['data']->first()->$column['relation'] !!}</td>
+                                <td>{!!  $model->$col->first()->$column['relation'] !!}</td>
                             @endif
                         @else
-                            <td>{!! $model->$column['data']->$column['relation']!!}</td>
+                            <td>{!! $model->$col->$column['relation']!!}</td>
                         @endif
                     @else
 
                          @if($column['data'] == 'images')
 
-                            @if(is_null($model->$column['data']))
+                            @if(is_null($model->$col))
                                <td></td>
                             @else
                                 <td style="width: 5%;">
-                                    @foreach($model->$column['data'] as $image)
+                                    @foreach($model->$col as $image)
                                         <div class="panel3 panel-default">
                                             <div class="panel3-body">
-                                                <a href="{{$image->image}}" title="{!! $model->name !!}" class="zoom" data-title="{!! $model->name !!}" data-type="image" data-toggle="lightbox">
-                                                    <img width="100%;" src="{{$image->image}}">
+                                                <a href="{!! $image->image!!}" title="{!! $model->name !!}" class="zoom" data-title="{!! $model->name !!}" data-type="image" data-toggle="lightbox">
+                                                    <img width="100%;" src="{!! $image->image !!}">
                                                     <span class="overlay"><i class="fa fa-arrows-alt"></i></span>
                                                 </a>
                                             </div>
@@ -73,7 +76,7 @@
                             @endif
 
                         @else
-                              <td>{!!  $model->$column['data'] !!}</td>
+                              <td>{!!  $model->$col !!}</td>
                          @endif
                     @endif
 
