@@ -12,7 +12,7 @@
         </div>
         <div class="col-xs-6 col-md-5">
             <div class="form-group">
-                {!! Form::text('name',null,['class'=>'input-sm form-control input-string','placeholder'=>'Nombre', 'required'=>'required']) !!}
+                {!! Form::text('name',null,['class'=>'input-sm form-control input-string','placeholder'=>'Nombre']) !!}
             </div>
         </div>
     </div>
