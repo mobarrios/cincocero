@@ -38,9 +38,11 @@
     {{--<div class="col-xs-12">--}}
         {{--<img src="https://todopago.com.ar/sites/todopago.com.ar/files/banner18cuotas_3.jpg" alt="" width="100%" />--}}
     {{--</div>--}}
-    <div class="col-xs-3"></div>
+    <div class="col-xs-3">
+        <img src="assets/web/img/flyerwave.jpg" alt="" width="100%" />
+    </div>
     <div class="col-xs-9 text-center">
-            <img src="assets/web/img/nacion.jpg" alt="" width="100%" />
+            <img src="assets/web/img/nacion.jpg" alt="" width="80%" />
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
