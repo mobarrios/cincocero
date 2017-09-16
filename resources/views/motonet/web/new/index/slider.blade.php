@@ -59,6 +59,17 @@
                 </div><!-- /.caption -->
             </div><!-- /.container-fluid -->
         </div><!-- /.item -->
+        <div class="item h-auto">
+            <div class="container-fluid">
+                <img src="assets/web/img/slider6.jpg" alt="" class="img-responsive">
+                <div class="caption bg-color vertical-center text-left">
+                    <div class="big-text fadeInDown-1">
+                    </div>
+                    <div class="button-holder fadeInDown-3">
+                    </div>
+                </div><!-- /.caption -->
+            </div><!-- /.container-fluid -->
+        </div><!-- /.item -->
 
 
     </div><!-- /.owl-carousel -->
