@@ -2,7 +2,7 @@
     <div class="links-social inner-top-sm">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="col-xs-3">
                     <!-- ============================================================= CONTACT INFO ============================================================= -->
                     <div class="contact-info">
                         <div class="footer-logo">
@@ -23,7 +23,7 @@
                     </div><!-- /.contact-info -->
                     <!-- ============================================================= CONTACT INFO : END ============================================================= -->            	</div><!-- /.col -->
 
-                <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="col-xs-5">
                     <!-- ============================================================= CONTACT TIMING============================================================= -->
                     <div class="contact-timing">
                         <div class="module-heading">
@@ -89,7 +89,7 @@
                     {{--</div><!-- /.contact-timing -->--}}
                 {{--</div><!-- /.col -->--}}
 
-                <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="col-xs-3">
                     <!-- ============================================================= INFORMATION============================================================= -->
                     <div class="contact-information">
                         <div class="module-heading">
@@ -104,6 +104,15 @@
                     </div><!-- /.contact-timing -->
                     <!-- ============================================================= INFORMATION : END ============================================================= -->
                 </div><!-- /.col -->
+
+                <div class="col-xs-1">
+                    <!-- ============================================================= INFORMATION============================================================= -->
+                    <a href="http://qr.afip.gob.ar/?qr=ABkaNCkzBlOi2NHlJCaKLA,," target="_F960AFIPInfo"><img width="100px" src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0"></a>
+                    <!-- ============================================================= INFORMATION : END ============================================================= -->
+                </div><!-- /.col -->
+
+
+
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div><!-- /.links-social -->
