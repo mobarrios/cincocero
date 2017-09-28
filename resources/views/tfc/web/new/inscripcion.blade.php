@@ -66,7 +66,18 @@
                                         <div class="contact-title">
                                             <h2>COMPLETA EL FORMULARIO</h2>
                                         </div>
-                                        <div class="contact-text">Usuario registrado con exito.</div>
+                                        <div class="mb-20 mb-md-10">
+                                            <div class="contact-text">
+                                                <ul>
+                                                    @if($errors->count()!= 0)
+                                                        @foreach($errors->all() as $error)
+                                                            <li>{{$error}}</li>
+                                                        @endforeach
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        {{--<div class="contact-text">Usuario registrado con exito.</div>--}}
                                     </div>
                                     
                                 </div>
@@ -81,15 +92,7 @@
         <div class="tm-bottom-b-box tm-full-width  ">
             <div class="uk-container uk-container-center mt60 mb180">
                 <section id="tm-bottom-b" class="tm-bottom-b uk-grid uk-grid-collapse" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
-                    {{--<div class="mb-20 mb-md-10">--}}
-                        {{--<ul>--}}
-                            {{--@if($errors->count()!= 0)--}}
-                                {{--@foreach($errors->all() as $error)--}}
-                                    {{--<li>{{$error}}</li>--}}
-                                {{--@endforeach--}}
-                            {{--@endif--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
+
                     <div class="uk-width-1-1">
                         <div class="uk-panel">
                             <div class="map-wrap">
