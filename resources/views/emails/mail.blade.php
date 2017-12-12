@@ -145,7 +145,7 @@
             <span>
                 <img src="http://www.motonet.com.ar/testing/mail/ok.png" alt="ok">
             </span>
-            ¡Gracias por tu compra!
+            ¡Gracias por Confiar en Nosotros!
         </h1>
         <h2>N° orden: {{$operation_id}}</h2>
 

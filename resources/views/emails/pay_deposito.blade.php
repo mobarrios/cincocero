@@ -6,7 +6,8 @@ MotoNET
 </strong>
 <br>
 
-Compraste el siguiente Articulo.
+Una vez confirmado por la empresa el deposito,
+Reservaste el siguiente Articulo.
 
 <hr>
 <table>
