@@ -154,56 +154,54 @@
                                                     </div>
 
                                                     @foreach($faseWeek->matches as $partido)
+                                                        {{--
 
-                                                        {{--<div class="article-single-text">--}}
-                                                            {{--<table>--}}
-                                                                {{--<tbody>--}}
+                                                        <div class="article-single-text">
+                                                            <table>
+                                                                <tbody>
 
-                                                                {{--<tr>--}}
-                                                                    {{--<td class="logo">--}}
-                                                                        {{--@if($partido->home_teams_id != null)--}}
-                                                                            {{--<img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}"--}}
-                                                                                 {{--class="img-polaroid">--}}
-                                                                        {{--@endif--}}
-                                                                    {{--</td>--}}
-                                                                    {{--<td><font color="#000000">--}}
-                                                                            {{--<h4>{!! $partido->homeTeam->name  or 'Libre' !!}</h4>--}}
-                                                                        {{--</font>--}}
-                                                                    {{--</td>--}}
-                                                                    {{--<td>{!! $partido->home_goals or "-" !!}</td>--}}
-                                                                    {{--<td> vs</td>--}}
-                                                                    {{--<td>{!! $partido->away_goals or "-" !!}</td>--}}
-                                                                    {{--<td>--}}
-                                                                        {{--<font color="#000000">{!! $partido->awayTeam->name  or 'Libre' !!}</font>--}}
-                                                                    {{--</td>--}}
-                                                                    {{--<td class="logo">--}}
-                                                                        {{--@if($partido->away_teams_id != null)--}}
-                                                                            {{--@if($partido->awayTeam)--}}
-                                                                                {{--<img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}"--}}
-                                                                                     {{--class="img-polaroid">--}}
-                                                                            {{--@else--}}
-                                                                                {{--<img src="assets/web/images/teamDefault.png"--}}
-                                                                                     {{--class="img-polaroid">--}}
+                                                                <tr>
+                                                                    <td class="logo">
+                                                                        @if($partido->home_teams_id != null)
+                                                                            <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}"
+                                                                                 class="img-polaroid">
+                                                                        @endif
+                                                                    </td>
+                                                                    <td><font color="#000000">
+                                                                            <h4>{!! $partido->homeTeam->name  or 'Libre' !!}</h4>
+                                                                        </font>
+                                                                    </td>
+                                                                    <td>{!! $partido->home_goals or "-" !!}</td>
+                                                                    <td> vs</td>
+                                                                    <td>{!! $partido->away_goals or "-" !!}</td>
+                                                                    <td>
+                                                                        <font color="#000000">{!! $partido->awayTeam->name  or 'Libre' !!}</font>
+                                                                    </td>
+                                                                    <td class="logo">
+                                                                        @if($partido->away_teams_id != null)
+                                                                            @if($partido->awayTeam)
+                                                                                <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}"
+                                                                                     class="img-polaroid">
+                                                                            @else
+                                                                                <img src="assets/web/images/teamDefault.png"
+                                                                                     class="img-polaroid">
 
-                                                                            {{--@endif--}}
-                                                                        {{--@endif--}}
-                                                                    {{--</td>--}}
-                                                                {{--</tr>--}}
+                                                                            @endif
+                                                                        @endif
+                                                                    </td>
+                                                                </tr>
 
-                                                                {{--</tbody>--}}
-                                                            {{--</table>--}}
-                                                        {{--</div>--}}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        --}}
 
 
                                                         <div class="va-latest-middle uk-flex uk-flex-middle">
                                                             <div class="uk-container uk-container-center">
                                                                 <div class="uk-grid uk-flex uk-flex-middle">
                                                                     <div class="uk-width-2-12 center">
-                                                                        <img src="{!! $partido->homeTeam->images->first() ? $partido->homeTeam->images->first()->image  : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
-                                                                        @if($partido->home_teams_id != null)
-                                                                            <img src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}"
-                                                                                 class="img-polaroid">
-                                                                        @endif
+                                                                        <img width="50" src="{!! $partido->homeTeam->images->count() > 0 ? $partido->homeTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
                                                                     </div>
                                                                     <div class="uk-width-3-12 name uk-vertical-align">
                                                                         <div class="wrap uk-vertical-align-middle">
@@ -224,8 +222,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="uk-width-2-12 center">
-                                                                        <img src="{!! $partido->awayTeam->images->first()->images  or 'assets/web/images/teamDefault.png' !!}" class="img-polaroid">
-
                                                                         @if($partido->away_teams_id != null)
                                                                             @if($partido->awayTeam)
                                                                                 <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}"
