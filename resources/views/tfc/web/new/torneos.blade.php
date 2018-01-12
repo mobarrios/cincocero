@@ -126,7 +126,7 @@
 
                                 <!-- Nuevos Resultados de la Fecha -->
 
-                                <div class="tm-top-b-box tm-full-width  "><br><br>
+                                <div class="tm-top-b-box tm-full-width" width="100%"><br><br>
                                     <div class="big-title"><img src="images/fair.png" width="50" height="50">Resultados
                                         <span>de la Fecha</span></div>
                                     <div class="uk-container uk-container-center">
