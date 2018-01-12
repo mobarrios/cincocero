@@ -224,10 +224,10 @@
                                                                     <div class="uk-width-2-12 center">
                                                                         @if($partido->away_teams_id != null)
                                                                             @if($partido->awayTeam)
-                                                                                <img src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}"
+                                                                                <img width="50" src="{!! $partido->awayTeam->images->count() > 0 ? $partido->awayTeam->images->first()->image : 'assets/web/images/teamDefault.png' !!}"
                                                                                      class="img-polaroid">
                                                                             @else
-                                                                                <img src="assets/web/images/teamDefault.png"
+                                                                                <img width="50" src="assets/web/images/teamDefault.png"
                                                                                      class="img-polaroid">
 
                                                                             @endif
