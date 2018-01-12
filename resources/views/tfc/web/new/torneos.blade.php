@@ -31,6 +31,10 @@
         .match-list-wrap .match-list-item .va-view-wrap {
             float: right;
         }
+
+        .tm-top-b-box.tm-full-width{
+            width: 100% !important;
+        }
     </style>
     <style>
         td a {
