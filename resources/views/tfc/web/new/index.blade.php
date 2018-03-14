@@ -37,7 +37,7 @@
 
     <section class="content">
       <p class="sub-title"><strong>Selecciona tu Torneo</strong> </p>
-      <p><a href="{!! route('new.torneos',[5,34]) !!}"><img src="../../../images/copa01.png"></a><a href="{!! route('new.torneos',[5,32]) !!}"><img src="../../../images/copa02.png"></a><a href="{!! route('new.torneos',[5,31]) !!}"><img src="../../../images/copa03.png"></a><a href="{!! route('new.torneos',[5,33]) !!}"><img src="../../../images/copa04.png"></a><a href="{!! route('new.torneos',[6,36]) !!}"><img src="../../../images/copa05.png"></a><a href="{!! route('new.torneos',[5,35]) !!}"><img src="../../../images/copa06.png"></a><a href="{!! route('new.torneos',[5,30]) !!}"><img src="../../../images/copa07.png"></a></p>
+      <p><a href="{!! route('new.torneos',[5,38]) !!}"><img src="../../../images/copa01.png"></a><a href="{!! route('new.torneos',[5,39]) !!}"><img src="../../../images/copa02.png"></a><a href="{!! route('new.torneos',[5,40]) !!}"><img src="../../../images/copa03.png"></a><a href="{!! route('new.torneos',[5,41]) !!}"><img src="../../../images/copa04.png"></a><a href="{!! route('new.torneos',[6,42]) !!}"><img src="../../../images/copa05.png"></a><a href="{!! route('new.torneos',[5,44]) !!}"><img src="../../../images/copa06.png"></a><a href="{!! route('new.torneos',[5,43]) !!}"><img src="../../../images/copa07.png"></a></p>
      
 
       
