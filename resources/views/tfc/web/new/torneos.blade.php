@@ -200,6 +200,18 @@
                                                         </div>
                                                         --}}
 
+                                                        <div class="va-latest-top">
+                                                            <div class="tournament">
+                                                                <address><h4>Cancha:{!! $partido->canchas ? $partido->canchas->name : 'A
+confirmar' !!} Sede: {!! $partido->canchas ? $partido->canchas->sedes->name
+: "A confirmar" !!}<br><br></address>
+                                                            </div>
+
+                                                            <div class="date">
+                                                                {!!
+                                                                $partido->date!!} {!! $partido->hour or 'A confirmar'!!}</div>
+                                                        </div>
+
 
                                                         <div class="va-latest-middle uk-flex uk-flex-middle">
                                                             <div class="uk-container uk-container-center">
