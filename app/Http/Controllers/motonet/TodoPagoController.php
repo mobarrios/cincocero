@@ -85,8 +85,8 @@ class TodoPagoController extends Controller {
                 'CSBTLASTNAME'              => $client->last_name,
                 'CSSTLASTNAME'              => $client->last_name,
 
-                'CSBTPHONENUMBER'           => '+54'.preg_replace("/^'|[^A-Za-z0-9\'-]|'$/", '', $client->phone),
-                'CSSTPHONENUMBER'           => '+54'.preg_replace("/^'|[^A-Za-z0-9\'-]|'$/", '', $client->phone),
+                'CSBTPHONENUMBER'           => '54'.preg_replace("/^'|[^A-Za-z0-9\'-]|'$/", '', $client->phone),
+                'CSSTPHONENUMBER'           => '54'.preg_replace("/^'|[^A-Za-z0-9\'-]|'$/", '', $client->phone),
 
                 'CSBTPOSTALCODE'            => $request->postal_code,
                 'CSSTPOSTALCODE'            => $request->postal_code,
