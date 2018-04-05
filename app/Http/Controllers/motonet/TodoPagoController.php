@@ -99,6 +99,7 @@ class TodoPagoController extends Controller {
 
                 'CSBTCUSTOMERID'            => $client->id,
                 'CSBTIPADDRESS'             => $_SERVER['REMOTE_ADDR'],
+                //'CSBTIPADDRESS'             => '127.0.0.1',
                 'CSPTCURRENCY'              => "ARS",
                 'CSPTGRANDTOTALAMOUNT'      => number_format($request->price, 2, '.', ''),
                 'CSITPRODUCTCODE'           => $publication->Models->Brands->name .'-'.$publication->Models->name ."#".$publication->Models->name,

@@ -221,7 +221,7 @@
             var inputs = [];
 
             $.each($(".input-string"),function(ind,element){
-                if(! element.value.match(/^[a-zñáéíóúüäö]{3,}$/ig)){
+                if(! element.value.match(/^[a-zñáéíóúüäö]{3,}( )?[a-zñáéíóúüäö]{0,}$/ig)){
                     $(element).parent().addClass('has-error')
 
                     submit1 = false;

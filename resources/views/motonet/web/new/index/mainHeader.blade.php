@@ -19,7 +19,7 @@
                         <i class="icon fa fa-phone"></i> 0810-333-6686
                     </div>
                     <div class="contact inline">
-                        <i class="icon fa fa-envelope"></i> ventas@motonet.com.ar
+                        <i class="icon fa fa-envelope"></i> info@motonet.com.ar
                     </div>
                 </div><!-- /.contact-row -->
                 <!-- ============================================================= SEARCH AREA ============================================================= -->
