@@ -5606,7 +5606,7 @@ a.linkbyn img{
   }
 
   .header-nav{
-    margin-top:175px !important;
+    margin-top:194px !important;
   }
 
 
@@ -5631,10 +5631,14 @@ a.linkbyn img{
   }
 
   .main-header .logo-holder{
-    margin-top: -70px !important;
-    margin-bottom: -40px !important;
+    margin-top: -55px !important;
+    margin-bottom: -20px !important;
     text-align: center;
     width:100%;
+  }
+
+  .main-header .top-search-holder .search-area .search-field{
+    width: 65% !important;
   }
 
   #main-header img{

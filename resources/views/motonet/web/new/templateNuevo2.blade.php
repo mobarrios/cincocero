@@ -427,7 +427,36 @@
             $('.modalOk').css('display','none');
         })
 
+
     </script>
 @yield('js')
+
+
+    <script>
+
+        if($(window.location.hash).length > 0){
+            $('html, body').stop().animate({
+                scrollTop: $(window.location.hash).offset().top - 135
+            }, 500);
+        }
+
+            $('#mc-horizontal-menu-collapse').on('click','a',function(event) {
+                event.preventDefault();
+
+                var link = $(this);
+
+                if($(event.currentTarget.hash).length > 0){
+                    $('html, body').stop().animate({
+                        scrollTop: $(event.currentTarget.hash).offset().top - 135
+                    }, 500);
+                }else{
+
+                    window.location.href = '{{route('indexNueva')}}'+event.currentTarget.hash
+                }
+
+
+            });
+
+    </script>
 </body>
 </html>
