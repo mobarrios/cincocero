@@ -157,7 +157,7 @@
     <div class="container">
 
         <div classs="col-xs-12">
-            <a href="{!! route('indexNueva') !!}#product-tabs-slider" ><img src="https://www.todopago.com.ar/sites/todopago.com.ar/files/mesa_de_trabajo_1_copia-100_0.jpg" alt="" width="100%" /></a>
+            <a href="{!! route('indexNueva') !!}#product-tabs-slider" class="destacados"><img src="https://www.todopago.com.ar/sites/todopago.com.ar/files/mesa_de_trabajo_1_copia-100_0.jpg" alt="" width="100%" /></a>
         </div>
         <br>
           @yield('promos')
@@ -440,22 +440,37 @@
             }, 500);
         }
 
-            $('#mc-horizontal-menu-collapse').on('click','a',function(event) {
-                event.preventDefault();
 
-                var link = $(this);
+        $('.destacados').on('click',function(event){
+            event.preventDefault();
 
-                if($(event.currentTarget.hash).length > 0){
-                    $('html, body').stop().animate({
-                        scrollTop: $(event.currentTarget.hash).offset().top - 135
-                    }, 500);
-                }else{
+            if($(event.currentTarget.hash).length > 0){
+                $('html, body').stop().animate({
+                    scrollTop: $(event.currentTarget.hash).offset().top - 135
+                }, 500);
+            }else{
 
-                    window.location.href = '{{route('indexNueva')}}'+event.currentTarget.hash
-                }
+                window.location.href = '{{route('indexNueva')}}'+event.currentTarget.hash
+            }
+
+        });
+
+        $('#mc-horizontal-menu-collapse').on('click','a',function(event) {
+            event.preventDefault();
+
+            var link = $(this);
+
+            if($(event.currentTarget.hash).length > 0){
+                $('html, body').stop().animate({
+                    scrollTop: $(event.currentTarget.hash).offset().top - 135
+                }, 500);
+            }else{
+
+                window.location.href = '{{route('indexNueva')}}'+event.currentTarget.hash
+            }
 
 
-            });
+        });
 
     </script>
 </body>
