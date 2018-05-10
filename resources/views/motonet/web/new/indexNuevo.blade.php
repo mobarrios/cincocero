@@ -368,7 +368,7 @@
         $('a.page-scroll').bind('click', function(event) {
             var link = $(this);
             $('html, body').stop().animate({
-                scrollTop: $(link.attr('href')).offset().top - 50
+                scrollTop: $(link.attr('href')).offset().top - 200
             }, 500);
             event.preventDefault();
             $("#navbar").collapse('hide');

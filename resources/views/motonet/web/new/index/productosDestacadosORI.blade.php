@@ -1,29 +1,26 @@
 <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp destacados">
     <div class="more-info-tab clearfix ">
-        <h3 class="new-product-title pull-left" style="font-size:45px;color:#ff0000"><span class="fa fa-fire"></span> HOT SALE!</h3>
+        <h3 class="new-product-title pull-left">Productos Destacados</h3>
       </div>
 
     <div class="tab-content outer-top-xs">
         <div class="tab-pane in active" id="all">
-            <div class="category-product">
-                <div class="row">
+            <div class="product-slider">
+                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme overflow-visible" data-item="5">
+
                     @foreach($publications as $publication)
                     @if(!$publication->private)
-                    <div style="height: 350px;" class="col-sm-6 col-md-3 col-xs-12" >
-                        <div class="item ">
+                    <div class="item item-carousel">
 
                             <div class="products">
 
                                 <div class="product">
                                     <div class="text-center" >
-                                        <label class="label label-danger" style="font-size: 10px">{{$publication->destacado_text}}</label>
-
-
+                                        <label class="label label-danger">{{$publication->destacado_text}}</label>
                                     </div>
                                     <div class="product-image m-r-15">
                                         <div class="image">
-                                            <a href="{!! route('productDetail',[$publication->models->nameClean,$publication->id]) !!}">
-                                                <img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image or ''}}" class=" img-responsive" alt=""></a>
+                                            <a href="{!! route('productDetail',[$publication->models->nameClean,$publication->id]) !!}"><img style="width: 200px;" src="{{$publication->Models->Images->first()->image }}" data-echo="{{$publication->Models->Images->first()->image or ''}}" class=" img-responsive" alt=""></a>
                                         </div><!-- /.image -->
                                     </div><!-- /.product-image -->
 
@@ -32,7 +29,7 @@
                                         <h3 >{{$publication->models->brands->name}}</h3>
                                         <h3 class="name"><a href="{!! route('productDetail',[$publication->models->nameClean,$publication->id]) !!}">{{$publication->title}}</a></h3>
                                         <div class="product-price">
-                                            <span class="price">{{$publication->promo}}</span>
+                                            <span class="price">$ {{$publication->price}}</span>
                                             {{--<span class="price-before-discount">$ {{$publication->price}}</span>--}}
 
                                         </div><!-- /.product-price -->
@@ -55,11 +52,11 @@
                             </div><!-- /.products -->
 
                         </div><!-- /.item -->
-                    </div>
                     @endif
 
                     @endforeach
-                </div>
+
+                </div><!-- /.home-owl-carousel -->
             </div><!-- /.product-slider -->
         </div><!-- /.tab-pane -->
 

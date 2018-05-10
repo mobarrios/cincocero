@@ -4,6 +4,10 @@
     <nav class="yamm megamenu-horizontal" role="navigation">
         <ul class="nav">
 
+            <li style="background-color:#ff0000 " class="menu-item ">
+                <a href="{!! route('indexNueva') !!}#product-tabs-slider" style="color: black;"> <span class="fa fa-fire"></span> HOT SALE</a>
+            </li><!-- /.menu-item -->
+
             <li class="menu-item">
                 <a href="{!! 'buscar/categorias/motos/1'!!}">Motos</a>
             </li><!-- /.menu-item -->
