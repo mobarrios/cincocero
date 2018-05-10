@@ -9,7 +9,7 @@
                 <div class="row">
                     @foreach($publications as $publication)
                     @if(!$publication->private)
-                    <div style="height: 350px;" class="col-sm-6 col-md-3 col-xs-12" >
+                    <div style="height: 400px;" class="col-sm-6 col-md-3 col-xs-12" >
                         <div class="item ">
 
                             <div class="products">
