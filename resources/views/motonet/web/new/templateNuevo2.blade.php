@@ -157,7 +157,7 @@
     <div class="container">
 
         <div classs="col-xs-12">
-            <a href="{!! route('indexNueva') !!}#product-tabs-slider" class="destacados"><img src="https://www.todopago.com.ar/sites/todopago.com.ar/files/mesa_de_trabajo_1_copia-100_0.jpg" alt="" width="100%" /></a>
+            <a href="{!! route('indexNueva') !!}#product-tabs-slider" class="dest"><img src="https://www.todopago.com.ar/sites/todopago.com.ar/files/mesa_de_trabajo_1_copia-100_0.jpg" alt="" width="100%" /></a>
         </div>
         <br>
           @yield('promos')
@@ -441,7 +441,7 @@
         }
 
 
-        $('.destacados').on('click',function(event){
+        $('.dest').on('click',function(event){
             event.preventDefault();
 
             if($(event.currentTarget.hash).length > 0){
