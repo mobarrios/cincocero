@@ -5,7 +5,7 @@
         <ul class="nav">
 
             <li style="background-color:#ff0000 " class="menu-item ">
-                <a href="{!! route('indexNueva') !!}#product-tabs-slider" style="color: black;"> <span class="fa fa-fire"></span> HOT SALE</a>
+                <a href="{!! route('indexNueva') !!}#product-tabs-slider"  class="dest" style="color: black;"> <span class="fa fa-fire"></span> HOT SALE</a>
             </li><!-- /.menu-item -->
 
             <li class="menu-item">
