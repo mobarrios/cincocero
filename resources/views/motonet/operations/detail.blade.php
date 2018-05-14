@@ -43,7 +43,7 @@
 
                 <tr>
                     <td>Monto Abonado</td>
-                    <td><span style="font-size: 12px; color: red"><strong>$ {{$status_tp['Operations']['AMOUNTBUYER']}}</strong>  </span></td>
+                    <td><span style="font-size: 12px; color: red"><strong>$ {{$status_tp['Operations']['AMOUNTBUYER'] or ''}}</strong>  </span></td>
                 </tr>
                 <tr>
                     <td>Estado</td>
