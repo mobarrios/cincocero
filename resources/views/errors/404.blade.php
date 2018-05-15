@@ -40,6 +40,19 @@
                                 <script type="text/javascript" src="http://www.tutiempo.net/widget/eltiempo_viAwYAWAgddBCFMAKAuEkEE1kRlALEI2LdEt1H5FgYGAtwWAg"></script>
                             </div>
                         </article>
+
+
+                        <hr>
+
+                        <h3 class="uk-panel-title">The futbol STORE</h3>
+                        <article class="has-context ">
+                            <div class="latest-news-wrap" style="padding-bottom: 36px;">
+                                <a href="https://www.thefutbolstore.com.ar">
+                                    <img src="{{ asset('thefutbolstore.jpg') }}" alt="" style="max-width:87%">
+                                </a>
+                            </div>
+                        </article>
+
                         <div class="clearfix"> </div>
                     </div>
                 </aside>

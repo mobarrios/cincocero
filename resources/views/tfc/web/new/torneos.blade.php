@@ -611,6 +611,17 @@ confirmar' !!} Sede: {!! $partido->canchas ? $partido->canchas->sedes->name
                         </div>
                     </article>
 
+                    <hr>
+
+                    <h3 class="uk-panel-title">The futbol STORE</h3>
+                    <article class="has-context ">
+                        <div class="latest-news-wrap" style="padding-bottom: 36px;">
+                            <a href="https://www.thefutbolstore.com.ar">
+                                <img src="{{ asset('thefutbolstore.jpg') }}" alt="" style="max-width:87%">
+                            </a>
+                        </div>
+                    </article>
+
                 </div>
             </aside>
         </div>
