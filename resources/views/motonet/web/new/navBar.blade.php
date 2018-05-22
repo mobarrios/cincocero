@@ -24,7 +24,9 @@
                             </li>
                             <li class="dropdown">
                                 <a href="{!! route('indexNueva') !!}#product-tabs-slider">Destacados
+{{--
                                     <span class="menu-label hot-menu hidden-xs"> <span class="fa fa-fire"></span> Hot Sale !</span>
+--}}
                                 </a>
                             </li>
                             <li class="dropdown">

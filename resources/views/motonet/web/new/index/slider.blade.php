@@ -102,7 +102,7 @@
                             <h4 class="info-box-heading orange">Envios</h4>
                         </div>
                     </div>
-                    <h6 class="text">Envios a todo el Pais.</h6>
+                    <h6 class="text">a Sucursales de Entrega.</h6>
                 </div>
             </div><!-- .col -->
 

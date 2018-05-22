@@ -1,7 +1,11 @@
 <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp destacados">
     <div class="more-info-tab clearfix ">
+{{--
         <h3 class="new-product-title pull-left" style="font-size:45px;color:#ff0000"><span class="fa fa-fire"></span> HOT SALE!</h3>
-      </div>
+--}}
+        <h3 class="new-product-title pull-left" >Productos Destacados</h3>
+
+    </div>
 
     <div class="tab-content outer-top-xs">
         <div class="tab-pane in active" id="all">
